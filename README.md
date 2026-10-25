@@ -3,7 +3,7 @@
 A mobile-first study game for memorizing full engine and transmission rebuild sequences, step by step,
 until you can run the whole order from memory.
 
-Live site: _coming soon (GitHub Pages URL goes here)_
+Live site: https://cveenstra.github.io/engine_rebuilding_simulator/
 
 > **Study aid only. This is not a service manual.** Rebuild Bench helps you learn the order of a rebuild. Every
 > torque, clearance, angle and fluid value shown in it must be verified against the factory service manual for
