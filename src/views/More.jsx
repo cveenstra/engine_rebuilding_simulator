@@ -8,12 +8,12 @@ import {
 } from '../engine/storage.js';
 import { allTransitions, studyStreak } from '../engine/progress.js';
 import { srsSummary } from '../engine/srs.js';
-import { NEW_PER_DAY_CHOICES, newPerDay } from '../engine/terms.js';
+import { NEW_PER_DAY_CHOICES, NO_LIMIT, newPerDay } from '../engine/terms.js';
 
 export default function More() {
   const state = useProgress();
   const [theme, setTheme] = useState(() => getPref('theme', 'system'));
-  const [perDay, setPerDay] = useState(() => newPerDay());
+  const [perDay, setPerDay] = useState(() => (newPerDay() === Infinity ? NO_LIMIT : newPerDay()));
   const [gate, setGate] = useState(() => getPref('termsFirst', true) !== false);
   const [msg, setMsg] = useState(null); // { tone, text }
   const [canSave] = useState(() => storageWorks());
@@ -102,10 +102,10 @@ export default function More() {
       </Card>
 
       <Card className="p-4">
-        <SectionTitle sub="How many new words the Terms drill introduces each day. Reviews are never capped.">New terms a day</SectionTitle>
+        <SectionTitle sub="How many new words the Terms drill introduces each day. No limit means new words keep coming as fast as you learn them; prerequisites still decide the order. Reviews are never capped.">New terms a day</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {NEW_PER_DAY_CHOICES.map((n) => (
-            <Chip key={n} active={perDay === n} onClick={() => { setPerDay(n); setPref('termNewPerDay', n); }}>{n}</Chip>
+            <Chip key={n} active={perDay === n} onClick={() => { setPerDay(n); setPref('termNewPerDay', n); }}>{n === NO_LIMIT ? 'No limit' : n}</Chip>
           ))}
         </div>
         <div className="mt-4 border-t border-line-2 pt-4">

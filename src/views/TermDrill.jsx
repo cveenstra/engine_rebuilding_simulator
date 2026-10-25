@@ -183,7 +183,7 @@ function Drill({ scope, mode, skey }) {
             {s.answered ? `Session done: ${s.right} of ${s.answered} right` : 'Nothing waiting right now'}
           </p>
           <p className="mt-1 text-sm text-ink-2">
-            {s.cur ? 'Stopped. Everything you answered is saved.' : 'Every term in this filter is either learned for now or waiting for today’s new allowance to reset.'}
+            {s.cur ? 'Stopped. Everything you answered is saved.' : 'Every term in this filter is learned for now, locked behind words it builds on, or waiting for today’s new-term limit to reset if you set one.'}
           </p>
         </Card>
         {learned.length > 0 && (

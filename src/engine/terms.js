@@ -13,8 +13,11 @@ export const STATUS_LABEL = {
   locked: 'Locked', new: 'New', learning: 'Learning', learned: 'Learned', mature: 'Mature',
 };
 
-export const NEW_PER_DAY_DEFAULT = 15;
-export const NEW_PER_DAY_CHOICES = [5, 10, 15, 20, 30];
+// No daily cap by default: new terms come as fast as the learner learns them.
+// Prerequisites still gate them, so a word is only new once what it builds on is learned.
+export const NO_LIMIT = -1;
+export const NEW_PER_DAY_DEFAULT = NO_LIMIT;
+export const NEW_PER_DAY_CHOICES = [NO_LIMIT, 5, 10, 15, 20, 30];
 
 const day0 = () => { const d = new Date(); d.setHours(0, 0, 0, 0); return d.getTime(); };
 export const recordsOf = (state = getState()) => state.terms || {};
@@ -29,8 +32,11 @@ export const hasTerms = () => DRILL().length >= 4;
 
 export function newPerDay() {
   const n = Number(getPref('termNewPerDay', NEW_PER_DAY_DEFAULT));
-  return Number.isFinite(n) && n >= 0 ? Math.min(n, 100) : NEW_PER_DAY_DEFAULT;
+  if (!Number.isFinite(n) || n < 0) return Infinity;
+  return Math.min(n, 100);
 }
+/** Label for the daily new-term setting. */
+export const perDayLabel = (n = newPerDay()) => (n === Infinity ? 'No daily limit' : `${n} new terms a day`);
 export const introducedToday = (state = getState()) => L.introducedSince(recordsOf(state), day0());
 
 /**

@@ -6,7 +6,7 @@ import { StatusBar, StatusLegend } from '../components/terms.jsx';
 import { useProgress, getPref, setPref } from '../engine/storage.js';
 import { REAL_UNITS, UNITS } from '../data/index.js';
 import { GLOSSARY_CATEGORIES, TERMS } from '../data/glossary.js';
-import { termSummary, termBreakdown, hasTerms, newPerDay, scopeTerms, recordsOf } from '../engine/terms.js';
+import { termSummary, termBreakdown, hasTerms, newPerDay, perDayLabel, scopeTerms, recordsOf } from '../engine/terms.js';
 import { dueAt, formatGap } from '../engine/ladder.js';
 
 const MODES = [
@@ -69,7 +69,7 @@ export default function Terms() {
       <Card className="p-4">
         <div className="grid grid-cols-3 gap-3">
           <Stat label="Due now" value={s.due} />
-          <Stat label="New today" value={s.newToday} note={`of ${newPerDay()} a day`} />
+          <Stat label="New today" value={s.newToday} note={newPerDay() === Infinity ? 'no daily limit' : `of ${newPerDay()} a day`} />
           <Stat label="Learned" value={s.learned + s.mature} note={`of ${s.total}`} />
         </div>
         <StatusBar counts={s} className="mt-4" />
@@ -121,7 +121,7 @@ export default function Terms() {
           </Card>
         )}
         <p className="mt-2 text-sm text-ink-3">
-          {newPerDay()} new terms a day. <Link to="/more" className="underline underline-offset-2">Change in settings</Link>.
+          {perDayLabel()}. <Link to="/more" className="underline underline-offset-2">Change in settings</Link>.
         </p>
       </div>
 
