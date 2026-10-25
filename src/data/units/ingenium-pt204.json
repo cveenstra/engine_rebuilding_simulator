@@ -315,372 +315,446 @@
     {
       "id": "block",
       "name": "Cylinder block with cast-iron liners",
-      "group": "block"
+      "group": "block",
+      "part": "cylinder-block"
     },
     {
       "id": "crankshaft",
       "name": "Crankshaft",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "crankshaft"
     },
     {
       "id": "main-bearings",
       "name": "Main bearing shells (graded)",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "main-bearings"
     },
     {
       "id": "main-caps",
       "name": "Main bearing caps",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "main-caps"
     },
     {
       "id": "thrust-washers",
       "name": "Crankshaft thrust washers",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "thrust-washers"
     },
     {
       "id": "pistons",
       "name": "Pistons",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "pistons"
     },
     {
       "id": "piston-rings",
       "name": "Piston rings",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "piston-rings"
     },
     {
       "id": "connecting-rods",
       "name": "Connecting rods (fracture-split)",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "connecting-rods"
     },
     {
       "id": "rod-bearings",
       "name": "Connecting rod bearing shells (graded)",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "rod-bearings"
     },
     {
       "id": "piston-jets",
       "name": "Piston cooling oil jets",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "piston-oil-jets"
     },
     {
       "id": "piston-jet-solenoid",
       "name": "Piston cooling jet solenoid",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-control-solenoid"
     },
     {
       "id": "balancer-shafts",
       "name": "Dynamic balancer shafts",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "balance-shafts"
     },
     {
       "id": "balancer-idler",
       "name": "Balancer idler gear",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "balance-shafts"
     },
     {
       "id": "windage-tray",
       "name": "Structural windage tray",
-      "group": "bottom-end"
+      "group": "bottom-end",
+      "part": "oil-baffle"
     },
     {
       "id": "oil-pan",
       "name": "Oil pan",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-pan"
     },
     {
       "id": "oil-pump",
       "name": "Variable-flow oil pump with vacuum pump",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-pump"
     },
     {
       "id": "oil-pump-chain",
       "name": "Oil pump drive chain and sprocket",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "pump-drive-chain"
     },
     {
       "id": "oil-pickup",
       "name": "Oil pump inlet pipe",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-pickup"
     },
     {
       "id": "oil-filter-housing",
       "name": "Oil filter housing and element",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-filter"
     },
     {
       "id": "oil-cooler",
       "name": "Engine oil cooler",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-cooler"
     },
     {
       "id": "front-cover",
       "name": "Engine front cover",
-      "group": "covers"
+      "group": "covers",
+      "part": "timing-cover"
     },
     {
       "id": "front-seal",
       "name": "Crankshaft front seal",
-      "group": "covers"
+      "group": "covers",
+      "part": "crank-seal"
     },
     {
       "id": "rear-seal",
       "name": "Crankshaft rear seal",
-      "group": "covers"
+      "group": "covers",
+      "part": "crank-seal"
     },
     {
       "id": "crank-pulley",
       "name": "Crankshaft pulley / vibration damper",
-      "group": "front-end"
+      "group": "front-end",
+      "part": "crank-pulley"
     },
     {
       "id": "drive-plate",
       "name": "Drive plate with reluctor ring",
-      "group": "rear-end"
+      "group": "rear-end",
+      "part": "drive-plate"
     },
     {
       "id": "lower-timing-cover",
       "name": "Lower timing cover (block rear cover)",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-cover"
     },
     {
       "id": "upper-timing-cover",
       "name": "Upper timing cover",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-cover"
     },
     {
       "id": "primary-chain",
       "name": "Primary (lower) timing chain",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-chain"
     },
     {
       "id": "secondary-chain",
       "name": "Secondary (upper) timing chain",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-chain"
     },
     {
       "id": "idler-sprocket",
       "name": "Timing idler sprocket",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-sprocket"
     },
     {
       "id": "primary-tensioner",
       "name": "Primary timing chain tensioner",
-      "group": "timing"
+      "group": "timing",
+      "part": "chain-tensioner"
     },
     {
       "id": "secondary-tensioner",
       "name": "Secondary timing chain tensioner",
-      "group": "timing"
+      "group": "timing",
+      "part": "chain-tensioner"
     },
     {
       "id": "primary-guides",
       "name": "Primary timing chain guides",
-      "group": "timing"
+      "group": "timing",
+      "part": "chain-guides"
     },
     {
       "id": "secondary-guides",
       "name": "Secondary timing chain guides",
-      "group": "timing"
+      "group": "timing",
+      "part": "chain-guides"
     },
     {
       "id": "vct-intake",
       "name": "Intake VCT actuator (cam phaser)",
-      "group": "timing"
+      "group": "timing",
+      "part": "cam-phaser"
     },
     {
       "id": "vct-exhaust",
       "name": "Exhaust VCT actuator (cam phaser)",
-      "group": "timing"
+      "group": "timing",
+      "part": "cam-phaser"
     },
     {
       "id": "vct-solenoids",
       "name": "VCT solenoids",
-      "group": "timing"
+      "group": "timing",
+      "part": "oil-control-solenoid"
     },
     {
       "id": "cylinder-head",
       "name": "Cylinder head",
-      "group": "head"
+      "group": "head",
+      "part": "cylinder-head"
     },
     {
       "id": "head-gasket",
       "name": "Multi-layer steel head gasket",
-      "group": "head"
+      "group": "head",
+      "part": "head-gasket"
     },
     {
       "id": "head-bolts",
       "name": "Cylinder head bolts",
-      "group": "head"
+      "group": "head",
+      "part": "head-bolts"
     },
     {
       "id": "camshaft-carrier",
       "name": "Camshaft carrier",
-      "group": "head"
+      "group": "head",
+      "part": "cam-carrier"
     },
     {
       "id": "intake-camshaft",
       "name": "Intake camshaft",
-      "group": "head"
+      "group": "head",
+      "part": "camshaft"
     },
     {
       "id": "exhaust-camshaft",
       "name": "Exhaust camshaft",
-      "group": "head"
+      "group": "head",
+      "part": "camshaft"
     },
     {
       "id": "cam-caps",
       "name": "Camshaft bearing caps",
-      "group": "head"
+      "group": "head",
+      "part": "cam-caps"
     },
     {
       "id": "cvvl",
       "name": "CVVL electrohydraulic intake valve lift unit",
-      "group": "head"
+      "group": "head",
+      "part": "cvvl-actuator"
     },
     {
       "id": "roller-followers",
       "name": "Exhaust roller finger followers",
-      "group": "head"
+      "group": "head",
+      "part": "roller-followers"
     },
     {
       "id": "hlas",
       "name": "Exhaust hydraulic lash adjusters",
-      "group": "head"
+      "group": "head",
+      "part": "lash-adjusters"
     },
     {
       "id": "valves",
       "name": "Intake and exhaust valves",
-      "group": "head"
+      "group": "head",
+      "part": "valves"
     },
     {
       "id": "valve-springs",
       "name": "Valve springs, retainers and collets",
-      "group": "head"
+      "group": "head",
+      "part": "valve-springs"
     },
     {
       "id": "valve-seals",
       "name": "Valve stem seals",
-      "group": "head"
+      "group": "head",
+      "part": "valve-stem-seals"
     },
     {
       "id": "vent-separator",
       "name": "Engine vent oil separator",
-      "group": "head"
+      "group": "head",
+      "part": "oil-separator"
     },
     {
       "id": "injectors",
       "name": "Direct fuel injectors",
-      "group": "fuel"
+      "group": "fuel",
+      "part": "fuel-injector"
     },
     {
       "id": "fuel-rail",
       "name": "Fuel rail",
-      "group": "fuel"
+      "group": "fuel",
+      "part": "fuel-rail"
     },
     {
       "id": "hpfp",
       "name": "High-pressure fuel pump",
-      "group": "fuel"
+      "group": "fuel",
+      "part": "high-pressure-fuel-pump"
     },
     {
       "id": "hpfp-tappet",
       "name": "HP fuel pump tappet",
-      "group": "fuel"
+      "group": "fuel",
+      "part": "high-pressure-fuel-pump"
     },
     {
       "id": "hp-lines",
       "name": "High-pressure fuel lines",
-      "group": "fuel"
+      "group": "fuel",
+      "part": "fuel-lines"
     },
     {
       "id": "ignition-coils",
       "name": "Ignition coils and spark plugs",
-      "group": "ignition"
+      "group": "ignition",
+      "part": "ignition-coils"
     },
     {
       "id": "intake-manifold",
       "name": "Intake manifold and throttle",
-      "group": "air"
+      "group": "air",
+      "part": "intake-manifold"
     },
     {
       "id": "turbo",
       "name": "Twin-scroll turbocharger",
-      "group": "air"
+      "group": "air",
+      "part": "turbocharger"
     },
     {
       "id": "turbo-oil-feed",
       "name": "Turbocharger oil feed pipe",
-      "group": "air"
+      "group": "air",
+      "part": "turbo-oil-lines"
     },
     {
       "id": "turbo-oil-return",
       "name": "Turbocharger oil return pipe",
-      "group": "air"
+      "group": "air",
+      "part": "turbo-oil-lines"
     },
     {
       "id": "heat-shields",
       "name": "Turbocharger heat shields",
-      "group": "air"
+      "group": "air",
+      "part": "heat-shield"
     },
     {
       "id": "cmp-sensors",
       "name": "Camshaft position sensors",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "cam-position-sensor"
     },
     {
       "id": "ckp-sensor",
       "name": "Crankshaft position sensor",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "crank-position-sensor"
     },
     {
       "id": "knock-sensors",
       "name": "Knock sensors",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "knock-sensor"
     },
     {
       "id": "temp-sensors",
       "name": "Head and block temperature sensors",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "temperature-sensor"
     },
     {
       "id": "coolant-pump",
       "name": "Coolant pump and pulley",
-      "group": "cooling"
+      "group": "cooling",
+      "part": "water-pump"
     },
     {
       "id": "thermostat-housing",
       "name": "Thermostat housing",
-      "group": "cooling"
+      "group": "cooling",
+      "part": "thermostat"
     },
     {
       "id": "coolant-pipes",
       "name": "Coolant pipes, hoses and degas bottle",
-      "group": "cooling"
+      "group": "cooling",
+      "part": "coolant-pipes"
     },
     {
       "id": "generator",
       "name": "Generator (alternator)",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "alternator"
     },
     {
       "id": "accessory-belt",
       "name": "Accessory drive belt and idlers",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "accessory-belt"
     },
     {
       "id": "wiring-harness",
       "name": "Engine wiring harness",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "wiring-harness"
     },
     {
       "id": "nvh-pads",
       "name": "NVH pads and engine cover",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "engine-cover"
     },
     {
       "id": "transmission",
       "name": "ZF 9HP48 transmission",
-      "group": "external"
+      "group": "external",
+      "part": "transmission-assembly"
     }
   ],
   "phases": [

@@ -309,172 +309,206 @@
     {
       "id": "torque-converter",
       "name": "Torque converter",
-      "group": "converter"
+      "group": "converter",
+      "part": "torque-converter"
     },
     {
       "id": "converter-seal",
       "name": "Converter hub seal and snap ring",
-      "group": "converter"
+      "group": "converter",
+      "part": "converter-seal"
     },
     {
       "id": "bell-housing",
       "name": "Bell (converter) housing",
-      "group": "housing"
+      "group": "housing",
+      "part": "converter-housing"
     },
     {
       "id": "case",
       "name": "Main transmission case",
-      "group": "housing"
+      "group": "housing",
+      "part": "transmission-case"
     },
     {
       "id": "case-gasket",
       "name": "Bell housing to case gasket and tube seal",
-      "group": "housing"
+      "group": "housing",
+      "part": "case-gasket"
     },
     {
       "id": "stator-support",
       "name": "Stator support",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "stator-support"
     },
     {
       "id": "oil-pump",
       "name": "Off-axis dual-chamber vane pump",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "transmission-pump"
     },
     {
       "id": "pump-chain",
       "name": "Pump drive chain and sprockets",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "pump-drive-chain"
     },
     {
       "id": "oil-filter",
       "name": "Internal filter and start-stop bypass tube",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "transmission-filter"
     },
     {
       "id": "feed-tubes",
       "name": "Valve body connecting (feed) tubes",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "fluid-lines"
     },
     {
       "id": "oil-gallery-plate",
       "name": "Oil passage (gallery) cover plate",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "case-cover"
     },
     {
       "id": "external-line",
       "name": "External hydraulic line",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "fluid-lines"
     },
     {
       "id": "valve-body",
       "name": "Valve body and solenoids",
-      "group": "controls"
+      "group": "controls",
+      "part": "valve-body"
     },
     {
       "id": "valve-body-cover",
       "name": "Valve body side cover",
-      "group": "controls"
+      "group": "controls",
+      "part": "valve-body-cover"
     },
     {
       "id": "tcm",
       "name": "Transmission control module",
-      "group": "controls"
+      "group": "controls",
+      "part": "tcm"
     },
     {
       "id": "pressure-sensor",
       "name": "Dog clutch pressure sensor",
-      "group": "controls"
+      "group": "controls",
+      "part": "pressure-sensor"
     },
     {
       "id": "speed-sensors",
       "name": "Input/output speed sensors",
-      "group": "controls"
+      "group": "controls",
+      "part": "speed-sensor"
     },
     {
       "id": "range-sensor",
       "name": "Internal range (mode) sensor",
-      "group": "controls"
+      "group": "controls",
+      "part": "range-switch"
     },
     {
       "id": "input-shaft",
       "name": "Input (turbine) shaft",
-      "group": "geartrain"
+      "group": "geartrain",
+      "part": "input-shaft"
     },
     {
       "id": "a-dog",
       "name": "A dog clutch",
-      "group": "clutches"
+      "group": "clutches",
+      "part": "dog-clutch"
     },
     {
       "id": "b-clutch",
       "name": "B clutch",
-      "group": "clutches"
+      "group": "clutches",
+      "part": "clutch-pack"
     },
     {
       "id": "c-brake",
       "name": "C brake",
-      "group": "clutches"
+      "group": "clutches",
+      "part": "brake-pack"
     },
     {
       "id": "d-brake",
       "name": "D brake",
-      "group": "clutches"
+      "group": "clutches",
+      "part": "brake-pack"
     },
     {
       "id": "e-clutch",
       "name": "E clutch",
-      "group": "clutches"
+      "group": "clutches",
+      "part": "clutch-pack"
     },
     {
       "id": "f-dog",
       "name": "F dog clutch",
-      "group": "clutches"
+      "group": "clutches",
+      "part": "dog-clutch"
     },
     {
       "id": "output-support",
       "name": "Output gear and support (OPSA)",
-      "group": "geartrain"
+      "group": "geartrain",
+      "part": "output-gear"
     },
     {
       "id": "planetary-1-2",
       "name": "Planetary sets 1 and 2 (common sun)",
-      "group": "geartrain"
+      "group": "geartrain",
+      "part": "planetary-gearset"
     },
     {
       "id": "planetary-3-4",
       "name": "Planetary sets 3 and 4 (shared housing)",
-      "group": "geartrain"
+      "group": "geartrain",
+      "part": "planetary-gearset"
     },
     {
       "id": "transfer-gear",
       "name": "Transfer gear with park gear",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "transfer-gear"
     },
     {
       "id": "differential",
       "name": "Differential",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "differential"
     },
     {
       "id": "diff-seals",
       "name": "Differential/axle seals",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "axle-seal"
     },
     {
       "id": "park-system",
       "name": "Park rod cam and pawl",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "parking-lock"
     },
     {
       "id": "ptu",
       "name": "Power transfer unit (AWD)",
-      "group": "vehicle"
+      "group": "vehicle",
+      "part": "power-transfer-unit"
     },
     {
       "id": "drain-fill-plugs",
       "name": "Drain, fill and port plugs",
-      "group": "housing"
+      "group": "housing",
+      "part": "sealing-plugs"
     }
   ],
   "phases": [

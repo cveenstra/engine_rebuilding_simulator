@@ -1,0 +1,1202 @@
+[
+  {
+    "id": "cylinder-block",
+    "name": "Cylinder block",
+    "category": "engine-block",
+    "what": "The heavy cast metal body of the engine that holds the cylinders and carries the crankshaft.",
+    "does": "Forms the backbone every other engine part bolts to and contains the coolant and oil passages.",
+    "lookFor": "Check the deck for flatness and the casting for cracks, especially between cylinders and around bolt holes.",
+    "photoQuery": "engine cylinder block",
+    "drawable": true
+  },
+  {
+    "id": "cylinder-liners",
+    "name": "Cylinder liners",
+    "category": "engine-block",
+    "what": "Hard iron sleeves cast into the block that form the walls the pistons slide in.",
+    "does": "Give the piston rings a tough, round surface to seal against.",
+    "lookFor": "Measure bore diameter, taper and out-of-round, and look for vertical scoring or a ridge at the top of ring travel.",
+    "photoQuery": "cylinder liner sleeve",
+    "drawable": true
+  },
+  {
+    "id": "main-caps",
+    "name": "Main bearing caps",
+    "category": "engine-block",
+    "what": "Heavy metal caps that bolt to the bottom of the block around each crankshaft journal.",
+    "does": "Clamp the main bearings and hold the crankshaft in the block.",
+    "lookFor": "Keep each cap in its original position and direction, and check the bearing saddles for fretting or spun-bearing marks.",
+    "photoQuery": "main bearing cap engine",
+    "drawable": true
+  },
+  {
+    "id": "cylinder-head",
+    "name": "Cylinder head",
+    "category": "engine-block",
+    "what": "The cast metal lid on top of the cylinders that holds the valves, ports and often the camshafts.",
+    "does": "Closes off the combustion chambers and controls air in and exhaust out through its valves.",
+    "lookFor": "Check the deck face for warp with a straightedge and look for cracks between valve seats and around coolant passages.",
+    "photoQuery": "cylinder head engine",
+    "drawable": true
+  },
+  {
+    "id": "crankshaft",
+    "name": "Crankshaft",
+    "category": "rotating",
+    "what": "A long, heavy shaft with offset journals that runs along the bottom of the engine.",
+    "does": "Turns the up-and-down push of the pistons into rotation that drives the transmission.",
+    "lookFor": "Measure journal diameters for wear and taper, check runout, and look for scoring, heat marks or cracks at the journal edges.",
+    "photoQuery": "engine crankshaft",
+    "drawable": true
+  },
+  {
+    "id": "main-bearings",
+    "name": "Main bearings",
+    "category": "rotating",
+    "what": "Thin, curved half-shell bearings that sit between the block and the crankshaft journals.",
+    "does": "Let the crankshaft spin on a film of pressurized oil without metal-to-metal contact.",
+    "lookFor": "Look for scoring, embedded debris, copper showing through and uneven wear, and measure oil clearance.",
+    "photoQuery": "engine main bearing shells",
+    "drawable": true
+  },
+  {
+    "id": "thrust-washers",
+    "name": "Crankshaft thrust washers",
+    "category": "rotating",
+    "what": "Flat half-moon washers fitted at one main journal of the crankshaft.",
+    "does": "Stop the crankshaft from sliding forward and back along its own length.",
+    "lookFor": "Measure crankshaft end play and check the thrust faces for scoring or uneven wear.",
+    "photoQuery": "crankshaft thrust washer",
+    "drawable": true
+  },
+  {
+    "id": "pistons",
+    "name": "Pistons",
+    "category": "rotating",
+    "what": "Cylindrical metal plugs that slide up and down inside each cylinder.",
+    "does": "Take the force of combustion and push the connecting rods to turn the crankshaft.",
+    "lookFor": "Check skirts for scuffing, crowns for burning or cracks, and ring grooves for wear, and measure piston-to-bore clearance.",
+    "photoQuery": "engine piston",
+    "drawable": true
+  },
+  {
+    "id": "piston-rings",
+    "name": "Piston rings",
+    "category": "rotating",
+    "what": "Thin split metal rings that sit in grooves around each piston.",
+    "does": "Seal combustion pressure above the piston and scrape extra oil off the cylinder wall.",
+    "lookFor": "Measure end gap in the bore and side clearance in the groove, and note which side faces up before fitting.",
+    "photoQuery": "piston rings",
+    "drawable": true
+  },
+  {
+    "id": "piston-pins",
+    "name": "Piston pins",
+    "category": "rotating",
+    "what": "Short hardened steel tubes, held in by clips, that pass through the piston and the top of the connecting rod.",
+    "does": "Let the connecting rod pivot under the piston as the crankshaft turns.",
+    "lookFor": "Check for scoring or a step worn into the pin, and fit new circlips.",
+    "photoQuery": "piston wrist pin",
+    "drawable": true
+  },
+  {
+    "id": "connecting-rods",
+    "name": "Connecting rods",
+    "category": "rotating",
+    "what": "Strong steel links with a small eye at the top and a split big end at the bottom.",
+    "does": "Connect each piston to the crankshaft and carry the combustion force between them.",
+    "lookFor": "Check for bend and twist and big-end bore roundness, and keep each cap matched to its own rod.",
+    "photoQuery": "connecting rod engine",
+    "drawable": true
+  },
+  {
+    "id": "rod-bearings",
+    "name": "Connecting rod bearings",
+    "category": "rotating",
+    "what": "Thin half-shell bearings fitted inside the big end of each connecting rod.",
+    "does": "Let the rod turn on its crankshaft journal on a film of oil.",
+    "lookFor": "Look for scoring, smeared lining and embedded debris, and measure oil clearance.",
+    "photoQuery": "connecting rod bearing",
+    "drawable": true
+  },
+  {
+    "id": "rod-bushings",
+    "name": "Small-end bushings",
+    "category": "rotating",
+    "what": "A pressed-in bronze sleeve in the small top eye of a connecting rod.",
+    "does": "Gives the piston pin a smooth, replaceable surface to pivot in.",
+    "lookFor": "Measure pin-to-bushing clearance and look for looseness or scoring in the bore.",
+    "photoQuery": "connecting rod small end bushing",
+    "drawable": true
+  },
+  {
+    "id": "drive-plate",
+    "name": "Drive plate (flexplate)",
+    "category": "rotating",
+    "what": "A thin steel disc with a toothed ring gear that bolts to the back of the crankshaft on automatic cars.",
+    "does": "Connects the crankshaft to the torque converter and gives the starter motor teeth to turn.",
+    "lookFor": "Look for cracks around the bolt holes, chipped ring gear teeth, and a bent or damaged sensor ring.",
+    "photoQuery": "flexplate automatic transmission",
+    "drawable": true
+  },
+  {
+    "id": "crank-pulley",
+    "name": "Crankshaft pulley",
+    "category": "rotating",
+    "what": "A grooved wheel, often with a rubber-mounted damper ring, on the front end of the crankshaft.",
+    "does": "Drives the accessory belt and, when it has a damper, soaks up twisting vibration in the crankshaft.",
+    "lookFor": "Check the rubber layer for cracks or slipping and the seal surface on the hub for a worn groove.",
+    "photoQuery": "crankshaft pulley harmonic balancer",
+    "drawable": true
+  },
+  {
+    "id": "balance-shafts",
+    "name": "Balance shafts",
+    "category": "rotating",
+    "what": "A pair of weighted shafts, driven by gears from the crankshaft, that spin alongside it.",
+    "does": "Cancel the shaking forces an inline four makes so the engine runs smoother.",
+    "lookFor": "Check bearing journals and drive gear teeth for wear, and line up the timing marks exactly on reassembly.",
+    "photoQuery": "engine balance shaft",
+    "drawable": true
+  },
+  {
+    "id": "valves",
+    "name": "Intake and exhaust valves",
+    "category": "valvetrain",
+    "what": "Mushroom-shaped metal stems that open and close the ports in the cylinder head.",
+    "does": "Let air into and exhaust out of each cylinder at the right moment, then seal it for compression.",
+    "lookFor": "Check faces for burning or pitting, stems for wear and bend, and the thickness of the edge around the head.",
+    "photoQuery": "engine poppet valve",
+    "drawable": true
+  },
+  {
+    "id": "valve-springs",
+    "name": "Valve springs and retainers",
+    "category": "valvetrain",
+    "what": "Coil springs held on each valve stem by a cap and two small split keepers.",
+    "does": "Snap each valve shut and keep it following the camshaft at high speed.",
+    "lookFor": "Measure free length and squareness, check spring pressure, and look for cracked retainers or worn keepers.",
+    "photoQuery": "valve spring retainer",
+    "drawable": true
+  },
+  {
+    "id": "valve-guides",
+    "name": "Valve guides",
+    "category": "valvetrain",
+    "what": "Thin tubes pressed into the cylinder head that each valve stem slides through.",
+    "does": "Keep the valve centered on its seat and carry heat away from the stem.",
+    "lookFor": "Measure stem-to-guide clearance and check for wear that has flared the ends of the bore.",
+    "photoQuery": "valve guide cylinder head",
+    "drawable": true
+  },
+  {
+    "id": "valve-seats",
+    "name": "Valve seats",
+    "category": "valvetrain",
+    "what": "Hardened rings set into the cylinder head where each valve closes.",
+    "does": "Give the valve face a tight, heat-resistant surface to seal against.",
+    "lookFor": "Check contact width and position, and look for pitting, burning, cracks or a seat that has sunk.",
+    "photoQuery": "valve seat cylinder head",
+    "drawable": true
+  },
+  {
+    "id": "valve-stem-seals",
+    "name": "Valve stem seals",
+    "category": "valvetrain",
+    "what": "Small rubber caps that fit over the top of each valve guide.",
+    "does": "Stop oil running down the valve stems into the ports and cylinders.",
+    "lookFor": "Replace them on every rebuild, and press each one on squarely without tearing the lip.",
+    "photoQuery": "valve stem seal",
+    "drawable": true
+  },
+  {
+    "id": "valve-shims",
+    "name": "Valve shims",
+    "category": "valvetrain",
+    "what": "Small hardened discs, made in graded thicknesses, that sit between the camshaft and each valve.",
+    "does": "Set the gap, called valve clearance, between the camshaft and each valve.",
+    "lookFor": "Measure clearances before teardown, and record each shim thickness so you can work out replacements.",
+    "photoQuery": "valve adjustment shim",
+    "drawable": true
+  },
+  {
+    "id": "roller-followers",
+    "name": "Roller finger followers",
+    "category": "valvetrain",
+    "what": "Short steel levers with a small roller in the middle that ride under the camshaft lobes.",
+    "does": "Pass the lift of each cam lobe to its valve with very little friction.",
+    "lookFor": "Check the roller for flat spots, pitting or play, and the pads at each end for wear.",
+    "photoQuery": "roller finger follower",
+    "drawable": true
+  },
+  {
+    "id": "lash-adjusters",
+    "name": "Hydraulic lash adjusters",
+    "category": "valvetrain",
+    "what": "Small oil-filled plungers in the head that one end of each follower pivots on.",
+    "does": "Take up slack in the valvetrain automatically, so the valves never need manual adjustment.",
+    "lookFor": "Check for scoring, sticking or a spongy feel, and keep them upright and full of oil before fitting.",
+    "photoQuery": "hydraulic lash adjuster",
+    "drawable": true
+  },
+  {
+    "id": "cam-carrier",
+    "name": "Camshaft carrier",
+    "category": "valvetrain",
+    "what": "A machined frame or housing that bolts to the top of the cylinder head and holds the camshafts.",
+    "does": "Supports the camshafts in their bearings at the right height and alignment over the valves.",
+    "lookFor": "Check bearing bores for scoring and the sealing faces for flatness and old sealant.",
+    "photoQuery": "camshaft carrier",
+    "drawable": true
+  },
+  {
+    "id": "camshaft",
+    "name": "Camshafts",
+    "category": "valvetrain",
+    "what": "Shafts with egg-shaped lobes along their length, driven from the crankshaft.",
+    "does": "Open each valve by the right amount at the right time as the lobes turn.",
+    "lookFor": "Check lobes for pitting or flat wear and journals for scoring, and measure runout and end play.",
+    "photoQuery": "engine camshaft",
+    "drawable": true
+  },
+  {
+    "id": "cam-caps",
+    "name": "Camshaft bearing caps",
+    "category": "valvetrain",
+    "what": "Small machined caps that bolt over each camshaft journal.",
+    "does": "Clamp the camshafts in their bearings while letting them turn.",
+    "lookFor": "Keep every cap in its original place and direction, and check the bearing surfaces for scoring.",
+    "photoQuery": "camshaft bearing cap",
+    "drawable": true
+  },
+  {
+    "id": "rocker-cover",
+    "name": "Rocker cover",
+    "category": "valvetrain",
+    "what": "The cover bolted on top of the cylinder head over the camshafts, also called a valve cover.",
+    "does": "Keeps oil in and dirt out of the valvetrain.",
+    "lookFor": "Check the gasket groove and sealing face for warp or cracks, and fit a new gasket.",
+    "photoQuery": "engine valve cover",
+    "drawable": true
+  },
+  {
+    "id": "cvvl-actuator",
+    "name": "CVVL intake lift unit",
+    "category": "valvetrain",
+    "what": "An oil-filled electrohydraulic unit on the cylinder head that sits between the intake camshaft and the intake valves.",
+    "does": "Varies how far and how long the intake valves open, so the engine can control airflow with less use of the throttle.",
+    "lookFor": "Handle it as a sealed assembly, keep it clean and primed with oil, and check its oil feed seals.",
+    "photoQuery": "variable valve lift actuator",
+    "drawable": true
+  },
+  {
+    "id": "cam-phaser",
+    "name": "Cam phasers",
+    "category": "timing",
+    "what": "An oil-driven hub on the end of a camshaft that also carries the timing sprocket.",
+    "does": "Turns the camshaft slightly ahead of or behind the crankshaft to change valve timing while the engine runs.",
+    "lookFor": "Check that the locking pin engages and the rotor moves freely, and look for worn sprocket teeth.",
+    "photoQuery": "cam phaser variable valve timing",
+    "drawable": true
+  },
+  {
+    "id": "timing-chain",
+    "name": "Timing chains",
+    "category": "timing",
+    "what": "A metal link chain that loops around sprockets on the crankshaft and camshafts.",
+    "does": "Keeps the camshafts turning in exact step with the crankshaft.",
+    "lookFor": "Measure chain stretch over a set number of links and look for stiff links or worn pins.",
+    "photoQuery": "engine timing chain",
+    "drawable": true
+  },
+  {
+    "id": "timing-sprocket",
+    "name": "Timing sprockets",
+    "category": "timing",
+    "what": "Toothed wheels on the crankshaft or an idler shaft that a timing chain wraps around.",
+    "does": "Pass drive between the crankshaft, the chains and the camshafts.",
+    "lookFor": "Check teeth for hooked or sharpened wear and the key or mating face for damage.",
+    "photoQuery": "timing chain sprocket",
+    "drawable": true
+  },
+  {
+    "id": "chain-tensioner",
+    "name": "Chain tensioners",
+    "category": "timing",
+    "what": "A spring and oil-pressure plunger, usually pushing a pivoting arm, that presses against a timing chain.",
+    "does": "Keeps the chain tight as it wears and damps slack when engine speed changes.",
+    "lookFor": "Check the plunger for scoring and free movement and the arm face for grooves, and lock it retracted before fitting.",
+    "photoQuery": "timing chain tensioner",
+    "drawable": true
+  },
+  {
+    "id": "chain-guides",
+    "name": "Timing chain guides",
+    "category": "timing",
+    "what": "Rigid rails with a plastic wear face that a timing chain slides along.",
+    "does": "Hold the chain on its path and stop it slapping.",
+    "lookFor": "Look for deep grooves, cracks or missing pieces of the plastic face.",
+    "photoQuery": "timing chain guide",
+    "drawable": true
+  },
+  {
+    "id": "timing-cover",
+    "name": "Timing covers",
+    "category": "timing",
+    "what": "Cast covers that close in the timing chains at one end of the engine.",
+    "does": "Keep oil in around the chain drive and often carry seals, pumps or mounts.",
+    "lookFor": "Check the sealing faces for corrosion or damage and clean off all old sealant before refitting.",
+    "photoQuery": "engine timing cover",
+    "drawable": true
+  },
+  {
+    "id": "oil-pan",
+    "name": "Engine oil pan",
+    "category": "lubrication",
+    "what": "The pan bolted to the bottom of the engine that holds the oil supply, sometimes in an upper and a lower section.",
+    "does": "Stores the engine oil and collects it as it drains back from the parts above.",
+    "lookFor": "Check for dents that reach the pickup, cracks and damaged drain threads, and clean the sealing faces.",
+    "photoQuery": "engine oil pan sump",
+    "drawable": true
+  },
+  {
+    "id": "oil-pickup",
+    "name": "Oil pickup and strainer",
+    "category": "lubrication",
+    "what": "A pipe with a mesh screen on the end that dips into the oil in the pan.",
+    "does": "Feeds oil to the pump while keeping large debris out.",
+    "lookFor": "Clear the screen of sludge or debris and replace the seal where the pipe meets the pump or block.",
+    "photoQuery": "oil pickup tube strainer",
+    "drawable": true
+  },
+  {
+    "id": "oil-pump",
+    "name": "Engine oil pump",
+    "category": "lubrication",
+    "what": "A gear, rotor or vane pump driven by the crankshaft or a chain.",
+    "does": "Pushes oil under pressure to the bearings, camshafts and other moving parts.",
+    "lookFor": "Measure rotor or vane clearances, check the housing for scoring, and make sure the relief valve moves freely.",
+    "photoQuery": "engine oil pump",
+    "drawable": true
+  },
+  {
+    "id": "oil-filter",
+    "name": "Oil filters and screens",
+    "category": "lubrication",
+    "what": "A paper filter element, or a small fine mesh screen, set into an oil passage.",
+    "does": "Catches dirt and metal particles before the oil reaches parts with tight clearances.",
+    "lookFor": "Replace the element, clean or replace any screens, and look in the old filter for metal flakes.",
+    "photoQuery": "engine oil filter",
+    "drawable": true
+  },
+  {
+    "id": "oil-cooler",
+    "name": "Oil cooler",
+    "category": "lubrication",
+    "what": "A small heat exchanger that passes engine oil close to coolant.",
+    "does": "Pulls heat out of the oil so it does not thin out or break down.",
+    "lookFor": "Flush it well after any internal failure, check for leaks between oil and coolant, and fit new seals.",
+    "photoQuery": "engine oil cooler",
+    "drawable": true
+  },
+  {
+    "id": "oil-baffle",
+    "name": "Oil baffles and windage trays",
+    "category": "lubrication",
+    "what": "Shaped metal or plastic plates that sit close to spinning parts or across an oil or fluid pan.",
+    "does": "Keep oil from sloshing away from the pickup and from being whipped up by moving parts.",
+    "lookFor": "Check for cracks, loose mounting points and rub marks from parts that have touched them.",
+    "photoQuery": "windage tray oil baffle",
+    "drawable": true
+  },
+  {
+    "id": "oil-separator",
+    "name": "Crankcase oil separator",
+    "category": "lubrication",
+    "what": "A box or cover with baffles inside, placed in the path of the crankcase ventilation gases.",
+    "does": "Strips oil mist out of crankcase gases before they are drawn back into the intake.",
+    "lookFor": "Check for blocked passages, cracked housings and leaking seals.",
+    "photoQuery": "crankcase oil separator",
+    "drawable": true
+  },
+  {
+    "id": "piston-oil-jets",
+    "name": "Piston cooling oil jets",
+    "category": "lubrication",
+    "what": "Small nozzles in the bottom of the block aimed up at the underside of each piston.",
+    "does": "Spray oil under the pistons to cool them and lubricate the piston pins.",
+    "lookFor": "Make sure each jet is straight, clear and aimed correctly, because a bent jet can hit a piston or rod.",
+    "photoQuery": "piston cooling oil jet",
+    "drawable": true
+  },
+  {
+    "id": "pump-drive-chain",
+    "name": "Pump drive chains",
+    "category": "lubrication",
+    "what": "A short chain with its sprockets that drives an oil or fluid pump mounted off to one side.",
+    "does": "Turns the pump whenever the engine or the torque converter is turning.",
+    "lookFor": "Check for stretch, worn sprocket teeth and stiff or noisy links.",
+    "photoQuery": "oil pump drive chain",
+    "drawable": true
+  },
+  {
+    "id": "water-pump",
+    "name": "Water pump",
+    "category": "cooling",
+    "what": "An impeller pump, driven by a belt or chain, mounted on the engine.",
+    "does": "Circulates coolant through the engine and radiator.",
+    "lookFor": "Check for bearing play, weeping from the weep hole and corroded or broken impeller blades.",
+    "photoQuery": "car water pump",
+    "drawable": true
+  },
+  {
+    "id": "thermostat",
+    "name": "Thermostat and housing",
+    "category": "cooling",
+    "what": "A wax-pellet valve that sits in a housing in the coolant path.",
+    "does": "Keeps coolant in the engine until it warms up, then opens to send it to the radiator.",
+    "lookFor": "Replace it on a rebuild, and check the housing for cracks and the sealing face for corrosion.",
+    "photoQuery": "car engine thermostat",
+    "drawable": true
+  },
+  {
+    "id": "coolant-pipes",
+    "name": "Coolant pipes and hoses",
+    "category": "cooling",
+    "what": "Metal pipes, rubber hoses and tanks that carry coolant around the engine.",
+    "does": "Route coolant between the pump, block, heads, heater and radiator.",
+    "lookFor": "Look for cracked or soft hoses and corroded pipe ends, and fit new O-rings.",
+    "photoQuery": "radiator coolant hose",
+    "drawable": true
+  },
+  {
+    "id": "water-jacket-spacer",
+    "name": "Water jacket spacer",
+    "category": "cooling",
+    "what": "A shaped plastic insert that sits in the coolant passage around the cylinders.",
+    "does": "Steers coolant flow so the cylinder walls warm up evenly.",
+    "lookFor": "Check for cracks or warping and fit it the right way round.",
+    "photoQuery": "water jacket spacer engine",
+    "drawable": true
+  },
+  {
+    "id": "intake-manifold",
+    "name": "Intake manifold and throttle body",
+    "category": "fuel-air",
+    "what": "A set of tubes or a plastic box that bolts to the head, with the throttle valve at its inlet.",
+    "does": "Meters air through the throttle and shares it evenly between the cylinders.",
+    "lookFor": "Check the runner gaskets, clean carbon off the throttle plate, and look for cracks in plastic sections.",
+    "photoQuery": "intake manifold engine",
+    "drawable": true
+  },
+  {
+    "id": "tumble-valve",
+    "name": "Tumble generator valves",
+    "category": "fuel-air",
+    "what": "Small flaps inside the intake runners near the head, moved by an electric actuator.",
+    "does": "Partly close at low load so incoming air tumbles, which helps the fuel burn cleanly when cold.",
+    "lookFor": "Check the flaps for free movement and the shafts for play or sticking carbon.",
+    "photoQuery": "intake manifold runner flap",
+    "drawable": true
+  },
+  {
+    "id": "fuel-injector",
+    "name": "Fuel injectors",
+    "category": "fuel-air",
+    "what": "Electrically opened nozzles that spray fuel either into the intake port or straight into the cylinder.",
+    "does": "Deliver a measured spray of fuel for each combustion cycle.",
+    "lookFor": "Fit new seals and O-rings, keep the tips clean, and use new combustion seals on direct injectors.",
+    "photoQuery": "fuel injector",
+    "drawable": true
+  },
+  {
+    "id": "fuel-rail",
+    "name": "Fuel rail",
+    "category": "fuel-air",
+    "what": "A metal tube that the fuel injectors plug into.",
+    "does": "Holds fuel under pressure and feeds it to each injector.",
+    "lookFor": "Check the fittings for damage, cap the openings against dirt, and use new seals where the injectors fit.",
+    "photoQuery": "fuel rail injectors",
+    "drawable": true
+  },
+  {
+    "id": "fuel-lines",
+    "name": "High-pressure fuel lines",
+    "category": "fuel-air",
+    "what": "Rigid steel pipes with machined end fittings that leave the high-pressure fuel pump.",
+    "does": "Carry fuel at very high pressure from the pump to the fuel rail.",
+    "lookFor": "Use new lines if the maker calls for them, and check the cone-shaped ends for marks or deformation.",
+    "photoQuery": "high pressure fuel line",
+    "drawable": true
+  },
+  {
+    "id": "high-pressure-fuel-pump",
+    "name": "High-pressure fuel pump",
+    "category": "fuel-air",
+    "what": "A plunger pump mounted on the head, pushed by a camshaft lobe through a roller tappet.",
+    "does": "Raises fuel to the very high pressure that direct injection needs.",
+    "lookFor": "Check the tappet roller and the cam lobe that drives it for wear, and fit new seals.",
+    "photoQuery": "high pressure fuel pump",
+    "drawable": true
+  },
+  {
+    "id": "egr-pipe",
+    "name": "EGR pipe",
+    "category": "fuel-air",
+    "what": "A metal pipe that links the exhaust side of the engine to the intake side.",
+    "does": "Carries a little exhaust gas back into the intake to lower combustion temperatures and emissions.",
+    "lookFor": "Check for carbon blockage, cracks and damaged flange gaskets.",
+    "photoQuery": "EGR pipe",
+    "drawable": true
+  },
+  {
+    "id": "pcv-valve",
+    "name": "PCV valve",
+    "category": "fuel-air",
+    "what": "A small one-way valve in the crankcase ventilation line.",
+    "does": "Lets crankcase gases be drawn into the intake while blocking flow the other way.",
+    "lookFor": "Shake it to hear the check ball move, and replace it if it sticks or is gummed up.",
+    "photoQuery": "PCV valve",
+    "drawable": true
+  },
+  {
+    "id": "turbocharger",
+    "name": "Turbocharger",
+    "category": "turbo",
+    "what": "An exhaust-driven turbine wheel joined by a shaft to an air compressor wheel.",
+    "does": "Uses exhaust energy to pack more air into the engine for more power.",
+    "lookFor": "Check shaft play, look for chipped or rubbing wheel blades, and look for oil in the inlet or outlet.",
+    "photoQuery": "car turbocharger",
+    "drawable": true
+  },
+  {
+    "id": "turbo-oil-lines",
+    "name": "Turbo oil feed and return lines",
+    "category": "turbo",
+    "what": "Small metal pipes that bring oil to the turbocharger bearings and drain it back to the pan.",
+    "does": "Keep the turbocharger shaft oiled and cooled.",
+    "lookFor": "Fit new lines or at least new sealing washers, and make sure no debris or sealant can reach the turbo.",
+    "photoQuery": "turbo oil feed line",
+    "drawable": true
+  },
+  {
+    "id": "heat-shield",
+    "name": "Heat shields",
+    "category": "turbo",
+    "what": "Formed metal covers that sit over or around hot exhaust parts.",
+    "does": "Protect nearby wiring, hoses and plastic parts from exhaust heat.",
+    "lookFor": "Check for cracks, broken mounts and missing fasteners that would let them rattle.",
+    "photoQuery": "turbo heat shield",
+    "drawable": true
+  },
+  {
+    "id": "head-gasket",
+    "name": "Head gasket",
+    "category": "sealing-fasteners",
+    "what": "A thin layered steel sheet cut to the shape of the top of the block.",
+    "does": "Seals combustion pressure, coolant and oil between the block and the cylinder head.",
+    "lookFor": "Always fit a new one, and make sure both faces are clean, flat and dry.",
+    "photoQuery": "cylinder head gasket",
+    "drawable": true
+  },
+  {
+    "id": "head-bolts",
+    "name": "Head bolts",
+    "category": "sealing-fasteners",
+    "what": "Long high-strength bolts that clamp the cylinder head to the block.",
+    "does": "Hold the head down hard enough to keep the head gasket sealed under combustion pressure.",
+    "lookFor": "Use new bolts when they are the stretch type, clean the threaded holes, and follow the tightening sequence.",
+    "photoQuery": "cylinder head bolts",
+    "drawable": true
+  },
+  {
+    "id": "block-bolts",
+    "name": "Block joining bolts",
+    "category": "sealing-fasteners",
+    "what": "The large bolts that hold the two halves of a split engine block together.",
+    "does": "Clamp the block halves, and the main bearings between them, around the crankshaft.",
+    "lookFor": "Check the threads, follow the tightening sequence, and use new bolts if the maker calls for them.",
+    "photoQuery": "boxer engine crankcase bolts",
+    "drawable": true
+  },
+  {
+    "id": "rod-bolts",
+    "name": "Connecting rod bolts",
+    "category": "sealing-fasteners",
+    "what": "High-strength bolts that hold each connecting rod cap to its rod.",
+    "does": "Clamp the rod cap tightly around the rod bearing at high engine speed.",
+    "lookFor": "Replace them when they are the stretch type, and tighten them in stages to the specified torque and angle.",
+    "photoQuery": "connecting rod bolt",
+    "drawable": true
+  },
+  {
+    "id": "crank-seal",
+    "name": "Crankshaft oil seals",
+    "category": "sealing-fasteners",
+    "what": "Rubber lip seals pressed into the covers at each end of the crankshaft.",
+    "does": "Keep oil inside the engine where the crankshaft passes out of it.",
+    "lookFor": "Fit new seals squarely to the right depth, and check the crankshaft surface for a groove worn by the old lip.",
+    "photoQuery": "crankshaft oil seal",
+    "drawable": true
+  },
+  {
+    "id": "converter-seal",
+    "name": "Converter hub seals",
+    "category": "sealing-fasteners",
+    "what": "Lip seals and sealing rings at the front of the transmission where the torque converter hub and shafts enter.",
+    "does": "Keep transmission fluid in around the spinning converter hub.",
+    "lookFor": "Fit new seals and check the converter hub for scoring or a worn groove.",
+    "photoQuery": "torque converter seal",
+    "drawable": true
+  },
+  {
+    "id": "axle-seal",
+    "name": "Axle seals",
+    "category": "sealing-fasteners",
+    "what": "Lip seals where the drive axles enter the transmission or differential.",
+    "does": "Keep fluid or gear oil in while the axles turn.",
+    "lookFor": "Replace them on a rebuild and check the axle surfaces for grooves or nicks.",
+    "photoQuery": "axle shaft seal",
+    "drawable": true
+  },
+  {
+    "id": "seal-rings",
+    "name": "Shaft sealing rings",
+    "category": "sealing-fasteners",
+    "what": "Narrow plastic or cast-iron rings that sit in grooves on shafts and hubs.",
+    "does": "Seal oil pressure as it passes between a fixed part and a turning one.",
+    "lookFor": "Replace them, check the grooves and bores for wear, and size new plastic rings before fitting if required.",
+    "photoQuery": "transmission sealing ring",
+    "drawable": true
+  },
+  {
+    "id": "case-gasket",
+    "name": "Case gaskets",
+    "category": "sealing-fasteners",
+    "what": "Flat gaskets or formed seals that sit between two sections of a transmission case.",
+    "does": "Seal fluid in at the joint between case sections and around tubes that cross it.",
+    "lookFor": "Fit new ones and clean both faces without gouging the aluminum.",
+    "photoQuery": "transmission case gasket",
+    "drawable": true
+  },
+  {
+    "id": "sealing-plugs",
+    "name": "Gallery, drain and fill plugs",
+    "category": "sealing-fasteners",
+    "what": "Threaded or pressed-in plugs that close off drilled passages, drain holes and fill holes.",
+    "does": "Seal passages that were drilled during manufacture or are opened only for service.",
+    "lookFor": "Remove gallery plugs so passages can be cleaned, and fit new sealing washers or O-rings.",
+    "photoQuery": "oil drain plug",
+    "drawable": true
+  },
+  {
+    "id": "wiring-harness",
+    "name": "Wiring harness",
+    "category": "electrical-sensors",
+    "what": "A bundle of wires, connectors and clips wrapped together as one assembly.",
+    "does": "Carries power and signals between the control modules and every sensor and actuator.",
+    "lookFor": "Label connectors before removal, and check for melted insulation, chafed wires and broken clips.",
+    "photoQuery": "engine wiring harness",
+    "drawable": true
+  },
+  {
+    "id": "knock-sensor",
+    "name": "Knock sensors",
+    "category": "electrical-sensors",
+    "what": "A small vibration sensor bolted to the side of the block.",
+    "does": "Picks up the sharp ping of knock so the engine computer can pull back ignition timing.",
+    "lookFor": "Tighten it to its exact torque, because too tight or too loose changes what it hears.",
+    "photoQuery": "knock sensor",
+    "drawable": true
+  },
+  {
+    "id": "crank-position-sensor",
+    "name": "Crankshaft position sensor",
+    "category": "electrical-sensors",
+    "what": "A magnetic sensor aimed at a toothed ring on the crankshaft or drive plate.",
+    "does": "Tells the engine computer crankshaft speed and position for spark and fuel timing.",
+    "lookFor": "Check the tip for metal debris or damage and the O-ring for cracks.",
+    "photoQuery": "crankshaft position sensor",
+    "drawable": true
+  },
+  {
+    "id": "cam-position-sensor",
+    "name": "Camshaft position sensors",
+    "category": "electrical-sensors",
+    "what": "A magnetic sensor aimed at a toothed target on a camshaft.",
+    "does": "Tells the engine computer where each camshaft is so it can time injection and check cam timing.",
+    "lookFor": "Check the tip for metal debris or damage and the O-ring for cracks.",
+    "photoQuery": "camshaft position sensor",
+    "drawable": true
+  },
+  {
+    "id": "temperature-sensor",
+    "name": "Temperature sensors",
+    "category": "electrical-sensors",
+    "what": "Small threaded or clipped sensors whose electrical resistance changes with temperature.",
+    "does": "Report coolant or metal temperature to the engine computer.",
+    "lookFor": "Check connectors for corrosion and fit new sealing washers or O-rings.",
+    "photoQuery": "coolant temperature sensor",
+    "drawable": true
+  },
+  {
+    "id": "oil-control-solenoid",
+    "name": "Oil control solenoids",
+    "category": "electrical-sensors",
+    "what": "Electrically switched valves that open or close oil passages on command.",
+    "does": "Let the engine computer steer oil flow, for example to the cam phasers or the piston cooling jets.",
+    "lookFor": "Clean or replace their inlet screens and check that the plunger or spool moves freely.",
+    "photoQuery": "VVT oil control solenoid",
+    "drawable": true
+  },
+  {
+    "id": "ignition-coils",
+    "name": "Ignition coils and spark plugs",
+    "category": "electrical-sensors",
+    "what": "Coils that sit on top of each spark plug, and the plugs screwed into the head.",
+    "does": "Make a high-voltage spark in each cylinder to light the fuel and air.",
+    "lookFor": "Fit new plugs gapped to spec, and check coil boots for cracks or burn tracks.",
+    "photoQuery": "ignition coil spark plug",
+    "drawable": true
+  },
+  {
+    "id": "alternator",
+    "name": "Alternator",
+    "category": "electrical-sensors",
+    "what": "A belt-driven electrical generator mounted on the engine.",
+    "does": "Charges the battery and powers the electrics while the engine runs.",
+    "lookFor": "Spin the pulley to check for a rough or noisy bearing.",
+    "photoQuery": "car alternator",
+    "drawable": true
+  },
+  {
+    "id": "speed-sensor",
+    "name": "Speed sensors",
+    "category": "electrical-sensors",
+    "what": "Small sensors aimed at a toothed or magnetic ring on a transmission shaft or drum.",
+    "does": "Tell the transmission computer how fast the shafts are turning.",
+    "lookFor": "Clean metal debris off the tip and check the O-ring and connector.",
+    "photoQuery": "transmission speed sensor",
+    "drawable": true
+  },
+  {
+    "id": "pressure-sensor",
+    "name": "Pressure sensors",
+    "category": "electrical-sensors",
+    "what": "A small sensor screwed into a hydraulic passage.",
+    "does": "Reports fluid pressure so the transmission computer can confirm a clutch has applied.",
+    "lookFor": "Fit a new seal and check the connector pins for damage.",
+    "photoQuery": "hydraulic pressure sensor",
+    "drawable": true
+  },
+  {
+    "id": "range-switch",
+    "name": "Transmission range sensor",
+    "category": "electrical-sensors",
+    "what": "A switch or sensor on the manual shaft that reads which selector position is chosen.",
+    "does": "Tells the computers whether the driver picked park, reverse, neutral or drive.",
+    "lookFor": "Set it to the correct position on reassembly and check the contacts or magnet for damage.",
+    "photoQuery": "transmission range switch",
+    "drawable": true
+  },
+  {
+    "id": "tcm",
+    "name": "Transmission control module",
+    "category": "electrical-sensors",
+    "what": "An electronic control unit mounted on or near the transmission.",
+    "does": "Reads sensors and drives the solenoids to choose ratios and control shifts.",
+    "lookFor": "Keep it clean and dry, and run the adaptation or learning routine after the rebuild.",
+    "photoQuery": "transmission control module",
+    "drawable": true
+  },
+  {
+    "id": "transmission-solenoid",
+    "name": "Transmission solenoids",
+    "category": "electrical-sensors",
+    "what": "Electrically controlled valves that mount on the valve body.",
+    "does": "Set the hydraulic pressures that apply clutches and move the pulleys.",
+    "lookFor": "Check their resistance, look for debris on their screens, and fit new O-rings.",
+    "photoQuery": "transmission solenoid",
+    "drawable": true
+  },
+  {
+    "id": "converter-housing",
+    "name": "Converter housing",
+    "category": "transmission-case",
+    "what": "The bell-shaped front section of a transmission case that surrounds the torque converter.",
+    "does": "Bolts the transmission to the engine and encloses the converter.",
+    "lookFor": "Check the mating face and dowels, and look for cracks around the mounting points.",
+    "photoQuery": "transmission bell housing",
+    "drawable": true
+  },
+  {
+    "id": "transmission-case",
+    "name": "Transmission case",
+    "category": "transmission-case",
+    "what": "The main aluminum housing that holds the gears, shafts and hydraulics.",
+    "does": "Holds all the internal parts in alignment and contains the fluid.",
+    "lookFor": "Check bearing bores and piston bores for wear or scoring, and look for cracks.",
+    "photoQuery": "automatic transmission case",
+    "drawable": true
+  },
+  {
+    "id": "extension-housing",
+    "name": "Extension housing",
+    "category": "transmission-case",
+    "what": "A tail section bolted to the back of the transmission case.",
+    "does": "Encloses the rear output and supports its shaft and seal.",
+    "lookFor": "Check the bushing and seal bore for wear and the mating face for damage.",
+    "photoQuery": "transmission extension housing",
+    "drawable": true
+  },
+  {
+    "id": "case-cover",
+    "name": "Case covers and plates",
+    "category": "transmission-case",
+    "what": "Bolted aluminum or steel covers and plates on a transmission case.",
+    "does": "Close openings in the case and form some of its internal oil passages.",
+    "lookFor": "Clean the sealing faces, check for warp, and renew gaskets or sealant.",
+    "photoQuery": "transmission cover plate",
+    "drawable": true
+  },
+  {
+    "id": "valve-body-cover",
+    "name": "Valve body cover",
+    "category": "transmission-case",
+    "what": "The cover bolted over the valve body on the side or bottom of the transmission.",
+    "does": "Encloses the valve body and solenoids and keeps fluid in.",
+    "lookFor": "Clean the sealing face, check it for warp, and fit a new gasket.",
+    "photoQuery": "transmission valve body cover",
+    "drawable": true
+  },
+  {
+    "id": "transmission-pump",
+    "name": "Transmission oil pump",
+    "category": "hydraulics",
+    "what": "A vane, gear or rotor pump inside the transmission, driven whenever the engine runs.",
+    "does": "Makes the fluid pressure that applies clutches, squeezes the pulleys and lubricates the gears.",
+    "lookFor": "Check vanes or rotors and the housing for scoring, and measure clearances where specified.",
+    "photoQuery": "automatic transmission oil pump",
+    "drawable": true
+  },
+  {
+    "id": "valve-body",
+    "name": "Valve body",
+    "category": "hydraulics",
+    "what": "A block of maze-like passages and sliding spool valves, often with solenoids attached.",
+    "does": "Sends pressurized fluid to the right clutches or pulleys to make each ratio.",
+    "lookFor": "Check the valves for sticking and bore wear, look for debris, and tighten its bolts in the correct order.",
+    "photoQuery": "automatic transmission valve body",
+    "drawable": true
+  },
+  {
+    "id": "transmission-filter",
+    "name": "Transmission filter",
+    "category": "hydraulics",
+    "what": "A filter or mesh strainer that fluid passes through on its way to the pump.",
+    "does": "Traps clutch material and metal particles before they reach the pump and valve body.",
+    "lookFor": "Replace it on every rebuild and look in the old one for metal or friction material.",
+    "photoQuery": "automatic transmission filter",
+    "drawable": true
+  },
+  {
+    "id": "transmission-pan",
+    "name": "Transmission oil pan",
+    "category": "hydraulics",
+    "what": "A shallow pan bolted under the transmission that holds fluid.",
+    "does": "Stores fluid and usually carries a magnet that catches metal particles.",
+    "lookFor": "Read the debris on the magnet and pan floor, and check the flange for bends.",
+    "photoQuery": "transmission oil pan magnet",
+    "drawable": true
+  },
+  {
+    "id": "fluid-lines",
+    "name": "Fluid lines and tubes",
+    "category": "hydraulics",
+    "what": "Metal tubes and hoses that carry transmission fluid inside or outside the case.",
+    "does": "Route fluid between the valve body, case passages, cooler and other hydraulic parts.",
+    "lookFor": "Check for kinks, cracks and trapped debris, and fit new O-rings at each end.",
+    "photoQuery": "transmission cooler line",
+    "drawable": true
+  },
+  {
+    "id": "clutch-pack",
+    "name": "Multi-plate clutches",
+    "category": "clutches-gears",
+    "what": "A stack of alternating friction plates and steel plates inside a drum, squeezed by a hydraulic piston.",
+    "does": "Locks two turning parts together when applied, to make a gear ratio.",
+    "lookFor": "Check friction plates for burning or glazing and steel plates for heat marks, and measure the pack clearance.",
+    "photoQuery": "transmission clutch pack",
+    "drawable": true
+  },
+  {
+    "id": "brake-pack",
+    "name": "Multi-plate brakes",
+    "category": "clutches-gears",
+    "what": "A stack of friction and steel plates like a clutch, but splined to the case so it cannot turn.",
+    "does": "Holds part of the gear train still against the case to make a gear ratio.",
+    "lookFor": "Check friction plates for burning or glazing and steel plates for heat marks, and measure the pack clearance.",
+    "photoQuery": "transmission brake clutch plates",
+    "drawable": true
+  },
+  {
+    "id": "dog-clutch",
+    "name": "Dog clutches",
+    "category": "clutches-gears",
+    "what": "A pair of rings with interlocking teeth that a hydraulic piston slides together.",
+    "does": "Lock two parts solidly with no slip, where a friction clutch would waste energy when open.",
+    "lookFor": "Check the teeth for rounded or chipped edges and the piston for smooth movement.",
+    "photoQuery": "dog clutch",
+    "drawable": true
+  },
+  {
+    "id": "planetary-gearset",
+    "name": "Planetary gear sets",
+    "category": "clutches-gears",
+    "what": "A sun gear in the middle, planet gears on a carrier around it, and a ring gear around the outside.",
+    "does": "Give different ratios, or reverse, depending on which member is driven and which is held.",
+    "lookFor": "Check teeth for pitting or chips, planet gears for end play and rough bearings, and thrust washers for wear.",
+    "photoQuery": "planetary gear set",
+    "drawable": true
+  },
+  {
+    "id": "input-shaft",
+    "name": "Input shaft",
+    "category": "clutches-gears",
+    "what": "The shaft that enters the transmission from the torque converter turbine.",
+    "does": "Carries engine torque into the gear train or the variator.",
+    "lookFor": "Check splines, bearing journals and sealing ring grooves for wear.",
+    "photoQuery": "transmission input shaft",
+    "drawable": true
+  },
+  {
+    "id": "transfer-gear",
+    "name": "Transfer gears",
+    "category": "clutches-gears",
+    "what": "Gears on a short shaft that carry drive across from one shaft line to another.",
+    "does": "Pass output torque over to the differential or toward the rear-wheel drive path.",
+    "lookFor": "Check teeth for pitting and chips and bearings for roughness or play.",
+    "photoQuery": "transmission transfer gear",
+    "drawable": true
+  },
+  {
+    "id": "output-gear",
+    "name": "Output gear and support",
+    "category": "clutches-gears",
+    "what": "The output gear and the bearing support it turns in, at the end of the gear train.",
+    "does": "Carries the finished output of the gear train toward the transfer gear and differential.",
+    "lookFor": "Check the gear teeth, the bearing seats and the bearing preload.",
+    "photoQuery": "transmission output gear",
+    "drawable": true
+  },
+  {
+    "id": "selective-shims",
+    "name": "Selective shims",
+    "category": "clutches-gears",
+    "what": "Precision washers made in a range of graded thicknesses.",
+    "does": "Set end play or bearing preload when shafts and cases go back together.",
+    "lookFor": "Measure before choosing, keep the old shims labeled by location, and never guess a thickness.",
+    "photoQuery": "shim washers",
+    "drawable": true
+  },
+  {
+    "id": "rolling-bearings",
+    "name": "Shaft bearings",
+    "category": "clutches-gears",
+    "what": "Ball or roller bearings pressed onto shafts or into the case.",
+    "does": "Support turning shafts with low friction under heavy load.",
+    "lookFor": "Spin them clean and dry to feel for roughness, and look for pitting or heat discoloration.",
+    "photoQuery": "tapered roller bearing",
+    "drawable": true
+  },
+  {
+    "id": "manual-shaft",
+    "name": "Manual shaft and linkage",
+    "category": "clutches-gears",
+    "what": "The shaft and levers inside the case that the gear selector cable turns.",
+    "does": "Move the manual valve and the park rod as the driver selects a range.",
+    "lookFor": "Check the detent spring and lever for wear and the shaft seal for leaks.",
+    "photoQuery": "transmission manual shaft",
+    "drawable": true
+  },
+  {
+    "id": "parking-lock",
+    "name": "Parking pawl and rod",
+    "category": "clutches-gears",
+    "what": "A hinged steel pawl with a tooth, pushed into place by a rod and cam.",
+    "does": "Drops into a toothed gear in park to lock the output so the car cannot roll.",
+    "lookFor": "Check the pawl tooth and park gear for wear and the return spring for strength.",
+    "photoQuery": "transmission parking pawl",
+    "drawable": true
+  },
+  {
+    "id": "variator-pulley",
+    "name": "Variator pulleys",
+    "category": "cvt-variator",
+    "what": "Pairs of cone-shaped steel discs on a shaft, with one half able to slide in and out.",
+    "does": "Change the diameter the chain runs on, giving the CVT a smooth, stepless range of ratios.",
+    "lookFor": "Check the cone faces for scoring or a stepped wear track and the sliding half for free movement.",
+    "photoQuery": "CVT pulley",
+    "drawable": true
+  },
+  {
+    "id": "variator-chain",
+    "name": "Variator chain",
+    "category": "cvt-variator",
+    "what": "A heavy steel chain made of many plates and pins that runs between the two variator pulleys.",
+    "does": "Carries the drive from one pulley to the other while they change ratio.",
+    "lookFor": "Check the pin ends and plates for wear, cracks and damage.",
+    "photoQuery": "CVT chain",
+    "drawable": true
+  },
+  {
+    "id": "variator-chain-guide",
+    "name": "Variator chain guides",
+    "category": "cvt-variator",
+    "what": "A plastic guide that rides close to the variator chain between the pulleys.",
+    "does": "Steadies the chain and limits whipping as the ratio changes.",
+    "lookFor": "Look for deep wear tracks, cracks or broken pieces.",
+    "photoQuery": "CVT chain guide",
+    "drawable": true
+  },
+  {
+    "id": "torque-converter",
+    "name": "Torque converter",
+    "category": "torque-converter",
+    "what": "A large sealed doughnut-shaped housing full of fluid that bolts to the drive plate.",
+    "does": "Passes engine power to the transmission through fluid, multiplies torque from a stop, and locks up at cruise.",
+    "lookFor": "Check the hub for scoring, consider contamination after any failure, and make sure it is fully engaged in the pump when fitted.",
+    "photoQuery": "torque converter",
+    "drawable": true
+  },
+  {
+    "id": "stator-support",
+    "name": "Stator support",
+    "category": "torque-converter",
+    "what": "A fixed hollow shaft that reaches from the front of the transmission into the torque converter.",
+    "does": "Holds the converter stator still in one direction and carries fluid passages to the converter.",
+    "lookFor": "Check the splines, bushings and sealing ring grooves for wear.",
+    "photoQuery": "stator support shaft",
+    "drawable": true
+  },
+  {
+    "id": "differential",
+    "name": "Differential",
+    "category": "driveline",
+    "what": "A gear set with a large ring gear on a carrier that holds small side and spider gears.",
+    "does": "Splits torque between the two front wheels and lets them turn at different speeds in corners.",
+    "lookFor": "Check gear teeth for pitting and carrier bearings for roughness, and set preload where the maker requires it.",
+    "photoQuery": "car differential gears",
+    "drawable": true
+  },
+  {
+    "id": "drive-pinion",
+    "name": "Drive pinion",
+    "category": "driveline",
+    "what": "A small gear on the end of a shaft that meshes with the differential ring gear.",
+    "does": "Passes the transmission output to the differential ring gear.",
+    "lookFor": "Check the tooth contact pattern, bearing preload and pinion depth shims.",
+    "photoQuery": "drive pinion gear",
+    "drawable": true
+  },
+  {
+    "id": "transfer-clutch",
+    "name": "AWD transfer clutch",
+    "category": "driveline",
+    "what": "An electronically controlled multi-plate clutch at the rear of the transmission.",
+    "does": "Sends a varying share of torque to the rear wheels for all-wheel drive.",
+    "lookFor": "Check the plates for burning or glazing and the piston and control solenoid for proper operation.",
+    "photoQuery": "AWD transfer clutch",
+    "drawable": true
+  },
+  {
+    "id": "power-transfer-unit",
+    "name": "Power transfer unit",
+    "category": "driveline",
+    "what": "A small gearbox bolted to the side of a front-drive transmission.",
+    "does": "Turns drive toward the rear prop shaft for all-wheel drive.",
+    "lookFor": "Check its oil for metal and its seals for leaks.",
+    "photoQuery": "power transfer unit",
+    "drawable": true
+  },
+  {
+    "id": "transmission-assembly",
+    "name": "Transmission (complete unit)",
+    "category": "driveline",
+    "what": "The whole transmission handled as one unit, separated from or joined to the engine.",
+    "does": "Changes gear ratios and passes engine power on to the wheels.",
+    "lookFor": "",
+    "photoQuery": "automatic transmission",
+    "drawable": true
+  },
+  {
+    "id": "engine-stand",
+    "name": "Engine stand",
+    "category": "tools",
+    "what": "A wheeled steel frame with a rotating head that bolts to the back of an engine.",
+    "does": "Holds the engine at working height and lets you turn it over during the rebuild.",
+    "lookFor": "",
+    "photoQuery": "engine stand",
+    "drawable": true
+  },
+  {
+    "id": "transmission-fluid",
+    "name": "Transmission fluid",
+    "category": "other",
+    "what": "The specified oil-like fluid that fills an automatic or CVT transmission.",
+    "does": "Lubricates, cools and carries hydraulic pressure inside the transmission.",
+    "lookFor": "Note the color, smell and any debris in the old fluid, and refill only with the exact fluid the maker specifies.",
+    "photoQuery": "automatic transmission fluid",
+    "drawable": false
+  },
+  {
+    "id": "gear-oil",
+    "name": "Gear oil",
+    "category": "other",
+    "what": "A thick oil made for heavily loaded gear sets.",
+    "does": "Lubricates the differential gears and bearings.",
+    "lookFor": "Look for metal particles in the drained oil and refill with the specified grade.",
+    "photoQuery": "gear oil",
+    "drawable": false
+  },
+  {
+    "id": "engine-cover",
+    "name": "Engine cover and NVH pads",
+    "category": "other",
+    "what": "A plastic cover over the top of the engine plus foam pads and blocks around it.",
+    "does": "Cut down engine noise and tidy the look of the engine bay.",
+    "lookFor": "",
+    "photoQuery": "engine cover",
+    "drawable": true
+  },
+  {
+    "id": "ac-compressor",
+    "name": "A/C compressor",
+    "category": "other",
+    "what": "A belt-driven pump for the air conditioning refrigerant.",
+    "does": "Squeezes refrigerant so the air conditioning can cool the cabin.",
+    "lookFor": "",
+    "photoQuery": "car AC compressor",
+    "drawable": true
+  },
+  {
+    "id": "accessory-belt",
+    "name": "Accessory drive belt",
+    "category": "other",
+    "what": "A ribbed rubber belt with a tensioner and idler pulleys.",
+    "does": "Drives the alternator, compressor and other accessories from the crankshaft pulley.",
+    "lookFor": "Check the belt for cracks or glazing and the tensioner and idlers for rough or noisy bearings.",
+    "photoQuery": "serpentine belt tensioner",
+    "drawable": true
+  },
+  {
+    "id": "engine-mounts",
+    "name": "Engine mounts",
+    "category": "other",
+    "what": "Rubber-and-metal blocks or brackets that hold the engine in the car.",
+    "does": "Support the engine and soak up its vibration.",
+    "lookFor": "Look for cracked, separated or collapsed rubber.",
+    "photoQuery": "engine mount",
+    "drawable": true
+  }
+]

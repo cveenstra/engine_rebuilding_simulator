@@ -211,342 +211,410 @@
     {
       "id": "block-rh",
       "name": "Cylinder block RH half (cylinders 1 and 3)",
-      "group": "block"
+      "group": "block",
+      "part": "cylinder-block"
     },
     {
       "id": "block-lh",
       "name": "Cylinder block LH half (cylinders 2 and 4)",
-      "group": "block"
+      "group": "block",
+      "part": "cylinder-block"
     },
     {
       "id": "case-bolts",
       "name": "Cylinder block joining bolts",
-      "group": "block"
+      "group": "block",
+      "part": "block-bolts"
     },
     {
       "id": "cylinder-bores",
       "name": "Cast iron cylinder liners (bores)",
-      "group": "block"
+      "group": "block",
+      "part": "cylinder-liners"
     },
     {
       "id": "block-plugs",
       "name": "Main gallery plugs, block plug and block plate",
-      "group": "block"
+      "group": "block",
+      "part": "sealing-plugs"
     },
     {
       "id": "oil-separator-cover",
       "name": "Oil separator cover",
-      "group": "block"
+      "group": "block",
+      "part": "oil-separator"
     },
     {
       "id": "water-jacket-spacer",
       "name": "Water jacket spacers",
-      "group": "block"
+      "group": "block",
+      "part": "water-jacket-spacer"
     },
     {
       "id": "crankshaft",
       "name": "Crankshaft",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "crankshaft"
     },
     {
       "id": "main-bearings",
       "name": "Crankshaft (main) bearings",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "main-bearings"
     },
     {
       "id": "pistons",
       "name": "Pistons",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "pistons"
     },
     {
       "id": "piston-rings",
       "name": "Piston rings",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "piston-rings"
     },
     {
       "id": "piston-pins",
       "name": "Piston pins and circlips",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "piston-pins"
     },
     {
       "id": "connecting-rods",
       "name": "Diagonally split connecting rods",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "connecting-rods"
     },
     {
       "id": "rod-bearings",
       "name": "Connecting rod bearings",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "rod-bearings"
     },
     {
       "id": "rod-bolts",
       "name": "Connecting rod cap bolts",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "rod-bolts"
     },
     {
       "id": "rod-bushings",
       "name": "Connecting rod small-end bushings",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "rod-bushings"
     },
     {
       "id": "rear-main-seal",
       "name": "Rear crankshaft oil seal",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "crank-seal"
     },
     {
       "id": "drive-plate",
       "name": "Drive plate with crank position sensor plate",
-      "group": "rotating"
+      "group": "rotating",
+      "part": "drive-plate"
     },
     {
       "id": "oil-pan",
       "name": "Oil pan (lower)",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-pan"
     },
     {
       "id": "oil-pan-upper",
       "name": "Oil pan upper with baffle and strainer",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-pan"
     },
     {
       "id": "oil-pump",
       "name": "Trochoid oil pump (in chain cover)",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-pump"
     },
     {
       "id": "oil-filter",
       "name": "Oil filter and oil pump union",
-      "group": "lubrication"
+      "group": "lubrication",
+      "part": "oil-filter"
     },
     {
       "id": "water-pump",
       "name": "Water pump and pulley",
-      "group": "cooling"
+      "group": "cooling",
+      "part": "water-pump"
     },
     {
       "id": "thermostat",
       "name": "Thermostat and cover",
-      "group": "cooling"
+      "group": "cooling",
+      "part": "thermostat"
     },
     {
       "id": "water-pipes",
       "name": "Water pipe assemblies",
-      "group": "cooling"
+      "group": "cooling",
+      "part": "coolant-pipes"
     },
     {
       "id": "cylinder-head-rh",
       "name": "Cylinder head RH",
-      "group": "head"
+      "group": "head",
+      "part": "cylinder-head"
     },
     {
       "id": "cylinder-head-lh",
       "name": "Cylinder head LH",
-      "group": "head"
+      "group": "head",
+      "part": "cylinder-head"
     },
     {
       "id": "head-gaskets",
       "name": "Cylinder head gaskets",
-      "group": "head"
+      "group": "head",
+      "part": "head-gasket"
     },
     {
       "id": "head-bolts",
       "name": "Cylinder head bolts",
-      "group": "head"
+      "group": "head",
+      "part": "head-bolts"
     },
     {
       "id": "valves",
       "name": "Intake and exhaust valves",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "valves"
     },
     {
       "id": "valve-springs",
       "name": "Valve springs, seats, retainers and collets",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "valve-springs"
     },
     {
       "id": "valve-guides",
       "name": "Valve guides",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "valve-guides"
     },
     {
       "id": "valve-seats",
       "name": "Valve seats",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "valve-seats"
     },
     {
       "id": "valve-stem-seals",
       "name": "Valve stem oil seals",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "valve-stem-seals"
     },
     {
       "id": "valve-shims",
       "name": "Valve shims",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "valve-shims"
     },
     {
       "id": "roller-rockers",
       "name": "Roller rocker arms and pivots",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "roller-followers"
     },
     {
       "id": "cam-carrier-rh",
       "name": "Cam carrier RH",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "cam-carrier"
     },
     {
       "id": "cam-carrier-lh",
       "name": "Cam carrier LH",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "cam-carrier"
     },
     {
       "id": "camshafts",
       "name": "Intake and exhaust camshafts",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "camshaft"
     },
     {
       "id": "cam-caps",
       "name": "Camshaft caps",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "cam-caps"
     },
     {
       "id": "avcs-filters",
       "name": "AVCS oil filter screens in cam carriers",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "oil-filter"
     },
     {
       "id": "rocker-covers",
       "name": "Rocker covers",
-      "group": "valvetrain"
+      "group": "valvetrain",
+      "part": "rocker-cover"
     },
     {
       "id": "cam-sprockets",
       "name": "Cam sprockets (AVCS actuators)",
-      "group": "timing"
+      "group": "timing",
+      "part": "cam-phaser"
     },
     {
       "id": "oil-control-solenoids",
       "name": "AVCS oil control solenoids",
-      "group": "timing"
+      "group": "timing",
+      "part": "oil-control-solenoid"
     },
     {
       "id": "cam-sensors",
       "name": "Camshaft position sensors",
-      "group": "timing"
+      "group": "timing",
+      "part": "cam-position-sensor"
     },
     {
       "id": "crank-sprocket",
       "name": "Crank sprocket",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-sprocket"
     },
     {
       "id": "timing-chain-rh",
       "name": "Timing chain RH",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-chain"
     },
     {
       "id": "timing-chain-lh",
       "name": "Timing chain LH",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-chain"
     },
     {
       "id": "chain-tensioners",
       "name": "Chain tensioners and tensioner levers",
-      "group": "timing"
+      "group": "timing",
+      "part": "chain-tensioner"
     },
     {
       "id": "chain-guides",
       "name": "Timing chain guides",
-      "group": "timing"
+      "group": "timing",
+      "part": "chain-guides"
     },
     {
       "id": "chain-cover",
       "name": "Chain (front) cover",
-      "group": "timing"
+      "group": "timing",
+      "part": "timing-cover"
     },
     {
       "id": "front-seal",
       "name": "Front crankshaft oil seal",
-      "group": "timing"
+      "group": "timing",
+      "part": "crank-seal"
     },
     {
       "id": "crank-pulley",
       "name": "Crank pulley and pulley boss",
-      "group": "timing"
+      "group": "timing",
+      "part": "crank-pulley"
     },
     {
       "id": "intake-manifold",
       "name": "Intake manifold with throttle body",
-      "group": "intake"
+      "group": "intake",
+      "part": "intake-manifold"
     },
     {
       "id": "tgv",
       "name": "Tumble generator valve assemblies",
-      "group": "intake"
+      "group": "intake",
+      "part": "tumble-valve"
     },
     {
       "id": "fuel-injectors",
       "name": "Fuel injectors and fuel pipes",
-      "group": "intake"
+      "group": "intake",
+      "part": "fuel-injector"
     },
     {
       "id": "egr-pipe",
       "name": "EGR pipe assembly",
-      "group": "intake"
+      "group": "intake",
+      "part": "egr-pipe"
     },
     {
       "id": "wiring-harness",
       "name": "Engine wiring harness",
-      "group": "intake"
+      "group": "intake",
+      "part": "wiring-harness"
     },
     {
       "id": "knock-sensor",
       "name": "Knock sensor",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "knock-sensor"
     },
     {
       "id": "crank-sensor",
       "name": "Crankshaft position sensor",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "crank-position-sensor"
     },
     {
       "id": "pcv-valve",
       "name": "PCV valve and connector",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "pcv-valve"
     },
     {
       "id": "ignition",
       "name": "Ignition coils and spark plugs",
-      "group": "sensors"
+      "group": "sensors",
+      "part": "ignition-coils"
     },
     {
       "id": "drive-belt",
       "name": "V-belt, tensioner and idler pulley",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "accessory-belt"
     },
     {
       "id": "generator",
       "name": "Generator (alternator)",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "alternator"
     },
     {
       "id": "ac-compressor",
       "name": "A/C compressor",
-      "group": "accessories"
+      "group": "accessories",
+      "part": "ac-compressor"
     },
     {
       "id": "engine-mounts",
       "name": "Engine mounts",
-      "group": "mounting"
+      "group": "mounting",
+      "part": "engine-mounts"
     },
     {
       "id": "engine-stand",
       "name": "Engine stand and adapters",
-      "group": "mounting"
+      "group": "mounting",
+      "part": "engine-stand"
     },
     {
       "id": "torque-converter",
       "name": "Torque converter (stays with TR580)",
-      "group": "mounting"
+      "group": "mounting",
+      "part": "torque-converter"
     }
   ],
   "phases": [

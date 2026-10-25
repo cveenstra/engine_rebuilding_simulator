@@ -250,222 +250,266 @@
     {
       "id": "torque-converter",
       "name": "Torque converter",
-      "group": "converter"
+      "group": "converter",
+      "part": "torque-converter"
     },
     {
       "id": "front-seals",
       "name": "Front seals (converter, input shaft, stator shaft)",
-      "group": "converter"
+      "group": "converter",
+      "part": "converter-seal"
     },
     {
       "id": "converter-case",
       "name": "Converter case",
-      "group": "case"
+      "group": "case",
+      "part": "converter-housing"
     },
     {
       "id": "transmission-case",
       "name": "Transmission case",
-      "group": "case"
+      "group": "case",
+      "part": "transmission-case"
     },
     {
       "id": "extension-case",
       "name": "Extension (tail) case",
-      "group": "transfer"
+      "group": "transfer",
+      "part": "extension-housing"
     },
     {
       "id": "chain-cover",
       "name": "Oil pump chain cover",
-      "group": "pump"
+      "group": "pump",
+      "part": "case-cover"
     },
     {
       "id": "stator-seal-ring",
       "name": "Stator support sealing ring",
-      "group": "pump"
+      "group": "pump",
+      "part": "seal-rings"
     },
     {
       "id": "pump-chain",
       "name": "Oil pump drive chain and sprockets",
-      "group": "pump"
+      "group": "pump",
+      "part": "pump-drive-chain"
     },
     {
       "id": "oil-pump",
       "name": "Oil pump",
-      "group": "pump"
+      "group": "pump",
+      "part": "transmission-pump"
     },
     {
       "id": "valve-cover",
       "name": "Valve body cover",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "valve-body-cover"
     },
     {
       "id": "control-valve-body",
       "name": "Control valve body",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "valve-body"
     },
     {
       "id": "internal-manual-valve",
       "name": "Internal manual valve body and separator plate",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "valve-body"
     },
     {
       "id": "oil-pan",
       "name": "Oil pan",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "transmission-pan"
     },
     {
       "id": "strainer",
       "name": "Oil strainer",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "transmission-filter"
     },
     {
       "id": "pan-baffle",
       "name": "Pan baffle",
-      "group": "hydraulics"
+      "group": "hydraulics",
+      "part": "oil-baffle"
     },
     {
       "id": "solenoids",
       "name": "Solenoids",
-      "group": "electrical"
+      "group": "electrical",
+      "part": "transmission-solenoid"
     },
     {
       "id": "harness",
       "name": "Transmission harness and connectors",
-      "group": "electrical"
+      "group": "electrical",
+      "part": "wiring-harness"
     },
     {
       "id": "sensors",
       "name": "Speed and pressure sensors",
-      "group": "electrical"
+      "group": "electrical",
+      "part": "speed-sensor"
     },
     {
       "id": "inhibitor-switch",
       "name": "Inhibitor (range) switch",
-      "group": "electrical"
+      "group": "electrical",
+      "part": "range-switch"
     },
     {
       "id": "tcm",
       "name": "Transmission control module (TCM)",
-      "group": "electrical"
+      "group": "electrical",
+      "part": "tcm"
     },
     {
       "id": "manual-linkage",
       "name": "Manual shaft and shift rail linkage",
-      "group": "shift"
+      "group": "shift",
+      "part": "manual-shaft"
     },
     {
       "id": "park-rod",
       "name": "Parking rod",
-      "group": "shift"
+      "group": "shift",
+      "part": "parking-lock"
     },
     {
       "id": "parking-pawl",
       "name": "Parking pawl, spring and shaft",
-      "group": "shift"
+      "group": "shift",
+      "part": "parking-lock"
     },
     {
       "id": "transfer-shims",
       "name": "Transfer gear shims",
-      "group": "transfer"
+      "group": "transfer",
+      "part": "selective-shims"
     },
     {
       "id": "transfer-clutch",
       "name": "Transfer (AWD) clutch",
-      "group": "transfer"
+      "group": "transfer",
+      "part": "transfer-clutch"
     },
     {
       "id": "transfer-gears",
       "name": "Transfer shaft and gears",
-      "group": "transfer"
+      "group": "transfer",
+      "part": "transfer-gear"
     },
     {
       "id": "pulley-baffle",
       "name": "Secondary pulley baffle",
-      "group": "variator"
+      "group": "variator",
+      "part": "oil-baffle"
     },
     {
       "id": "chain-guides",
       "name": "Chain guides",
-      "group": "variator"
+      "group": "variator",
+      "part": "variator-chain-guide"
     },
     {
       "id": "variator-chain",
       "name": "Variator chain",
-      "group": "variator"
+      "group": "variator",
+      "part": "variator-chain"
     },
     {
       "id": "primary-pulley",
       "name": "Primary pulley",
-      "group": "variator"
+      "group": "variator",
+      "part": "variator-pulley"
     },
     {
       "id": "secondary-pulley",
       "name": "Secondary pulley",
-      "group": "variator"
+      "group": "variator",
+      "part": "variator-pulley"
     },
     {
       "id": "pulley-shims",
       "name": "Pulley bearing shims",
-      "group": "variator"
+      "group": "variator",
+      "part": "selective-shims"
     },
     {
       "id": "pulley-bearings",
       "name": "Pulley shaft bearings",
-      "group": "variator"
+      "group": "variator",
+      "part": "rolling-bearings"
     },
     {
       "id": "reverse-brake",
       "name": "Reverse brake",
-      "group": "forward-reverse"
+      "group": "forward-reverse",
+      "part": "brake-pack"
     },
     {
       "id": "planetary",
       "name": "Planetary carrier and ring gear",
-      "group": "forward-reverse"
+      "group": "forward-reverse",
+      "part": "planetary-gearset"
     },
     {
       "id": "sun-gear",
       "name": "Sun gear",
-      "group": "forward-reverse"
+      "group": "forward-reverse",
+      "part": "planetary-gearset"
     },
     {
       "id": "forward-clutch",
       "name": "Forward clutch",
-      "group": "forward-reverse"
+      "group": "forward-reverse",
+      "part": "clutch-pack"
     },
     {
       "id": "input-shaft",
       "name": "Input shaft and forward drum",
-      "group": "forward-reverse"
+      "group": "forward-reverse",
+      "part": "input-shaft"
     },
     {
       "id": "pinion-support",
       "name": "Pinion support and drive pinion",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "drive-pinion"
     },
     {
       "id": "front-differential",
       "name": "Front differential",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "differential"
     },
     {
       "id": "axle-seals",
       "name": "Differential side (axle) seals",
-      "group": "final-drive"
+      "group": "final-drive",
+      "part": "axle-seal"
     },
     {
       "id": "cvtf",
       "name": "CVT fluid",
-      "group": "fluid"
+      "group": "fluid",
+      "part": "transmission-fluid"
     },
     {
       "id": "diff-oil",
       "name": "Front differential gear oil",
-      "group": "fluid"
+      "group": "fluid",
+      "part": "gear-oil"
     },
     {
       "id": "cooler-lines",
       "name": "CVTF cooler lines",
-      "group": "fluid"
+      "group": "fluid",
+      "part": "fluid-lines"
     }
   ],
   "phases": [

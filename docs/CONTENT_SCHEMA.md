@@ -1,7 +1,9 @@
 # Content schema
 
 Every rebuildable unit (engine or transmission) is one JSON file in `src/data/units/<id>.json`.
-The app reads nothing else, so this file is the contract between the content and the code.
+Alongside the units sits one shared file, `src/data/parts/catalog.json`, that describes each
+*kind* of part once (see [Parts catalog](#parts-catalog)). This document is the contract between
+the content and the code.
 
 Units in v1:
 
@@ -45,7 +47,8 @@ Units in v1:
     // kind "manual": a factory manual cited by title only, never linked (no url)
   ],
   "components": [                     // the parts the diagram and steps refer to
-    { "id": "timing-chain", "name": "Timing chain", "group": "timing" }
+    { "id": "timing-chain", "name": "Timing chain", "group": "timing",
+      "part": "timing-chain" }        // required: a parts catalog id (see below)
   ],
   "phases": [                         // in order
     { "id": "teardown-ext", "name": "External teardown", "kind": "teardown",
@@ -77,8 +80,53 @@ Units in v1:
 }
 ```
 
+## Parts catalog
+
+`components[]` are the parts of one unit, named the way that unit's manual names them
+("Timing chain RH", "Secondary (upper) timing chain"). Many of them are the same kind of part
+in different units. `src/data/parts/catalog.json` lists each kind once, so a picture and a plain
+description written for "timing chain" serve every unit that has one.
+
+Every component in a real unit carries `"part": "<catalog id>"`. Several components can point
+at the same part (both cylinder heads of the FB25 point at `cylinder-head`), and a part can
+serve engines and transmissions alike (`pump-drive-chain`). The practice fixture may leave
+`part` out.
+
+```jsonc
+[
+  {
+    "id": "timing-chain",             // kebab-case, unique
+    "name": "Timing chains",          // plain name; a set is one part ("Piston rings", "Head bolts")
+    "category": "timing",             // see the list below
+    "what": "One sentence: what it is, for someone who has never seen one.",
+    "does": "One sentence: what it does in the engine or transmission.",
+    "lookFor": "One sentence: what to inspect during a rebuild, or \"\" if nothing applies.",
+    "photoQuery": "engine timing chain", // 2 to 5 words to search Wikimedia Commons with
+    "drawable": true                  // false only for things with no useful picture (fluids)
+  }
+]
+```
+
+Categories: `engine-block`, `rotating`, `valvetrain`, `timing`, `lubrication`, `cooling`,
+`fuel-air`, `turbo`, `sealing-fasteners`, `electrical-sensors`, `transmission-case`,
+`hydraulics`, `clutches-gears`, `cvt-variator`, `torque-converter`, `driveline`, `tools`, `other`.
+
+Rules for the catalog:
+
+- **Group by kind of part, not by unit.** One `crankshaft` serves both engines; one
+  `torque-converter` serves both transmissions. Add a unit-specific part only when the part is
+  genuinely unique to that design (the Ingenium CVVL unit, the TR580 variator pulleys, the 9HP
+  dog clutches).
+- **Same writing rules as steps:** our own words, plain English, no em dashes.
+- **Adding a component:** pick an existing part if one fits. Add a new catalog entry only when
+  none does, and fill every field.
+
 ## Checks (`npm run validate`)
 
 - ids unique, `order` is 1..N with no gaps, every `phase`, `components[]` and `sourceIds[]` resolves.
 - every `spec` has at least one `sourceId`.
 - titles unique within a unit and 2–7 words, so "what's next" choices can't be guessed by length.
+- every component in a real unit has a `part` that resolves to a catalog id.
+- catalog ids are unique kebab-case, every field is present, `category` is from the list above
+  and `drawable` is true or false. A `photoQuery` outside 2 to 5 words and a catalog part no
+  component uses are warnings.

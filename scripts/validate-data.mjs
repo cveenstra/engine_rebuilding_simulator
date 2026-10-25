@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Checks every unit file in src/data/units/ (plus the test fixture) against
+// Checks every unit file in src/data/units/ (plus the test fixture) and the
+// shared parts catalog in src/data/parts/catalog.json against
 // docs/CONTENT_SCHEMA.md. No dependencies. Exits 1 on any error; warnings are
 // printed but do not fail the run.
 //   node scripts/validate-data.mjs           errors, warnings and counts
@@ -11,12 +12,19 @@ import { fileURLToPath } from 'node:url';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const UNITS_DIR = join(ROOT, 'src', 'data', 'units');
 const FIXTURE = join(ROOT, 'src', 'data', 'fixtures', 'sample-unit.json');
+const CATALOG = join(ROOT, 'src', 'data', 'parts', 'catalog.json');
 const QUIET = process.argv.includes('--quiet');
 
 const UNIT_KINDS = new Set(['engine', 'transmission']);
 const PHASE_KINDS = new Set(['prep', 'teardown', 'inspect', 'machine', 'assembly', 'final']);
 const SPEC_KINDS = new Set(['torque', 'clearance', 'angle', 'sequence', 'fluid', 'other']);
 const SOURCE_KINDS = new Set(['manual', 'oem', 'forum', 'vendor', 'video', 'reference']);
+const PART_CATEGORIES = new Set([
+  'engine-block', 'rotating', 'valvetrain', 'timing', 'lubrication', 'cooling', 'fuel-air', 'turbo',
+  'sealing-fasteners', 'electrical-sensors', 'transmission-case', 'hydraulics', 'clutches-gears',
+  'cvt-variator', 'torque-converter', 'driveline', 'tools', 'other',
+]);
+const PART_TEXT_FIELDS = ['name', 'what', 'does', 'photoQuery'];
 const EM_DASH = /\u2014/;
 
 const isStr = (v) => typeof v === 'string' && v.trim().length > 0;
@@ -26,6 +34,54 @@ const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 
 let errorCount = 0;
 let warnCount = 0;
+
+// ---- parts catalog: one shared list of part types that unit components point at.
+function checkCatalog(file) {
+  const rel = relative(ROOT, file);
+  const errors = [];
+  const warnings = [];
+  const err = (where, msg) => errors.push(`${where}: ${msg}`);
+  const warn = (where, msg) => warnings.push(`${where}: ${msg}`);
+  const ids = new Set();
+
+  let list;
+  try {
+    list = JSON.parse(readFileSync(file, 'utf8'));
+  } catch (e) {
+    err('file', existsSync(file) ? `not valid JSON (${e.message})` : 'missing');
+    return { rel, errors, warnings, ids, count: 0 };
+  }
+  if (!isArr(list)) {
+    err('file', 'top level is not an array');
+    return { rel, errors, warnings, ids, count: 0 };
+  }
+
+  list.forEach((p, i) => {
+    const w = `[${i}]${isObj(p) && isStr(p.id) ? ` (${p.id})` : ''}`;
+    if (!isObj(p)) { err(w, 'not an object'); return; }
+    if (!isStr(p.id)) err(w, 'id missing');
+    else {
+      if (ids.has(p.id)) err(w, `duplicate id "${p.id}"`);
+      ids.add(p.id);
+      if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.id)) err(w, 'id is not kebab-case');
+    }
+    for (const k of PART_TEXT_FIELDS) if (!isStr(p[k])) err(w, `${k} missing or empty`);
+    if (typeof p.lookFor !== 'string') err(w, 'lookFor missing (use "" when nothing applies)');
+    if (!PART_CATEGORIES.has(p.category)) err(w, `category "${p.category}" is not one of ${[...PART_CATEGORIES].join('|')}`);
+    if (typeof p.drawable !== 'boolean') err(w, 'drawable is not true/false');
+    if (isStr(p.photoQuery)) {
+      const n = words(p.photoQuery);
+      if (n < 2 || n > 5) warn(w, `photoQuery "${p.photoQuery}" is ${n} words (aim for 2 to 5)`);
+    }
+    for (const [k, v] of Object.entries(p)) {
+      if (typeof v === 'string' && EM_DASH.test(v)) warn(w, `em dash in ${k}`);
+    }
+  });
+  return { rel, errors, warnings, ids, count: list.length };
+}
+
+const catalog = checkCatalog(CATALOG);
+const usedParts = new Set();
 
 function checkUnit(file, isFixture = false) {
   const rel = relative(ROOT, file);
@@ -98,6 +154,11 @@ function checkUnit(file, isFixture = false) {
     if (componentIds.has(c.id)) err(w, `duplicate id "${c.id}"`);
     componentIds.add(c.id);
     if (!isStr(c.name)) err(w, 'name missing');
+    // Real units must map every component to a catalog part; the fixture may skip it.
+    if (c.part == null) { if (!isFixture) err(w, `component "${c.id}" has no part`); }
+    else if (!isStr(c.part)) err(w, 'part is not a string');
+    else if (!catalog.ids.has(c.part)) err(w, `part "${c.part}" is not in the parts catalog`);
+    else usedParts.add(c.part);
   });
   if (u.components != null && !isArr(u.components)) err('components', 'is not an array');
 
@@ -235,5 +296,13 @@ for (const r of results) {
   if (!QUIET) for (const w of r.warnings) console.log(`    warning ${w}`);
 }
 
-console.log(`\n${all.length} file(s), ${errorCount} error(s), ${warnCount} warning(s).`);
+// The catalog reports last, once every unit has had a chance to use its parts.
+for (const id of catalog.ids) if (!usedParts.has(id)) catalog.warnings.push(`part ${id}: no unit component uses it`);
+errorCount += catalog.errors.length;
+warnCount += catalog.warnings.length;
+console.log(`${catalog.errors.length ? 'FAIL' : 'ok  '} ${catalog.rel}  (${catalog.count} parts, ${catalog.errors.length} errors, ${catalog.warnings.length} warnings)`);
+for (const e of catalog.errors) console.log(`    error   ${e}`);
+if (!QUIET) for (const w of catalog.warnings) console.log(`    warning ${w}`);
+
+console.log(`\n${all.length + 1} file(s), ${errorCount} error(s), ${warnCount} warning(s).`);
 process.exit(errorCount ? 1 : 0);
