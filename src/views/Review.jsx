@@ -4,6 +4,8 @@ import { Button, Card, Chip, ChipRow, Bar, Empty } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
 import { ActionBar } from '../components/bench.jsx';
 import NextQuestion from '../components/NextQuestion.jsx';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss } from '../engine/feedback.js';
 import { UNITS, UNIT_BY_ID } from '../data/index.js';
 import { useProgress } from '../engine/storage.js';
 import { transitions, buildQueue, srsSummary, grade } from '../engine/srs.js';
@@ -59,6 +61,7 @@ export default function Review() {
   const onPick = (id) => {
     if (!session || session.picked) return;
     const ok = id === session.q.answer.id;
+    if (ok) cheer(); else miss();
     grade(session.queue[session.i].id, ok, { onlyPromoteDue: false });
     setSession({ ...session, picked: id, right: session.right + (ok ? 1 : 0) });
   };
@@ -72,6 +75,12 @@ export default function Review() {
     }
     setSession({ ...session, i, q: qFor(session.queue[i]), picked: null });
   };
+  const inSession = !!session && !session.done;
+  const beat = useAutoAdvance({
+    token: inSession ? session.q : null,
+    active: inSession && session.picked != null && session.picked === session.q.answer.id,
+    onAdvance: next,
+  });
 
   const header = (
     <div className="mb-4">
@@ -97,10 +106,10 @@ export default function Review() {
           <Bar pct={(session.i / session.queue.length) * 100} label="Review progress" />
           <span className="tabnum flex-shrink-0 text-sm text-ink-3">{session.i + 1} / {session.queue.length}</span>
         </div>
-        <NextQuestion key={card.id} unit={unit} q={session.q} picked={session.picked} onPick={onPick} showUnit={!session.unitId} />
-        <ActionBar>
+        <NextQuestion key={card.id} unit={unit} q={session.q} picked={session.picked} onPick={onPick} showUnit={!session.unitId} explainProps={beat.pauseProps} />
+        <ActionBar beat={beat}>
           <Button variant="ghost" className="flex-1" onClick={() => setSession(null)}>Stop</Button>
-          <Button className="flex-[2]" onClick={next} disabled={!session.picked}>
+          <Button className="flex-[2]" onClick={beat.go} disabled={!session.picked}>
             {session.i + 1 >= session.queue.length ? 'Finish' : 'Next'} <Icon name="right" size={18} />
           </Button>
         </ActionBar>

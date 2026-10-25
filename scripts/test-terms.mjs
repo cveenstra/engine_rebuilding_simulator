@@ -10,6 +10,8 @@ import { fileURLToPath } from 'node:url';
 import * as L from '../src/engine/ladder.js';
 import { createMatcher } from '../src/engine/termMatch.js';
 import * as MQ from '../src/engine/mistakeQuiz.js';
+import * as AA from '../src/engine/autoAdvance.js';
+import { streakNote } from '../src/engine/feedback.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 let pass = 0;
@@ -358,6 +360,79 @@ if (existsSync(GLOSSARY)) {
   const cands = [10, 48, 52, 49, 90, 5].map((n, i) => ({ id: i, text: String(i) + 'b'.repeat(n) }));
   const near = MQ.nearestByLength(target.text, cands, 3, rng(3));
   ok('wrong answers are the nearest in length', near.every((c) => Math.abs(c.text.length - 50) <= 4));
+}
+
+// ===========================================================================
+// Auto-advance beat (autoAdvance.js): timing, pause, skip, stop and the guard
+// ===========================================================================
+{
+  eq('Calm is the default pause', AA.pauseMs(undefined), 1100);
+  eq('Quick is 0.7 s', AA.pauseMs('quick'), 700);
+  eq('Slow is 1.8 s', AA.pauseMs('slow'), 1800);
+  eq('an unknown pause falls back to Calm', AA.pauseMs('glacial'), 1100);
+
+  // Run a beat on 16 ms frames until it is due; returns [beat, frames].
+  const run = (b, pausedAt = () => false, limit = 1000) => {
+    let n = 0;
+    while (!AA.beatDue(b) && n < limit) { b = AA.beatTick(b, 16, pausedAt(n)); n++; }
+    return [b, n];
+  };
+  const [done, frames] = run(AA.beatStart(1100));
+  ok('a Calm beat is due after about 1.1 s of frames', frames >= 68 && frames <= 70, `frames ${frames}`);
+  eq('progress is full when due', AA.beatProgress(done), 1);
+  eq('progress starts at zero', AA.beatProgress(AA.beatStart(1100)), 0);
+  ok('progress is halfway at half time', Math.abs(AA.beatProgress(AA.beatTick(AA.beatStart(100), 50)) - 0.5) < 1e-9);
+
+  const [, pausedFrames] = run(AA.beatStart(1100), (n) => n >= 10 && n < 60);
+  eq('paused frames do not count', pausedFrames, frames + 50);
+  let p = AA.beatTick(AA.beatStart(1100), 16);
+  eq('a paused tick leaves the beat as it was', AA.beatTick(p, 500, true), p);
+
+  // A frame after a hidden tab reports a huge delta: it must not end the beat.
+  p = AA.beatTick(AA.beatStart(1100), 60000);
+  ok('one huge frame is clamped', p.elapsed === AA.MAX_FRAME_MS && !AA.beatDue(p));
+  eq('a negative frame adds nothing', AA.beatTick(AA.beatStart(1100), -40).elapsed, 0);
+  eq('a NaN frame adds nothing', AA.beatTick(AA.beatStart(1100), NaN).elapsed, 0);
+
+  const fired = AA.beatFire(done);
+  ok('a fired beat is no longer due', !AA.beatDue(fired));
+  eq('firing twice is the same beat', AA.beatFire(fired), fired);
+  ok('a fired beat does not tick', AA.beatTick(fired, 16) === fired);
+
+  // Skipping early: fire before time is up, and the timer can never fire it again.
+  let early = AA.beatFire(AA.beatTick(AA.beatStart(1100), 16));
+  for (let i = 0; i < 200; i++) early = AA.beatTick(early, 16);
+  ok('a skipped beat never comes due', !AA.beatDue(early));
+
+  // Stopped (the learner is reading): never due, but Next still works through the guard.
+  let stopped = AA.beatStop(AA.beatTick(AA.beatStart(700), 16));
+  for (let i = 0; i < 200; i++) stopped = AA.beatTick(stopped, 16);
+  ok('a stopped beat never comes due', !AA.beatDue(stopped));
+  ok('stopping a fired beat changes nothing', AA.beatStop(fired) === fired);
+  ok('a zero-length beat is due at once', AA.beatDue(AA.beatStart(0)));
+
+  // The once-per-question guard behind the timer, a tap, a key and Next.
+  const g = AA.oncePerToken();
+  const q1 = { id: 1 };
+  const q2 = { id: 2 };
+  ok('the first advance for a question goes', g.take(q1));
+  ok('a second advance for the same question is dropped', !g.take(q1));
+  ok('a third, too', !g.take(q1));
+  ok('the next question can advance', g.take(q2));
+  ok('and only once', !g.take(q2));
+  g.reset();
+  ok('after a reset the same token may go again', g.take(q2));
+  const g2 = AA.oncePerToken();
+  ok('a numeric token 0 goes the first time', g2.take(0));
+  ok('and not twice', !g2.take(0));
+  ok('a null token goes once', g2.take(null) && !g2.take(null));
+
+  // The streak chime climbs the pentatonic scale, then rocks between its top two notes.
+  const notes = Array.from({ length: 9 }, (_, i) => streakNote(i));
+  ok('the streak climbs for five right answers', notes.slice(0, 5).every((f, i) => i === 0 || f > notes[i - 1]));
+  ok('streak notes stay in the soft 580 to 1000 Hz range', notes.every((f) => f >= 580 && f <= 1000));
+  ok('past the top it alternates, never repeats one note', notes.slice(5).every((f, i, a) => i === 0 || f !== a[i - 1]));
+  eq('a reset streak starts on the first note', streakNote(0), notes[0]);
 }
 
 for (const w of warnings.slice(0, 20)) console.log(`  warn: ${w}`);

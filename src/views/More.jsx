@@ -9,17 +9,31 @@ import {
 import { allTransitions, studyStreak } from '../engine/progress.js';
 import { srsSummary } from '../engine/srs.js';
 import { NEW_PER_DAY_CHOICES, NO_LIMIT, newPerDay } from '../engine/terms.js';
+import { PAUSES } from '../engine/autoAdvance.js';
+import { feedbackPrefs, previewSound } from '../engine/feedback.js';
+
+/** An On / Off pair of chips for a yes-no setting. */
+function OnOff({ value, onChange, label }) {
+  return (
+    <div className="flex flex-wrap gap-2" role="group" aria-label={label}>
+      <Chip active={value} onClick={() => onChange(true)}>On</Chip>
+      <Chip active={!value} onClick={() => onChange(false)}>Off</Chip>
+    </div>
+  );
+}
 
 export default function More() {
   const state = useProgress();
   const [theme, setTheme] = useState(() => getPref('theme', 'system'));
   const [perDay, setPerDay] = useState(() => (newPerDay() === Infinity ? NO_LIMIT : newPerDay()));
   const [gate, setGate] = useState(() => getPref('termsFirst', true) !== false);
+  const [fx, setFx] = useState(feedbackPrefs);
   const [msg, setMsg] = useState(null); // { tone, text }
   const [canSave] = useState(() => storageWorks());
   const fileRef = useRef(null);
 
   const pickTheme = (t) => { setTheme(t); setPref('theme', t); applyTheme(t); };
+  const setFxPref = (key, pref, value) => { setPref(pref, value); setFx({ ...fx, [key]: value }); };
 
   const summary = srsSummary(allTransitions(), state);
   const runs = Object.values(state.runs).reduce((n, list) => n + (Array.isArray(list) ? list.length : 0), 0);
@@ -116,6 +130,34 @@ export default function More() {
             <Chip active={gate} onClick={() => { setGate(true); setPref('termsFirst', true); }}>On</Chip>
             <Chip active={!gate} onClick={() => { setGate(false); setPref('termsFirst', false); }}>Off</Chip>
           </div>
+        </div>
+      </Card>
+
+      <Card className="p-4">
+        <SectionTitle sub="After a right answer, the app pauses for a breath, then moves on by itself. Tap anywhere or press Enter to go sooner. Wrong answers always wait for you.">
+          Auto-advance on correct
+        </SectionTitle>
+        <OnOff label="Auto-advance on correct" value={fx.auto} onChange={(v) => setFxPref('auto', 'autoAdvance', v)} />
+        <div className={`mt-4 border-t border-line-2 pt-4 ${fx.auto ? '' : 'opacity-60'}`}>
+          <SectionTitle sub="How long the right answer stays on screen before the next question.">Pause length</SectionTitle>
+          <div className="flex flex-wrap gap-2" role="group" aria-label="Pause length">
+            {PAUSES.map(([v, ms, l]) => (
+              <Chip key={v} active={fx.pauseName === v} onClick={() => { setPref('advancePause', v); setFx({ ...fx, pauseName: v, pause: ms }); }}>
+                {l} <span className="ml-1 tabnum opacity-75">{(ms / 1000).toFixed(1)} s</span>
+              </Chip>
+            ))}
+          </div>
+        </div>
+        <div className="mt-4 border-t border-line-2 pt-4">
+          <SectionTitle sub="A soft tone for a right answer that climbs as your streak grows, and a low, quiet one for a miss.">Sounds</SectionTitle>
+          <div className="flex flex-wrap items-center gap-2">
+            <OnOff label="Sounds" value={fx.sound} onChange={(v) => { setFxPref('sound', 'sounds', v); if (v) previewSound('right'); }} />
+            {fx.sound && <Button variant="quiet" onClick={() => previewSound('right')}><Icon name="play" size={14} /> Hear it</Button>}
+          </div>
+        </div>
+        <div className="mt-4 border-t border-line-2 pt-4">
+          <SectionTitle sub="A tiny tap from the phone on a right answer, where the phone supports it. iPhones do not.">Haptics</SectionTitle>
+          <OnOff label="Haptics" value={fx.haptics} onChange={(v) => setFxPref('haptics', 'haptics', v)} />
         </div>
       </Card>
 

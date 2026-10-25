@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Button, Chip, ChipRow, Card } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
-import { ModeHeader, UnitMissing, ActionBar, ChoiceButton, CriticalBadge } from '../components/bench.jsx';
+import { ModeHeader, UnitMissing, ActionBar, ChoiceButton, CriticalBadge, CorrectFlourish } from '../components/bench.jsx';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss } from '../engine/feedback.js';
 import { PartStrip } from '../components/parts.jsx';
 import { Glossed } from '../components/glossary.jsx';
 import { useUnit } from '../engine/unit.js';
@@ -43,10 +45,14 @@ function Drill({ unit }) {
       const b = seq[i + 1];
       results.push({ id: transitionId(a, b), ok: positionOf[b.id] === positionOf[a.id] + 1 });
     }
+    if (rightSpot === size) cheer(); else miss();
     gradeMany(results);
     logSession('order', unit.id, rightSpot, size);
     setTally((t) => ({ drills: t.drills + 1, perfect: t.perfect + (rightSpot === size ? 1 : 0) }));
   };
+
+  const perfect = checked && rightSpot === size;
+  const beat = useAutoAdvance({ token: drill, active: perfect, onAdvance: () => fresh() });
 
   const first = seq[0];
   const firstPhase = first ? unit.phaseById[first.phase] : null;
@@ -73,7 +79,7 @@ function Drill({ unit }) {
       </p>
 
       {!checked && (
-        <>
+        <div key={size + shuffled.map((s) => s.id).join()} className="rise-in">
           <ol className="mb-4 space-y-2">
             {placed.map((id, i) => (
               <li key={id}>
@@ -102,18 +108,20 @@ function Drill({ unit }) {
               </ul>
             </>
           )}
-        </>
+        </div>
       )}
 
       {checked && (
         <div className="space-y-3">
-          <Card className={`p-4 ${rightSpot === size ? 'border-ok-line bg-ok-soft' : ''}`}>
-            <p className="text-lg font-semibold text-ink">{rightSpot} of {size} in the right spot</p>
-            <p className="text-sm text-ink-3">
-              {rightSpot === size ? 'Perfect order.' : 'Here is the real order. Misplaced steps show why they go where they do.'}
-            </p>
-          </Card>
-          <ol className="space-y-2">
+          {perfect ? (
+            <CorrectFlourish>Perfect order. All {size} in the right spot.</CorrectFlourish>
+          ) : (
+            <Card className="pop-in p-4">
+              <p className="text-lg font-semibold text-ink">{rightSpot} of {size} in the right spot</p>
+              <p className="text-sm text-ink-3">Here is the real order. Misplaced steps show why they go where they do.</p>
+            </Card>
+          )}
+          <ol className="space-y-2" {...beat.pauseProps}>
             {seq.map((s, i) => {
               const ok = positionOf[s.id] === i;
               return (
@@ -143,7 +151,7 @@ function Drill({ unit }) {
         </div>
       )}
 
-      <ActionBar>
+      <ActionBar beat={beat}>
         {!checked ? (
           <>
             <Button variant="ghost" className="flex-1" onClick={() => setPlaced([])} disabled={!placed.length}>
@@ -152,7 +160,7 @@ function Drill({ unit }) {
             <Button className="flex-[2]" onClick={check} disabled={placed.length !== size}>Check order</Button>
           </>
         ) : (
-          <Button className="flex-1" onClick={() => fresh()}>New drill <Icon name="right" size={18} /></Button>
+          <Button className="flex-1" onClick={beat.go}>New drill <Icon name="right" size={18} /></Button>
         )}
       </ActionBar>
     </div>

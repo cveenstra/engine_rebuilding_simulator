@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Button, Card, Pill } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
-import { ActionBar, ChoiceButton } from '../components/bench.jsx';
+import { ActionBar, ChoiceButton, CorrectFlourish } from '../components/bench.jsx';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss, feedbackPrefs } from '../engine/feedback.js';
 import { TermBody } from '../components/glossary.jsx';
 import { TermChips, StatusDot } from '../components/terms.jsx';
 import { useDefine } from '../components/glossaryContext.js';
@@ -129,14 +131,24 @@ function Drill({ scope, mode, skey }) {
 
   const pick = (opt) => {
     if (cur.picked) return;
+    if (opt.correct) cheer(); else miss();
     const { res, patch } = record(opt.correct);
     setS({ ...s, ...patch, cur: { ...cur, phase: 'answered', picked: opt.id, res } });
   };
 
+  // Good and Easy get the same calm beat as a right pick when auto-advance is on.
+  // Again and Hard move on at once, as they always have.
   const rate = (r) => {
     const { res, patch } = record(r);
-    advance(patch, { termId: cur.termId, res });
+    const good = r === 'good' || r === 'easy';
+    if (good) cheer(); else if (r === 'again') miss();
+    if (good && feedbackPrefs().auto) setS({ ...s, ...patch, last: null, cur: { ...cur, phase: 'rated', res } });
+    else advance(patch, { termId: cur.termId, res });
   };
+
+  // What Next does after a question, or after a Good or Easy rating (whose result is already on screen).
+  const pickedRight = cur?.phase === 'answered' && !!cur.q?.options.find((o) => o.id === cur.picked)?.correct;
+  const beat = useAutoAdvance({ token: cur, active: pickedRight || cur?.phase === 'rated', onAdvance: () => advance({}, null) });
 
   // Number keys pick a choice or a rating, for desktop study.
   const keyRef = useRef(null);
@@ -230,14 +242,14 @@ function Drill({ scope, mode, skey }) {
       </div>
 
       {cur.phase === 'teach' && (
-        <div key={`t-${s.answered}`} className="pop-in space-y-3">
+        <div key={`t-${s.answered}`} className="rise-in space-y-3">
           <p className="text-base text-ink-2">A new word. Read it, then check you have it.</p>
           <TermCard term={term} unitId={scope.unitId} />
         </div>
       )}
 
       {(cur.phase === 'ask' || cur.phase === 'answered') && cur.q && (
-        <div key={`q-${s.answered}`} className="pop-in space-y-4">
+        <div key={`q-${s.answered}`} className="rise-in space-y-4">
           <div className="rounded-xl border border-line bg-sunken p-4">
             <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">{cur.q.prompt}</p>
             <p className={`mt-1 leading-snug text-ink ${cur.q.kind === 'definition' || cur.q.kind === 'dependency' ? 'text-2xl font-semibold' : 'text-lg'}`}>
@@ -250,14 +262,14 @@ function Drill({ scope, mode, skey }) {
               if (cur.picked) state = o.correct ? 'right' : o.id === cur.picked ? 'wrong' : 'dim';
               return (
                 <li key={o.id}>
-                  <ChoiceButton state={state} disabled={!!cur.picked} onClick={() => pick(o)} lead={i + 1}>{o.text}</ChoiceButton>
+                  <ChoiceButton state={state} bloom={pickedRight && state === 'right'} disabled={!!cur.picked} onClick={() => pick(o)} lead={i + 1}>{o.text}</ChoiceButton>
                 </li>
               );
             })}
           </ul>
 
           {cur.phase === 'answered' && cur.res && (
-            <div className="pop-in space-y-3">
+            <div className="pop-in space-y-3" {...beat.pauseProps}>
               <p className={`text-base font-semibold ${cur.q.options.find((o) => o.id === cur.picked)?.correct ? 'text-ok-text' : 'text-bad-text'}`} role="status">
                 {cur.q.options.find((o) => o.id === cur.picked)?.correct ? 'Right.' : `Not quite. The answer: ${cur.q.answerText}${/[.!?]$/.test(cur.q.answerText) ? '' : '.'}`}
                 {' '}
@@ -273,7 +285,7 @@ function Drill({ scope, mode, skey }) {
       )}
 
       {cur.phase === 'front' && (
-        <div key={`f-${s.answered}`} className="pop-in">
+        <div key={`f-${s.answered}`} className="rise-in">
           <div className="grid min-h-48 place-items-center rounded-xl border border-line bg-surface p-6 text-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">What does it mean?</p>
@@ -284,14 +296,24 @@ function Drill({ scope, mode, skey }) {
         </div>
       )}
 
-      {cur.phase === 'back' && (
+      {/* After Good or Easy the same card stays put and the flourish takes the prompt's place below it. */}
+      {(cur.phase === 'back' || cur.phase === 'rated') && (
         <div key={`b-${s.answered}`} className="pop-in space-y-3">
-          <TermCard term={term} unitId={scope.unitId} />
-          <p className="text-sm text-ink-3">How well did you know it?</p>
+          <div {...beat.pauseProps}><TermCard term={term} unitId={scope.unitId} /></div>
+          {cur.phase === 'rated' && cur.res ? (
+            <>
+              <CorrectFlourish>
+                {term.term}: {cur.res.justLearned ? 'learned. ' : ''}<span className="font-normal text-ink-2">Back in {formatGap(cur.res.nextIn)}.</span>
+              </CorrectFlourish>
+              <Unlocked ids={cur.res.unlocked.map((t) => t.id)} />
+            </>
+          ) : (
+            <p className="text-sm text-ink-3">How well did you know it?</p>
+          )}
         </div>
       )}
 
-      <ActionBar>
+      <ActionBar beat={beat}>
         {cur.phase === 'teach' && (
           <>
             <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop</Button>
@@ -303,8 +325,8 @@ function Drill({ scope, mode, skey }) {
         {cur.phase === 'ask' && (
           <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop and save</Button>
         )}
-        {cur.phase === 'answered' && (
-          <Button className="flex-1" onClick={() => advance({}, null)}>Next <Icon name="right" size={18} /></Button>
+        {(cur.phase === 'answered' || cur.phase === 'rated') && (
+          <Button className="flex-1" onClick={beat.go}>Next <Icon name="right" size={18} /></Button>
         )}
         {cur.phase === 'front' && (
           <>

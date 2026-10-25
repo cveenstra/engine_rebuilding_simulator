@@ -3,6 +3,8 @@ import { Button, Chip, ChipRow } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
 import { ModeHeader, UnitMissing, ActionBar } from '../components/bench.jsx';
 import NextQuestion from '../components/NextQuestion.jsx';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss } from '../engine/feedback.js';
 import { useUnit } from '../engine/unit.js';
 import { nextQuestion, randomQuestionIndex } from '../engine/game.js';
 import { grade, transitionId } from '../engine/srs.js';
@@ -31,6 +33,7 @@ function Game({ unit }) {
     if (picked) return;
     setPicked(id);
     const ok = id === q.answer.id;
+    if (ok) cheer(); else miss();
     grade(transitionId(q.step, q.answer), ok);
     setTally((t) => ({ right: t.right + (ok ? 1 : 0), total: t.total + 1 }));
   };
@@ -39,6 +42,7 @@ function Game({ unit }) {
     setQ(makeQ(unit, phase, q?.step.index ?? -1));
     setPicked(null);
   };
+  const beat = useAutoAdvance({ token: q, active: !!q && picked === q.answer.id, onAdvance: next });
 
   // Log the session once when the learner leaves, not on every answer.
   const tallyRef = useRef(tally);
@@ -62,13 +66,13 @@ function Game({ unit }) {
       </ChipRow>
 
       {q ? (
-        <NextQuestion key={q.step.id} unit={unit} q={q} picked={picked} onPick={onPick} />
+        <NextQuestion key={q.step.id} unit={unit} q={q} picked={picked} onPick={onPick} explainProps={beat.pauseProps} />
       ) : (
         <p className="text-base text-ink-2">This phase has no step with a step after it. Pick another phase.</p>
       )}
 
-      <ActionBar>
-        <Button className="flex-1" onClick={next} disabled={!picked}>
+      <ActionBar beat={beat}>
+        <Button className="flex-1" onClick={beat.go} disabled={!picked}>
           Next question <Icon name="right" size={18} />
         </Button>
       </ActionBar>

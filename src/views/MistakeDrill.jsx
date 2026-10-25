@@ -5,6 +5,8 @@ import Icon from '../components/Icon.jsx';
 import { ActionBar, ChoiceButton, ModeHeader, UnitMissing } from '../components/bench.jsx';
 import { MistakeCard, SeverityBadge, SeverityBars } from '../components/mistakes.jsx';
 import { useUnit } from '../engine/unit.js';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss } from '../engine/feedback.js';
 import {
   SEVERITIES, DEFAULT_SEVERITIES, NEW_PER_SESSION, severityMeta, drillable, scopeCards, nextMistake,
   questionForMistake, answerMistake, recordsOf, nextBackMs,
@@ -90,6 +92,7 @@ function Drill({ unit, severities, skey }) {
 
   const pick = (opt) => {
     if (!cur || cur.picked) return;
+    if (opt.correct) cheer(); else miss();
     const wasNew = !recordsOf()[cur.id]?.seen;
     const res = answerMistake(cur.id, opt.correct);
     setS({
@@ -105,6 +108,8 @@ function Drill({ unit, severities, skey }) {
     const answered = s.answered + 1;
     setS({ ...s, answered, cur: upNext(unit, severities, answered, cur.id, Math.max(0, NEW_PER_SESSION - s.newSeen)) });
   };
+  const pickedRight = !!cur?.picked && !!cur.q.options.find((o) => o.id === cur.picked)?.correct;
+  const beat = useAutoAdvance({ token: cur, active: pickedRight, onAdvance: next });
 
   // Number keys pick a choice, Enter moves on, for desktop study.
   const keyRef = useRef(null);
@@ -112,7 +117,7 @@ function Drill({ unit, severities, skey }) {
     keyRef.current = (k) => {
       if (!cur) return;
       if (!cur.picked && /^[1-4]$/.test(k) && cur.q.options[Number(k) - 1]) pick(cur.q.options[Number(k) - 1]);
-      else if (cur.picked && k === 'Enter') next();
+      else if (cur.picked && k === 'Enter') beat.go();
     };
   });
   useEffect(() => {
@@ -175,7 +180,7 @@ function Drill({ unit, severities, skey }) {
         {s.answered > 0 && <span className="tabnum ml-auto text-sm text-ink-3">{s.right}/{s.answered} right</span>}
       </div>
 
-      <div key={`q-${s.answered}`} className="pop-in space-y-4">
+      <div key={`q-${s.answered}`} className="rise-in space-y-4">
         <Stem unit={unit} q={q} />
         <ul className="space-y-2">
           {q.options.map((o, i) => {
@@ -183,14 +188,14 @@ function Drill({ unit, severities, skey }) {
             if (cur.picked) state = o.correct ? 'right' : o.id === cur.picked ? 'wrong' : 'dim';
             return (
               <li key={o.id}>
-                <ChoiceButton state={state} disabled={!!cur.picked} onClick={() => pick(o)} lead={i + 1}>{o.text}</ChoiceButton>
+                <ChoiceButton state={state} bloom={pickedRight && state === 'right'} disabled={!!cur.picked} onClick={() => pick(o)} lead={i + 1}>{o.text}</ChoiceButton>
               </li>
             );
           })}
         </ul>
 
         {pickedOpt && cur.res && (
-          <div className="pop-in space-y-3">
+          <div className="pop-in space-y-3" {...beat.pauseProps}>
             <p className={`text-base font-semibold ${pickedOpt.correct ? 'text-ok-text' : 'text-bad-text'}`} role="status">
               {pickedOpt.correct ? 'Right.' : 'Not quite. The right answer is marked.'}{' '}
               <span className="font-normal text-ink-2">Back in {formatGap(cur.res.nextIn)}.</span>
@@ -200,9 +205,9 @@ function Drill({ unit, severities, skey }) {
         )}
       </div>
 
-      <ActionBar>
+      <ActionBar beat={beat}>
         {!cur.picked && <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop and save</Button>}
-        {cur.picked && <Button className="flex-1" onClick={next}>Next <Icon name="right" size={18} /></Button>}
+        {cur.picked && <Button className="flex-1" onClick={beat.go}>Next <Icon name="right" size={18} /></Button>}
       </ActionBar>
     </div>
   );

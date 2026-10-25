@@ -251,6 +251,52 @@ p, li, dd, dt, h1, h2, h3, a { overflow-wrap: break-word; }
 .pop-in { animation: pop-in 160ms ease-out; }
 
 /*
+ * The beat after a right answer. Everything eases out slowly: the picked
+ * answer swells a touch and glows, its check draws itself, the other choices
+ * fade back, and a hairline on the action bar fills until the next question
+ * rises in. With reduced motion the scale, rise and stroke drawing become
+ * plain fades; the pause and the sound stay.
+ */
+@keyframes rise-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise-in { animation: rise-in 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+
+.choice {
+  transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease, opacity 480ms ease-out;
+}
+
+@keyframes bloom {
+  from { transform: scale(1); box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent; }
+  to {
+    transform: scale(1.02);
+    box-shadow:
+      0 0 0 4px color-mix(in srgb, var(--c-ok) 14%, transparent),
+      0 8px 24px -8px color-mix(in srgb, var(--c-ok) 45%, transparent);
+  }
+}
+.bloom { animation: bloom 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.draw-check path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 420ms cubic-bezier(0.65, 0, 0.35, 1) 90ms forwards; }
+
+.beat-bar { transform: scaleX(0); transform-origin: left center; transition: opacity 300ms ease; will-change: transform; }
+.beat-bar[data-state='paused'] { opacity: 0.35; }
+.beat-bar[data-state='stopped'] { opacity: 0; }
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes glow-in {
+  from { box-shadow: 0 0 0 4px transparent; }
+  to { box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-ok) 14%, transparent); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise-in { animation: fade-in 220ms ease-out both !important; }
+  .choice { transition: opacity 300ms ease-out !important; }
+  .bloom { animation: glow-in 400ms ease-out both !important; }
+  .draw-check { animation: fade-in 300ms ease-out both !important; }
+  .draw-check path { animation: none !important; stroke-dashoffset: 0; }
+  .beat-bar { transition: none !important; }
+}
+
+/*
  * Part drawings and unit diagrams are inlined SVG. They draw in currentColor
  * (set by the wrapper's text color) and highlight with var(--accent), so both
  * follow the light or dark theme.

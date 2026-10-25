@@ -9,6 +9,8 @@ import { useManifest } from '../engine/assets.js';
 import { unitParts, photosFor, PART_BY_ID } from '../data/parts.js';
 import { Glossed } from '../components/glossary.jsx';
 import { glossSkips, termsForPart } from '../engine/glossary.js';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss } from '../engine/feedback.js';
 
 const shuffle = (arr) => {
   const a = [...arr];
@@ -55,6 +57,7 @@ function Quiz({ unit }) {
 
   const pick = (id) => {
     if (picked) return;
+    if (id === q.answer) cheer(); else miss();
     setPicked(id);
     setTally((t) => ({ right: t.right + (id === q.answer ? 1 : 0), total: t.total + 1 }));
   };
@@ -67,6 +70,8 @@ function Quiz({ unit }) {
 
   const answered = picked != null;
   const answerPart = q ? PART_BY_ID[q.answer] : null;
+  const pickedRight = answered && !!q && picked === q.answer;
+  const beat = useAutoAdvance({ token: q, active: pickedRight, onAdvance: next });
 
   return (
     <div>
@@ -83,7 +88,7 @@ function Quiz({ unit }) {
             : 'None of this unit’s parts has a photo or drawing yet. Check back once the pictures land.'}
         </Empty>
       ) : q && (
-        <div className="space-y-4">
+        <div key={round.n} className="rise-in space-y-4">
           <p className="text-base text-ink-2">
             Name this part from the {unit.name}. Just practice: it does not change your review schedule.
             {pool.length < all.length ? ` ${pool.length} of ${all.length} parts have a picture so far.` : ''}
@@ -102,7 +107,7 @@ function Quiz({ unit }) {
                 if (answered) state = id === q.answer ? 'right' : id === picked ? 'wrong' : 'dim';
                 return (
                   <li key={id}>
-                    <ChoiceButton state={state} disabled={answered} onClick={() => pick(id)}>{PART_BY_ID[id].name}</ChoiceButton>
+                    <ChoiceButton state={state} bloom={pickedRight && state === 'right'} disabled={answered} onClick={() => pick(id)}>{PART_BY_ID[id].name}</ChoiceButton>
                   </li>
                 );
               })}
@@ -110,7 +115,7 @@ function Quiz({ unit }) {
           </div>
 
           {answered && (
-            <div className="pop-in rounded-xl border border-line bg-surface p-4">
+            <div className="pop-in rounded-xl border border-line bg-surface p-4" {...beat.pauseProps}>
               <p className={`text-base font-semibold ${picked === q.answer ? 'text-ok-text' : 'text-bad-text'}`}>
                 {picked === q.answer ? `Right: ${answerPart.name}.` : `Not quite. The answer: ${answerPart.name}.`}
               </p>
@@ -127,8 +132,8 @@ function Quiz({ unit }) {
         </div>
       )}
 
-      <ActionBar>
-        <Button className="flex-1" onClick={next} disabled={!q}>
+      <ActionBar beat={beat}>
+        <Button className="flex-1" onClick={beat.go} disabled={!q}>
           {answered ? 'Next picture' : 'Skip'} <Icon name="right" size={18} />
         </Button>
       </ActionBar>

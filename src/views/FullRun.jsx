@@ -10,6 +10,8 @@ import { runChoices } from '../engine/game.js';
 import { grade, transitionId } from '../engine/srs.js';
 import { getState, getPref, setPref } from '../engine/storage.js';
 import { saveActiveRun, recordRun, touchMode, formatMs, unitProgress } from '../engine/progress.js';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss, feedbackPrefs } from '../engine/feedback.js';
 
 // Wall clock for the run timer. Only called from event handlers and the ticking effect.
 const clock = () => Date.now();
@@ -79,6 +81,8 @@ function Run({ unit }) {
   const [run, setRun] = useState(null);
   const [q, setQ] = useState(null);
   const [wrong, setWrong] = useState(null); // id picked wrongly, waiting for Continue
+  // A right pick in its calm beat: { id, out }. The step is already graded and saved; the screen moves on after the beat.
+  const [right, setRight] = useState(null);
   const [segStart, setSegStart] = useState(0);
   const [now, setNow] = useState(() => clock());
   const [result, setResult] = useState(null);
@@ -97,6 +101,7 @@ function Run({ unit }) {
     setRun(r);
     setQ(runChoices(unit, r.pos, r.choiceCount));
     setWrong(null);
+    setRight(null);
     setSegStart(t);
     setNow(t);
     setScreen('play');
@@ -106,32 +111,52 @@ function Run({ unit }) {
   const startFresh = () => begin(blankRun(choiceCount));
   const resume = () => begin({ ...blankRun(choiceCount), ...saved, pos: Math.min(saved.pos, n - 1) });
 
-  const advance = (r) => {
-    const t = clock();
+  /** Close out the current step at time `t`: save the run one step on, or record it if that was the last. */
+  const settle = (r, t) => {
     const elapsedMs = r.elapsedMs + (t - segStart);
     const nextPos = r.pos + 1;
     if (nextPos >= n) {
       const res = { at: t, total: n, mistakes: r.mistakes, ms: elapsedMs, missed: r.missed, choices: r.choiceCount };
       recordRun(unit.id, res);
-      setResult(res);
+      return { res };
+    }
+    const nr = { ...r, pos: nextPos, elapsedMs };
+    saveActiveRun(unit.id, nr);
+    return { nr };
+  };
+
+  /** Show what `settle` decided: the next step (its clock starting now) or the results. */
+  const show = (out) => {
+    const t = clock();
+    setWrong(null);
+    setRight(null);
+    if (out.res) {
+      setResult(out.res);
       setScreen('done');
       return;
     }
-    const nr = { ...r, pos: nextPos, elapsedMs };
-    setRun(nr);
-    setQ(runChoices(unit, nextPos, nr.choiceCount));
-    setWrong(null);
+    setRun(out.nr);
+    setQ(runChoices(unit, out.nr.pos, out.nr.choiceCount));
     setSegStart(t);
     setNow(t);
-    saveActiveRun(unit.id, nr);
   };
 
+  const advance = (r) => show(settle(r, clock()));
+
   const pick = (id) => {
-    if (wrong || !q) return;
+    if (wrong || right || !q) return;
     const ok = id === q.answer.id;
     const prev = unit.steps[run.pos - 1];
     if (prev) grade(transitionId(prev, q.answer), ok);
-    if (ok) { advance(run); return; }
+    if (ok) {
+      cheer();
+      // The clock stops at the pick: the beat is the app's pause, not the learner's time.
+      const out = settle(run, clock());
+      if (feedbackPrefs().auto) setRight({ id, out });
+      else show(out);
+      return;
+    }
+    miss();
     const nr = {
       ...run,
       mistakes: run.mistakes + 1,
@@ -141,6 +166,9 @@ function Run({ unit }) {
     setWrong(id);
     saveActiveRun(unit.id, nr);
   };
+
+  // Continue: after a right pick (when the beat ends, a tap skips it, or the button) or after a miss.
+  const beat = useAutoAdvance({ token: q, active: !!right, onAdvance: () => (right ? show(right.out) : advance(run)) });
 
   const pause = () => {
     saveActiveRun(unit.id, { ...run, elapsedMs: run.elapsedMs + (clock() - segStart) });
@@ -198,7 +226,7 @@ function Run({ unit }) {
     );
   }
 
-  const elapsed = run.elapsedMs + Math.max(0, now - segStart);
+  const elapsed = right ? (right.out.nr?.elapsedMs ?? right.out.res.ms) : run.elapsedMs + Math.max(0, now - segStart);
   const trail = unit.steps.slice(Math.max(0, run.pos - 3), run.pos);
 
   return (
@@ -233,13 +261,14 @@ function Run({ unit }) {
       </div>
 
       <p className="mb-2 text-base font-semibold text-ink">Step {run.pos + 1}: what do you do next?</p>
-      <ul key={q.answer.id} className="pop-in space-y-2">
+      <ul key={q.answer.id} className="rise-in space-y-2">
         {q.choices.map((c) => {
           let state = 'idle';
           if (wrong) state = c.id === q.answer.id ? 'right' : c.id === wrong ? 'wrong' : 'dim';
+          else if (right) state = c.id === right.id ? 'right' : 'dim';
           return (
             <li key={c.id}>
-              <ChoiceButton state={state} disabled={!!wrong} onClick={() => pick(c.id)}>{c.title}</ChoiceButton>
+              <ChoiceButton state={state} bloom={!!right && c.id === right.id} disabled={!!wrong || !!right} onClick={() => pick(c.id)}>{c.title}</ChoiceButton>
             </li>
           );
         })}
@@ -252,9 +281,11 @@ function Run({ unit }) {
         </div>
       )}
 
-      <ActionBar>
+      <ActionBar beat={beat}>
         {wrong ? (
-          <Button className="flex-1" onClick={() => advance(run)}>Continue <Icon name="right" size={18} /></Button>
+          <Button className="flex-1" onClick={beat.go}>Continue <Icon name="right" size={18} /></Button>
+        ) : right ? (
+          <Button className="flex-1" onClick={beat.go}>{right.out.res ? 'See results' : 'Continue'} <Icon name="right" size={18} /></Button>
         ) : (
           <Button variant="ghost" className="flex-1" onClick={pause}>Pause and leave (saved)</Button>
         )}

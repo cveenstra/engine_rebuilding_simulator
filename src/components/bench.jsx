@@ -161,31 +161,74 @@ export function StepCard({ unit, step, compact = false, mistakesOpen = false }) 
   );
 }
 
-/** A big tappable answer. state: idle | right | wrong | dim */
-export function ChoiceButton({ state = 'idle', onClick, disabled, children, lead }) {
+/** A check mark that draws itself, stroke by stroke. */
+export function DrawnCheck({ size = 20, strokeWidth = 2.4, className = '' }) {
+  return (
+    <svg
+      aria-hidden="true" viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor"
+      strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={`draw-check flex-shrink-0 ${className}`}
+    >
+      <path d="m5 12.5 4.5 4.5L19 7.5" pathLength="1" />
+    </svg>
+  );
+}
+
+/**
+ * The quiet "got it" for answers that are not a choice (a self-graded card, a
+ * perfect order): a soft green bloom with a check that draws itself.
+ */
+export function CorrectFlourish({ children, className = '' }) {
+  return (
+    <div className={`bloom flex min-h-14 items-center gap-3 rounded-xl border-2 border-ok bg-ok-soft px-4 py-3 text-ok-text ${className}`} role="status">
+      <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-surface/70"><DrawnCheck size={20} /></span>
+      <span className="min-w-0 flex-1 text-base font-semibold leading-snug">{children}</span>
+    </div>
+  );
+}
+
+/**
+ * A big tappable answer. state: idle | right | wrong | dim.
+ * `bloom` marks the learner's own right pick: it swells a touch, glows and draws its check.
+ * Once answered (`disabled`) it is aria-disabled rather than disabled, so a tap on it
+ * still reaches the page and can skip the pause before the next question.
+ */
+export function ChoiceButton({ state = 'idle', onClick, disabled, children, lead, bloom = false }) {
   const tone = {
     idle: 'border-line bg-surface text-ink hover:border-brand-line hover:bg-brand-soft/40 active:bg-brand-soft/70',
     right: 'border-ok bg-ok-soft text-ok-text',
     wrong: 'border-bad bg-bad-soft text-bad-text',
-    dim: 'border-line bg-surface text-ink-3 opacity-70',
+    dim: 'border-line bg-surface text-ink-3 opacity-55',
   }[state];
   return (
     <button
-      type="button" onClick={onClick} disabled={disabled}
-      className={`flex min-h-14 w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-base font-medium leading-snug transition-colors ${tone}`}
+      type="button" onClick={disabled ? undefined : onClick} aria-disabled={disabled ? 'true' : undefined}
+      className={`choice flex min-h-14 w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left text-base font-medium leading-snug ${tone} ${bloom ? 'bloom' : ''} ${disabled ? 'cursor-default' : ''}`}
     >
       {lead != null && <span className="tabnum grid h-7 w-7 flex-shrink-0 place-items-center rounded-full bg-sunken text-sm text-ink-2">{lead}</span>}
       <span className="min-w-0 flex-1">{children}</span>
-      {state === 'right' && <Icon name="check" size={20} strokeWidth={2.4} />}
+      {state === 'right' && (bloom ? <DrawnCheck /> : <Icon name="check" size={20} strokeWidth={2.4} />)}
       {state === 'wrong' && <Icon name="x" size={20} strokeWidth={2.4} />}
     </button>
   );
 }
 
-/** Fixed bottom bar for game screens, where the thumb is. */
-export function ActionBar({ children }) {
+/**
+ * Fixed bottom bar for game screens, where the thumb is. Pass the screen's
+ * `beat` (from useAutoAdvance) and, while a right answer is counting down, a
+ * hairline along its top edge fills as the next question approaches.
+ */
+export function ActionBar({ children, beat }) {
+  const hairline = beat?.running ? beat.bar : null;
   return (
-    <div className="safe-bottom fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/90">
+    <div data-action-bar="" className="safe-bottom fixed inset-x-0 bottom-0 z-30 border-t border-line bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/90">
+      {hairline && (
+        <>
+          <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 -top-px h-0.5 overflow-hidden">
+            <div ref={hairline} className="beat-bar h-full w-full bg-ok" />
+          </div>
+          <p className="sr-only" role="status">Next one in a moment. Press Enter to go now.</p>
+        </>
+      )}
       <div className="mx-auto flex max-w-2xl gap-2 px-4 py-3">{children}</div>
     </div>
   );

@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { Button, Empty, Bar, Card } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
-import { ModeHeader, UnitMissing, ActionBar, SpecBlock, CriticalBadge } from '../components/bench.jsx';
+import { ModeHeader, UnitMissing, ActionBar, SpecBlock, CriticalBadge, DrawnCheck } from '../components/bench.jsx';
+import { useAutoAdvance } from '../components/useAutoAdvance.js';
+import { cheer, miss, feedbackPrefs } from '../engine/feedback.js';
 import { useUnit } from '../engine/unit.js';
 import { SPEC_KIND_LABEL, specSteps } from '../data/index.js';
 import { buildQueue, grade, specCardId } from '../engine/srs.js';
@@ -31,8 +33,18 @@ function Deck({ unit }) {
   const [i, setI] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [tally, setTally] = useState({ got: 0, again: 0 });
+  const [got, setGot] = useState(false); // "Got it" pressed: the calm beat before the next card
 
   useEffect(() => { touchMode(unit.id, 'specs'); }, [unit.id]);
+
+  /** On to the next card. The one path for the beat, a tap, and Next. */
+  const moveOn = () => {
+    setGot(false);
+    setFlipped(false);
+    setI(i + 1);
+    if (i + 1 >= deck.length) logSession('specs', unit.id, tally.got, tally.got + tally.again);
+  };
+  const beat = useAutoAdvance({ token: i, active: got, onAdvance: moveOn });
 
   if (!deck.length) {
     return (
@@ -49,10 +61,14 @@ function Deck({ unit }) {
   const step = deck[Math.min(i, deck.length - 1)];
   const phase = unit.phaseById[step.phase];
 
+  // "Got it" gets the calm beat when auto-advance is on; "Again" moves on at once, as before.
   const answer = (ok) => {
+    if (got) return;
+    if (ok) cheer(); else miss();
     grade(specCardId(step), ok);
     const t = { got: tally.got + (ok ? 1 : 0), again: tally.again + (ok ? 0 : 1) };
     setTally(t);
+    if (ok && feedbackPrefs().auto) { setGot(true); return; }
     setFlipped(false);
     setI(i + 1);
     if (i + 1 >= deck.length) logSession('specs', unit.id, t.got, t.got + t.again);
@@ -62,6 +78,7 @@ function Deck({ unit }) {
     setDeck(makeDeck(unit));
     setI(0);
     setFlipped(false);
+    setGot(false);
     setTally({ got: 0, again: 0 });
   };
 
@@ -80,10 +97,17 @@ function Deck({ unit }) {
         </Card>
       ) : (
         <button
-          type="button" onClick={() => setFlipped(!flipped)} aria-label={flipped ? 'Show the question' : 'Show the answer'}
-          className="block w-full rounded-xl border border-line bg-surface p-5 text-left"
+          key={i} type="button" onClick={got ? undefined : () => setFlipped(!flipped)} aria-disabled={got ? 'true' : undefined}
+          aria-label={flipped ? 'Show the question' : 'Show the answer'}
+          className={`rise-in relative block w-full rounded-xl border p-5 text-left ${got ? 'bloom border-ok bg-surface' : 'border-line bg-surface'}`}
         >
-          <p className="flex flex-wrap items-center gap-2 text-sm text-ink-3">
+          {/* "Got it": the card itself blooms and draws a check, so nothing below it moves. */}
+          {got && (
+            <span className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-ok-soft text-ok-text">
+              <DrawnCheck size={20} />
+            </span>
+          )}
+          <p className="flex flex-wrap items-center gap-2 pr-10 text-sm text-ink-3">
             <span className="tabnum font-semibold text-brand-text">Step {step.order}</span>
             {phase && <span>{phase.name}</span>}
             {step.critical && <CriticalBadge />}
@@ -96,16 +120,19 @@ function Deck({ unit }) {
       )}
 
       {!done && flipped && (
-        <div className="pop-in mt-3 space-y-3">
+        <div className="pop-in mt-3 space-y-3" {...beat.pauseProps}>
+          {got && <p className="sr-only" role="status">{i + 1 >= deck.length ? 'Got it. That was the last card.' : 'Got it. Next card coming up.'}</p>}
           {/* Linked only once flipped: the front is the question. */}
           <SpecBlock unit={unit} spec={step.spec} />
           {step.action && <p className="text-sm leading-relaxed text-ink-2"><Glossed text={step.action} skip={glossSkips([step.spec.note, step.action])[1]} /></p>}
         </div>
       )}
 
-      <ActionBar>
+      <ActionBar beat={beat}>
         {done ? (
           <Button className="flex-1" onClick={restart}>Go again</Button>
+        ) : got ? (
+          <Button className="flex-1" onClick={beat.go}>Next card <Icon name="right" size={18} /></Button>
         ) : !flipped ? (
           <Button className="flex-1" onClick={() => setFlipped(true)}>Show answer</Button>
         ) : (

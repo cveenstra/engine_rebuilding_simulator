@@ -5,13 +5,13 @@ import { ChoiceButton, StepCard, CriticalBadge } from './bench.jsx';
  * picked so it can drive the action bar and grading. Choices are titles only,
  * and every title is 2 to 7 words, so length gives nothing away.
  */
-export default function NextQuestion({ unit, q, picked, onPick, showUnit = false }) {
+export default function NextQuestion({ unit, q, picked, onPick, showUnit = false, explainProps }) {
   const answered = picked != null;
   const right = answered && picked === q.answer.id;
   const phase = unit.phaseById[q.step.phase];
 
   return (
-    <div className="space-y-4">
+    <div className="rise-in space-y-4">
       <div className="rounded-xl border border-line bg-sunken p-4">
         <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">
           {showUnit ? `${unit.name}, ` : ''}you just finished step {q.step.order}{phase ? ` (${phase.name})` : ''}
@@ -33,7 +33,7 @@ export default function NextQuestion({ unit, q, picked, onPick, showUnit = false
             }
             return (
               <li key={c.id}>
-                <ChoiceButton state={state} disabled={answered} onClick={() => onPick(c.id)}>{c.title}</ChoiceButton>
+                <ChoiceButton state={state} bloom={right && state === 'right'} disabled={answered} onClick={() => onPick(c.id)}>{c.title}</ChoiceButton>
               </li>
             );
           })}
@@ -41,7 +41,7 @@ export default function NextQuestion({ unit, q, picked, onPick, showUnit = false
       </div>
 
       {answered && (
-        <div className="pop-in space-y-2">
+        <div className="pop-in space-y-2" {...explainProps}>
           <p className={`text-base font-semibold ${right ? 'text-ok-text' : 'text-bad-text'}`}>
             {right ? 'Right.' : `Not quite. Step ${q.answer.order} is next:`}
           </p>
