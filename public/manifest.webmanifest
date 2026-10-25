@@ -1,0 +1,15 @@
+{
+  "name": "Rebuild Bench",
+  "short_name": "Rebuild Bench",
+  "description": "Study game for memorizing engine and transmission rebuild sequences.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f5f7",
+  "theme_color": "#1f5f99",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,2554 @@
+{
+  "id": "tr580",
+  "kind": "transmission",
+  "name": "Subaru TR580",
+  "fullName": "Subaru Lineartronic TR580 chain-belt CVT with torque converter and AWD transfer clutch",
+  "vehicle": "2014–2018 Subaru Forester 2.5i",
+  "pairsWith": "fb25",
+  "summary": "A chain-belt CVT: a lock-up converter drives a forward/reverse planetary, which feeds a pair of hydraulically squeezed pulleys linked by a steel chain. A transfer clutch in the tail sends torque to the rear axle. The hard parts are unloading the spring-loaded secondary pulley to free the chain and putting every pulley and transfer shim back in place. Fluid level is only right when checked hot at a fixed temperature. In practice many shops replace the variator, valve body or whole unit instead of overhauling it.",
+  "facts": [
+    {
+      "label": "Type",
+      "value": "Chain-belt CVT with lock-up torque converter and AWD transfer clutch",
+      "sourceIds": [
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "label": "Generation",
+      "value": "Second-generation TR580 (Forester SJ, also 2012+ Impreza and FB25 Legacy/Outback)",
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "label": "Forward/reverse",
+      "value": "Planetary with forward clutch and reverse brake, ahead of the primary pulley",
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "label": "Oil pump",
+      "value": "Chain-driven from the converter at about 1.33:1 engine speed",
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "label": "Valve body",
+      "value": "On top of the case under a cover; six solenoids; sold by Subaru only as an assembly",
+      "sourceIds": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "label": "CVT fluid",
+      "value": "Subaru CVTF II (green)",
+      "sourceIds": [
+        "s3",
+        "s2"
+      ]
+    },
+    {
+      "label": "Fluid level check",
+      "value": "Engine idling, CVTF at 35–45 °C, level to bottom of filler hole",
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "label": "Overhaul fill",
+      "value": "About 11.9–12.4 L (sources differ)",
+      "sourceIds": [
+        "s13",
+        "s17"
+      ]
+    },
+    {
+      "label": "Front differential",
+      "value": "Separate 75W-90 GL-5 gear oil, about 1.35–1.4 L",
+      "sourceIds": [
+        "s10",
+        "s13",
+        "s17"
+      ]
+    },
+    {
+      "label": "Clutch clearances",
+      "value": "Forward 1.10–1.40 mm, reverse 2.30–2.70 mm, transfer 0.7–1.1 mm",
+      "sourceIds": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "label": "Stall speed (2017 Forester)",
+      "value": "D 2,000–2,750 rpm, R 1,900–2,650 rpm",
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "label": "Subaru chain slip remedy",
+      "value": "Replace the CVT assembly",
+      "sourceIds": [
+        "s7"
+      ]
+    },
+    {
+      "label": "Warranty",
+      "value": "CVT coverage extended to 10 yr/100,000 mi on 2014–15 Forester",
+      "sourceIds": [
+        "s8"
+      ]
+    }
+  ],
+  "notes": [
+    "Be honest with yourself about scope: Subaru does not sell a variator overhaul, its fix for confirmed chain slip is a complete CVT, and the valve body is sold only as an assembly. Many shops install a new or remanufactured CVT, or replace only the valve body in the car, rather than doing the full bench overhaul learned here.",
+    "Chain and pulleys are one decision. Scored sheaves ruin a new chain, so damaged variator parts are replaced as a set, and when they are hard to get the job usually becomes a unit swap.",
+    "The torque converter is normally replaced with a new or remanufactured unit or sent to a converter rebuilder, not reused after a debris failure.",
+    "Special tool: the secondary pulley has to be held open to remove or fit the chain. The factory expander tool is reported discontinued in the US, so rebuilders make a plate-and-all-thread tool. Never put fingers between the sheaves while it is loaded.",
+    "One-time-use parts called out by Subaru include the stator support sealing ring, the differential side (axle) seals, the axle C-clips and the filler plug gasket. A rebuild kit adds the gaskets, seals, sealing rings and frictions.",
+    "Clutch clearances and stack-ups come from an aftermarket teardown of the second-generation unit, not factory text. Most torque values are not publicly sourced, so steps say 'torque to spec' rather than give a number.",
+    "The valve body is on top of the case on this unit, which is why it can be replaced in the car.",
+    "Step count is 114, inside the 90–120 target. Pulley disassembly (sheave seals, the secondary pulley spring) is left out because public sources don't document it for this generation and shops replace pulleys as assemblies.",
+    "After any rebuild, valve body or TCM work, clear the AT learning data and run the learning procedure with a Subaru-capable scan tool, or shift quality and lock-up will be wrong."
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Subaru TSB 16-103-16R: CVT fluid seepage (oil pump chain cover reseal)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2019/MC-10164446-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s2",
+      "title": "Subaru campaign WTJ-70R: 2017 Forester CVT low fluid level (level check, stall test)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2017/MC-10117559-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s3",
+      "title": "Subaru TSB 01-167-08R: Recommended materials (CVT fluids)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2019/MC-10168572-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s4",
+      "title": "Subaru TSB 16-111-18: 2018 Forester TR580 TCM reprogram, clear AT learning, learning control",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10130284-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s5",
+      "title": "Subaru TSB 16-156-25R: CVT control valve body design change, shudder, torque converter relearn",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2026/MC-11033063-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s6",
+      "title": "Subaru TSB 16-90-13R: Lock-up torque converter design change (thrust washer to needle bearing)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2014/MC-10234839-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s7",
+      "title": "Subaru TSB 16-132-20R: Diagnosing alleged chain slip on TR580/TR690",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2021/MC-10199954-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s8",
+      "title": "Subaru TSB 16-107-17R: CVT warranty extension (includes 2014-15 Forester)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2017/MC-10125885-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s9",
+      "title": "GEARS: A Look Inside Subaru CVT Generation 2, Part 1",
+      "url": "https://gearsmagazine.com/magazine/a-look-inside-subaru-cvt-generation-2-part-1/",
+      "kind": "reference"
+    },
+    {
+      "id": "s10",
+      "title": "GEARS: A Look Inside Subaru CVT Generation 2, Part 2",
+      "url": "https://gearsmagazine.com/magazine/a-look-inside-subaru-cvt-generation-2-part-2/",
+      "kind": "reference"
+    },
+    {
+      "id": "s11",
+      "title": "GEARS: Subaru CVT Gen 2 Valve Body",
+      "url": "https://gearsmagazine.com/magazine/subaru-cvt-gen-2-valve-body/",
+      "kind": "reference"
+    },
+    {
+      "id": "s12",
+      "title": "GEARS: Worth Another Look - Subaru Lineartronic failures, faults and fixes",
+      "url": "https://gearsmagazine.com/magazine/worth-another-look-subaru-lineartronic-failures-faults-and-fixes/",
+      "kind": "reference"
+    },
+    {
+      "id": "s13",
+      "title": "AKPPro Magazine: Lineartronic TR-580, Subaru's most popular CVT",
+      "url": "https://akppro.ru/en/magazine/article/tr-580.html",
+      "kind": "reference"
+    },
+    {
+      "id": "s14",
+      "title": "I Do Cars: TR580 CVT teardown (2013 Outback, FB25 pairing)",
+      "url": "https://www.youtube.com/watch?v=AmMbJYCHjOE",
+      "kind": "video"
+    },
+    {
+      "id": "s16",
+      "title": "Automatic Choice parts catalogue: TR580 Lineartronic Gen 2 applications",
+      "url": "https://customer-portal.auto03.steets.nl/fr-be/subaru-tr-580-lineartronic-gen-2-continuous-variable-transmission-parts-catalogue",
+      "kind": "vendor"
+    },
+    {
+      "id": "s17",
+      "title": "oils-finder: Forester SJ 2012-2018 fluid types and capacities",
+      "url": "https://oils-finder.com/index.php?model_code=forester12",
+      "kind": "reference"
+    },
+    {
+      "id": "s18",
+      "title": "GEARS: Sonnax Subaru TR580 oversized lubrication valve kit",
+      "url": "https://gearsmagazine.com/2024/08/new-sonnax-subaru-tr580-oversized-lubrication-valve-kit/",
+      "kind": "vendor"
+    },
+    {
+      "id": "s19",
+      "title": "GEARS: Sonnax Subaru TR580 TCC boost valve kit",
+      "url": "https://gearsmagazine.com/2023/08/new-sonnax-subaru-tr580-boost-valve-kit/",
+      "kind": "vendor"
+    },
+    {
+      "id": "s20",
+      "title": "BITOG forum: 2015 Forester TR580 bearing replacement thread",
+      "url": "https://bobistheoilguy.com/forums/threads/2015-subaru-forester-tr580-cvt-transmission-bearing-replacement.389279/",
+      "kind": "forum"
+    },
+    {
+      "id": "s21",
+      "title": "Subaru TSB 16-131-20R: Updated CVT solenoid DTC diagnostics (2013-20 Forester)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2021/MC-10198765-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s22",
+      "title": "Cherish Your Car: 2014-2018 Forester transmission problems (owner-report roundup)",
+      "url": "https://www.cherishyourcar.com/?p=11700",
+      "kind": "forum"
+    }
+  ],
+  "components": [
+    {
+      "id": "torque-converter",
+      "name": "Torque converter",
+      "group": "converter"
+    },
+    {
+      "id": "front-seals",
+      "name": "Front seals (converter, input shaft, stator shaft)",
+      "group": "converter"
+    },
+    {
+      "id": "converter-case",
+      "name": "Converter case",
+      "group": "case"
+    },
+    {
+      "id": "transmission-case",
+      "name": "Transmission case",
+      "group": "case"
+    },
+    {
+      "id": "extension-case",
+      "name": "Extension (tail) case",
+      "group": "transfer"
+    },
+    {
+      "id": "chain-cover",
+      "name": "Oil pump chain cover",
+      "group": "pump"
+    },
+    {
+      "id": "stator-seal-ring",
+      "name": "Stator support sealing ring",
+      "group": "pump"
+    },
+    {
+      "id": "pump-chain",
+      "name": "Oil pump drive chain and sprockets",
+      "group": "pump"
+    },
+    {
+      "id": "oil-pump",
+      "name": "Oil pump",
+      "group": "pump"
+    },
+    {
+      "id": "valve-cover",
+      "name": "Valve body cover",
+      "group": "hydraulics"
+    },
+    {
+      "id": "control-valve-body",
+      "name": "Control valve body",
+      "group": "hydraulics"
+    },
+    {
+      "id": "internal-manual-valve",
+      "name": "Internal manual valve body and separator plate",
+      "group": "hydraulics"
+    },
+    {
+      "id": "oil-pan",
+      "name": "Oil pan",
+      "group": "hydraulics"
+    },
+    {
+      "id": "strainer",
+      "name": "Oil strainer",
+      "group": "hydraulics"
+    },
+    {
+      "id": "pan-baffle",
+      "name": "Pan baffle",
+      "group": "hydraulics"
+    },
+    {
+      "id": "solenoids",
+      "name": "Solenoids",
+      "group": "electrical"
+    },
+    {
+      "id": "harness",
+      "name": "Transmission harness and connectors",
+      "group": "electrical"
+    },
+    {
+      "id": "sensors",
+      "name": "Speed and pressure sensors",
+      "group": "electrical"
+    },
+    {
+      "id": "inhibitor-switch",
+      "name": "Inhibitor (range) switch",
+      "group": "electrical"
+    },
+    {
+      "id": "tcm",
+      "name": "Transmission control module (TCM)",
+      "group": "electrical"
+    },
+    {
+      "id": "manual-linkage",
+      "name": "Manual shaft and shift rail linkage",
+      "group": "shift"
+    },
+    {
+      "id": "park-rod",
+      "name": "Parking rod",
+      "group": "shift"
+    },
+    {
+      "id": "parking-pawl",
+      "name": "Parking pawl, spring and shaft",
+      "group": "shift"
+    },
+    {
+      "id": "transfer-shims",
+      "name": "Transfer gear shims",
+      "group": "transfer"
+    },
+    {
+      "id": "transfer-clutch",
+      "name": "Transfer (AWD) clutch",
+      "group": "transfer"
+    },
+    {
+      "id": "transfer-gears",
+      "name": "Transfer shaft and gears",
+      "group": "transfer"
+    },
+    {
+      "id": "pulley-baffle",
+      "name": "Secondary pulley baffle",
+      "group": "variator"
+    },
+    {
+      "id": "chain-guides",
+      "name": "Chain guides",
+      "group": "variator"
+    },
+    {
+      "id": "variator-chain",
+      "name": "Variator chain",
+      "group": "variator"
+    },
+    {
+      "id": "primary-pulley",
+      "name": "Primary pulley",
+      "group": "variator"
+    },
+    {
+      "id": "secondary-pulley",
+      "name": "Secondary pulley",
+      "group": "variator"
+    },
+    {
+      "id": "pulley-shims",
+      "name": "Pulley bearing shims",
+      "group": "variator"
+    },
+    {
+      "id": "pulley-bearings",
+      "name": "Pulley shaft bearings",
+      "group": "variator"
+    },
+    {
+      "id": "reverse-brake",
+      "name": "Reverse brake",
+      "group": "forward-reverse"
+    },
+    {
+      "id": "planetary",
+      "name": "Planetary carrier and ring gear",
+      "group": "forward-reverse"
+    },
+    {
+      "id": "sun-gear",
+      "name": "Sun gear",
+      "group": "forward-reverse"
+    },
+    {
+      "id": "forward-clutch",
+      "name": "Forward clutch",
+      "group": "forward-reverse"
+    },
+    {
+      "id": "input-shaft",
+      "name": "Input shaft and forward drum",
+      "group": "forward-reverse"
+    },
+    {
+      "id": "pinion-support",
+      "name": "Pinion support and drive pinion",
+      "group": "final-drive"
+    },
+    {
+      "id": "front-differential",
+      "name": "Front differential",
+      "group": "final-drive"
+    },
+    {
+      "id": "axle-seals",
+      "name": "Differential side (axle) seals",
+      "group": "final-drive"
+    },
+    {
+      "id": "cvtf",
+      "name": "CVT fluid",
+      "group": "fluid"
+    },
+    {
+      "id": "diff-oil",
+      "name": "Front differential gear oil",
+      "group": "fluid"
+    },
+    {
+      "id": "cooler-lines",
+      "name": "CVTF cooler lines",
+      "group": "fluid"
+    }
+  ],
+  "phases": [
+    {
+      "id": "prep",
+      "name": "Prep and removal",
+      "kind": "prep",
+      "summary": "Record the faults, drain both fluids, pull the CVT and get it on the bench clean."
+    },
+    {
+      "id": "teardown-ext",
+      "name": "External teardown",
+      "kind": "teardown",
+      "summary": "Strip the converter, top valve body, AWD extension case, pan, linkage and front pump drive."
+    },
+    {
+      "id": "teardown-int",
+      "name": "Internal teardown",
+      "kind": "teardown",
+      "summary": "Split the case, unload the variator, then remove the forward/reverse unit and final drive."
+    },
+    {
+      "id": "inspect",
+      "name": "Clean and inspect",
+      "kind": "inspect",
+      "summary": "Judge the chain, pulleys, clutches, pump, valve body and gears, and decide what gets replaced."
+    },
+    {
+      "id": "subassembly",
+      "name": "Subassembly rebuild",
+      "kind": "assembly",
+      "summary": "Rebuild the pump and the three clutch packs and set their clearances off the case."
+    },
+    {
+      "id": "assembly",
+      "name": "Final assembly",
+      "kind": "assembly",
+      "summary": "Rebuild the unit in reverse order, with the variator, shims and seals placed exactly."
+    },
+    {
+      "id": "final",
+      "name": "Fill, learn and test",
+      "kind": "final",
+      "summary": "Install, fill to a hot level check, clear and redo TCM learning, then prove it on the road."
+    }
+  ],
+  "steps": [
+    {
+      "id": "tr580-001",
+      "order": 1,
+      "phase": "prep",
+      "title": "Scan and record CVT codes",
+      "action": "Before anything is unplugged, read and save every TCM trouble code and a short data log of engine, primary pulley and secondary pulley speeds.",
+      "why": "The codes and speed traces tell you whether you are chasing chain slip, a solenoid circuit or a converter problem, which decides how deep the rebuild goes.",
+      "tools": [
+        "Subaru Select Monitor (SSM) or equivalent scan tool"
+      ],
+      "components": [
+        "tcm",
+        "solenoids"
+      ],
+      "sourceIds": [
+        "s7",
+        "s21"
+      ]
+    },
+    {
+      "id": "tr580-002",
+      "order": 2,
+      "phase": "prep",
+      "title": "Drain and inspect the fluid",
+      "action": "Pull the pan drain plug, catch the CVTF in a clean pan and look at it: metal glitter, a varnish smell or a milky look each point to a different failure.",
+      "why": "The drained fluid is your first look inside; debris here is what usually condemns the chain and pulleys.",
+      "tools": [
+        "Clean drain pan",
+        "Magnet"
+      ],
+      "components": [
+        "cvtf",
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "id": "tr580-003",
+      "order": 3,
+      "phase": "prep",
+      "title": "Drain the front differential",
+      "action": "Drain the front differential gear oil separately from the CVTF and check the plug magnet for gear debris.",
+      "why": "On this unit the final drive has its own gear oil, so it is drained and judged on its own.",
+      "tools": [
+        "Drain pan"
+      ],
+      "components": [
+        "diff-oil",
+        "front-differential"
+      ],
+      "sourceIds": [
+        "s10",
+        "s17"
+      ]
+    },
+    {
+      "id": "tr580-004",
+      "order": 4,
+      "phase": "prep",
+      "title": "Unbolt converter from drive plate",
+      "action": "Through the starter or access hole, rotate the engine and remove the converter-to-drive-plate nuts, then hold the converter back against the transmission.",
+      "why": "The converter must leave with the transmission; if it stays on the drive plate it drops off the pump drive and gets damaged.",
+      "tools": [
+        "Socket set",
+        "Engine turning tool"
+      ],
+      "critical": true,
+      "mistake": "Letting the converter slide forward off its hub as the unit is separated, which damages the seal and pump drive.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-005",
+      "order": 5,
+      "phase": "prep",
+      "title": "Lower the CVT out",
+      "action": "With the engine supported, disconnect the axles, propeller shaft, cooler lines, harness and crossmember, separate the CVT from the engine and lower it out on a jack.",
+      "why": "This is a summary of the in-car removal; the bench work starts once the unit is on the floor.",
+      "tools": [
+        "Transmission jack",
+        "Engine support bar"
+      ],
+      "components": [
+        "cooler-lines",
+        "harness",
+        "converter-case"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6"
+      ]
+    },
+    {
+      "id": "tr580-006",
+      "order": 6,
+      "phase": "prep",
+      "title": "Mount and clean the unit",
+      "action": "Stand the CVT securely on a bench fixture, then degrease the outside, especially the chain cover seam and bell housing, before any cover comes off.",
+      "tools": [
+        "Transmission bench fixture"
+      ],
+      "components": [
+        "converter-case",
+        "transmission-case",
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1",
+        "s14"
+      ],
+      "why": "Road dirt around the seams falls straight into the hydraulics once covers are off."
+    },
+    {
+      "id": "tr580-007",
+      "order": 7,
+      "phase": "teardown-ext",
+      "title": "Slide out the torque converter",
+      "action": "Pull the converter straight forward off the input shaft with steady even pressure, letting the residual fluid drain into a pan.",
+      "tools": [
+        "Converter handles",
+        "Drain pan"
+      ],
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-008",
+      "order": 8,
+      "phase": "teardown-ext",
+      "title": "Check the chain cover seam",
+      "action": "Look around the oil pump chain cover and input shaft seal for wet, dirty CVTF trails and note them.",
+      "why": "Subaru names this cover's sealant and the input shaft seal as the usual CVTF seepage points on this unit.",
+      "components": [
+        "chain-cover",
+        "front-seals"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-009",
+      "order": 9,
+      "phase": "teardown-ext",
+      "title": "Remove the top valve cover",
+      "action": "Take out the bolts around the cover on top of the case, lift it off and unplug the main connector, noting how each solenoid lead and ground is routed.",
+      "why": "On the TR580 the valve body sits on top of the case, and misrouted solenoid grounds set codes after the rebuild.",
+      "spec": {
+        "kind": "other",
+        "value": "12",
+        "unit": "bolts",
+        "note": "10 mm heads",
+        "sourceIds": [
+          "s11"
+        ]
+      },
+      "components": [
+        "valve-cover",
+        "harness",
+        "solenoids"
+      ],
+      "sourceIds": [
+        "s11",
+        "s12",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-010",
+      "order": 10,
+      "phase": "teardown-ext",
+      "title": "Lift out the control valve body",
+      "action": "Remove the valve body to case bolts and lift it off level, then find the two small O-rings that can stay behind in the case.",
+      "why": "Lifting it level keeps loose valve parts in place, and the O-rings are easy to lose.",
+      "spec": {
+        "kind": "other",
+        "value": "9",
+        "unit": "bolts",
+        "note": "10 mm heads",
+        "sourceIds": [
+          "s11"
+        ]
+      },
+      "mistake": "Leaving the two case O-rings in their bores and later stacking new ones on top of them.",
+      "components": [
+        "control-valve-body"
+      ],
+      "sourceIds": [
+        "s11"
+      ]
+    },
+    {
+      "id": "tr580-011",
+      "order": 11,
+      "phase": "teardown-ext",
+      "title": "Remove the extension case",
+      "action": "Remove the extension case bolts, work the housing off the rear of the case and save the small O-ring that seals the transfer clutch feed.",
+      "spec": {
+        "kind": "other",
+        "value": "13",
+        "unit": "bolts",
+        "note": "12 mm heads",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "extension-case",
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9",
+        "s14"
+      ],
+      "why": "Without that O-ring the AWD clutch loses apply pressure."
+    },
+    {
+      "id": "tr580-012",
+      "order": 12,
+      "phase": "teardown-ext",
+      "title": "Bag and label transfer shims",
+      "action": "Collect the transfer gear shims as they come off and keep each set with its location; the two sets have different outside diameters.",
+      "why": "These shims set transfer gear bearing preload and end play; reusing them in the right place saves a full measurement.",
+      "critical": true,
+      "mistake": "Mixing the two shim sets or losing one stuck to the housing.",
+      "components": [
+        "transfer-shims"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-013",
+      "order": 13,
+      "phase": "teardown-ext",
+      "title": "Remove the parking pawl",
+      "action": "Take out the parking pawl with its spring and pivot shaft.",
+      "components": [
+        "parking-pawl"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-014",
+      "order": 14,
+      "phase": "teardown-ext",
+      "title": "Pull transfer clutch drum and hub",
+      "action": "Pull the transfer clutch drum straight out of the rear of the case, then lift out the hub behind it.",
+      "components": [
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-015",
+      "order": 15,
+      "phase": "teardown-ext",
+      "title": "Remove transfer shaft and gears",
+      "action": "Take out the transfer shaft and its gears as an assembly.",
+      "components": [
+        "transfer-gears"
+      ],
+      "sourceIds": [
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-016",
+      "order": 16,
+      "phase": "teardown-ext",
+      "title": "Remove the oil pan",
+      "action": "Unbolt and lift off the oil pan, then look at the magnet and the bottom of the pan for chain or pulley debris.",
+      "components": [
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s9",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-017",
+      "order": 17,
+      "phase": "teardown-ext",
+      "title": "Remove strainer and pan baffle",
+      "action": "Remove the strainer bolts and pull the strainer, checking its O-ring, then unbolt the baffle under it from the case.",
+      "spec": {
+        "kind": "other",
+        "value": "3",
+        "unit": "bolts",
+        "note": "each for the strainer and the baffle (baffle bolts 12 mm)",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "strainer",
+        "pan-baffle"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-018",
+      "order": 18,
+      "phase": "teardown-ext",
+      "title": "Remove linkage and range switch",
+      "action": "Remove the manual valve linkage bolts, drive out the roll pin on the shift rail shaft and unbolt the inhibitor (range) switch.",
+      "components": [
+        "manual-linkage",
+        "inhibitor-switch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-019",
+      "order": 19,
+      "phase": "teardown-ext",
+      "title": "Remove the parking rod",
+      "action": "Pull the parking rod out before the case is touched.",
+      "why": "Left in place, the rod bends when the main case is lifted off.",
+      "mistake": "Splitting the case with the parking rod still installed.",
+      "components": [
+        "park-rod"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-020",
+      "order": 20,
+      "phase": "teardown-ext",
+      "title": "Remove the external sensors",
+      "action": "Remove the speed sensors and the secondary pressure sensor and cap the bores.",
+      "components": [
+        "sensors"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-021",
+      "order": 21,
+      "phase": "teardown-ext",
+      "title": "Pry off the chain cover",
+      "action": "Remove the pump chain cover bolts and pry the cover free only at its pry tabs, never on the machined face.",
+      "why": "A gouged sealing face is a guaranteed leak and may mean a new cover.",
+      "tools": [
+        "Pry tool"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "10",
+        "unit": "bolts",
+        "note": "12 mm hex, all the same length on the TR580",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Prying on the machined sealing surface instead of the tabs.",
+      "components": [
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-022",
+      "order": 22,
+      "phase": "teardown-ext",
+      "title": "Remove the pump drive chain",
+      "action": "Lift off the oil pump drive chain and its sprockets together.",
+      "why": "The pump is chain-driven from the converter at about 1.33 times engine speed.",
+      "components": [
+        "pump-chain"
+      ],
+      "sourceIds": [
+        "s9",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-023",
+      "order": 23,
+      "phase": "teardown-ext",
+      "title": "Unbolt the oil pump",
+      "action": "Remove the pump bolts and lift the pump off, noting the large suction-side O-ring and the small pressure-side O-ring.",
+      "tools": [
+        "8 mm hex bit"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "bolts",
+        "note": "8 mm Allen",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s9",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-024",
+      "order": 24,
+      "phase": "teardown-int",
+      "title": "Remove the case-half bolts",
+      "action": "Remove every bolt joining the transmission case to the converter case, checking for any hidden in recesses.",
+      "components": [
+        "transmission-case"
+      ],
+      "sourceIds": [
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-025",
+      "order": 25,
+      "phase": "teardown-int",
+      "title": "Lift off the transmission case",
+      "action": "Break the sealant and lift the transmission case straight off the converter case, leaving the variator standing.",
+      "components": [
+        "transmission-case",
+        "converter-case"
+      ],
+      "sourceIds": [
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-026",
+      "order": 26,
+      "phase": "teardown-int",
+      "title": "Remove the secondary pulley baffle",
+      "action": "Unbolt and remove the baffle wrapped around the secondary pulley.",
+      "spec": {
+        "kind": "other",
+        "value": "3",
+        "unit": "bolts",
+        "note": "12 mm heads",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "pulley-baffle"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-027",
+      "order": 27,
+      "phase": "teardown-int",
+      "title": "Open the secondary pulley",
+      "action": "Fit the pulley expander tool and tighten it evenly on both sides until the secondary pulley opens and the chain goes slack.",
+      "why": "The chain cannot come off a loaded pulley, and the secondary pulley is held closed by a strong spring.",
+      "tools": [
+        "Secondary pulley expander tool (factory tool is discontinued; shops fabricate a plate and all-thread tool)"
+      ],
+      "critical": true,
+      "mistake": "Tightening one side of the tool ahead of the other so the pulley cocks or the tool slips under spring load.",
+      "components": [
+        "secondary-pulley",
+        "variator-chain"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-028",
+      "order": 28,
+      "phase": "teardown-int",
+      "title": "Release the chain guides",
+      "action": "Pull the chain outward, release the locking tabs and split the left chain guide, then remove its anchor bolt.",
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "locking tabs",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-029",
+      "order": 29,
+      "phase": "teardown-int",
+      "title": "Unbolt the primary pulley",
+      "action": "Remove the bolts that retain the primary pulley on the right side.",
+      "components": [
+        "primary-pulley"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-030",
+      "order": 30,
+      "phase": "teardown-int",
+      "title": "Tip out the primary pulley",
+      "action": "Lift the primary pulley and tip it toward the secondary, take out the right chain guide, then remove the primary pulley and chain.",
+      "why": "Tipping the pulley in is the only way to gain room for the second guide.",
+      "critical": true,
+      "mistake": "Letting the chain drop or the sheave faces knock together, which nicks the hardened surfaces.",
+      "components": [
+        "primary-pulley",
+        "variator-chain",
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-031",
+      "order": 31,
+      "phase": "teardown-int",
+      "title": "Mark and store the chain",
+      "action": "Mark the chain's running direction and lay it flat and clean where nothing can kink or nick it.",
+      "why": "If the chain is judged reusable it must go back the same way it wore in.",
+      "components": [
+        "variator-chain"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-032",
+      "order": 32,
+      "phase": "teardown-int",
+      "title": "Remove the secondary pulley",
+      "action": "Back off the expander tool, remove the secondary pulley retaining bolts and lift the pulley out, keeping the shims from its rear.",
+      "spec": {
+        "kind": "other",
+        "value": "3",
+        "unit": "bolts",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "critical": true,
+      "mistake": "Losing the rear pulley shims, which set the pulley's axial position.",
+      "components": [
+        "secondary-pulley",
+        "pulley-shims"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-033",
+      "order": 33,
+      "phase": "teardown-int",
+      "title": "Collect the primary pulley shim",
+      "action": "Recover the shim from the primary pulley front bearing and tag it with its location.",
+      "why": "Pulley shims set where each pulley sits; a wrong stack misaligns the chain.",
+      "components": [
+        "pulley-shims",
+        "primary-pulley"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-034",
+      "order": 34,
+      "phase": "teardown-int",
+      "title": "Remove the internal manual valve",
+      "action": "Unbolt the manual valve body and separator plate from the reverse brake housing.",
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "bolts",
+        "note": "10 mm heads",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "internal-manual-valve"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-035",
+      "order": 35,
+      "phase": "teardown-int",
+      "title": "Remove the reverse brake",
+      "action": "Remove the housing support bolts, then lift out the reverse brake plates in order, noting which way the dished cushion plate faces.",
+      "tools": [
+        "E20 socket"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "6",
+        "unit": "bolts",
+        "note": "E20 Torx socket",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "reverse-brake"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-036",
+      "order": 36,
+      "phase": "teardown-int",
+      "title": "Remove the planetary gear set",
+      "action": "Lift out the ring gear, planet carrier and sun gear, noting which way the sun gear faces.",
+      "components": [
+        "planetary",
+        "sun-gear"
+      ],
+      "sourceIds": [
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-037",
+      "order": 37,
+      "phase": "teardown-int",
+      "title": "Remove the forward drum",
+      "action": "Remove the forward clutch drum together with the input shaft, then take out the snap ring and the forward clutch plates in order.",
+      "why": "On the TR580 the forward clutch rides on the input shaft ahead of the primary pulley.",
+      "components": [
+        "input-shaft",
+        "forward-clutch"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-038",
+      "order": 38,
+      "phase": "teardown-int",
+      "title": "Lift out the pinion support",
+      "action": "Remove the pinion support bolts and pry the support up with the drive pinion, saving the two seals.",
+      "spec": {
+        "kind": "other",
+        "value": "14",
+        "unit": "bolts",
+        "note": "E20 Torx socket",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "pinion-support"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-039",
+      "order": 39,
+      "phase": "teardown-int",
+      "title": "Lift out the front differential",
+      "action": "Lift the front differential out of the converter case.",
+      "components": [
+        "front-differential"
+      ],
+      "sourceIds": [
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-040",
+      "order": 40,
+      "phase": "teardown-int",
+      "title": "Drive out the old seals",
+      "action": "Remove the converter seal, the stator and input shaft seals and both differential side seals.",
+      "why": "Subaru treats the axle side seals as one-time-use, and the input shaft seal was redesigned.",
+      "components": [
+        "front-seals",
+        "axle-seals"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-041",
+      "order": 41,
+      "phase": "inspect",
+      "title": "Clean the cases and passages",
+      "action": "Wash every case and flush the passages, picking sealant crumbs out of the stator support cavity with tape, then check both chain cover sealing faces for nicks.",
+      "why": "Subaru says not to use abrasive pads or compressed air there, and a damaged face means a new cover.",
+      "mistake": "Using a gasket disc on the aluminum sealing faces.",
+      "components": [
+        "converter-case",
+        "transmission-case",
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-042",
+      "order": 42,
+      "phase": "inspect",
+      "title": "Inspect the variator chain",
+      "action": "Check every link and pin for cracks, flat spots, heat colour and stretch, look for chipped plates, and check both plastic guides for grooves and broken tabs.",
+      "why": "Chain wear and broken guides are the usual sources of driving noise on this unit.",
+      "critical": true,
+      "components": [
+        "variator-chain",
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-043",
+      "order": 43,
+      "phase": "inspect",
+      "title": "Inspect the pulley sheave faces",
+      "action": "Look at all four sheave faces for scoring, steps, galling or bluing where the chain runs.",
+      "why": "Once the chain slips, chain and pulleys are damaged together.",
+      "critical": true,
+      "mistake": "Fitting a new chain to scored pulleys, which destroys the new chain quickly.",
+      "components": [
+        "primary-pulley",
+        "secondary-pulley"
+      ],
+      "sourceIds": [
+        "s12",
+        "s7"
+      ]
+    },
+    {
+      "id": "tr580-044",
+      "order": 44,
+      "phase": "inspect",
+      "title": "Decide reuse or replace variator",
+      "action": "Treat chain and pulleys as one decision: if either is damaged, replace the variator parts as a set or switch to a complete replacement CVT.",
+      "why": "Subaru's own fix for confirmed chain slip is a complete CVT, and loose pulleys and chains are hard to source.",
+      "critical": true,
+      "components": [
+        "variator-chain",
+        "primary-pulley",
+        "secondary-pulley"
+      ],
+      "sourceIds": [
+        "s7",
+        "s12",
+        "s22"
+      ]
+    },
+    {
+      "id": "tr580-045",
+      "order": 45,
+      "phase": "inspect",
+      "title": "Check the pulley bearings",
+      "action": "Spin each pulley bearing for roughness and check the pulley sealing rings and grooves.",
+      "components": [
+        "pulley-bearings",
+        "primary-pulley",
+        "secondary-pulley"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "tr580-046",
+      "order": 46,
+      "phase": "inspect",
+      "title": "Inspect clutch plates and pistons",
+      "action": "Check all three packs: frictions for burning and lost material, steels for heat spots and warping, and pistons, seals, return springs and drum bores for scoring.",
+      "components": [
+        "forward-clutch",
+        "reverse-brake",
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9",
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-047",
+      "order": 47,
+      "phase": "inspect",
+      "title": "Inspect the planetary gears",
+      "action": "Check the planet pinions for play and pitting, and the ring and sun gear teeth and oil slots.",
+      "components": [
+        "planetary",
+        "sun-gear"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-048",
+      "order": 48,
+      "phase": "inspect",
+      "title": "Split and inspect the pump",
+      "action": "Unbolt and separate the pump halves, check the gears, body, shaft and shaft bearings for wear and pitting, and check the pump drive chain and sprockets.",
+      "components": [
+        "oil-pump",
+        "pump-chain"
+      ],
+      "sourceIds": [
+        "s9"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "bolts",
+        "note": "10 mm heads hold the pump halves",
+        "sourceIds": [
+          "s9"
+        ]
+      }
+    },
+    {
+      "id": "tr580-049",
+      "order": 49,
+      "phase": "inspect",
+      "title": "Decide on the torque converter",
+      "action": "Plan on a new, rebuilt or updated converter rather than reusing one from a debris failure, since it cannot be flushed clean.",
+      "why": "Subaru moved the converter from a thrust washer to a needle bearing after washer wear blocked lock-up release.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s6",
+        "s12"
+      ]
+    },
+    {
+      "id": "tr580-050",
+      "order": 50,
+      "phase": "inspect",
+      "title": "Measure the solenoid resistances",
+      "action": "Measure each solenoid at room temperature, then recheck the lock-up solenoid hot, because it often opens only when warm.",
+      "tools": [
+        "Ohmmeter"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "10.0–13.5",
+        "unit": "Ω",
+        "note": "Lock-up duty, primary-up and primary-down. Secondary line pressure 5–7 Ω, forward/reverse 4–6 Ω, AWD 2.0–4.5 Ω (aftermarket figures)",
+        "sourceIds": [
+          "s11"
+        ]
+      },
+      "components": [
+        "solenoids"
+      ],
+      "sourceIds": [
+        "s11",
+        "s12"
+      ]
+    },
+    {
+      "id": "tr580-051",
+      "order": 51,
+      "phase": "inspect",
+      "title": "Decide on the valve body",
+      "action": "Fit Subaru's updated valve body, or rebuild the worn bores with aftermarket valve and sleeve kits if you have the tooling.",
+      "why": "Subaru sells the valve body only as an assembly; the updated design fixes lock-up and shudder faults.",
+      "components": [
+        "control-valve-body"
+      ],
+      "sourceIds": [
+        "s5",
+        "s11",
+        "s18",
+        "s19"
+      ]
+    },
+    {
+      "id": "tr580-052",
+      "order": 52,
+      "phase": "inspect",
+      "title": "Check the sensors and harness",
+      "action": "Check the speed sensor tips for debris, the pressure sensor connector, and the harness for chafing or oil in the connectors.",
+      "components": [
+        "sensors",
+        "harness"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "tr580-053",
+      "order": 53,
+      "phase": "inspect",
+      "title": "Inspect the final drive",
+      "action": "Check the hypoid gear and drive pinion teeth, the side and pinion gears, and the differential and pinion bearings for pitting or roughness.",
+      "components": [
+        "front-differential",
+        "pinion-support"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-054",
+      "order": 54,
+      "phase": "inspect",
+      "title": "Inspect transfer gears and bearings",
+      "action": "Check the transfer gear teeth and bearings and the transfer clutch hub splines.",
+      "components": [
+        "transfer-gears",
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-055",
+      "order": 55,
+      "phase": "subassembly",
+      "title": "Replace the pulley shaft bearings",
+      "action": "Where a bearing is rough, unstake and remove the retaining nut, pull the bearing, press the new one on by its inner race, then restake the nut.",
+      "why": "Pressing on the outer race brinells a new bearing.",
+      "mistake": "Forgetting to restake the nut after torquing it.",
+      "components": [
+        "pulley-bearings"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "tr580-056",
+      "order": 56,
+      "phase": "subassembly",
+      "title": "Fit new shaft sealing rings",
+      "action": "Fit new sealing rings on the pulley shafts and input shaft and lubricate them with CVTF.",
+      "components": [
+        "primary-pulley",
+        "secondary-pulley",
+        "input-shaft"
+      ],
+      "sourceIds": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-057",
+      "order": 57,
+      "phase": "subassembly",
+      "title": "Reassemble the oil pump",
+      "action": "Lubricate the pump gears with CVTF, bolt the pump halves together and fit new O-rings on both ports.",
+      "components": [
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-058",
+      "order": 58,
+      "phase": "subassembly",
+      "title": "Install the new input seal",
+      "action": "Press the redesigned input shaft seal into the chain cover until it is flush with the cover edge, oiling only the main lip.",
+      "why": "A seal driven too deep blocks the oil passage beside it.",
+      "tools": [
+        "Seal installer (Subaru optional tool 927890000)"
+      ],
+      "critical": true,
+      "mistake": "Driving the seal past flush and restricting the oil passage.",
+      "components": [
+        "front-seals",
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-059",
+      "order": 59,
+      "phase": "subassembly",
+      "title": "Rebuild the forward clutch",
+      "action": "Fit new piston seals, then stack the dished cushion plate with its ID mark facing you, soaked frictions alternating with steels, the pressure plate and snap ring.",
+      "spec": {
+        "kind": "other",
+        "value": "3",
+        "unit": "frictions",
+        "note": "3 steels, 1 pressure plate, 1 dished cushion plate",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "forward-clutch"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-060",
+      "order": 60,
+      "phase": "subassembly",
+      "title": "Set forward clutch clearance",
+      "action": "Measure pack clearance with a feeler gauge and change the selective plate until it is in range.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "1.10–1.40",
+        "unit": "mm",
+        "note": "0.045–0.055 in",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "critical": true,
+      "mistake": "Accepting a loose pack, which slips and burns on engagement.",
+      "components": [
+        "forward-clutch"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-061",
+      "order": 61,
+      "phase": "subassembly",
+      "title": "Rebuild the reverse brake",
+      "action": "Fit new piston seals, then stack the dished cushion plate with its ID mark facing you, soaked frictions alternating with steels, then the pressure plate.",
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "frictions",
+        "note": "4 steels, 1 pressure plate, 1 dished cushion plate",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "components": [
+        "reverse-brake"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-062",
+      "order": 62,
+      "phase": "subassembly",
+      "title": "Set reverse brake clearance",
+      "action": "Measure the reverse pack clearance and swap the selective plate until it falls in range.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "2.30–2.70",
+        "unit": "mm",
+        "note": "0.091–0.106 in",
+        "sourceIds": [
+          "s10"
+        ]
+      },
+      "critical": true,
+      "mistake": "Building the pack tight, which drags in forward and overheats the plates.",
+      "components": [
+        "reverse-brake"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-063",
+      "order": 63,
+      "phase": "subassembly",
+      "title": "Stack the transfer clutch pack",
+      "action": "With a resealed piston, lay in the apply plate, then alternate steel and friction four times, then the pressure plate and snap ring.",
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "frictions",
+        "note": "4 steels, apply plate and pressure plate",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-064",
+      "order": 64,
+      "phase": "subassembly",
+      "title": "Set transfer clutch clearance",
+      "action": "Measure transfer clutch clearance and use a different plate thickness until it is in range.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.7–1.1",
+        "unit": "mm",
+        "note": "0.028–0.043 in",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "critical": true,
+      "mistake": "Leaving the AWD clutch tight, which causes binding on tight turns.",
+      "components": [
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9",
+        "s22"
+      ]
+    },
+    {
+      "id": "tr580-065",
+      "order": 65,
+      "phase": "subassembly",
+      "title": "Air-test the transfer clutch",
+      "action": "Assemble drum and hub, hold them together in a press and apply shop air to the feed to watch the piston apply and release.",
+      "why": "The press stops the hub separating and tearing the sealing rings during the test.",
+      "spec": {
+        "kind": "other",
+        "value": "40",
+        "unit": "psi",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-066",
+      "order": 66,
+      "phase": "assembly",
+      "title": "Install the front differential",
+      "action": "Set the front differential into the converter case on its bearings.",
+      "components": [
+        "front-differential",
+        "converter-case"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-067",
+      "order": 67,
+      "phase": "assembly",
+      "title": "Install the pinion support",
+      "action": "Fit the pinion support with new seals, mesh the drive pinion with the differential gear and torque its bolts in a crossing pattern.",
+      "why": "If the hypoid gears, bearings or case were replaced, pinion depth and backlash must be re-set before going further.",
+      "components": [
+        "pinion-support",
+        "front-differential"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-068",
+      "order": 68,
+      "phase": "assembly",
+      "title": "Install the input shaft and drum",
+      "action": "Install the input shaft with the forward drum and clutch pack into the case.",
+      "components": [
+        "input-shaft",
+        "forward-clutch"
+      ],
+      "sourceIds": [
+        "s10",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-069",
+      "order": 69,
+      "phase": "assembly",
+      "title": "Orient and fit the sun gear",
+      "action": "Fit the sun gear with the side carrying the full-circle oil slot toward the drum and the three-slot side toward the planet.",
+      "why": "Backward, it cuts off lube oil to the planetary.",
+      "critical": true,
+      "mistake": "Installing the sun gear backward and starving the planet of oil.",
+      "components": [
+        "sun-gear"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-070",
+      "order": 70,
+      "phase": "assembly",
+      "title": "Fit the planet and ring gear",
+      "action": "Install the planet carrier and ring gear, turning them until the splines drop in.",
+      "components": [
+        "planetary"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-071",
+      "order": 71,
+      "phase": "assembly",
+      "title": "Install the reverse brake housing",
+      "action": "Set the reverse brake pack and housing over the planetary, torque the housing support bolts, then fit the separator plate and internal manual valve body.",
+      "components": [
+        "reverse-brake",
+        "internal-manual-valve"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-072",
+      "order": 72,
+      "phase": "assembly",
+      "title": "Seat the secondary pulley",
+      "action": "Put the original or newly selected rear shims in place, lower the secondary pulley in and fit its retaining bolts.",
+      "critical": true,
+      "mistake": "Leaving out or swapping a rear shim, which shifts the pulley and misaligns the chain.",
+      "components": [
+        "secondary-pulley",
+        "pulley-shims"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-073",
+      "order": 73,
+      "phase": "assembly",
+      "title": "Open the secondary pulley again",
+      "action": "Refit the expander tool and open the secondary pulley evenly until the chain can be fitted.",
+      "tools": [
+        "Secondary pulley expander tool"
+      ],
+      "critical": true,
+      "components": [
+        "secondary-pulley"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-074",
+      "order": 74,
+      "phase": "assembly",
+      "title": "Hang chain and primary pulley",
+      "action": "With its front bearing shim fitted, tip the primary pulley in with the chain on both pulleys in its marked direction, fit the right chain guide, then stand the pulley up and bolt it in.",
+      "why": "The right guide only goes in while the primary pulley is tipped.",
+      "critical": true,
+      "mistake": "Fitting a reused chain reversed, so worn surfaces meet fresh ones.",
+      "components": [
+        "primary-pulley",
+        "variator-chain",
+        "chain-guides",
+        "pulley-shims"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-075",
+      "order": 75,
+      "phase": "assembly",
+      "title": "Lock the chain guides together",
+      "action": "Join the guide halves around the chain until all locking tabs click, then fit the guide anchor bolt.",
+      "components": [
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-076",
+      "order": 76,
+      "phase": "assembly",
+      "title": "Release the pulley onto the chain",
+      "action": "Back the expander tool off slowly and evenly, watching the chain pull into both pulleys, then turn the pulleys by hand.",
+      "why": "A sudden release lets the spring slam the sheaves onto a misplaced chain.",
+      "critical": true,
+      "components": [
+        "secondary-pulley",
+        "variator-chain"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-077",
+      "order": 77,
+      "phase": "assembly",
+      "title": "Refit the pulley baffle",
+      "action": "Bolt the baffle back around the secondary pulley.",
+      "components": [
+        "pulley-baffle"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-078",
+      "order": 78,
+      "phase": "assembly",
+      "title": "Lower on the transmission case",
+      "action": "Clean both case faces dry, lay an even bead of Subaru-specified liquid gasket, then lower the case straight down over the pulley shafts without disturbing the chain.",
+      "components": [
+        "transmission-case",
+        "converter-case"
+      ],
+      "sourceIds": [
+        "s1",
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-079",
+      "order": 79,
+      "phase": "assembly",
+      "title": "Torque the case-half bolts",
+      "action": "Run the case bolts down and torque them to spec in a crossing pattern.",
+      "components": [
+        "transmission-case"
+      ],
+      "sourceIds": [
+        "s10",
+        "s14"
+      ]
+    },
+    {
+      "id": "tr580-080",
+      "order": 80,
+      "phase": "assembly",
+      "title": "Install transfer shaft and gears",
+      "action": "Install the transfer shaft and gears into the rear of the case.",
+      "components": [
+        "transfer-gears"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-081",
+      "order": 81,
+      "phase": "assembly",
+      "title": "Install the transfer clutch",
+      "action": "Fit the transfer clutch hub, then the drum, turning the drum until it drops fully onto its splines.",
+      "components": [
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-082",
+      "order": 82,
+      "phase": "assembly",
+      "title": "Refit the parking pawl",
+      "action": "Install the parking pawl, its spring and the pivot shaft.",
+      "components": [
+        "parking-pawl"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-083",
+      "order": 83,
+      "phase": "assembly",
+      "title": "Place the transfer gear shims",
+      "action": "Put each transfer shim set back in its own location, or measure and select new shims if bearings or cases were replaced.",
+      "critical": true,
+      "mistake": "Swapping the two shim sets, which ruins transfer bearing preload.",
+      "components": [
+        "transfer-shims"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-084",
+      "order": 84,
+      "phase": "assembly",
+      "title": "Install the extension case",
+      "action": "With a new transfer clutch O-ring and fresh sealant, fit the extension case and torque its bolts in a crossing pattern.",
+      "components": [
+        "extension-case",
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-085",
+      "order": 85,
+      "phase": "assembly",
+      "title": "Air-check the clutch circuits",
+      "action": "Apply low-pressure shop air to the forward and reverse feeds with the manual valve in D and then R, and to the transfer clutch port, listening for a clean apply.",
+      "spec": {
+        "kind": "other",
+        "value": "40",
+        "unit": "psi",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "forward-clutch",
+        "reverse-brake",
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-086",
+      "order": 86,
+      "phase": "assembly",
+      "title": "Install the oil pump",
+      "action": "Fit the pump with new suction and pressure O-rings, torque its bolts, then install the pump drive chain and sprockets together.",
+      "components": [
+        "oil-pump",
+        "pump-chain"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-087",
+      "order": 87,
+      "phase": "assembly",
+      "title": "Replace the stator seal ring",
+      "action": "Fit a new plastic sealing ring on the stator support and oil it with CVTF.",
+      "why": "Subaru lists this ring as one-time-use.",
+      "critical": true,
+      "mistake": "Reusing the old ring because it looks undamaged.",
+      "components": [
+        "stator-seal-ring"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-088",
+      "order": 88,
+      "phase": "assembly",
+      "title": "Bead sealant on chain cover",
+      "action": "Run a small bead of liquid gasket along the chamfer edge of the cover, skipping the marked oil hole.",
+      "why": "Sealant in the marked hole blocks oil flow, and too much squeezes into the case.",
+      "spec": {
+        "kind": "other",
+        "value": "ThreeBond 1215",
+        "unit": "liquid gasket",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Laying sealant around the marked oil hole or using too heavy a bead.",
+      "components": [
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-089",
+      "order": 89,
+      "phase": "assembly",
+      "title": "Torque the chain cover",
+      "action": "Fit the cover and tighten its ten bolts in a crossing pattern.",
+      "spec": {
+        "kind": "torque",
+        "value": "21",
+        "unit": "N·m",
+        "note": "15.5 ft·lb, crossing pattern, TR580",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-090",
+      "order": 90,
+      "phase": "assembly",
+      "title": "Refit rod and shift linkage",
+      "action": "Install the parking rod, the manual shaft linkage and a new roll pin in the shift rail.",
+      "components": [
+        "park-rod",
+        "manual-linkage"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-091",
+      "order": 91,
+      "phase": "assembly",
+      "title": "Install the inhibitor switch",
+      "action": "Bolt the inhibitor switch on loosely, set it to the neutral position and tighten it.",
+      "components": [
+        "inhibitor-switch"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-092",
+      "order": 92,
+      "phase": "assembly",
+      "title": "Fit baffle and new strainer",
+      "action": "Bolt the pan baffle back on, then install a new oil strainer with a new O-ring.",
+      "components": [
+        "pan-baffle",
+        "strainer"
+      ],
+      "sourceIds": [
+        "s9",
+        "s13"
+      ]
+    },
+    {
+      "id": "tr580-093",
+      "order": 93,
+      "phase": "assembly",
+      "title": "Install the oil pan",
+      "action": "Clean the magnet, fit the pan with a new gasket or sealant and a new drain plug gasket, and torque the bolts.",
+      "components": [
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-094",
+      "order": 94,
+      "phase": "assembly",
+      "title": "Install the control valve body",
+      "action": "Put new O-rings in the case ports, set the valve body on level and run its bolts down evenly, with every solenoid ground back under its bolt.",
+      "critical": true,
+      "mistake": "Doubling up old and new port O-rings, which holds the valve body off the case.",
+      "components": [
+        "control-valve-body",
+        "solenoids"
+      ],
+      "sourceIds": [
+        "s11"
+      ]
+    },
+    {
+      "id": "tr580-095",
+      "order": 95,
+      "phase": "assembly",
+      "title": "Refit the top valve cover",
+      "action": "Reconnect the main harness connector and bolt the top cover back on.",
+      "components": [
+        "valve-cover",
+        "harness"
+      ],
+      "sourceIds": [
+        "s11"
+      ]
+    },
+    {
+      "id": "tr580-096",
+      "order": 96,
+      "phase": "assembly",
+      "title": "Install the external sensors",
+      "action": "Fit the speed sensors and the secondary pressure sensor with new O-rings.",
+      "components": [
+        "sensors"
+      ],
+      "sourceIds": [
+        "s10"
+      ]
+    },
+    {
+      "id": "tr580-097",
+      "order": 97,
+      "phase": "assembly",
+      "title": "Fit new axle and front seals",
+      "action": "Drive in new differential side seals on both sides, then fit a new converter seal and stator shaft seal and oil the lips with CVTF.",
+      "components": [
+        "axle-seals",
+        "front-seals"
+      ],
+      "sourceIds": [
+        "s6",
+        "s9"
+      ]
+    },
+    {
+      "id": "tr580-098",
+      "order": 98,
+      "phase": "assembly",
+      "title": "Install the torque converter",
+      "action": "Slide the converter on while turning it until it drops through each spline engagement and sits fully back on the pump drive.",
+      "why": "A converter that is not fully home is pulled forward by the drive plate bolts and wrecks the pump drive.",
+      "critical": true,
+      "mistake": "Bolting up with the converter sitting on the last spline instead of fully engaged.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-099",
+      "order": 99,
+      "phase": "final",
+      "title": "Mate the CVT to the engine",
+      "action": "Raise the CVT on the jack, align it to the engine dowels and draw it in with the housing bolts, never with the converter nuts.",
+      "components": [
+        "converter-case",
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-100",
+      "order": 100,
+      "phase": "final",
+      "title": "Bolt converter to drive plate",
+      "action": "Rotate the engine and install the converter-to-drive-plate nuts to spec.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "tr580-101",
+      "order": 101,
+      "phase": "final",
+      "title": "Reconnect driveline and cooler",
+      "action": "Refit the crossmember, axles with new C-clips, propeller shaft, cooler lines and harness, flushing the cooler circuit first.",
+      "why": "Subaru treats the axle C-clips as one-time-use.",
+      "components": [
+        "axle-seals",
+        "cooler-lines",
+        "harness"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "tr580-102",
+      "order": 102,
+      "phase": "final",
+      "title": "Fill the front differential",
+      "action": "Fill the front differential with gear oil, not CVTF, and refit its plug.",
+      "spec": {
+        "kind": "fluid",
+        "value": "75W-90 GL-5",
+        "unit": "gear oil",
+        "note": "About 1.35–1.4 L",
+        "sourceIds": [
+          "s10",
+          "s13",
+          "s17"
+        ]
+      },
+      "critical": true,
+      "mistake": "Filling the differential with CVTF, or the CVT with gear oil.",
+      "components": [
+        "diff-oil",
+        "front-differential"
+      ],
+      "sourceIds": [
+        "s10",
+        "s17"
+      ]
+    },
+    {
+      "id": "tr580-103",
+      "order": 103,
+      "phase": "final",
+      "title": "Add the initial CVTF fill",
+      "action": "Fill the CVT through the filler plug with the specified fluid, temporarily refit the plug and start the engine.",
+      "spec": {
+        "kind": "fluid",
+        "value": "Subaru CVTF II",
+        "unit": "fluid",
+        "note": "Green, for non-turbo TR580. Dry fill is roughly 12 L; the hot level check sets the final amount",
+        "sourceIds": [
+          "s3",
+          "s2",
+          "s17"
+        ]
+      },
+      "critical": true,
+      "mistake": "Using High Torque CVTF (meant for TR690 units such as the Forester XT) or a generic CVT fluid.",
+      "components": [
+        "cvtf"
+      ],
+      "sourceIds": [
+        "s2",
+        "s3",
+        "s17"
+      ]
+    },
+    {
+      "id": "tr580-104",
+      "order": 104,
+      "phase": "final",
+      "title": "Warm to check temperature",
+      "action": "Idle the engine and watch the CVTF temperature on the scan tool until it reaches the check window.",
+      "tools": [
+        "Scan tool showing CVTF temperature"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "35–45",
+        "unit": "°C",
+        "note": "95–113 °F, read on the Subaru Select Monitor",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "critical": true,
+      "mistake": "Checking the level cold, which leaves the CVT overfilled.",
+      "components": [
+        "cvtf"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "tr580-105",
+      "order": 105,
+      "phase": "final",
+      "title": "Circulate the new fluid",
+      "action": "Still idling with the brake held, move the lever slowly from P to R to N to D and back to P to push fluid through every circuit.",
+      "components": [
+        "cvtf"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "tr580-106",
+      "order": 106,
+      "phase": "final",
+      "title": "Set level at the filler hole",
+      "action": "With the engine idling, remove the filler plug, add fluid until it just reaches the bottom of the hole, then refit the plug with a new gasket.",
+      "why": "The level is only correct with the engine running and the fluid in the temperature window.",
+      "critical": true,
+      "components": [
+        "cvtf"
+      ],
+      "sourceIds": [
+        "s2"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "50",
+        "unit": "N·m",
+        "note": "Filler plug, 36.9 ft·lb, new gasket, 8 mm hex",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    {
+      "id": "tr580-107",
+      "order": 107,
+      "phase": "final",
+      "title": "Clear stored trouble codes",
+      "action": "Clear the codes, cycle the key and confirm no solenoid or sensor codes return.",
+      "components": [
+        "tcm",
+        "solenoids"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "tr580-108",
+      "order": 108,
+      "phase": "final",
+      "title": "Clear the AT learning data",
+      "action": "Run the scan tool's clear AT learning function, then switch off for at least 30 seconds and back on; the AT temp light should flash four times.",
+      "why": "Old learned values belong to the worn parts and must go before new learning.",
+      "spec": {
+        "kind": "other",
+        "value": "30",
+        "unit": "s",
+        "note": "minimum ignition-off time",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "tr580-109",
+      "order": 109,
+      "phase": "final",
+      "title": "Prepare for AT learning",
+      "action": "Bring the CVTF into the learning window, select P, set the parking brake hard, lift the wheels clear and switch off electrical loads.",
+      "spec": {
+        "kind": "other",
+        "value": "40–65",
+        "unit": "°C",
+        "note": "104–149 °F; keep the tires at least 30 cm off the ground",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      "critical": true,
+      "mistake": "Running learning with the fluid outside the temperature window, so it ends abnormally.",
+      "components": [
+        "tcm",
+        "cvtf"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "tr580-110",
+      "order": 110,
+      "phase": "final",
+      "title": "Run compulsory AT learning",
+      "action": "Start the compulsory learning mode in the scan tool's work support menu and follow the prompts until it reports a normal finish.",
+      "why": "The TCM must relearn clutch and pressure characteristics of the rebuilt parts.",
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s4",
+        "s6"
+      ]
+    },
+    {
+      "id": "tr580-111",
+      "order": 111,
+      "phase": "final",
+      "title": "Run torque converter relearn",
+      "action": "Perform the torque converter relearn procedure, especially if the valve body or converter was replaced.",
+      "components": [
+        "tcm",
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "tr580-112",
+      "order": 112,
+      "phase": "final",
+      "title": "Stall-test D and R",
+      "action": "With the fluid hot, wheels chocked and brake held, hold full throttle for no more than 5 seconds in D, cool down in N for a minute, then repeat in R.",
+      "spec": {
+        "kind": "other",
+        "value": "2,000–2,750",
+        "unit": "rpm",
+        "note": "D range; R range 1,900–2,650 rpm; CVTF at 60–80 °C (2017 Forester non-turbo)",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "components": [
+        "torque-converter",
+        "forward-clutch",
+        "reverse-brake"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "tr580-113",
+      "order": 113,
+      "phase": "final",
+      "title": "Road test the vehicle",
+      "action": "Drive and check engagements, smooth ratio change, lock-up, no flare or judder from a stop, and no binding on tight turns.",
+      "components": [
+        "variator-chain",
+        "torque-converter",
+        "transfer-clutch"
+      ],
+      "sourceIds": [
+        "s5",
+        "s7"
+      ]
+    },
+    {
+      "id": "tr580-114",
+      "order": 114,
+      "phase": "final",
+      "title": "Recheck level and leaks",
+      "action": "Recheck the CVTF level in the temperature window and inspect the chain cover seam, axle seals and pan for leaks.",
+      "components": [
+        "cvtf",
+        "chain-cover",
+        "axle-seals"
+      ],
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    }
+  ]
+}

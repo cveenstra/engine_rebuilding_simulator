@@ -1,0 +1,4427 @@
+{
+  "id": "fb25",
+  "kind": "engine",
+  "name": "Subaru FB25",
+  "fullName": "Subaru FB25 2.5L DOHC 16-valve horizontally opposed four",
+  "vehicle": "2014–2018 Subaru Forester 2.5i",
+  "pairsWith": "tr580",
+  "summary": "The FB25 is a chain-driven boxer whose cams live in separate bolt-on cam carriers, so the valvetrain comes off as two sealed modules and cam clearance is set with shims under roller rockers. Unlike the older EJ engines it has no piston pin service holes: the diagonally split rods let each piston and rod come out through its bore once the heads and oil pan upper are off, and only then is the block split. Almost every joint is sealed with liquid gasket and nearly every major fastener is angle-torqued, so most rebuild mistakes are sealing, sequence and timing-mark errors.",
+  "facts": [
+    {
+      "label": "Layout",
+      "value": "Horizontally opposed (boxer) four, DOHC, 4 valves per cylinder",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Displacement",
+      "value": "2,498 cc (2.5 L)",
+      "sourceIds": [
+        "s1",
+        "s14"
+      ]
+    },
+    {
+      "label": "Bore x stroke",
+      "value": "94.0 x 90.0 mm",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Compression ratio",
+      "value": "10.0:1",
+      "sourceIds": [
+        "s1",
+        "s14"
+      ]
+    },
+    {
+      "label": "Firing order",
+      "value": "1-3-2-4",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Timing drive",
+      "value": "Two timing chains (RH and LH bank) with hydraulic tensioners",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Valvetrain",
+      "value": "Roller rocker arms with selective valve shims; dual AVCS on intake and exhaust",
+      "sourceIds": [
+        "s1",
+        "s13"
+      ]
+    },
+    {
+      "label": "Fuel injection",
+      "value": "Port (multipoint) injection, injectors in the cylinder heads",
+      "sourceIds": [
+        "s1",
+        "s13"
+      ]
+    },
+    {
+      "label": "Block material",
+      "value": "Aluminum, open deck, cast iron liners, split vertically into RH and LH halves",
+      "sourceIds": [
+        "s13",
+        "s1"
+      ]
+    },
+    {
+      "label": "Connecting rods",
+      "value": "Diagonally split; pistons and rods come out through the bores",
+      "sourceIds": [
+        "s13",
+        "s1"
+      ]
+    },
+    {
+      "label": "Engine code",
+      "value": "FB25B",
+      "sourceIds": [
+        "s14"
+      ]
+    },
+    {
+      "label": "Oil capacity",
+      "value": "5.7 L (6.0 US qt) at overhaul, 0W-20 synthetic",
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "label": "Coolant capacity",
+      "value": "About 7.6 L (8.0 US qt), CVT model",
+      "sourceIds": [
+        "s3"
+      ]
+    }
+  ],
+  "notes": [
+    "Specs here come from the 2014 Forester service manual (FB25, Mechanical ME(H4DO)). Later 2015 to 2018 Forester engines may carry running changes, so check numbers against Subaru STIS for the exact VIN before torquing anything.",
+    "There are no piston pin service holes on the FB25. Pistons and rods leave and enter through the bores, with the rod caps reached from the oil pan side, which is why the heads and oil pan upper come off before the block is split.",
+    "The engine comes out without the TR580; the torque converter stays in the transmission and needs the converter stopper fitted before the engine is pulled away.",
+    "Special tools that matter: crankshaft socket 18252AA000, rod bolt socket 18270AA020, cam sprocket socket 18270KA010, pulley wrench 18355AA000 with pin sets, angle gauge, valve spring compressor, rear seal guide and installer, and the chain cover removal kit J-53038 with alignment pins J-51972.",
+    "Treat as one-time use: connecting rod cap bolts, head gaskets, every O-ring, AVCS filter screens, the oil separator cover, valve stem seals, front and rear crank seals, and any replaced valve shim.",
+    "Liquid gasket is ThreeBond 1217G per the manual (ThreeBond 1105 on gallery plug threads, 1141G on the PCV valve). Most joints must be assembled within five minutes of applying the bead.",
+    "Usually sublet to a machine shop: head and deck surfacing, valve guide replacement and seat cutting, boring and honing (all four bores at once), crank grinding and rod bushing replacement.",
+    "Typical rebuild kits omit the oil pump and timing parts. The oil pump is built into the chain cover and is not serviceable separately."
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Subaru 2014 Forester Service Manual, Mechanical ME(H4DO) section",
+      "kind": "manual"
+    },
+    {
+      "id": "s2",
+      "title": "Subaru 2014 Forester Service Manual, Lubrication LU(H4DO) section",
+      "kind": "manual"
+    },
+    {
+      "id": "s3",
+      "title": "Subaru 2014 Forester Service Manual, Cooling CO(H4DO) section",
+      "kind": "manual"
+    },
+    {
+      "id": "s4",
+      "title": "Subaru 2014 Forester Service Manual, Fuel Injection FU(H4DO) section",
+      "kind": "manual"
+    },
+    {
+      "id": "s5",
+      "title": "Subaru Legacy BN/BS 2015-2019 Service Manual, Mechanical(H4DO) (FB25 cross-check)",
+      "kind": "manual"
+    },
+    {
+      "id": "s6",
+      "title": "Subaru Service Information Bulletin 14-26-20: FA/FB front timing chain cover removal tool",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2020/MC-10182200-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s7",
+      "title": "Subaru Service Bulletin 02-177-18: Remanufactured FB short block, removal and handling",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10144874-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s8",
+      "title": "Subaru Service Bulletin 02-188-21: Timing chain / camshaft sprocket installation (lock pin)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2021/MC-10202810-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s9",
+      "title": "Subaru Service Bulletin 02-131-12R: Oil seepage diagnosis and repair, 2011-2014 Forester FB",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2015/SB-10094224-2280.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s10",
+      "title": "Subaru Service Bulletin 02-157-14R: Oil control piston ring change / oil consumption",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2014/SB-10068626-0699.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s11",
+      "title": "Subaru Legacy 2015-2019 Owner's Manual: New vehicle break-in driving",
+      "kind": "manual"
+    },
+    {
+      "id": "s12",
+      "title": "Crawford Performance: Subaru engine break-in procedure for built motors",
+      "url": "https://crawfordperformance.com/blogs/news/subaru-engine-break-in-procedure-built-motor",
+      "kind": "vendor"
+    },
+    {
+      "id": "s13",
+      "title": "AustralianCar.Reviews: Subaru FB25 engine",
+      "url": "https://australiancar.reviews/?p=52495",
+      "kind": "reference"
+    },
+    {
+      "id": "s14",
+      "title": "Wikipedia: Subaru FB engine",
+      "url": "https://en.wikipedia.org/wiki/Subaru_FB_engine",
+      "kind": "reference"
+    },
+    {
+      "id": "s15",
+      "title": "8020 Automotive: The most common Subaru FB25 engine problems",
+      "url": "https://8020automotive.com/the-3-most-common-subaru-fb25-engine-problems/",
+      "kind": "reference"
+    },
+    {
+      "id": "s16",
+      "title": "Partsology: Engine rebuild kit EK4348 for 2011-2015 Forester 2.5L (FB25B)",
+      "url": "https://partsology.com/products/engine-rebuild-kit-subaru-forester-11-15-2-5l-ek4348",
+      "kind": "vendor"
+    }
+  ],
+  "components": [
+    {
+      "id": "block-rh",
+      "name": "Cylinder block RH half (cylinders 1 and 3)",
+      "group": "block"
+    },
+    {
+      "id": "block-lh",
+      "name": "Cylinder block LH half (cylinders 2 and 4)",
+      "group": "block"
+    },
+    {
+      "id": "case-bolts",
+      "name": "Cylinder block joining bolts",
+      "group": "block"
+    },
+    {
+      "id": "cylinder-bores",
+      "name": "Cast iron cylinder liners (bores)",
+      "group": "block"
+    },
+    {
+      "id": "block-plugs",
+      "name": "Main gallery plugs, block plug and block plate",
+      "group": "block"
+    },
+    {
+      "id": "oil-separator-cover",
+      "name": "Oil separator cover",
+      "group": "block"
+    },
+    {
+      "id": "water-jacket-spacer",
+      "name": "Water jacket spacers",
+      "group": "block"
+    },
+    {
+      "id": "crankshaft",
+      "name": "Crankshaft",
+      "group": "rotating"
+    },
+    {
+      "id": "main-bearings",
+      "name": "Crankshaft (main) bearings",
+      "group": "rotating"
+    },
+    {
+      "id": "pistons",
+      "name": "Pistons",
+      "group": "rotating"
+    },
+    {
+      "id": "piston-rings",
+      "name": "Piston rings",
+      "group": "rotating"
+    },
+    {
+      "id": "piston-pins",
+      "name": "Piston pins and circlips",
+      "group": "rotating"
+    },
+    {
+      "id": "connecting-rods",
+      "name": "Diagonally split connecting rods",
+      "group": "rotating"
+    },
+    {
+      "id": "rod-bearings",
+      "name": "Connecting rod bearings",
+      "group": "rotating"
+    },
+    {
+      "id": "rod-bolts",
+      "name": "Connecting rod cap bolts",
+      "group": "rotating"
+    },
+    {
+      "id": "rod-bushings",
+      "name": "Connecting rod small-end bushings",
+      "group": "rotating"
+    },
+    {
+      "id": "rear-main-seal",
+      "name": "Rear crankshaft oil seal",
+      "group": "rotating"
+    },
+    {
+      "id": "drive-plate",
+      "name": "Drive plate with crank position sensor plate",
+      "group": "rotating"
+    },
+    {
+      "id": "oil-pan",
+      "name": "Oil pan (lower)",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-pan-upper",
+      "name": "Oil pan upper with baffle and strainer",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-pump",
+      "name": "Trochoid oil pump (in chain cover)",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-filter",
+      "name": "Oil filter and oil pump union",
+      "group": "lubrication"
+    },
+    {
+      "id": "water-pump",
+      "name": "Water pump and pulley",
+      "group": "cooling"
+    },
+    {
+      "id": "thermostat",
+      "name": "Thermostat and cover",
+      "group": "cooling"
+    },
+    {
+      "id": "water-pipes",
+      "name": "Water pipe assemblies",
+      "group": "cooling"
+    },
+    {
+      "id": "cylinder-head-rh",
+      "name": "Cylinder head RH",
+      "group": "head"
+    },
+    {
+      "id": "cylinder-head-lh",
+      "name": "Cylinder head LH",
+      "group": "head"
+    },
+    {
+      "id": "head-gaskets",
+      "name": "Cylinder head gaskets",
+      "group": "head"
+    },
+    {
+      "id": "head-bolts",
+      "name": "Cylinder head bolts",
+      "group": "head"
+    },
+    {
+      "id": "valves",
+      "name": "Intake and exhaust valves",
+      "group": "valvetrain"
+    },
+    {
+      "id": "valve-springs",
+      "name": "Valve springs, seats, retainers and collets",
+      "group": "valvetrain"
+    },
+    {
+      "id": "valve-guides",
+      "name": "Valve guides",
+      "group": "valvetrain"
+    },
+    {
+      "id": "valve-seats",
+      "name": "Valve seats",
+      "group": "valvetrain"
+    },
+    {
+      "id": "valve-stem-seals",
+      "name": "Valve stem oil seals",
+      "group": "valvetrain"
+    },
+    {
+      "id": "valve-shims",
+      "name": "Valve shims",
+      "group": "valvetrain"
+    },
+    {
+      "id": "roller-rockers",
+      "name": "Roller rocker arms and pivots",
+      "group": "valvetrain"
+    },
+    {
+      "id": "cam-carrier-rh",
+      "name": "Cam carrier RH",
+      "group": "valvetrain"
+    },
+    {
+      "id": "cam-carrier-lh",
+      "name": "Cam carrier LH",
+      "group": "valvetrain"
+    },
+    {
+      "id": "camshafts",
+      "name": "Intake and exhaust camshafts",
+      "group": "valvetrain"
+    },
+    {
+      "id": "cam-caps",
+      "name": "Camshaft caps",
+      "group": "valvetrain"
+    },
+    {
+      "id": "avcs-filters",
+      "name": "AVCS oil filter screens in cam carriers",
+      "group": "valvetrain"
+    },
+    {
+      "id": "rocker-covers",
+      "name": "Rocker covers",
+      "group": "valvetrain"
+    },
+    {
+      "id": "cam-sprockets",
+      "name": "Cam sprockets (AVCS actuators)",
+      "group": "timing"
+    },
+    {
+      "id": "oil-control-solenoids",
+      "name": "AVCS oil control solenoids",
+      "group": "timing"
+    },
+    {
+      "id": "cam-sensors",
+      "name": "Camshaft position sensors",
+      "group": "timing"
+    },
+    {
+      "id": "crank-sprocket",
+      "name": "Crank sprocket",
+      "group": "timing"
+    },
+    {
+      "id": "timing-chain-rh",
+      "name": "Timing chain RH",
+      "group": "timing"
+    },
+    {
+      "id": "timing-chain-lh",
+      "name": "Timing chain LH",
+      "group": "timing"
+    },
+    {
+      "id": "chain-tensioners",
+      "name": "Chain tensioners and tensioner levers",
+      "group": "timing"
+    },
+    {
+      "id": "chain-guides",
+      "name": "Timing chain guides",
+      "group": "timing"
+    },
+    {
+      "id": "chain-cover",
+      "name": "Chain (front) cover",
+      "group": "timing"
+    },
+    {
+      "id": "front-seal",
+      "name": "Front crankshaft oil seal",
+      "group": "timing"
+    },
+    {
+      "id": "crank-pulley",
+      "name": "Crank pulley and pulley boss",
+      "group": "timing"
+    },
+    {
+      "id": "intake-manifold",
+      "name": "Intake manifold with throttle body",
+      "group": "intake"
+    },
+    {
+      "id": "tgv",
+      "name": "Tumble generator valve assemblies",
+      "group": "intake"
+    },
+    {
+      "id": "fuel-injectors",
+      "name": "Fuel injectors and fuel pipes",
+      "group": "intake"
+    },
+    {
+      "id": "egr-pipe",
+      "name": "EGR pipe assembly",
+      "group": "intake"
+    },
+    {
+      "id": "wiring-harness",
+      "name": "Engine wiring harness",
+      "group": "intake"
+    },
+    {
+      "id": "knock-sensor",
+      "name": "Knock sensor",
+      "group": "sensors"
+    },
+    {
+      "id": "crank-sensor",
+      "name": "Crankshaft position sensor",
+      "group": "sensors"
+    },
+    {
+      "id": "pcv-valve",
+      "name": "PCV valve and connector",
+      "group": "sensors"
+    },
+    {
+      "id": "ignition",
+      "name": "Ignition coils and spark plugs",
+      "group": "sensors"
+    },
+    {
+      "id": "drive-belt",
+      "name": "V-belt, tensioner and idler pulley",
+      "group": "accessories"
+    },
+    {
+      "id": "generator",
+      "name": "Generator (alternator)",
+      "group": "accessories"
+    },
+    {
+      "id": "ac-compressor",
+      "name": "A/C compressor",
+      "group": "accessories"
+    },
+    {
+      "id": "engine-mounts",
+      "name": "Engine mounts",
+      "group": "mounting"
+    },
+    {
+      "id": "engine-stand",
+      "name": "Engine stand and adapters",
+      "group": "mounting"
+    },
+    {
+      "id": "torque-converter",
+      "name": "Torque converter (stays with TR580)",
+      "group": "mounting"
+    }
+  ],
+  "phases": [
+    {
+      "id": "prep",
+      "name": "Prep and engine removal",
+      "kind": "prep",
+      "summary": "Check the engine, drain it, disconnect it and lift it out of the Forester leaving the TR580 in the car."
+    },
+    {
+      "id": "teardown-ext",
+      "name": "External and timing teardown",
+      "kind": "teardown",
+      "summary": "Mount on a stand, strip the intake and accessories, open the chain cover and park the valvetrain safely as the chains come off."
+    },
+    {
+      "id": "teardown-heads",
+      "name": "Cylinder heads and valvetrain",
+      "kind": "teardown",
+      "summary": "Lift off the cam carriers with their camshafts, remove both heads and strip the valves."
+    },
+    {
+      "id": "teardown-block",
+      "name": "Short block teardown",
+      "kind": "teardown",
+      "summary": "Pull pistons and rods out through the bores, split the block halves and strip the crankshaft and pistons."
+    },
+    {
+      "id": "inspect",
+      "name": "Cleaning, inspection and measurement",
+      "kind": "inspect",
+      "summary": "Clean everything and measure the head, valvetrain, bores, pistons, rods and crankshaft against the factory limits."
+    },
+    {
+      "id": "machine",
+      "name": "Machine shop decisions",
+      "kind": "machine",
+      "summary": "Decide what gets resurfaced, cut, bored, ground or replaced, and order the one-time parts."
+    },
+    {
+      "id": "assembly-short",
+      "name": "Short block assembly",
+      "kind": "assembly",
+      "summary": "Join the block halves around the crankshaft, then fit pistons and rods through the bores and close up the bottom end."
+    },
+    {
+      "id": "assembly-heads",
+      "name": "Heads and cam carriers",
+      "kind": "assembly",
+      "summary": "Build and torque the heads, fit the rocker gear and cam carriers, and set cam clearance with shims."
+    },
+    {
+      "id": "assembly-timing",
+      "name": "Timing chains, AVCS and covers",
+      "kind": "assembly",
+      "summary": "Time both chains to their colored links, close the rocker and chain covers and fit the crank pulley."
+    },
+    {
+      "id": "assembly-ext",
+      "name": "External assembly",
+      "kind": "assembly",
+      "summary": "Refit the intake side, sensors and accessories."
+    },
+    {
+      "id": "final",
+      "name": "Installation, first start and break-in",
+      "kind": "final",
+      "summary": "Install the engine, fill and bleed it, prime the oil system, start it and break it in."
+    }
+  ],
+  "steps": [
+    {
+      "id": "fb25-001",
+      "order": 1,
+      "phase": "prep",
+      "title": "Record compression before teardown",
+      "action": "With the engine warm, disable the fuel pump at its fuse, pull all four plugs, hold the throttle wide open and crank each cylinder on a compression gauge at least twice, then refit the plugs.",
+      "why": "A baseline reading tells you which cylinders to look at hardest once it is apart; it has to happen while the engine can still run.",
+      "tools": [
+        "Compression gauge (screw-in end under 25 mm long)"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "1,050 to 1,400",
+        "unit": "kPa",
+        "note": "152 to 203 psi; no more than 100 kPa (14 psi) between cylinders",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "ignition"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-002",
+      "order": 2,
+      "phase": "prep",
+      "title": "Recover A/C refrigerant",
+      "action": "Have the A/C system evacuated with a recovery machine before any refrigerant line is opened.",
+      "why": "The compressor leaves with the engine, so its hoses must be disconnected, and refrigerant may not be vented.",
+      "tools": [
+        "Refrigerant recovery machine"
+      ],
+      "components": [
+        "ac-compressor"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-003",
+      "order": 3,
+      "phase": "prep",
+      "title": "Relieve fuel pressure, disconnect battery",
+      "action": "Bleed fuel pressure using the factory procedure, remove the fuel filler cap to vent the tank, then disconnect the battery ground.",
+      "why": "Fuel lines are opened later; relieving pressure first keeps fuel from spraying, and the ground comes off before any connector is unplugged.",
+      "components": [
+        "fuel-injectors"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-004",
+      "order": 4,
+      "phase": "prep",
+      "title": "Drain the coolant",
+      "action": "Fit a hose to the radiator drain, open the drain plug with the radiator cap off and collect the coolant; refit the drain with new O-rings.",
+      "tools": [
+        "Drain pan",
+        "8 mm ID hose"
+      ],
+      "components": [
+        "water-pump"
+      ],
+      "sourceIds": [
+        "s3"
+      ]
+    },
+    {
+      "id": "fb25-005",
+      "order": 5,
+      "phase": "prep",
+      "title": "Drain oil and remove filter",
+      "action": "Open the filler cap, drain the oil from the pan, refit the drain plug with a new gasket and spin off the oil filter.",
+      "why": "The pan has to be empty before the engine is tipped on the stand and the pan is split.",
+      "tools": [
+        "Drain pan",
+        "Oil filter wrench"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "41.7",
+        "unit": "N·m",
+        "note": "drain plug, new gasket (30.8 ft·lb)",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "components": [
+        "oil-pan",
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "fb25-006",
+      "order": 6,
+      "phase": "prep",
+      "title": "Remove intake ducting and radiator",
+      "action": "Take out the air intake duct and boot, the rear air cleaner case and the radiator.",
+      "why": "The radiator sits directly in front of the crank pulley and must be out of the way for the engine to roll forward.",
+      "components": [
+        "intake-manifold"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-007",
+      "order": 7,
+      "phase": "prep",
+      "title": "Label and disconnect engine harness",
+      "action": "Tag and unplug the bulkhead harness connectors, generator and A/C compressor leads, and the engine ground strap; free the harness from its clips.",
+      "why": "Labels now save hours at reinstallation when dozens of identical-looking connectors go back.",
+      "tools": [
+        "Masking tape and marker"
+      ],
+      "components": [
+        "wiring-harness",
+        "generator",
+        "ac-compressor"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-008",
+      "order": 8,
+      "phase": "prep",
+      "title": "Disconnect hoses and fuel lines",
+      "action": "Disconnect the brake booster hose, heater inlet and outlet hoses, CVTF cooler water hose, A/C pressure hose, and the fuel delivery and evaporation lines using the quick-connector release tool.",
+      "tools": [
+        "Quick connector release 42099AE000",
+        "Rag for fuel spill"
+      ],
+      "mistake": "Swapping the heater inlet and outlet hoses at reassembly is easy if they are not marked now.",
+      "components": [
+        "fuel-injectors"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-009",
+      "order": 9,
+      "phase": "prep",
+      "title": "Remove exhaust and lower bolts",
+      "action": "From underneath, remove the front exhaust pipe and the lower transmission-to-engine bolts and nuts, then remove the nuts holding the engine mounts to the crossmember.",
+      "tools": [
+        "Lift or jack stands"
+      ],
+      "components": [
+        "engine-mounts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-010",
+      "order": 10,
+      "phase": "prep",
+      "title": "Unbolt converter from drive plate",
+      "action": "Remove the service hole plug, turn the crank by the pulley bolt to reach each of the torque converter bolts and remove them.",
+      "why": "On the Forester the engine comes out alone and the TR580 stays in the car, so the converter must be freed from the drive plate first.",
+      "components": [
+        "torque-converter",
+        "drive-plate"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-011",
+      "order": 11,
+      "phase": "prep",
+      "title": "Support the engine and transmission",
+      "action": "Hang the engine from a hoist with chains or wire rope and put a jack under the transmission.",
+      "why": "Once the bellhousing bolts are out, the transmission would otherwise drop on its rear mount.",
+      "tools": [
+        "Engine hoist",
+        "Garage jack"
+      ],
+      "components": [
+        "engine-mounts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-012",
+      "order": 12,
+      "phase": "prep",
+      "title": "Fit converter stopper, separate bellhousing",
+      "action": "Remove the starter, attach the torque converter stopper to the converter housing, then remove the upper transmission-to-engine bolts.",
+      "why": "The stopper keeps the converter seated on the transmission input shaft as the engine pulls away.",
+      "tools": [
+        "Stopper set 498277200"
+      ],
+      "critical": true,
+      "mistake": "Pulling the engine without the stopper lets the converter slide off its shaft and damage the pump drive and seal.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-013",
+      "order": 13,
+      "phase": "prep",
+      "title": "Lift the engine out",
+      "action": "Raise the engine slightly, raise the transmission with the jack, slide the engine forward until it clears the transmission, then lift it out slowly.",
+      "why": "The engine must move straight forward off the transmission before it can be lifted, or the input shaft and converter take side load.",
+      "mistake": "Swinging the engine early catches the crank pulley or dipstick on the body and radiator support.",
+      "components": [
+        "engine-mounts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-014",
+      "order": 14,
+      "phase": "prep",
+      "title": "Mount the engine on stand",
+      "action": "Remove the engine mounts and bolt the engine to the stand using the RH and LH stand adapters and the adapter plate.",
+      "tools": [
+        "Engine stand 499817100",
+        "Stand adapters 498457000 / 498457100",
+        "Adapter 18362AA020"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "35",
+        "unit": "N·m",
+        "note": "stand adapter bolts (25.8 ft·lb)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "engine-stand",
+        "engine-mounts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-015",
+      "order": 15,
+      "phase": "teardown-ext",
+      "title": "Remove the V-belt",
+      "action": "Turn the belt tensioner clockwise with a wrench to relieve tension and slip the belt off, then remove the tensioner and the idler pulley.",
+      "why": "Every pulley on the front of the engine, including the crank pulley, is blocked by the belt.",
+      "components": [
+        "drive-belt"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-016",
+      "order": 16,
+      "phase": "teardown-ext",
+      "title": "Remove generator and A/C compressor",
+      "action": "Unbolt and remove the generator and the A/C compressor from their brackets.",
+      "why": "The compressor mounts to the LH head and must come off before that head; the generator blocks the chain cover.",
+      "components": [
+        "generator",
+        "ac-compressor"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-017",
+      "order": 17,
+      "phase": "teardown-ext",
+      "title": "Remove the intake manifold",
+      "action": "Disconnect the EGR pipe, PCV hose, MAP and throttle connectors and fuel delivery pipes, then lift the manifold off the tumble generator valves and remove the engine wiring harness.",
+      "tools": [
+        "Quick connector release 42099AE000"
+      ],
+      "components": [
+        "intake-manifold",
+        "egr-pipe",
+        "wiring-harness"
+      ],
+      "sourceIds": [
+        "s4",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-018",
+      "order": 18,
+      "phase": "teardown-ext",
+      "title": "Remove tumble generator valves",
+      "action": "Unplug and unbolt the tumble generator valve assemblies from each head, then remove the cylinder head plates behind them.",
+      "components": [
+        "tgv"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-019",
+      "order": 19,
+      "phase": "teardown-ext",
+      "title": "Remove the EGR pipe",
+      "action": "Unbolt the EGR pipe from the water pipe and the RH block half.",
+      "why": "It ties the RH head to the block and blocks the RH head from lifting off.",
+      "components": [
+        "egr-pipe"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-020",
+      "order": 20,
+      "phase": "teardown-ext",
+      "title": "Remove coils and spark plugs",
+      "action": "Remove the four ignition coils and spark plugs.",
+      "why": "Pulling the plugs lets the crank turn freely without compression while the timing is set up.",
+      "components": [
+        "ignition"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-021",
+      "order": 21,
+      "phase": "teardown-ext",
+      "title": "Remove water pump pulley",
+      "action": "Hold the water pump pulley with the pulley wrench and pin set and remove its bolts.",
+      "tools": [
+        "Pulley wrench 18355AA000",
+        "Pin set 18334AA030"
+      ],
+      "components": [
+        "water-pump"
+      ],
+      "sourceIds": [
+        "s3",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-022",
+      "order": 22,
+      "phase": "teardown-ext",
+      "title": "Loosen and remove crank pulley",
+      "action": "Lock the crank pulley with the pulley wrench and pin set, break the bolt loose and remove the bolt and pulley.",
+      "why": "The crank must be held by the pulley itself; the bolt is angle-torqued and will not break loose otherwise.",
+      "tools": [
+        "Pulley wrench 18355AA000",
+        "Pin set 18334AA000"
+      ],
+      "components": [
+        "crank-pulley"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-023",
+      "order": 23,
+      "phase": "teardown-ext",
+      "title": "Strip harness from chain cover",
+      "action": "Unplug the oil control solenoids, cam position sensors, oil pressure switch, oil temperature sensor and oil level switch, remove the harness stay, and pull the dipstick guide and idler pulley.",
+      "components": [
+        "oil-control-solenoids",
+        "cam-sensors",
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-024",
+      "order": 24,
+      "phase": "teardown-ext",
+      "title": "Separate the chain cover",
+      "action": "Remove all chain cover bolts and push the cover off with the factory removal tool, or pry only at the designated points with a taped bar, working around a little at a time.",
+      "why": "The cover is sealed with a long bead of liquid gasket to both heads, both cam carriers, the block and the oil pan upper; it has to come off before any timing part is reachable.",
+      "tools": [
+        "Chain cover tool kit J-53038",
+        "Plastic trim tools"
+      ],
+      "critical": true,
+      "mistake": "Prying on the unsupported lower corner of a cam carrier cracks the cam cap and scraps the whole carrier.",
+      "components": [
+        "chain-cover",
+        "cam-carrier-rh",
+        "cam-carrier-lh"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6",
+        "s7"
+      ]
+    },
+    {
+      "id": "fb25-025",
+      "order": 25,
+      "phase": "teardown-ext",
+      "title": "Clean off cover sealant",
+      "action": "Remove the O-rings at the heads, block LH and oil pan upper and strip the old liquid gasket from the cover and engine with gasket remover and plastic scrapers.",
+      "why": "Steel blades and abrasive discs gouge the machined aluminum faces and cause leaks later.",
+      "tools": [
+        "Silicone gasket remover",
+        "Plastic razor blades"
+      ],
+      "components": [
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6"
+      ]
+    },
+    {
+      "id": "fb25-026",
+      "order": 26,
+      "phase": "teardown-ext",
+      "title": "Check AVCS sprocket lock state",
+      "action": "Before setting any marks, check whether the sensor plate on each cam sprocket turns freely against the sprocket housing.",
+      "why": "If an AVCS lock pin did not engage at shutdown, the sensor plate marks are meaningless and only the housing marks can be trusted.",
+      "mistake": "Timing to a free-floating sensor plate instead of the housing marks puts the cam out of time.",
+      "components": [
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s8"
+      ]
+    },
+    {
+      "id": "fb25-027",
+      "order": 27,
+      "phase": "teardown-ext",
+      "title": "Align RH timing marks",
+      "action": "Turn the crank clockwise with the crankshaft socket until the crank sprocket and the RH intake and exhaust sprocket marks line up, with the crank key at six o'clock.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "critical": true,
+      "components": [
+        "crank-sprocket",
+        "cam-sprockets",
+        "timing-chain-rh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-028",
+      "order": 28,
+      "phase": "teardown-ext",
+      "title": "Pin and remove RH tensioner",
+      "action": "Push the RH tensioner lever down, lock the plunger with a 2.5 mm pin or hex key in the stopper hole, then remove the tensioner and its lever.",
+      "why": "The plunger is spring and oil loaded; pinning it first keeps it from shooting out and lets it be reused.",
+      "tools": [
+        "2.5 mm stopper pin or hex key"
+      ],
+      "components": [
+        "chain-tensioners"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-029",
+      "order": 29,
+      "phase": "teardown-ext",
+      "title": "Remove RH chain and guide",
+      "action": "Unbolt the RH chain guide and lift off the RH timing chain, keeping RH parts separate from LH.",
+      "why": "With the chain off, both RH cams sit at zero lift and must only be turned within the range where they move freely by hand.",
+      "critical": true,
+      "mistake": "Turning an untimed cam past its free range opens intake and exhaust valves together so they hit each other and bend.",
+      "components": [
+        "timing-chain-rh",
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-030",
+      "order": 30,
+      "phase": "teardown-ext",
+      "title": "Align LH timing marks",
+      "action": "Turn the crank to line up the crank key with the LH intake and exhaust sprocket marks.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "components": [
+        "timing-chain-lh",
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-031",
+      "order": 31,
+      "phase": "teardown-ext",
+      "title": "Pin and remove LH tensioner",
+      "action": "Push the LH tensioner lever down, pin the plunger, remove the tensioner and lever, and take the O-ring off the LH block half.",
+      "tools": [
+        "Stopper pin or hex key"
+      ],
+      "components": [
+        "chain-tensioners"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-032",
+      "order": 32,
+      "phase": "teardown-ext",
+      "title": "Remove LH chain and guide",
+      "action": "Unbolt the LH chain guide and lift off the LH timing chain.",
+      "why": "At this point the LH intake cam is holding its valves open and pistons 1 and 4 are near the top, so the LH intake cam must not be turned yet.",
+      "critical": true,
+      "mistake": "Turning the LH intake cam now drives open valves into pistons 1 and 4.",
+      "components": [
+        "timing-chain-lh",
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-033",
+      "order": 33,
+      "phase": "teardown-ext",
+      "title": "Park pistons at mid-stroke",
+      "action": "Turn the crankshaft about 200 degrees clockwise until the crank sprocket mark reaches the parked position, only backing up slightly to fine-tune.",
+      "why": "With all four pistons halfway down their bores, no valve can reach a piston, which makes it safe to turn the LH intake cam next.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "critical": true,
+      "mistake": "Turning the crank counterclockwise here can bring a piston up into an open valve.",
+      "components": [
+        "crankshaft",
+        "crank-sprocket"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-034",
+      "order": 34,
+      "phase": "teardown-ext",
+      "title": "Rotate LH intake to zero-lift",
+      "action": "Hold the LH intake sprocket with the pulley wrench and pin set and turn it about 180 degrees to its zero-lift mark.",
+      "why": "Every cam must sit at zero lift before the cam carriers are unbolted, or spring pressure loads the carrier unevenly.",
+      "tools": [
+        "Pulley wrench 18355AA000",
+        "Pin set 18334AA030"
+      ],
+      "critical": true,
+      "components": [
+        "camshafts",
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-035",
+      "order": 35,
+      "phase": "teardown-ext",
+      "title": "Remove the four cam sprockets",
+      "action": "Hold each sprocket with the pulley wrench and pin sets (a 6 mm rod through the RH exhaust sprocket), remove the bolts with the sprocket socket and tag each sprocket by position.",
+      "why": "The sprockets come off only when the carriers will be stripped; the camshafts must stay still while the bolts break loose.",
+      "tools": [
+        "Sprocket socket 18270KA010",
+        "Pulley wrench 18355AA000",
+        "Pin sets 18334AA020 / 18334AA030",
+        "6 mm steel rod"
+      ],
+      "components": [
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-036",
+      "order": 36,
+      "phase": "teardown-heads",
+      "title": "Remove both rocker covers",
+      "action": "Remove the intake manifold protectors and both rocker covers, then peel off the cover gaskets and spark plug tube gaskets.",
+      "mistake": "Scraping old sealant with the cam lobe under the scraper scores the lobe; turn the crank to move the lobe away first.",
+      "components": [
+        "rocker-covers"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-037",
+      "order": 37,
+      "phase": "teardown-heads",
+      "title": "Remove injectors and fuel pipes",
+      "action": "Unplug each injector, disconnect the fuel pipe quick connectors and unbolt each fuel pipe from its cam carrier with its injectors.",
+      "components": [
+        "fuel-injectors"
+      ],
+      "sourceIds": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-038",
+      "order": 38,
+      "phase": "teardown-heads",
+      "title": "Remove the water pipe assemblies",
+      "action": "Disconnect the water pipe hoses at the oil pan upper and remove the water pipe assemblies from each side.",
+      "components": [
+        "water-pipes"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-039",
+      "order": 39,
+      "phase": "teardown-heads",
+      "title": "Tip engine RH cams up",
+      "action": "Extend the stand with steel rods and roll the engine onto its side so the RH camshafts face up.",
+      "why": "The rocker arms and shims are loose under the carrier; with the cams up they stay in place, and the extension rods keep the engine from toppling.",
+      "tools": [
+        "Engine stand extension rods"
+      ],
+      "components": [
+        "engine-stand"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-040",
+      "order": 40,
+      "phase": "teardown-heads",
+      "title": "Lift off RH cam carrier",
+      "action": "Loosen the RH carrier bolts evenly a little at a time in the factory loosening sequence and lift the carrier off with both camshafts in it.",
+      "why": "On the FB the camshafts are captured in the carrier; the carrier and cams come off as one unit.",
+      "critical": true,
+      "mistake": "Loosening carrier bolts one at a time instead of evenly lets spring load bend or crack the carrier.",
+      "components": [
+        "cam-carrier-rh",
+        "camshafts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-041",
+      "order": 41,
+      "phase": "teardown-heads",
+      "title": "Bag RH rockers and shims",
+      "action": "Lift out the RH roller rockers, O-rings, valve shims and rocker pivots and store each in a labeled tray by valve.",
+      "why": "Each shim was selected for one valve; mixing them throws every cam clearance off.",
+      "tools": [
+        "Labeled parts tray"
+      ],
+      "components": [
+        "roller-rockers",
+        "valve-shims"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-042",
+      "order": 42,
+      "phase": "teardown-heads",
+      "title": "Lift off LH cam carrier",
+      "action": "Roll the engine LH cams up, loosen the LH carrier bolts evenly in sequence, lift off the carrier with its cams and bag the LH rockers, pivots and shims by position.",
+      "tools": [
+        "Labeled parts tray"
+      ],
+      "critical": true,
+      "components": [
+        "cam-carrier-lh",
+        "camshafts",
+        "roller-rockers",
+        "valve-shims"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-043",
+      "order": 43,
+      "phase": "teardown-heads",
+      "title": "Loosen RH head bolts",
+      "action": "Loosen the RH head bolts evenly in the factory order, leaving bolts 1 and 4 threaded in three or four turns.",
+      "why": "Leaving two bolts engaged stops the head from dropping off the side of the block when the gasket lets go.",
+      "components": [
+        "cylinder-head-rh",
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-044",
+      "order": 44,
+      "phase": "teardown-heads",
+      "title": "Remove the RH head",
+      "action": "Tap the RH head loose with a plastic hammer, remove the last two bolts and lift the head and gasket off without scratching either face.",
+      "tools": [
+        "Plastic hammer"
+      ],
+      "components": [
+        "cylinder-head-rh",
+        "head-gaskets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-045",
+      "order": 45,
+      "phase": "teardown-heads",
+      "title": "Remove the LH head",
+      "action": "Loosen the LH head bolts in order, keep bolts 1 and 4 engaged, tap the head free and lift it off with its gasket.",
+      "tools": [
+        "Plastic hammer"
+      ],
+      "components": [
+        "cylinder-head-lh",
+        "head-bolts",
+        "head-gaskets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-046",
+      "order": 46,
+      "phase": "teardown-heads",
+      "title": "Strip the cam carriers",
+      "action": "Loosen the cam cap bolts evenly in sequence, keep the caps in order, lift out the camshafts and pull the AVCS filter screens.",
+      "why": "The caps are machined in place with the carrier and must return to their original positions.",
+      "components": [
+        "cam-caps",
+        "camshafts",
+        "avcs-filters"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "fb25-047",
+      "order": 47,
+      "phase": "teardown-heads",
+      "title": "Remove valves and springs",
+      "action": "Compress each spring, remove the collets, then the retainer, spring, valve and spring seat, keeping each valve's parts together.",
+      "tools": [
+        "Valve spring compressor 0920287002000",
+        "Labeled valve tray"
+      ],
+      "components": [
+        "valves",
+        "valve-springs"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-048",
+      "order": 48,
+      "phase": "teardown-heads",
+      "title": "Pull stem seals and studs",
+      "action": "Remove the valve stem seals from the guides and the stud bolts and chain cover bolt from the heads.",
+      "components": [
+        "valve-stem-seals"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-049",
+      "order": 49,
+      "phase": "teardown-block",
+      "title": "Remove the crank sprocket",
+      "action": "Slide the crank sprocket off the crankshaft nose.",
+      "components": [
+        "crank-sprocket"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-050",
+      "order": 50,
+      "phase": "teardown-block",
+      "title": "Remove block-mounted ancillaries",
+      "action": "Remove the rear engine hanger, the water pipe and PCV connector set with their O-rings, the knock sensor and the PCV valve.",
+      "components": [
+        "knock-sensor",
+        "pcv-valve",
+        "water-pipes"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-051",
+      "order": 51,
+      "phase": "teardown-block",
+      "title": "Remove drive plate and sensor",
+      "action": "Unbolt the drive plate with its crank position sensor plate, then remove the crank position sensor and holder from the LH half.",
+      "components": [
+        "drive-plate",
+        "crank-sensor"
+      ],
+      "sourceIds": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-052",
+      "order": 52,
+      "phase": "teardown-block",
+      "title": "Remove thermostat and water pump",
+      "action": "Turn the block oil pan up, take it off the stand, then remove the thermostat cover and thermostat and the water pump from the oil pan upper.",
+      "why": "Both are mounted on the oil pan upper, which comes off next.",
+      "components": [
+        "thermostat",
+        "water-pump"
+      ],
+      "sourceIds": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "id": "fb25-053",
+      "order": 53,
+      "phase": "teardown-block",
+      "title": "Remove oil pan upper",
+      "action": "Unbolt the oil pan upper and lift it off together with the lower pan, then take the O-ring off the block; if the lower pan must be separated, cut its sealant with an oil pan cutter.",
+      "why": "The rod caps are reached through the bottom of the block, so the pans have to come off before any piston can come out.",
+      "tools": [
+        "Oil pan seal cutter"
+      ],
+      "mistake": "Prying the lower pan off with a screwdriver bends the flange and gouges the sealing face.",
+      "components": [
+        "oil-pan-upper",
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "id": "fb25-054",
+      "order": 54,
+      "phase": "teardown-block",
+      "title": "Stand block on its rear",
+      "action": "Thread four same-length bolts into the A/C compressor and generator bracket holes as feet, then stand the block with the rear seal down.",
+      "why": "The bolts keep the dowel (knock) pins off the bench, and standing the block up lets the pistons come straight out of the bores.",
+      "components": [
+        "block-rh",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-055",
+      "order": 55,
+      "phase": "teardown-block",
+      "title": "Remove rods 1 and 4",
+      "action": "Turn the crank to bring the 1 and 4 rod caps into reach, remove each cap and bolt with the rod socket, rotate the crank to clear each pin, and push each piston and rod out the top of its bore.",
+      "why": "The FB has no piston pin service holes; its diagonally split rods let the piston and rod leave through the bore once the head is off.",
+      "tools": [
+        "Crankshaft socket 18252AA000",
+        "Rod bolt socket 18270AA020"
+      ],
+      "critical": true,
+      "mistake": "Letting the rod's big end drag along the bore scratches the liner; guide it out by hand.",
+      "components": [
+        "connecting-rods",
+        "pistons",
+        "rod-bolts"
+      ],
+      "sourceIds": [
+        "s1",
+        "s13"
+      ]
+    },
+    {
+      "id": "fb25-056",
+      "order": 56,
+      "phase": "teardown-block",
+      "title": "Remove rods 2 and 3",
+      "action": "Rotate the crank to reach the 2 and 3 caps, remove them and push those piston and rod assemblies out, marking every cap and piston with its cylinder number.",
+      "tools": [
+        "Rod bolt socket 18270AA020"
+      ],
+      "mistake": "Mixing rod caps between rods ruins the bore geometry; each cap only fits its own rod.",
+      "components": [
+        "connecting-rods",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-057",
+      "order": 57,
+      "phase": "teardown-block",
+      "title": "Unbolt the block halves",
+      "action": "Lay the block RH half up on a padded board, remove the single outer joining bolt, then loosen the joining bolts in the factory order.",
+      "why": "The padded board protects the dowel pins and keeps the block stable while it is split.",
+      "components": [
+        "case-bolts",
+        "block-rh",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-058",
+      "order": 58,
+      "phase": "teardown-block",
+      "title": "Split the block halves",
+      "action": "Lift the RH half a little, confirm the crankshaft is staying in the LH half, then lift the RH half clear.",
+      "why": "The crank can stick to the upper half and fall out if the half is lifted quickly.",
+      "critical": true,
+      "mistake": "Lifting the RH half in one pull lets the crank drop and nick journals or the mating faces.",
+      "components": [
+        "block-rh",
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-059",
+      "order": 59,
+      "phase": "teardown-block",
+      "title": "Lift out the crankshaft",
+      "action": "Lift the crankshaft out of the LH half, pull the rear main seal and the LH O-ring, and push out the main bearings from the end opposite the locating lip, keeping them in order.",
+      "components": [
+        "crankshaft",
+        "main-bearings",
+        "rear-main-seal"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-060",
+      "order": 60,
+      "phase": "teardown-block",
+      "title": "Strip block plugs and covers",
+      "action": "Remove the water jacket spacers, the oil separator cover, the block plug and main gallery plugs from both halves, and the block plate from the LH half.",
+      "why": "The galleries can only be cleaned properly with every plug out.",
+      "components": [
+        "water-jacket-spacer",
+        "oil-separator-cover",
+        "block-plugs"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-061",
+      "order": 61,
+      "phase": "teardown-block",
+      "title": "Disassemble pistons from rods",
+      "action": "Remove the rod bearings, take the rings off top first, then the oil rails and expander, pry out one circlip with a taped screwdriver, push out the pin and separate the rod.",
+      "why": "Keeping rings, pins and rods together by cylinder matters if any are reused.",
+      "tools": [
+        "Ring expander",
+        "Taped flat screwdriver"
+      ],
+      "components": [
+        "pistons",
+        "piston-rings",
+        "piston-pins",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-062",
+      "order": 62,
+      "phase": "inspect",
+      "title": "Clean parts and passages",
+      "action": "Strip all old liquid gasket with plastic scrapers and remover, wash every part and blow out the oil and coolant passages.",
+      "why": "Measuring dirty parts gives false readings, and a blocked gallery starves a bearing.",
+      "tools": [
+        "Solvent tank",
+        "Compressed air",
+        "Plastic scrapers"
+      ],
+      "components": [
+        "block-rh",
+        "block-lh",
+        "cylinder-head-rh",
+        "cylinder-head-lh"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6"
+      ]
+    },
+    {
+      "id": "fb25-063",
+      "order": 63,
+      "phase": "inspect",
+      "title": "Crack-check heads and block",
+      "action": "Look over the heads and block for cracks and use dye penetrant on the critical areas, and check gasket faces for gas or water tracks.",
+      "tools": [
+        "Dye penetrant kit"
+      ],
+      "components": [
+        "cylinder-head-rh",
+        "cylinder-head-lh",
+        "block-rh",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-064",
+      "order": 64,
+      "phase": "inspect",
+      "title": "Measure head deck warpage",
+      "action": "Check each head's block face with a straightedge and feeler gauge across the factory positions at room temperature.",
+      "why": "A warped head face will not clamp evenly even if every bolt is torqued correctly.",
+      "tools": [
+        "Precision straightedge",
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.035",
+        "unit": "mm",
+        "note": "limit; head height 98.5 mm standard",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "cylinder-head-rh",
+        "cylinder-head-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-065",
+      "order": 65,
+      "phase": "inspect",
+      "title": "Measure stem-to-guide clearance",
+      "action": "Measure each valve stem in six places and each guide bore in six places and subtract, also checking the valve margin thickness.",
+      "tools": [
+        "Micrometer",
+        "Small hole gauge"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.030 to 0.057",
+        "unit": "mm",
+        "note": "intake; exhaust 0.040 to 0.065",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "valves",
+        "valve-guides"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-066",
+      "order": 66,
+      "phase": "inspect",
+      "title": "Check shim fit on stems",
+      "action": "Measure each valve stem tip and the bore of its shim and confirm the clearance between them.",
+      "spec": {
+        "kind": "clearance",
+        "value": "0.030 to 0.105",
+        "unit": "mm",
+        "note": "intake; exhaust 0.040 to 0.115",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "valve-shims",
+        "valves"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-067",
+      "order": 67,
+      "phase": "inspect",
+      "title": "Check valve seat contact",
+      "action": "Dye each valve face, press it onto its seat without turning, and measure the contact width and where it lands on the face.",
+      "why": "The contact band should sit in the middle of the valve face; a wide or off-center band means the seats need cutting.",
+      "tools": [
+        "Marking dye",
+        "Valve lapping stick",
+        "Caliper"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "0.8 to 1.6",
+        "unit": "mm",
+        "note": "intake seat width; exhaust 1.1 to 1.7 mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "valve-seats",
+        "valves"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-068",
+      "order": 68,
+      "phase": "inspect",
+      "title": "Test the valve springs",
+      "action": "Check each spring's free length, load at installed and open height, and squareness on a surface plate.",
+      "tools": [
+        "Spring tester",
+        "Square",
+        "Caliper"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "41.68",
+        "unit": "mm",
+        "note": "free length; squareness 2.5 deg / 1.8 mm max",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "valve-springs"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-069",
+      "order": 69,
+      "phase": "inspect",
+      "title": "Measure camshaft lobes and runout",
+      "action": "Check camshaft bend with a dial gauge on V-blocks, and measure lobe height, base circle and journal diameters.",
+      "tools": [
+        "Dial indicator",
+        "V-blocks",
+        "Micrometer"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "40.77 to 40.87",
+        "unit": "mm",
+        "note": "intake lobe height; exhaust 40.15 to 40.25 mm; bend limit 0.020 mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "camshafts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-070",
+      "order": 70,
+      "phase": "inspect",
+      "title": "Plastigage cam journal clearance",
+      "action": "Lay Plastigage across each cam journal, torque the caps in sequence, remove them and read the widest point; also check cam end play with a dial gauge.",
+      "why": "If clearance is out, the caps and carrier are replaced as a set because they are line-bored together.",
+      "tools": [
+        "Plastigage",
+        "Torque wrench",
+        "Dial indicator"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.037 to 0.072",
+        "unit": "mm",
+        "note": "oil clearance; caps at 18 N·m; thrust 0.068 to 0.116 mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "camshafts",
+        "cam-caps",
+        "cam-carrier-rh",
+        "cam-carrier-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-071",
+      "order": 71,
+      "phase": "inspect",
+      "title": "Inspect timing chain parts",
+      "action": "Check both chains, guides, tensioner levers, tensioners and all sprocket teeth for cracks or abnormal wear, and confirm the crank sprocket has no play on its key.",
+      "components": [
+        "timing-chain-rh",
+        "timing-chain-lh",
+        "chain-guides",
+        "chain-tensioners",
+        "cam-sprockets",
+        "crank-sprocket"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-072",
+      "order": 72,
+      "phase": "inspect",
+      "title": "Measure block deck warpage",
+      "action": "Check both head faces of the block with a straightedge and feeler gauge.",
+      "tools": [
+        "Precision straightedge",
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.025",
+        "unit": "mm",
+        "note": "limit; block height 205.0 mm standard",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "block-rh",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-073",
+      "order": 73,
+      "phase": "inspect",
+      "title": "Bore-gauge all four cylinders",
+      "action": "Measure each liner at four depths (10, 45, 80 and 115 mm) in both the thrust and pin directions and work out size, taper and out-of-round.",
+      "why": "The bore size grade (A or B) is stamped on the block deck and decides which piston grade belongs in each hole.",
+      "tools": [
+        "Dial bore gauge",
+        "Outside micrometer"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.015",
+        "unit": "mm",
+        "note": "cylindricality limit; out-of-round limit 0.010 mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "cylinder-bores"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-074",
+      "order": 74,
+      "phase": "inspect",
+      "title": "Calculate piston-to-wall clearance",
+      "action": "Measure each piston across the thrust faces 13.3 mm up from the skirt bottom and subtract from its bore size.",
+      "tools": [
+        "Outside micrometer"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.015 to 0.035",
+        "unit": "mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "pistons",
+        "cylinder-bores"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-075",
+      "order": 75,
+      "phase": "inspect",
+      "title": "Check piston pin fit",
+      "action": "Confirm each pin pushes into its piston with thumb pressure at room temperature, measure pin bore and pin, and check the circlip grooves for burrs.",
+      "tools": [
+        "Micrometer",
+        "Small hole gauge"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.004 to 0.008",
+        "unit": "mm",
+        "note": "piston to pin",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "piston-pins",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-076",
+      "order": 76,
+      "phase": "inspect",
+      "title": "Measure ring end gaps",
+      "action": "Square each ring in its bore with a piston and measure the gap with a feeler gauge.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.20 to 0.30",
+        "unit": "mm",
+        "note": "top ring; second 0.30 to 0.45; oil rails 0.20 to 0.50",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "piston-rings",
+        "cylinder-bores"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-077",
+      "order": 77,
+      "phase": "inspect",
+      "title": "Measure ring side clearance",
+      "action": "Clean the ring grooves, roll each compression ring in its groove and measure the side clearance with a feeler gauge.",
+      "tools": [
+        "Feeler gauges",
+        "Ring groove cleaner"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.040 to 0.080",
+        "unit": "mm",
+        "note": "top ring; second 0.030 to 0.070",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "piston-rings",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-078",
+      "order": 78,
+      "phase": "inspect",
+      "title": "Check rods for bend",
+      "action": "Check each rod for bend and twist on a rod aligner and look over the thrust faces and small-end bushing.",
+      "tools": [
+        "Connecting rod aligner"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "0.10",
+        "unit": "mm",
+        "note": "bend or twist limit per 100 mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-079",
+      "order": 79,
+      "phase": "inspect",
+      "title": "Measure pin-to-bushing clearance",
+      "action": "Measure the piston pin and the rod small-end bushing and subtract.",
+      "tools": [
+        "Micrometer",
+        "Small hole gauge"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.004 to 0.026",
+        "unit": "mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "piston-pins",
+        "rod-bushings"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-080",
+      "order": 80,
+      "phase": "inspect",
+      "title": "Check rod side clearance",
+      "action": "Fit each rod and cap to the crank with a new oiled bolt, tighten to the full rod bolt procedure while holding the crank, and measure side play with a feeler gauge.",
+      "why": "Side clearance is only meaningful with the cap at full clamp, and the rod bolts are stretched in doing it.",
+      "tools": [
+        "Rod bolt socket 18270AA020",
+        "Angle gauge",
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.070 to 0.330",
+        "unit": "mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "connecting-rods",
+        "rod-bolts",
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-081",
+      "order": 81,
+      "phase": "inspect",
+      "title": "Plastigage rod bearing clearance",
+      "action": "Lay Plastigage across each crank pin, fit the rod and cap with a new bolt and full rod bolt torque without letting the rod move, then remove the cap and read the strip.",
+      "why": "This is the only check of the actual oil film the rod bearing will run on.",
+      "tools": [
+        "Plastigage",
+        "Rod bolt socket 18270AA020",
+        "Angle gauge"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.017 to 0.047",
+        "unit": "mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Turning the crank with Plastigage in place smears it and gives a false reading.",
+      "components": [
+        "rod-bearings",
+        "crankshaft",
+        "rod-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-082",
+      "order": 82,
+      "phase": "inspect",
+      "title": "Measure crankshaft journals and runout",
+      "action": "Crack-check the crank, check runout on the end journals with a dial gauge, and mic every main journal and crank pin for size, taper and out-of-round.",
+      "tools": [
+        "Dial indicator",
+        "V-blocks",
+        "Outside micrometer",
+        "Dye penetrant"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "0.035",
+        "unit": "mm",
+        "note": "runout limit; pins and journals 0.005 mm out-of-round, 0.006 mm cylindricality",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-083",
+      "order": 83,
+      "phase": "inspect",
+      "title": "Measure crankshaft end play",
+      "action": "With all main bearings in the block and the crank laid in, measure end play at the number 5 thrust bearing with a feeler gauge.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.130 to 0.308",
+        "unit": "mm",
+        "note": "thrust is taken by the #5 main bearing",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "crankshaft",
+        "main-bearings"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-084",
+      "order": 84,
+      "phase": "inspect",
+      "title": "Plastigage main bearing clearance",
+      "action": "Lay Plastigage on each journal, join the block halves with oiled bolts and run the full joining-bolt torque sequence, then split the halves and read each strip.",
+      "why": "Main clearance can only be read with the two halves clamped exactly as they will run.",
+      "tools": [
+        "Plastigage",
+        "Torque wrench",
+        "Angle gauge"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.013 to 0.031",
+        "unit": "mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Checking mains with only a few bolts snug gives a reading that is too loose.",
+      "components": [
+        "main-bearings",
+        "crankshaft",
+        "case-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-085",
+      "order": 85,
+      "phase": "inspect",
+      "title": "Inspect pump, thermostat and pulleys",
+      "action": "Spin the water pump bearing, check the impeller, test the thermostat in heated water, and check the crank pulley, chain cover and pans for cracks.",
+      "components": [
+        "water-pump",
+        "thermostat",
+        "crank-pulley",
+        "chain-cover",
+        "oil-pan-upper"
+      ],
+      "sourceIds": [
+        "s3",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-086",
+      "order": 86,
+      "phase": "machine",
+      "title": "Decide on head resurfacing",
+      "action": "Have any head beyond the warpage limit surfaced, but only while it stays at or above the minimum height; otherwise replace it.",
+      "spec": {
+        "kind": "other",
+        "value": "98.4",
+        "unit": "mm",
+        "note": "minimum head height after grinding (98.5 mm standard)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "cylinder-head-rh",
+        "cylinder-head-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-087",
+      "order": 87,
+      "phase": "machine",
+      "title": "Replace worn valve guides",
+      "action": "Drive out worn guides from the combustion side, drive new oiled guides in from the cam side to the marked depth, ream them to size and clean out every chip.",
+      "why": "Guides go in before seat work because the seat cutter pilots off the guide bore.",
+      "tools": [
+        "Guide remover/installer 499765700",
+        "Guide reamer 499765900"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "11.4 to 11.8",
+        "unit": "mm",
+        "note": "guide protrusion",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "valve-guides"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-088",
+      "order": 88,
+      "phase": "machine",
+      "title": "Cut and lap valve seats",
+      "action": "Cut each seat at 45 degrees, move the contact band with the 30 and 75 degree cutters until it is centered and in width, then lap each valve lightly and clean off all compound.",
+      "why": "Any replaced valve or reworked seat must be lapped so the dye check shows a continuous band.",
+      "tools": [
+        "Seat cutters (30, 45, 75 deg)",
+        "Lapping compound"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "45",
+        "unit": "deg",
+        "note": "seat angle",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "mistake": "Leaving lapping compound in a guide or port wears the new guide in minutes.",
+      "components": [
+        "valve-seats",
+        "valves"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-089",
+      "order": 89,
+      "phase": "machine",
+      "title": "Bore and hone to oversize",
+      "action": "If any bore is out of size, taper or round, or scored, bore and hone all four liners together for 0.25 or 0.50 mm oversize pistons, measuring only after the block cools to room temperature.",
+      "why": "Subaru requires all four bores to be done together so all pistons stay matched.",
+      "spec": {
+        "kind": "other",
+        "value": "94.505",
+        "unit": "mm",
+        "note": "maximum bore diameter after boring",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "mistake": "Measuring right after honing reads small because the block is still warm.",
+      "components": [
+        "cylinder-bores",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-090",
+      "order": 90,
+      "phase": "machine",
+      "title": "Resurface the block decks",
+      "action": "Only if the decks are past the warpage limit, have them surfaced while staying within the minimum block height.",
+      "spec": {
+        "kind": "other",
+        "value": "204.9",
+        "unit": "mm",
+        "note": "minimum block height after grinding (205.0 mm standard)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "block-rh",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-091",
+      "order": 91,
+      "phase": "machine",
+      "title": "Grind or replace crankshaft",
+      "action": "If journals or pins are out of size or shape, grind to the size that matches the 0.03, 0.05 or 0.25 mm undersize bearings, or replace the crank.",
+      "spec": {
+        "kind": "other",
+        "value": "47.726",
+        "unit": "mm",
+        "note": "pin grind limit; main journal limit 67.735 mm",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "crankshaft",
+        "main-bearings",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-092",
+      "order": 92,
+      "phase": "machine",
+      "title": "Replace rod small-end bushings",
+      "action": "Where pin-to-bushing clearance is out, press out the bushing, press in a new oiled one, drill its two oil holes through the rod's holes and ream it to fit.",
+      "tools": [
+        "Bushing remover/installer 18350AA000",
+        "Press",
+        "Reamer"
+      ],
+      "components": [
+        "rod-bushings",
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-093",
+      "order": 93,
+      "phase": "machine",
+      "title": "Order kit and one-time parts",
+      "action": "Order the gasket set, bearings, rings and pistons as needed, plus the parts the manual treats as one-time use: rod cap bolts, every O-ring, AVCS filter screens, oil separator cover, front and rear seals and valve stem seals.",
+      "why": "A typical aftermarket rebuild kit leaves out the oil pump and timing parts, so chains, guides or tensioners must be sourced separately if needed.",
+      "components": [
+        "rod-bolts",
+        "avcs-filters",
+        "oil-separator-cover",
+        "front-seal",
+        "rear-main-seal"
+      ],
+      "sourceIds": [
+        "s16",
+        "s14",
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "fb25-094",
+      "order": 94,
+      "phase": "assembly-short",
+      "title": "Install gallery and block plugs",
+      "action": "Degrease the threads, coat the plugs with liquid gasket and install the main gallery plugs and block plug in both halves, then fit the block plate to the LH half.",
+      "spec": {
+        "kind": "torque",
+        "value": "37",
+        "unit": "N·m",
+        "note": "main gallery plugs (block plug 16 N·m); ThreeBond 1105 on threads",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "block-plugs"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-095",
+      "order": 95,
+      "phase": "assembly-short",
+      "title": "Fit new oil separator cover",
+      "action": "Run a bead of liquid gasket on a new oil separator cover, fit it to the RH half within five minutes and tighten the bolts in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "in numerical order; ThreeBond 1217G bead",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "oil-separator-cover"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-096",
+      "order": 96,
+      "phase": "assembly-short",
+      "title": "Fit water jacket spacers",
+      "action": "Set the water jacket spacers into the RH and LH halves.",
+      "components": [
+        "water-jacket-spacer"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-097",
+      "order": 97,
+      "phase": "assembly-short",
+      "title": "Assemble pistons to rods",
+      "action": "Fit one circlip, set the piston on the rod with the front mark and rod direction matched for its side, slide in the oiled pin, fit the second circlip and turn both gaps away from the groove notch.",
+      "why": "RH pistons (1 and 3) and LH pistons (2 and 4) face their rods differently; the orientation is fixed once the rod is in the bore.",
+      "tools": [
+        "Taped flat screwdriver"
+      ],
+      "critical": true,
+      "mistake": "A circlip left with its gap at the groove notch can walk out and let the pin score the bore.",
+      "components": [
+        "pistons",
+        "piston-pins",
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-098",
+      "order": 98,
+      "phase": "assembly-short",
+      "title": "Install the piston rings",
+      "action": "Fit the oil ring expander, lower rail and upper rail by hand, then the second and top rings with a ring expander, marks facing up.",
+      "why": "Upside-down compression rings pump oil into the chamber, the same symptom behind Subaru's FB oil consumption bulletins.",
+      "tools": [
+        "Ring expander"
+      ],
+      "mistake": "Installing the second ring upside down raises oil consumption.",
+      "components": [
+        "piston-rings"
+      ],
+      "sourceIds": [
+        "s1",
+        "s10"
+      ]
+    },
+    {
+      "id": "fb25-099",
+      "order": 99,
+      "phase": "assembly-short",
+      "title": "Seat oiled main bearings",
+      "action": "Install the oiled main bearings in both halves in their original or selected positions and fit new O-rings to the LH half.",
+      "tools": [
+        "Padded board"
+      ],
+      "components": [
+        "main-bearings",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-100",
+      "order": 100,
+      "phase": "assembly-short",
+      "title": "Lay crankshaft in LH half",
+      "action": "Oil the main journals and lower the crankshaft into the LH half.",
+      "why": "The crank must go in before the halves are joined; nothing else installs between them except the bearings.",
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-101",
+      "order": 101,
+      "phase": "assembly-short",
+      "title": "Apply block-half sealant bead",
+      "action": "Degrease both mating faces and run the specified liquid gasket bead on the RH half, thin across most of the face and thicker in the marked ranges, keeping it clear of oil passages and bearing bores.",
+      "why": "Sealant squeezed into an oil passage or bearing can block oil and seize the engine; the halves must be joined within five minutes.",
+      "spec": {
+        "kind": "other",
+        "value": "1 +/- 0.5",
+        "unit": "mm",
+        "note": "bead diameter on most of the face; 4 mm in ranges A and C, 3.2 mm in range B; ThreeBond 1217G",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "A heavy bead near a bearing saddle squeezes into the oil feed and starves that bearing.",
+      "components": [
+        "block-rh",
+        "block-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-102",
+      "order": 102,
+      "phase": "assembly-short",
+      "title": "Join the block halves",
+      "action": "Set the RH half onto the LH half, lightly oil the joining bolt threads and washers, fit the bolts, and screw in two head bolts where shown to anchor the angle gauge.",
+      "why": "Only a light coat of oil goes on the bolts so none reaches the water jacket.",
+      "components": [
+        "block-rh",
+        "block-lh",
+        "case-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-103",
+      "order": 103,
+      "phase": "assembly-short",
+      "title": "Torque joining bolts first pass",
+      "action": "Holding only the LH half, tighten all joining bolts in the tightening sequence, back them all off 180 degrees in the loosening sequence, then tighten them all again.",
+      "why": "Seating, releasing and reseating the bolts draws the halves together evenly before any angle is added.",
+      "tools": [
+        "Torque wrench"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "35",
+        "unit": "N·m",
+        "note": "all bolts, twice, with a 180 deg back-off between",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Holding the RH half while torquing pulls the halves out of alignment.",
+      "components": [
+        "case-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-104",
+      "order": 104,
+      "phase": "assembly-short",
+      "title": "Angle-torque the joining bolts",
+      "action": "Back off the first group of four bolts 180 degrees, tighten them to the lower torque and add the angle in sequence, then do the same for the group of six.",
+      "tools": [
+        "Torque wrench",
+        "Angle gauge"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "60 +/- 2",
+        "unit": "deg",
+        "note": "after 17 N·m; four bolts first, then six",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "case-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-105",
+      "order": 105,
+      "phase": "assembly-short",
+      "title": "Fit the outer joining bolt",
+      "action": "Remove the temporary head bolts, install the separate outer joining bolt and wipe any squeeze-out off the chain cover and oil pan faces, leaving sealant on the chamfers.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "case-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-106",
+      "order": 106,
+      "phase": "assembly-short",
+      "title": "Install the rear main seal",
+      "action": "Oil the new rear seal inside and out and press it on with the seal guide and installer.",
+      "tools": [
+        "Oil seal guide 18671AA020",
+        "Oil seal installer 18657AA030"
+      ],
+      "components": [
+        "rear-main-seal"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-107",
+      "order": 107,
+      "phase": "assembly-short",
+      "title": "Set the ring gap positions",
+      "action": "Stand the block rear down on the four bolts, then clock each top ring gap to its mark, the second ring opposite, the upper rail with its stopper in the side hole, the expander opposite the rail and the lower rail a further third of a turn round.",
+      "why": "Staggered gaps limit blow-by, and no gap may sit in line with the piston skirt.",
+      "spec": {
+        "kind": "sequence",
+        "value": "second ring 180 from top ring; expander 180 from upper rail; lower rail 120 clockwise from upper rail",
+        "unit": "deg",
+        "note": "top ring and upper rail start at the positions in the factory figure",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "piston-rings"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-108",
+      "order": 108,
+      "phase": "assembly-short",
+      "title": "Install piston number one",
+      "action": "Oil the bore, piston and crank pin, bring the number 1 pin to top dead center, compress the rings and tap the piston in by its crown with the front mark forward.",
+      "why": "With the pin at the top, the rod can be steered onto it without hitting the liner.",
+      "tools": [
+        "Ring compressor",
+        "Crankshaft socket 18252AA000",
+        "Plastic hammer handle"
+      ],
+      "critical": true,
+      "mistake": "Letting the rod's big end strike the crank pin or liner on the way in nicks both.",
+      "components": [
+        "pistons",
+        "connecting-rods",
+        "cylinder-bores"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-109",
+      "order": 109,
+      "phase": "assembly-short",
+      "title": "Cap rod one, snug bolts",
+      "action": "Holding the piston down, turn the crank so the pin meets the big end, fit the matching cap with a new oiled bolt and tighten in two steps.",
+      "why": "Each cap only fits its own rod; the final angle comes later once all four are in.",
+      "tools": [
+        "Rod bolt socket 18270AA020"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "10, then 22",
+        "unit": "N·m",
+        "note": "new bolt, oiled threads and seat",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "rod-bolts",
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-110",
+      "order": 110,
+      "phase": "assembly-short",
+      "title": "Install pistons two through four",
+      "action": "Repeat for pistons 2, 3 and 4, turning the crank clockwise to bring each pin to the top and fitting each cap to the same two-step torque.",
+      "tools": [
+        "Ring compressor",
+        "Rod bolt socket 18270AA020"
+      ],
+      "components": [
+        "pistons",
+        "connecting-rods",
+        "rod-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-111",
+      "order": 111,
+      "phase": "assembly-short",
+      "title": "Final-angle the rod bolts",
+      "action": "Thread cam carrier bolts into the block as anchors for the angle gauge, then add the final angle to the 1 and 4 cap bolts, rotate the crank and do the 2 and 3 cap bolts.",
+      "why": "Rod bolts are stretch-type and one-time use; the angle sets clamp load, not the torque reading.",
+      "tools": [
+        "Angle gauge",
+        "Rod bolt socket 18270AA020"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "137 (+3 / -2)",
+        "unit": "deg",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Reusing old rod bolts or skipping the angle lets a cap loosen and spin a bearing.",
+      "components": [
+        "rod-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-112",
+      "order": 112,
+      "phase": "assembly-short",
+      "title": "Assemble lower pan and strainer",
+      "action": "Fit the strainer with a new O-ring and the baffle plate to the oil pan upper, then bond the lower pan to it with a liquid gasket bead and a new seal ring.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "strainer and lower pan bolts",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "oil-pan",
+        "oil-pan-upper"
+      ],
+      "sourceIds": [
+        "s2",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-113",
+      "order": 113,
+      "phase": "assembly-short",
+      "title": "Install oil pan upper",
+      "action": "Turn the block oil pan up, remove the four foot bolts, run a bead on the oil pan upper just outside the chamfer, fit a new O-ring and tighten the bolts in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "18",
+        "unit": "N·m",
+        "note": "in numerical order; 5 mm bead",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "mistake": "Getting sealant on the O-ring at the oil passage stops it sealing.",
+      "components": [
+        "oil-pan-upper"
+      ],
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "id": "fb25-114",
+      "order": 114,
+      "phase": "assembly-short",
+      "title": "Fit thermostat and water pump",
+      "action": "Install the thermostat and cover with a new gasket, and the water pump on the oil pan upper with a new gasket.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "thermostat cover and water pump",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "thermostat",
+        "water-pump"
+      ],
+      "sourceIds": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "id": "fb25-115",
+      "order": 115,
+      "phase": "assembly-short",
+      "title": "Remount block on the stand",
+      "action": "Bolt the stand adapters back to the block and oil pan upper and remount the assembly on the stand.",
+      "tools": [
+        "Engine stand 499817100"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "35",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "engine-stand"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-116",
+      "order": 116,
+      "phase": "assembly-short",
+      "title": "Fit crank sensor and drive plate",
+      "action": "Install the crank position sensor and holder on the LH half, then the drive plate with its sensor plate.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "crank position sensor; drive plate torque is in the CVT section (not sourced here)",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "crank-sensor",
+        "drive-plate"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-117",
+      "order": 117,
+      "phase": "assembly-short",
+      "title": "Install the PCV valve",
+      "action": "Coat the PCV valve threads with liquid gasket, install it in the RH half and refit its hose.",
+      "spec": {
+        "kind": "torque",
+        "value": "23",
+        "unit": "N·m",
+        "note": "ThreeBond 1141G on threads",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "pcv-valve"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-118",
+      "order": 118,
+      "phase": "assembly-short",
+      "title": "Install the knock sensor",
+      "action": "Bolt the knock sensor to the LH half with its connector angled toward the front of the engine within the specified window.",
+      "spec": {
+        "kind": "torque",
+        "value": "24",
+        "unit": "N·m",
+        "note": "connector center 76.5 to 91.5 deg toward the front",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "knock-sensor"
+      ],
+      "sourceIds": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-119",
+      "order": 119,
+      "phase": "assembly-short",
+      "title": "Fit water pipe and hanger",
+      "action": "Fit new O-rings, install the water pipe and PCV connector set, then the rear engine hanger.",
+      "spec": {
+        "kind": "torque",
+        "value": "21",
+        "unit": "N·m",
+        "note": "rear hanger; water pipe bolts 6.4 N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "water-pipes",
+        "pcv-valve"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-120",
+      "order": 120,
+      "phase": "assembly-short",
+      "title": "Slide on the crank sprocket",
+      "action": "Slide the crank sprocket onto the crank key; either face can go outward.",
+      "why": "It must be on before the heads so the chains can be hung later without disturbing them.",
+      "components": [
+        "crank-sprocket"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-121",
+      "order": 121,
+      "phase": "assembly-heads",
+      "title": "Press in valve stem seals",
+      "action": "Oil each new stem seal and press it onto its guide by hand with the seal guide tool, gray seals on intake and green on exhaust.",
+      "why": "Driving the tool with a hammer distorts the seal lip.",
+      "tools": [
+        "Valve oil seal guide 18261AA010"
+      ],
+      "mistake": "Swapping the gray intake and green exhaust seals changes oil control at the guides.",
+      "components": [
+        "valve-stem-seals"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-122",
+      "order": 122,
+      "phase": "assembly-heads",
+      "title": "Reassemble valves and springs",
+      "action": "Set the spring seat, spring (close coils down) and retainer, slide in the oiled valve, compress the spring and fit the collets, then tap each retainer to seat them.",
+      "tools": [
+        "Valve spring compressor 0920287002000",
+        "Plastic hammer"
+      ],
+      "components": [
+        "valves",
+        "valve-springs"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-123",
+      "order": 123,
+      "phase": "assembly-heads",
+      "title": "Refit head studs",
+      "action": "Install the stud bolts in both heads and the chain cover bolt in the LH head.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4 / 18",
+        "unit": "N·m",
+        "note": "two stud sizes; chain cover bolt 6.4 N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "cylinder-head-rh",
+        "cylinder-head-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-124",
+      "order": 124,
+      "phase": "assembly-heads",
+      "title": "Clean head bolt holes",
+      "action": "Blow every head bolt hole in the block clean and dry with compressed air.",
+      "why": "Coolant or oil left in a blind hole gives a false torque reading and can crack the block.",
+      "tools": [
+        "Compressed air",
+        "Safety glasses"
+      ],
+      "critical": true,
+      "components": [
+        "block-rh",
+        "block-lh",
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-125",
+      "order": 125,
+      "phase": "assembly-heads",
+      "title": "Seal and place RH gasket",
+      "action": "Degrease the faces, put the specified liquid gasket bead on both sides of a new RH head gasket where marked and place it so the sealant squeezes out at the edge.",
+      "why": "The head must go on within five minutes of applying sealant.",
+      "spec": {
+        "kind": "other",
+        "value": "3 +/- 1",
+        "unit": "mm",
+        "note": "bead diameter; ThreeBond 1217G",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "head-gaskets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-126",
+      "order": 126,
+      "phase": "assembly-heads",
+      "title": "Snug the RH head bolts",
+      "action": "Oil the head bolt threads and washers, set the RH head, tighten all bolts in sequence to the first torque, then to the second.",
+      "tools": [
+        "Torque wrench"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "29, then 100",
+        "unit": "N·m",
+        "note": "in numerical order",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "If a bolt creaks with stick-slip while tightening, the whole procedure has to be restarted with fresh sealant.",
+      "components": [
+        "cylinder-head-rh",
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-127",
+      "order": 127,
+      "phase": "assembly-heads",
+      "title": "Release and retorque RH bolts",
+      "action": "Back every bolt off 180 degrees in the loosening sequence, then another 180 degrees, then tighten all in the tightening sequence to the working torque.",
+      "why": "Seating the gasket at high torque and then releasing it removes friction before the final stretch.",
+      "spec": {
+        "kind": "torque",
+        "value": "42",
+        "unit": "N·m",
+        "note": "after two 180 deg back-offs",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-128",
+      "order": 128,
+      "phase": "assembly-heads",
+      "title": "Angle-torque the RH head",
+      "action": "Add the first angle to all bolts in order, then the second angle to the two named bolts, then the third angle to the four named bolts, and wipe any sealant off the chain cover face.",
+      "tools": [
+        "Angle gauge"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "80 +/- 2",
+        "unit": "deg",
+        "note": "all bolts; then +75 deg on 2 bolts; then +30 deg on 4 bolts",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Applying the 75 and 30 degree passes to the wrong bolts overloads some and underloads others.",
+      "components": [
+        "cylinder-head-rh",
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "id": "fb25-129",
+      "order": 129,
+      "phase": "assembly-heads",
+      "title": "Install and torque LH head",
+      "action": "Seal a new LH gasket the same way and run the identical torque, release, retorque and three-stage angle procedure on the LH head in its own sequence.",
+      "tools": [
+        "Torque wrench",
+        "Angle gauge"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "80, then 75, then 30",
+        "unit": "deg",
+        "note": "after 29, 100, 2 x 180 deg release and 42 N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "cylinder-head-lh",
+        "head-bolts",
+        "head-gaskets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-130",
+      "order": 130,
+      "phase": "assembly-heads",
+      "title": "Mount the A/C compressor",
+      "action": "Bolt the A/C compressor back onto its mounting on the LH side.",
+      "why": "The manual refits the compressor right after the LH head is torqued and before the LH cam carrier goes on.",
+      "components": [
+        "ac-compressor"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-131",
+      "order": 131,
+      "phase": "assembly-heads",
+      "title": "Install the EGR pipe",
+      "action": "Fit the EGR pipe to the water pipe and RH block half with a new gasket.",
+      "components": [
+        "egr-pipe"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-132",
+      "order": 132,
+      "phase": "assembly-heads",
+      "title": "Fit new AVCS filter screens",
+      "action": "Press a new AVCS filter screen into each cam carrier flush with the end face, no deeper than 0.5 mm.",
+      "why": "The screens are one-time use and protect the oil supply to the AVCS sprockets.",
+      "spec": {
+        "kind": "other",
+        "value": "0 to 0.5",
+        "unit": "mm",
+        "note": "below carrier end face",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "avcs-filters"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "fb25-133",
+      "order": 133,
+      "phase": "assembly-heads",
+      "title": "Assemble camshafts into carriers",
+      "action": "Oil the journals, lay the camshafts in each carrier, run thin sealant beads on the front and rear cap faces and torque the caps in sequence.",
+      "why": "Too much sealant here can flow onto a journal and seize the camshaft.",
+      "spec": {
+        "kind": "torque",
+        "value": "18",
+        "unit": "N·m",
+        "note": "cam cap bolts in numerical order",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "camshafts",
+        "cam-caps",
+        "cam-carrier-rh",
+        "cam-carrier-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-134",
+      "order": 134,
+      "phase": "assembly-heads",
+      "title": "Set RH rocker gear",
+      "action": "Stand the engine RH cams up, oil and install each shim and pivot in its original place, then the oiled roller rockers and new O-rings.",
+      "why": "Each shim must go back on its own valve or every clearance changes.",
+      "components": [
+        "valve-shims",
+        "roller-rockers"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-135",
+      "order": 135,
+      "phase": "assembly-heads",
+      "title": "Torque the RH cam carrier",
+      "action": "Seal the carrier face, set both cams to zero lift, set the carrier and tighten all bolts in sequence, then three times back off the three named bolts 180 degrees and retighten them.",
+      "why": "Zero lift means no valve spring is pushing up while the carrier draws down.",
+      "tools": [
+        "Torque wrench"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "18",
+        "unit": "N·m",
+        "note": "all bolts, then three release-and-retighten cycles on 3 bolts",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Setting the carrier with a lobe on a rocker can bend a valve or crack the carrier.",
+      "components": [
+        "cam-carrier-rh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-136",
+      "order": 136,
+      "phase": "assembly-heads",
+      "title": "Install the LH cam carrier",
+      "action": "Roll the engine LH cams up, fit the LH shims, pivots, rockers and O-rings, seal the carrier and torque it with the same zero-lift and three-cycle procedure.",
+      "tools": [
+        "Torque wrench"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "18",
+        "unit": "N·m",
+        "note": "same cycle as RH",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "cam-carrier-lh",
+        "valve-shims",
+        "roller-rockers"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-137",
+      "order": 137,
+      "phase": "assembly-heads",
+      "title": "Bolt on the cam sprockets",
+      "action": "Fit each sprocket on its camshaft knock pin, hold it with the pulley wrench and pin set, and torque the bolts.",
+      "tools": [
+        "Sprocket socket 18270KA010",
+        "Pulley wrench 18355AA000"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "18",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-138",
+      "order": 138,
+      "phase": "assembly-heads",
+      "title": "Measure cam clearance",
+      "action": "With each lobe on its base circle, measure between the cam and the roller with a feeler gauge and record every reading.",
+      "why": "Clearance is set by shim thickness, so it must be checked before chains and covers make the carriers hard to remove.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "spec": {
+        "kind": "clearance",
+        "value": "0.13 (+0.02 / -0.03)",
+        "unit": "mm",
+        "note": "intake; exhaust 0.22 +/- 0.02",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Turning a cam past its free range to reach a lobe makes intake and exhaust valves collide.",
+      "components": [
+        "camshafts",
+        "roller-rockers",
+        "valve-shims"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-139",
+      "order": 139,
+      "phase": "assembly-heads",
+      "title": "Correct clearance with new shims",
+      "action": "For any valve out of range, measure its shim, calculate the new thickness, fit a new shim, refit the carrier and recheck every valve on that side.",
+      "tools": [
+        "Micrometer"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "S = T + 1.54 x (V - 0.13)",
+        "unit": "mm",
+        "note": "intake; exhaust S = T + 1.69 x (V - 0.22); S new, T current shim, V measured",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "valve-shims"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-140",
+      "order": 140,
+      "phase": "assembly-timing",
+      "title": "Load the LH tensioner",
+      "action": "Push the LH tensioner plunger in with the link plate, make sure the first rack notch is engaged and lock it with the stopper pin.",
+      "tools": [
+        "Stopper pin or hex key"
+      ],
+      "components": [
+        "chain-tensioners"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-141",
+      "order": 141,
+      "phase": "assembly-timing",
+      "title": "Confirm crank parked mid-stroke",
+      "action": "Check the crank sprocket mark is still at the parked position with all pistons halfway down.",
+      "why": "The LH intake cam is turned next, and that is only safe with no piston near the top.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "critical": true,
+      "components": [
+        "crank-sprocket",
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-142",
+      "order": 142,
+      "phase": "assembly-timing",
+      "title": "Time the LH intake sprocket",
+      "action": "Turn the LH intake sprocket with the pulley wrench to its timing mark, without touching the LH exhaust cam.",
+      "tools": [
+        "Pulley wrench 18355AA000",
+        "Pin set 18334AA030"
+      ],
+      "critical": true,
+      "mistake": "Nudging the LH exhaust cam while the intake is lifted lets the valves meet.",
+      "components": [
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-143",
+      "order": 143,
+      "phase": "assembly-timing",
+      "title": "Roll crank back 200 degrees",
+      "action": "Turn the crank about 200 degrees counterclockwise to bring the key to its LH timing position, only going clockwise for the last fine adjustment.",
+      "why": "This is the teardown move in reverse; turning clockwise here would push pistons into the open LH intake valves.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "critical": true,
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-144",
+      "order": 144,
+      "phase": "assembly-timing",
+      "title": "Time the LH exhaust sprocket",
+      "action": "Set the LH exhaust sprocket to its mark, turning it only within its free zero-lift range.",
+      "critical": true,
+      "components": [
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-145",
+      "order": 145,
+      "phase": "assembly-timing",
+      "title": "Hang the LH timing chain",
+      "action": "Fit the LH chain with its blue link on the crank sprocket mark and its two pink links on the LH intake and exhaust timing marks, then fit the LH guide.",
+      "why": "Use the housing marks on any sprocket whose sensor plate was found free.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "chain guide",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Counting links instead of matching the colored links is the usual way the LH bank ends up a tooth off.",
+      "components": [
+        "timing-chain-lh",
+        "chain-guides",
+        "cam-sprockets",
+        "crank-sprocket"
+      ],
+      "sourceIds": [
+        "s1",
+        "s8"
+      ]
+    },
+    {
+      "id": "fb25-146",
+      "order": 146,
+      "phase": "assembly-timing",
+      "title": "Install LH tensioner and lever",
+      "action": "Fit a new O-ring at the LH block half, then the LH tensioner lever and tensioner.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "chain-tensioners"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-147",
+      "order": 147,
+      "phase": "assembly-timing",
+      "title": "Pull the LH stopper pin",
+      "action": "Recheck the blue and two pink links against their marks, then pull the stopper pin so the tensioner takes up the slack.",
+      "why": "Once the pin is out the chain is loaded and cannot be shifted a tooth without starting over.",
+      "critical": true,
+      "components": [
+        "chain-tensioners",
+        "timing-chain-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-148",
+      "order": 148,
+      "phase": "assembly-timing",
+      "title": "Turn over and recheck LH",
+      "action": "Turn the crank clockwise to confirm nothing binds, then bring it round until the crank and LH marks line up again with the key at six o'clock.",
+      "why": "The RH chain is timed from this position.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "components": [
+        "crankshaft",
+        "timing-chain-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-149",
+      "order": 149,
+      "phase": "assembly-timing",
+      "title": "Load the RH tensioner",
+      "action": "Compress and pin the RH tensioner plunger with the 2.5 mm stopper pin, first rack notch engaged.",
+      "tools": [
+        "2.5 mm stopper pin"
+      ],
+      "components": [
+        "chain-tensioners"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-150",
+      "order": 150,
+      "phase": "assembly-timing",
+      "title": "Time the RH sprockets",
+      "action": "Set the RH intake and exhaust sprockets to their marks, moving each only within its free zero-lift range.",
+      "critical": true,
+      "components": [
+        "cam-sprockets"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-151",
+      "order": 151,
+      "phase": "assembly-timing",
+      "title": "Hang the RH timing chain",
+      "action": "Fit the RH chain with the blue link on the crank mark and the pink links on the RH intake and exhaust marks, then fit the RH guide.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "chain guide",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "timing-chain-rh",
+        "chain-guides"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-152",
+      "order": 152,
+      "phase": "assembly-timing",
+      "title": "Release the RH tensioner",
+      "action": "Install the RH tensioner lever and tensioner, confirm all three RH marks, and pull the stopper pin.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "chain-tensioners",
+        "timing-chain-rh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-153",
+      "order": 153,
+      "phase": "assembly-timing",
+      "title": "Rotate engine to verify timing",
+      "action": "Confirm all marks on both banks, then turn the crank clockwise by hand through at least two turns and check for any binding before going further.",
+      "why": "A timing error found now costs minutes; found after the chain cover is sealed it costs the cover.",
+      "tools": [
+        "Crankshaft socket 18252AA000"
+      ],
+      "critical": true,
+      "components": [
+        "crankshaft",
+        "timing-chain-rh",
+        "timing-chain-lh"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-154",
+      "order": 154,
+      "phase": "assembly-timing",
+      "title": "Install injectors and fuel pipes",
+      "action": "Fit new O-rings, rubbers and seal rings, install each fuel pipe with its injectors and bolt it to its cam carrier.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "fuel-injectors"
+      ],
+      "sourceIds": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-155",
+      "order": 155,
+      "phase": "assembly-timing",
+      "title": "Refit the water pipes",
+      "action": "Connect the water pipe hoses at the oil pan upper and bolt the water pipe assemblies on.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "water-pipes"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-156",
+      "order": 156,
+      "phase": "assembly-timing",
+      "title": "Install the rocker covers",
+      "action": "Fit new spark plug tube gaskets and cover gaskets, run the sealant beads at the arches, and tighten each cover in sequence.",
+      "why": "The rocker covers go on before the chain cover because the chain cover seals across their ends.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "note": "3.5 mm sealant bead",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "rocker-covers"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-157",
+      "order": 157,
+      "phase": "assembly-timing",
+      "title": "Prepare the chain cover joints",
+      "action": "Fit new oiled O-rings at the heads, LH block half and oil pan upper, and fill any step between cam cap, carrier, head and block with liquid gasket.",
+      "why": "The cover seals across several separate parts, and each joint between them is a leak path.",
+      "components": [
+        "chain-cover"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "fb25-158",
+      "order": 158,
+      "phase": "assembly-timing",
+      "title": "Seal and fit chain cover",
+      "action": "Run the liquid gasket bead around the cover and on its five center bosses, then slide it straight on over guide pins without touching the sprockets and tighten the bolts in sequence.",
+      "why": "The cover can catch the sensor plate on a cam sprocket; touching a sprocket also smears the fresh bead.",
+      "tools": [
+        "Cover alignment pins J-51972"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "10 / 25",
+        "unit": "N·m",
+        "note": "M6 bolts 10, M8 bolts 25; 4 mm bead",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Swinging the cover in at an angle wipes the sealant and leaks at the cam carrier corners.",
+      "components": [
+        "chain-cover",
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6",
+        "s15"
+      ]
+    },
+    {
+      "id": "fb25-159",
+      "order": 159,
+      "phase": "assembly-timing",
+      "title": "Press in front crank seal",
+      "action": "Lightly oil the new front seal and drive it into the chain cover to just below the outer face.",
+      "tools": [
+        "Oil seal installer 398437700"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "1 (+0 / -1)",
+        "unit": "mm",
+        "note": "seal depth from cover end face",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "front-seal"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-160",
+      "order": 160,
+      "phase": "assembly-timing",
+      "title": "Install the AVCS solenoids",
+      "action": "Fit the oil control solenoids with new oiled O-rings, plus the sensor and actuator covers.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.4",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "oil-control-solenoids"
+      ],
+      "sourceIds": [
+        "s4",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-161",
+      "order": 161,
+      "phase": "assembly-timing",
+      "title": "Install chain cover sensors",
+      "action": "Install the camshaft position sensors, oil temperature sensor, oil pressure switch and the oil pump union.",
+      "spec": {
+        "kind": "torque",
+        "value": "45",
+        "unit": "N·m",
+        "note": "oil pump union",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "cam-sensors",
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "id": "fb25-162",
+      "order": 162,
+      "phase": "assembly-timing",
+      "title": "Angle-torque the crank pulley",
+      "action": "With a new O-ring on the pulley boss, fit the pulley on its knock pin, oil the bolt, torque it while the pulley is locked, then mark bolt and pulley and turn the bolt through the angle.",
+      "why": "The pulley bolt clamps the crank sprocket and boss; the angle, not the torque, sets that load.",
+      "tools": [
+        "Pulley wrench 18355AA000",
+        "Pin set 18334AA000",
+        "Marker"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "60",
+        "unit": "N·m",
+        "note": "then +60 deg +/- 5 deg",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "mistake": "Stopping at the torque value without the angle leaves the pulley loose enough to shear its pin.",
+      "components": [
+        "crank-pulley"
+      ],
+      "sourceIds": [
+        "s1",
+        "s6"
+      ]
+    },
+    {
+      "id": "fb25-163",
+      "order": 163,
+      "phase": "assembly-ext",
+      "title": "Fit idler and dipstick guide",
+      "action": "Install the idler pulley with its cover the right way round and the oil level gauge guide with a new O-ring.",
+      "spec": {
+        "kind": "torque",
+        "value": "36",
+        "unit": "N·m",
+        "note": "idler pulley",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "drive-belt"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-164",
+      "order": 164,
+      "phase": "assembly-ext",
+      "title": "Install water pump pulley",
+      "action": "Bolt the water pump pulley on while holding it with the pulley wrench.",
+      "tools": [
+        "Pulley wrench 18355AA000"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "14",
+        "unit": "N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "water-pump"
+      ],
+      "sourceIds": [
+        "s3"
+      ]
+    },
+    {
+      "id": "fb25-165",
+      "order": 165,
+      "phase": "assembly-ext",
+      "title": "Install the oil filter",
+      "action": "Oil the new filter's seal and turn it on by hand until it touches, then about one more turn.",
+      "spec": {
+        "kind": "torque",
+        "value": "14",
+        "unit": "N·m",
+        "note": "68 mm filter; 12 N·m for the 67.4 mm filter",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "components": [
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "fb25-166",
+      "order": 166,
+      "phase": "assembly-ext",
+      "title": "Install tumble generator valves",
+      "action": "Fit the cylinder head plates and tumble generator valve assemblies with new gaskets.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      "components": [
+        "tgv"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-167",
+      "order": 167,
+      "phase": "assembly-ext",
+      "title": "Install harness and manifold",
+      "action": "Lay in the engine wiring harness, then fit the intake manifold to the tumble generator valves with new gaskets and reconnect fuel and sensor lines.",
+      "spec": {
+        "kind": "torque",
+        "value": "8.3",
+        "unit": "N·m",
+        "note": "manifold to tumble generator valves",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      "components": [
+        "wiring-harness",
+        "intake-manifold"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "fb25-168",
+      "order": 168,
+      "phase": "assembly-ext",
+      "title": "Install the generator",
+      "action": "Bolt the generator onto its bracket and reconnect its cord stay to the chain cover.",
+      "components": [
+        "generator"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-169",
+      "order": 169,
+      "phase": "assembly-ext",
+      "title": "Install tensioner and V-belt",
+      "action": "Fit the belt tensioner with its tab in the anti-rotation hole, then route the V-belt on clean, dry pulleys.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "tensioner",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "drive-belt"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-170",
+      "order": 170,
+      "phase": "assembly-ext",
+      "title": "Install plugs and coils",
+      "action": "Install the spark plugs and the four ignition coils.",
+      "components": [
+        "ignition"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-171",
+      "order": 171,
+      "phase": "final",
+      "title": "Fit mounts, lift off stand",
+      "action": "Bolt the engine mounts on, then sling the engine and remove it from the stand.",
+      "tools": [
+        "Engine hoist"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "35",
+        "unit": "N·m",
+        "note": "mount to engine",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "engine-mounts",
+        "engine-stand"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-172",
+      "order": 172,
+      "phase": "final",
+      "title": "Mate engine to transmission",
+      "action": "Lower the engine in, slide it straight back onto the transmission with the jack supporting the transmission, and fit the upper bellhousing bolts.",
+      "spec": {
+        "kind": "torque",
+        "value": "50",
+        "unit": "N·m",
+        "note": "upper transmission-to-engine bolts",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "engine-mounts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-173",
+      "order": 173,
+      "phase": "final",
+      "title": "Reconnect torque converter",
+      "action": "Remove the converter stopper, install the starter, then turn the crank to bolt the converter to the drive plate through the service hole and refit the plug.",
+      "why": "The stopper must be out before the converter can be pulled up to the drive plate.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "converter to drive plate",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "mistake": "Dropping a converter bolt into the bellhousing means pulling the engine back out.",
+      "components": [
+        "torque-converter",
+        "drive-plate"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-174",
+      "order": 174,
+      "phase": "final",
+      "title": "Secure bolts, mounts and exhaust",
+      "action": "From underneath, fit the lower bellhousing bolts and the mount nuts, connect the engine ground and install the front exhaust pipe.",
+      "spec": {
+        "kind": "torque",
+        "value": "45",
+        "unit": "N·m",
+        "note": "mount nuts to crossmember; lower bellhousing 50 N·m",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "components": [
+        "engine-mounts"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-175",
+      "order": 175,
+      "phase": "final",
+      "title": "Reconnect hoses and harness",
+      "action": "Reconnect fuel and evaporation lines, heater and booster hoses, the A/C line, harness connectors, radiator and intake ducting.",
+      "mistake": "Heater inlet and outlet hoses swapped at the engine will not heat properly and trap air.",
+      "components": [
+        "wiring-harness",
+        "fuel-injectors"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-176",
+      "order": 176,
+      "phase": "final",
+      "title": "Fill the engine oil",
+      "action": "Fill with 0W-20 synthetic through the filler to the F mark on the dipstick.",
+      "spec": {
+        "kind": "fluid",
+        "value": "5.7",
+        "unit": "L",
+        "note": "total at overhaul (6.0 US qt), 0W-20 synthetic",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "components": [
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "fb25-177",
+      "order": 177,
+      "phase": "final",
+      "title": "Fill and bleed coolant",
+      "action": "Add the cooling system conditioner, fill with Subaru Super Coolant, then run the factory bleed cycle of short revving bursts, heater on full hot, until the fan cycles, topping up after each cool-down.",
+      "why": "The repeated rev, wait and top-up cycles work trapped air out of the engine and heater core; air left behind lets the engine overheat.",
+      "spec": {
+        "kind": "fluid",
+        "value": "7.6",
+        "unit": "L",
+        "note": "approximate total, CVT model",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "components": [
+        "water-pump",
+        "thermostat"
+      ],
+      "sourceIds": [
+        "s3"
+      ]
+    },
+    {
+      "id": "fb25-178",
+      "order": 178,
+      "phase": "final",
+      "title": "Check CVTF, recharge A/C",
+      "action": "Check the CVT fluid level and top up if needed, then evacuate and recharge the A/C system.",
+      "components": [
+        "torque-converter",
+        "ac-compressor"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-179",
+      "order": 179,
+      "phase": "final",
+      "title": "Prime the oil system",
+      "action": "With the fuel pump fuse removed, crank the engine in short bursts until oil pressure shows on a gauge or the warning light goes out, then refit the fuse.",
+      "why": "New bearings, the chain tensioners and the AVCS sprockets all need oil before the engine fires.",
+      "critical": true,
+      "mistake": "Firing a fresh engine before oil pressure is up runs the bearings and cam journals dry.",
+      "components": [
+        "oil-pump",
+        "main-bearings",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s12",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-180",
+      "order": 180,
+      "phase": "final",
+      "title": "Start and check oil pressure",
+      "action": "Start the engine and confirm oil pressure with a gauge in place of the pressure switch, then look for leaks and listen for noise.",
+      "spec": {
+        "kind": "other",
+        "value": "50 or more at 600 rpm",
+        "unit": "kPa",
+        "note": "350 kPa or more at 6,000 rpm, oil at 80 C",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-181",
+      "order": 181,
+      "phase": "final",
+      "title": "Run first heat cycle",
+      "action": "Let the engine warm up with varied speed rather than long idling, then shut it down, let it cool and check for leaks and fluid levels.",
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s12",
+        "s1"
+      ]
+    },
+    {
+      "id": "fb25-182",
+      "order": 182,
+      "phase": "final",
+      "title": "Change oil after first run",
+      "action": "Drain the first oil and replace the filter after the initial heat cycle, checking the filter for metal.",
+      "why": "The first oil carries assembly lube and machining debris.",
+      "components": [
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s12"
+      ]
+    },
+    {
+      "id": "fb25-183",
+      "order": 183,
+      "phase": "final",
+      "title": "Drive the 1,000-mile break-in",
+      "action": "For the first 1,000 miles keep the engine under 4,000 rpm, vary speed, avoid hard starts and hard braking, and check the oil level often.",
+      "why": "Rings seat and new parts settle during this period; Subaru notes some oil use is normal while an engine is breaking in.",
+      "spec": {
+        "kind": "other",
+        "value": "4,000",
+        "unit": "rpm",
+        "note": "maximum during first 1,000 miles (1,600 km)",
+        "sourceIds": [
+          "s11"
+        ]
+      },
+      "components": [
+        "piston-rings"
+      ],
+      "sourceIds": [
+        "s11",
+        "s10"
+      ]
+    }
+  ]
+}

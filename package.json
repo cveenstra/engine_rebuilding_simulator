@@ -1,0 +1,28 @@
+{
+  "name": "rebuild-bench",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Mobile-first study game for memorizing engine and transmission rebuild sequences: Subaru FB25 and TR580 CVT, JLR Ingenium 2.0 petrol and ZF 9HP48.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "oxlint src scripts",
+    "validate": "node scripts/validate-data.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^8.3.0"
+  }
+}

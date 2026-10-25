@@ -1,0 +1,2550 @@
+{
+  "id": "zf-9hp48",
+  "kind": "transmission",
+  "name": "ZF 9HP48",
+  "fullName": "ZF 9HP48 nine-speed transverse automatic (dog clutches A and F, multi-plate B, C, D, E; four planetary sets)",
+  "vehicle": "2018 Land Rover Discovery Sport",
+  "pairsWith": "ingenium-pt204",
+  "summary": "A compact transverse nine-speed with four nested planetary sets and six shift elements, two of them hydraulically moved dog clutches with no friction to absorb a bad engagement. The pump sits off-axis in the bell housing, driven by chain, and there is no bottom pan: everything is reached through a plastic side cover and by splitting the bell housing from the case. Clutch clearances are set with selective rings and plates under a fixed load, and the job is not finished until the TCM is updated and its adaptations relearned.",
+  "facts": [
+    {
+      "label": "Type",
+      "value": "Front-transverse 9-speed planetary automatic with lock-up torque converter; AWD via a PTU on the differential side",
+      "sourceIds": [
+        "s23",
+        "s4",
+        "s12"
+      ]
+    },
+    {
+      "label": "Generation",
+      "value": "First-generation 9HP48 (L550 Discovery Sport 2015MY on); 9HP50 takes over with the 2020MY facelift",
+      "sourceIds": [
+        "s12",
+        "s13",
+        "s25"
+      ]
+    },
+    {
+      "label": "Gears",
+      "value": "4.700 (1st) to 0.479 (9th), reverse 3.805, from four nested planetary sets",
+      "sourceIds": [
+        "s10",
+        "s2"
+      ]
+    },
+    {
+      "label": "Shift elements",
+      "value": "Dog clutches A and F; friction clutches B and E; friction brakes C and D",
+      "sourceIds": [
+        "s1",
+        "s2",
+        "s7"
+      ]
+    },
+    {
+      "label": "Oil pump",
+      "value": "Chain-driven, off-axis dual-chamber vane pump in the bell housing",
+      "sourceIds": [
+        "s1",
+        "s23"
+      ]
+    },
+    {
+      "label": "Valve body",
+      "value": "Inside the case behind a ribbed plastic side cover; 9 solenoids, 10 with electronic park; no bottom pan",
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "label": "Mechatronic",
+      "value": "No: the TCM is a separate module bolted to the outside of the case",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Fluid level check",
+      "value": "Engine idling in P, fluid temperature read on the JLR tool, level set at the check plug; JLR's temperature window not found publicly",
+      "sourceIds": [
+        "s12",
+        "s8"
+      ]
+    },
+    {
+      "label": "Overhaul fill",
+      "value": "About 6.5 L of ZF LifeguardFluid 9 (JLR LR023288)",
+      "sourceIds": [
+        "s26",
+        "s24",
+        "s12"
+      ]
+    },
+    {
+      "label": "Front differential",
+      "value": "Inside the transmission case on tapered roller bearings; carrier built for 2WD or AWD",
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "label": "Clutch clearances",
+      "value": "B 0.050–0.070 in, C 0.030–0.045 in, D 0.040–0.059 in, E 0.050–0.070 in under 45 lb (smaller packs differ)",
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "label": "Torque rating",
+      "value": "450 N·m petrol / 480 N·m diesel",
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "label": "Weight",
+      "value": "About 86 kg",
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "label": "Start-stop",
+      "value": "Filter bypass tube gives instant pressure on restart instead of an auxiliary pump",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Warranty",
+      "value": "US extension to 5 yr/62,500 mi for 2015MY Discovery Sport and 2014–15 Evoque only",
+      "sourceIds": [
+        "s19"
+      ]
+    }
+  ],
+  "notes": [
+    "Correction to a common description: the 9HP48 is not an 8HP-style mechatronic. The valve body sits inside the case behind a plastic side cover and the TCM is a separate module bolted to the outside of the case. There is no bottom oil pan; the side cover is the 'pan' and the filter is internal.",
+    "Be honest about the job: JLR does not overhaul these. Its bulletins say to update TCM software, fix leaks and low fluid, and otherwise replace the whole transmission. Many 9HP shift complaints were cured by calibration updates and adaptation resets alone, and 2014-2015 Evoque and 2015 Discovery Sport units got an extended US warranty.",
+    "Dog clutch problems are the 9HP's signature failure. Common causes are a loose A dog sensing valve screw, worn dog sleeves and splines, and worn A/F dog plunger valve sleeves in the valve body. The usual repair is a complete input shaft assembly plus a valve body plunger kit or a remanufactured valve body, not machining.",
+    "The internal sequence here follows Chrysler 948TE service information and trade-press teardowns of the same ZF design. 9HP48 and 948TE parts are not always interchangeable, and torque figures marked '948TE' come from FCA data. Check them against ZF or JLR data for your unit.",
+    "Usually replaced: all frictions, every seal, O-ring and gasket, the internal filter, the bell housing gasket and tube seal, differential seals, converter nuts and the gallery plate bolts. Commonly replaced as assemblies: torque converter (sent out or remanufactured), input shaft with A dog if it fails the air test, and the valve body if bores are worn.",
+    "Special tools in the factory procedure: a press tool with adapters for the C and D Belleville springs (Miller 8901A, 10428, 10504), a C piston tool (10507A), valve body alignment pins (10379), a force gauge for loading clutch packs during clearance checks, and an arbor press. A JLR diagnostic tool (Pathfinder for 2018MY) is required for the TCM update, configuration and adaptation reset.",
+    "Step count is 117, inside the 90-120 target. Not covered step by step: valve body bore-by-bore layout, torque converter internals, and differential/transfer bearing preload, because no public source gives the 9HP48 preload method or values.",
+    "Output gear nut torque, converter nut torque, drain/fill plug torques, the JLR fluid-level temperature window and the input shaft end play value are left out because no reliable public source for this unit was found."
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Transmission Digest: ZF9HP48 FWD Nine Speed, Part 1 (M. Riley, Aug 2015)",
+      "url": "https://www.transmissiondigest.com/zf9hp48-fwd-nine-speed-part-1-is-this-fuel-economy-or-marketing-driven/",
+      "kind": "reference"
+    },
+    {
+      "id": "s2",
+      "title": "Transmission Digest: ZF9HP48 FWD Nine Speed, Part 2 (M. Riley, Sep 2015)",
+      "url": "https://www.transmissiondigest.com/zf9hp48-fwd-nine-speed-part-2/",
+      "kind": "reference"
+    },
+    {
+      "id": "s3",
+      "title": "Transmission Digest: Chrysler 948TE, a doggy dog transmission (W. Colonna, 2022)",
+      "url": "https://www.transmissiondigest.com/chrysler-948te-doggy-dog-transmission/",
+      "kind": "reference"
+    },
+    {
+      "id": "s4",
+      "title": "Transmission Digest / Sonnax: ZF9HP48, 948TE line pressure control and diagnostics (2021)",
+      "url": "https://www.transmissiondigest.com/zf9hp48-948te-line-pressure-control-and-diagnostics/",
+      "kind": "vendor"
+    },
+    {
+      "id": "s5",
+      "title": "GEARS: ZF 9HP48, a mechanical marvel (S. Boyle, Dec 2019)",
+      "url": "https://gearsmagazine.com/magazine/zf-9hp48-a-mechanical-marvel/",
+      "kind": "reference"
+    },
+    {
+      "id": "s6",
+      "title": "GEARS: ZF9HP48 worn parts create stuck-in-park, dog clutch no-go (Apr 2026)",
+      "url": "https://gearsmagazine.com/magazine/zf9hp48-worn-parts-create-stuck-in-park-dog-clutch-issues-cause-a-no-go/",
+      "kind": "reference"
+    },
+    {
+      "id": "s7",
+      "title": "GEARS: Chrysler's 948TE goes to the dogs (Dec 2015)",
+      "url": "https://gearsmagazine.com/magazine/chryslers-948te-goes-dogs-good-way/",
+      "kind": "reference"
+    },
+    {
+      "id": "s8",
+      "title": "GEARS: 948TE checking fluid levels (Apr 2017)",
+      "url": "https://gearsmagazine.com/magazine/948te-checking-fluid-levels/",
+      "kind": "reference"
+    },
+    {
+      "id": "s9",
+      "title": "FCA TSB 21-008-15 Rev A: 948TE C-clutch snap ring (teardown/assembly procedure)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2015/MC-10144823-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s10",
+      "title": "FCA TSB 21-032-14: 948TE adaptation learn procedure and apply chart",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2014/MC-10139769-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s11",
+      "title": "FCA TSB 21-013-16: 948TE Quick Learn procedure",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2016/MC-10218163-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s12",
+      "title": "JLR LTB00837NAS3: 9HP48 transmission cover gasket leak (L550/L538)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2017/MC-10125255-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s13",
+      "title": "JLR SSM71847: L538/L550 9HP faults P07D4, P2704, P07E7",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2016/SB-10097191-1020.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s14",
+      "title": "JLR SSM72946: L550/L538 9HP48 with P2545/P2546 stored",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2016/SB-10097198-1020.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s15",
+      "title": "JLR Q500NAS1: 9-speed automatic transmission calibration service action",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2017/SB-10105605-9340.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s16",
+      "title": "JLR SSM72569: 9HP48 transmission-to-engine bolt (48 N·m)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2015/SB-10106063-9340.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s17",
+      "title": "JLR SSM71857: 9HP transmission fixings (new converter nuts)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2014/MC-10101656-9340.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s18",
+      "title": "JLR SSM71847 (Nov 2014): 9-speed faults, software level and adaptation path",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2014/SB-10106341-9340.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s19",
+      "title": "JLR NAS20.03.002: 9HP transmission extended warranty (USA)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2020/MC-10173519-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s20",
+      "title": "PMM / Autodata: poor gear shifting on a Range Rover Evoque (gallery plate gasket)",
+      "url": "https://pmmonline.co.uk/technical/poor-gear-shifting-on-a-range-rover-evoque/",
+      "kind": "reference"
+    },
+    {
+      "id": "s21",
+      "title": "Sonnax 85740-22K A & F dog clutch plunger valve kit",
+      "url": "https://sonnax.com/parts/5643-a-f-dog-clutch-plunger-valve-kit",
+      "kind": "vendor"
+    },
+    {
+      "id": "s22",
+      "title": "Wikipedia: ZF 9HP transmission",
+      "url": "https://en.wikipedia.org/wiki/ZF_9HP_transmission",
+      "kind": "reference"
+    },
+    {
+      "id": "s23",
+      "title": "SAE 2013-01-1276: The ZF automatic transmission 9HP48 (abstract)",
+      "url": "https://saemobilus.sae.org/content/2013-01-1276",
+      "kind": "reference"
+    },
+    {
+      "id": "s24",
+      "title": "ZF LifeguardFluid 9 product data sheet",
+      "url": "https://aftermarket.zf.com/lubricants-datasheets/lifeguardfluid-9/pdb_zf-lgf9_20191025_eng.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s25",
+      "title": "GEARS: ZF9HP50 rebuild kit release (2020-2024 Discovery Sport)",
+      "url": "https://gearsmagazine.com/?p=30124",
+      "kind": "vendor"
+    },
+    {
+      "id": "s26",
+      "title": "Cararac: Discovery Sport L550 transmission fluid capacities",
+      "url": "https://cararac.com/gear_oil/land-rover/discovery-sport.html",
+      "kind": "reference"
+    },
+    {
+      "id": "s27",
+      "title": "JLR SSM71994: 9HP P0795/P07E3/P0893, TCM software update",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2014/SB-10072914-6903.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s28",
+      "title": "ATRA PDF-948TE rebuild/reference procedure (contents listing)",
+      "url": "https://members.atra.com/products/pdf-948te",
+      "kind": "reference"
+    }
+  ],
+  "components": [
+    {
+      "id": "torque-converter",
+      "name": "Torque converter",
+      "group": "converter"
+    },
+    {
+      "id": "converter-seal",
+      "name": "Converter hub seal and snap ring",
+      "group": "converter"
+    },
+    {
+      "id": "bell-housing",
+      "name": "Bell (converter) housing",
+      "group": "housing"
+    },
+    {
+      "id": "case",
+      "name": "Main transmission case",
+      "group": "housing"
+    },
+    {
+      "id": "case-gasket",
+      "name": "Bell housing to case gasket and tube seal",
+      "group": "housing"
+    },
+    {
+      "id": "stator-support",
+      "name": "Stator support",
+      "group": "hydraulics"
+    },
+    {
+      "id": "oil-pump",
+      "name": "Off-axis dual-chamber vane pump",
+      "group": "hydraulics"
+    },
+    {
+      "id": "pump-chain",
+      "name": "Pump drive chain and sprockets",
+      "group": "hydraulics"
+    },
+    {
+      "id": "oil-filter",
+      "name": "Internal filter and start-stop bypass tube",
+      "group": "hydraulics"
+    },
+    {
+      "id": "feed-tubes",
+      "name": "Valve body connecting (feed) tubes",
+      "group": "hydraulics"
+    },
+    {
+      "id": "oil-gallery-plate",
+      "name": "Oil passage (gallery) cover plate",
+      "group": "hydraulics"
+    },
+    {
+      "id": "external-line",
+      "name": "External hydraulic line",
+      "group": "hydraulics"
+    },
+    {
+      "id": "valve-body",
+      "name": "Valve body and solenoids",
+      "group": "controls"
+    },
+    {
+      "id": "valve-body-cover",
+      "name": "Valve body side cover",
+      "group": "controls"
+    },
+    {
+      "id": "tcm",
+      "name": "Transmission control module",
+      "group": "controls"
+    },
+    {
+      "id": "pressure-sensor",
+      "name": "Dog clutch pressure sensor",
+      "group": "controls"
+    },
+    {
+      "id": "speed-sensors",
+      "name": "Input/output speed sensors",
+      "group": "controls"
+    },
+    {
+      "id": "range-sensor",
+      "name": "Internal range (mode) sensor",
+      "group": "controls"
+    },
+    {
+      "id": "input-shaft",
+      "name": "Input (turbine) shaft",
+      "group": "geartrain"
+    },
+    {
+      "id": "a-dog",
+      "name": "A dog clutch",
+      "group": "clutches"
+    },
+    {
+      "id": "b-clutch",
+      "name": "B clutch",
+      "group": "clutches"
+    },
+    {
+      "id": "c-brake",
+      "name": "C brake",
+      "group": "clutches"
+    },
+    {
+      "id": "d-brake",
+      "name": "D brake",
+      "group": "clutches"
+    },
+    {
+      "id": "e-clutch",
+      "name": "E clutch",
+      "group": "clutches"
+    },
+    {
+      "id": "f-dog",
+      "name": "F dog clutch",
+      "group": "clutches"
+    },
+    {
+      "id": "output-support",
+      "name": "Output gear and support (OPSA)",
+      "group": "geartrain"
+    },
+    {
+      "id": "planetary-1-2",
+      "name": "Planetary sets 1 and 2 (common sun)",
+      "group": "geartrain"
+    },
+    {
+      "id": "planetary-3-4",
+      "name": "Planetary sets 3 and 4 (shared housing)",
+      "group": "geartrain"
+    },
+    {
+      "id": "transfer-gear",
+      "name": "Transfer gear with park gear",
+      "group": "final-drive"
+    },
+    {
+      "id": "differential",
+      "name": "Differential",
+      "group": "final-drive"
+    },
+    {
+      "id": "diff-seals",
+      "name": "Differential/axle seals",
+      "group": "final-drive"
+    },
+    {
+      "id": "park-system",
+      "name": "Park rod cam and pawl",
+      "group": "final-drive"
+    },
+    {
+      "id": "ptu",
+      "name": "Power transfer unit (AWD)",
+      "group": "vehicle"
+    },
+    {
+      "id": "drain-fill-plugs",
+      "name": "Drain, fill and port plugs",
+      "group": "housing"
+    }
+  ],
+  "phases": [
+    {
+      "id": "prep",
+      "name": "Diagnosis and removal",
+      "kind": "prep",
+      "summary": "Decide whether the unit needs a rebuild at all, then drain it and get it on the bench."
+    },
+    {
+      "id": "teardown-ext",
+      "name": "External teardown",
+      "kind": "teardown",
+      "summary": "Strip the converter, controls and bell housing so the geartrain is exposed."
+    },
+    {
+      "id": "teardown-int",
+      "name": "Internal teardown",
+      "kind": "teardown",
+      "summary": "Lift out the final drive, planetaries and C/D brakes, then break down each subassembly."
+    },
+    {
+      "id": "inspect",
+      "name": "Cleaning and inspection",
+      "kind": "inspect",
+      "summary": "Clean everything and judge the dog clutches, pump, valve body and bearings."
+    },
+    {
+      "id": "subassembly",
+      "name": "Subassembly rebuild",
+      "kind": "assembly",
+      "summary": "Rebuild the pump, valve body, rotating clutches and output support before they go back in the case."
+    },
+    {
+      "id": "assembly",
+      "name": "Case reassembly",
+      "kind": "assembly",
+      "summary": "Rebuild the case from the bottom up with every clearance checked before the next part covers it."
+    },
+    {
+      "id": "final",
+      "name": "Install, fill and relearn",
+      "kind": "final",
+      "summary": "Refit the unit, fill and level it hot, load software, reset adaptations and road test."
+    }
+  ],
+  "steps": [
+    {
+      "id": "zf-9hp48-001",
+      "order": 1,
+      "phase": "prep",
+      "title": "Scan codes and software level",
+      "action": "Read every TCM fault code, record the TCM software level, and note the transmission serial number before touching a wrench.",
+      "why": "JLR's own guidance ties some 9HP48 codes to serial-number ranges and software levels; that decides whether the box is a rebuild candidate or a reflash.",
+      "tools": [
+        "JLR Pathfinder (2018MY) or SDD",
+        "Battery support unit"
+      ],
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s13",
+        "s18",
+        "s12"
+      ]
+    },
+    {
+      "id": "zf-9hp48-002",
+      "order": 2,
+      "phase": "prep",
+      "title": "Check level and external leaks",
+      "action": "Check the fluid level and look for leaks at the valve body cover gasket, case-to-bell-housing joint, cooler joint and the transmission-to-PTU joint.",
+      "why": "Low fluid alone causes poor shifts, noise and dog clutch codes on this unit; fix the leak before blaming the internals.",
+      "components": [
+        "valve-body-cover",
+        "case-gasket",
+        "ptu"
+      ],
+      "sourceIds": [
+        "s13",
+        "s14",
+        "s12"
+      ]
+    },
+    {
+      "id": "zf-9hp48-003",
+      "order": 3,
+      "phase": "prep",
+      "title": "Try software and adaptations first",
+      "action": "If no hard mechanical fault is confirmed, update the TCM to the latest calibration and run the adaptation routine, then road test before committing to a teardown.",
+      "why": "Many 9HP shift complaints were cured by calibration updates rather than parts; a rebuild will not fix a software complaint.",
+      "tools": [
+        "JLR Pathfinder or SDD"
+      ],
+      "mistake": "Tearing down a box whose only problem was an old calibration.",
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s14",
+        "s27",
+        "s18",
+        "s10"
+      ]
+    },
+    {
+      "id": "zf-9hp48-004",
+      "order": 4,
+      "phase": "prep",
+      "title": "Decide rebuild, swap, or sublet",
+      "action": "Choose between a full bench overhaul, a valve body or TCM swap, or a replacement unit, based on the codes, fluid debris and what the diagnosis points to.",
+      "why": "JLR dealers replace the whole transmission for internal faults; an overhaul only makes sense when parts, tooling and service data are in hand.",
+      "components": [
+        "valve-body",
+        "tcm"
+      ],
+      "sourceIds": [
+        "s13",
+        "s14",
+        "s19"
+      ]
+    },
+    {
+      "id": "zf-9hp48-005",
+      "order": 5,
+      "phase": "prep",
+      "title": "Drain fluid and read debris",
+      "action": "Remove the drain plug, let the fluid drain into a clean pan, and examine it and the plug for metal, friction material and burnt smell.",
+      "why": "Fine bright metal points toward dog clutch spline damage; friction debris points to a slipping brake or clutch pack.",
+      "tools": [
+        "Clean drain pan",
+        "Magnet"
+      ],
+      "components": [
+        "drain-fill-plugs"
+      ],
+      "sourceIds": [
+        "s9",
+        "s3"
+      ]
+    },
+    {
+      "id": "zf-9hp48-006",
+      "order": 6,
+      "phase": "prep",
+      "title": "Separate halfshafts and PTU",
+      "action": "With the vehicle supported, remove the front halfshafts and separate the power transfer unit from the transmission's differential side.",
+      "why": "The US Discovery Sport is AWD, so the PTU is splined into the differential and must come away before the transmission can drop.",
+      "components": [
+        "ptu",
+        "differential"
+      ],
+      "sourceIds": [
+        "s12",
+        "s13"
+      ]
+    },
+    {
+      "id": "zf-9hp48-007",
+      "order": 7,
+      "phase": "prep",
+      "title": "Unbolt converter from flexplate",
+      "action": "Mark the converter-to-flexplate position, turn the engine to reach each fastener, and remove the converter nuts; discard them.",
+      "why": "JLR requires new flexplate-to-converter nuts on refit, so these are scrap once removed.",
+      "mistake": "Saving the old converter nuts to reuse on install.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s17"
+      ]
+    },
+    {
+      "id": "zf-9hp48-008",
+      "order": 8,
+      "phase": "prep",
+      "title": "Lower transmission from vehicle",
+      "action": "Support the engine, disconnect the harness, cooler lines and selector, remove the transmission-to-engine bolts and lower the unit with the converter held in place.",
+      "why": "The converter can slide off the pump drive as the unit tilts; keep it captured so it does not fall or damage the hub seal.",
+      "tools": [
+        "Transmission jack",
+        "Engine support"
+      ],
+      "components": [
+        "torque-converter",
+        "case"
+      ],
+      "sourceIds": [
+        "s16",
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-009",
+      "order": 9,
+      "phase": "prep",
+      "title": "Wash exterior and mount unit",
+      "action": "Clean the outside, photograph the bar-code model label on top of the case, then set the transmission on a clean bench or fixture with room to drain.",
+      "why": "Grime at the cover and bell housing joints falls into the valve body once they open; the label matters because 9HP48 and 948TE parts are not always interchangeable.",
+      "tools": [
+        "Solvent tank or pressure washer",
+        "Bench fixture"
+      ],
+      "components": [
+        "case"
+      ],
+      "sourceIds": [
+        "s9",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-010",
+      "order": 10,
+      "phase": "teardown-ext",
+      "title": "Pull converter and port plugs",
+      "action": "Slide the converter straight off and drain it face-down, then remove the production fill plug and converter pressure port plugs so the rest of the fluid runs out.",
+      "why": "The converter must come off first; the bell housing cannot be split with it in place.",
+      "components": [
+        "torque-converter",
+        "drain-fill-plugs",
+        "bell-housing"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-011",
+      "order": 11,
+      "phase": "teardown-ext",
+      "title": "Unbolt the case-mounted TCM",
+      "action": "Unplug and unbolt the transmission control module from the outside of the case and store it in anti-static packaging.",
+      "why": "On the 9HP the TCM is a separate module bolted to the case, not built into the valve body as on the 8HP.",
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-012",
+      "order": 12,
+      "phase": "teardown-ext",
+      "title": "Release the case connector",
+      "action": "Pull the retaining clip from the main electrical connector and push the connector slightly into the side cover.",
+      "why": "The connector passes through the cover; it has to be freed before the cover will lift away.",
+      "components": [
+        "valve-body-cover",
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s9",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-013",
+      "order": 13,
+      "phase": "teardown-ext",
+      "title": "Remove valve body side cover",
+      "action": "Remove the cover bolts (they stay captive in their torque limiters) and lift off the ribbed plastic side cover with its molded seal.",
+      "why": "There is no bottom pan on the 9HP48; this side cover is the only way into the controls.",
+      "components": [
+        "valve-body-cover"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-014",
+      "order": 14,
+      "phase": "teardown-ext",
+      "title": "Mark solenoids and connector plate",
+      "action": "Label every solenoid and photograph the connector plate routing before anything is unplugged.",
+      "why": "The connector plate also carries the speed sensor, range sensor and temperature wiring; reversed solenoids give wrong shifts.",
+      "critical": true,
+      "mistake": "Pulling solenoids without marking their positions.",
+      "components": [
+        "valve-body",
+        "speed-sensors",
+        "range-sensor"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-015",
+      "order": 15,
+      "phase": "teardown-ext",
+      "title": "Unbolt the valve body",
+      "action": "Remove only the valve body retaining bolts that hold it to the case; leave the bolts that hold the valve body halves together.",
+      "why": "Pulling the wrong bolts splits the valve body on the bench and scatters check balls and springs.",
+      "critical": true,
+      "mistake": "Removing the valve body section bolts along with the mounting bolts.",
+      "components": [
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-016",
+      "order": 16,
+      "phase": "teardown-ext",
+      "title": "Pry valve body off tubes",
+      "action": "Ease the valve body away from the connecting tubes with a suitable pry tool, keeping its harness to the range and speed sensors slack.",
+      "why": "The tubes carry clutch, converter, pump and lube oil and grip the valve body by their O-rings; the sensor wiring is still attached.",
+      "critical": true,
+      "mistake": "Yanking the valve body and tearing the range or speed sensor harness.",
+      "components": [
+        "valve-body",
+        "feed-tubes"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-017",
+      "order": 17,
+      "phase": "teardown-ext",
+      "title": "Remove range and speed sensors",
+      "action": "Unbolt the range sensor and speed sensor from the case and set them aside with the valve body.",
+      "why": "These sit behind the valve body and can only be reached with it moved.",
+      "components": [
+        "range-sensor",
+        "speed-sensors"
+      ],
+      "sourceIds": [
+        "s9",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-018",
+      "order": 18,
+      "phase": "teardown-ext",
+      "title": "Pull connecting and bypass tubes",
+      "action": "Remove the valve body connecting tubes and the filter bypass tube, noting which are round and which have one oblong end.",
+      "why": "The two oblong-ended tubes feed the output gear support and only fit one way.",
+      "components": [
+        "feed-tubes",
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s2",
+        "s9",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-019",
+      "order": 19,
+      "phase": "teardown-ext",
+      "title": "Remove oil gallery plate",
+      "action": "Unbolt the oil passage cover plate and its bonded steel gasket from the case.",
+      "why": "This gasket is a known JLR leak point that causes low fluid, noise and poor shifts.",
+      "components": [
+        "oil-gallery-plate"
+      ],
+      "sourceIds": [
+        "s1",
+        "s20"
+      ]
+    },
+    {
+      "id": "zf-9hp48-020",
+      "order": 20,
+      "phase": "teardown-ext",
+      "title": "Remove external hydraulic line",
+      "action": "Disconnect and remove the external hydraulic line at the back of the case.",
+      "why": "The line can blow out with age, so it gets inspected and resealed on every overhaul.",
+      "components": [
+        "external-line"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-021",
+      "order": 21,
+      "phase": "teardown-ext",
+      "title": "Air-check circuits before teardown",
+      "action": "With the valve body off, apply regulated shop air to each clutch and dog clutch port and note how each one applies and how much it leaks.",
+      "why": "A baseline tells you which circuit was leaking; the F dog leaks heavily until its piston shuttles, which is normal.",
+      "tools": [
+        "Air nozzle with rubber tip",
+        "Regulator"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "60",
+        "unit": "psi",
+        "note": "about the minimum air pressure GEARS found needed to shuttle the F dog",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "components": [
+        "a-dog",
+        "b-clutch",
+        "c-brake",
+        "d-brake",
+        "e-clutch",
+        "f-dog"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-022",
+      "order": 22,
+      "phase": "teardown-ext",
+      "title": "Remove outer bell housing bolts",
+      "action": "Remove the bolts around the outside of the bell housing to case joint, leaving the one bolt that stays in throughout.",
+      "why": "One inner bolt also holds the output gear support to the bell housing and must stay until later.",
+      "components": [
+        "bell-housing",
+        "case"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-023",
+      "order": 23,
+      "phase": "teardown-ext",
+      "title": "Remove inner bell housing bolts",
+      "action": "Remove the inner bell housing bolts, leaving the two marked bolts that retain the output gear support.",
+      "critical": true,
+      "mistake": "Removing every inner bolt so the output support drops when the housing lifts.",
+      "components": [
+        "bell-housing",
+        "output-support"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-024",
+      "order": 24,
+      "phase": "teardown-ext",
+      "title": "Lift bell housing off case",
+      "action": "Block the case bell-housing-up, pry at the proper pry points and lift the bell housing straight up; the E clutch, output gear support and filter come with it.",
+      "why": "Lifting straight protects the many tube O-rings and the stator support sealing rings.",
+      "tools": [
+        "Wooden blocks",
+        "Pry bar"
+      ],
+      "components": [
+        "bell-housing",
+        "e-clutch",
+        "output-support",
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s9",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-025",
+      "order": 25,
+      "phase": "teardown-ext",
+      "title": "Remove gasket and tube seal",
+      "action": "Peel off the rubber-coated steel bell housing gasket and remove the tube seal that sits between case and bell housing.",
+      "why": "Both are single-use and the tube seal is easy to forget on reassembly.",
+      "components": [
+        "case-gasket"
+      ],
+      "sourceIds": [
+        "s1",
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-026",
+      "order": 26,
+      "phase": "teardown-int",
+      "title": "Lift out the differential",
+      "action": "Lift the differential assembly out of the case.",
+      "why": "The final drive sits on top once the bell housing is off and must come out before the transfer gear.",
+      "components": [
+        "differential"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-027",
+      "order": 27,
+      "phase": "teardown-int",
+      "title": "Lift out the transfer gear",
+      "action": "Remove the transfer gear (with its integral park gear) from its bearing.",
+      "components": [
+        "transfer-gear",
+        "park-system"
+      ],
+      "sourceIds": [
+        "s9",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-028",
+      "order": 28,
+      "phase": "teardown-int",
+      "title": "Remove upper annulus and carrier",
+      "action": "Lift out the annulus and pinion carrier assembly that sits on top (Chrysler calls it the gear 4 annulus and carrier).",
+      "components": [
+        "planetary-1-2"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-029",
+      "order": 29,
+      "phase": "teardown-int",
+      "title": "Remove next annulus and carrier",
+      "action": "Lift out the next annulus and carrier assembly (Chrysler's gear 3 annulus and carrier gear).",
+      "components": [
+        "planetary-1-2",
+        "planetary-3-4"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-030",
+      "order": 30,
+      "phase": "teardown-int",
+      "title": "Pull transfer gear bearing off",
+      "action": "Use a two-jaw puller seated in the case reliefs to pull the transfer gear bearing off its case boss, spacing the puller with a socket if needed.",
+      "why": "The bearing blocks the D piston housing, so it must come off first; pulling on the cage ruins it.",
+      "tools": [
+        "Two-jaw puller",
+        "1 in socket as spacer"
+      ],
+      "critical": true,
+      "mistake": "Hooking the puller on the roller cage instead of the inner race.",
+      "components": [
+        "transfer-gear",
+        "case"
+      ],
+      "sourceIds": [
+        "s1",
+        "s5",
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-031",
+      "order": 31,
+      "phase": "teardown-int",
+      "title": "Compress D retainer, remove ring",
+      "action": "In an arbor press, compress the D piston retainer with the press tool and adapter and remove its snap ring.",
+      "why": "The Belleville spring is under real load; the retainer only moves about an eighth of an inch.",
+      "tools": [
+        "Arbor press",
+        "Miller 8901A press tool",
+        "Miller 10428 adapter"
+      ],
+      "critical": true,
+      "components": [
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-032",
+      "order": 32,
+      "phase": "teardown-int",
+      "title": "Remove D piston and spring",
+      "action": "Lift out the D piston retainer, the aluminum D piston and its Belleville spring.",
+      "components": [
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s9",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-033",
+      "order": 33,
+      "phase": "teardown-int",
+      "title": "Lift geartrain out by input shaft",
+      "action": "Lift the geartrain (annulus, B clutch pack and hub, input shaft) out of the case by the input shaft, never by the hub.",
+      "why": "Lifting by the hub pulls it out of the B clutch pack and drops the plates.",
+      "critical": true,
+      "mistake": "Lifting the assembly by the hub so the B pack falls apart.",
+      "components": [
+        "input-shaft",
+        "b-clutch",
+        "planetary-3-4",
+        "a-dog"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-034",
+      "order": 34,
+      "phase": "teardown-int",
+      "title": "Remove D brake pack",
+      "action": "Remove the D brake plates and frictions, keeping them in order.",
+      "components": [
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-035",
+      "order": 35,
+      "phase": "teardown-int",
+      "title": "Remove C selective ring and pack",
+      "action": "Remove the C brake selective snap ring, then the C plates and frictions; tag the ring's thickness.",
+      "why": "The selective ring sets C clearance; knowing the old size speeds up shimming later.",
+      "components": [
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-036",
+      "order": 36,
+      "phase": "teardown-int",
+      "title": "Compress C spring, remove piston",
+      "action": "Fit the spring compressor plate over the C Belleville, compress it in the press, remove the snap ring, then lift out the spring and aluminum C piston.",
+      "why": "The C piston sits at the bottom of the case and is the last thing out; the spring is loaded hard enough to launch the ring.",
+      "tools": [
+        "Miller 10504 compressor plate",
+        "Miller 8901A press tool",
+        "Miller 10507A C piston tool"
+      ],
+      "critical": true,
+      "components": [
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5",
+        "s28"
+      ]
+    },
+    {
+      "id": "zf-9hp48-037",
+      "order": 37,
+      "phase": "teardown-int",
+      "title": "Remove differential seals",
+      "action": "Drive out and discard the differential seals from both the case and the bell housing.",
+      "components": [
+        "diff-seals"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-038",
+      "order": 38,
+      "phase": "teardown-int",
+      "title": "Separate output support from housing",
+      "action": "Remove the remaining bolt holding the output gear support to the bell housing and lift the support away without dropping it.",
+      "components": [
+        "output-support",
+        "bell-housing"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-039",
+      "order": 39,
+      "phase": "teardown-int",
+      "title": "Remove E clutch from housing",
+      "action": "Lift the E clutch hub and plates out in order, then lift the steel E drum off the stator support sealing rings.",
+      "why": "The drum carries the input speed sensor knockouts; bent tabs give a bad speed signal.",
+      "components": [
+        "e-clutch",
+        "stator-support"
+      ],
+      "sourceIds": [
+        "s9",
+        "s2",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-040",
+      "order": 40,
+      "phase": "teardown-int",
+      "title": "Unbolt the stator support",
+      "action": "Unbolt the flanged stator support from the bell housing.",
+      "components": [
+        "stator-support"
+      ],
+      "sourceIds": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-041",
+      "order": 41,
+      "phase": "teardown-int",
+      "title": "Remove pump and drive chain",
+      "action": "Remove the pump drive chain and sprockets, noting their orientation, then lift the vane pump out of its pocket in the pump housing.",
+      "why": "The pump sits at the base of the pump housing inside the bell housing, off the input axis.",
+      "components": [
+        "pump-chain",
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-042",
+      "order": 42,
+      "phase": "teardown-int",
+      "title": "Remove filter from pump housing",
+      "action": "Pull the filter outlet neck out of the pump housing and discard the filter and its O-rings.",
+      "why": "There is no pan to reach the filter from outside, so it is only changed during a teardown.",
+      "components": [
+        "oil-filter"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-043",
+      "order": 43,
+      "phase": "teardown-int",
+      "title": "Remove converter hub seal",
+      "action": "Remove the snap ring and drive out the converter hub seal; check the hub support bearing.",
+      "why": "The converter hub runs in a bearing, not a bushing, so check it for roughness while it is exposed.",
+      "components": [
+        "converter-seal",
+        "bell-housing"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-044",
+      "order": 44,
+      "phase": "teardown-int",
+      "title": "Split B drum from geartrain",
+      "action": "Separate the input shaft and B clutch drum from the planetary 3/4 housing.",
+      "components": [
+        "b-clutch",
+        "input-shaft",
+        "planetary-3-4"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-045",
+      "order": 45,
+      "phase": "teardown-int",
+      "title": "Disassemble the B clutch",
+      "action": "Compress the B Belleville spring, remove the snap ring and remove the inverted pack, cushion plate and aluminum piston.",
+      "why": "The B pack is inverted (frictions with outside teeth), so note the stack order.",
+      "components": [
+        "b-clutch"
+      ],
+      "sourceIds": [
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-046",
+      "order": 46,
+      "phase": "teardown-int",
+      "title": "Disassemble the E clutch",
+      "action": "Compress the E Belleville spring, remove its retainer and the bonded piston from the steel drum.",
+      "components": [
+        "e-clutch"
+      ],
+      "sourceIds": [
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-047",
+      "order": 47,
+      "phase": "teardown-int",
+      "title": "Strip output support and F dog",
+      "action": "Remove the output gear nut, bearing and gear from the support, then remove the F dog sleeve and its double-acting piston and cover.",
+      "why": "The F dog grounds the shared sun of sets 1 and 2 to this support.",
+      "components": [
+        "f-dog",
+        "output-support"
+      ],
+      "sourceIds": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "id": "zf-9hp48-048",
+      "order": 48,
+      "phase": "teardown-int",
+      "title": "Separate planetary sets 3 and 4",
+      "action": "Release the snap ring joining the C and D hubs and separate planetary sets 3 and 4 from their shared aluminum housing.",
+      "components": [
+        "planetary-3-4",
+        "c-brake",
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-049",
+      "order": 49,
+      "phase": "teardown-int",
+      "title": "Mark and dismantle the pump",
+      "action": "Mark every pump piece, compress the dished back plate with clamps, remove the clip and take the pump apart.",
+      "why": "The parts only work one way round; unmarked vanes and plates are hard to place again.",
+      "tools": [
+        "Welding clamps",
+        "Paint marker"
+      ],
+      "critical": true,
+      "mistake": "Disassembling the pump without marking the parts' orientation.",
+      "components": [
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-050",
+      "order": 50,
+      "phase": "teardown-int",
+      "title": "Strip the valve body",
+      "action": "Remove the solenoids in their marked order, separate the valve body halves, and lay out valves, springs and sleeves by bore.",
+      "components": [
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s2",
+        "s4",
+        "s21"
+      ]
+    },
+    {
+      "id": "zf-9hp48-051",
+      "order": 51,
+      "phase": "inspect",
+      "title": "Clean all parts and passages",
+      "action": "Wash every part in clean solvent, blow passages dry with air, and keep each subassembly's parts together.",
+      "components": [
+        "case",
+        "bell-housing",
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-052",
+      "order": 52,
+      "phase": "inspect",
+      "title": "Inspect A dog splines",
+      "action": "Check the A dog sleeve and its mating sun/ring gear splines for rounding, chipping and heat marks, and check that the sleeve slides freely.",
+      "why": "The sleeve usually wears before the gears; spline damage here causes loss of forward gears.",
+      "tools": [
+        "Dial caliper"
+      ],
+      "components": [
+        "a-dog",
+        "planetary-3-4"
+      ],
+      "sourceIds": [
+        "s6",
+        "s3",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-053",
+      "order": 53,
+      "phase": "inspect",
+      "title": "Check A dog sensing screw",
+      "action": "Check that the small screw holding the A dog sensing valve plate is tight and its head is intact.",
+      "why": "A loose or broken screw stops the piston's full travel, gives erratic sensor readings and grinds the dog.",
+      "critical": true,
+      "mistake": "Assuming the A dog is fine because the splines look good.",
+      "components": [
+        "a-dog",
+        "input-shaft"
+      ],
+      "sourceIds": [
+        "s3"
+      ]
+    },
+    {
+      "id": "zf-9hp48-054",
+      "order": 54,
+      "phase": "inspect",
+      "title": "Air-test A dog travel",
+      "action": "Hold the input shaft upright, apply air to the apply side and confirm the sleeve travels fully with little leakage, then confirm it returns.",
+      "why": "If it fails, the fix is a complete input shaft assembly; the parts are not serviced separately.",
+      "components": [
+        "a-dog",
+        "input-shaft"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "zf-9hp48-055",
+      "order": 55,
+      "phase": "inspect",
+      "title": "Inspect F dog and sun",
+      "action": "Check the F dog sleeve, its two sealing rings and the synchro splines on the shared sun gear of sets 1 and 2.",
+      "components": [
+        "f-dog",
+        "planetary-1-2"
+      ],
+      "sourceIds": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "id": "zf-9hp48-056",
+      "order": 56,
+      "phase": "inspect",
+      "title": "Bench-test dog pressure sensor",
+      "action": "Power the dog clutch pressure sensor from a bench supply and apply air to confirm its output changes; an ohmmeter will not test it.",
+      "why": "The TCM uses this sensor to know when either dog has finished moving.",
+      "spec": {
+        "kind": "other",
+        "value": "29",
+        "unit": "psi",
+        "note": "approximate pressure the sensor sees while a dog piston is moving; drops to 0 at full travel (948TE)",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "components": [
+        "pressure-sensor"
+      ],
+      "sourceIds": [
+        "s6",
+        "s7",
+        "s3"
+      ]
+    },
+    {
+      "id": "zf-9hp48-057",
+      "order": 57,
+      "phase": "inspect",
+      "title": "Inspect valve body bores",
+      "action": "Check the pressure regulator, the SV-SP valve and the A/F dog plunger valve sleeves for bore wear and sticking.",
+      "why": "Worn plunger sleeves let dog clutch pressure overlap or exhaust early; SV-SP wear upsets line pressure.",
+      "components": [
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s4",
+        "s21"
+      ]
+    },
+    {
+      "id": "zf-9hp48-058",
+      "order": 58,
+      "phase": "inspect",
+      "title": "Inspect pump, chain, sprockets",
+      "action": "Check the vane pump faces, vanes and rotor, the chain for stretch, and the drive gear's four flats where the converter hub engages.",
+      "components": [
+        "oil-pump",
+        "pump-chain"
+      ],
+      "sourceIds": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-059",
+      "order": 59,
+      "phase": "inspect",
+      "title": "Inspect planetaries and thrust bearings",
+      "action": "Spin each planetary pinion for roughness and end play, and check every needle thrust bearing and washer.",
+      "components": [
+        "planetary-1-2",
+        "planetary-3-4"
+      ],
+      "sourceIds": [
+        "s2",
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-060",
+      "order": 60,
+      "phase": "inspect",
+      "title": "Inspect bushings and ring lands",
+      "action": "Check bushings, sealing ring grooves, the pressed-in steel sealing-ring support in the case and the stator support ring lands.",
+      "components": [
+        "case",
+        "stator-support",
+        "input-shaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-061",
+      "order": 61,
+      "phase": "inspect",
+      "title": "Inspect pistons, springs, drums",
+      "action": "Check the C, D and B aluminum pistons, the bonded E piston, every Belleville spring and the drum splines for cracks, distortion and wear.",
+      "components": [
+        "b-clutch",
+        "c-brake",
+        "d-brake",
+        "e-clutch"
+      ],
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-062",
+      "order": 62,
+      "phase": "inspect",
+      "title": "Inspect final drive and park",
+      "action": "Check transfer gear and differential tapered bearings, the park gear teeth and pawl, and the park rod cam.",
+      "components": [
+        "transfer-gear",
+        "differential",
+        "park-system"
+      ],
+      "sourceIds": [
+        "s2",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-063",
+      "order": 63,
+      "phase": "inspect",
+      "title": "Check sensors and connector plate",
+      "action": "Check speed sensors, range sensor and connector plate wiring for chafing, heat damage and bad terminals.",
+      "components": [
+        "speed-sensors",
+        "range-sensor",
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-064",
+      "order": 64,
+      "phase": "inspect",
+      "title": "Judge the torque converter",
+      "action": "Decide whether the converter can be reused or should go to a converter rebuilder or be replaced with a remanufactured unit.",
+      "why": "Lockup is used in every gear, so a worn lockup clutch shows up as shudder; debris left in it re-contaminates the new parts.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "zf-9hp48-065",
+      "order": 65,
+      "phase": "inspect",
+      "title": "Sort replace versus reuse",
+      "action": "Set aside for replacement all frictions, seals, O-rings, gaskets, the filter and converter nuts; keep hard parts that passed inspection.",
+      "why": "Every tube O-ring, the bell housing gasket and the tube seal are single-use.",
+      "critical": true,
+      "mistake": "Reusing tube O-rings that look fine but have taken a set.",
+      "components": [
+        "feed-tubes",
+        "case-gasket",
+        "oil-filter",
+        "converter-seal"
+      ],
+      "sourceIds": [
+        "s9",
+        "s17",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-066",
+      "order": 66,
+      "phase": "subassembly",
+      "title": "Rebuild valve body bores",
+      "action": "Fit replacement valves and sleeves where bores are worn, then reassemble the halves with the manual valve rotated to line up with its notches.",
+      "why": "A misaligned manual valve leaves the selector and valve body out of step.",
+      "critical": true,
+      "mistake": "Reassembling the valve body with the manual valve turned wrong.",
+      "components": [
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s2",
+        "s21",
+        "s4"
+      ]
+    },
+    {
+      "id": "zf-9hp48-067",
+      "order": 67,
+      "phase": "subassembly",
+      "title": "Refit solenoids and connector plate",
+      "action": "Install each solenoid in its marked bore and refit the connector plate, routing the sensor wires as photographed.",
+      "components": [
+        "valve-body",
+        "speed-sensors",
+        "range-sensor"
+      ],
+      "sourceIds": [
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-068",
+      "order": 68,
+      "phase": "subassembly",
+      "title": "Reassemble the oil pump",
+      "action": "Reassemble the pump parts in their marked positions, compress the dished back plate in the press and fit the clip.",
+      "why": "The dished plate preloads the pump and must face the right way.",
+      "tools": [
+        "Arbor press",
+        "O2-sensor socket as a pusher"
+      ],
+      "critical": true,
+      "components": [
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-069",
+      "order": 69,
+      "phase": "subassembly",
+      "title": "Install pump and chain",
+      "action": "Seat the pump with new O-rings in the pump housing, lining up its raised lip, then fit the chain and sprockets.",
+      "why": "The pump body only seats one way; 180 degrees off and it will not sit down.",
+      "critical": true,
+      "mistake": "Seating the pump body rotated 180 degrees.",
+      "components": [
+        "oil-pump",
+        "pump-chain"
+      ],
+      "sourceIds": [
+        "s5",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-070",
+      "order": 70,
+      "phase": "subassembly",
+      "title": "Fit new filter and seal",
+      "action": "Push the new filter's outlet neck with new O-rings into the pump housing, and install a new converter hub seal and its snap ring.",
+      "components": [
+        "oil-filter",
+        "converter-seal"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-071",
+      "order": 71,
+      "phase": "subassembly",
+      "title": "Bolt in the stator support",
+      "action": "Bolt the stator support to the bell housing with new sealing rings.",
+      "components": [
+        "stator-support"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-072",
+      "order": 72,
+      "phase": "subassembly",
+      "title": "Rebuild E clutch drum",
+      "action": "Fit the bonded piston, Belleville spring and retainer, then the segmented frictions, steels and cushion spring, and the selective snap ring.",
+      "components": [
+        "e-clutch"
+      ],
+      "sourceIds": [
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-073",
+      "order": 73,
+      "phase": "subassembly",
+      "title": "Check E clutch clearance",
+      "action": "Load the pack with the specified force and measure clearance; change the selective snap ring until it is in range.",
+      "spec": {
+        "kind": "clearance",
+        "value": "0.050–0.070",
+        "unit": "in",
+        "note": "with 45 lb on the pack; selective snap ring (948TE/9HP48 data via GEARS)",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "critical": true,
+      "mistake": "Measuring with no load on a cushioned pack and reading it as too loose.",
+      "components": [
+        "e-clutch"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-074",
+      "order": 74,
+      "phase": "subassembly",
+      "title": "Rebuild B clutch drum",
+      "action": "Fit the aluminum piston and Belleville spring, then stack the inverted pack with its cushion plate and the selective backing plate.",
+      "components": [
+        "b-clutch"
+      ],
+      "sourceIds": [
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-075",
+      "order": 75,
+      "phase": "subassembly",
+      "title": "Check B clutch clearance",
+      "action": "Load the pack with the specified force, measure clearance and pick the backing plate that puts it in range for that friction count.",
+      "spec": {
+        "kind": "clearance",
+        "value": "0.050–0.070",
+        "unit": "in",
+        "note": "with three double-sided plus two single-sided frictions; 0.040–0.060 in with two plus two; 45 lb load; selective backing plate (GEARS)",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "b-clutch"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-076",
+      "order": 76,
+      "phase": "subassembly",
+      "title": "Rebuild output support and F dog",
+      "action": "Fit the F dog piston and cover with new seals, slide on the sleeve, then refit the output gear, bearing and nut to the support.",
+      "components": [
+        "f-dog",
+        "output-support"
+      ],
+      "sourceIds": [
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "id": "zf-9hp48-077",
+      "order": 77,
+      "phase": "subassembly",
+      "title": "Air-check F dog shuttle",
+      "action": "Apply air to the F dog apply and release ports and confirm the sleeve shuttles fully both ways.",
+      "spec": {
+        "kind": "other",
+        "value": "60",
+        "unit": "psi",
+        "note": "approximate air pressure needed before the F dog shuttles (GEARS)",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "components": [
+        "f-dog"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-078",
+      "order": 78,
+      "phase": "subassembly",
+      "title": "Assemble geartrain stack",
+      "action": "Join planetary sets 3 and 4 in their housing with the C and D hubs, then install the input shaft with A dog and the B drum.",
+      "components": [
+        "planetary-3-4",
+        "input-shaft",
+        "a-dog",
+        "b-clutch"
+      ],
+      "sourceIds": [
+        "s2",
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-079",
+      "order": 79,
+      "phase": "assembly",
+      "title": "Install C piston and spring",
+      "action": "Lube the seals, set the aluminum C piston and Belleville spring in the case, compress evenly in the press and fit the snap ring.",
+      "why": "Uneven compression cuts the piston seals.",
+      "tools": [
+        "Arbor press",
+        "Miller 8901A",
+        "Miller 10428",
+        "Miller 10504"
+      ],
+      "critical": true,
+      "mistake": "Compressing the spring off-center and rolling a piston seal.",
+      "components": [
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-080",
+      "order": 80,
+      "phase": "assembly",
+      "title": "Verify C snap ring seating",
+      "action": "Release the press and confirm the C snap ring is fully seated in its groove all the way round.",
+      "why": "FCA issued a bulletin for a C-clutch snap ring on early 948TE units; a half-seated ring here is fatal.",
+      "critical": true,
+      "components": [
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-081",
+      "order": 81,
+      "phase": "assembly",
+      "title": "Install C pack and ring",
+      "action": "Stack the C frictions and steels and install the selective snap ring in the case.",
+      "components": [
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-082",
+      "order": 82,
+      "phase": "assembly",
+      "title": "Check C brake clearance",
+      "action": "With the specified force on the pack, measure clearance and change the selective snap ring until it is in range.",
+      "spec": {
+        "kind": "clearance",
+        "value": "0.030–0.045",
+        "unit": "in",
+        "note": "3-disc pack; 0.020–0.035 in for 2-disc; 45 lb load; selective snap ring (GEARS)",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-083",
+      "order": 83,
+      "phase": "assembly",
+      "title": "Seat the number 8 bearing",
+      "action": "Remove the needle thrust bearing that may still be stuck to the geartrain hub and place it correctly on the oil feed bushing in the case.",
+      "why": "A bearing left on the hub ends up out of position and wrecks the stack-up.",
+      "critical": true,
+      "components": [
+        "case"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-084",
+      "order": 84,
+      "phase": "assembly",
+      "title": "Install D brake pack",
+      "action": "Stack the D frictions and steels and line up the friction tabs of the C and D packs.",
+      "why": "Aligned tabs let the geartrain hubs drop through both packs.",
+      "components": [
+        "d-brake",
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-085",
+      "order": 85,
+      "phase": "assembly",
+      "title": "Lower geartrain into case",
+      "action": "Lower the geartrain by the input shaft and wriggle it until it engages both packs with a solid clunk and the D hub sits just proud of the pack.",
+      "why": "If the input shaft slips inward or the hubs miss a plate, the stack is wrong and everything above it will be too.",
+      "critical": true,
+      "mistake": "Forcing the geartrain down without it fully engaging the C and D frictions.",
+      "components": [
+        "input-shaft",
+        "planetary-3-4",
+        "d-brake",
+        "c-brake"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-086",
+      "order": 86,
+      "phase": "assembly",
+      "title": "Install D piston and retainer",
+      "action": "Inspect the piston and retainer O-rings, then fit the D Belleville spring, piston and retainer.",
+      "components": [
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-087",
+      "order": 87,
+      "phase": "assembly",
+      "title": "Compress D retainer, fit ring",
+      "action": "Compress the D retainer in the press until the groove shows and install its snap ring.",
+      "why": "Only once the retainer is locked down can the D clearance be measured and the transfer gear bearing go back on.",
+      "tools": [
+        "Arbor press",
+        "Miller 8901A",
+        "Miller 10428"
+      ],
+      "critical": true,
+      "components": [
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-088",
+      "order": 88,
+      "phase": "assembly",
+      "title": "Check D brake clearance",
+      "action": "With the specified force applied, measure D clearance and change the selective backing plate if it is out of range.",
+      "spec": {
+        "kind": "clearance",
+        "value": "0.040–0.059",
+        "unit": "in",
+        "note": "45 lb load; selective backing plate (GEARS)",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "d-brake"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-089",
+      "order": 89,
+      "phase": "assembly",
+      "title": "Press on transfer gear bearing",
+      "action": "Press the transfer gear bearing back onto its case boss.",
+      "why": "It goes back only after the D piston retainer is in, because it blocks the retainer.",
+      "components": [
+        "transfer-gear",
+        "case"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-090",
+      "order": 90,
+      "phase": "assembly",
+      "title": "Install lower annulus and carrier",
+      "action": "Install the gear 3 annulus and carrier assembly.",
+      "components": [
+        "planetary-1-2",
+        "planetary-3-4"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-091",
+      "order": 91,
+      "phase": "assembly",
+      "title": "Install upper annulus and carrier",
+      "action": "Install the gear 4 annulus and pinion carrier assembly.",
+      "components": [
+        "planetary-1-2"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-092",
+      "order": 92,
+      "phase": "assembly",
+      "title": "Fit output support on carrier",
+      "action": "Set the output gear support onto the carrier with its lower teeth fully meshed and its tube orifices lined up.",
+      "why": "Misaligned orifices block the oblong tubes that feed the F dog.",
+      "critical": true,
+      "mistake": "Setting the support down a tooth off so the tube orifices do not line up.",
+      "components": [
+        "output-support",
+        "planetary-1-2",
+        "f-dog"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-093",
+      "order": 93,
+      "phase": "assembly",
+      "title": "Install E clutch onto support",
+      "action": "Holding the E plates in their hub, set the E clutch and hub onto the output gear support.",
+      "components": [
+        "e-clutch",
+        "output-support"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-094",
+      "order": 94,
+      "phase": "assembly",
+      "title": "Install transfer gear and differential",
+      "action": "Install the transfer gear on its bearing meshed with the output gear, then the differential meshed with the transfer pinion.",
+      "why": "Reverse of removal: the transfer gear must be in before the differential can mesh with it.",
+      "components": [
+        "transfer-gear",
+        "differential"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-095",
+      "order": 95,
+      "phase": "assembly",
+      "title": "Fit tube seal and gasket",
+      "action": "Install a new fluid port tube seal in the case and lay a new bell housing gasket on the case face.",
+      "critical": true,
+      "mistake": "Leaving out the new tube seal between case and bell housing.",
+      "components": [
+        "case-gasket"
+      ],
+      "sourceIds": [
+        "s9",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-096",
+      "order": 96,
+      "phase": "assembly",
+      "title": "Lower bell housing onto case",
+      "action": "Lower the bell housing over the stack, rotating the output support and E clutch slightly until the guide pins enter their holes.",
+      "why": "Grease on the stator support rings keeps them from being cut as the E drum slides on.",
+      "tools": [
+        "Assembly gel"
+      ],
+      "critical": true,
+      "components": [
+        "bell-housing",
+        "output-support",
+        "e-clutch",
+        "stator-support"
+      ],
+      "sourceIds": [
+        "s9",
+        "s5"
+      ]
+    },
+    {
+      "id": "zf-9hp48-097",
+      "order": 97,
+      "phase": "assembly",
+      "title": "Torque bell housing bolts",
+      "action": "Run all bolts in by hand, torque the inner bolts in their sequence, then the outer perimeter bolts in theirs.",
+      "why": "Inner bolts first pulls the housing down evenly over the output support and E clutch.",
+      "spec": {
+        "kind": "torque",
+        "value": "29",
+        "unit": "N·m",
+        "note": "inner then outer, each in sequence; 948TE figure from FCA TSB, confirm for the JLR unit",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "bell-housing",
+        "case"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-098",
+      "order": 98,
+      "phase": "assembly",
+      "title": "Check input shaft end play",
+      "action": "Check the input shaft end play and that the shaft turns with slight resistance.",
+      "why": "Zero end play or a bound shaft means a misplaced bearing or a hub not fully engaged; open it now, not after fill.",
+      "critical": true,
+      "components": [
+        "input-shaft"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-099",
+      "order": 99,
+      "phase": "assembly",
+      "title": "Drive in new differential seals",
+      "action": "Drive new differential seals into the case and bell housing with the seal installer.",
+      "why": "With the housing bolted up, the seals can be driven square against a fully supported bore.",
+      "tools": [
+        "Seal installer",
+        "Driver handle"
+      ],
+      "components": [
+        "diff-seals"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-100",
+      "order": 100,
+      "phase": "assembly",
+      "title": "Install connecting tubes",
+      "action": "Install the valve body connecting tubes in the case with new O-rings, with the two oblong tubes turned the right way.",
+      "critical": true,
+      "mistake": "Fitting an oblong tube rotated so it starves the output support circuit.",
+      "components": [
+        "feed-tubes"
+      ],
+      "sourceIds": [
+        "s9",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-101",
+      "order": 101,
+      "phase": "assembly",
+      "title": "Fit large tubes to valve body",
+      "action": "Install the two larger transfer tubes and the filter bypass tube into the valve body with new O-rings.",
+      "why": "The bypass tube gives instant pressure on restart after an auto stop; a leak here shows as slow drive-away.",
+      "components": [
+        "feed-tubes",
+        "oil-filter",
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s9",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-102",
+      "order": 102,
+      "phase": "assembly",
+      "title": "Bolt in range and speed sensors",
+      "action": "With the valve body held over the case, install the range sensor and speed sensor and torque their bolts.",
+      "spec": {
+        "kind": "torque",
+        "value": "6.5",
+        "unit": "N·m",
+        "note": "948TE figure from FCA TSB",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "range-sensor",
+        "speed-sensors"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-103",
+      "order": 103,
+      "phase": "assembly",
+      "title": "Seat valve body on tubes",
+      "action": "Line the valve body up over the tubes, guide the manual lever cam into the manual valve slot, and press it into place evenly.",
+      "critical": true,
+      "mistake": "Missing the manual valve slot so park and gear selection are wrong.",
+      "components": [
+        "valve-body",
+        "feed-tubes"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-104",
+      "order": 104,
+      "phase": "assembly",
+      "title": "Torque valve body bolts",
+      "action": "Install the valve body bolts and torque them in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "11",
+        "unit": "N·m",
+        "note": "in sequence; 948TE figure from FCA TSB",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-105",
+      "order": 105,
+      "phase": "assembly",
+      "title": "Refit side cover and connector",
+      "action": "Lube the connector O-rings, set the side cover on, push the connector through until the clip groove shows, fit the clip and torque the cover bolts.",
+      "spec": {
+        "kind": "torque",
+        "value": "11",
+        "unit": "N·m",
+        "note": "948TE figure from FCA TSB",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "valve-body-cover",
+        "valve-body"
+      ],
+      "sourceIds": [
+        "s9",
+        "s12"
+      ]
+    },
+    {
+      "id": "zf-9hp48-106",
+      "order": 106,
+      "phase": "assembly",
+      "title": "Install oil gallery plate",
+      "action": "Fit the oil passage cover with a new gasket and new bolts, tightening them in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "10",
+        "unit": "N·m",
+        "note": "new bolts, in sequence (Evoque 9HP48 data via PMM/Autodata)",
+        "sourceIds": [
+          "s20"
+        ]
+      },
+      "components": [
+        "oil-gallery-plate"
+      ],
+      "sourceIds": [
+        "s20",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-107",
+      "order": 107,
+      "phase": "assembly",
+      "title": "Refit external line and TCM",
+      "action": "Install the external hydraulic line with new seals and bolt the TCM back onto the case.",
+      "components": [
+        "external-line",
+        "tcm"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-108",
+      "order": 108,
+      "phase": "assembly",
+      "title": "Fully engage torque converter",
+      "action": "Slide the converter on while turning it until it drops through each engagement and the hub's flats engage the pump drive gear.",
+      "why": "A converter that is not fully seated is pulled into the pump when the bolts are tightened.",
+      "critical": true,
+      "mistake": "Bolting up a converter that has only engaged the input shaft and not the pump drive.",
+      "components": [
+        "torque-converter",
+        "oil-pump"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-109",
+      "order": 109,
+      "phase": "final",
+      "title": "Install transmission to engine",
+      "action": "Raise the unit, engage the dowels, and torque the transmission-to-engine bolts.",
+      "spec": {
+        "kind": "torque",
+        "value": "48",
+        "unit": "N·m",
+        "note": "±7.5 N·m for the M10 transmission-to-engine bolt in JLR SSM72569 (16MY GTDi); confirm for Ingenium",
+        "sourceIds": [
+          "s16"
+        ]
+      },
+      "components": [
+        "case"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "zf-9hp48-110",
+      "order": 110,
+      "phase": "final",
+      "title": "Fit converter with new nuts",
+      "action": "Line up the converter marks and fit new flexplate-to-converter nuts, torqued to spec.",
+      "critical": true,
+      "mistake": "Reusing the old converter nuts.",
+      "components": [
+        "torque-converter"
+      ],
+      "sourceIds": [
+        "s17"
+      ]
+    },
+    {
+      "id": "zf-9hp48-111",
+      "order": 111,
+      "phase": "final",
+      "title": "Refit PTU, shafts and lines",
+      "action": "Refit the PTU to the differential side with a new seal, the halfshafts, cooler lines, harness and selector.",
+      "why": "The transmission-to-PTU joint is a listed leak point; a dry seal here empties the transmission.",
+      "components": [
+        "ptu",
+        "diff-seals"
+      ],
+      "sourceIds": [
+        "s13",
+        "s12"
+      ]
+    },
+    {
+      "id": "zf-9hp48-112",
+      "order": 112,
+      "phase": "final",
+      "title": "Fill with LifeguardFluid 9",
+      "action": "Fill through the fill port with ZF LifeguardFluid 9 (JLR part LR023288) to an initial level; do not mix in other fluids or leak dye.",
+      "why": "Other fluids change friction behavior and shift feel on this unit.",
+      "spec": {
+        "kind": "fluid",
+        "value": "6.5",
+        "unit": "L",
+        "note": "approximate total capacity from a capacity database; final level is set hot",
+        "sourceIds": [
+          "s26"
+        ]
+      },
+      "critical": true,
+      "mistake": "Topping up with a generic multi-vehicle ATF.",
+      "components": [
+        "drain-fill-plugs"
+      ],
+      "sourceIds": [
+        "s24",
+        "s12",
+        "s8"
+      ]
+    },
+    {
+      "id": "zf-9hp48-113",
+      "order": 113,
+      "phase": "final",
+      "title": "Update and configure TCM",
+      "action": "Connect a battery support unit and the JLR diagnostic tool, update the TCM to the latest calibration and run the TCM configure routine, entering the transmission serial number when asked.",
+      "why": "The TCM is matched to the transmission; the routine asks for the serial number.",
+      "tools": [
+        "JLR Pathfinder (2018MY)",
+        "Battery support unit"
+      ],
+      "critical": true,
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s15",
+        "s12",
+        "s27"
+      ]
+    },
+    {
+      "id": "zf-9hp48-114",
+      "order": 114,
+      "phase": "final",
+      "title": "Set level at temperature",
+      "action": "With the engine idling in park, monitor fluid temperature on the diagnostic tool and set the level at the check plug within the temperature window in the service data.",
+      "why": "The level changes with temperature; a level set cold or too hot is wrong.",
+      "tools": [
+        "JLR Pathfinder"
+      ],
+      "critical": true,
+      "mistake": "Setting the level by volume alone without the hot check.",
+      "components": [
+        "drain-fill-plugs"
+      ],
+      "sourceIds": [
+        "s8",
+        "s12"
+      ]
+    },
+    {
+      "id": "zf-9hp48-115",
+      "order": 115,
+      "phase": "final",
+      "title": "Reset and relearn adaptations",
+      "action": "Clear the transmission adaptation values and run the guided adaptation procedure.",
+      "why": "Adaptations are learned clutch fill times and pressures; old values from worn parts give harsh or flared shifts on the new packs.",
+      "tools": [
+        "JLR Pathfinder"
+      ],
+      "critical": true,
+      "mistake": "Skipping the adaptation reset and blaming the rebuild for harsh shifts.",
+      "components": [
+        "tcm"
+      ],
+      "sourceIds": [
+        "s18",
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "id": "zf-9hp48-116",
+      "order": 116,
+      "phase": "final",
+      "title": "Road test all gears",
+      "action": "Drive through every upshift and downshift to ninth, including part-throttle and kickdown, and check engagements from park to reverse to drive.",
+      "why": "Dog clutch engagements need several cycles before shifts settle.",
+      "components": [
+        "a-dog",
+        "f-dog",
+        "tcm"
+      ],
+      "sourceIds": [
+        "s10",
+        "s11"
+      ]
+    },
+    {
+      "id": "zf-9hp48-117",
+      "order": 117,
+      "phase": "final",
+      "title": "Recheck codes, leaks, level",
+      "action": "Rescan for codes, inspect the cover, case joint, cooler and PTU joint for leaks, and recheck the hot level.",
+      "components": [
+        "valve-body-cover",
+        "case-gasket",
+        "ptu",
+        "tcm"
+      ],
+      "sourceIds": [
+        "s13",
+        "s12"
+      ]
+    }
+  ]
+}

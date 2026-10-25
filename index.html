@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Rebuild Bench</title>
+    <meta name="description" content="Rebuild Bench: a study game for memorizing engine and transmission rebuild sequences, step by step. Subaru FB25 and TR580 CVT, JLR Ingenium 2.0 petrol and ZF 9HP48. A study aid, not a service manual." />
+    <meta name="theme-color" content="#1f5f99" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131a21" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Rebuild Bench" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <script>
+      // Apply a saved light/dark override before first paint (no flash). Guarded:
+      // storage can be blocked and the app must still load.
+      try {
+        var p = JSON.parse(localStorage.getItem('rebuild-bench:prefs.v1') || '{}');
+        if (p && (p.theme === 'light' || p.theme === 'dark')) document.documentElement.setAttribute('data-theme', p.theme);
+      } catch (e) { /* ignore */ }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Rebuild Bench needs JavaScript turned on.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

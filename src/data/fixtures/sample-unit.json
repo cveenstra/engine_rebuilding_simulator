@@ -1,0 +1,66 @@
+{
+  "id": "sample-unit",
+  "kind": "engine",
+  "name": "Sample Gizmo Motor",
+  "fullName": "Sample Gizmo Motor 0.0L imaginary twin (practice fixture)",
+  "vehicle": "Practice bench (not a real vehicle)",
+  "summary": "A made-up unit used to build and test the app before the real rebuild content lands. Every part name here is invented. Do not use any of it on a real engine.",
+  "facts": [
+    { "label": "Layout", "value": "Imaginary inline twin", "sourceIds": ["fx1"] },
+    { "label": "Timing drive", "value": "Rubber band at the front", "sourceIds": ["fx1"] },
+    { "label": "Fuel injection", "value": "Hand-poured", "sourceIds": ["fx1"] },
+    { "label": "Displacement", "value": "0.0 L", "sourceIds": ["fx1"] },
+    { "label": "Valvetrain", "value": "One wobble shaft", "sourceIds": ["fx2"] },
+    { "label": "Block material", "value": "Cardboard", "sourceIds": ["fx2"] }
+  ],
+  "notes": [
+    "This is a practice fixture with obviously fake names. It exists so every game mode can be tested without real data.",
+    "Special tools: the Wobble Shaft Holder (fake) and a Sprocket Persuader (also fake)."
+  ],
+  "sources": [
+    { "id": "fx1", "title": "Imaginary Gizmo Workshop Notes", "url": "https://example.com/gizmo-notes", "kind": "reference" },
+    { "id": "fx2", "title": "Pretend Forum Thread", "url": "https://example.com/gizmo-forum", "kind": "forum" }
+  ],
+  "components": [
+    { "id": "gizmo-cover", "name": "Gizmo cover", "group": "external" },
+    { "id": "rubber-band", "name": "Timing rubber band", "group": "timing" },
+    { "id": "wobble-shaft", "name": "Wobble shaft", "group": "valvetrain" },
+    { "id": "sprocket", "name": "Sprocket", "group": "timing" },
+    { "id": "flux-piston", "name": "Flux piston", "group": "rotating" },
+    { "id": "doohickey-crank", "name": "Doohickey crank", "group": "rotating" },
+    { "id": "sump", "name": "Sump tray", "group": "lubrication" }
+  ],
+  "phases": [
+    { "id": "prep", "name": "Prep", "kind": "prep", "summary": "Get the pretend unit on the bench and drained." },
+    { "id": "teardown", "name": "Teardown", "kind": "teardown", "summary": "Take the gizmo apart in order." },
+    { "id": "inspect", "name": "Inspect and measure", "kind": "inspect", "summary": "Check the invented parts for wear." },
+    { "id": "assembly", "name": "Reassembly", "kind": "assembly", "summary": "Put it back together in reverse." }
+  ],
+  "steps": [
+    { "id": "sample-unit-001", "order": 1, "phase": "prep", "title": "Photograph the gizmo harness", "action": "Take photos of every connector and clip before anything comes off.", "why": "Photos are your reassembly map later.", "tools": ["Phone camera"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-002", "order": 2, "phase": "prep", "title": "Drain the sump tray", "action": "Pull the drain plug and let the pretend oil empty into a pan.", "why": "Oil left in the sump spills everywhere once the unit is tipped.", "tools": ["Drain pan", "Pretend wrench"], "components": ["sump"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-003", "order": 3, "phase": "prep", "title": "Mount on the wobble stand", "action": "Bolt the unit to the stand at its four fake mounting points.", "why": "A secured unit can be rotated safely for teardown.", "tools": ["Wobble stand"], "critical": true, "mistake": "Using only two bolts and letting the unit tip.", "sourceIds": ["fx1"] },
+    { "id": "sample-unit-004", "order": 4, "phase": "prep", "title": "Bag and label fasteners", "action": "Set out labeled bags for each area so bolts never mix.", "sourceIds": ["fx2"] },
+    { "id": "sample-unit-005", "order": 5, "phase": "teardown", "title": "Remove the gizmo cover", "action": "Unbolt the cover in a criss-cross pattern and lift it off.", "why": "The cover hides the rubber band and must come off first.", "components": ["gizmo-cover"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-006", "order": 6, "phase": "teardown", "title": "Set number one to top", "action": "Rotate the doohickey crank until the timing marks line up.", "why": "Locking timing at a known position makes reassembly repeatable.", "critical": true, "mistake": "Rotating backwards past the mark and misreading it.", "components": ["doohickey-crank"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-007", "order": 7, "phase": "teardown", "title": "Lock the wobble shaft", "action": "Fit the Wobble Shaft Holder so the shaft cannot spin.", "why": "The shaft is spring-loaded and will snap out of time when the band is released.", "tools": ["Wobble Shaft Holder"], "critical": true, "components": ["wobble-shaft"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-008", "order": 8, "phase": "teardown", "title": "Release the band tensioner", "action": "Back the tensioner off slowly and pin it.", "components": ["rubber-band"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-009", "order": 9, "phase": "teardown", "title": "Remove the timing rubber band", "action": "Slide the band off both sprockets and bin it.", "why": "A used band is never reused.", "components": ["rubber-band"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-010", "order": 10, "phase": "teardown", "title": "Pull the sprocket", "action": "Use the Sprocket Persuader to draw the sprocket off its taper.", "tools": ["Sprocket Persuader"], "components": ["sprocket"], "sourceIds": ["fx2"] },
+    { "id": "sample-unit-011", "order": 11, "phase": "teardown", "title": "Lift out the wobble shaft", "action": "Remove the holder and lift the shaft straight up.", "components": ["wobble-shaft"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-012", "order": 12, "phase": "teardown", "title": "Remove the sump tray", "action": "Unbolt the tray and break the sealant with a plastic scraper.", "mistake": "Prying with a screwdriver and gouging the flange.", "components": ["sump"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-013", "order": 13, "phase": "teardown", "title": "Push out the flux pistons", "action": "Unbolt each rod cap and push the pistons out the top.", "why": "The sump must be off first to reach the rod caps.", "components": ["flux-piston"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-014", "order": 14, "phase": "teardown", "title": "Remove the doohickey crank", "action": "Unbolt the main caps in reverse of the tightening sequence and lift the crank out.", "components": ["doohickey-crank"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-015", "order": 15, "phase": "inspect", "title": "Measure flux piston clearance", "action": "Measure the bore and piston and compare the difference to the spec.", "spec": { "kind": "clearance", "value": "0.01 to 0.02", "unit": "mm", "note": "Fake number for testing only", "sourceIds": ["fx1"] }, "components": ["flux-piston"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-016", "order": 16, "phase": "inspect", "title": "Check crank journal wear", "action": "Mic each journal at two points ninety degrees apart.", "components": ["doohickey-crank"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-017", "order": 17, "phase": "inspect", "title": "Inspect the wobble shaft lobes", "action": "Look for pitting and measure lobe height.", "components": ["wobble-shaft"], "sourceIds": ["fx2"] },
+    { "id": "sample-unit-018", "order": 18, "phase": "inspect", "title": "Clean every mating surface", "action": "Scrape old sealant and wipe surfaces with solvent.", "why": "New sealant will not bond to old sealant.", "sourceIds": ["fx2"] },
+    { "id": "sample-unit-019", "order": 19, "phase": "assembly", "title": "Install the doohickey crank", "action": "Lube the journals, set the crank in, and torque the main caps in sequence.", "spec": { "kind": "torque", "value": "12", "unit": "N·m", "note": "Fake value, plus 45 degrees", "sourceIds": ["fx1"] }, "critical": true, "mistake": "Torquing caps out of sequence and binding the crank.", "components": ["doohickey-crank"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-020", "order": 20, "phase": "assembly", "title": "Fit the flux pistons", "action": "Compress the rings and tap each piston in with the arrow toward the front.", "spec": { "kind": "torque", "value": "8", "unit": "N·m", "note": "Rod caps, fake value", "sourceIds": ["fx1"] }, "mistake": "Installing a piston backwards.", "components": ["flux-piston"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-021", "order": 21, "phase": "assembly", "title": "Seal and fit the sump tray", "action": "Run a bead of sealant and install the tray within the working time.", "spec": { "kind": "fluid", "value": "0.5", "unit": "L", "note": "Pretend oil capacity", "sourceIds": ["fx2"] }, "components": ["sump"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-022", "order": 22, "phase": "assembly", "title": "Install and lock the wobble shaft", "action": "Set the shaft in and fit the holder again.", "critical": true, "components": ["wobble-shaft"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-023", "order": 23, "phase": "assembly", "title": "Press on the sprocket", "action": "Seat the sprocket on its taper and torque the center bolt.", "spec": { "kind": "torque", "value": "20", "unit": "N·m", "sourceIds": ["fx2"] }, "components": ["sprocket"], "sourceIds": ["fx2"] },
+    { "id": "sample-unit-024", "order": 24, "phase": "assembly", "title": "Fit a new rubber band", "action": "Route the band, release the tensioner, then remove the shaft holder.", "why": "The holder comes out only after the band is under tension.", "critical": true, "mistake": "Pulling the holder before tensioning and losing timing.", "components": ["rubber-band"], "sourceIds": ["fx1"] },
+    { "id": "sample-unit-025", "order": 25, "phase": "assembly", "title": "Rotate twice and recheck marks", "action": "Turn the crank two full turns by hand and confirm the marks line up.", "why": "Proves timing before any covers hide it.", "components": ["doohickey-crank"], "sourceIds": ["fx1"] }
+  ]
+}

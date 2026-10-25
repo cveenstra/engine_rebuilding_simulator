@@ -1,0 +1,4251 @@
+{
+  "id": "ingenium-pt204",
+  "kind": "engine",
+  "name": "JLR Ingenium PT204",
+  "fullName": "Jaguar Land Rover Ingenium 2.0L turbocharged DOHC 16-valve inline four (PT204 / AJ200P), 237 hp",
+  "vehicle": "2018 Land Rover Discovery Sport (US)",
+  "pairsWith": "zf-9hp48",
+  "summary": "JLR's in-house 2.0L turbo petrol four, with both timing chains at the transmission end, timed at 50 degrees after TDC with dedicated locking tools. The intake valves are worked by an electrohydraulic CVVL unit rather than directly by the cam, and both camshafts have VCT phasers. The engine also has 200 bar direct injection, a twin-scroll turbo on a head-integrated manifold, gear-driven twin balancers, and an aluminium block with cast-iron liners. Rebuild order is driven by the rear chain drive and by the CVVL unit's need for clean oil, reset brakes and a software calibration.",
+  "facts": [
+    {
+      "label": "Layout",
+      "value": "Inline four, turbocharged, DOHC 16-valve",
+      "sourceIds": [
+        "s4",
+        "s29"
+      ]
+    },
+    {
+      "label": "Engine code",
+      "value": "PT204 (AJ200P), JLR Ingenium 2.0L petrol",
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "label": "Output",
+      "value": "237 hp, 251 lb-ft (240 PS / 340 N·m) in the 2018 US Discovery Sport",
+      "sourceIds": [
+        "s27",
+        "s34",
+        "s28"
+      ]
+    },
+    {
+      "label": "Displacement",
+      "value": "1,999 cc (2.0 L)",
+      "sourceIds": [
+        "s29"
+      ]
+    },
+    {
+      "label": "Bore x stroke",
+      "value": "83.0 mm x 92.3 mm",
+      "sourceIds": [
+        "s29"
+      ]
+    },
+    {
+      "label": "Compression ratio",
+      "value": "10.5:1",
+      "sourceIds": [
+        "s29"
+      ]
+    },
+    {
+      "label": "Block material",
+      "value": "Deep-skirt aluminium with thin-wall interference-fit cast-iron liners",
+      "sourceIds": [
+        "s4",
+        "s29"
+      ]
+    },
+    {
+      "label": "Timing drive",
+      "value": "Two chains (crank to idler, idler to cams) at the transmission end; timed at 50 degrees ATDC with locking tools",
+      "sourceIds": [
+        "s4",
+        "s1",
+        "s8"
+      ]
+    },
+    {
+      "label": "Valvetrain",
+      "value": "Electrohydraulic CVVL on the intake (cam drives oil pumps, not valves); roller followers on the exhaust; VCT on both cams",
+      "sourceIds": [
+        "s4",
+        "s28"
+      ]
+    },
+    {
+      "label": "Fuel injection",
+      "value": "200 bar central direct injection; HP pump driven by an exhaust-cam lobe",
+      "sourceIds": [
+        "s28",
+        "s4"
+      ]
+    },
+    {
+      "label": "Turbocharger",
+      "value": "Twin-scroll, on an exhaust manifold cast into the head",
+      "sourceIds": [
+        "s28"
+      ]
+    },
+    {
+      "label": "Balancers",
+      "value": "Two counter-rotating shafts at twice crank speed, gear-driven",
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "label": "Oil capacity",
+      "value": "About 7.0 L (7.4 qt) of 0W-20 to STJLR.51.5122",
+      "sourceIds": [
+        "s24",
+        "s30",
+        "s31"
+      ]
+    },
+    {
+      "label": "Pairs with",
+      "value": "ZF 9HP48 9-speed automatic",
+      "sourceIds": [
+        "s27"
+      ]
+    }
+  ],
+  "notes": [
+    "The timing chains are at the rear (transmission) end. Any chain work means removing the transmission and drive plate, so most shops pull the whole engine.",
+    "The engine is timed at 50 degrees after TDC, not at TDC. Turn it clockwise only, and set it with JLR-303-1630 (crank pulley lock), JLR-303-1635 (camshaft setting) and JLR-303-1636 (VCT lock). JLR-303-1656 is used to turn the crank.",
+    "Other JLR tools used here: JLR-303-1653 (head bolts), JLR-303-1639 and JLR-303-1647 (CVVL), JLR-303-1712 and JLR-303-1674A (rear seal), JLR-303-1628 (front seal), 303-1433 (front cover alignment), JLR-310-254/255/256/257 and 310-198 (injectors), 205-053 (oil pump sprocket), 303-252 (valve springs).",
+    "Single-use parts: head bolts, drive plate bolts, crank pulley bolts, VCT centre bolts, all timing guides and both tensioners, turbo nuts and banjo bolts, injector seals and clamps, and every gasket and O-ring. HP fuel lines have a limited number of tightening cycles.",
+    "The CVVL unit cannot be serviced and must never be turned upside down. After it has been off, reset its brake units, run the JLR software calibration and build oil pressure by cranking before the first start.",
+    "Known failure modes: VCT unit internal seal leaks causing rattle and cam timing codes (2018 bulletin); timing chain and tensioner wear; oil degradation and sludge in the CVVL and high-pressure oil galleries in short-trip urban use; CVVL-related misfires; coolant leaks at the thermostat housing.",
+    "Spec gaps: no verified values were found for main cap bolts, rod bolts, idler sprocket bolt, ring gaps, bearing clearances or head flatness. Take them from JLR TOPIx. Many specs here come from the JLR manual for the 2020-on Defender, which uses the same Ingenium I4 2.0L petrol; confirm against the 2018 Discovery Sport manual.",
+    "Usually sent out: valve seat work and any liner or block repair. JLR offers only one piston size and no serviceable valve guides, so a badly worn bore or guide usually means a new block or head."
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "title": "Laser Tools 8507 instructions: JLR AJ200 Ingenium petrol timing kit",
+      "url": "https://www.lasertools.co.uk/items/pdf/products/8507_Instructions.pdf",
+      "kind": "vendor"
+    },
+    {
+      "id": "s2",
+      "title": "JLR bulletin LTB01145NAS2: rattle from timing chain area, Ingenium I4 2.0L petrol (via NHTSA)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10136655-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s3",
+      "title": "JLR service action N481: VCT solenoids, Ingenium I4 2.0L petrol (via NHTSA)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2020/MC-10185362-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s4",
+      "title": "JLR workshop manual (Defender L663), Engine description, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s5",
+      "title": "JLR workshop manual (Defender L663): Lower timing chain, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s6",
+      "title": "JLR workshop manual (Defender L663): Upper timing chain",
+      "kind": "manual"
+    },
+    {
+      "id": "s7",
+      "title": "JLR workshop manual (Defender L663): Upper timing cover",
+      "kind": "manual"
+    },
+    {
+      "id": "s8",
+      "title": "JLR workshop manual (Defender L663): Lower timing cover, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s9",
+      "title": "JLR workshop manual (Defender L663): Engine front cover, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s10",
+      "title": "JLR workshop manual (Defender L663): Crankshaft pulley, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s11",
+      "title": "JLR workshop manual (Defender L663): Crankshaft rear seal, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s12",
+      "title": "JLR workshop manual (Defender L663): Drive plate, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s13",
+      "title": "JLR workshop manual (Defender L663): Oil pan, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s14",
+      "title": "JLR workshop manual (Defender L663): Oil pump drive chain, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s15",
+      "title": "JLR workshop manual (Defender L663): Oil pump, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s16",
+      "title": "JLR workshop manual (Defender L663): Cylinder head",
+      "kind": "manual"
+    },
+    {
+      "id": "s17",
+      "title": "JLR workshop manual (Defender L663): Camshaft carrier",
+      "kind": "manual"
+    },
+    {
+      "id": "s18",
+      "title": "JLR workshop manual (Defender L663): Camshafts, engine set",
+      "kind": "manual"
+    },
+    {
+      "id": "s19",
+      "title": "JLR workshop manual (Defender L663): Valves",
+      "kind": "manual"
+    },
+    {
+      "id": "s20",
+      "title": "JLR workshop manual (Defender L663): Continuous variable valve lift",
+      "kind": "manual"
+    },
+    {
+      "id": "s21",
+      "title": "JLR workshop manual (Defender L663): Engine and ancillaries removal, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s22",
+      "title": "JLR workshop manual (Defender L663): Engine and ancillaries installation, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s23",
+      "title": "JLR workshop manual (Defender L663): Engine removal",
+      "kind": "manual"
+    },
+    {
+      "id": "s24",
+      "title": "JLR service action N892v2: early engine oil and filter change, 2.0L I4 Ingenium petrol (via NHTSA)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2024/MC-11011721-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s25",
+      "title": "JLR SSM73804: injector refit kit shipped with wrong-order Bosch instructions (via NHTSA)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10136685-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s26",
+      "title": "JLR technical topic SSM75724: misfire codes, replace CVVL unit if diagnosed (via NHTSA)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2022/MC-10212986-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s27",
+      "title": "auto123: 2018 Discovery Sport and Evoque get new Ingenium gasoline engines",
+      "url": "https://www.auto123.com/en/news/amp/land-rover-discovery-sport-range-rover-evoque-new-engines/64096/",
+      "kind": "reference"
+    },
+    {
+      "id": "s28",
+      "title": "JLR media (UK), June 2017: latest Ingenium engine technology for Discovery Sport and Evoque",
+      "url": "https://media.jlr.com/jaguar/en-gb/news/2017/06/latest-ingenium-engine-technology-injects-more-performance-discovery-sport-and-evoque",
+      "kind": "oem"
+    },
+    {
+      "id": "s29",
+      "title": "Wikipedia: Ingenium engine family",
+      "url": "https://en.wikipedia.org/wiki/Ingenium_engine_family",
+      "kind": "reference"
+    },
+    {
+      "id": "s30",
+      "title": "YouCanic: Land Rover Discovery Sport (2019-present) fluids and capacities",
+      "url": "https://www.youcanic.com/vehicles/land-rover/discovery-sport/2019-present-7/",
+      "kind": "reference"
+    },
+    {
+      "id": "s31",
+      "title": "Motul Specific 5122 0W-20 (STJLR.51.5122) product page",
+      "url": "https://motul.com/en-AE/products/59610",
+      "kind": "vendor"
+    },
+    {
+      "id": "s32",
+      "title": "JLR workshop manual (Defender L663): Oil cooler, Ingenium I4 2.0L petrol",
+      "kind": "manual"
+    },
+    {
+      "id": "s33",
+      "title": "Garrett turbocharger installation guide, part 2",
+      "url": "https://www.garrettmotion.com/knowledge-center-category/aftermarket/part-2-garrett-turbocharger-installation-guide/",
+      "kind": "vendor"
+    },
+    {
+      "id": "s34",
+      "title": "Automotive Fleet: Discovery Sport and Evoque boost power for 2018 (US trims and outputs)",
+      "url": "https://www.automotive-fleet.com/142764/land-rover-discovery-sport-range-rover-evoque-boost-power-for-2018",
+      "kind": "reference"
+    }
+  ],
+  "components": [
+    {
+      "id": "block",
+      "name": "Cylinder block with cast-iron liners",
+      "group": "block"
+    },
+    {
+      "id": "crankshaft",
+      "name": "Crankshaft",
+      "group": "bottom-end"
+    },
+    {
+      "id": "main-bearings",
+      "name": "Main bearing shells (graded)",
+      "group": "bottom-end"
+    },
+    {
+      "id": "main-caps",
+      "name": "Main bearing caps",
+      "group": "bottom-end"
+    },
+    {
+      "id": "thrust-washers",
+      "name": "Crankshaft thrust washers",
+      "group": "bottom-end"
+    },
+    {
+      "id": "pistons",
+      "name": "Pistons",
+      "group": "bottom-end"
+    },
+    {
+      "id": "piston-rings",
+      "name": "Piston rings",
+      "group": "bottom-end"
+    },
+    {
+      "id": "connecting-rods",
+      "name": "Connecting rods (fracture-split)",
+      "group": "bottom-end"
+    },
+    {
+      "id": "rod-bearings",
+      "name": "Connecting rod bearing shells (graded)",
+      "group": "bottom-end"
+    },
+    {
+      "id": "piston-jets",
+      "name": "Piston cooling oil jets",
+      "group": "bottom-end"
+    },
+    {
+      "id": "piston-jet-solenoid",
+      "name": "Piston cooling jet solenoid",
+      "group": "lubrication"
+    },
+    {
+      "id": "balancer-shafts",
+      "name": "Dynamic balancer shafts",
+      "group": "bottom-end"
+    },
+    {
+      "id": "balancer-idler",
+      "name": "Balancer idler gear",
+      "group": "bottom-end"
+    },
+    {
+      "id": "windage-tray",
+      "name": "Structural windage tray",
+      "group": "bottom-end"
+    },
+    {
+      "id": "oil-pan",
+      "name": "Oil pan",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-pump",
+      "name": "Variable-flow oil pump with vacuum pump",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-pump-chain",
+      "name": "Oil pump drive chain and sprocket",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-pickup",
+      "name": "Oil pump inlet pipe",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-filter-housing",
+      "name": "Oil filter housing and element",
+      "group": "lubrication"
+    },
+    {
+      "id": "oil-cooler",
+      "name": "Engine oil cooler",
+      "group": "lubrication"
+    },
+    {
+      "id": "front-cover",
+      "name": "Engine front cover",
+      "group": "covers"
+    },
+    {
+      "id": "front-seal",
+      "name": "Crankshaft front seal",
+      "group": "covers"
+    },
+    {
+      "id": "rear-seal",
+      "name": "Crankshaft rear seal",
+      "group": "covers"
+    },
+    {
+      "id": "crank-pulley",
+      "name": "Crankshaft pulley / vibration damper",
+      "group": "front-end"
+    },
+    {
+      "id": "drive-plate",
+      "name": "Drive plate with reluctor ring",
+      "group": "rear-end"
+    },
+    {
+      "id": "lower-timing-cover",
+      "name": "Lower timing cover (block rear cover)",
+      "group": "timing"
+    },
+    {
+      "id": "upper-timing-cover",
+      "name": "Upper timing cover",
+      "group": "timing"
+    },
+    {
+      "id": "primary-chain",
+      "name": "Primary (lower) timing chain",
+      "group": "timing"
+    },
+    {
+      "id": "secondary-chain",
+      "name": "Secondary (upper) timing chain",
+      "group": "timing"
+    },
+    {
+      "id": "idler-sprocket",
+      "name": "Timing idler sprocket",
+      "group": "timing"
+    },
+    {
+      "id": "primary-tensioner",
+      "name": "Primary timing chain tensioner",
+      "group": "timing"
+    },
+    {
+      "id": "secondary-tensioner",
+      "name": "Secondary timing chain tensioner",
+      "group": "timing"
+    },
+    {
+      "id": "primary-guides",
+      "name": "Primary timing chain guides",
+      "group": "timing"
+    },
+    {
+      "id": "secondary-guides",
+      "name": "Secondary timing chain guides",
+      "group": "timing"
+    },
+    {
+      "id": "vct-intake",
+      "name": "Intake VCT actuator (cam phaser)",
+      "group": "timing"
+    },
+    {
+      "id": "vct-exhaust",
+      "name": "Exhaust VCT actuator (cam phaser)",
+      "group": "timing"
+    },
+    {
+      "id": "vct-solenoids",
+      "name": "VCT solenoids",
+      "group": "timing"
+    },
+    {
+      "id": "cylinder-head",
+      "name": "Cylinder head",
+      "group": "head"
+    },
+    {
+      "id": "head-gasket",
+      "name": "Multi-layer steel head gasket",
+      "group": "head"
+    },
+    {
+      "id": "head-bolts",
+      "name": "Cylinder head bolts",
+      "group": "head"
+    },
+    {
+      "id": "camshaft-carrier",
+      "name": "Camshaft carrier",
+      "group": "head"
+    },
+    {
+      "id": "intake-camshaft",
+      "name": "Intake camshaft",
+      "group": "head"
+    },
+    {
+      "id": "exhaust-camshaft",
+      "name": "Exhaust camshaft",
+      "group": "head"
+    },
+    {
+      "id": "cam-caps",
+      "name": "Camshaft bearing caps",
+      "group": "head"
+    },
+    {
+      "id": "cvvl",
+      "name": "CVVL electrohydraulic intake valve lift unit",
+      "group": "head"
+    },
+    {
+      "id": "roller-followers",
+      "name": "Exhaust roller finger followers",
+      "group": "head"
+    },
+    {
+      "id": "hlas",
+      "name": "Exhaust hydraulic lash adjusters",
+      "group": "head"
+    },
+    {
+      "id": "valves",
+      "name": "Intake and exhaust valves",
+      "group": "head"
+    },
+    {
+      "id": "valve-springs",
+      "name": "Valve springs, retainers and collets",
+      "group": "head"
+    },
+    {
+      "id": "valve-seals",
+      "name": "Valve stem seals",
+      "group": "head"
+    },
+    {
+      "id": "vent-separator",
+      "name": "Engine vent oil separator",
+      "group": "head"
+    },
+    {
+      "id": "injectors",
+      "name": "Direct fuel injectors",
+      "group": "fuel"
+    },
+    {
+      "id": "fuel-rail",
+      "name": "Fuel rail",
+      "group": "fuel"
+    },
+    {
+      "id": "hpfp",
+      "name": "High-pressure fuel pump",
+      "group": "fuel"
+    },
+    {
+      "id": "hpfp-tappet",
+      "name": "HP fuel pump tappet",
+      "group": "fuel"
+    },
+    {
+      "id": "hp-lines",
+      "name": "High-pressure fuel lines",
+      "group": "fuel"
+    },
+    {
+      "id": "ignition-coils",
+      "name": "Ignition coils and spark plugs",
+      "group": "ignition"
+    },
+    {
+      "id": "intake-manifold",
+      "name": "Intake manifold and throttle",
+      "group": "air"
+    },
+    {
+      "id": "turbo",
+      "name": "Twin-scroll turbocharger",
+      "group": "air"
+    },
+    {
+      "id": "turbo-oil-feed",
+      "name": "Turbocharger oil feed pipe",
+      "group": "air"
+    },
+    {
+      "id": "turbo-oil-return",
+      "name": "Turbocharger oil return pipe",
+      "group": "air"
+    },
+    {
+      "id": "heat-shields",
+      "name": "Turbocharger heat shields",
+      "group": "air"
+    },
+    {
+      "id": "cmp-sensors",
+      "name": "Camshaft position sensors",
+      "group": "sensors"
+    },
+    {
+      "id": "ckp-sensor",
+      "name": "Crankshaft position sensor",
+      "group": "sensors"
+    },
+    {
+      "id": "knock-sensors",
+      "name": "Knock sensors",
+      "group": "sensors"
+    },
+    {
+      "id": "temp-sensors",
+      "name": "Head and block temperature sensors",
+      "group": "sensors"
+    },
+    {
+      "id": "coolant-pump",
+      "name": "Coolant pump and pulley",
+      "group": "cooling"
+    },
+    {
+      "id": "thermostat-housing",
+      "name": "Thermostat housing",
+      "group": "cooling"
+    },
+    {
+      "id": "coolant-pipes",
+      "name": "Coolant pipes, hoses and degas bottle",
+      "group": "cooling"
+    },
+    {
+      "id": "generator",
+      "name": "Generator (alternator)",
+      "group": "accessories"
+    },
+    {
+      "id": "accessory-belt",
+      "name": "Accessory drive belt and idlers",
+      "group": "accessories"
+    },
+    {
+      "id": "wiring-harness",
+      "name": "Engine wiring harness",
+      "group": "accessories"
+    },
+    {
+      "id": "nvh-pads",
+      "name": "NVH pads and engine cover",
+      "group": "accessories"
+    },
+    {
+      "id": "transmission",
+      "name": "ZF 9HP48 transmission",
+      "group": "external"
+    }
+  ],
+  "phases": [
+    {
+      "id": "prep",
+      "name": "Preparation and removal",
+      "kind": "prep",
+      "summary": "Diagnose, gather the JLR tools and renew-parts list, get the engine out and onto a stand."
+    },
+    {
+      "id": "teardown-ext",
+      "name": "External teardown",
+      "kind": "teardown",
+      "summary": "Strip accessories, turbo, intake, DI fuel system and sensors down to the bare long block."
+    },
+    {
+      "id": "teardown-timing",
+      "name": "Timing drive at the rear",
+      "kind": "teardown",
+      "summary": "Lock the engine at 50 degrees after TDC, then remove both chains, the phasers, the drive plate and the end covers."
+    },
+    {
+      "id": "teardown-head",
+      "name": "Cylinder head and valvetrain",
+      "kind": "teardown",
+      "summary": "Lift off the CVVL unit and camshaft carrier, then the head, and strip the valves."
+    },
+    {
+      "id": "teardown-block",
+      "name": "Short-block teardown",
+      "kind": "teardown",
+      "summary": "Remove the oil pan, oil pump, windage tray, pistons, crankshaft and balancer shafts."
+    },
+    {
+      "id": "inspect",
+      "name": "Cleaning and measurement",
+      "kind": "inspect",
+      "summary": "Clean every gallery, read the factory grade codes and measure what decides reuse."
+    },
+    {
+      "id": "machine",
+      "name": "Machine-shop decisions",
+      "kind": "machine",
+      "summary": "Decide what can be machined, what must be replaced, and which bearing grades to fit."
+    },
+    {
+      "id": "assembly-block",
+      "name": "Short-block assembly",
+      "kind": "assembly",
+      "summary": "Balancers, crankshaft, pistons, oil pump, oil pan and front cover, in that order."
+    },
+    {
+      "id": "assembly-head",
+      "name": "Head and camshaft carrier",
+      "kind": "assembly",
+      "summary": "Build and torque the head, then fit followers, camshafts and the carrier."
+    },
+    {
+      "id": "assembly-timing",
+      "name": "Timing with locking tools",
+      "kind": "assembly",
+      "summary": "Lock crank and cams, fit both chains with new guides and tensioners, then close the rear of the engine."
+    },
+    {
+      "id": "assembly-ext",
+      "name": "External reassembly",
+      "kind": "assembly",
+      "summary": "Refit CVVL, DI fuel system, intake, oil cooler, turbo with primed oil feed, and accessories."
+    },
+    {
+      "id": "final",
+      "name": "Installation and first start",
+      "kind": "final",
+      "summary": "Refill, calibrate the CVVL, build oil pressure without firing, then start and check."
+    }
+  ],
+  "steps": [
+    {
+      "id": "ingenium-pt204-001",
+      "order": 1,
+      "phase": "prep",
+      "title": "Read codes before removal",
+      "action": "With the engine still in the vehicle, scan the PCM and save every stored code and the camshaft timing data. VCT codes (P052A, P0011, P000A) point at the phasers and chain; repeated misfire codes (P0300, P0316, P1315) point at the CVVL unit.",
+      "why": "Once the engine is apart you can no longer tell a phaser fault from a stretched chain or a sticking CVVL solenoid.",
+      "tools": [
+        "JLR-approved diagnostic tool or capable scan tool"
+      ],
+      "components": [
+        "vct-intake",
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s2",
+        "s26"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-002",
+      "order": 2,
+      "phase": "prep",
+      "title": "Sample the old oil",
+      "action": "Drain a clean sample of the used oil into a bottle and note its smell, colour and any sludge before the rest goes to waste.",
+      "why": "JLR asks for an oil sample with any returned CVVL unit because degraded oil and sludge are the known killers of this engine's high-pressure oil circuits.",
+      "tools": [
+        "Sample bottle"
+      ],
+      "components": [
+        "cvvl",
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s24",
+        "s26"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-003",
+      "order": 3,
+      "phase": "prep",
+      "title": "Run a compression test",
+      "action": "With the spark plugs out and fuel injection disabled, check compression on all four cylinders and record the numbers.",
+      "why": "A timing-tool maker recommends a compression check before the head comes off on this interference engine; it tells you whether valves were already hit.",
+      "tools": [
+        "Compression gauge"
+      ],
+      "components": [
+        "valves",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-004",
+      "order": 4,
+      "phase": "prep",
+      "title": "Order renew-only parts",
+      "action": "Before teardown, order the parts JLR treats as single use: head bolts, drive plate bolts, crank pulley bolts, VCT actuator bolts, all timing guides and both tensioners, turbo nuts and banjo bolts, injector seals and every gasket and O-ring.",
+      "why": "The procedures call these parts 'renew' every time they are disturbed, so the rebuild stalls without them.",
+      "components": [
+        "head-bolts",
+        "primary-guides",
+        "secondary-guides",
+        "primary-tensioner",
+        "secondary-tensioner"
+      ],
+      "sourceIds": [
+        "s5",
+        "s16",
+        "s12",
+        "s10",
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-005",
+      "order": 5,
+      "phase": "prep",
+      "title": "Gather the JLR timing tools",
+      "action": "Collect the crankshaft pulley locking tool JLR-303-1630, camshaft setting tool JLR-303-1635, VCT actuator locking tool JLR-303-1636 and crank rotation tool JLR-303-1656, plus the CVVL and seal tools listed in later steps.",
+      "why": "This engine has no simple timing pins; correct cam-to-crank timing is only achievable with the setting and locking tools.",
+      "tools": [
+        "JLR-303-1630",
+        "JLR-303-1635",
+        "JLR-303-1636",
+        "JLR-303-1656"
+      ],
+      "components": [
+        "crank-pulley",
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-006",
+      "order": 6,
+      "phase": "prep",
+      "title": "Remove the engine assembly",
+      "action": "Remove the engine from the vehicle following the vehicle procedure, with the transmission separated from it, using the JLR lifting kit and a crane with a helper.",
+      "why": "The timing chains sit at the transmission end, so the transmission and drive plate must come off before any chain work is possible.",
+      "tools": [
+        "JLR-303-1633-01 lifting kit",
+        "Engine crane"
+      ],
+      "components": [
+        "transmission"
+      ],
+      "sourceIds": [
+        "s23",
+        "s1"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-007",
+      "order": 7,
+      "phase": "prep",
+      "title": "Mount engine on stand",
+      "action": "Bolt the engine to a stand using the JLR engine stand adaptor so it can be rotated for top and bottom access.",
+      "tools": [
+        "JLR-303-1673 stand adaptor",
+        "Engine stand"
+      ],
+      "components": [
+        "block"
+      ],
+      "sourceIds": [
+        "s23"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-008",
+      "order": 8,
+      "phase": "prep",
+      "title": "Drain oil and coolant",
+      "action": "Pull the side-mounted oil pan drain plug and drain the oil, then drain any coolant left in the block and pipes. Refit the plug with a new washer.",
+      "tools": [
+        "Drain pans"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "23",
+        "unit": "N·m",
+        "note": "oil pan drain plug, new washer",
+        "sourceIds": [
+          "s21"
+        ]
+      },
+      "components": [
+        "oil-pan",
+        "coolant-pipes"
+      ],
+      "sourceIds": [
+        "s21",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-009",
+      "order": 9,
+      "phase": "teardown-ext",
+      "title": "Strip NVH pads and covers",
+      "action": "Unclip and remove the foam and laminate NVH pads from the block sides, head and timing cover area.",
+      "components": [
+        "nvh-pads"
+      ],
+      "sourceIds": [
+        "s21",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-010",
+      "order": 10,
+      "phase": "teardown-ext",
+      "title": "Remove coolant pipes and degas",
+      "action": "Unbolt the coolant pipes and hoses around the engine and remove the coolant degas separator, checking each O-ring as it comes out.",
+      "components": [
+        "coolant-pipes"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-011",
+      "order": 11,
+      "phase": "teardown-ext",
+      "title": "Remove breather and purge valve",
+      "action": "Disconnect the breather pipe connectors and remove the breather pipe, then unbolt the evaporative purge valve assembly.",
+      "components": [
+        "vent-separator"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-012",
+      "order": 12,
+      "phase": "teardown-ext",
+      "title": "Pull the oil dipstick tube",
+      "action": "Remove the bolt and lift out the oil level gauge tube, discarding its O-ring.",
+      "components": [
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-013",
+      "order": 13,
+      "phase": "teardown-ext",
+      "title": "Remove belt and idler pulleys",
+      "action": "Release the accessory belt tension, remove the belt, then remove the two idler pulley covers and pulleys, noting where each pulley came from.",
+      "why": "The two idlers use different bolt sizes and must go back in their original positions.",
+      "components": [
+        "accessory-belt"
+      ],
+      "sourceIds": [
+        "s21",
+        "s9"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-014",
+      "order": 14,
+      "phase": "teardown-ext",
+      "title": "Remove the generator",
+      "action": "Disconnect the battery cable and connector, remove the two bolts and lift off the generator.",
+      "components": [
+        "generator"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-015",
+      "order": 15,
+      "phase": "teardown-ext",
+      "title": "Lift off the engine harness",
+      "action": "Unplug every sensor, actuator and injector connector, release the harness clips and brackets, and lift the engine harness off as one piece.",
+      "why": "Labelling connectors now saves guesswork; the harness has dozens of plugs including four CVVL solenoids.",
+      "components": [
+        "wiring-harness"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-016",
+      "order": 16,
+      "phase": "teardown-ext",
+      "title": "Remove the coolant pump",
+      "action": "Hold the pulley, remove its three bolts, then remove the six pump bolts and the coolant pump.",
+      "mistake": "Reusing a pump whose gasket is damaged; the gasket is not sold separately, so a damaged one means a new pump.",
+      "components": [
+        "coolant-pump"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-017",
+      "order": 17,
+      "phase": "teardown-ext",
+      "title": "Remove turbo oil feed pipe",
+      "action": "Unbolt the support bracket, then remove the turbo oil supply pipe, cutting off the trapped lower sealing washers and discarding both banjo bolts and all four washers.",
+      "why": "Banjo bolts and washers on the oil feed are single use; a reused washer is a common source of oil leaks onto a hot turbo.",
+      "components": [
+        "turbo-oil-feed"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-018",
+      "order": 18,
+      "phase": "teardown-ext",
+      "title": "Remove turbo heat shields",
+      "action": "Remove the bolts and lift off the turbo heat shields, discarding the one bolt the procedure calls renew-only.",
+      "components": [
+        "heat-shields"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-019",
+      "order": 19,
+      "phase": "teardown-ext",
+      "title": "Remove turbo oil return",
+      "action": "Remove the bolt and pull the turbo oil return pipe, discarding its two O-rings.",
+      "components": [
+        "turbo-oil-return"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-020",
+      "order": 20,
+      "phase": "teardown-ext",
+      "title": "Lift off the turbocharger",
+      "action": "Remove and discard the four nuts holding the turbo to the head's integrated exhaust manifold, lift the turbo off and discard the gasket.",
+      "why": "The exhaust manifold is cast into the head, so the turbo bolts straight to the head and must come off before the head can.",
+      "components": [
+        "turbo"
+      ],
+      "sourceIds": [
+        "s21",
+        "s28"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-021",
+      "order": 21,
+      "phase": "teardown-ext",
+      "title": "Remove the oil cooler",
+      "action": "Disconnect the coolant hose, remove the seven bolts and take off the oil cooler from the side of the block below the turbo, discarding its metal gasket.",
+      "why": "The cooler sits under the turbo, so the turbo has to come off first.",
+      "components": [
+        "oil-cooler"
+      ],
+      "sourceIds": [
+        "s21",
+        "s32",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-022",
+      "order": 22,
+      "phase": "teardown-ext",
+      "title": "Remove the intake manifold",
+      "action": "Loosen the captive bolts, lift off the plastic intake manifold with its throttle and MAP sensor, and discard the four port seals.",
+      "components": [
+        "intake-manifold"
+      ],
+      "sourceIds": [
+        "s21",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-023",
+      "order": 23,
+      "phase": "teardown-ext",
+      "title": "Remove the thermostat housing",
+      "action": "Remove the four bolts and the thermostat housing, keeping the gasket only if it is undamaged.",
+      "mistake": "Ignoring seepage at the thermostat housing; JLR has bulletins on coolant leaks from this housing's welded spigot and gasket.",
+      "components": [
+        "thermostat-housing"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-024",
+      "order": 24,
+      "phase": "teardown-ext",
+      "title": "Remove HP fuel lines",
+      "action": "Unbolt and remove both high-pressure fuel lines, and count the paint marks on each before deciding whether it can go back on.",
+      "why": "JLR allows each HP line a limited number of tightening cycles and has you paint-mark it after each one.",
+      "spec": {
+        "kind": "other",
+        "value": "4",
+        "unit": "uses",
+        "note": "maximum tightening cycles per HP line; paint-mark after each",
+        "sourceIds": [
+          "s21"
+        ]
+      },
+      "critical": true,
+      "mistake": "Reusing an HP line that has already been tightened its maximum number of times, which risks a fuel leak at 200 bar.",
+      "components": [
+        "hp-lines"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-025",
+      "order": 25,
+      "phase": "teardown-ext",
+      "title": "Remove the HP fuel pump",
+      "action": "Back the two pump bolts out one turn at a time, alternating, until the spring pressure from the cam lobe is gone, then lift the pump off.",
+      "why": "The pump plunger is preloaded by a lobe on the exhaust camshaft; uneven release can crack the flange or cock the pump.",
+      "critical": true,
+      "mistake": "Unscrewing one bolt fully while the other still holds spring load.",
+      "components": [
+        "hpfp"
+      ],
+      "sourceIds": [
+        "s21",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-026",
+      "order": 26,
+      "phase": "teardown-ext",
+      "title": "Remove the pump tappet",
+      "action": "Lift the HP fuel pump tappet out of its bore in the camshaft carrier and keep it clean.",
+      "components": [
+        "hpfp-tappet"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-027",
+      "order": 27,
+      "phase": "teardown-ext",
+      "title": "Remove coils and spark plugs",
+      "action": "Remove the four coil bolts and coils, then remove the spark plugs.",
+      "why": "Plugs out lets the engine turn without compression fighting the timing tools later.",
+      "components": [
+        "ignition-coils"
+      ],
+      "sourceIds": [
+        "s21",
+        "s1"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-028",
+      "order": 28,
+      "phase": "teardown-ext",
+      "title": "Remove the fuel rail",
+      "action": "Remove the four rail bolts and lift the fuel rail away from the injectors.",
+      "components": [
+        "fuel-rail"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-029",
+      "order": 29,
+      "phase": "teardown-ext",
+      "title": "Extract the DI injectors",
+      "action": "Discard the injector spring clamps, fit the JLR injector remover with a slide hammer, and pull each centrally mounted injector straight out of the head.",
+      "why": "Combustion deposits grip the injector tips; the puller keeps the pull straight so the bore and nozzle are not damaged. The CVVL unit cannot come off until the injectors are out.",
+      "tools": [
+        "JLR-310-254 injector remover",
+        "100-012 slide hammer"
+      ],
+      "critical": true,
+      "mistake": "Prying injectors out sideways, which can damage the injector or its bore in the head.",
+      "components": [
+        "injectors"
+      ],
+      "sourceIds": [
+        "s21",
+        "s20"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-030",
+      "order": 30,
+      "phase": "teardown-ext",
+      "title": "Discard all injector seals",
+      "action": "Cut off and discard each injector's Teflon combustion seal, O-ring and washer.",
+      "why": "These seals are single use and are sized on the injector at refit with special tools.",
+      "components": [
+        "injectors"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-031",
+      "order": 31,
+      "phase": "teardown-ext",
+      "title": "Remove cam sensors and solenoids",
+      "action": "Remove both camshaft position sensors, then the four bolts holding the two VCT solenoids, and pull the solenoids out of the upper timing cover.",
+      "why": "The VCT solenoids reach through the upper timing cover to the phaser centre bolts, so they must come out before the cover will lift off.",
+      "components": [
+        "cmp-sensors",
+        "vct-solenoids"
+      ],
+      "sourceIds": [
+        "s21",
+        "s7",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-032",
+      "order": 32,
+      "phase": "teardown-ext",
+      "title": "Remove the knock sensors",
+      "action": "Note the exact position of each knock sensor, then remove both.",
+      "why": "Knock sensor orientation affects signal quality; the procedure has you refit them where they came from.",
+      "components": [
+        "knock-sensors"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-033",
+      "order": 33,
+      "phase": "teardown-ext",
+      "title": "Remove block-mounted sensors",
+      "action": "Remove the piston cooling jet solenoid, the vacuum pipe connector and the crankshaft position sensor, keeping their O-rings for inspection.",
+      "components": [
+        "piston-jet-solenoid",
+        "ckp-sensor"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-034",
+      "order": 34,
+      "phase": "teardown-ext",
+      "title": "Remove filter housing and filler",
+      "action": "Remove the oil filler pipe, unscrew the filter cap and discard the element, then remove the three housing bolts and the oil filter housing, discarding its five O-rings.",
+      "components": [
+        "oil-filter-housing"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-035",
+      "order": 35,
+      "phase": "teardown-ext",
+      "title": "Remove the vent oil separator",
+      "action": "Loosen the captive bolts and lift off the engine vent oil separator, discarding its gasket.",
+      "components": [
+        "vent-separator"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-036",
+      "order": 36,
+      "phase": "teardown-timing",
+      "title": "Remove the upper timing cover",
+      "action": "Remove the NVH pad, the twelve bolts and the upper timing cover at the transmission end of the head, and discard its gasket.",
+      "why": "On this engine both chains are at the rear, so everything timing-related starts here rather than at the pulley end.",
+      "components": [
+        "upper-timing-cover"
+      ],
+      "sourceIds": [
+        "s7",
+        "s1"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-037",
+      "order": 37,
+      "phase": "teardown-timing",
+      "title": "Rotate to the timing position",
+      "action": "Fit the crank rotation tool and turn the crankshaft clockwise only until the pulley mark points down and both cam marks point up. That is 50 degrees after TDC on cylinder 1.",
+      "why": "JLR sets this engine's timing at 50 degrees after TDC rather than at TDC, so no piston is at the top while the cams are locked.",
+      "tools": [
+        "JLR-303-1656 crank rotation tool"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "50",
+        "unit": "deg",
+        "note": "after TDC, cylinder 1; pulley mark at 6 o'clock, cam marks at 12 o'clock",
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      "critical": true,
+      "mistake": "Looking for TDC marks, or turning the engine counter-clockwise to reach the marks.",
+      "components": [
+        "crank-pulley",
+        "intake-camshaft",
+        "exhaust-camshaft"
+      ],
+      "sourceIds": [
+        "s6",
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-038",
+      "order": 38,
+      "phase": "teardown-timing",
+      "title": "Fit the camshaft setting tool",
+      "action": "Bolt the camshaft setting tool across the camshafts and tighten its two bolts.",
+      "tools": [
+        "JLR-303-1635"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "13",
+        "unit": "N·m",
+        "note": "tool bolts",
+        "sourceIds": [
+          "s6",
+          "s2"
+        ]
+      },
+      "critical": true,
+      "mistake": "Forcing the tool on when the cam marks are not aligned, instead of rotating the crank further.",
+      "components": [
+        "intake-camshaft",
+        "exhaust-camshaft"
+      ],
+      "sourceIds": [
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-039",
+      "order": 39,
+      "phase": "teardown-timing",
+      "title": "Fit the VCT locking tool",
+      "action": "Bolt the VCT actuator locking tool over both phasers and tighten its two bolts.",
+      "why": "It holds the phaser sprockets still while their centre bolts are broken loose, so the chain and cams cannot jump.",
+      "tools": [
+        "JLR-303-1636"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "13",
+        "unit": "N·m",
+        "note": "tool bolts",
+        "sourceIds": [
+          "s6",
+          "s2"
+        ]
+      },
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-040",
+      "order": 40,
+      "phase": "teardown-timing",
+      "title": "Lock the crankshaft pulley",
+      "action": "Fit the crankshaft pulley locking tool to the front pulley and lock it in place.",
+      "tools": [
+        "JLR-303-1630"
+      ],
+      "components": [
+        "crank-pulley",
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-041",
+      "order": 41,
+      "phase": "teardown-timing",
+      "title": "Crack both phaser bolts",
+      "action": "Break both VCT actuator centre bolts loose but leave them threaded in.",
+      "why": "The bolts are tight and need the locking tools to react against; leaving them in keeps the phasers seated until the tensioner is out.",
+      "critical": true,
+      "mistake": "Removing the centre bolts completely at this stage.",
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-042",
+      "order": 42,
+      "phase": "teardown-timing",
+      "title": "Remove the upper tensioner",
+      "action": "Unscrew and discard the hydraulic upper (secondary) chain tensioner.",
+      "components": [
+        "secondary-tensioner"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-043",
+      "order": 43,
+      "phase": "teardown-timing",
+      "title": "Take off VCT locking tool",
+      "action": "Remove the two bolts and lift off the VCT actuator locking tool so the phasers can come out.",
+      "tools": [
+        "JLR-303-1636"
+      ],
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-044",
+      "order": 44,
+      "phase": "teardown-timing",
+      "title": "Label and remove phasers",
+      "action": "Mark each phaser intake or exhaust, then remove and discard the centre bolts and lift both VCT actuators off their camshafts.",
+      "why": "Each VCT unit is matched to its camshaft and the two are not interchangeable.",
+      "critical": true,
+      "mistake": "Swapping the intake and exhaust phasers on reassembly.",
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-045",
+      "order": 45,
+      "phase": "teardown-timing",
+      "title": "Remove upper chain guides",
+      "action": "Remove the bolts and the three upper chain guides and discard them.",
+      "components": [
+        "secondary-guides"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-046",
+      "order": 46,
+      "phase": "teardown-timing",
+      "title": "Lift off the upper chain",
+      "action": "Lift the secondary chain off the idler sprocket. Check how far the old chain stretches against a new one before you throw it away.",
+      "components": [
+        "secondary-chain"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-047",
+      "order": 47,
+      "phase": "teardown-timing",
+      "title": "Remove the drive plate",
+      "action": "With the crank locked at the pulley, remove and discard the eight drive plate bolts and lift off the drive plate with its reluctor ring.",
+      "why": "The rear crank seal and the lower timing cover sit behind the drive plate.",
+      "tools": [
+        "JLR-303-1630"
+      ],
+      "components": [
+        "drive-plate"
+      ],
+      "sourceIds": [
+        "s12",
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-048",
+      "order": 48,
+      "phase": "teardown-timing",
+      "title": "Extract the rear crank seal",
+      "action": "Bolt the JLR seal remover to the crank flange on its dowel, drill one hole through the seal at the set depth between 9 and 3 o'clock, then thread in the screw and pull the seal with a slide hammer.",
+      "why": "The drilling depth is fixed by the tool so the bit cannot reach the crank flange or the cover.",
+      "tools": [
+        "JLR-303-1712",
+        "100-012 slide hammer",
+        "Electric drill"
+      ],
+      "critical": true,
+      "mistake": "Drilling without the depth spacer and scoring the crankshaft seal surface.",
+      "components": [
+        "rear-seal"
+      ],
+      "sourceIds": [
+        "s11"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-049",
+      "order": 49,
+      "phase": "teardown-timing",
+      "title": "Remove the lower timing cover",
+      "action": "Move the crankshaft position sensor aside, then remove the sixteen bolts and the lower timing cover, which doubles as the rear cover of the block.",
+      "why": "It is sealed with RTV and spans the head gasket joint, so pry only at the provided points.",
+      "components": [
+        "lower-timing-cover",
+        "ckp-sensor"
+      ],
+      "sourceIds": [
+        "s8",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-050",
+      "order": 50,
+      "phase": "teardown-timing",
+      "title": "Remove the lower tensioner",
+      "action": "Remove the two bolts and the primary chain tensioner.",
+      "components": [
+        "primary-tensioner"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-051",
+      "order": 51,
+      "phase": "teardown-timing",
+      "title": "Remove lower chain guides",
+      "action": "Remove the primary chain tensioner guide and the fixed guide.",
+      "components": [
+        "primary-guides"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-052",
+      "order": 52,
+      "phase": "teardown-timing",
+      "title": "Remove idler and lower chain",
+      "action": "Remove the idler sprocket bolt, lift off the idler sprocket and slip the primary chain off the crankshaft sprocket.",
+      "components": [
+        "idler-sprocket",
+        "primary-chain"
+      ],
+      "sourceIds": [
+        "s5",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-053",
+      "order": 53,
+      "phase": "teardown-timing",
+      "title": "Remove the crankshaft pulley",
+      "action": "With the locking tool holding the crank, remove the four pulley bolts, then remove the tool and slide the pulley off its roll pin.",
+      "why": "The pulley carries the timing mark and the locking tool, so it stays on until the chains are off.",
+      "tools": [
+        "JLR-303-1630"
+      ],
+      "mistake": "Reusing the pulley bolts; the pulley procedure calls for four new bolts of the correct length.",
+      "components": [
+        "crank-pulley"
+      ],
+      "sourceIds": [
+        "s10",
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-054",
+      "order": 54,
+      "phase": "teardown-timing",
+      "title": "Remove the engine front cover",
+      "action": "Remove the twelve bolts and the front cover, then pull the front crank seal out with the JLR seal tool.",
+      "tools": [
+        "JLR-303-1628"
+      ],
+      "components": [
+        "front-cover",
+        "front-seal"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-055",
+      "order": 55,
+      "phase": "teardown-head",
+      "title": "Fit the CVVL locating pins",
+      "action": "Loosen the four specified CVVL bolts, remove two others, and screw the JLR locating pins into those two holes.",
+      "why": "The pins guide the CVVL unit straight up so its brake units and pumps are not side-loaded.",
+      "tools": [
+        "JLR-303-1647 CVVL locating pins"
+      ],
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-056",
+      "order": 56,
+      "phase": "teardown-head",
+      "title": "Lift off the CVVL unit",
+      "action": "Remove the remaining bolts in the set sequence and lift the CVVL unit straight up, keeping it upright and holding it by its body, never by the solenoids.",
+      "why": "The unit is full of oil and is a non-serviceable assembly; turning it over or hanging it on the solenoids can ruin it.",
+      "critical": true,
+      "mistake": "Turning the CVVL unit upside down to look at it, which lets air into the hydraulic circuits.",
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-057",
+      "order": 57,
+      "phase": "teardown-head",
+      "title": "Remove the cam setting tool",
+      "action": "Unbolt the camshaft setting tool from the camshafts.",
+      "tools": [
+        "JLR-303-1635"
+      ],
+      "components": [
+        "intake-camshaft",
+        "exhaust-camshaft"
+      ],
+      "sourceIds": [
+        "s17",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-058",
+      "order": 58,
+      "phase": "teardown-head",
+      "title": "Lift off the camshaft carrier",
+      "action": "Remove the nineteen bolts and lift the camshaft carrier, with both camshafts inside it, off the head. Discard the gasket.",
+      "why": "The camshafts run in the carrier, not in the head.",
+      "components": [
+        "camshaft-carrier"
+      ],
+      "sourceIds": [
+        "s17",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-059",
+      "order": 59,
+      "phase": "teardown-head",
+      "title": "Remove the intake camshaft",
+      "action": "Loosen the intake cam cap bolts one turn at a time in sequence, remove the five caps in order, and lift out the intake camshaft.",
+      "why": "Loosening gradually lets the valve and pump loads come off evenly so the hollow camshaft does not bend.",
+      "critical": true,
+      "mistake": "Mixing up the caps; each is stamped I or E with a number and machined to its own bore.",
+      "components": [
+        "intake-camshaft",
+        "cam-caps"
+      ],
+      "sourceIds": [
+        "s18",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-060",
+      "order": 60,
+      "phase": "teardown-head",
+      "title": "Remove the exhaust camshaft",
+      "action": "Repeat for the exhaust camshaft and its five caps, keeping the caps in order.",
+      "components": [
+        "exhaust-camshaft",
+        "cam-caps"
+      ],
+      "sourceIds": [
+        "s18"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-061",
+      "order": 61,
+      "phase": "teardown-head",
+      "title": "Remove head-mounted ancillaries",
+      "action": "Remove the cylinder head temperature sensor, the coolant pipe assembly and the coolant pipe at the head.",
+      "components": [
+        "temp-sensors",
+        "coolant-pipes"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-062",
+      "order": 62,
+      "phase": "teardown-head",
+      "title": "Bag followers and lash adjusters",
+      "action": "Lift out the eight exhaust roller finger followers and eight hydraulic lash adjusters, keeping each in a labelled slot for its position.",
+      "why": "Worn pairs must go back where they ran.",
+      "components": [
+        "roller-followers",
+        "hlas"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-063",
+      "order": 63,
+      "phase": "teardown-head",
+      "title": "Remove the small head bolts",
+      "action": "Remove the three small bolts and the single bolt at the timing end that tie the head to the block, before the main head bolts.",
+      "components": [
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-064",
+      "order": 64,
+      "phase": "teardown-head",
+      "title": "Loosen head bolts in sequence",
+      "action": "Using the JLR head bolt tool, loosen the ten main head bolts in the set sequence and discard them.",
+      "why": "Loosening in sequence keeps the head from distorting as clamp load comes off.",
+      "tools": [
+        "JLR-303-1653 head bolt tool"
+      ],
+      "critical": true,
+      "mistake": "Breaking the head bolts loose in random order.",
+      "components": [
+        "head-bolts",
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-065",
+      "order": 65,
+      "phase": "teardown-head",
+      "title": "Lift off the cylinder head",
+      "action": "With a helper, lift the head straight off the dowels without levering on the gasket faces, then discard the head gasket and remove the two dowels.",
+      "critical": true,
+      "mistake": "Prying between the head and block and gouging the aluminium sealing faces.",
+      "components": [
+        "cylinder-head",
+        "head-gasket"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-066",
+      "order": 66,
+      "phase": "teardown-head",
+      "title": "Remove the valves",
+      "action": "Compress each spring, remove the collets, spring and retainer, and keep every valve in a rack labelled by cylinder and position.",
+      "tools": [
+        "303-252 valve spring compressor"
+      ],
+      "components": [
+        "valves",
+        "valve-springs"
+      ],
+      "sourceIds": [
+        "s19"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-067",
+      "order": 67,
+      "phase": "teardown-head",
+      "title": "Discard the valve stem seals",
+      "action": "Pull and discard every valve stem seal, which also carries the spring seat.",
+      "components": [
+        "valve-seals"
+      ],
+      "sourceIds": [
+        "s19",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-068",
+      "order": 68,
+      "phase": "teardown-block",
+      "title": "Remove the oil pan",
+      "action": "Remove the oil pan bolts, release the RTV seal at the pry points and lift off the cast aluminium pan.",
+      "components": [
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s13",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-069",
+      "order": 69,
+      "phase": "teardown-block",
+      "title": "Remove oil pump drive chain",
+      "action": "Hold the oil pump sprocket with the flange holding tool, remove and discard its bolt, and take off the drive chain and sprocket.",
+      "tools": [
+        "205-053 flange holding tool"
+      ],
+      "components": [
+        "oil-pump-chain"
+      ],
+      "sourceIds": [
+        "s14"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-070",
+      "order": 70,
+      "phase": "teardown-block",
+      "title": "Remove oil pump and pickup",
+      "action": "Unplug the pump solenoid, remove the pickup pipe bolt and four pump bolts, and lift off the variable-flow oil pump with its vacuum pump. Separate the inlet pipe.",
+      "components": [
+        "oil-pump",
+        "oil-pickup"
+      ],
+      "sourceIds": [
+        "s15",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-071",
+      "order": 71,
+      "phase": "teardown-block",
+      "title": "Remove the windage tray",
+      "action": "Remove the bolts and the cast aluminium structural windage tray from the bottom of the block.",
+      "why": "The tray stiffens the bottom end and covers the main caps and rod caps.",
+      "components": [
+        "windage-tray"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-072",
+      "order": 72,
+      "phase": "teardown-block",
+      "title": "Remove piston cooling jets",
+      "action": "Remove the single bolt on each of the four piston cooling jets and lift them out.",
+      "why": "The jets sit close to the bores and can be struck by a rod or the crank on the way out.",
+      "critical": true,
+      "mistake": "Leaving the jets in and bending one while pushing out pistons or lifting the crank.",
+      "components": [
+        "piston-jets"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-073",
+      "order": 73,
+      "phase": "teardown-block",
+      "title": "Mark rods and caps",
+      "action": "Confirm each rod and cap is marked to its cylinder and note the arrow on each piston crown toward the front.",
+      "why": "Rod caps are fracture-split and fit only their own rod in one orientation.",
+      "components": [
+        "connecting-rods",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-074",
+      "order": 74,
+      "phase": "teardown-block",
+      "title": "Remove pistons and rods",
+      "action": "Remove each rod cap, protect the crank journal, and push the piston and rod out through the top of the bore, keeping the shells with their rod.",
+      "components": [
+        "pistons",
+        "connecting-rods",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-075",
+      "order": 75,
+      "phase": "teardown-block",
+      "title": "Remove the main bearing caps",
+      "action": "Loosen the ten main cap bolts evenly and lift out the five numbered sintered-steel caps with their shells.",
+      "components": [
+        "main-caps",
+        "main-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-076",
+      "order": 76,
+      "phase": "teardown-block",
+      "title": "Lift out the crankshaft",
+      "action": "Lift the crankshaft out of the block, then remove the two thrust washers at the centre main and the upper shells.",
+      "components": [
+        "crankshaft",
+        "thrust-washers",
+        "main-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-077",
+      "order": 77,
+      "phase": "teardown-block",
+      "title": "Remove balancers and idler",
+      "action": "Remove the balancer idler gear, then withdraw both counter-rotating balancer shafts from their bores in the block.",
+      "why": "They are gear-driven from a ring gear on the crankshaft, so the crank must be out first.",
+      "components": [
+        "balancer-shafts",
+        "balancer-idler"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-078",
+      "order": 78,
+      "phase": "teardown-block",
+      "title": "Separate pistons from rods",
+      "action": "Remove both circlips, push out the gudgeon pin and separate each piston from its rod.",
+      "components": [
+        "pistons",
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-079",
+      "order": 79,
+      "phase": "inspect",
+      "title": "Clean the gasket faces",
+      "action": "Remove old gasket and RTV from the aluminium head, block and cover faces with a plastic scraper and solvent only.",
+      "why": "Metal scrapers and abrasive discs gouge aluminium and ruin the MLS gasket seal.",
+      "critical": true,
+      "mistake": "Using an abrasive disc on the block deck.",
+      "components": [
+        "block",
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-080",
+      "order": 80,
+      "phase": "inspect",
+      "title": "Flush every oil gallery",
+      "action": "Brush and flush the block, head and camshaft carrier oil galleries and blow them dry, looking for sludge in the high-pressure passages that feed the VCT and CVVL.",
+      "why": "JLR traced CVVL failures to oil sludge deposits in the high-pressure galleries; any left behind will lodge in the new parts.",
+      "critical": true,
+      "mistake": "Fitting new timing parts or a new CVVL unit to galleries still holding old sludge.",
+      "components": [
+        "block",
+        "camshaft-carrier",
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s24",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-081",
+      "order": 81,
+      "phase": "inspect",
+      "title": "Inspect VCT bolts and passages",
+      "action": "Clean the oil feed bores in the camshaft carrier that supply the phasers, and inspect each camshaft drive adapter and timing dowel.",
+      "why": "The phasers are moved by engine oil through these bores; a weak VCT seal or blocked feed causes the rattle and cam timing codes JLR documented.",
+      "components": [
+        "vct-intake",
+        "vct-exhaust",
+        "camshaft-carrier"
+      ],
+      "sourceIds": [
+        "s4",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-082",
+      "order": 82,
+      "phase": "inspect",
+      "title": "Inspect the cylinder liners",
+      "action": "Check each thin-wall cast-iron liner for scoring, cracks and any movement at the deck.",
+      "components": [
+        "block"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-083",
+      "order": 83,
+      "phase": "inspect",
+      "title": "Measure bores and pistons",
+      "action": "Measure each bore for taper and out-of-round, and each piston skirt, and compare them.",
+      "why": "JLR lists only one piston diameter grade, so a worn bore cannot be fixed with a factory oversize piston.",
+      "tools": [
+        "Bore gauge",
+        "Micrometers"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "83.0",
+        "unit": "mm",
+        "note": "nominal bore diameter; wear limits not published in sources found",
+        "sourceIds": [
+          "s29"
+        ]
+      },
+      "components": [
+        "block",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s4",
+        "s29"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-084",
+      "order": 84,
+      "phase": "inspect",
+      "title": "Check ring end gaps",
+      "action": "Square each new ring in its bore and check the end gap with feeler gauges.",
+      "tools": [
+        "Feeler gauges"
+      ],
+      "components": [
+        "piston-rings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-085",
+      "order": 85,
+      "phase": "inspect",
+      "title": "Read the crankshaft codes",
+      "action": "Read the laser-etched letter strings or data-matrix code on the crankshaft for the main and rod journal grades.",
+      "why": "Bearing shells are chosen from these codes and the selection charts, not just from measuring.",
+      "components": [
+        "crankshaft",
+        "main-bearings",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-086",
+      "order": 86,
+      "phase": "inspect",
+      "title": "Measure crank journals",
+      "action": "Mic every main and rod journal for size, taper and out-of-round, and check the induction-hardened surfaces for scoring.",
+      "tools": [
+        "Micrometers"
+      ],
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-087",
+      "order": 87,
+      "phase": "inspect",
+      "title": "Check bearing running clearance",
+      "action": "With the chosen shells fitted and caps torqued, check main and rod clearances with Plastigage or bore gauge and compare them with the selection chart.",
+      "tools": [
+        "Plastigage or bore gauge"
+      ],
+      "components": [
+        "main-bearings",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-088",
+      "order": 88,
+      "phase": "inspect",
+      "title": "Check head deck flatness",
+      "action": "Check the cylinder head face for distortion with a straightedge and feeler gauges across and diagonally.",
+      "tools": [
+        "Straightedge",
+        "Feeler gauges"
+      ],
+      "components": [
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-089",
+      "order": 89,
+      "phase": "inspect",
+      "title": "Inspect valves and seats",
+      "action": "Inspect each valve face, stem and seat, and check the guides for wear by rocking each valve in its guide.",
+      "components": [
+        "valves",
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s19",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-090",
+      "order": 90,
+      "phase": "inspect",
+      "title": "Inspect camshafts and rollers",
+      "action": "Check the pressed-on cam lobes, the HP pump lobe and the needle roller bearings for pitting or roughness.",
+      "components": [
+        "intake-camshaft",
+        "exhaust-camshaft",
+        "cam-caps"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-091",
+      "order": 91,
+      "phase": "inspect",
+      "title": "Inspect followers and adjusters",
+      "action": "Check each exhaust roller follower for a free, smooth roller and each lash adjuster for wear.",
+      "components": [
+        "roller-followers",
+        "hlas"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-092",
+      "order": 92,
+      "phase": "inspect",
+      "title": "Inspect balancer gears and bearings",
+      "action": "Check the balancer needle bearings, the outer races in the block, the helical gear teeth and the anti-backlash scissor gears.",
+      "components": [
+        "balancer-shafts",
+        "balancer-idler"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-093",
+      "order": 93,
+      "phase": "inspect",
+      "title": "Inspect the turbocharger",
+      "action": "Check the turbo shaft for radial and axial play, wheel contact and coked oil in the centre housing, and confirm the oil feed and return pipes are clear.",
+      "why": "A turbo that failed from oil starvation or contamination will fail again on a fresh engine.",
+      "components": [
+        "turbo",
+        "turbo-oil-feed",
+        "turbo-oil-return"
+      ],
+      "sourceIds": [
+        "s33"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-094",
+      "order": 94,
+      "phase": "inspect",
+      "title": "Judge the CVVL unit",
+      "action": "Decide whether the CVVL unit is reused or replaced; it is a sealed assembly, and a failed solenoid, sludge or misfire history means a new unit.",
+      "why": "JLR does not sell CVVL solenoids or internals; the only repair is a complete unit.",
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s4",
+        "s26"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-095",
+      "order": 95,
+      "phase": "machine",
+      "title": "Decide on valve work",
+      "action": "Have seats and valves refaced only as needed, then lap each valve until a continuous contact band shows on valve and seat.",
+      "tools": [
+        "Valve lapping tool",
+        "Fine grinding paste"
+      ],
+      "components": [
+        "valves",
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s19"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-096",
+      "order": 96,
+      "phase": "machine",
+      "title": "Replace head if guides worn",
+      "action": "If guide wear is out of limits, plan on a replacement head.",
+      "why": "JLR lists the valve guides as non-serviceable.",
+      "components": [
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-097",
+      "order": 97,
+      "phase": "machine",
+      "title": "Decide the bore strategy",
+      "action": "Within limits, hone lightly and fit new rings; with liner scoring or wear beyond limits, replace the block or send it to a specialist for sleeving.",
+      "why": "JLR offers one piston size and interference-fit liners, so there is no factory oversize route.",
+      "critical": true,
+      "mistake": "Boring the liners oversize and assuming oversize pistons will be available.",
+      "components": [
+        "block",
+        "pistons"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-098",
+      "order": 98,
+      "phase": "machine",
+      "title": "Decide the crankshaft fate",
+      "action": "If journals are within limits, fit graded shells; if scored or out of limits, replace the crankshaft.",
+      "why": "JLR sizes clearances with graded bearings rather than undersize shells, so a reground crank needs non-factory bearings.",
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-099",
+      "order": 99,
+      "phase": "machine",
+      "title": "Select bearing grades",
+      "action": "Use the crank codes and the block or rod references with JLR's selection charts to pick a colour- and letter-coded shell for each journal.",
+      "critical": true,
+      "mistake": "Ordering one standard size for every journal instead of grading each one.",
+      "components": [
+        "main-bearings",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-100",
+      "order": 100,
+      "phase": "machine",
+      "title": "Chase threads and final wash",
+      "action": "Clean all threads, including the drive plate holes with an M10 x 1.0 bottoming tap no deeper than the hole, then wash the block and head and blow them dry.",
+      "why": "Head and drive plate bolts are torqued to an angle and must go into clean, dry threads.",
+      "tools": [
+        "M10 x 1.0 bottoming tap"
+      ],
+      "spec": {
+        "kind": "other",
+        "value": "16",
+        "unit": "mm",
+        "note": "maximum tap depth in drive plate bolt holes",
+        "sourceIds": [
+          "s12",
+          "s22"
+        ]
+      },
+      "components": [
+        "block",
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s12",
+        "s22",
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-101",
+      "order": 101,
+      "phase": "assembly-block",
+      "title": "Fit and time the balancers",
+      "action": "Install the outer races if replaced, slide both balancer shafts into their bores, fit the idler gear, and set them in phase with the JLR alignment tools.",
+      "why": "Out-of-phase balancers add vibration instead of cancelling it, and their timing cannot be set once the crank is in.",
+      "critical": true,
+      "mistake": "Fitting the balancers without the alignment tools and guessing the gear mesh.",
+      "components": [
+        "balancer-shafts",
+        "balancer-idler"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-102",
+      "order": 102,
+      "phase": "assembly-block",
+      "title": "Fit upper main shells",
+      "action": "Lay the grooved upper main shells, with their oil holes lined up, into the clean, dry block saddles.",
+      "why": "The block-side shells carry the oil feed to the crank; a cap-side shell in the block starves the journal.",
+      "critical": true,
+      "mistake": "Mixing up block-side shells with the plain cap-side shells.",
+      "components": [
+        "main-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-103",
+      "order": 103,
+      "phase": "assembly-block",
+      "title": "Fit the thrust washers",
+      "action": "Place the two thrust washers on either side of the centre main web, grooves facing the crank.",
+      "components": [
+        "thrust-washers"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-104",
+      "order": 104,
+      "phase": "assembly-block",
+      "title": "Lay in the crankshaft",
+      "action": "Oil the shells and lower the crankshaft in, meshing its balancer drive gear with the balancer gears.",
+      "components": [
+        "crankshaft"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-105",
+      "order": 105,
+      "phase": "assembly-block",
+      "title": "Fit lower main shells",
+      "action": "Fit the plain shells to caps 1 to 4 and the partly grooved shell to the rear cap 5.",
+      "components": [
+        "main-bearings",
+        "main-caps"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-106",
+      "order": 106,
+      "phase": "assembly-block",
+      "title": "Install the main caps",
+      "action": "Fit each cap to its numbered position with the arrow toward the front of the engine.",
+      "critical": true,
+      "mistake": "Fitting a cap reversed, which changes the bore geometry and seizes the bearing.",
+      "components": [
+        "main-caps"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-107",
+      "order": 107,
+      "phase": "assembly-block",
+      "title": "Torque the main cap bolts",
+      "action": "Tighten the ten main cap bolts in stages to the JLR value and angle, working from the centre out.",
+      "why": "No published value could be verified for this unit, so look it up in the workshop manual.",
+      "critical": true,
+      "components": [
+        "main-caps"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-108",
+      "order": 108,
+      "phase": "assembly-block",
+      "title": "Check end float and rotation",
+      "action": "Check crankshaft end float with a dial indicator and turn the crank by hand to confirm it spins freely.",
+      "tools": [
+        "Dial indicator"
+      ],
+      "components": [
+        "crankshaft",
+        "thrust-washers"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-109",
+      "order": 109,
+      "phase": "assembly-block",
+      "title": "Assemble pistons to rods",
+      "action": "Join each piston to its rod with the gudgeon pin and two new circlips, keeping the crown arrow and rod orientation correct.",
+      "components": [
+        "pistons",
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-110",
+      "order": 110,
+      "phase": "assembly-block",
+      "title": "Fit and stagger rings",
+      "action": "Install the oil control ring, then the two compression rings, and turn them so the gaps are 120 degrees apart.",
+      "spec": {
+        "kind": "other",
+        "value": "120",
+        "unit": "deg",
+        "note": "spacing between the three ring gaps",
+        "sourceIds": [
+          "s4"
+        ]
+      },
+      "components": [
+        "piston-rings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-111",
+      "order": 111,
+      "phase": "assembly-block",
+      "title": "Refit piston cooling jets",
+      "action": "Bolt the four piston cooling jets back into the block and check each points at its piston's underside.",
+      "components": [
+        "piston-jets"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-112",
+      "order": 112,
+      "phase": "assembly-block",
+      "title": "Install pistons arrow forward",
+      "action": "Fit each piston with its graded rod shell, arrow toward the front, and tap it into the bore through a ring compressor while guiding the rod onto the journal.",
+      "tools": [
+        "Ring compressor"
+      ],
+      "critical": true,
+      "mistake": "Installing a piston with its crown arrow facing the transmission end.",
+      "components": [
+        "pistons",
+        "rod-bearings",
+        "connecting-rods"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-113",
+      "order": 113,
+      "phase": "assembly-block",
+      "title": "Fit and torque rod caps",
+      "action": "Mate each fracture-split cap to its own rod, then tighten the rod bolts to the JLR value and angle, using new bolts if the manual specifies them.",
+      "why": "A fracture-split cap only seats correctly on the rod it was broken from.",
+      "critical": true,
+      "mistake": "Swapping caps between rods.",
+      "components": [
+        "connecting-rods",
+        "rod-bearings"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-114",
+      "order": 114,
+      "phase": "assembly-block",
+      "title": "Install the windage tray",
+      "action": "Bolt the structural windage tray to the bottom of the block.",
+      "components": [
+        "windage-tray"
+      ],
+      "sourceIds": [
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-115",
+      "order": 115,
+      "phase": "assembly-block",
+      "title": "Install oil pump and pickup",
+      "action": "Fit the inlet pipe to the pump, bolt the pump to the block, then tighten the pickup support bolt and reconnect the pump solenoid.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "4 oil pump bolts; inlet pipe and pickup bolts 12 N·m",
+        "sourceIds": [
+          "s15"
+        ]
+      },
+      "components": [
+        "oil-pump",
+        "oil-pickup"
+      ],
+      "sourceIds": [
+        "s15"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-116",
+      "order": 116,
+      "phase": "assembly-block",
+      "title": "Fit oil pump drive chain",
+      "action": "Fit the chain and sprocket with the sprocket correctly keyed to the pump shaft, hold it with the flange tool and fit a new bolt.",
+      "tools": [
+        "205-053 flange holding tool"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "60",
+        "unit": "N·m",
+        "note": "new bolt, then plus 90 degrees",
+        "sourceIds": [
+          "s14"
+        ]
+      },
+      "components": [
+        "oil-pump-chain"
+      ],
+      "sourceIds": [
+        "s14"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-117",
+      "order": 117,
+      "phase": "assembly-block",
+      "title": "Seal and fit oil pan",
+      "action": "Lay a steady 3 mm bead of JLR-spec silicone, fit the pan and all bolts finger tight, then tighten in sequence in two stages, all within 7 minutes of sealant.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "stage 1 10 N·m, stage 2 25 N·m, in sequence; fit within 7 minutes of sealant",
+        "sourceIds": [
+          "s13"
+        ]
+      },
+      "critical": true,
+      "mistake": "Letting the RTV skin over before the pan is torqued.",
+      "components": [
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s13"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-118",
+      "order": 118,
+      "phase": "assembly-block",
+      "title": "Fit the engine front cover",
+      "action": "Apply RTV where shown, fit the front cover, align it with the JLR tool, and tighten four bolts in sequence and the remaining eight diagonally.",
+      "tools": [
+        "303-1433 cover alignment tool"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "12",
+        "unit": "N·m",
+        "note": "all 12 bolts",
+        "sourceIds": [
+          "s9"
+        ]
+      },
+      "components": [
+        "front-cover"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-119",
+      "order": 119,
+      "phase": "assembly-block",
+      "title": "Install the front crank seal",
+      "action": "Install a new front seal dry with the JLR seal tool and turn it home to the specified torque.",
+      "why": "The seal is not lubricated; it seals against the pulley hub.",
+      "tools": [
+        "JLR-303-1628"
+      ],
+      "mistake": "Oiling the new front seal.",
+      "components": [
+        "front-seal"
+      ],
+      "sourceIds": [
+        "s9",
+        "s10"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-120",
+      "order": 120,
+      "phase": "assembly-block",
+      "title": "Fit the crankshaft pulley",
+      "action": "Fit the pulley onto its roll pin with a good O-ring, check the four new bolts are 48 mm long, and tighten them diagonally.",
+      "why": "The pulley carries the timing mark and the locking tool needed for the timing steps.",
+      "tools": [
+        "JLR-303-1630"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "37",
+        "unit": "N·m",
+        "note": "new 48 mm bolts, diagonal sequence, then plus 90 degrees",
+        "sourceIds": [
+          "s10",
+          "s22"
+        ]
+      },
+      "components": [
+        "crank-pulley"
+      ],
+      "sourceIds": [
+        "s10",
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-121",
+      "order": 121,
+      "phase": "assembly-head",
+      "title": "Rebuild the valve assemblies",
+      "action": "Fit new stem seals, oil each valve stem, insert the valves in their original guides and refit springs, retainers and collets with the compressor.",
+      "tools": [
+        "303-252 valve spring compressor"
+      ],
+      "components": [
+        "valves",
+        "valve-seals",
+        "valve-springs"
+      ],
+      "sourceIds": [
+        "s19"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-122",
+      "order": 122,
+      "phase": "assembly-head",
+      "title": "Fit dowels and head gasket",
+      "action": "Fit the two clean dowels to the block and lay a new multi-layer steel gasket over them.",
+      "critical": true,
+      "mistake": "Fitting the gasket without the dowels in place.",
+      "components": [
+        "head-gasket",
+        "block"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-123",
+      "order": 123,
+      "phase": "assembly-head",
+      "title": "Set the head on dowels",
+      "action": "With a helper, lower the head straight onto the dowels.",
+      "components": [
+        "cylinder-head"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-124",
+      "order": 124,
+      "phase": "assembly-head",
+      "title": "Snug new head bolts",
+      "action": "Fit ten new head bolts into clean, dry holes and tighten them in sequence with the JLR head bolt tool.",
+      "why": "These are torque-to-yield bolts, and oil in the blind holes gives false readings or can crack the block.",
+      "tools": [
+        "JLR-303-1653"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "20",
+        "unit": "N·m",
+        "note": "new bolts, dry threads, in sequence",
+        "sourceIds": [
+          "s16"
+        ]
+      },
+      "critical": true,
+      "mistake": "Reusing the old stretched head bolts.",
+      "components": [
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s16",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-125",
+      "order": 125,
+      "phase": "assembly-head",
+      "title": "Angle the head bolts",
+      "action": "In the same sequence, turn every head bolt 90 degrees, then a further 180 degrees.",
+      "tools": [
+        "JLR-303-1653",
+        "Angle gauge"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "90",
+        "unit": "deg",
+        "note": "stage 1; then stage 2 a further 180 degrees, in sequence",
+        "sourceIds": [
+          "s16"
+        ]
+      },
+      "critical": true,
+      "mistake": "Stopping after the first angle stage or skipping the sequence.",
+      "components": [
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-126",
+      "order": 126,
+      "phase": "assembly-head",
+      "title": "Tighten small head bolts",
+      "action": "Fit and tighten the single bolt, then the three small bolts at the timing end.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "single bolt; the 3 small bolts 12 N·m",
+        "sourceIds": [
+          "s16"
+        ]
+      },
+      "components": [
+        "head-bolts"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-127",
+      "order": 127,
+      "phase": "assembly-head",
+      "title": "Refit lash adjusters and followers",
+      "action": "Oil and refit the eight lash adjusters and eight roller followers in their original positions.",
+      "components": [
+        "hlas",
+        "roller-followers"
+      ],
+      "sourceIds": [
+        "s16"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-128",
+      "order": 128,
+      "phase": "assembly-head",
+      "title": "Install camshafts in carrier",
+      "action": "Oil the needle bearings, lay each camshaft in the carrier, fit its five matched caps and tighten the bolts in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "11",
+        "unit": "N·m",
+        "note": "cam cap bolts, in sequence",
+        "sourceIds": [
+          "s18",
+          "s17"
+        ]
+      },
+      "critical": true,
+      "mistake": "Mixing up the I and E caps or their numbered positions.",
+      "components": [
+        "intake-camshaft",
+        "exhaust-camshaft",
+        "cam-caps",
+        "camshaft-carrier"
+      ],
+      "sourceIds": [
+        "s18",
+        "s17",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-129",
+      "order": 129,
+      "phase": "assembly-head",
+      "title": "Fit the camshaft carrier",
+      "action": "Lay a new gasket on the head, set the carrier on its two dowels, and tighten the nineteen bolts in sequence in two stages.",
+      "spec": {
+        "kind": "torque",
+        "value": "28",
+        "unit": "N·m",
+        "note": "stage 1 10 N·m, stage 2 28 N·m, in sequence",
+        "sourceIds": [
+          "s17"
+        ]
+      },
+      "components": [
+        "camshaft-carrier"
+      ],
+      "sourceIds": [
+        "s17"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-130",
+      "order": 130,
+      "phase": "assembly-head",
+      "title": "Fit the camshaft sensors",
+      "action": "Install both camshaft position sensors with new O-rings.",
+      "spec": {
+        "kind": "torque",
+        "value": "8",
+        "unit": "N·m",
+        "sourceIds": [
+          "s17",
+          "s22"
+        ]
+      },
+      "components": [
+        "cmp-sensors"
+      ],
+      "sourceIds": [
+        "s17",
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-131",
+      "order": 131,
+      "phase": "assembly-timing",
+      "title": "Set crank to timing position",
+      "action": "Turn the crank clockwise with the rotation tool until the pulley mark points down, then fit and bolt the crank pulley locking tool.",
+      "tools": [
+        "JLR-303-1656",
+        "JLR-303-1630"
+      ],
+      "spec": {
+        "kind": "angle",
+        "value": "50",
+        "unit": "deg",
+        "note": "after TDC, cylinder 1",
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      "critical": true,
+      "mistake": "Rotating the crank counter-clockwise.",
+      "components": [
+        "crankshaft",
+        "crank-pulley"
+      ],
+      "sourceIds": [
+        "s5",
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-132",
+      "order": 132,
+      "phase": "assembly-timing",
+      "title": "Lock cams with setting tool",
+      "action": "Turn each camshaft until its mark points up and bolt the camshaft setting tool across both.",
+      "tools": [
+        "JLR-303-1635"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "13",
+        "unit": "N·m",
+        "note": "tool bolts",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "components": [
+        "intake-camshaft",
+        "exhaust-camshaft"
+      ],
+      "sourceIds": [
+        "s5",
+        "s1"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-133",
+      "order": 133,
+      "phase": "assembly-timing",
+      "title": "Fit idler with lower chain",
+      "action": "Hang the new primary chain on the idler sprocket with the timing mark at the centre of the gold link, fit the idler and chain together, and tighten the idler bolt.",
+      "why": "The coloured links are the only reference for chain-to-sprocket timing.",
+      "critical": true,
+      "mistake": "Letting the chain slip a tooth off its coloured link while fitting the idler.",
+      "components": [
+        "idler-sprocket",
+        "primary-chain"
+      ],
+      "sourceIds": [
+        "s5",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-134",
+      "order": 134,
+      "phase": "assembly-timing",
+      "title": "Fit new lower chain guides",
+      "action": "Confirm the crank and idler marks still align, then fit the new fixed guide and the new tensioner guide.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "two-bolt guide; single-bolt guide 11 N·m",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "components": [
+        "primary-guides"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-135",
+      "order": 135,
+      "phase": "assembly-timing",
+      "title": "Fit the new lower tensioner",
+      "action": "Bolt on the new primary chain tensioner, then pull out and discard its locking clip.",
+      "spec": {
+        "kind": "torque",
+        "value": "11",
+        "unit": "N·m",
+        "sourceIds": [
+          "s5"
+        ]
+      },
+      "components": [
+        "primary-tensioner"
+      ],
+      "sourceIds": [
+        "s5"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-136",
+      "order": 136,
+      "phase": "assembly-timing",
+      "title": "Hang the upper chain",
+      "action": "Fit the new secondary chain over the idler with its coloured link on the idler mark, keeping tension on the chain so it cannot jump.",
+      "critical": true,
+      "components": [
+        "secondary-chain",
+        "idler-sprocket"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-137",
+      "order": 137,
+      "phase": "assembly-timing",
+      "title": "Fit first upper guide",
+      "action": "Install the first new upper chain guide while keeping the chain taut.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      "components": [
+        "secondary-guides"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-138",
+      "order": 138,
+      "phase": "assembly-timing",
+      "title": "Fit the intake phaser",
+      "action": "Fit the intake VCT actuator on its dowel with the coloured link centred on its mark, then snug a new centre bolt and back it off a quarter turn.",
+      "why": "Backing the bolt off leaves the sprocket free to settle under chain tension before final torque.",
+      "spec": {
+        "kind": "torque",
+        "value": "10",
+        "unit": "N·m",
+        "note": "new bolt, then loosen 90 degrees",
+        "sourceIds": [
+          "s5",
+          "s2"
+        ]
+      },
+      "critical": true,
+      "mistake": "Fitting the phaser off its dowel or fitting the exhaust unit to the intake cam.",
+      "components": [
+        "vct-intake"
+      ],
+      "sourceIds": [
+        "s5",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-139",
+      "order": 139,
+      "phase": "assembly-timing",
+      "title": "Fit the middle upper guide",
+      "action": "Install the second new upper guide between the camshaft sprockets, keeping the chain on the idler.",
+      "components": [
+        "secondary-guides"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-140",
+      "order": 140,
+      "phase": "assembly-timing",
+      "title": "Fit the exhaust phaser",
+      "action": "Fit the exhaust VCT actuator on its dowel with its groove centred on the coloured link, then snug a new bolt and back it off a quarter turn.",
+      "spec": {
+        "kind": "torque",
+        "value": "10",
+        "unit": "N·m",
+        "note": "new bolt, then loosen 90 degrees",
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-141",
+      "order": 141,
+      "phase": "assembly-timing",
+      "title": "Fit the tensioner-side guide",
+      "action": "Install the last new upper guide with its two bolts.",
+      "spec": {
+        "kind": "torque",
+        "value": "11",
+        "unit": "N·m",
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      "components": [
+        "secondary-guides"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-142",
+      "order": 142,
+      "phase": "assembly-timing",
+      "title": "Lock phasers with VCT tool",
+      "action": "Bolt the VCT actuator locking tool over both phasers.",
+      "tools": [
+        "JLR-303-1636"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "13",
+        "unit": "N·m",
+        "note": "tool bolts",
+        "sourceIds": [
+          "s5",
+          "s6"
+        ]
+      },
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-143",
+      "order": 143,
+      "phase": "assembly-timing",
+      "title": "Install the new upper tensioner",
+      "action": "Screw in the new, still-compressed hydraulic upper tensioner.",
+      "spec": {
+        "kind": "torque",
+        "value": "55",
+        "unit": "N·m",
+        "sourceIds": [
+          "s5",
+          "s6",
+          "s2"
+        ]
+      },
+      "components": [
+        "secondary-tensioner"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-144",
+      "order": 144,
+      "phase": "assembly-timing",
+      "title": "Release the upper tensioner",
+      "action": "Push the upper tensioner guide in and let it go to release the tensioner plunger, without touching the tensioner itself, and confirm the chain is now taut.",
+      "critical": true,
+      "mistake": "Torquing the phaser bolts before the tensioner has released and taken up the slack.",
+      "components": [
+        "secondary-tensioner",
+        "secondary-guides"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-145",
+      "order": 145,
+      "phase": "assembly-timing",
+      "title": "Final-torque phaser bolts",
+      "action": "With the locking tools still fitted, tighten both VCT centre bolts to torque and then the final angle.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "then plus 60 degrees",
+        "sourceIds": [
+          "s5",
+          "s6",
+          "s2"
+        ]
+      },
+      "critical": true,
+      "mistake": "Reusing the old centre bolts, which are single use.",
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-146",
+      "order": 146,
+      "phase": "assembly-timing",
+      "title": "Remove the cam locking tools",
+      "action": "Remove the VCT locking tool, then the camshaft setting tool.",
+      "tools": [
+        "JLR-303-1636",
+        "JLR-303-1635"
+      ],
+      "components": [
+        "vct-intake",
+        "vct-exhaust"
+      ],
+      "sourceIds": [
+        "s5",
+        "s6"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-147",
+      "order": 147,
+      "phase": "assembly-timing",
+      "title": "Verify timing after two turns",
+      "action": "Remove the crank lock, turn the engine clockwise two full turns by hand, and confirm the pulley and cam marks line up again and the setting tool still fits without force.",
+      "why": "It catches a chain one tooth out before the covers go on and before anything is fired.",
+      "critical": true,
+      "mistake": "Closing up the timing covers without a hand-turn check.",
+      "components": [
+        "crankshaft",
+        "intake-camshaft",
+        "exhaust-camshaft"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-148",
+      "order": 148,
+      "phase": "assembly-timing",
+      "title": "Seal the lower timing cover",
+      "action": "Lay a continuous 3 mm RTV bead, check the dowels, and fit the lower timing cover within 7 minutes, taking care not to damage the head gasket edge.",
+      "why": "The cover spans the head-to-block joint and closes the rear of the block.",
+      "spec": {
+        "kind": "other",
+        "value": "7",
+        "unit": "min",
+        "note": "maximum time from sealant to fitting",
+        "sourceIds": [
+          "s8"
+        ]
+      },
+      "critical": true,
+      "mistake": "Catching and tearing the exposed edge of the new head gasket with the cover.",
+      "components": [
+        "lower-timing-cover",
+        "head-gasket"
+      ],
+      "sourceIds": [
+        "s8"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-149",
+      "order": 149,
+      "phase": "assembly-timing",
+      "title": "Torque lower cover in stages",
+      "action": "Snug the two locating bolts, add two more and tighten all four, then fit and tighten the remaining twelve by size.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "first 2 bolts 5 N·m; then 4 bolts and M8 bolts 25 N·m; M6 bolts 12 N·m",
+        "sourceIds": [
+          "s8"
+        ]
+      },
+      "components": [
+        "lower-timing-cover"
+      ],
+      "sourceIds": [
+        "s8"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-150",
+      "order": 150,
+      "phase": "assembly-timing",
+      "title": "Refit the crank position sensor",
+      "action": "Fit the crankshaft position sensor to the lower timing cover, where it reads the drive plate reluctor ring.",
+      "spec": {
+        "kind": "torque",
+        "value": "8",
+        "unit": "N·m",
+        "sourceIds": [
+          "s8",
+          "s22"
+        ]
+      },
+      "components": [
+        "ckp-sensor"
+      ],
+      "sourceIds": [
+        "s8",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-151",
+      "order": 151,
+      "phase": "assembly-timing",
+      "title": "Install the rear crank seal",
+      "action": "Fit the JLR installer to the crank, slide the new seal over it on its shipping spacer, discard the spacer, then draw the seal home until the tool bolt stops.",
+      "why": "The spacer keeps the seal lip correctly formed; if the seal comes off it, the seal must be replaced.",
+      "tools": [
+        "JLR-303-1674A"
+      ],
+      "critical": true,
+      "mistake": "Pushing the seal over the crank flange without its spacer and rolling the lip.",
+      "components": [
+        "rear-seal"
+      ],
+      "sourceIds": [
+        "s11"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-152",
+      "order": 152,
+      "phase": "assembly-timing",
+      "title": "Install the drive plate",
+      "action": "Fit the drive plate on its dowel with eight new bolts into clean, dry threads, then tighten in sequence with the crank locked.",
+      "tools": [
+        "JLR-303-1630"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "30",
+        "unit": "N·m",
+        "note": "new pre-coated bolts, then plus 120 degrees, in sequence",
+        "sourceIds": [
+          "s12",
+          "s22"
+        ]
+      },
+      "critical": true,
+      "mistake": "Reusing the drive plate bolts, which carry a one-time sealant patch.",
+      "components": [
+        "drive-plate"
+      ],
+      "sourceIds": [
+        "s12",
+        "s22",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-153",
+      "order": 153,
+      "phase": "assembly-timing",
+      "title": "Fit the upper timing cover",
+      "action": "Apply a 3 mm sealant bead where shown, fit a new gasket and the cover, then tighten, back off and retighten every bolt.",
+      "spec": {
+        "kind": "torque",
+        "value": "13.5",
+        "unit": "N·m",
+        "note": "stage 1 13.5 N·m, stage 2 loosen 180 degrees, stage 3 13.5 N·m",
+        "sourceIds": [
+          "s7"
+        ]
+      },
+      "components": [
+        "upper-timing-cover"
+      ],
+      "sourceIds": [
+        "s7"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-154",
+      "order": 154,
+      "phase": "assembly-timing",
+      "title": "Refit the VCT solenoids",
+      "action": "Oil the bores, fit new O-rings and install both VCT solenoids into the upper timing cover.",
+      "spec": {
+        "kind": "torque",
+        "value": "9",
+        "unit": "N·m",
+        "sourceIds": [
+          "s7",
+          "s22"
+        ]
+      },
+      "mistake": "Fitting old O-rings; a leaking solenoid seal drops phaser oil pressure.",
+      "components": [
+        "vct-solenoids"
+      ],
+      "sourceIds": [
+        "s7",
+        "s3"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-155",
+      "order": 155,
+      "phase": "assembly-ext",
+      "title": "Reset the CVVL brake units",
+      "action": "If the original CVVL unit is going back on, reset all eight brake units with the JLR reset tool, keeping the unit upright.",
+      "why": "The brake units also act as the intake valve lash adjusters and must start from the reset position.",
+      "tools": [
+        "JLR-303-1639 CVVL brake reset tool"
+      ],
+      "critical": true,
+      "mistake": "Refitting a removed CVVL unit without resetting its brake units.",
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-156",
+      "order": 156,
+      "phase": "assembly-ext",
+      "title": "Install the CVVL unit",
+      "action": "With a new gasket and the locating pins fitted, lower the CVVL unit on and draw down the two pilot bolts in the specified way.",
+      "tools": [
+        "JLR-303-1647"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "6",
+        "unit": "N·m",
+        "note": "2 pilot bolts: run to contact, then 2 more turns, then 6 N·m",
+        "sourceIds": [
+          "s20"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-157",
+      "order": 157,
+      "phase": "assembly-ext",
+      "title": "Torque the CVVL bolts",
+      "action": "Remove the locating pins, fit the last two bolts, and tighten all ten CVVL bolts in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "12",
+        "unit": "N·m",
+        "note": "10 bolts, in sequence",
+        "sourceIds": [
+          "s20"
+        ]
+      },
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-158",
+      "order": 158,
+      "phase": "assembly-ext",
+      "title": "Fit the vent oil separator",
+      "action": "Fit the engine vent oil separator with a new gasket and tighten its seven bolts in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "11.5",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "vent-separator"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-159",
+      "order": 159,
+      "phase": "assembly-ext",
+      "title": "Fit the oil filter housing",
+      "action": "Fit five new O-rings, bolt the filter housing on, check the bypass valve in the cap, and fit a new element and cap O-ring.",
+      "spec": {
+        "kind": "torque",
+        "value": "28",
+        "unit": "N·m",
+        "note": "filter cap; housing bolts 11.5 N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "mistake": "Fitting the filter cap without checking the bypass valve is clipped in.",
+      "components": [
+        "oil-filter-housing"
+      ],
+      "sourceIds": [
+        "s22",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-160",
+      "order": 160,
+      "phase": "assembly-ext",
+      "title": "Fit new temperature sensors",
+      "action": "Install a new cylinder head temperature sensor with its special socket and a new block temperature sensor.",
+      "tools": [
+        "303-680 sensor socket"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "10.5",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "temp-sensors"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-161",
+      "order": 161,
+      "phase": "assembly-ext",
+      "title": "Refit the knock sensors",
+      "action": "Install both knock sensors on clean faces in their noted positions.",
+      "spec": {
+        "kind": "torque",
+        "value": "20",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "knock-sensors"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-162",
+      "order": 162,
+      "phase": "assembly-ext",
+      "title": "Refit block solenoid and connector",
+      "action": "Install the piston cooling jet solenoid and the vacuum pipe connector with oiled O-rings.",
+      "spec": {
+        "kind": "torque",
+        "value": "11.5",
+        "unit": "N·m",
+        "note": "piston-jet solenoid; vacuum connector 5 N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "piston-jet-solenoid"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-163",
+      "order": 163,
+      "phase": "assembly-ext",
+      "title": "Size new injector seals",
+      "action": "Fit a new O-ring and washer, push a new Teflon seal on with the installer, wait two minutes, then form it with the resizing tool and fit a new spring clamp.",
+      "why": "An unsized Teflon seal will not enter the bore cleanly or seal combustion pressure. JLR warns that the Bosch sheet in the refit kit gives the steps in the wrong order.",
+      "tools": [
+        "310-198 Teflon seal installer",
+        "JLR-310-257 resize tool"
+      ],
+      "critical": true,
+      "mistake": "Following the Bosch sheet in the injector refit kit, whose wrong step order damages the seals and causes fuel leaks.",
+      "components": [
+        "injectors"
+      ],
+      "sourceIds": [
+        "s22",
+        "s25"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-164",
+      "order": 164,
+      "phase": "assembly-ext",
+      "title": "Install injectors and rail",
+      "action": "Clip the injectors to the rail, guide the assembly in on the JLR guide pins, and tighten the rail bolts one turn at a time.",
+      "tools": [
+        "JLR-310-255 (original head) or JLR-310-256 (new head) guide pins"
+      ],
+      "spec": {
+        "kind": "torque",
+        "value": "20",
+        "unit": "N·m",
+        "note": "rail bolts one turn at a time; final 4 bolts 30 N·m in sequence",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "critical": true,
+      "mistake": "Pulling the rail down on one bolt and cocking an injector in its bore.",
+      "components": [
+        "injectors",
+        "fuel-rail"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-165",
+      "order": 165,
+      "phase": "assembly-ext",
+      "title": "Fit coils and spark plugs",
+      "action": "Install the spark plugs, then the four ignition coils.",
+      "spec": {
+        "kind": "torque",
+        "value": "8",
+        "unit": "N·m",
+        "note": "coil bolts",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "ignition-coils"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-166",
+      "order": 166,
+      "phase": "assembly-ext",
+      "title": "Install the HP fuel pump",
+      "action": "Oil and fit the tappet, then draw the pump down evenly one turn per bolt, alternating, to torque.",
+      "spec": {
+        "kind": "torque",
+        "value": "11.5",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "critical": true,
+      "mistake": "Pulling the pump down on one bolt against the cam lobe spring load.",
+      "components": [
+        "hpfp",
+        "hpfp-tappet"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-167",
+      "order": 167,
+      "phase": "assembly-ext",
+      "title": "Torque the HP fuel lines",
+      "action": "Fit the HP lines finger tight, tighten the unions in sequence, wait 30 seconds and recheck, then paint-mark each line.",
+      "spec": {
+        "kind": "torque",
+        "value": "20",
+        "unit": "N·m",
+        "note": "unions; recheck after 30 seconds",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "critical": true,
+      "components": [
+        "hp-lines"
+      ],
+      "sourceIds": [
+        "s22",
+        "s21"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-168",
+      "order": 168,
+      "phase": "assembly-ext",
+      "title": "Refit the thermostat housing",
+      "action": "Install the thermostat housing with a good gasket.",
+      "spec": {
+        "kind": "torque",
+        "value": "11.5",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "thermostat-housing"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-169",
+      "order": 169,
+      "phase": "assembly-ext",
+      "title": "Install the intake manifold",
+      "action": "Fit four new port seals and the manifold, then tighten the seven bolts in sequence.",
+      "spec": {
+        "kind": "torque",
+        "value": "11.5",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "intake-manifold"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-170",
+      "order": 170,
+      "phase": "assembly-ext",
+      "title": "Install the oil cooler",
+      "action": "Fit a new metal gasket and the oil cooler, and tighten the seven bolts in sequence in two stages.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "stage 1 15 N·m, stage 2 25 N·m, in sequence",
+        "sourceIds": [
+          "s22",
+          "s32"
+        ]
+      },
+      "components": [
+        "oil-cooler"
+      ],
+      "sourceIds": [
+        "s22",
+        "s32"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-171",
+      "order": 171,
+      "phase": "assembly-ext",
+      "title": "Mount the turbocharger",
+      "action": "Fit a new gasket and the turbo to the head, and tighten four new nuts in sequence in two stages.",
+      "spec": {
+        "kind": "torque",
+        "value": "25",
+        "unit": "N·m",
+        "note": "new nuts, stage 1 18 N·m, stage 2 25 N·m, in sequence",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "turbo"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-172",
+      "order": 172,
+      "phase": "assembly-ext",
+      "title": "Fit the turbo oil return",
+      "action": "Install the oil return pipe with two new O-rings.",
+      "spec": {
+        "kind": "torque",
+        "value": "10.5",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "turbo-oil-return"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-173",
+      "order": 173,
+      "phase": "assembly-ext",
+      "title": "Prime and fit oil feed",
+      "action": "Fill the turbo oil inlet with clean engine oil, then fit the feed pipe with new banjo bolts and four new sealing washers, and refit its bracket.",
+      "why": "Pre-oiling the bearings protects them during the seconds before oil pressure reaches the turbo on first crank.",
+      "spec": {
+        "kind": "torque",
+        "value": "18",
+        "unit": "N·m",
+        "note": "new banjo bolts and washers",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "critical": true,
+      "mistake": "Connecting a dry turbo and relying on the first crank to oil it.",
+      "components": [
+        "turbo-oil-feed",
+        "turbo"
+      ],
+      "sourceIds": [
+        "s22",
+        "s33"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-174",
+      "order": 174,
+      "phase": "assembly-ext",
+      "title": "Refit the turbo heat shields",
+      "action": "Install the heat shields, using a new bolt where the procedure calls for one.",
+      "spec": {
+        "kind": "torque",
+        "value": "9",
+        "unit": "N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "heat-shields"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-175",
+      "order": 175,
+      "phase": "assembly-ext",
+      "title": "Install the coolant pump",
+      "action": "Fit the coolant pump, tighten the two locating bolts first, then the other four, and fit the pulley.",
+      "spec": {
+        "kind": "torque",
+        "value": "11.5",
+        "unit": "N·m",
+        "note": "6 pump bolts after 2 locators at 6 N·m; pulley bolts 25 N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "coolant-pump"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-176",
+      "order": 176,
+      "phase": "assembly-ext",
+      "title": "Refit harness and generator",
+      "action": "Lay the engine harness back on, reconnect every connector, and install the generator.",
+      "spec": {
+        "kind": "torque",
+        "value": "47.5",
+        "unit": "N·m",
+        "note": "generator bolts",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "components": [
+        "wiring-harness",
+        "generator"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-177",
+      "order": 177,
+      "phase": "assembly-ext",
+      "title": "Fit idlers and accessory belt",
+      "action": "Refit each idler pulley to its noted position and fit the accessory belt.",
+      "spec": {
+        "kind": "torque",
+        "value": "47.5",
+        "unit": "N·m",
+        "note": "M10 idler bolt; M8 idler bolt 25 N·m",
+        "sourceIds": [
+          "s22"
+        ]
+      },
+      "mistake": "Swapping the two idler pulleys between positions.",
+      "components": [
+        "accessory-belt"
+      ],
+      "sourceIds": [
+        "s22",
+        "s9"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-178",
+      "order": 178,
+      "phase": "assembly-ext",
+      "title": "Refit pipes, tube and pads",
+      "action": "Install the coolant pipes, degas bottle, breather, purge valve, dipstick tube and NVH pads with new or inspected O-rings.",
+      "components": [
+        "coolant-pipes",
+        "nvh-pads",
+        "oil-pan"
+      ],
+      "sourceIds": [
+        "s22"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-179",
+      "order": 179,
+      "phase": "final",
+      "title": "Install engine and transmission",
+      "action": "Mate the engine to the ZF 9HP48 and refit the powertrain to the vehicle following the vehicle procedures.",
+      "components": [
+        "transmission"
+      ],
+      "sourceIds": [
+        "s23",
+        "s27"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-180",
+      "order": 180,
+      "phase": "final",
+      "title": "Fill with approved 0W-20",
+      "action": "Fill with 0W-20 oil meeting STJLR.51.5122 and check the level on the dipstick.",
+      "why": "JLR warns that oil outside its specification can make the CVVL system malfunction.",
+      "spec": {
+        "kind": "fluid",
+        "value": "7.0",
+        "unit": "L",
+        "note": "approximate refill with filter; set final level on the dipstick",
+        "sourceIds": [
+          "s24",
+          "s30"
+        ]
+      },
+      "critical": true,
+      "mistake": "Using a generic 5W-30, which the CVVL hydraulics are not calibrated for.",
+      "components": [
+        "oil-pan",
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s4",
+        "s31",
+        "s24",
+        "s30"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-181",
+      "order": 181,
+      "phase": "final",
+      "title": "Vacuum fill the cooling system",
+      "action": "Vacuum fill the cooling system and check for leaks at the pump, thermostat housing, oil cooler and turbo lines.",
+      "components": [
+        "coolant-pipes"
+      ],
+      "sourceIds": [
+        "s7"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-182",
+      "order": 182,
+      "phase": "final",
+      "title": "Run CVVL calibration",
+      "action": "Connect JLR-approved diagnostic equipment and run the CVVL software calibration.",
+      "why": "JLR requires this after any CVVL removal or replacement so the PCM learns the unit's switching behaviour.",
+      "tools": [
+        "JLR-approved diagnostic equipment"
+      ],
+      "critical": true,
+      "mistake": "Starting the engine and skipping the calibration, which leaves it misfiring or in limp mode.",
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20",
+        "s4"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-183",
+      "order": 183,
+      "phase": "final",
+      "title": "Crank to build oil pressure",
+      "action": "Unplug the injector harness and crank for 10 seconds, rest 5 seconds, and repeat 4 times so oil fills the CVVL unit, phasers and turbo before firing.",
+      "spec": {
+        "kind": "other",
+        "value": "10",
+        "unit": "s",
+        "note": "crank 10 s, rest 5 s, repeat 4 times, injectors unplugged",
+        "sourceIds": [
+          "s20"
+        ]
+      },
+      "critical": true,
+      "mistake": "Letting the engine fire on the first crank with dry CVVL chambers and turbo bearings.",
+      "components": [
+        "cvvl",
+        "turbo",
+        "injectors"
+      ],
+      "sourceIds": [
+        "s20",
+        "s33"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-184",
+      "order": 184,
+      "phase": "final",
+      "title": "Reconnect injectors and clear codes",
+      "action": "Reconnect the injector harness and clear any stored codes with the diagnostic tool.",
+      "components": [
+        "injectors"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-185",
+      "order": 185,
+      "phase": "final",
+      "title": "Idle for one minute",
+      "action": "Start the engine and let it idle for at least one minute without revving, so the CVVL unit reaches full oil pressure.",
+      "critical": true,
+      "mistake": "Revving the engine right after first start.",
+      "components": [
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-186",
+      "order": 186,
+      "phase": "final",
+      "title": "Inspect for leaks and noise",
+      "action": "With the engine idling, check the HP fuel unions, injector seals, turbo oil lines and coolant joints, and listen for chain rattle at the transmission end.",
+      "why": "A rattle from the rear on a fresh engine means a tensioner or phaser problem; shut down at once.",
+      "components": [
+        "hp-lines",
+        "turbo-oil-feed",
+        "secondary-tensioner"
+      ],
+      "sourceIds": [
+        "s22",
+        "s2",
+        "s33"
+      ]
+    },
+    {
+      "id": "ingenium-pt204-187",
+      "order": 187,
+      "phase": "final",
+      "title": "Plan an early oil change",
+      "action": "Change the oil and filter early after the rebuild, and advise shorter intervals for mostly urban, short-trip use.",
+      "why": "JLR found that hard urban driving degrades oil fast enough to sludge the CVVL and high-pressure galleries, and runs early oil-change campaigns for it.",
+      "components": [
+        "oil-filter-housing",
+        "cvvl"
+      ],
+      "sourceIds": [
+        "s24"
+      ]
+    }
+  ]
+}
