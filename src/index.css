@@ -252,9 +252,9 @@ p, li, dd, dt, h1, h2, h3, a { overflow-wrap: break-word; }
 
 /*
  * The beat after a right answer. Everything eases out slowly: the picked
- * answer swells a touch and glows, its check draws itself, the other choices
+ * answer glows from the inside, its check draws itself, the other choices
  * fade back, and a hairline on the action bar fills until the next question
- * rises in. With reduced motion the scale, rise and stroke drawing become
+ * rises in. With reduced motion the rise and stroke drawing become
  * plain fades; the pause and the sound stay.
  */
 @keyframes rise-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -265,12 +265,14 @@ p, li, dd, dt, h1, h2, h3, a { overflow-wrap: break-word; }
 }
 
 @keyframes bloom {
-  from { transform: scale(1); box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent; }
+  /* Everything stays inside the button's own box (inset shadows, no scale, no
+     outer shadow). iOS Safari left stale green arcs on screen when a scaled,
+     outward-glowing button was replaced by the next question. */
+  from { box-shadow: inset 0 0 0 0 transparent, inset 0 0 0 0 transparent; }
   to {
-    transform: scale(1.02);
     box-shadow:
-      0 0 0 4px color-mix(in srgb, var(--c-ok) 14%, transparent),
-      0 8px 24px -8px color-mix(in srgb, var(--c-ok) 45%, transparent);
+      inset 0 0 0 1px color-mix(in srgb, var(--c-ok) 55%, transparent),
+      inset 0 0 22px -4px color-mix(in srgb, var(--c-ok) 40%, transparent);
   }
 }
 .bloom { animation: bloom 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
@@ -284,8 +286,8 @@ p, li, dd, dt, h1, h2, h3, a { overflow-wrap: break-word; }
 
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes glow-in {
-  from { box-shadow: 0 0 0 4px transparent; }
-  to { box-shadow: 0 0 0 4px color-mix(in srgb, var(--c-ok) 14%, transparent); }
+  from { box-shadow: inset 0 0 0 0 transparent; }
+  to { box-shadow: inset 0 0 22px -4px color-mix(in srgb, var(--c-ok) 40%, transparent); }
 }
 @media (prefers-reduced-motion: reduce) {
   .rise-in { animation: fade-in 220ms ease-out both !important; }

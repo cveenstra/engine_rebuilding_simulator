@@ -188,7 +188,7 @@ export function CorrectFlourish({ children, className = '' }) {
 
 /**
  * A big tappable answer. state: idle | right | wrong | dim.
- * `bloom` marks the learner's own right pick: it swells a touch, glows and draws its check.
+ * `bloom` marks the learner's own right pick: it glows from the inside and draws its check.
  * Once answered (`disabled`) it is aria-disabled rather than disabled, so a tap on it
  * still reaches the page and can skip the pause before the next question.
  */
