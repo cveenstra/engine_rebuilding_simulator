@@ -9,6 +9,8 @@ import { useProgress } from '../engine/storage.js';
 import { transitions, buildQueue, srsSummary, grade } from '../engine/srs.js';
 import { nextQuestion } from '../engine/game.js';
 import { logSession } from '../engine/progress.js';
+import { splitNewCards, holdingTerms } from '../engine/terms.js';
+import { HeldNotice } from '../components/terms.jsx';
 
 const SESSION_SIZE = 20;
 const NEW_SIZE = 10;
@@ -38,8 +40,12 @@ export default function Review() {
   const unitId = UNIT_BY_ID[params.get('unit')] ? params.get('unit') : '';
   const [session, setSession] = useState(null); // { queue, i, q, picked, right, unitId }
 
-  const cards = cardsFor(unitId);
-  const summary = srsSummary(cards, state);
+  // New cards still waiting on their terms stay out of the queue and the counts.
+  const all = cardsFor(unitId);
+  const held = splitNewCards(all, state);
+  const heldIds = new Set(held.held.map((c) => c.id));
+  const cards = heldIds.size ? all.filter((c) => !heldIds.has(c.id)) : all;
+  const summary = { ...srsSummary(all, state), unseen: srsSummary(cards, state).unseen };
   const back = unitId ? { to: `/unit/${unitId}`, label: UNIT_BY_ID[unitId].name } : { to: '/', label: 'Garage' };
 
   const start = (includeNew) => {
@@ -137,6 +143,8 @@ export default function Review() {
           its due day and the gap grows: 1, 3, 7, 16, then 35 days.
         </p>
       </Card>
+
+      <HeldNotice split={held} top={holdingTerms(held)} />
 
       <ActionBar>
         {summary.due > 0 ? (

@@ -7,6 +7,8 @@ import { SPEC_KIND_LABEL, specSteps } from '../data/index.js';
 import { buildQueue, grade, specCardId } from '../engine/srs.js';
 import { shuffle } from '../engine/game.js';
 import { logSession, touchMode } from '../engine/progress.js';
+import { Glossed } from '../components/glossary.jsx';
+import { glossSkips } from '../engine/glossary.js';
 
 /** Due and new spec cards first; if none are waiting, the whole deck shuffled. */
 function makeDeck(unit) {
@@ -95,8 +97,9 @@ function Deck({ unit }) {
 
       {!done && flipped && (
         <div className="pop-in mt-3 space-y-3">
+          {/* Linked only once flipped: the front is the question. */}
           <SpecBlock unit={unit} spec={step.spec} />
-          {step.action && <p className="text-sm leading-relaxed text-ink-2">{step.action}</p>}
+          {step.action && <p className="text-sm leading-relaxed text-ink-2"><Glossed text={step.action} skip={glossSkips([step.spec.note, step.action])[1]} /></p>}
         </div>
       )}
 

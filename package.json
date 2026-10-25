@@ -9,7 +9,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "oxlint src scripts",
-    "validate": "node scripts/validate-data.mjs"
+    "validate": "node scripts/validate-data.mjs",
+    "check:media": "node scripts/check-media.mjs",
+    "test:terms": "node scripts/test-terms.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",

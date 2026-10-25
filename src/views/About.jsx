@@ -55,6 +55,15 @@ export default function About() {
       </section>
 
       <section>
+        <SectionTitle>Pictures</SectionTitle>
+        <p className="text-base leading-relaxed text-ink-2">
+          Part drawings and unit diagrams are original work made for this project. Part photos are shared by
+          their authors under Creative Commons or public domain licenses and are credited wherever they appear.{' '}
+          <Link to="/credits" className="font-medium text-brand-text underline">See every photo credit</Link>.
+        </p>
+      </section>
+
+      <section>
         <SectionTitle>Your data</SectionTitle>
         <p className="text-base leading-relaxed text-ink-2">
           There is no account and no server. Progress is stored only in this browser. Use{' '}

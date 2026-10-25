@@ -47,6 +47,16 @@
   --color-warn-text: var(--c-warn-text);
   --color-warn-line: var(--c-warn-line);
 
+  /* Mistake severity: solid red, orange, yellow, then slate. Every badge also says the word. */
+  --color-ruin: var(--c-ruin);
+  --color-ruin-ink: var(--c-ruin-ink);
+  --color-costly-soft: var(--c-costly-soft);
+  --color-costly-text: var(--c-costly-text);
+  --color-costly-line: var(--c-costly-line);
+  --color-rework-soft: var(--c-rework-soft);
+  --color-rework-text: var(--c-rework-text);
+  --color-rework-line: var(--c-rework-line);
+
   --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -87,6 +97,14 @@
   --c-warn-soft: #fcf1d6;
   --c-warn-text: #8a5105;
   --c-warn-line: #ecd08c;
+  --c-ruin: #b3203a;
+  --c-ruin-ink: #ffffff;
+  --c-costly-soft: #ffe6d0;
+  --c-costly-text: #9a3a00;
+  --c-costly-line: #f2ac72;
+  --c-rework-soft: #fbf3c4;
+  --c-rework-text: #6b5300;
+  --c-rework-line: #dcc65a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -127,6 +145,14 @@
     --c-warn-soft: #33260e;
     --c-warn-text: #f0c46a;
     --c-warn-line: #634a1b;
+    --c-ruin: #f0647e;
+    --c-ruin-ink: #1d0409;
+    --c-costly-soft: #3b1f0c;
+    --c-costly-text: #ffab70;
+    --c-costly-line: #7a3e14;
+    --c-rework-soft: #2c280b;
+    --c-rework-text: #e8d36a;
+    --c-rework-line: #5e5317;
   }
 }
 
@@ -167,6 +193,14 @@
   --c-warn-soft: #33260e;
   --c-warn-text: #f0c46a;
   --c-warn-line: #634a1b;
+  --c-ruin: #f0647e;
+  --c-ruin-ink: #1d0409;
+  --c-costly-soft: #3b1f0c;
+  --c-costly-text: #ffab70;
+  --c-costly-line: #7a3e14;
+  --c-rework-soft: #2c280b;
+  --c-rework-text: #e8d36a;
+  --c-rework-line: #5e5317;
 }
 
 html {
@@ -215,3 +249,80 @@ p, li, dd, dt, h1, h2, h3, a { overflow-wrap: break-word; }
 
 @keyframes pop-in { from { transform: scale(0.97); opacity: 0.4; } to { transform: none; opacity: 1; } }
 .pop-in { animation: pop-in 160ms ease-out; }
+
+/*
+ * Part drawings and unit diagrams are inlined SVG. They draw in currentColor
+ * (set by the wrapper's text color) and highlight with var(--accent), so both
+ * follow the light or dark theme.
+ */
+:root { --accent: var(--c-heat); }
+.part-svg svg,
+.unit-diagram svg { display: block; width: 100%; height: 100%; }
+
+.unit-diagram g[data-part] { cursor: pointer; transition: opacity 150ms ease, color 150ms ease; }
+/* Outline-only shapes would only catch taps on their thin strokes; make their insides tappable too. */
+.unit-diagram g[data-part] :is(path, rect, circle, ellipse, polygon) { pointer-events: visible; }
+.unit-diagram g[data-part]:hover,
+.unit-diagram g[data-part]:focus-visible { color: var(--c-brand); outline: none; }
+.unit-diagram g[data-part]:focus-visible :is(path, rect, circle, ellipse, line, polyline, polygon) { stroke: var(--c-brand); }
+.unit-diagram.has-focus g[data-part]:not(.is-on) { opacity: 0.25; }
+.unit-diagram g[data-part].is-on {
+  color: var(--accent);
+  filter: drop-shadow(0 0 3px color-mix(in srgb, var(--accent) 55%, transparent));
+}
+.unit-diagram g[data-part].is-on :is(path, rect, circle, ellipse, line, polyline, polygon) { stroke: var(--accent); }
+.unit-diagram g[data-part].is-on :is(rect, circle, ellipse, polygon):not([fill='none']) {
+  fill: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+/* Part sheet: a bottom sheet on phones, a centered card on wider screens. */
+dialog.sheet[open] { display: block; }
+
+/*
+ * A dictionary word inside running text: a quiet dotted underline that turns
+ * solid on hover, and a tap area a little taller than the line without
+ * shifting the text. A real <button>, so it is reachable by keyboard.
+ */
+.gloss {
+  display: inline;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  white-space: inherit;
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: color-mix(in srgb, var(--c-brand) 75%, transparent);
+  text-underline-offset: 0.22em;
+  border-radius: 3px;
+  -webkit-tap-highlight-color: transparent;
+}
+.gloss::after { content: ''; position: absolute; inset: -0.3em -0.1em; }
+.gloss:hover { color: var(--c-brand-text); text-decoration-style: solid; }
+.gloss:active { background: var(--c-brand-soft); }
+.gloss:focus-visible { outline-offset: 1px; }
+
+/*
+ * Printing: only the page content, black on white. The pre-flight checklist
+ * prints as a plain list with empty boxes to tick by hand.
+ */
+@media print {
+  :root, :root:not([data-theme='light']), :root[data-theme='dark'] {
+    color-scheme: light;
+    --c-canvas: #ffffff; --c-surface: #ffffff; --c-sunken: #ffffff;
+    --c-ink: #000000; --c-ink-2: #000000; --c-ink-3: #333333;
+    --c-line: #999999; --c-line-2: #cccccc;
+  }
+  html, body { background: #fff; }
+  .print-hide { display: none !important; }
+  .print-break { break-inside: avoid; }
+  .pb-tabbar, .pb-actionbar { padding-bottom: 0; }
+  a { color: inherit; text-decoration: none; }
+}

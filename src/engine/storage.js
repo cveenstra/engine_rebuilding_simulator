@@ -22,6 +22,8 @@ const EMPTY = {
   walk: {},       // unitId -> step index last viewed in the walkthrough
   last: {},       // unitId -> { mode, at } for the "continue" button
   sessions: [],   // { at, kind, unit, score, total } newest first
+  terms: {},      // termId -> { seen, correct, wrong, firstAt, lastAt, learnedAt }: the Terms ladder, apart from the step deck
+  mistakes: {},   // `${unitId}:${mistakeId}` -> the same ladder record as terms: the mistake drill
   savedAt: 0,
 };
 
@@ -31,7 +33,7 @@ const isObj = (v) => v != null && typeof v === 'object' && !Array.isArray(v);
 function sanitize(parsed) {
   const base = clone(EMPTY);
   if (!isObj(parsed)) return base;
-  for (const k of ['srs', 'runs', 'activeRun', 'walk', 'last']) {
+  for (const k of ['srs', 'terms', 'mistakes', 'runs', 'activeRun', 'walk', 'last']) {
     if (isObj(parsed[k])) base[k] = parsed[k];
   }
   if (Array.isArray(parsed.sessions)) base.sessions = parsed.sessions.filter(isObj).slice(0, 300);

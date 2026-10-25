@@ -28,7 +28,16 @@ const PATHS = {
   download: <><path d="M12 4v11M7 10.5l5 5 5-5M4 20h16" /></>,
   upload: <><path d="M12 15.5V4.5M7 9l5-5 5 5M4 20h16" /></>,
   play: <path d="M7 4.5v15l12-7.5z" />,
+  eye: <><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" /><circle cx="12" cy="12" r="3" /></>,
+  image: <><rect x="3" y="4.5" width="18" height="15" rx="2" /><circle cx="8.5" cy="9.5" r="1.6" /><path d="m21 16-5-5-8.5 8.5" /></>,
+  book: <><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z" /><path d="M4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5" /><path d="M8 7.5h8M8 11h6" /></>,
+  map: <><circle cx="6" cy="6" r="2.5" /><circle cx="18" cy="6" r="2.5" /><circle cx="12" cy="18" r="2.5" /><path d="M7.5 8 11 15.8M16.5 8 13 15.8M8.5 6h7" /></>,
+  lock: <><rect x="5" y="10.5" width="14" height="10" rx="2" /><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3" /></>,
   undo: <><path d="M9 14 4 9l5-5" /><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11" /></>,
+  shield: <><path d="M12 3 4.5 6v5.5c0 4.5 3.2 8 7.5 9.5 4.3-1.5 7.5-5 7.5-9.5V6z" /><path d="m8.8 12 2.3 2.3 4.3-4.6" /></>,
+  print: <><path d="M7 9V3.5h10V9" /><rect x="3.5" y="9" width="17" height="8" rx="1.5" /><path d="M7 14.5h10v6H7z" /></>,
+  search: <><circle cx="10.5" cy="10.5" r="6.5" /><path d="m15.5 15.5 5 5" /></>,
+  checklist: <><path d="m3.5 6 1.8 1.8L8.5 4.5M3.5 13l1.8 1.8 3.2-3.3" /><path d="M11.5 6.5h9M11.5 13.5h9M4.5 19.5h.01M11.5 19.5h9" /></>,
 };
 
 export default function Icon({ name, size = 22, className = '', strokeWidth = 1.8 }) {

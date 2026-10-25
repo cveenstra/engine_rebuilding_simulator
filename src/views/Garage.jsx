@@ -6,6 +6,9 @@ import { VEHICLES, UNIT_BY_ID, OTHER_UNITS, UNITS } from '../data/index.js';
 import { useProgress } from '../engine/storage.js';
 import { unitProgress, continuePath, allTransitions, studyStreak } from '../engine/progress.js';
 import { srsSummary } from '../engine/srs.js';
+import { hasTerms, termSummary, splitNewCards, holdingTerms } from '../engine/terms.js';
+import { HeldNotice } from '../components/terms.jsx';
+import { mistakeStats, wreckLine, mistakesDueByUnit, drillable } from '../engine/mistakes.js';
 
 function UnitRow({ meta, unit, state }) {
   if (!unit) {
@@ -24,6 +27,7 @@ function UnitRow({ meta, unit, state }) {
   }
   const p = unitProgress(unit, state);
   const started = p.studied > 0 || p.runs.length > 0 || p.active;
+  const wreck = mistakeStats(unit);
   return (
     <li className="px-4 py-3">
       <div className="flex items-center gap-3">
@@ -36,6 +40,11 @@ function UnitRow({ meta, unit, state }) {
             <span className="block text-sm text-ink-3">
               {unit.steps.length} steps{p.due ? `, ${p.due} due` : ''}
             </span>
+            {wreck.total > 0 && (
+              <span className="mt-0.5 flex items-center gap-1 text-sm text-bad-text">
+                <Icon name="alert" size={14} className="flex-shrink-0" /> {wreckLine(wreck, 'it')}
+              </span>
+            )}
           </span>
         </Link>
         <Button to={continuePath(unit, state)} variant={started ? 'primary' : 'soft'} className="flex-shrink-0 px-3">
@@ -54,6 +63,13 @@ export default function Garage() {
   const state = useProgress();
   const review = srsSummary(allTransitions(), state);
   const streak = studyStreak(state);
+  const terms = hasTerms() ? termSummary({}, state) : null;
+  const held = terms ? splitNewCards(allTransitions(), state) : null;
+  const hasMistakeDrill = UNITS.some((u) => drillable(u).length >= 4);
+  const mistakesDue = hasMistakeDrill ? mistakesDueByUnit(state) : [];
+  const mistakesDueTotal = mistakesDue.reduce((n, x) => n + x.due, 0);
+  // The unit with the most due, or else the first with mistakes to drill (real units before the practice ones).
+  const drillTarget = mistakesDue[0]?.unit || [...UNITS].sort((a, b) => Number(a.sample) - Number(b.sample)).find((u) => drillable(u).length >= 4) || null;
 
   return (
     <div className="space-y-6">
@@ -80,6 +96,50 @@ export default function Garage() {
           Review
         </Button>
       </Card>
+
+      {terms && (
+        <Card className="flex items-center gap-4 p-4">
+          <span className={`grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl ${terms.due ? 'bg-heat-soft text-heat-text' : 'bg-sunken text-ink-3'}`}>
+            <Icon name="book" size={24} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="text-base font-semibold text-ink">
+              {terms.due ? `${terms.due} term${terms.due === 1 ? '' : 's'} due` : 'No terms due'}
+            </p>
+            <p className="text-sm text-ink-3">
+              {terms.learned + terms.mature} of {terms.total} shop words learned{terms.newToday ? `, ${terms.newToday} new today` : ''}
+            </p>
+          </div>
+          <Button to="/terms" variant={terms.due || terms.newToday ? 'primary' : 'ghost'} className="flex-shrink-0 px-3">
+            Terms
+          </Button>
+        </Card>
+      )}
+
+      {hasMistakeDrill && (
+        <Card className="flex items-center gap-4 p-4">
+          <span className={`grid h-12 w-12 flex-shrink-0 place-items-center rounded-xl ${mistakesDueTotal ? 'bg-bad-soft text-bad-text' : 'bg-sunken text-ink-3'}`}>
+            <Icon name="shield" size={24} />
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="text-base font-semibold text-ink">
+              {mistakesDueTotal ? `${mistakesDueTotal} mistake${mistakesDueTotal === 1 ? '' : 's'} due` : 'No mistakes due'}
+            </p>
+            <p className="text-sm text-ink-3">
+              {mistakesDue.length
+                ? mistakesDue.map((x) => `${x.due} in ${x.unit.name}`).join(', ')
+                : 'Drill the ways to wreck a unit; missed ones come back here.'}
+            </p>
+          </div>
+          {drillTarget && (
+            <Button to={`/unit/${drillTarget.id}/mistakes/drill${mistakesDue.length ? '?sev=all' : ''}`} variant={mistakesDue.length ? 'primary' : 'ghost'} className="flex-shrink-0 px-3">
+              Drill
+            </Button>
+          )}
+        </Card>
+      )}
+
+      {held && <HeldNotice split={held} top={holdingTerms(held)} />}
 
       {VEHICLES.map((v) => (
         <section key={v.id}>

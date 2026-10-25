@@ -1,4 +1,5 @@
 import { getState, update } from './storage.js';
+import { isHeldNewCard } from './terms.js';
 
 /**
  * Leitner box scheduling, the same shape as hvac_study's srs.js.
@@ -12,6 +13,11 @@ import { getState, update } from './storage.js';
  * drops the card to box 0, due now, so it shows up in "Review due" at once. A hit in the review queue always
  * promotes; a hit in a practice mode only promotes when the card was due or new,
  * so cramming one unit for an hour does not push everything out to next month.
+ *
+ * Steps wait for their terms: a transition never seen before is not entered
+ * into the schedule while a dictionary term it uses is not yet learned in
+ * Terms (see terms.js; switchable in Settings). Practice still plays; the
+ * answer just does not introduce the card.
  */
 export const BOX_INTERVALS_DAYS = [0, 1, 3, 7, 16, 35];
 export const MAX_BOX = 5;
@@ -65,11 +71,13 @@ function nextCard(prev, ok, onlyPromoteDue, now) {
  * results: [{ id, ok }]; onlyPromoteDue: true for practice modes, false for review.
  */
 export function gradeMany(results, { onlyPromoteDue = true } = {}) {
-  if (!results.length) return getState();
+  const state = getState();
+  const open = results.filter((r) => !isHeldNewCard(r.id, state));
+  if (!open.length) return state;
   const now = Date.now();
   return update((s) => {
     const srs = { ...s.srs };
-    for (const { id, ok } of results) srs[id] = nextCard(srs[id] || BLANK, !!ok, onlyPromoteDue, now);
+    for (const { id, ok } of open) srs[id] = nextCard(srs[id] || BLANK, !!ok, onlyPromoteDue, now);
     return { ...s, srs };
   });
 }

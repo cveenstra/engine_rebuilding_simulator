@@ -1,0 +1,1128 @@
+{
+  "cylinder-block": [
+    {
+      "file": "parts/photos/cylinder-block-1.jpg",
+      "caption": "Bare aluminum casting for a BMW inline six, bores open on top",
+      "author": "160SX",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:BMW_6-cylinder_block_Al-Mg.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/cylinder-block-2.jpg",
+      "caption": "Die-cast closed-deck casting for a V6 diesel at a trade display",
+      "author": "160SX",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cylinder_block_for_V6_Diesel.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "cylinder-liners": [
+    {
+      "file": "parts/photos/cylinder-liners-1.jpg",
+      "caption": "Iron sleeve cut open for display, with a piston inside",
+      "author": "Elkawe",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buchse_%2B_Kolben.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/cylinder-liners-2.jpg",
+      "caption": "Rover K-series engine with the head off, showing the sleeved bores",
+      "author": "Nibi",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:KseriesK18.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "main-caps": [
+    {
+      "file": "parts/photos/main-caps-1.jpg",
+      "caption": "Honda H22A bottom end upside down, the crank held in by bolted lower caps and a girdle",
+      "author": "3ndymion",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:JDM_H22A_63.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "cylinder-head": [
+    {
+      "file": "parts/photos/cylinder-head-1.jpg",
+      "caption": "Inlet side of a partly assembled Toyota DOHC casting, off the engine",
+      "author": "ALLOCKE",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:7MGE_head.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/cylinder-head-2.jpg",
+      "caption": "Underside of a Ford CVH casting showing the combustion chambers, one with valves fitted",
+      "author": "Luitold",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:CVH_Kopf3.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "crankshaft": [
+    {
+      "file": "parts/photos/crankshaft-1.jpg",
+      "caption": "Rotating assembly from a Subaru EJ20 rally engine, rods fitted, at a motor show",
+      "author": "160SX",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:SUBARU_EJ20_WRC_Crankshaft_and_Conn-rod.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/crankshaft-2.jpg",
+      "caption": "Bare forged shaft showing its journals and counterweights",
+      "author": "Alex Kovach",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Crankshaft.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "main-bearings": [
+    {
+      "file": "parts/photos/main-bearings-1.jpg",
+      "caption": "Curved half-shell with an oil groove and holes, from a large diesel engine",
+      "author": "BerndB",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gleitlager.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "pistons": [
+    {
+      "file": "parts/photos/pistons-1.jpg",
+      "caption": "Damaged part from a Subaru Impreza boxer engine",
+      "author": "Phil Sangwell from United Kingdom",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Damaged_piston_from_a_Subaru_Impreza_boxer_engine-2011.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/pistons-2.jpg",
+      "caption": "Diesel engine part showing the ring grooves, skirt and pin bore",
+      "author": "S. Diddy",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cummins_Diesel_engine_piston_head_45deg.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "piston-rings": [
+    {
+      "file": "parts/photos/piston-rings-1.jpg",
+      "caption": "Racing V8 piston with its compression and oil control rings in the grooves",
+      "author": "Auge=mit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kolbenringe_piston_rings_cropped.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/piston-rings-2.jpg",
+      "caption": "Set of split rings laid out, showing the end gaps and an expander spring",
+      "author": "Jaeyoungchoi77",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:AMIR-PISTON_RING-3.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "piston-pins": [
+    {
+      "file": "parts/photos/piston-pins-1.jpg",
+      "caption": "Underside of a piston with the worn pin partly pushed out of its bore",
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:N%C3%BCral_piston_H268X_-3978.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/piston-pins-2.jpg",
+      "caption": "Fitting the pin through a service hole in a Subaru EJ20 at a motor show",
+      "author": "160SX",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:SUBARU_EJ20_WRC_installing_piston-pin.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "connecting-rods": [
+    {
+      "file": "parts/photos/connecting-rods-1.jpg",
+      "caption": "Ferrari display set of pistons and the links below them, one sectioned",
+      "author": "Auge=mit",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Display-Set_Ferrari_Kolben_und_Pleuel_noBG.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/connecting-rods-2.jpg",
+      "caption": "Piston assembly from a Seat engine, the link bent by hydrolock",
+      "author": "MichaelXXLF",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bent_connecting_rod_2.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "crank-pulley": [
+    {
+      "file": "parts/photos/crank-pulley-1.jpg",
+      "caption": "Chromed grooved wheel and damper on the nose of a Jeep four-cylinder",
+      "author": "CZmarlin (Christopher Ziemnowicz)",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jeep_2.5_liter_4-cylinder_engine_chromed_p.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "valve-springs": [
+    {
+      "file": "parts/photos/valve-springs-1.jpg",
+      "caption": "Museum cutaway: cam lobes pressing on the coils over each valve",
+      "author": "Yapparina",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nockenwelle2,_closeup.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/valve-springs-2.jpg",
+      "caption": "Exposed coils over the valves on a 1948 Nimbus motorcycle engine",
+      "author": "Lothar Spurzem",
+      "license": "CC BY-SA 2.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2007-06-10_Nimbus,_Bj._1948_(Ventilfedern).jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "valve-guides": [
+    {
+      "file": "parts/photos/valve-guides-1.jpg",
+      "caption": "A bin of new bronze-alloy tubes before they are pressed into a head",
+      "author": "Kelford Cams",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bronze-valve-guides.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "valve-seats": [
+    {
+      "file": "parts/photos/valve-seats-1.jpg",
+      "caption": "Hardened inserts of several sizes on a maker's display board",
+      "author": "160SX",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Valve_seat_inserts_(NPR).jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/valve-seats-2.jpg",
+      "caption": "Ford DOHC head on the bench, combustion chambers showing where each valve closes",
+      "author": "Dolda2000 at English Wikipedia",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford-I4DOHC-cylhead.jpeg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "valve-shims": [
+    {
+      "file": "parts/photos/valve-shims-1.jpg",
+      "caption": "Jaguar XK bucket tappets lined up with the small disc that sits in each",
+      "author": "HReuter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:XK_engine_inlet_camshaft_tappets_and_shims-0745.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/valve-shims-2.jpg",
+      "caption": "Single hardened adjusting disc, close up",
+      "author": "HReuter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:XK_engine_shim-0756.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "lash-adjusters": [
+    {
+      "file": "parts/photos/lash-adjusters-1.jpg",
+      "caption": "Oil-filled lifters taken apart to show the plunger, check ball and spring",
+      "author": "A7N8X",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Punterie_idrauliche_SOHC.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/lash-adjusters-2.jpg",
+      "caption": "Failed lifter from a VW engine beside its inner plunger, tape for scale",
+      "author": "hermannk",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zerst%C3%B6rter_hydrost%C3%B6ssel.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "camshaft": [
+    {
+      "file": "parts/photos/camshaft-1.jpg",
+      "caption": "Assortment of assembled car shafts showing their rows of lobes",
+      "author": "ThyssenKrupp Presta Chemnitz GmbH",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gebaute_Nockenwellen_ThyssenKrupp_Presta_Chemnitz_GmbH.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/camshaft-2.jpg",
+      "caption": "Intake and exhaust shafts from a Ford DOHC four, laid out on newspaper",
+      "author": "Dolda2000 at English Wikipedia",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford-I4DOHC-camshafts.jpeg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "cam-caps": [
+    {
+      "file": "parts/photos/cam-caps-1.jpg",
+      "caption": "Jaguar XK journal caps lined up with their bearing shells",
+      "author": "HReuter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:XK_engine_inlet_camshaft_bearing_caps_and_shells-0742.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/cam-caps-2.jpg",
+      "caption": "One numbered cap bolted over a journal in a Jaguar XK head",
+      "author": "HReuter",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:XK_engine_camshaft_bearing_cap_showing_corresponding_numbers-0788.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "rocker-cover": [
+    {
+      "file": "parts/photos/rocker-cover-1.jpg",
+      "caption": "Chromed top cover for a Subaru Sambar EN07 engine, off the engine",
+      "author": "Cp9asngf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:EN07Y_rocker_cover,_chromed.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/rocker-cover-2.jpg",
+      "caption": "Polished covers on top of a Jaguar XK150 straight six",
+      "author": "Moebiusuibeom-en",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rocker_Covers_XK150.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "timing-chain": [
+    {
+      "file": "parts/photos/timing-chain-1.jpg",
+      "caption": "Front of a Toyota four with the cover off, looping over both cam sprockets",
+      "author": "Logansenf",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Timing_Chain.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/timing-chain-2.jpg",
+      "caption": "Running around a cam sprocket and guide on a Mercedes V12 at a car show",
+      "author": "Thomas Vogt from Paderborn, Deutschland",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Steuerkette,_Mercedes_V12_(49531117157).jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "timing-sprocket": [
+    {
+      "file": "parts/photos/timing-sprocket-1.jpg",
+      "caption": "A single toothed steel wheel off an engine, teeth flame hardened",
+      "author": "Zaereth",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flame_hardened_sprocket.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/timing-sprocket-2.jpg",
+      "caption": "Cutaway of a chain-driven overhead cam, the chain wrapped over the toothed wheel",
+      "author": "Kolossos",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nockenwellenantrieb.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "oil-pan": [
+    {
+      "file": "parts/photos/oil-pan-1.jpg",
+      "caption": "Cast aluminum pan for a car engine, shown off the engine",
+      "author": "Handtmann01",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%96lwanne_Handtmann-1.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "oil-pump": [
+    {
+      "file": "parts/photos/oil-pump-1.jpg",
+      "caption": "Rotor-type unit from a Toyota diesel, cover off to show the inner and outer rotors",
+      "author": "Ll1324",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oil_Pump_from_Toyota_Coaster_Bus.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "oil-filter": [
+    {
+      "file": "parts/photos/oil-filter-1.jpg",
+      "caption": "Spin-on canister cut open to show the pleated paper element",
+      "author": "Harrikkamies",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engine_oil_filter_cutaway.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/oil-filter-2.jpg",
+      "caption": "New spin-on canister seen from the threaded mounting end",
+      "author": "Petrb",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_motorcycle_oil_filter_Hiflo_Filtro.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "oil-cooler": [
+    {
+      "file": "parts/photos/oil-cooler-1.jpg",
+      "caption": "Compact aluminum oil-to-coolant heat exchanger for an Audi engine",
+      "author": "Blsrq",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oil_cooler_059117021B_for_AUDI.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "pump-drive-chain": [
+    {
+      "file": "parts/photos/pump-drive-chain-1.jpg",
+      "caption": "Mercedes OM601 diesel with the sump off: a short chain and sprocket turn the pump",
+      "author": "Didolevski",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_close_view_of_OM601_diesel_engine_oil_pump..JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "thermostat": [
+    {
+      "file": "parts/photos/thermostat-1.jpg",
+      "caption": "Wax-pellet valve sitting in its cast housing from a Toyota Corolla, cleaned up",
+      "author": "dave_7 from Lethbridge, Canada",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Thermostat_housing_-_after_(4096043386).jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/thermostat-2.jpg",
+      "caption": "Plastic coolant outlet housing with its valve inside, seen from the engine side",
+      "author": "Raimond Spekking",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:VEMO_V22-99-0018_Thermostat_Housing-4002.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "coolant-pipes": [
+    {
+      "file": "parts/photos/coolant-pipes-1.jpg",
+      "caption": "Molded coolant bypass pipe with hose connections, for a Land Rover engine",
+      "author": "Europartsgiant",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:LR121446_by-pass_hose-heater_water.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/coolant-pipes-2.jpg",
+      "caption": "Hoses running from the expansion tank around a small sports car engine",
+      "author": "Brian Snelson from Hockley, Essex, England",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caterham_Roadsport_building_-_068_-_Hoses,_hoses_and_more_hoses.._-_Flickr_-_exfordy.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "intake-manifold": [
+    {
+      "file": "parts/photos/intake-manifold-1.jpg",
+      "caption": "Two runner assemblies for a VW 1.8T side by side, factory and aftermarket",
+      "author": "Alison Cassidy",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Manifold_comparison.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/intake-manifold-2.jpg",
+      "caption": "Head-side flange of a Mazda Miata lower runner section, ports exposed",
+      "author": "epinkert",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lower-intake-manifold.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "tumble-valve": [
+    {
+      "file": "parts/photos/tumble-valve-1.jpg",
+      "caption": "Cleaned flap and shaft removed from a BMW diesel intake runner",
+      "author": "Rogerzilla at English Wikipedia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:M47N_diesel_engine_swirl_flap.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "fuel-injector": [
+    {
+      "file": "parts/photos/fuel-injector-1.jpg",
+      "caption": "Tip end of a VW petrol injector, showing the nozzle and seal",
+      "author": "Europartsgiant",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:06A906036F_Noozle_of_Fuel_Injector.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/fuel-injector-2.jpg",
+      "caption": "Electrically opened diesel unit that sprays straight into the cylinder",
+      "author": "Panoha",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bosch_common_rail_injector_(cropped).JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "fuel-rail": [
+    {
+      "file": "parts/photos/fuel-rail-1.jpg",
+      "caption": "Honda four-cylinder rail with its injectors and pressure regulator attached",
+      "author": "Ian Brockhoff",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fuel_rail.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/fuel-rail-2.jpg",
+      "caption": "Close up of a multi-point rail with injectors clipped in, red retaining clips",
+      "author": "Flickr user storem",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Multi-point_Gasoline_fuel_injection_rail.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "fuel-lines": [
+    {
+      "file": "parts/photos/fuel-lines-1.jpg",
+      "caption": "Volvo truck diesel: rigid steel pipes run from the rail to each injector",
+      "author": "Panoha",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Common_rail_D7E.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "pcv-valve": [
+    {
+      "file": "parts/photos/pcv-valve-1.jpg",
+      "caption": "Small one-way breather valve, labeled with the direction the gases flow",
+      "author": "Flippythedragonslayer",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:PCV_valve.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "turbocharger": [
+    {
+      "file": "parts/photos/turbocharger-1.jpg",
+      "caption": "Sectioned unit showing the turbine wheel, shaft and compressor wheel in their housings",
+      "author": "Tommi Nummelin",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sectioned_Garrett_AiResearch_turbocharger.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/turbocharger-2.jpg",
+      "caption": "BMW B58 unit with its exhaust manifold, on display in a museum",
+      "author": "Tiia Monto",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turbocharger_3.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "heat-shield": [
+    {
+      "file": "parts/photos/heat-shield-1.jpg",
+      "caption": "Dimpled metal cover over the exhaust under a Ford Focus",
+      "author": "Asurnipal",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_Focus-exhaust_heat_shield-01ASD.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/heat-shield-2.jpg",
+      "caption": "Mercedes M271 engine: formed metal cover wrapped over the hot turbine housing",
+      "author": "Chris1287",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:M271_turbo.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "head-gasket": [
+    {
+      "file": "parts/photos/head-gasket-1.jpg",
+      "caption": "Failed layered-steel sheet from a 1997 to 1999 Subaru boxer, burned between bores",
+      "author": "John Furman",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:97_-_99_Subaru_Head_Gasket_Failure.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/head-gasket-2.jpg",
+      "caption": "Multi-layer steel sheets for a Volvo five-cylinder, compared side by side",
+      "author": "TangoSix",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2.5_Safrane_Head_Gasket.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "head-bolts": [
+    {
+      "file": "parts/photos/head-bolts-1.jpg",
+      "caption": "Toyota diesel head on the bench with its long clamping bolts standing in their holes",
+      "author": "Игоревич",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cylinder_head_of_1KD-FTV_photo_3.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/head-bolts-2.jpg",
+      "caption": "The same head with each bolt position marked with a number",
+      "author": "Игоревич",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cylinder_head_of_1KD-FTV_photo2.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "crank-seal": [
+    {
+      "file": "parts/photos/crank-seal-1.jpg",
+      "caption": "Assortment of car and motorcycle lip seals, several with a metal-cased outer rim",
+      "author": "Qingshansealing",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Assortment_of_oil_seals_2.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "sealing-plugs": [
+    {
+      "file": "parts/photos/sealing-plugs-1.jpg",
+      "caption": "Pressed-in cup closing a casting hole in a block, corroded by neglected coolant",
+      "author": "Ahanix1989 at English Wikipedia",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Corroded-Core-Plug.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "wiring-harness": [
+    {
+      "file": "parts/photos/wiring-harness-1.jpg",
+      "caption": "Wiring loom from a Geo Storm laid flat, taped bundles ending in colored plug connectors",
+      "author": "Ildar Sagdejev (Specious)",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2008-04-17_Geo_Storm_instrument_cluster_wiring_harness.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/wiring-harness-2.jpg",
+      "caption": "Complete vehicle loom from a supplier, spread out to show its branches",
+      "author": "Draexlmaier Group",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2004_Kabelbaum_Dr%C3%A4xlmaier_Group.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "ignition-coils": [
+    {
+      "file": "parts/photos/ignition-coils-1.jpg",
+      "caption": "One-piece rail for a four-cylinder engine, each tower pushing onto a plug",
+      "author": "Cschirp",
+      "license": "CC BY-SA 3.0 de",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ignition_coil_module.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/ignition-coils-2.jpg",
+      "caption": "Platinum-tipped plug held between two fingers",
+      "author": "ProjectManhattan",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spark_plug_2.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "alternator": [
+    {
+      "file": "parts/photos/alternator-1.jpg",
+      "caption": "Belt-driven generator from a car on a workbench, pulley end facing the camera",
+      "author": "Shixart1985",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Car_alternator_on_a_workbench_surrounded_by_various_auto_parts_in_a_garage_setting.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/alternator-2.jpg",
+      "caption": "Belt-driven 12 V generator shown on a display mount",
+      "author": "TaurusEmerald",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:PowerEdge_24PE_12V_Alternator_Padmount_Sonoma_2026.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "speed-sensor": [
+    {
+      "file": "parts/photos/speed-sensor-1.jpg",
+      "caption": "Two wheel-speed pickups with their plug connectors (VW versions shown); transmission speed sensors are a similar plug-in pickup",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:ABS_Sensor_VAG_IMG_0562.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "transmission-solenoid": [
+    {
+      "file": "parts/photos/transmission-solenoid-1.jpg",
+      "caption": "Prototype gearbox valve block held in a hand, electrically pulsed valves fitted",
+      "author": "PWMhistorical",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Prototype_Hydraulic_Valve_Block_with_PWM_Solenoid_Valves.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "converter-housing": [
+    {
+      "file": "parts/photos/converter-housing-1.jpg",
+      "caption": "Front-drive automatic seen from the engine side: the bell-shaped case section around the converter",
+      "author": "Leodude1987",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torque_converter_of_the_4EAT.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "transmission-case": [
+    {
+      "file": "parts/photos/transmission-case-1.jpg",
+      "caption": "Bare aluminum case of a ZF five-speed automatic out of a BMW, lying on paving",
+      "author": "Beemwej",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:740d_ZF_5HP-30.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/transmission-case-2.jpg",
+      "caption": "Cast housing of an older automatic gearbox on wooden blocks",
+      "author": "DL24",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gaz-14_auto_transmission_left.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "extension-housing": [
+    {
+      "file": "parts/photos/extension-housing-1.jpg",
+      "caption": "Rear-drive automatic out of a Dodge Dakota, the long tail section at the right",
+      "author": "Dana60Cummins",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:2011-07-11_20.15.54.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "valve-body": [
+    {
+      "file": "parts/photos/valve-body-1.jpg",
+      "caption": "Underside of a Toyota automatic with the pan off, showing the plate of passages and spool valves",
+      "author": "Hoikka1",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tercel_automatic_transmission.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "transmission-filter": [
+    {
+      "file": "parts/photos/transmission-filter-1.jpg",
+      "caption": "Underside of an automatic gearbox with the pan off and the strainer in place",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Installiert_%C3%96lfilter_in_einem_Automatikgetriebe_IMG_6756.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "transmission-pan": [
+    {
+      "file": "parts/photos/transmission-pan-1.jpg",
+      "caption": "Removed from an automatic gearbox, with sludge settled in the bottom",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:%C3%96lwanne_Automatikgetriebe_mit_abgelagertem_%C3%96lschlamm_IMG_6759.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "clutch-pack": [
+    {
+      "file": "parts/photos/clutch-pack-1.jpg",
+      "caption": "From a motorcycle: toothed basket beside its stack of friction and steel plates",
+      "author": "Gérard Delafond",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clutch_discs.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "dog-clutch": [
+    {
+      "file": "parts/photos/dog-clutch-1.jpg",
+      "caption": "Pair of splined rings with square interlocking teeth from a 4WD engagement unit",
+      "author": "Ael150",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dog_Clutch.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "planetary-gearset": [
+    {
+      "file": "parts/photos/planetary-gearset-1.jpg",
+      "caption": "Carrier from a Ford automatic, small gears visible between its plates, fork for scale",
+      "author": "Elacy",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_transmission_planet_carrier.JPG",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/planetary-gearset-2.jpg",
+      "caption": "Looking into a carrier: the small gears in mesh around the center",
+      "author": "Elacy",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ford_transmission_planet_gears.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "input-shaft": [
+    {
+      "file": "parts/photos/input-shaft-1.jpg",
+      "caption": "Inside the bell of a Mazda manual gearbox: the splined shaft comes out through the center",
+      "author": "J.C. Fields",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:M5OD_transmission,_input.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "rolling-bearings": [
+    {
+      "file": "parts/photos/rolling-bearings-1.jpg",
+      "caption": "Deep-groove type standing on edge, balls visible between the rings",
+      "author": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1970_or_earlier_ball_bearing_330_V4_MTY_Hoffmann_Manufacturing_Company_England.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/rolling-bearings-2.jpg",
+      "caption": "Older SKF unit, cage and balls visible",
+      "author": "R. Henrik Nilsson",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:1950s_ball_bearing_129_HA_by_Swedish_company_SKF_made_in_Sweden.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "parking-lock": [
+    {
+      "file": "parts/photos/parking-lock-1.jpg",
+      "caption": "Gearbox case half with the output shaft in place; a finger pushes the hinged pawl toward the toothed wheel",
+      "author": "Selit",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pawl_brake_engaged.png",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "variator-pulley": [
+    {
+      "file": "parts/photos/variator-pulley-1.jpg",
+      "caption": "Sectioned Subaru Lineartronic CVT: two pairs of cone-faced discs with the steel chain between them",
+      "author": "OSX",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Subaru_Lineartronic_continuously_variable_transmission_(2010-10-16)_02.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/variator-pulley-2.jpg",
+      "caption": "Subaru Lineartronic CVT cutaway on a show stand, cones and chain exposed",
+      "author": "Qurren",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Subaru_Lineartronic_transmission_in_Tokyo_Motor_Show_2009.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "variator-chain": [
+    {
+      "file": "parts/photos/variator-chain-1.jpg",
+      "caption": "Close up of the plate-and-pin chain inside an Audi multitronic CVT",
+      "author": "AutoStrong-M",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Audi_Multitronic_chain.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/variator-chain-2.jpg",
+      "caption": "Plate-link chain sitting in the cone faces of a CVT pulley",
+      "author": "Bury123e",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jedna-z-remenic-cvt.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "torque-converter": [
+    {
+      "file": "parts/photos/torque-converter-1.jpg",
+      "caption": "Chrysler W300 unit cut open to show the blades inside its sealed housing",
+      "author": "Michael Barera",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ypsilanti_Automotive_Heritage_Museum_May_2015_063_(W300_RWD_Torque_Converter).jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/torque-converter-2.jpg",
+      "caption": "Front-drive automatic with the unit seated in its bell, studs facing out for the drive plate",
+      "author": "Leodude1987",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Torque_converter_of_the_4EAT.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "differential": [
+    {
+      "file": "parts/photos/differential-1.jpg",
+      "caption": "Porsche final drive cut open: large ring gear on the carrier, small side and spider gears inside",
+      "author": "DrJunge",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Differentialgetriebe2.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/differential-2.jpg",
+      "caption": "Truck axle housing cut away to show the ring gear and carrier",
+      "author": "Tennen-Gas",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Differential_gear_001.JPG",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "drive-pinion": [
+    {
+      "file": "parts/photos/drive-pinion-1.jpg",
+      "caption": "Spare bevel ring gears and the small toothed shafts that mesh with them, for truck axles",
+      "author": "Otospareparts",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bevel_and_pinion_gear_for_front_axle,_midle_axle_and_rear_axle_Shacman_truck_2013-11-23_19-47.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/drive-pinion-2.jpg",
+      "caption": "Ring gear teeth painted with marking compound to check how the small drive gear meshes",
+      "author": "Michael Robinson (unixxx)",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ring%26Pinion_Pattern_Drive.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "transmission-assembly": [
+    {
+      "file": "parts/photos/transmission-assembly-1.jpg",
+      "caption": "Sectioned 9-speed front-drive automatic of the ZF 9HP design on a show stand",
+      "author": "Joseph Brent",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Transmission_at_the_New_York_International_Auto_Show_(8612486658).jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/transmission-assembly-2.jpg",
+      "caption": "Subaru Lineartronic CVT, sectioned, on a display stand",
+      "author": "OSX",
+      "license": "Public domain",
+      "licenseUrl": "",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Subaru_Lineartronic_continuously_variable_transmission_(2010-10-16)_01.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "engine-stand": [
+    {
+      "file": "parts/photos/engine-stand-1.jpg",
+      "caption": "V8 bolted by its back face to a wheeled stand, shop crane beside it",
+      "author": "simonov",
+      "license": "CC BY-SA 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:ZZ4_mounted_to_the_engine_stand.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "transmission-fluid": [
+    {
+      "file": "parts/photos/transmission-fluid-1.jpg",
+      "caption": "Red automatic gearbox fluid in a bottle and a large can",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Automatic_transmission_fluid_-_ATF_-_Automatikgetriebe%C3%B6l_IMG_6732.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "gear-oil": [
+    {
+      "file": "parts/photos/gear-oil-1.jpg",
+      "caption": "Thick amber oil being poured into a gearbox during installation",
+      "author": "Fachab",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chinese_man_filling_a_gear_box_with_oil_during_equipment_installation.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/gear-oil-2.jpg",
+      "caption": "Topping up the final drive of a scooter from a squeeze bottle",
+      "author": "Sciencefreak109",
+      "license": "CC BY-SA 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gear_oil_change_scooter.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "engine-cover": [
+    {
+      "file": "parts/photos/engine-cover-1.jpg",
+      "caption": "Molded plastic cover over the top of a VW diesel",
+      "author": "Shixart1985",
+      "license": "CC BY 2.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Engine_cover_shows_TDI_branding_in_a_car%27s_engine_compartment.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/engine-cover-2.jpg",
+      "caption": "Molded lightweight top cover for Volvo engines, off the car",
+      "author": "Spielvogel",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Volvo_engine_cover_from_BASF._Spielvogel1.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ],
+  "accessory-belt": [
+    {
+      "file": "parts/photos/accessory-belt-1.jpg",
+      "caption": "Ribbed belt running over the pulleys and idler rollers on the front of a VW engine",
+      "author": "Hans Haase",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keilrippenriemen_Servopumpe_Spannrollen_VW_T4_IMG_20160922_135213.jpg",
+      "modified": "Resized and recompressed"
+    },
+    {
+      "file": "parts/photos/accessory-belt-2.jpg",
+      "caption": "Spring-loaded pulley pressing on a ribbed belt, 7.4 L engine",
+      "author": "Una Smith",
+      "license": "CC BY 3.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tensioner.jpg",
+      "modified": "Resized and recompressed"
+    }
+  ]
+}

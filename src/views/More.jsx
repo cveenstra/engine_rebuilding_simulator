@@ -8,10 +8,13 @@ import {
 } from '../engine/storage.js';
 import { allTransitions, studyStreak } from '../engine/progress.js';
 import { srsSummary } from '../engine/srs.js';
+import { NEW_PER_DAY_CHOICES, newPerDay } from '../engine/terms.js';
 
 export default function More() {
   const state = useProgress();
   const [theme, setTheme] = useState(() => getPref('theme', 'system'));
+  const [perDay, setPerDay] = useState(() => newPerDay());
+  const [gate, setGate] = useState(() => getPref('termsFirst', true) !== false);
   const [msg, setMsg] = useState(null); // { tone, text }
   const [canSave] = useState(() => storageWorks());
   const fileRef = useRef(null);
@@ -99,6 +102,24 @@ export default function More() {
       </Card>
 
       <Card className="p-4">
+        <SectionTitle sub="How many new words the Terms drill introduces each day. Reviews are never capped.">New terms a day</SectionTitle>
+        <div className="flex flex-wrap gap-2">
+          {NEW_PER_DAY_CHOICES.map((n) => (
+            <Chip key={n} active={perDay === n} onClick={() => { setPerDay(n); setPref('termNewPerDay', n); }}>{n}</Chip>
+          ))}
+        </div>
+        <div className="mt-4 border-t border-line-2 pt-4">
+          <SectionTitle sub="On: a step joins review only once every shop word it uses is learned in Terms. The walkthrough is never held. Off: steps join review straight away.">
+            Steps wait for their terms
+          </SectionTitle>
+          <div className="flex flex-wrap gap-2">
+            <Chip active={gate} onClick={() => { setGate(true); setPref('termsFirst', true); }}>On</Chip>
+            <Chip active={!gate} onClick={() => { setGate(false); setPref('termsFirst', false); }}>Off</Chip>
+          </div>
+        </div>
+      </Card>
+
+      <Card className="p-4">
         <SectionTitle sub="System follows your phone's light or dark setting.">Appearance</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {[['system', 'System'], ['light', 'Light'], ['dark', 'Dark']].map(([v, l]) => (
@@ -114,6 +135,39 @@ export default function More() {
           <li><strong className="font-semibold text-ink">Android:</strong> open it in Chrome, tap the menu, then Add to Home screen or Install app.</li>
         </ul>
       </Card>
+
+      <Link to="/terms" className="flex min-h-14 items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 hover:bg-sunken">
+        <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-text">
+          <Icon name="cards" size={20} />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-base font-medium text-ink">Terms</span>
+          <span className="block text-sm text-ink-3">Drill the shop language with spaced repetition</span>
+        </span>
+        <Icon name="chevron" size={18} className="text-ink-3" />
+      </Link>
+
+      <Link to="/dictionary" className="flex min-h-14 items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 hover:bg-sunken">
+        <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-text">
+          <Icon name="book" size={20} />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-base font-medium text-ink">Dictionary</span>
+          <span className="block text-sm text-ink-3">Every shop word in plain English, A to Z</span>
+        </span>
+        <Icon name="chevron" size={18} className="text-ink-3" />
+      </Link>
+
+      <Link to="/credits" className="flex min-h-14 items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 hover:bg-sunken">
+        <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-text">
+          <Icon name="image" size={20} />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-base font-medium text-ink">Picture credits</span>
+          <span className="block text-sm text-ink-3">Who took the part photos, and their licenses</span>
+        </span>
+        <Icon name="chevron" size={18} className="text-ink-3" />
+      </Link>
 
       <Link to="/about" className="flex min-h-14 items-center gap-3 rounded-xl border border-line bg-surface px-4 py-3 hover:bg-sunken">
         <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-warn-soft text-warn-text">

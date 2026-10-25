@@ -303,6 +303,72 @@
       "title": "ATRA PDF-948TE rebuild/reference procedure (contents listing)",
       "url": "https://members.atra.com/products/pdf-948te",
       "kind": "reference"
+    },
+    {
+      "id": "s29",
+      "title": "Sonnax 85740-15K ZF9HP48 oversized pressure regulator valve kit",
+      "url": "https://www.sonnax.com/parts/5472-oversized-pressure-regulator-valve-kit",
+      "kind": "vendor"
+    },
+    {
+      "id": "s30",
+      "title": "JLR SSM73065: 9HP internal differential seal plug missing (L550/L538)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10142756-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s31",
+      "title": "JLR SSM74140: L550/L538 oil leaking from the PTU to transmission interface",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2018/MC-10152017-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s32",
+      "title": "JLR LTB00909NAS1: Active Driveline PTU internal oil leak (PTU oil, battery support during programming)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2016/SB-10105742-9340.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s33",
+      "title": "FCA TSB 21-006-23: 948TE loss of forward gear from insufficient fluid",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2023/MC-10248022-9999.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s34",
+      "title": "JLR Safety Recall P091 (NHTSA 16V-614): 9-speed gearbox harness crimp, unexpected neutral",
+      "url": "https://static.nhtsa.gov/odi/rcl/2016/RCMN-16V614-1293.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s35",
+      "title": "ZF Aftermarket: automatic transmission oil change tips (passenger car)",
+      "url": "https://aftermarket.zf.com/sg/aftermarket-portal/for-workshops/useful-tips/transmission-oil-change-pc/",
+      "kind": "oem"
+    },
+    {
+      "id": "s36",
+      "title": "Mazda TSB (2021): power-flush the A/T oil cooler before installing an overhauled transmission (general practice)",
+      "url": "https://static.nhtsa.gov/odi/tsbs/2021/MC-10206002-0001.pdf",
+      "kind": "oem"
+    },
+    {
+      "id": "s37",
+      "title": "FTI Performance: torque converter installation instructions (general practice)",
+      "url": "https://sdda.semadata.org/Standard/Mc%20Leod/CONVERTER%20INSTALLATION.pdf",
+      "kind": "vendor"
+    },
+    {
+      "id": "s38",
+      "title": "Alto PowerPack installation instructions BM378A: pre-soak frictions, seat and measure the pack (general practice)",
+      "url": "https://cdn.transend.us/img/BM378A-Instructions.pdf",
+      "kind": "vendor"
+    },
+    {
+      "id": "s39",
+      "title": "Sonnax: PTFE seal installation tips (general practice)",
+      "url": "https://www.sonnax.com/tech_resources/1161-ptfe-seal-install-tips-for-sonnax-2nd-gear-super-hold-servo",
+      "kind": "vendor"
     }
   ],
   "components": [
@@ -567,6 +633,57 @@
         "JLR Pathfinder (2018MY) or SDD",
         "Battery support unit"
       ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-001-m1",
+          "title": "Clearing codes before saving them",
+          "what": "Clears the TCM fault memory at the first connection without saving the session, code suffixes or freeze-frame data.",
+          "consequence": "JLR's replace-or-reflash choice depends on the exact codes, so that evidence is lost and an intermittent fault may not come back before teardown.",
+          "prevent": "Save the full diagnostic session, write down every code with its suffix and freeze frame, and only then clear and retest.",
+          "severity": "rework",
+          "sourceIds": [
+            "s13",
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-001-m2",
+          "title": "Not recording the transmission serial",
+          "what": "Skips reading the transmission serial number off the case label at the diagnosis stage.",
+          "consequence": "JLR sets replace thresholds by serial number for some codes, and the TCM configure routine needs it later.",
+          "prevent": "Read and photograph the serial label before any work and copy it onto the job card.",
+          "severity": "minor",
+          "sourceIds": [
+            "s13",
+            "s15"
+          ]
+        },
+        {
+          "id": "zf-9hp48-001-m3",
+          "title": "Ignoring body codes that hold Park",
+          "what": "Scans only the TCM when the complaint is a vehicle stuck in Park or that drops back into Park.",
+          "consequence": "Door, hood or hatch ajar signals and an unoccupied driver's seat can keep the shift-by-wire system in Park, so a healthy transmission gets condemned.",
+          "prevent": "Run a full-vehicle scan and clear body faults first; only then treat a no-go or stuck-in-Park as a transmission fault.",
+          "detect": "A body control code for a door, hood, hatch or seat sensor alongside the complaint.",
+          "severity": "costly",
+          "sourceIds": [
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-001-m4",
+          "title": "Skipping the recall and bulletin check",
+          "what": "Starts diagnosis without checking the VIN for open recalls and service actions.",
+          "consequence": "Early neutral-drop and irregular-shift faults fixed by recall software get mistaken for mechanical failure and torn down.",
+          "prevent": "Check the VIN against open recalls and service actions and apply them before judging the hardware.",
+          "severity": "costly",
+          "sourceIds": [
+            "s34",
+            "s15",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "tcm"
       ],
@@ -583,6 +700,59 @@
       "title": "Check level and external leaks",
       "action": "Check the fluid level and look for leaks at the valve body cover gasket, case-to-bell-housing joint, cooler joint and the transmission-to-PTU joint.",
       "why": "Low fluid alone causes poor shifts, noise and dog clutch codes on this unit; fix the leak before blaming the internals.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-002-m1",
+          "title": "Reading the level cold",
+          "what": "Checks the level at the check plug with cold fluid, the engine off, or without reading fluid temperature on the scan tool.",
+          "consequence": "A cold reading can hide the low fluid behind dog clutch and shift codes, or lead you to overfill.",
+          "prevent": "Check with the engine idling in P and the fluid temperature, read on the scan tool, inside the service window.",
+          "severity": "rework",
+          "sourceIds": [
+            "s8",
+            "s35",
+            "s12"
+          ]
+        },
+        {
+          "id": "zf-9hp48-002-m2",
+          "title": "Blaming the wrong leak point",
+          "what": "Assumes fluid at the front of the vehicle is the side cover and ignores the transmission-to-PTU joint and the cooler joint.",
+          "consequence": "The wrong seal gets replaced and the box keeps losing fluid; JLR lists four separate leak points on this unit.",
+          "prevent": "Clean and dry the case, then trace the leak at the cover, case joint, cooler joint and PTU joint.",
+          "detect": "Fresh wetness concentrated at one joint after a short drive on a cleaned case.",
+          "severity": "rework",
+          "sourceIds": [
+            "s13",
+            "s31"
+          ]
+        },
+        {
+          "id": "zf-9hp48-002-m3",
+          "title": "Topping up without fixing the leak",
+          "what": "Tops the fluid back up and returns the vehicle without finding why it was low.",
+          "consequence": "The level falls again; low fluid alone can cause poor shifts, noise, dog clutch codes and even loss of forward gear.",
+          "prevent": "Follow JLR's order: repair leaks, correct the level, update the TCM, then retest.",
+          "severity": "costly",
+          "sourceIds": [
+            "s14",
+            "s33",
+            "s13"
+          ]
+        },
+        {
+          "id": "zf-9hp48-002-m4",
+          "title": "Adding leak dye to the fluid",
+          "what": "Puts UV leak-tracing dye into the transmission to find a seep.",
+          "consequence": "It changes the fluid's chemistry, which ZF says not to do, and trade guidance for this family says not to use dye.",
+          "prevent": "Find leaks by cleaning, drying and inspecting instead of additives.",
+          "severity": "minor",
+          "sourceIds": [
+            "s8",
+            "s35"
+          ]
+        }
+      ],
       "components": [
         "valve-body-cover",
         "case-gasket",
@@ -605,6 +775,45 @@
         "JLR Pathfinder or SDD"
       ],
       "mistake": "Tearing down a box whose only problem was an old calibration.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-003-m1",
+          "title": "Tearing down a software complaint",
+          "what": "Commits to a teardown for harsh, delayed or flared shifts without first loading the latest calibration and relearning adaptations.",
+          "consequence": "The rebuild costs days and parts and the complaint is still there, because many 9HP shift faults were calibration faults.",
+          "prevent": "Update the TCM, reset and relearn adaptations and road test before condemning the hardware.",
+          "severity": "costly",
+          "sourceIds": [
+            "s14",
+            "s27",
+            "s18"
+          ]
+        },
+        {
+          "id": "zf-9hp48-003-m2",
+          "title": "Judging before the adaptations have learned",
+          "what": "Drives once after an update or reset and decides the software did nothing.",
+          "consequence": "Each clutch needs repeated shift events before its learned values settle, so early shifts are rough and a good box goes to the bench.",
+          "prevent": "Run the guided adaptation drive and repeat each shift several times before rating shift quality.",
+          "detect": "Adaptation counters still at or near zero on the scan tool.",
+          "severity": "costly",
+          "sourceIds": [
+            "s10",
+            "s18"
+          ]
+        },
+        {
+          "id": "zf-9hp48-003-m3",
+          "title": "Skipping the engine control software check",
+          "what": "Updates the TCM but leaves the engine control module on an old calibration.",
+          "consequence": "The two modules share torque and shift data; the FCA learn procedure for this family requires both at the latest level before learning.",
+          "prevent": "Check and update engine and transmission software together before running any learn.",
+          "severity": "rework",
+          "sourceIds": [
+            "s11"
+          ]
+        }
+      ],
       "components": [
         "tcm"
       ],
@@ -622,6 +831,44 @@
       "title": "Decide rebuild, swap, or sublet",
       "action": "Choose between a full bench overhaul, a valve body or TCM swap, or a replacement unit, based on the codes, fluid debris and what the diagnosis points to.",
       "why": "JLR dealers replace the whole transmission for internal faults; an overhaul only makes sense when parts, tooling and service data are in hand.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-004-m1",
+          "title": "Overhauling without tools or data",
+          "what": "Starts a bench overhaul without the C and D spring compressors, a force gauge for clearance checks, or clearance data.",
+          "consequence": "Clearances cannot be set and piston seals get cut, so the job stalls or ends in a replacement unit anyway.",
+          "prevent": "Have the press tools or proven equivalents, a force gauge and the clearance data before the first bolt comes out.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-004-m2",
+          "title": "Ignoring JLR's replace-by-serial guidance",
+          "what": "Plans a soft-parts overhaul on a unit whose code and serial number fall in a range JLR says to replace.",
+          "consequence": "JLR treats those as internal faults beyond a software fix, so a seals-and-frictions job may not reach the root cause.",
+          "prevent": "Compare the stored codes and serial with the bulletins and budget for hard parts or a replacement unit when they match.",
+          "severity": "costly",
+          "sourceIds": [
+            "s13",
+            "s18"
+          ]
+        },
+        {
+          "id": "zf-9hp48-004-m3",
+          "title": "Quoting soft parts for a dog fault",
+          "what": "Prices only a seal and friction kit for a box with dog clutch or no-forward codes.",
+          "consequence": "A failed A dog usually needs a whole input shaft assembly, and worn plunger sleeves need valve body parts, so the job overruns.",
+          "prevent": "Budget for an input shaft assembly, valve body repair parts and a converter when codes point at a dog clutch.",
+          "severity": "minor",
+          "sourceIds": [
+            "s6",
+            "s21"
+          ]
+        }
+      ],
       "components": [
         "valve-body",
         "tcm"
@@ -643,6 +890,31 @@
         "Clean drain pan",
         "Magnet"
       ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-005-m1",
+          "title": "Discarding the drain evidence",
+          "what": "Wipes the drain plug and dumps the old fluid without looking at it.",
+          "consequence": "You lose the clue that tells dog spline damage (bright metal) from a slipping pack (friction debris), lengthening the hunt.",
+          "prevent": "Drain into a clean pan, keep a sample in a clear jar and photograph the plug before cleaning it.",
+          "severity": "rework",
+          "sourceIds": [
+            "s3",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-005-m2",
+          "title": "Not planning for a cooler flush",
+          "what": "Finds metal or friction debris in the fluid but does not flag the cooler and lines for flushing or replacement.",
+          "consequence": "Debris trapped in the cooler washes back into the rebuilt unit on first drive.",
+          "prevent": "Write the debris finding on the job card so the cooler is flushed or replaced before the rebuilt unit goes in.",
+          "severity": "costly",
+          "sourceIds": [
+            "s36"
+          ]
+        }
+      ],
       "components": [
         "drain-fill-plugs"
       ],
@@ -658,6 +930,31 @@
       "title": "Separate halfshafts and PTU",
       "action": "With the vehicle supported, remove the front halfshafts and separate the power transfer unit from the transmission's differential side.",
       "why": "The US Discovery Sport is AWD, so the PTU is splined into the differential and must come away before the transmission can drop.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-006-m1",
+          "title": "Pushing a halfshaft through the case",
+          "what": "Uses a tool to drive the right-hand halfshaft out through the transmission.",
+          "consequence": "The internal differential sealing plug is knocked out, causing a leak at the differential joint, and may end up inside the case.",
+          "prevent": "Pull halfshafts out from the outboard side only, then check the sealing plug is intact before going further.",
+          "detect": "The differential cross pin is visible through the bore when the plug is missing.",
+          "severity": "costly",
+          "sourceIds": [
+            "s30"
+          ]
+        },
+        {
+          "id": "zf-9hp48-006-m2",
+          "title": "Levering the PTU off crooked",
+          "what": "Pries the PTU off the differential side at an angle.",
+          "consequence": "The quill shaft seals and retaining clips at the PTU joint get damaged, and that interface becomes a leak point after refit.",
+          "prevent": "Draw the PTU straight off its splines and inspect the quill shaft seals and clips before reuse.",
+          "severity": "rework",
+          "sourceIds": [
+            "s31"
+          ]
+        }
+      ],
       "components": [
         "ptu",
         "differential"
@@ -675,6 +972,19 @@
       "action": "Mark the converter-to-flexplate position, turn the engine to reach each fastener, and remove the converter nuts; discard them.",
       "why": "JLR requires new flexplate-to-converter nuts on refit, so these are scrap once removed.",
       "mistake": "Saving the old converter nuts to reuse on install.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-007-m1",
+          "title": "Saving the converter nuts",
+          "what": "Keeps the flexplate-to-converter nuts to reuse on install.",
+          "consequence": "JLR calls for new nuts and warns that reusing unsuitable fixings leads to later component failures.",
+          "prevent": "Bin the nuts as they come off and order new ones with the rebuild parts.",
+          "severity": "costly",
+          "sourceIds": [
+            "s17"
+          ]
+        }
+      ],
       "components": [
         "torque-converter"
       ],
@@ -692,6 +1002,20 @@
       "tools": [
         "Transmission jack",
         "Engine support"
+      ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-008-m1",
+          "title": "Letting the converter slide off",
+          "what": "Lowers the unit nose-down without retaining the converter.",
+          "consequence": "The converter slides off the input shaft and pump drive, damaging the hub seal and possibly the hub or the pump drive gear.",
+          "prevent": "Strap or bracket the converter to the bell housing and keep the unit level on the jack.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s1"
+          ]
+        }
       ],
       "components": [
         "torque-converter",
@@ -713,6 +1037,32 @@
         "Solvent tank or pressure washer",
         "Bench fixture"
       ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-009-m1",
+          "title": "Opening the unit before washing",
+          "what": "Removes the side cover or splits the bell housing before cleaning the outside of the case.",
+          "consequence": "Road grit at the joints falls into the valve body and tube bores, where it scores bores and sticks valves.",
+          "prevent": "Wash the case with solvent or a pressure washer first and work on a clean bench with room to drain.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-009-m2",
+          "title": "Not recording the model label",
+          "what": "Skips photographing the bar-code label and orders parts by vehicle alone.",
+          "consequence": "Park-by-wire and park-by-cable valve bodies and different input shafts exist, so 948TE or wrong-variant parts get fitted.",
+          "prevent": "Photograph the label, decode the exact variant, and match every hard part you order to it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s21",
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "case"
       ],
@@ -728,6 +1078,19 @@
       "title": "Pull converter and port plugs",
       "action": "Slide the converter straight off and drain it face-down, then remove the production fill plug and converter pressure port plugs so the rest of the fluid runs out.",
       "why": "The converter must come off first; the bell housing cannot be split with it in place.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-010-m1",
+          "title": "Leaving old fluid in the converter",
+          "what": "Pulls the converter and sets it aside without draining it face-down.",
+          "consequence": "You cannot see what debris it holds, which is the main input to deciding whether the converter is reused or sent out.",
+          "prevent": "Drain the converter into a clean container and look at what comes out.",
+          "severity": "minor",
+          "sourceIds": [
+            "s4"
+          ]
+        }
+      ],
       "components": [
         "torque-converter",
         "drain-fill-plugs",
@@ -744,6 +1107,33 @@
       "title": "Unbolt the case-mounted TCM",
       "action": "Unplug and unbolt the transmission control module from the outside of the case and store it in anti-static packaging.",
       "why": "On the 9HP the TCM is a separate module bolted to the case, not built into the valve body as on the 8HP.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-011-m1",
+          "title": "Handling the TCM without static care",
+          "what": "Unbolts the TCM and leaves it on the bench without anti-static packaging, or touches its pins.",
+          "consequence": "A damaged TCM must be replaced, configured to the transmission and relearned, adding parts and time.",
+          "prevent": "Bag the module in anti-static packaging and keep it with the unit.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s11",
+            "s15"
+          ]
+        },
+        {
+          "id": "zf-9hp48-011-m2",
+          "title": "Losing track of TCM pairing",
+          "what": "Lets the TCM get separated from its transmission in a shop with several units.",
+          "consequence": "The module holds that unit's configuration and learned values; fitting it to another box gives wrong shift behaviour until it is reconfigured and relearned.",
+          "prevent": "Tag the TCM with the transmission serial number as soon as it comes off.",
+          "severity": "rework",
+          "sourceIds": [
+            "s15",
+            "s10"
+          ]
+        }
+      ],
       "components": [
         "tcm"
       ],
@@ -758,6 +1148,19 @@
       "title": "Release the case connector",
       "action": "Pull the retaining clip from the main electrical connector and push the connector slightly into the side cover.",
       "why": "The connector passes through the cover; it has to be freed before the cover will lift away.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-012-m1",
+          "title": "Lifting the cover with the clip on",
+          "what": "Tries to lift the side cover before pulling the connector clip and pushing the connector inward.",
+          "consequence": "The case connector or its O-rings get torn, and the connector seal leaks after refit.",
+          "prevent": "Pull the clip, push the connector slightly into the cover, and only then lift the cover.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "valve-body-cover",
         "valve-body"
@@ -774,6 +1177,32 @@
       "title": "Remove valve body side cover",
       "action": "Remove the cover bolts (they stay captive in their torque limiters) and lift off the ribbed plastic side cover with its molded seal.",
       "why": "There is no bottom pan on the 9HP48; this side cover is the only way into the controls.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-013-m1",
+          "title": "Prying the plastic cover",
+          "what": "Levers the ribbed plastic side cover off at its edge with a screwdriver.",
+          "consequence": "The cover warps or its sealing face is nicked, and the cover joint is JLR's first-listed leak point, causing low fluid, poor shifts and noise.",
+          "prevent": "Release every captive bolt, then lift the cover evenly; plan on the new gasket kit.",
+          "severity": "rework",
+          "sourceIds": [
+            "s12",
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-013-m2",
+          "title": "Pulling bolts out of their limiters",
+          "what": "Forces the captive cover bolts out of their torque limiters and loses limiters.",
+          "consequence": "Without limiters the bolts crush the plastic cover on refit, cracking it or distorting the seal.",
+          "prevent": "Leave the bolts captive in the cover and check every limiter is present before refit.",
+          "severity": "minor",
+          "sourceIds": [
+            "s9",
+            "s12"
+          ]
+        }
+      ],
       "components": [
         "valve-body-cover"
       ],
@@ -791,6 +1220,31 @@
       "why": "The connector plate also carries the speed sensor, range sensor and temperature wiring; reversed solenoids give wrong shifts.",
       "critical": true,
       "mistake": "Pulling solenoids without marking their positions.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-014-m1",
+          "title": "Pulling solenoids without marking them",
+          "what": "Unplugs and removes solenoids without labelling which bore each came from.",
+          "consequence": "Solenoids in the wrong bores apply the wrong elements, giving harsh shifts, wrong gears or a tie-up on the first drive.",
+          "prevent": "Paint-mark each solenoid and its bore and photograph the valve body before anything is unplugged.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-014-m2",
+          "title": "Not photographing the connector plate routing",
+          "what": "Unclips the connector plate wiring without photos of how it runs.",
+          "consequence": "On refit the speed, range and temperature sensor wires get routed where the valve body or cover pinches or chafes them, causing sensor codes.",
+          "prevent": "Photograph the plate and every wire path from two angles before unplugging.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2",
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "valve-body",
         "speed-sensors",
@@ -809,6 +1263,41 @@
       "why": "Pulling the wrong bolts splits the valve body on the bench and scatters check balls and springs.",
       "critical": true,
       "mistake": "Removing the valve body section bolts along with the mounting bolts.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-015-m1",
+          "title": "Removing the valve body section bolts",
+          "what": "Takes out the bolts that hold the valve body halves together along with the mounting bolts.",
+          "consequence": "The halves separate as the valve body lifts and valves, springs and small parts fall out in unknown order.",
+          "prevent": "Remove only the mounting bolts the service procedure highlights and leave the section bolts alone.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-015-m2",
+          "title": "Mixing valve body bolt lengths",
+          "what": "Drops all the valve body bolts into one tray.",
+          "consequence": "On refit a long bolt in a short hole bottoms out before clamping or damages the casting, and a short one strips threads.",
+          "prevent": "Push the bolts through a cardboard template of the bolt pattern in the order they came out.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-015-m3",
+          "title": "Missing one mounting bolt",
+          "what": "Starts prying the valve body with one mounting bolt still in.",
+          "consequence": "The aluminium valve body casting cracks or bends, which means a replacement valve body.",
+          "prevent": "Count the removed bolts against the service figure before applying any pry force.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "valve-body"
       ],
@@ -825,6 +1314,43 @@
       "why": "The tubes carry clutch, converter, pump and lube oil and grip the valve body by their O-rings; the sensor wiring is still attached.",
       "critical": true,
       "mistake": "Yanking the valve body and tearing the range or speed sensor harness.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-016-m1",
+          "title": "Tearing the sensor harness",
+          "what": "Yanks the valve body off its tubes while the range and speed sensor wiring is still attached.",
+          "consequence": "The range or speed sensor harness tears, giving range or speed codes and a sensor replacement.",
+          "prevent": "Keep the harness slack and ease the valve body off a little at a time while watching the wiring.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-016-m2",
+          "title": "Prying on machined faces",
+          "what": "Levers against the valve body's sealing face or the tube bores to free it.",
+          "consequence": "Gouged faces and bores leak at the tube O-rings, robbing a clutch, converter or lube circuit of oil.",
+          "prevent": "Pry only at the proper pry points with a suitable tool and draw the valve body off the tubes squarely.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-016-m3",
+          "title": "Not counting tubes after removal",
+          "what": "Doesn't notice a connecting tube came away inside the valve body instead of staying in the case.",
+          "consequence": "On reassembly the tube is fitted twice or left out, starving the circuit it feeds.",
+          "prevent": "Count the tubes left in the case and any stuck in the valve body before setting it aside.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "valve-body",
         "feed-tubes"
@@ -841,6 +1367,19 @@
       "title": "Remove range and speed sensors",
       "action": "Unbolt the range sensor and speed sensor from the case and set them aside with the valve body.",
       "why": "These sit behind the valve body and can only be reached with it moved.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-017-m1",
+          "title": "Pulling sensors by their wiring",
+          "what": "Works the range or speed sensor out of the case by tugging on its leads.",
+          "consequence": "The sensor or its wiring breaks, adding a part and a fault code after assembly.",
+          "prevent": "Unbolt the sensor and lift it by its body.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "range-sensor",
         "speed-sensors"
@@ -857,6 +1396,43 @@
       "title": "Pull connecting and bypass tubes",
       "action": "Remove the valve body connecting tubes and the filter bypass tube, noting which are round and which have one oblong end.",
       "why": "The two oblong-ended tubes feed the output gear support and only fit one way.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-018-m1",
+          "title": "Not recording oblong tube orientation",
+          "what": "Removes the connecting tubes without noting which two have an oblong end and which way it faced.",
+          "consequence": "On refit an oblong tube goes in turned, starving the output gear support circuit that feeds the F dog.",
+          "prevent": "Photograph the tubes in place and lay them out in position order with the oblong ends marked.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-018-m2",
+          "title": "Crushing tube ends with pliers",
+          "what": "Grips the tubes with pliers or vise-grips to pull them out.",
+          "consequence": "The sealing ends go oval and leak at the O-rings even with new seals.",
+          "prevent": "Pull tubes straight by hand or with a padded tool and replace any that are distorted.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-018-m3",
+          "title": "Overlooking the filter bypass tube",
+          "what": "Doesn't note the filter bypass tube as a separate part.",
+          "consequence": "It gets left out on refit, and the unit loses the quick pressure build that lets it drive away promptly after an auto stop.",
+          "prevent": "List every tube, including the bypass tube, on the job card as it comes out.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "feed-tubes",
         "oil-filter"
@@ -874,6 +1450,20 @@
       "title": "Remove oil gallery plate",
       "action": "Unbolt the oil passage cover plate and its bonded steel gasket from the case.",
       "why": "This gasket is a known JLR leak point that causes low fluid, noise and poor shifts.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-019-m1",
+          "title": "Gouging the gallery plate face",
+          "what": "Scrapes the bonded gasket residue off with a sharp steel scraper.",
+          "consequence": "A scored case face leaks even with a new gasket, and this joint is a known cause of low fluid, poor shifts and noise.",
+          "prevent": "Clean the face with a plastic scraper and solvent, and inspect it under good light.",
+          "severity": "rework",
+          "sourceIds": [
+            "s20",
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "oil-gallery-plate"
       ],
@@ -889,6 +1479,19 @@
       "title": "Remove external hydraulic line",
       "action": "Disconnect and remove the external hydraulic line at the back of the case.",
       "why": "The line can blow out with age, so it gets inspected and resealed on every overhaul.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-020-m1",
+          "title": "Reusing an aged external line",
+          "what": "Refits the external hydraulic line without inspecting it or renewing its seals.",
+          "consequence": "The line can blow out with age, dumping fluid quickly and leaving the unit to run low.",
+          "prevent": "Inspect the line for chafing, corrosion and damaged ends and renew its seals every overhaul.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "external-line"
       ],
@@ -916,6 +1519,31 @@
           "s5"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-021-m1",
+          "title": "Condemning the F dog for leaking",
+          "what": "Sees the F dog leak heavily on air and writes it off.",
+          "consequence": "Good parts are replaced; the F dog leaks until its piston shuttles and then tightens up, which is normal.",
+          "prevent": "Apply enough regulated air to shuttle the piston and judge the leak after it has moved.",
+          "detect": "The leak drops sharply once the piston has shuttled.",
+          "severity": "minor",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-021-m2",
+          "title": "Skipping the baseline air check",
+          "what": "Tears the unit down without air-checking each circuit first.",
+          "consequence": "There is no record of which circuit was leaking, so the cause of a slipping element can be missed and the same fault rebuilt back in.",
+          "prevent": "Air-check each clutch, brake and dog port with the valve body off and write down how each one behaves.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "a-dog",
         "b-clutch",
@@ -935,6 +1563,30 @@
       "title": "Remove outer bell housing bolts",
       "action": "Remove the bolts around the outside of the bell housing to case joint, leaving the one bolt that stays in throughout.",
       "why": "One inner bolt also holds the output gear support to the bell housing and must stay until later.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-022-m1",
+          "title": "Mixing bell housing bolt lengths",
+          "what": "Pulls the perimeter bolts into one container.",
+          "consequence": "On assembly bolts go into the wrong holes, bottoming out or under-engaging threads in the aluminium case.",
+          "prevent": "Store the bolts in a template in their hole positions.",
+          "severity": "minor",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-022-m2",
+          "title": "Prying against a hidden bolt",
+          "what": "Starts prying the bell housing while a perimeter bolt is still in.",
+          "consequence": "The flange cracks or the sealing face is damaged, a costly housing or case replacement.",
+          "prevent": "Count the removed bolts against the service figure and check every hole with a light before prying.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "bell-housing",
         "case"
@@ -951,6 +1603,19 @@
       "action": "Remove the inner bell housing bolts, leaving the two marked bolts that retain the output gear support.",
       "critical": true,
       "mistake": "Removing every inner bolt so the output support drops when the housing lifts.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-023-m1",
+          "title": "Removing every inner bolt",
+          "what": "Takes out all the inner bell housing bolts, including the ones that retain the output gear support.",
+          "consequence": "The output gear support and E clutch drop as the housing lifts, damaging the F dog, bearing or gear teeth.",
+          "prevent": "Leave the marked output support bolts in until the procedure calls for them.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "bell-housing",
         "output-support"
@@ -970,6 +1635,32 @@
         "Wooden blocks",
         "Pry bar"
       ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-024-m1",
+          "title": "Prying at the wrong spot",
+          "what": "Drives a pry bar into the case-to-bell-housing joint anywhere it fits.",
+          "consequence": "The sealing faces are gouged and the case-to-converter-housing joint, one of JLR's listed leak points, weeps after assembly.",
+          "prevent": "Use only the designated pry points and lift evenly.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9",
+            "s13"
+          ]
+        },
+        {
+          "id": "zf-9hp48-024-m2",
+          "title": "Lifting the housing crooked",
+          "what": "Tilts the bell housing as it comes off the case.",
+          "consequence": "Tube O-ring bores and the stator support ring lands get scored, and the E clutch or output support can fall free.",
+          "prevent": "Lift straight up with the case blocked level, supporting the E clutch and output support as they rise.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9",
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "bell-housing",
         "e-clutch",
@@ -988,6 +1679,32 @@
       "title": "Remove gasket and tube seal",
       "action": "Peel off the rubber-coated steel bell housing gasket and remove the tube seal that sits between case and bell housing.",
       "why": "Both are single-use and the tube seal is easy to forget on reassembly.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-025-m1",
+          "title": "Leaving the old tube seal in",
+          "what": "Misses the old fluid port tube seal stuck in its bore.",
+          "consequence": "On assembly the new seal is stacked on the old one or left out, and the case-to-bell-housing circuit leaks; the fix means splitting the unit again.",
+          "prevent": "Remove the old tube seal as soon as the housing is off and put it with the scrap gasket.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-025-m2",
+          "title": "Scratching the joint faces",
+          "what": "Scrapes the gasket faces with a steel blade or abrasive disc.",
+          "consequence": "Scratches running across the face leak at the case-to-converter-housing joint, one of JLR's listed leak points.",
+          "prevent": "Clean the case and housing faces with solvent and a plastic scraper, never a blade or disc.",
+          "severity": "rework",
+          "sourceIds": [
+            "s13",
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "case-gasket"
       ],
@@ -1003,6 +1720,20 @@
       "title": "Lift out the differential",
       "action": "Lift the differential assembly out of the case.",
       "why": "The final drive sits on top once the bell housing is off and must come out before the transfer gear.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-026-m1",
+          "title": "Mixing differential bearing races",
+          "what": "Lets the differential's tapered bearing cups and cones get swapped side to side.",
+          "consequence": "Bearings that were worn in as pairs run noisy and wear early when mismatched.",
+          "prevent": "Keep each cone with its own cup and tag them left and right.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2",
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "differential"
       ],
@@ -1016,6 +1747,19 @@
       "phase": "teardown-int",
       "title": "Lift out the transfer gear",
       "action": "Remove the transfer gear (with its integral park gear) from its bearing.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-027-m1",
+          "title": "Knocking the park gear teeth",
+          "what": "Bangs the transfer gear against the case or bench while lifting it out.",
+          "consequence": "Chipped park gear teeth stop the pawl engaging cleanly, and the vehicle may not hold in Park.",
+          "prevent": "Lift the transfer gear straight out and set it on a clean, soft surface.",
+          "severity": "minor",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "transfer-gear",
         "park-system"
@@ -1031,6 +1775,19 @@
       "phase": "teardown-int",
       "title": "Remove upper annulus and carrier",
       "action": "Lift out the annulus and pinion carrier assembly that sits on top (Chrysler calls it the gear 4 annulus and carrier).",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-028-m1",
+          "title": "Not tagging thrust washers and bearings",
+          "what": "Lifts out the annulus and carrier assemblies without tagging the thrust bearings, washers and spacers between them.",
+          "consequence": "Bearings go back in the wrong place or upside down, changing end play and leading to bearing failure.",
+          "prevent": "Tag every snap ring, washer, spacer and thrust bearing with its position and orientation as it comes out.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "planetary-1-2"
       ],
@@ -1044,6 +1801,19 @@
       "phase": "teardown-int",
       "title": "Remove next annulus and carrier",
       "action": "Lift out the next annulus and carrier assembly (Chrysler's gear 3 annulus and carrier gear).",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-029-m1",
+          "title": "Letting a stuck bearing travel",
+          "what": "Doesn't check the underside of each assembly for a needle bearing stuck to it.",
+          "consequence": "The bearing ends up on the wrong part or is lost, and the stack-up is wrong on assembly.",
+          "prevent": "Turn each assembly over as it comes out and remove any bearing stuck to it.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "planetary-1-2",
         "planetary-3-4"
@@ -1065,6 +1835,31 @@
       ],
       "critical": true,
       "mistake": "Hooking the puller on the roller cage instead of the inner race.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-030-m1",
+          "title": "Hooking the bearing cage",
+          "what": "Puts the puller jaws on the roller cage instead of the inner race.",
+          "consequence": "The cage bends and the rollers fall out, so the bearing is scrap and has to be replaced.",
+          "prevent": "Seat the jaws in the case reliefs under the inner race, spacing the puller with a socket if needed.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-030-m2",
+          "title": "Puller jaws on the case boss",
+          "what": "Lets the puller jaws bear on the case boss edge instead of sitting in the reliefs.",
+          "consequence": "The case boss is gouged or cracked, and the case is expensive to replace.",
+          "prevent": "Check jaw placement in the reliefs before turning the screw and stop if it binds.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "transfer-gear",
         "case"
@@ -1088,6 +1883,31 @@
         "Miller 10428 adapter"
       ],
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-031-m1",
+          "title": "Compressing the D retainer off-center",
+          "what": "Sets the press tool off-center so the D piston retainer tilts as it goes down.",
+          "consequence": "The retainer O-ring drops into the snap ring groove or is cut, and the D brake leaks on apply.",
+          "prevent": "Center the tool, compress evenly and only as far as the groove needs.",
+          "detect": "The O-ring visible in the snap ring groove after compression.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-031-m2",
+          "title": "Gouging the groove for a tabless ring",
+          "what": "Digs at the D snap ring, which has no pry tabs, with picks levered against the groove edge.",
+          "consequence": "The groove or retainer is damaged and the new ring will not seat fully.",
+          "prevent": "Relieve the ring's load in the press, rotate it to an opening and lift it without levering on the groove wall.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "d-brake"
       ],
@@ -1102,6 +1922,32 @@
       "phase": "teardown-int",
       "title": "Remove D piston and spring",
       "action": "Lift out the D piston retainer, the aluminum D piston and its Belleville spring.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-032-m1",
+          "title": "Not noting Belleville spring direction",
+          "what": "Lifts out the D Belleville spring without marking which way its cone faced.",
+          "consequence": "Refitted upside down, it changes how the D piston applies and releases, causing drag or harsh apply.",
+          "prevent": "Mark the spring's up side and photograph it in place before removal.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-032-m2",
+          "title": "Scoring the aluminium D piston",
+          "what": "Pries the aluminium D piston out with a screwdriver.",
+          "consequence": "Scored piston or bore surfaces let D apply oil leak past the new seals, so D slips.",
+          "prevent": "Lift the piston out evenly by hand; replace it if the sealing surfaces are marked.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1",
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "d-brake"
       ],
@@ -1119,6 +1965,30 @@
       "why": "Lifting by the hub pulls it out of the B clutch pack and drops the plates.",
       "critical": true,
       "mistake": "Lifting the assembly by the hub so the B pack falls apart.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-033-m1",
+          "title": "Lifting the geartrain by the hub",
+          "what": "Grabs the geartrain by the B clutch hub instead of the input shaft.",
+          "consequence": "The hub pulls out of the B clutch pack and the plates fall out of order.",
+          "prevent": "Lift the whole geartrain only by the input shaft, keeping your hands off the B hub.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-033-m2",
+          "title": "Missing the bearing on the hub",
+          "what": "Doesn't check the bottom of the geartrain hub for the needle thrust bearing stuck to it.",
+          "consequence": "The bearing is lost or later goes back on the hub instead of the case bushing.",
+          "prevent": "Turn the geartrain over and remove the bearing to its tagged spot.",
+          "severity": "minor",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "input-shaft",
         "b-clutch",
@@ -1135,6 +2005,20 @@
       "phase": "teardown-int",
       "title": "Remove D brake pack",
       "action": "Remove the D brake plates and frictions, keeping them in order.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-034-m1",
+          "title": "Mixing C and D plates",
+          "what": "Lays the D brake plates down with the C plates.",
+          "consequence": "Pack thickness and clearance change and the wear evidence for each pack is lost.",
+          "prevent": "Keep each pack in its own labelled tray in removal order.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "d-brake"
       ],
@@ -1149,6 +2033,19 @@
       "title": "Remove C selective ring and pack",
       "action": "Remove the C brake selective snap ring, then the C plates and frictions; tag the ring's thickness.",
       "why": "The selective ring sets C clearance; knowing the old size speeds up shimming later.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-035-m1",
+          "title": "Not recording the selective ring",
+          "what": "Removes the C selective snap ring without measuring and tagging it.",
+          "consequence": "Shimming the C brake later starts from scratch and takes several tries.",
+          "prevent": "Measure the ring and write its thickness on the tag.",
+          "severity": "minor",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "c-brake"
       ],
@@ -1170,6 +2067,32 @@
         "Miller 10507A C piston tool"
       ],
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-036-m1",
+          "title": "Spring tool slipping off",
+          "what": "Uses a C spring compressor that does not reach between the piston slots, or sets it crooked.",
+          "consequence": "The tool slips under load, launching the snap ring or damaging the piston and spring.",
+          "prevent": "Use the correct tool or a proven equivalent that sits between the piston slots, and compress straight.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s28"
+          ]
+        },
+        {
+          "id": "zf-9hp48-036-m2",
+          "title": "Prying the C piston from the case",
+          "what": "Levers the aluminium C piston out of its bore at the bottom of the case.",
+          "consequence": "The bore is part of the case, so scoring it means a C leak that only a new case fixes.",
+          "prevent": "Lift the piston out evenly by hand without tools touching the bore.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "c-brake"
       ],
@@ -1185,6 +2108,19 @@
       "phase": "teardown-int",
       "title": "Remove differential seals",
       "action": "Drive out and discard the differential seals from both the case and the bell housing.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-037-m1",
+          "title": "Gouging the differential seal bores",
+          "what": "Drives the old differential seals out with a chisel that cuts into the bore.",
+          "consequence": "The new differential seals leak along the scratch and fluid drips at the halfshaft.",
+          "prevent": "Use a seal puller or drive from behind without touching the bore wall.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "diff-seals"
       ],
@@ -1198,6 +2134,19 @@
       "phase": "teardown-int",
       "title": "Separate output support from housing",
       "action": "Remove the remaining bolt holding the output gear support to the bell housing and lift the support away without dropping it.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-038-m1",
+          "title": "Dropping the output gear support",
+          "what": "Removes the last support bolt without holding the output gear support.",
+          "consequence": "It falls, damaging the F dog, its bearing or gear teeth.",
+          "prevent": "Hold the support while the bolt comes out and lift it away.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "output-support",
         "bell-housing"
@@ -1213,6 +2162,31 @@
       "title": "Remove E clutch from housing",
       "action": "Lift the E clutch hub and plates out in order, then lift the steel E drum off the stator support sealing rings.",
       "why": "The drum carries the input speed sensor knockouts; bent tabs give a bad speed signal.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-039-m1",
+          "title": "Bending the speed sensor tabs",
+          "what": "Handles or stacks the steel E drum on its sensor knockouts.",
+          "consequence": "Bent tabs give the input speed sensor a bad signal, which shows up as shift faults and speed codes.",
+          "prevent": "Store the drum upright on a clean surface and check the tabs are straight.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-039-m2",
+          "title": "Dragging the drum over sealing rings",
+          "what": "Tilts the E drum as it comes off the stator support.",
+          "consequence": "The ring lands get scored, and new rings will leak E clutch apply oil.",
+          "prevent": "Lift the E drum straight up off the stator support without rocking it.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "e-clutch",
         "stator-support"
@@ -1229,6 +2203,7 @@
       "phase": "teardown-int",
       "title": "Unbolt the stator support",
       "action": "Unbolt the flanged stator support from the bell housing.",
+      "mistakes": [],
       "components": [
         "stator-support"
       ],
@@ -1244,6 +2219,32 @@
       "title": "Remove pump and drive chain",
       "action": "Remove the pump drive chain and sprockets, noting their orientation, then lift the vane pump out of its pocket in the pump housing.",
       "why": "The pump sits at the base of the pump housing inside the bell housing, off the input axis.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-041-m1",
+          "title": "Not marking chain and sprockets",
+          "what": "Removes the pump drive chain and sprockets without noting which face points out.",
+          "consequence": "A reused chain or sprocket refitted flipped runs on fresh wear surfaces, making noise and wearing fast.",
+          "prevent": "Mark the outer face of the chain and each sprocket before removal.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-041-m2",
+          "title": "Prying the pump from its pocket",
+          "what": "Levers the vane pump out of its pocket with a screwdriver against the housing.",
+          "consequence": "The pocket in the pump housing is damaged, and that housing is part of the bell housing assembly.",
+          "prevent": "Lift the pump out evenly by its body, working it up a little at each side.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "pump-chain",
         "oil-pump"
@@ -1260,6 +2261,19 @@
       "title": "Remove filter from pump housing",
       "action": "Pull the filter outlet neck out of the pump housing and discard the filter and its O-rings.",
       "why": "There is no pan to reach the filter from outside, so it is only changed during a teardown.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-042-m1",
+          "title": "Leaving the filter O-ring behind",
+          "what": "Pulls the filter but leaves its outlet neck O-ring in the pump housing bore.",
+          "consequence": "The new filter will not seat over the old ring and the pump draws air, aerating the fluid and dropping pressure.",
+          "prevent": "Check the bore is empty and clean after pulling the filter.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "oil-filter"
       ],
@@ -1274,6 +2288,19 @@
       "title": "Remove converter hub seal",
       "action": "Remove the snap ring and drive out the converter hub seal; check the hub support bearing.",
       "why": "The converter hub runs in a bearing, not a bushing, so check it for roughness while it is exposed.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-043-m1",
+          "title": "Hitting the hub bearing",
+          "what": "Drives the converter hub seal out with a punch that strikes the hub support bearing behind it.",
+          "consequence": "The bearing is damaged, runs rough and wears the hub seal.",
+          "prevent": "Remove the snap ring and pull the seal without contacting the bearing.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "converter-seal",
         "bell-housing"
@@ -1288,6 +2315,20 @@
       "phase": "teardown-int",
       "title": "Split B drum from geartrain",
       "action": "Separate the input shaft and B clutch drum from the planetary 3/4 housing.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-044-m1",
+          "title": "Forcing the A dog splines apart",
+          "what": "Hammers or levers the input shaft out of the 3-sun/4-ring splines.",
+          "consequence": "The A dog teeth chip, and the fix is usually a complete input shaft assembly.",
+          "prevent": "Separate the parts straight along their axis by hand; if they bind, find why.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "b-clutch",
         "input-shaft",
@@ -1304,6 +2345,31 @@
       "title": "Disassemble the B clutch",
       "action": "Compress the B Belleville spring, remove the snap ring and remove the inverted pack, cushion plate and aluminum piston.",
       "why": "The B pack is inverted (frictions with outside teeth), so note the stack order.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-045-m1",
+          "title": "Losing the inverted B pack order",
+          "what": "Takes the B pack apart without recording the stack order of its outside-toothed frictions, steels and cushion plate.",
+          "consequence": "The pack is rebuilt in the conventional order and will not work correctly.",
+          "prevent": "Photograph and lay out the pack in removal order.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-045-m2",
+          "title": "Uneven B spring compression",
+          "what": "Compresses the B Belleville spring with the tool off-center.",
+          "consequence": "The aluminium B piston cocks in its bore and its seals or the bore surface are damaged.",
+          "prevent": "Center the compressor on the B spring and bring it down slowly and evenly.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "b-clutch"
       ],
@@ -1318,6 +2384,19 @@
       "phase": "teardown-int",
       "title": "Disassemble the E clutch",
       "action": "Compress the E Belleville spring, remove its retainer and the bonded piston from the steel drum.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-046-m1",
+          "title": "Trying to reseal the bonded piston",
+          "what": "Attempts to peel or replace the seal on the bonded E piston.",
+          "consequence": "The bonded seal cannot be renewed separately, so the piston is ruined.",
+          "prevent": "Inspect the bonded piston as a unit and replace the whole piston if the seal is damaged.",
+          "severity": "minor",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "e-clutch"
       ],
@@ -1333,6 +2412,21 @@
       "title": "Strip output support and F dog",
       "action": "Remove the output gear nut, bearing and gear from the support, then remove the F dog sleeve and its double-acting piston and cover.",
       "why": "The F dog grounds the shared sun of sets 1 and 2 to this support.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-047-m1",
+          "title": "Mixing F dog seal sides",
+          "what": "Strips the double-acting F dog piston and cover without noting which seals sit on the apply and release sides.",
+          "consequence": "On rebuild the F dog will not shuttle both ways, giving dog position faults and wrong gear selection.",
+          "prevent": "Lay out the F dog parts in order and note which seal goes where.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s3",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "f-dog",
         "output-support"
@@ -1348,6 +2442,19 @@
       "phase": "teardown-int",
       "title": "Separate planetary sets 3 and 4",
       "action": "Release the snap ring joining the C and D hubs and separate planetary sets 3 and 4 from their shared aluminum housing.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-048-m1",
+          "title": "Prying the shared housing apart",
+          "what": "Levers between sets 3 and 4 to split their shared aluminium housing.",
+          "consequence": "The housing or the 3-sun/4-ring splines the A dog engages are damaged.",
+          "prevent": "Release the snap ring fully and separate the sets straight by hand.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "planetary-3-4",
         "c-brake",
@@ -1370,6 +2477,41 @@
       ],
       "critical": true,
       "mistake": "Disassembling the pump without marking the parts' orientation.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-049-m1",
+          "title": "Disassembling the pump unmarked",
+          "what": "Takes the pump apart without marking each piece's orientation.",
+          "consequence": "The parts go back in the wrong way round and the pump loses output or wears out quickly.",
+          "prevent": "Mark every plate, ring and the rotor face before the clip comes off.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-049-m2",
+          "title": "Releasing the dished plate unclamped",
+          "what": "Removes the pump clip without compressing the dished back plate.",
+          "consequence": "The preloaded plate springs the clip out, damaging its groove or the plate.",
+          "prevent": "Clamp the plate down before removing the clip and release the clamp slowly.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-049-m3",
+          "title": "Mixing vanes between slots",
+          "what": "Tips the vanes out together and loses which slot and which way each came from.",
+          "consequence": "Worn-in vanes in different slots stick or leak, reducing pump output.",
+          "prevent": "Note each vane's position and edge direction, or replace the vane set.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "oil-pump"
       ],
@@ -1383,6 +2525,44 @@
       "phase": "teardown-int",
       "title": "Strip the valve body",
       "action": "Remove the solenoids in their marked order, separate the valve body halves, and lay out valves, springs and sleeves by bore.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-050-m1",
+          "title": "Losing small valve body parts",
+          "what": "Separates the valve body halves over an open bench.",
+          "consequence": "Loose springs, retainers and plugs fall out, and a missing or misplaced one changes how a circuit regulates.",
+          "prevent": "Split the halves over a tray, slowly, and lay each part out in bore order.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s4"
+          ]
+        },
+        {
+          "id": "zf-9hp48-050-m2",
+          "title": "Mixing springs between bores",
+          "what": "Puts all valve springs in one cup.",
+          "consequence": "Similar-looking springs swap bores and change regulated pressure, causing harsh or soft shifts.",
+          "prevent": "Lay out valves and springs in bore order on a labelled board.",
+          "severity": "costly",
+          "sourceIds": [
+            "s4",
+            "s21"
+          ]
+        },
+        {
+          "id": "zf-9hp48-050-m3",
+          "title": "Forcing a stuck valve out",
+          "what": "Taps or pries a stuck valve out of its bore.",
+          "consequence": "The aluminium bore is scored and the valve body needs a reamed oversize repair or replacement.",
+          "prevent": "Clean and free a stuck valve gently; if it will not come free, plan an oversize repair.",
+          "severity": "costly",
+          "sourceIds": [
+            "s4",
+            "s29"
+          ]
+        }
+      ],
       "components": [
         "valve-body"
       ],
@@ -1398,6 +2578,31 @@
       "phase": "inspect",
       "title": "Clean all parts and passages",
       "action": "Wash every part in clean solvent, blow passages dry with air, and keep each subassembly's parts together.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-051-m1",
+          "title": "Leaving lint in passages",
+          "what": "Dries valve body parts and case passages with shop rags.",
+          "consequence": "Lint lodges in a valve bore or solenoid screen and sticks a valve on the first drive.",
+          "prevent": "Blow parts dry with clean air and keep rags away from hydraulic parts.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-051-m2",
+          "title": "Not blowing out every passage",
+          "what": "Washes parts in the tank but doesn't blow through every feed passage and tube bore.",
+          "consequence": "Debris left in a passage plugs a solenoid or valve after assembly.",
+          "prevent": "Blow through each passage with clean air and watch for flow at the other end.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s4"
+          ]
+        }
+      ],
       "components": [
         "case",
         "bell-housing",
@@ -1416,6 +2621,43 @@
       "why": "The sleeve usually wears before the gears; spline damage here causes loss of forward gears.",
       "tools": [
         "Dial caliper"
+      ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-052-m1",
+          "title": "Passing rounded dog teeth",
+          "what": "Accepts A dog teeth with slight rounding or chipped edges.",
+          "consequence": "Rounded teeth ratchet or pop out under load and the dog clutch fault returns soon after the rebuild.",
+          "prevent": "Reject any A dog sleeve or gear with rounded, chipped or heat-marked teeth.",
+          "severity": "costly",
+          "sourceIds": [
+            "s6",
+            "s3"
+          ]
+        },
+        {
+          "id": "zf-9hp48-052-m2",
+          "title": "Checking only the sleeve",
+          "what": "Inspects the A dog sleeve but not the mating spline on the 3-sun/4-ring gear.",
+          "consequence": "A worn spline on the mating gear chews up a new sleeve and the dog fault returns.",
+          "prevent": "Inspect the 3-sun/4-ring spline as closely as the sleeve and reject either if worn.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-052-m3",
+          "title": "Not measuring sleeve travel",
+          "what": "Judges A dog sleeve freedom by feel alone.",
+          "consequence": "A sleeve that binds partway passes on the bench and fails to complete its travel in the vehicle.",
+          "prevent": "Slide the sleeve through its full range and confirm the travel with a dial caliper.",
+          "severity": "costly",
+          "sourceIds": [
+            "s6"
+          ]
+        }
       ],
       "components": [
         "a-dog",
@@ -1436,6 +2678,42 @@
       "why": "A loose or broken screw stops the piston's full travel, gives erratic sensor readings and grinds the dog.",
       "critical": true,
       "mistake": "Assuming the A dog is fine because the splines look good.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-053-m1",
+          "title": "Trusting good-looking splines",
+          "what": "Assumes the A dog is fine because the splines look good and skips the sensing valve screw.",
+          "consequence": "A loose or broken sensing plate screw stops full piston travel, gives erratic sensor readings and grinds the dog.",
+          "prevent": "Check the screw is tight and intact on every unit, whatever the splines look like.",
+          "severity": "costly",
+          "sourceIds": [
+            "s3"
+          ]
+        },
+        {
+          "id": "zf-9hp48-053-m2",
+          "title": "Retightening a damaged screw",
+          "what": "Snugs up a loose sensing plate screw whose head is damaged and reuses the shaft.",
+          "consequence": "The damaged screw backs out again in service and the A dog failure repeats.",
+          "prevent": "Treat a loose or damaged screw as a failed input shaft and replace the assembly.",
+          "severity": "costly",
+          "sourceIds": [
+            "s3",
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-053-m3",
+          "title": "Mistaking the loose pin for damage",
+          "what": "Sees the hardened pin through the sensing valve move freely and thinks it is broken.",
+          "consequence": "Good parts get replaced; that pin is loosely held by design.",
+          "prevent": "Know that the pin passes loosely through the valve and judge the screw and travel instead.",
+          "severity": "minor",
+          "sourceIds": [
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "a-dog",
         "input-shaft"
@@ -1451,6 +2729,30 @@
       "title": "Air-test A dog travel",
       "action": "Hold the input shaft upright, apply air to the apply side and confirm the sleeve travels fully with little leakage, then confirm it returns.",
       "why": "If it fails, the fix is a complete input shaft assembly; the parts are not serviced separately.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-054-m1",
+          "title": "Passing a slow return",
+          "what": "Accepts an A dog that applies on air but returns slowly or not fully.",
+          "consequence": "In the vehicle the sleeve does not release on time, setting clutch position errors such as P0810.",
+          "prevent": "Require full travel both ways with little leakage, holding the shaft upright as you test.",
+          "severity": "costly",
+          "sourceIds": [
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-054-m2",
+          "title": "Fitting the wrong input shaft",
+          "what": "Replaces a failed input shaft with one listed for the Chrysler 948TE.",
+          "consequence": "Chrysler shafts have no orificed tip while other applications do, so the A dog circuit behaves differently.",
+          "prevent": "Match the replacement shaft to the 9HP48 variant and compare the tip with the old shaft before fitting.",
+          "severity": "costly",
+          "sourceIds": [
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "a-dog",
         "input-shaft"
@@ -1465,6 +2767,42 @@
       "phase": "inspect",
       "title": "Inspect F dog and sun",
       "action": "Check the F dog sleeve, its two sealing rings and the synchro splines on the shared sun gear of sets 1 and 2.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-055-m1",
+          "title": "Ignoring F dog sealing rings",
+          "what": "Reuses the F dog sealing rings because they look intact.",
+          "consequence": "Leaking rings slow the F dog's travel and its position fault returns.",
+          "prevent": "Replace the F dog rings and check their grooves.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s3"
+          ]
+        },
+        {
+          "id": "zf-9hp48-055-m2",
+          "title": "Missing a blocked sensing hole",
+          "what": "Doesn't clean and check the F dog sensing hole.",
+          "consequence": "With the hole blocked, the pressure sensor cannot tell when the F dog has finished moving, and the TCM sets position faults.",
+          "prevent": "Blow through the sensing hole and confirm it is clear.",
+          "severity": "rework",
+          "sourceIds": [
+            "s3"
+          ]
+        },
+        {
+          "id": "zf-9hp48-055-m3",
+          "title": "Passing worn sun gear splines",
+          "what": "Doesn't inspect the dog splines on the shared sun of sets 1 and 2.",
+          "consequence": "A worn sun spline ratchets against a new F dog sleeve.",
+          "prevent": "Inspect the sun splines as closely as the sleeve.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "f-dog",
         "planetary-1-2"
@@ -1490,6 +2828,31 @@
           "s3"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-056-m1",
+          "title": "Testing the sensor with an ohmmeter",
+          "what": "Checks the dog clutch pressure sensor with an ohmmeter.",
+          "consequence": "It is a powered Hall-effect sensor, so the reading means nothing and a good sensor is scrapped or a bad one passed.",
+          "prevent": "Power it from a bench supply, apply air and watch the output change.",
+          "severity": "minor",
+          "sourceIds": [
+            "s7",
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-056-m2",
+          "title": "Skipping the sensor test",
+          "what": "Reinstalls the original sensor untested after a dog clutch fault.",
+          "consequence": "If the sensor was the fault, dog position codes come back and the valve body has to come off again.",
+          "prevent": "Bench-test the dog pressure sensor on every rebuild done for a dog-related fault.",
+          "severity": "rework",
+          "sourceIds": [
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "pressure-sensor"
       ],
@@ -1506,6 +2869,42 @@
       "title": "Inspect valve body bores",
       "action": "Check the pressure regulator, the SV-SP valve and the A/F dog plunger valve sleeves for bore wear and sticking.",
       "why": "Worn plunger sleeves let dog clutch pressure overlap or exhaust early; SV-SP wear upsets line pressure.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-057-m1",
+          "title": "Overlooking the SV-SP valve",
+          "what": "Checks the pressure regulator bore but not the SV-SP valve that feeds it.",
+          "consequence": "The SV-SP valve feeds the regulator, so its wear upsets line pressure, shift quality and clutch life.",
+          "prevent": "Inspect and vacuum-test the SV-SP bore along with the pressure regulator bores.",
+          "severity": "costly",
+          "sourceIds": [
+            "s4"
+          ]
+        },
+        {
+          "id": "zf-9hp48-057-m2",
+          "title": "Judging bores by feel only",
+          "what": "Decides a valve bore is fine because the valve slides freely.",
+          "consequence": "Bore wear that leaks pressure goes undetected and line pressure regulation stays poor.",
+          "prevent": "Vacuum-test the specified bores and fix any that will not hold.",
+          "detect": "A bore that will not hold vacuum at its test port.",
+          "severity": "costly",
+          "sourceIds": [
+            "s29"
+          ]
+        },
+        {
+          "id": "zf-9hp48-057-m3",
+          "title": "Passing scratched plunger sleeves",
+          "what": "Reuses A/F dog plunger valve sleeves with visible scratches.",
+          "consequence": "Worn sleeves let dog clutch pressure overlap or exhaust early, giving delayed engagement and loss of higher gears.",
+          "prevent": "Replace the plunger valves and sleeves when the sleeve bore or valve shows wear.",
+          "severity": "costly",
+          "sourceIds": [
+            "s21"
+          ]
+        }
+      ],
       "components": [
         "valve-body"
       ],
@@ -1520,6 +2919,43 @@
       "phase": "inspect",
       "title": "Inspect pump, chain, sprockets",
       "action": "Check the vane pump faces, vanes and rotor, the chain for stretch, and the drive gear's four flats where the converter hub engages.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-058-m1",
+          "title": "Reusing a stretched pump chain",
+          "what": "Refits the pump drive chain without checking it for stretch and wear.",
+          "consequence": "A worn pump chain whines or slaps and can upset how steadily the pump is driven.",
+          "prevent": "Compare the chain with a new one and replace it if it is stretched.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-058-m2",
+          "title": "Missing worn drive flats",
+          "what": "Doesn't check the four flats on the pump drive gear where the converter hub engages.",
+          "consequence": "Worn flats slip or break under load, and the pump stops delivering.",
+          "prevent": "Inspect the flats and the converter hub drive for wear and replace worn parts.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-058-m3",
+          "title": "Ignoring scored pump faces",
+          "what": "Reuses a pump with scored faces or a worn rotor.",
+          "consequence": "Pump output drops, and line pressure is low at hot idle.",
+          "prevent": "Check the pump faces, rotor and vanes and replace the pump if they are scored.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "oil-pump",
         "pump-chain"
@@ -1535,6 +2971,31 @@
       "phase": "inspect",
       "title": "Inspect planetaries and thrust bearings",
       "action": "Spin each planetary pinion for roughness and end play, and check every needle thrust bearing and washer.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-059-m1",
+          "title": "Passing heat-blued pinions",
+          "what": "Reuses a carrier with discoloured pinions or rough-spinning gears.",
+          "consequence": "Overheated pinions fail early and send needles and metal through the new unit.",
+          "prevent": "Spin each pinion and check end play; replace a carrier with any roughness or heat marks.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-059-m2",
+          "title": "Reusing pitted thrust bearings",
+          "what": "Reuses needle thrust bearings with pitting or flat spots.",
+          "consequence": "Pitted needle bearings get noisy and can break up, spreading metal through the geartrain.",
+          "prevent": "Replace any needle thrust bearing that feels rough when spun or shows marks on its races.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "planetary-1-2",
         "planetary-3-4"
@@ -1550,6 +3011,30 @@
       "phase": "inspect",
       "title": "Inspect bushings and ring lands",
       "action": "Check bushings, sealing ring grooves, the pressed-in steel sealing-ring support in the case and the stator support ring lands.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-060-m1",
+          "title": "Missing worn ring grooves",
+          "what": "Fits new sealing rings into worn ring grooves.",
+          "consequence": "The rings leak in worn grooves, and the clutch they feed slips.",
+          "prevent": "Check each groove's sides for steps and wear before fitting new rings.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-060-m2",
+          "title": "Ignoring the pressed-in ring support",
+          "what": "Doesn't check the steel sealing-ring support pressed into the case.",
+          "consequence": "A loose or worn support leaks past its rings and starves the circuit.",
+          "prevent": "Check the support for movement and wear with the case bare.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "case",
         "stator-support",
@@ -1565,6 +3050,42 @@
       "phase": "inspect",
       "title": "Inspect pistons, springs, drums",
       "action": "Check the C, D and B aluminum pistons, the bonded E piston, every Belleville spring and the drum splines for cracks, distortion and wear.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-061-m1",
+          "title": "Reusing a tired Belleville spring",
+          "what": "Reuses a Belleville spring without comparing its cone height with a new one.",
+          "consequence": "A flattened spring releases its piston slowly, giving drag and heat in that pack.",
+          "prevent": "Compare each spring with a new part and replace any that have lost height or show cracks.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-061-m2",
+          "title": "Missing a cracked piston",
+          "what": "Washes an aluminium piston and puts it back without close inspection.",
+          "consequence": "A hairline crack leaks apply oil, and the pack slips and burns.",
+          "prevent": "Inspect each piston under bright light and replace any with cracks or nicks.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-061-m3",
+          "title": "Ignoring notched drum splines",
+          "what": "Passes a drum with notches worn into its splines.",
+          "consequence": "Plates hang in the notches instead of sliding freely, causing drag or harsh apply.",
+          "prevent": "Run a fingernail across each drum spline and replace any drum with notches.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "b-clutch",
         "c-brake",
@@ -1582,6 +3103,43 @@
       "phase": "inspect",
       "title": "Inspect final drive and park",
       "action": "Check transfer gear and differential tapered bearings, the park gear teeth and pawl, and the park rod cam.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-062-m1",
+          "title": "Passing a worn park pawl",
+          "what": "Reuses a park pawl or park gear with worn engagement faces.",
+          "consequence": "The pawl can ratchet out of the park gear, so the vehicle may roll while in Park.",
+          "prevent": "Check the pawl nose and park gear teeth closely and replace worn parts.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-062-m2",
+          "title": "Reusing pitted final drive bearings",
+          "what": "Puts pitted transfer gear or differential tapered bearings back in.",
+          "consequence": "The final drive whines on the road and needs a second teardown to replace the bearings.",
+          "prevent": "Replace any transfer gear or differential tapered bearing that is rough, pitted or discoloured.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-062-m3",
+          "title": "Not checking park rod movement",
+          "what": "Doesn't check the park rod and cam for free movement.",
+          "consequence": "A sticky park linkage contributes to stuck-in-Park complaints after the rebuild.",
+          "prevent": "Work the linkage through its range by hand and check it returns cleanly.",
+          "severity": "rework",
+          "sourceIds": [
+            "s6",
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "transfer-gear",
         "differential",
@@ -1598,6 +3156,30 @@
       "phase": "inspect",
       "title": "Check sensors and connector plate",
       "action": "Check speed sensors, range sensor and connector plate wiring for chafing, heat damage and bad terminals.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-063-m1",
+          "title": "Not checking terminal crimps",
+          "what": "Looks at the internal wiring but doesn't test the terminal crimps.",
+          "consequence": "Poor crimps in the transmission harness caused sudden shifts to neutral on early units, a safety recall.",
+          "prevent": "Inspect and gently pull-test each terminal and replace any harness section with a loose crimp.",
+          "severity": "costly",
+          "sourceIds": [
+            "s34"
+          ]
+        },
+        {
+          "id": "zf-9hp48-063-m2",
+          "title": "Ignoring heat-damaged wiring",
+          "what": "Passes connector plate wiring with brittle or chafed insulation.",
+          "consequence": "Brittle or chafed wiring shorts or opens later, giving intermittent sensor and solenoid codes.",
+          "prevent": "Replace the connector plate or harness section when the insulation is damaged.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "speed-sensors",
         "range-sensor",
@@ -1614,6 +3196,42 @@
       "title": "Judge the torque converter",
       "action": "Decide whether the converter can be reused or should go to a converter rebuilder or be replaced with a remanufactured unit.",
       "why": "Lockup is used in every gear, so a worn lockup clutch shows up as shudder; debris left in it re-contaminates the new parts.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-064-m1",
+          "title": "Reusing a contaminated converter",
+          "what": "Puts the old converter back after a failure that made debris.",
+          "consequence": "Debris trapped inside the converter washes out into the new frictions, bushings and valve body.",
+          "prevent": "Send the converter out for cleaning and rebuild, or replace it, when the fluid showed debris.",
+          "severity": "costly",
+          "sourceIds": [
+            "s4"
+          ]
+        },
+        {
+          "id": "zf-9hp48-064-m2",
+          "title": "Ignoring lockup shudder history",
+          "what": "Reuses the converter without asking about shudder before the rebuild.",
+          "consequence": "Lockup is used in every gear, so a worn lockup clutch shudders after the rebuild and gets blamed on it.",
+          "prevent": "Ask about shudder and send the converter out if there was any.",
+          "severity": "costly",
+          "sourceIds": [
+            "s4"
+          ]
+        },
+        {
+          "id": "zf-9hp48-064-m3",
+          "title": "Not checking the hub drive",
+          "what": "Doesn't inspect the converter hub's drive flats and seal surface.",
+          "consequence": "A worn hub slips in the pump drive or leaks past the new seal.",
+          "prevent": "Inspect the hub flats and sealing surface and replace the converter if they are worn.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "torque-converter"
       ],
@@ -1630,6 +3248,43 @@
       "why": "Every tube O-ring, the bell housing gasket and the tube seal are single-use.",
       "critical": true,
       "mistake": "Reusing tube O-rings that look fine but have taken a set.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-065-m1",
+          "title": "Reusing tube O-rings",
+          "what": "Reuses tube O-rings that look fine but have taken a set.",
+          "consequence": "A hardened O-ring leaks a clutch or lube feed, causing slip or wear.",
+          "prevent": "Replace every tube O-ring and gasket, whatever they look like.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-065-m2",
+          "title": "Keeping the old C snap ring",
+          "what": "Puts the C piston snap ring back in the reuse pile.",
+          "consequence": "FCA's C snap ring fix used a new ring, and a ring that dislodges leaves C stuck on.",
+          "prevent": "Treat the C piston snap ring as single-use and order a new one with the kit.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-065-m3",
+          "title": "Using a 948TE kit unchecked",
+          "what": "Orders a rebuild kit listed for the 948TE and assumes it all fits the JLR 9HP48.",
+          "consequence": "Some parts differ, such as plunger valve diameters by park type, so the wrong part goes in.",
+          "prevent": "Check each kit part against the old one before assembly.",
+          "severity": "costly",
+          "sourceIds": [
+            "s21",
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "feed-tubes",
         "case-gasket",
@@ -1651,6 +3306,41 @@
       "why": "A misaligned manual valve leaves the selector and valve body out of step.",
       "critical": true,
       "mistake": "Reassembling the valve body with the manual valve turned wrong.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-066-m1",
+          "title": "Manual valve turned wrong",
+          "what": "Reassembles the valve body with the manual valve rotated off its notches.",
+          "consequence": "The selector and valve body are out of step and park or gear selection is wrong.",
+          "prevent": "Line the manual valve up with its notches and check it before closing the valve body.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-066-m2",
+          "title": "Oversize valve without reaming",
+          "what": "Drops an oversize repair valve into a worn bore without reaming it.",
+          "consequence": "The valve does not fit or still leaks, and line pressure stays wrong.",
+          "prevent": "Ream the bore with the kit's tool kit, clean it, then fit the valve.",
+          "severity": "costly",
+          "sourceIds": [
+            "s29"
+          ]
+        },
+        {
+          "id": "zf-9hp48-066-m3",
+          "title": "Wrong plunger size for park type",
+          "what": "Fits A/F dog plunger valves without checking whether the valve body is park-by-wire or park-by-cable.",
+          "consequence": "The two use different plunger diameters, so the wrong valve leaks or binds.",
+          "prevent": "Measure the old plunger and match the kit to it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s21"
+          ]
+        }
+      ],
       "components": [
         "valve-body"
       ],
@@ -1666,6 +3356,42 @@
       "phase": "subassembly",
       "title": "Refit solenoids and connector plate",
       "action": "Install each solenoid in its marked bore and refit the connector plate, routing the sensor wires as photographed.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-067-m1",
+          "title": "Solenoid in the wrong bore",
+          "what": "Installs a solenoid in a bore other than the one it came from.",
+          "consequence": "The solenoid drives the wrong element, giving harsh shifts, wrong gears or a tie-up.",
+          "prevent": "Match each solenoid to the bore marked at teardown before you push it in.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-067-m2",
+          "title": "Pinching a solenoid O-ring",
+          "what": "Pushes a solenoid into its bore with a dry or rolled O-ring.",
+          "consequence": "The cut O-ring leaks control pressure, and the element that solenoid controls slips.",
+          "prevent": "Lube each solenoid O-ring and push the solenoid in straight, not at an angle.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2",
+            "s39"
+          ]
+        },
+        {
+          "id": "zf-9hp48-067-m3",
+          "title": "Routing wires into a pinch point",
+          "what": "Routes the connector plate wires differently from the photos.",
+          "consequence": "The cover or valve body pinches a wire, causing sensor or solenoid codes.",
+          "prevent": "Route every connector plate wire exactly as the teardown photos show.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "valve-body",
         "speed-sensors",
@@ -1687,6 +3413,30 @@
         "O2-sensor socket as a pusher"
       ],
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-068-m1",
+          "title": "Dished plate upside down",
+          "what": "Fits the dished back plate the wrong way up.",
+          "consequence": "The pump loses its built-in preload, so its output drops and line pressure suffers.",
+          "prevent": "Fit the plate the way it was marked and confirm it before clamping.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-068-m2",
+          "title": "Pump clip not fully seated",
+          "what": "Releases the press before the pump clip is fully in its groove.",
+          "consequence": "The pump can come apart in service and lose pressure, burning every pack.",
+          "prevent": "Recompress the plate and check the clip is fully seated all round.",
+          "severity": "ruins-unit",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "oil-pump"
       ],
@@ -1703,6 +3453,42 @@
       "why": "The pump body only seats one way; 180 degrees off and it will not sit down.",
       "critical": true,
       "mistake": "Seating the pump body rotated 180 degrees.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-069-m1",
+          "title": "Pump seated 180 degrees off",
+          "what": "Tries to seat the pump with its raised lip turned the wrong way.",
+          "consequence": "It will not sit down, and forcing it damages the pump or its pocket.",
+          "prevent": "Line up the raised lip with its mating feature before pressing.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-069-m2",
+          "title": "Rolling the pump O-ring",
+          "what": "Seats the pump with a dry O-ring that rolls in the pocket.",
+          "consequence": "The pump draws air past the rolled O-ring, aerating the fluid and dropping pressure.",
+          "prevent": "Lube the pump O-rings and press the pump in straight so they cannot roll.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s39"
+          ]
+        },
+        {
+          "id": "zf-9hp48-069-m3",
+          "title": "Chain refitted flipped",
+          "what": "Refits a reused chain with its marked face turned in.",
+          "consequence": "The chain runs on fresh wear surfaces, gets noisy and wears fast.",
+          "prevent": "Fit the chain with its mark facing out as recorded.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "oil-pump",
         "pump-chain"
@@ -1718,6 +3504,41 @@
       "phase": "subassembly",
       "title": "Fit new filter and seal",
       "action": "Push the new filter's outlet neck with new O-rings into the pump housing, and install a new converter hub seal and its snap ring.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-070-m1",
+          "title": "Filter neck not fully home",
+          "what": "Leaves the filter outlet neck short of fully seated in the pump housing.",
+          "consequence": "Air leaks in at the filter neck, so the fluid aerates and pressure drops under load.",
+          "prevent": "Push the neck fully home with lubed O-rings and check it is seated.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-070-m2",
+          "title": "Hub seal driven crooked",
+          "what": "Drives the converter hub seal in at an angle or too deep.",
+          "consequence": "The seal leaks at the converter and the unit has to come out again.",
+          "prevent": "Drive the seal square with the correct installer to its stop.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-070-m3",
+          "title": "Forgetting the seal snap ring",
+          "what": "Leaves out the hub seal's snap ring.",
+          "consequence": "The hub seal walks out of its bore and the unit dumps fluid at the converter.",
+          "prevent": "Fit the hub seal snap ring and run a pick around it to check it is seated.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "oil-filter",
         "converter-seal"
@@ -1732,6 +3553,20 @@
       "phase": "subassembly",
       "title": "Bolt in the stator support",
       "action": "Bolt the stator support to the bell housing with new sealing rings.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-071-m1",
+          "title": "Cutting the support sealing rings",
+          "what": "Over-stretches or cuts the stator support sealing rings during install.",
+          "consequence": "The E clutch leaks apply oil, slipping in gears 4 to 9.",
+          "prevent": "Stretch the rings gently, size them down after fitting, and coat with assembly lube.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s39"
+          ]
+        }
+      ],
       "components": [
         "stator-support"
       ],
@@ -1745,6 +3580,30 @@
       "phase": "subassembly",
       "title": "Rebuild E clutch drum",
       "action": "Fit the bonded piston, Belleville spring and retainer, then the segmented frictions, steels and cushion spring, and the selective snap ring.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-072-m1",
+          "title": "Installing frictions dry",
+          "what": "Stacks new E clutch frictions without soaking them.",
+          "consequence": "Dry E frictions overheat and glaze on the first shifts, shortening the new pack's life.",
+          "prevent": "Soak every new E friction in LifeguardFluid 9 before stacking it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s38"
+          ]
+        },
+        {
+          "id": "zf-9hp48-072-m2",
+          "title": "Cushion spring left out",
+          "what": "Builds the E pack without the cushion spring or puts it in the wrong place.",
+          "consequence": "The E clutch applies harshly and the clearance check is wrong.",
+          "prevent": "Fit the cushion spring where the stack layout shows.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "e-clutch"
       ],
@@ -1770,6 +3629,41 @@
       },
       "critical": true,
       "mistake": "Measuring with no load on a cushioned pack and reading it as too loose.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-073-m1",
+          "title": "Measuring an unloaded cushioned pack",
+          "what": "Measures E clearance with no load on the pack.",
+          "consequence": "Cushioned packs compress under load, so the wrong selective ring is chosen and E slips or drags.",
+          "prevent": "Put the specified load on the E pack with a force gauge before taking the reading.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-073-m2",
+          "title": "Forcing a feeler gauge in",
+          "what": "Tries to measure E clearance with a feeler gauge.",
+          "consequence": "There is no room behind the E backing plate, so a feeler reading is false.",
+          "prevent": "Use the two-step method: free clearance first, then dial indicator deflection under load.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-073-m3",
+          "title": "Not seating the pack first",
+          "what": "Measures right after stacking.",
+          "consequence": "A new pack settles after the first applies, so the clearance grows past what you measured.",
+          "prevent": "Apply the clutch several times with air to settle the stack, then measure.",
+          "severity": "rework",
+          "sourceIds": [
+            "s38"
+          ]
+        }
+      ],
       "components": [
         "e-clutch"
       ],
@@ -1783,6 +3677,31 @@
       "phase": "subassembly",
       "title": "Rebuild B clutch drum",
       "action": "Fit the aluminum piston and Belleville spring, then stack the inverted pack with its cushion plate and the selective backing plate.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-074-m1",
+          "title": "Stacking the B pack conventionally",
+          "what": "Builds the B pack in the usual friction-on-hub order instead of its inverted layout with outside-toothed frictions.",
+          "consequence": "The frictions cannot engage their drum splines as designed, so B will not hold in reverse, 3rd, 5th or 9th.",
+          "prevent": "Rebuild the B stack from the layout photos taken at teardown, checking which part carries the outside teeth.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-074-m2",
+          "title": "B cushion plate at the wrong end",
+          "what": "Puts the B cushion plate at the wrong end of the stack or leaves it out.",
+          "consequence": "The B apply becomes harsh and the clearance reading taken next no longer means anything.",
+          "prevent": "Place the cushion plate where the teardown photos show it, before stacking the frictions.",
+          "severity": "rework",
+          "sourceIds": [
+            "s2",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "b-clutch"
       ],
@@ -1807,6 +3726,30 @@
         ]
       },
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-075-m1",
+          "title": "Wrong B spec for friction count",
+          "what": "Measures B clearance against the spec for the other friction count.",
+          "consequence": "B has two specs depending on how many frictions the pack holds, so the wrong one leaves the pack too tight or too loose.",
+          "prevent": "Count the double- and single-sided frictions in the pack and pick the spec that matches that count.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-075-m2",
+          "title": "Measuring B with the input shaft in",
+          "what": "Measures B clearance with the input shaft already installed in the drum.",
+          "consequence": "The shaft gets in the way of the press and the gauge, so the backing plate you choose is wrong.",
+          "prevent": "Assemble the B housing, piston and pack with the input shaft left out, then load and measure.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "b-clutch"
       ],
@@ -1820,6 +3763,31 @@
       "phase": "subassembly",
       "title": "Rebuild output support and F dog",
       "action": "Fit the F dog piston and cover with new seals, slide on the sleeve, then refit the output gear, bearing and nut to the support.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-076-m1",
+          "title": "Cutting F dog piston seals",
+          "what": "Fits the F dog piston and cover seals dry or stretches them over sharp edges.",
+          "consequence": "A cut seal lets the double-acting F dog leak, so it moves slowly or stops partway and sets position faults.",
+          "prevent": "Lube each seal, stretch it evenly, size it down after fitting and check it is not twisted.",
+          "severity": "costly",
+          "sourceIds": [
+            "s3",
+            "s39"
+          ]
+        },
+        {
+          "id": "zf-9hp48-076-m2",
+          "title": "Output gear nut left loose",
+          "what": "Runs the output gear nut down by feel and does not torque or lock it to the service data.",
+          "consequence": "The gear and its bearing loosen on the support, giving gear whine and tooth damage later on.",
+          "prevent": "Torque the nut to the service figure and secure it with the locking method the service data specifies.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2"
+          ]
+        }
+      ],
       "components": [
         "f-dog",
         "output-support"
@@ -1844,6 +3812,31 @@
           "s5"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-077-m1",
+          "title": "Testing the F dog with too little air",
+          "what": "Air-checks the rebuilt F dog at low pressure and sees no movement.",
+          "consequence": "A good F dog looks seized and gets stripped down again for nothing.",
+          "prevent": "Raise regulated air until the piston shuttles, which GEARS found takes around 60 psi on new units.",
+          "severity": "minor",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-077-m2",
+          "title": "Passing a one-way F dog",
+          "what": "Accepts an F dog that shuttles to apply but not back to release, or the other way round.",
+          "consequence": "In the vehicle the F dog stays engaged or disengaged, causing P0810-type position faults and missing gears.",
+          "prevent": "Air both the apply and release ports in turn and require full travel each way.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "f-dog"
       ],
@@ -1857,6 +3850,31 @@
       "phase": "subassembly",
       "title": "Assemble geartrain stack",
       "action": "Join planetary sets 3 and 4 in their housing with the C and D hubs, then install the input shaft with A dog and the B drum.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-078-m1",
+          "title": "Dog teeth assembled out of mesh",
+          "what": "Pushes the input shaft with its A dog into the 3-sun/4-ring housing without the dog teeth lined up.",
+          "consequence": "The dog teeth bind tip to tip or chip, so the A dog cannot complete its travel once the unit is running.",
+          "prevent": "Line the teeth up by eye, slide the dog into mesh by hand, and confirm it moves freely before going on.",
+          "severity": "costly",
+          "sourceIds": [
+            "s2",
+            "s6"
+          ]
+        },
+        {
+          "id": "zf-9hp48-078-m2",
+          "title": "Thrust bearing reversed in the stack",
+          "what": "Fits a needle thrust bearing in the geartrain stack upside down.",
+          "consequence": "End play is off, and the bearing runs on the wrong race and breaks up, sending needles through the unit.",
+          "prevent": "Fit each thrust bearing in the orientation recorded on its tag and in the photos.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "planetary-3-4",
         "input-shaft",
@@ -1883,6 +3901,43 @@
       ],
       "critical": true,
       "mistake": "Compressing the spring off-center and rolling a piston seal.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-079-m1",
+          "title": "Off-center C spring compression",
+          "what": "Compresses the C Belleville spring with the press tool off-center.",
+          "consequence": "The C piston tilts and rolls or cuts a seal, so the C brake leaks and slips in the gears where it holds.",
+          "prevent": "Center the press tool on the spring and bring it down slowly and evenly.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-079-m2",
+          "title": "C piston seals fitted dry",
+          "what": "Sets the C piston into its case bore with no lubricant on the seals.",
+          "consequence": "The seals drag and tear as the piston goes in, and the C brake leaks from the first drive.",
+          "prevent": "Coat the C piston seals generously with assembly gel before seating the piston.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-079-m3",
+          "title": "C Belleville spring reversed",
+          "what": "Fits the C Belleville spring upside down.",
+          "consequence": "The C piston no longer releases correctly, so the brake drags and burns or applies harshly.",
+          "prevent": "Fit the spring with the cone facing the way it was marked during teardown.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "c-brake"
       ],
@@ -1899,6 +3954,31 @@
       "action": "Release the press and confirm the C snap ring is fully seated in its groove all the way round.",
       "why": "FCA issued a bulletin for a C-clutch snap ring on early 948TE units; a half-seated ring here is fatal.",
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-080-m1",
+          "title": "Half-seated C snap ring",
+          "what": "Releases the press with the C snap ring only partly in its groove.",
+          "consequence": "The ring can work out and leave the C brake stuck on, tying the geartrain up and burning the packs.",
+          "prevent": "Release the press slowly and run a pick around the full ring to confirm it sits in the groove all round.",
+          "detect": "Any spot where the ring's edge stands above the groove wall.",
+          "severity": "ruins-unit",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-080-m2",
+          "title": "C ring gap in the old spot",
+          "what": "Fits the new C snap ring with its opening where the original ring's opening was.",
+          "consequence": "The FCA fix places the opening 90 degrees counterclockwise from the original spot, so you lose that improvement.",
+          "prevent": "Mark the original gap position and set the new ring's opening where the bulletin shows.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "c-brake"
       ],
@@ -1912,6 +3992,31 @@
       "phase": "assembly",
       "title": "Install C pack and ring",
       "action": "Stack the C frictions and steels and install the selective snap ring in the case.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-081-m1",
+          "title": "C frictions installed dry",
+          "what": "Stacks new C frictions straight from the box.",
+          "consequence": "Unsoaked friction material overheats and glazes in the first holds, shortening the life of the new C pack.",
+          "prevent": "Soak each new friction in LifeguardFluid 9 for at least the kit maker's minimum time before stacking.",
+          "severity": "costly",
+          "sourceIds": [
+            "s38",
+            "s24"
+          ]
+        },
+        {
+          "id": "zf-9hp48-081-m2",
+          "title": "Wrong plate count in C",
+          "what": "Builds the C brake with a different number of frictions or steels from the original pack.",
+          "consequence": "Pack thickness changes and the clearance spec for the original disc count no longer applies.",
+          "prevent": "Count the removed plates and match the new pack to that count and order.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "c-brake"
       ],
@@ -1935,6 +4040,31 @@
         ]
       },
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-082-m1",
+          "title": "Wrong C spec for disc count",
+          "what": "Reads C clearance against the 3-disc figure on a 2-disc pack.",
+          "consequence": "The C brake is left outside its true range, so it slips or drags in the gears where it holds.",
+          "prevent": "Count the C frictions and use the clearance range for that disc count.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-082-m2",
+          "title": "Measuring C at one point",
+          "what": "Measures C clearance at one spot around the snap ring.",
+          "consequence": "A cocked pack reads fine at one point and wrong elsewhere, so the selective ring you pick can be off.",
+          "prevent": "Measure at four points around the pack under load and use the average.",
+          "severity": "rework",
+          "sourceIds": [
+            "s38",
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "c-brake"
       ],
@@ -1950,6 +4080,30 @@
       "action": "Remove the needle thrust bearing that may still be stuck to the geartrain hub and place it correctly on the oil feed bushing in the case.",
       "why": "A bearing left on the hub ends up out of position and wrecks the stack-up.",
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-083-m1",
+          "title": "Number 8 bearing left on the hub",
+          "what": "Fits the geartrain with the number 8 needle bearing still stuck to its hub.",
+          "consequence": "The bearing lands out of position and is crushed, and every part stacked above it sits wrong.",
+          "prevent": "Pull the bearing off the hub and place it on the oil feed bushing in the case first.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-083-m2",
+          "title": "Number 8 bearing upside down",
+          "what": "Sets the number 8 bearing on the oil feed bushing upside down.",
+          "consequence": "The bearing runs on the wrong face and fails, and input shaft end play comes out wrong.",
+          "prevent": "Match its orientation to the bulletin figure and the tag made at teardown.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "case"
       ],
@@ -1964,6 +4118,19 @@
       "title": "Install D brake pack",
       "action": "Stack the D frictions and steels and line up the friction tabs of the C and D packs.",
       "why": "Aligned tabs let the geartrain hubs drop through both packs.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-084-m1",
+          "title": "C and D friction tabs misaligned",
+          "what": "Stacks the D pack without lining its friction tabs up with the C pack below.",
+          "consequence": "The geartrain hubs will not drop through both packs, and forcing them breaks friction tabs.",
+          "prevent": "Line up the C and D friction tabs with a straightedge or by eye before lowering the geartrain.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "d-brake",
         "c-brake"
@@ -1981,6 +4148,31 @@
       "why": "If the input shaft slips inward or the hubs miss a plate, the stack is wrong and everything above it will be too.",
       "critical": true,
       "mistake": "Forcing the geartrain down without it fully engaging the C and D frictions.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-085-m1",
+          "title": "Forcing the geartrain down",
+          "what": "Pushes the geartrain down before it has engaged both the C and D frictions.",
+          "consequence": "Hubs land on top of the plates, bending tabs, and everything stacked above sits high.",
+          "prevent": "Wriggle the geartrain until it drops with a solid clunk and stop to investigate if it will not.",
+          "detect": "The D hub sits just proud of the D pack once the geartrain is fully down.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-085-m2",
+          "title": "Letting the input shaft slip",
+          "what": "Lets the input shaft slide inward while lowering and wriggling the geartrain.",
+          "consequence": "The B hub and A dog lose their positions, so the stack is wrong before the bell housing even goes on.",
+          "prevent": "Hold the input shaft up firmly while you wriggle and lower the geartrain.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "input-shaft",
         "planetary-3-4",
@@ -1997,6 +4189,30 @@
       "phase": "assembly",
       "title": "Install D piston and retainer",
       "action": "Inspect the piston and retainer O-rings, then fit the D Belleville spring, piston and retainer.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-086-m1",
+          "title": "D O-rings fitted unchecked",
+          "what": "Installs the D piston and retainer without looking closely at their O-rings.",
+          "consequence": "A nicked or twisted O-ring leaks D apply oil, and the D brake slips in the gears where it holds.",
+          "prevent": "Inspect each D O-ring under good light and replace any that are marked, flattened or twisted.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-086-m2",
+          "title": "Retainer O-ring in the ring groove",
+          "what": "Lowers the D retainer without watching its O-ring.",
+          "consequence": "The O-ring drops into the snap ring groove and is cut when the ring goes in.",
+          "prevent": "Gel the O-ring so it stays put and watch it go past the groove as the retainer comes down.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "d-brake"
       ],
@@ -2017,6 +4233,31 @@
         "Miller 10428"
       ],
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-087-m1",
+          "title": "D retainer ring partly seated",
+          "what": "Releases the press with the tabless D snap ring only partly in its groove.",
+          "consequence": "The retainer can pop out under apply pressure and the D brake loses apply oil.",
+          "prevent": "Run a pick around the whole ring before releasing the press and confirm it is fully seated.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-087-m2",
+          "title": "Pressing the D retainer too far",
+          "what": "Keeps pressing the D retainer after its snap ring groove is exposed.",
+          "consequence": "The retainer or Belleville spring distorts, changing how the D piston applies.",
+          "prevent": "Press only until the groove shows, which is a small amount of travel.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "d-brake"
       ],
@@ -2041,6 +4282,30 @@
         ]
       },
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-088-m1",
+          "title": "Skipping the two-step D check",
+          "what": "Tries to feeler-gauge the D pack instead of the two-step measurement.",
+          "consequence": "There is no clean gap to measure, so the D clearance ends up guessed and outside its range.",
+          "prevent": "Measure case lug to snap ring, then the loaded pack thickness, and subtract.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-088-m2",
+          "title": "Shimming D with the snap ring",
+          "what": "Tries to correct D clearance by swapping its snap ring.",
+          "consequence": "D clearance is set by a selective backing plate, so the clearance does not change.",
+          "prevent": "Change the selective backing plate to bring D clearance into range.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "d-brake"
       ],
@@ -2055,6 +4320,30 @@
       "title": "Press on transfer gear bearing",
       "action": "Press the transfer gear bearing back onto its case boss.",
       "why": "It goes back only after the D piston retainer is in, because it blocks the retainer.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-089-m1",
+          "title": "Pressing the bearing through its rollers",
+          "what": "Presses the transfer gear bearing on by pushing on its outer race or cage.",
+          "consequence": "The load passes through the rollers and dents the races, so the bearing whines in service.",
+          "prevent": "Press only on the inner race with a driver that clears the cage.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5"
+          ]
+        },
+        {
+          "id": "zf-9hp48-089-m2",
+          "title": "Bearing fitted before the D retainer",
+          "what": "Presses the transfer gear bearing on before the D piston retainer is locked in.",
+          "consequence": "The bearing blocks the retainer, so it has to be pulled again and may be damaged.",
+          "prevent": "Lock the D retainer in with its snap ring before pressing the bearing on.",
+          "severity": "rework",
+          "sourceIds": [
+            "s5"
+          ]
+        }
+      ],
       "components": [
         "transfer-gear",
         "case"
@@ -2069,6 +4358,19 @@
       "phase": "assembly",
       "title": "Install lower annulus and carrier",
       "action": "Install the gear 3 annulus and carrier assembly.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-090-m1",
+          "title": "Thrust washer left out between sets",
+          "what": "Installs the lower annulus and carrier with a thrust washer missing.",
+          "consequence": "Gears rub where the washer should be, and end play and wear go wrong.",
+          "prevent": "Check every tagged washer and bearing is in the stack before lowering each assembly.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "planetary-1-2",
         "planetary-3-4"
@@ -2083,6 +4385,19 @@
       "phase": "assembly",
       "title": "Install upper annulus and carrier",
       "action": "Install the gear 4 annulus and pinion carrier assembly.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-091-m1",
+          "title": "Upper carrier sitting high",
+          "what": "Leaves the upper annulus and carrier sitting high instead of fully engaged.",
+          "consequence": "The output support and E clutch above will not line up, and the bell housing will not seat.",
+          "prevent": "Turn the carrier until it drops fully and compare its height with the teardown photos.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "planetary-1-2"
       ],
@@ -2099,6 +4414,30 @@
       "why": "Misaligned orifices block the oblong tubes that feed the F dog.",
       "critical": true,
       "mistake": "Setting the support down a tooth off so the tube orifices do not line up.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-092-m1",
+          "title": "Output support a tooth off",
+          "what": "Sets the output gear support onto the carrier with its tube orifices out of line.",
+          "consequence": "The oblong tubes cannot feed the support, so the F dog is starved and will not move.",
+          "prevent": "Line up the tube orifices with the case tube positions before you seat the support.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-092-m2",
+          "title": "Output support teeth half-meshed",
+          "what": "Leaves the output support's lower teeth only partly meshed with the carrier.",
+          "consequence": "The support sits high and the bell housing is pulled down onto it.",
+          "prevent": "Check the lower teeth are fully engaged before you go on.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "output-support",
         "planetary-1-2",
@@ -2114,6 +4453,19 @@
       "phase": "assembly",
       "title": "Install E clutch onto support",
       "action": "Holding the E plates in their hub, set the E clutch and hub onto the output gear support.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-093-m1",
+          "title": "E plates dropping from the hub",
+          "what": "Moves the E clutch and hub onto the support without holding the plates in place.",
+          "consequence": "Plates slip out of the hub, and the bell housing will not seat over a misaligned E pack.",
+          "prevent": "Hold the E plates in their hub with your fingers while setting the assembly down.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "e-clutch",
         "output-support"
@@ -2129,6 +4481,19 @@
       "title": "Install transfer gear and differential",
       "action": "Install the transfer gear on its bearing meshed with the output gear, then the differential meshed with the transfer pinion.",
       "why": "Reverse of removal: the transfer gear must be in before the differential can mesh with it.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-094-m1",
+          "title": "Differential before the transfer gear",
+          "what": "Drops the differential in before the transfer gear is on its bearing.",
+          "consequence": "The transfer gear can no longer go in meshed with both gears, so the differential has to come out again.",
+          "prevent": "Fit the transfer gear meshed with the output gear first, then the differential.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "transfer-gear",
         "differential"
@@ -2145,6 +4510,43 @@
       "action": "Install a new fluid port tube seal in the case and lay a new bell housing gasket on the case face.",
       "critical": true,
       "mistake": "Leaving out the new tube seal between case and bell housing.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-095-m1",
+          "title": "Leaving out the new tube seal",
+          "what": "Lays the bell housing gasket down and forgets the new fluid port tube seal.",
+          "consequence": "Oil leaks between case and bell housing at that port, and fixing it means splitting the unit again.",
+          "prevent": "Fit the tube seal first and tick it off on the job card before the gasket goes down.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-095-m2",
+          "title": "Reusing the bell housing gasket",
+          "what": "Puts the old rubber-coated steel bell housing gasket back.",
+          "consequence": "The case-to-converter-housing joint, a JLR-listed leak point, seeps fluid until the unit runs low.",
+          "prevent": "Fit a new bell housing gasket every time the housing is split.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1",
+            "s13"
+          ]
+        },
+        {
+          "id": "zf-9hp48-095-m3",
+          "title": "Tube seal standing proud",
+          "what": "Leaves the new tube seal sitting above its bore.",
+          "consequence": "The bell housing crushes the seal as it comes down, and that port leaks even though the seal is new.",
+          "prevent": "Press the seal fully home and check it is flush before the housing goes on.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "case-gasket"
       ],
@@ -2164,6 +4566,43 @@
         "Assembly gel"
       ],
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-096-m1",
+          "title": "Cutting stator support rings",
+          "what": "Lowers the bell housing with the stator support sealing rings dry.",
+          "consequence": "The E drum slices the rings as it slides on, and the E clutch leaks apply oil in 4th to 9th.",
+          "prevent": "Grease the stator support rings so they stay sized and centred as the E drum slides over them.",
+          "severity": "costly",
+          "sourceIds": [
+            "s5",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-096-m2",
+          "title": "Forcing the housing past its pins",
+          "what": "Pushes the bell housing down when it hangs up instead of turning the output support and E clutch.",
+          "consequence": "Tubes, rings or the support teeth are crushed between housing and case.",
+          "prevent": "Rotate the output support and E clutch slightly until the guide pins drop into their holes by weight alone.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s37"
+          ]
+        },
+        {
+          "id": "zf-9hp48-096-m3",
+          "title": "Gasket shifting off its dowels",
+          "what": "Lowers the bell housing without checking the gasket is still on its dowels.",
+          "consequence": "A shifted gasket pinches under the flange and the joint leaks.",
+          "prevent": "Check the gasket sits flat on its dowels just before the housing comes down.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "bell-housing",
         "output-support",
@@ -2191,6 +4630,41 @@
           "s9"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-097-m1",
+          "title": "Outer bell bolts torqued first",
+          "what": "Torques the outer perimeter bolts before the inner bolts.",
+          "consequence": "The housing is pulled down unevenly over the output support and E clutch, risking binding and a weeping joint.",
+          "prevent": "Hand-start all the bolts, then torque the inner bolts in sequence before the outer ones.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-097-m2",
+          "title": "Using the 948TE torque unchecked",
+          "what": "Uses the FCA 948TE bell housing torque figure without checking it for the JLR unit.",
+          "consequence": "If the JLR value differs, the joint ends up over- or under-clamped.",
+          "prevent": "Check the torque in the JLR or ZF data and note which figure you used.",
+          "severity": "minor",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-097-m3",
+          "title": "Bell bolt in the wrong hole",
+          "what": "Starts a bell housing bolt in a hole meant for a different length.",
+          "consequence": "A long bolt bottoms before clamping and a short one pulls threads out of the aluminium case.",
+          "prevent": "Take bolts from the hole-pattern template one at a time.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "bell-housing",
         "case"
@@ -2207,6 +4681,30 @@
       "action": "Check the input shaft end play and that the shaft turns with slight resistance.",
       "why": "Zero end play or a bound shaft means a misplaced bearing or a hub not fully engaged; open it now, not after fill.",
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-098-m1",
+          "title": "Skipping the end play check",
+          "what": "Moves on to the valve body without checking input shaft end play.",
+          "consequence": "A misplaced thrust bearing or unseated hub goes unnoticed until the unit is installed and filled.",
+          "prevent": "Check end play and that the shaft turns with slight resistance before any more parts go on.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-098-m2",
+          "title": "Ignoring a bound input shaft",
+          "what": "Notes that the input shaft is tight or will not turn and carries on.",
+          "consequence": "A hub is sitting on a plate instead of engaged, which burns that pack on the first drive.",
+          "prevent": "Split the housing now and find the hub that has not engaged.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "input-shaft"
       ],
@@ -2225,6 +4723,31 @@
         "Seal installer",
         "Driver handle"
       ],
+      "mistakes": [
+        {
+          "id": "zf-9hp48-099-m1",
+          "title": "Differential seal driven cocked",
+          "what": "Drives a differential seal in at an angle.",
+          "consequence": "The lip runs off-centre on the halfshaft and leaks fluid at the axle.",
+          "prevent": "Use the correct seal installer and drive the seal square against its stop.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-099-m2",
+          "title": "Not checking the sealing plug",
+          "what": "Closes up without checking the right-hand internal differential sealing plug.",
+          "consequence": "If the plug is missing, the transmission-to-differential joint leaks once the PTU is fitted.",
+          "prevent": "Confirm the plug is in place before the PTU goes on.",
+          "detect": "The differential cross pin is visible through the bore when the plug is missing.",
+          "severity": "costly",
+          "sourceIds": [
+            "s30"
+          ]
+        }
+      ],
       "components": [
         "diff-seals"
       ],
@@ -2240,6 +4763,43 @@
       "action": "Install the valve body connecting tubes in the case with new O-rings, with the two oblong tubes turned the right way.",
       "critical": true,
       "mistake": "Fitting an oblong tube rotated so it starves the output support circuit.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-100-m1",
+          "title": "Oblong tube turned wrong",
+          "what": "Fits an oblong connecting tube rotated from its recorded position.",
+          "consequence": "The tube blocks the output support circuit, so the F dog is starved and will not move.",
+          "prevent": "Turn each oblong tube to match the teardown photos before pressing it home.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9",
+            "s2"
+          ]
+        },
+        {
+          "id": "zf-9hp48-100-m2",
+          "title": "Cutting tube O-rings on entry",
+          "what": "Pushes connecting tubes into the case with dry new O-rings.",
+          "consequence": "An O-ring is sliced on the bore edge and that circuit leaks under pressure.",
+          "prevent": "Lube each O-ring lightly and push the tubes in straight.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9",
+            "s39"
+          ]
+        },
+        {
+          "id": "zf-9hp48-100-m3",
+          "title": "Leaving a connecting tube out",
+          "what": "Installs the connecting tubes from memory and misses one.",
+          "consequence": "The circuit it feeds has no supply, so its element will not apply at all.",
+          "prevent": "Check the tube count against the list made at teardown before fitting the valve body.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "feed-tubes"
       ],
@@ -2255,6 +4815,30 @@
       "title": "Fit large tubes to valve body",
       "action": "Install the two larger transfer tubes and the filter bypass tube into the valve body with new O-rings.",
       "why": "The bypass tube gives instant pressure on restart after an auto stop; a leak here shows as slow drive-away.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-101-m1",
+          "title": "Bypass tube missing or leaking",
+          "what": "Leaves out the filter bypass tube or fits it with an old O-ring.",
+          "consequence": "Drive-away is slow after an engine auto stop, because the bypass that gives fast pressure on restart is missing.",
+          "prevent": "Fit the bypass tube with new O-rings and tick it off with the other tubes.",
+          "severity": "rework",
+          "sourceIds": [
+            "s1"
+          ]
+        },
+        {
+          "id": "zf-9hp48-101-m2",
+          "title": "Rolled O-ring on a large tube",
+          "what": "Pushes one of the large transfer tubes into the valve body with a rolled O-ring.",
+          "consequence": "The tube leaks a high-flow circuit, dropping pressure to the elements it feeds.",
+          "prevent": "Lube the O-ring and push the tube in straight, checking the ring is not twisted.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "feed-tubes",
         "oil-filter",
@@ -2280,6 +4864,30 @@
           "s9"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-102-m1",
+          "title": "Overtightened sensor bolts",
+          "what": "Tightens the range and speed sensor bolts by feel with a long ratchet.",
+          "consequence": "These small bolts take a low torque, so the threads in the case strip or the sensor body cracks.",
+          "prevent": "Torque the sensor bolts to the small figure in the service data with a suitable wrench.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-102-m2",
+          "title": "Sensor harness pinched underneath",
+          "what": "Lets the sensor harness slip under the valve body while fitting the sensors.",
+          "consequence": "The wire is crushed as the valve body seats and range or speed codes follow.",
+          "prevent": "Route the harness clear and hold it aside while lowering the valve body.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "range-sensor",
         "speed-sensors"
@@ -2296,6 +4904,30 @@
       "action": "Line the valve body up over the tubes, guide the manual lever cam into the manual valve slot, and press it into place evenly.",
       "critical": true,
       "mistake": "Missing the manual valve slot so park and gear selection are wrong.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-103-m1",
+          "title": "Missing the manual valve slot",
+          "what": "Seats the valve body with the manual lever cam beside the manual valve slot instead of in it.",
+          "consequence": "The valve body ignores the selector, so Park and gear selection are wrong and the cam can break.",
+          "prevent": "Guide the cam into the slot before pressing the valve body down and check the lever moves the valve.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-103-m2",
+          "title": "Bolting the valve body down",
+          "what": "Uses the valve body bolts to pull it down onto the connecting tubes.",
+          "consequence": "The valve body cocks on the tubes, cutting O-rings and possibly cracking the casting.",
+          "prevent": "Press the valve body on evenly by hand until it sits flat, then fit the bolts.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "valve-body",
         "feed-tubes"
@@ -2319,6 +4951,41 @@
           "s9"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-104-m1",
+          "title": "Valve body torqued out of sequence",
+          "what": "Torques the valve body bolts in no particular order.",
+          "consequence": "The casting distorts and valves bind in their bores, causing sticky or erratic shifts.",
+          "prevent": "Torque the bolts in the published sequence, in stages.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-104-m2",
+          "title": "Valve body bolts swapped by length",
+          "what": "Puts a long valve body bolt in a short hole.",
+          "consequence": "The bolt bottoms out without clamping, or pushes into a passage and cracks the valve body.",
+          "prevent": "Take each bolt from its slot in the template and check its length before starting it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-104-m3",
+          "title": "Stripping valve body threads",
+          "what": "Overshoots the valve body bolt torque with an uncalibrated wrench.",
+          "consequence": "Threads in the aluminium case pull out and need thread inserts before the valve body can be clamped.",
+          "prevent": "Use a calibrated small-range torque wrench for every valve body bolt.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        }
+      ],
       "components": [
         "valve-body"
       ],
@@ -2341,6 +5008,53 @@
           "s9"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-105-m1",
+          "title": "Reusing the side cover gasket",
+          "what": "Puts the side cover back on its old molded gasket.",
+          "consequence": "JLR traced a leak with poor shifts and noise to this gasket, so the cover weeps and the level falls.",
+          "prevent": "Fit the new ZF cover gasket kit every time the cover comes off.",
+          "severity": "rework",
+          "sourceIds": [
+            "s12"
+          ]
+        },
+        {
+          "id": "zf-9hp48-105-m2",
+          "title": "Connector O-rings fitted dry",
+          "what": "Pushes the case connector through the cover with dry O-rings.",
+          "consequence": "The O-rings roll or tear and fluid wicks out through the connector.",
+          "prevent": "Give the connector O-rings a light coat of assembly lube before fitting.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-105-m3",
+          "title": "Clip fitted before the groove shows",
+          "what": "Fits the connector clip without pushing the connector far enough to expose its groove.",
+          "consequence": "The clip does not lock, so the connector backs out and intermittent electrical faults follow.",
+          "prevent": "Push the connector until the full clip groove shows, then fit the clip.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-105-m4",
+          "title": "Overtightening the plastic cover",
+          "what": "Tightens the cover bolts hard where a torque limiter is missing.",
+          "consequence": "The plastic side cover cracks at a bolt boss and leaks there.",
+          "prevent": "Check every limiter is present and torque the bolts to the cover figure.",
+          "severity": "rework",
+          "sourceIds": [
+            "s9",
+            "s12"
+          ]
+        }
+      ],
       "components": [
         "valve-body-cover",
         "valve-body"
@@ -2365,6 +5079,42 @@
           "s20"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-106-m1",
+          "title": "Reusing gallery plate bolts",
+          "what": "Refits the oil gallery plate with its original bolts.",
+          "consequence": "The bolts may not clamp the plate evenly and the bonded gasket weeps at a known leak point.",
+          "prevent": "Fit new gallery plate bolts as the repair data calls for.",
+          "severity": "rework",
+          "sourceIds": [
+            "s20"
+          ]
+        },
+        {
+          "id": "zf-9hp48-106-m2",
+          "title": "Gallery plate tightened out of order",
+          "what": "Tightens the gallery plate bolts in no particular order.",
+          "consequence": "The plate pulls down unevenly and leaks, causing low fluid, noise and poor shifts.",
+          "prevent": "Tighten the bolts in the published sequence to the specified torque.",
+          "severity": "rework",
+          "sourceIds": [
+            "s20"
+          ]
+        },
+        {
+          "id": "zf-9hp48-106-m3",
+          "title": "Reusing the bonded gallery gasket",
+          "what": "Puts the old bonded steel gasket back under the gallery plate.",
+          "consequence": "This gasket was a known Evoque fault on its own; a used one leaks at once.",
+          "prevent": "Fit a new bonded gasket every time the plate comes off.",
+          "severity": "rework",
+          "sourceIds": [
+            "s20",
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "oil-gallery-plate"
       ],
@@ -2379,6 +5129,19 @@
       "phase": "assembly",
       "title": "Refit external line and TCM",
       "action": "Install the external hydraulic line with new seals and bolt the TCM back onto the case.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-107-m1",
+          "title": "Reusing external line seals",
+          "what": "Refits the external hydraulic line on its old seals.",
+          "consequence": "The line weeps or blows off under pressure and the unit loses fluid fast on the road.",
+          "prevent": "Fit new seals to the external line and check its ends seat squarely.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "external-line",
         "tcm"
@@ -2396,6 +5159,43 @@
       "why": "A converter that is not fully seated is pulled into the pump when the bolts are tightened.",
       "critical": true,
       "mistake": "Bolting up a converter that has only engaged the input shaft and not the pump drive.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-108-m1",
+          "title": "Converter on the input shaft only",
+          "what": "Slides the converter on until it stops at the first engagement.",
+          "consequence": "Bolting it to the flexplate drives the hub into the pump drive gear and pump, wrecking the pump and filling the new unit with debris.",
+          "prevent": "Turn the converter while pushing until it drops through each engagement and the hub flats engage the pump drive.",
+          "detect": "The converter turns freely and sits back from the bell housing face as far as the service data calls for.",
+          "severity": "ruins-unit",
+          "sourceIds": [
+            "s1",
+            "s37"
+          ]
+        },
+        {
+          "id": "zf-9hp48-108-m2",
+          "title": "Not measuring converter set-back",
+          "what": "Installs the unit without measuring how far the converter sits back in the bell housing.",
+          "consequence": "A converter that has missed its last engagement looks fine by eye and goes in unnoticed.",
+          "prevent": "Measure from the bell housing face to the converter mounting pads and compare with the service figure.",
+          "severity": "costly",
+          "sourceIds": [
+            "s37"
+          ]
+        },
+        {
+          "id": "zf-9hp48-108-m3",
+          "title": "Folding the new hub seal lip",
+          "what": "Slides the converter in with a dry hub.",
+          "consequence": "The new converter hub seal lip folds over and the unit leaks at the converter from the first start.",
+          "prevent": "Lube the converter hub and slide it in straight without rocking it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s1"
+          ]
+        }
+      ],
       "components": [
         "torque-converter",
         "oil-pump"
@@ -2419,6 +5219,41 @@
           "s16"
         ]
       },
+      "mistakes": [
+        {
+          "id": "zf-9hp48-109-m1",
+          "title": "Drawing the case up with bolts",
+          "what": "Uses the transmission-to-engine bolts to pull the unit the last distance onto the engine.",
+          "consequence": "If the converter or a dowel is not lined up, the bolts crack the bell housing or force the converter into the pump.",
+          "prevent": "Bring the unit fully flush on the dowels by hand before fitting any bolt.",
+          "severity": "costly",
+          "sourceIds": [
+            "s37"
+          ]
+        },
+        {
+          "id": "zf-9hp48-109-m2",
+          "title": "Reusing a flagged engine bolt",
+          "what": "Reuses a transmission-to-engine bolt that a JLR bulletin says to replace on certain VINs.",
+          "consequence": "On the affected 16MY vehicles the old bolt can strip the oil pan thread when reinstalled.",
+          "prevent": "Check bulletins for your VIN and fit the replacement bolt they specify.",
+          "severity": "rework",
+          "sourceIds": [
+            "s16"
+          ]
+        },
+        {
+          "id": "zf-9hp48-109-m3",
+          "title": "Not spinning the converter after bolting",
+          "what": "Moves straight on to the converter nuts without turning the converter by hand.",
+          "consequence": "A converter that is binding against the pump drive goes unnoticed until it damages the pump.",
+          "prevent": "Turn the converter by hand after the bell housing bolts are tight and stop if it binds.",
+          "severity": "rework",
+          "sourceIds": [
+            "s37"
+          ]
+        }
+      ],
       "components": [
         "case"
       ],
@@ -2434,6 +5269,30 @@
       "action": "Line up the converter marks and fit new flexplate-to-converter nuts, torqued to spec.",
       "critical": true,
       "mistake": "Reusing the old converter nuts.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-110-m1",
+          "title": "Old converter nuts refitted",
+          "what": "Refits the flexplate-to-converter nuts that came off at removal.",
+          "consequence": "The converter is held by fixings JLR says must be renewed, risking a loose converter and a second removal.",
+          "prevent": "Fit the new flexplate-to-converter nuts that JLR specifies and torque them to spec.",
+          "severity": "costly",
+          "sourceIds": [
+            "s17"
+          ]
+        },
+        {
+          "id": "zf-9hp48-110-m2",
+          "title": "Converter pads not flat",
+          "what": "Tightens one converter nut fully while the pads are not sitting flat on the flexplate.",
+          "consequence": "The converter is drawn out of line and loads the pump drive and hub seal off-centre.",
+          "prevent": "Check all pads touch the flexplate, snug every nut, then torque them in turn.",
+          "severity": "rework",
+          "sourceIds": [
+            "s37"
+          ]
+        }
+      ],
       "components": [
         "torque-converter"
       ],
@@ -2448,6 +5307,52 @@
       "title": "Refit PTU, shafts and lines",
       "action": "Refit the PTU to the differential side with a new seal, the halfshafts, cooler lines, harness and selector.",
       "why": "The transmission-to-PTU joint is a listed leak point; a dry seal here empties the transmission.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-111-m1",
+          "title": "Superseded PTU interface parts",
+          "what": "Refits the PTU with quill shaft seals and clips from an old stock kit.",
+          "consequence": "JLR revised these clips because the earlier ones let the quill shaft and seals assemble wrong and leak.",
+          "prevent": "Order the latest quill shaft seals and clips from the parts catalogue and follow the current procedure.",
+          "severity": "rework",
+          "sourceIds": [
+            "s31"
+          ]
+        },
+        {
+          "id": "zf-9hp48-111-m2",
+          "title": "Filling the PTU with ATF",
+          "what": "Tops up or refills the PTU with the transmission's ATF.",
+          "consequence": "The PTU uses its own gear oil, so ATF in it shortens the life of its gears and bearings.",
+          "prevent": "Fill the PTU with its own specified oil, separately from the transmission.",
+          "severity": "costly",
+          "sourceIds": [
+            "s32"
+          ]
+        },
+        {
+          "id": "zf-9hp48-111-m3",
+          "title": "Fitting a dirty oil cooler",
+          "what": "Reconnects the oil cooler and lines without flushing them after a failure that made debris.",
+          "consequence": "Debris trapped in the cooler starves the new unit of lube flow, a leading cause of repeat failures.",
+          "prevent": "Back-flush, forward-flush and back-flush the cooler and lines, or replace the cooler.",
+          "severity": "ruins-unit",
+          "sourceIds": [
+            "s36"
+          ]
+        },
+        {
+          "id": "zf-9hp48-111-m4",
+          "title": "Cooler joint not fully seated",
+          "what": "Connects the cooler to the transmission without checking the joint is fully home.",
+          "consequence": "The cooler-to-housing joint, a JLR-listed leak point, seeps and lowers the level.",
+          "prevent": "Seat the joint fully with new seals and check it before filling.",
+          "severity": "rework",
+          "sourceIds": [
+            "s13"
+          ]
+        }
+      ],
       "components": [
         "ptu",
         "diff-seals"
@@ -2475,6 +5380,42 @@
       },
       "critical": true,
       "mistake": "Topping up with a generic multi-vehicle ATF.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-112-m1",
+          "title": "Topping up with generic ATF",
+          "what": "Fills with a generic multi-vehicle ATF instead of ZF LifeguardFluid 9.",
+          "consequence": "Different friction behaviour changes how the clutches apply, giving poor shift quality and faster wear.",
+          "prevent": "Use ZF LifeguardFluid 9 (JLR LR023288) and nothing else.",
+          "severity": "costly",
+          "sourceIds": [
+            "s24",
+            "s35"
+          ]
+        },
+        {
+          "id": "zf-9hp48-112-m2",
+          "title": "Adding additives or cleaners",
+          "what": "Adds a friction modifier, conditioner or flush chemical to the new fluid.",
+          "consequence": "ZF warns these alter the oil's chemistry, which upsets clutch apply on a freshly built unit.",
+          "prevent": "Fill with plain LifeguardFluid 9 and add nothing to it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s35"
+          ]
+        },
+        {
+          "id": "zf-9hp48-112-m3",
+          "title": "Starting the engine empty",
+          "what": "Cranks or starts the engine before any fluid is in the transmission.",
+          "consequence": "The pump runs dry and the new parts turn without oil.",
+          "prevent": "Put the initial fill in before the engine is started or the vehicle is moved.",
+          "severity": "costly",
+          "sourceIds": [
+            "s35"
+          ]
+        }
+      ],
       "components": [
         "drain-fill-plugs"
       ],
@@ -2496,6 +5437,43 @@
         "Battery support unit"
       ],
       "critical": true,
+      "mistakes": [
+        {
+          "id": "zf-9hp48-113-m1",
+          "title": "Entering the wrong serial",
+          "what": "Mistypes the transmission serial number when the configure routine asks for it.",
+          "consequence": "JLR's bulletin warns that not following this routine correctly can lead to serious mechanical failure.",
+          "prevent": "Enter the serial from the label photo and have someone check the digits before confirming.",
+          "severity": "costly",
+          "sourceIds": [
+            "s15"
+          ]
+        },
+        {
+          "id": "zf-9hp48-113-m2",
+          "title": "Programming without battery support",
+          "what": "Flashes the TCM on the vehicle battery alone.",
+          "consequence": "A voltage drop mid-flash can corrupt the module, adding a replacement TCM to the job.",
+          "prevent": "Connect a JLR-approved battery support unit before starting the session.",
+          "severity": "costly",
+          "sourceIds": [
+            "s15",
+            "s32"
+          ]
+        },
+        {
+          "id": "zf-9hp48-113-m3",
+          "title": "Skipping ignition prompts",
+          "what": "Clicks through the diagnostic tool's ignition-on and ignition-off requests without acting on them.",
+          "consequence": "JLR warns that skipping these ignition steps can damage control modules during programming.",
+          "prevent": "Carry out every ignition request exactly when the tool asks for it.",
+          "severity": "costly",
+          "sourceIds": [
+            "s15",
+            "s32"
+          ]
+        }
+      ],
       "components": [
         "tcm"
       ],
@@ -2517,6 +5495,56 @@
       ],
       "critical": true,
       "mistake": "Setting the level by volume alone without the hot check.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-114-m1",
+          "title": "Setting the level by fill volume",
+          "what": "Puts in the approximate capacity and skips the hot level check.",
+          "consequence": "Too little fluid has left this family with no forward gear, and too much causes its own damage.",
+          "prevent": "Set the final level at the check plug within the specified temperature window.",
+          "severity": "ruins-unit",
+          "sourceIds": [
+            "s33",
+            "s8",
+            "s35"
+          ]
+        },
+        {
+          "id": "zf-9hp48-114-m2",
+          "title": "Checking the level too hot",
+          "what": "Sets the level after a long drive with the fluid above the window.",
+          "consequence": "Hot fluid has expanded, so a level set then is low once it cools to the check temperature.",
+          "prevent": "Let the fluid cool into the window and recheck on the scan tool.",
+          "severity": "rework",
+          "sourceIds": [
+            "s35",
+            "s8"
+          ]
+        },
+        {
+          "id": "zf-9hp48-114-m3",
+          "title": "Auto stop during the check",
+          "what": "Leaves start-stop enabled and the engine shuts off while you check the level.",
+          "consequence": "The check is made with the pump stopped instead of idling, so the reading is wrong.",
+          "prevent": "Turn start-stop off before checking so the engine keeps idling.",
+          "severity": "rework",
+          "sourceIds": [
+            "s35",
+            "s11"
+          ]
+        },
+        {
+          "id": "zf-9hp48-114-m4",
+          "title": "Not cycling the selector first",
+          "what": "Checks the level without first shifting through R and D at idle.",
+          "consequence": "Oil has not yet filled the circuits and converter, so the level drops after you close the plug.",
+          "prevent": "Move through R and D with the brake on, return to P, then check.",
+          "severity": "rework",
+          "sourceIds": [
+            "s35"
+          ]
+        }
+      ],
       "components": [
         "drain-fill-plugs"
       ],
@@ -2537,6 +5565,66 @@
       ],
       "critical": true,
       "mistake": "Skipping the adaptation reset and blaming the rebuild for harsh shifts.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-115-m1",
+          "title": "Skipping the adaptation reset",
+          "what": "Drives off on the adaptation values the TCM learned on the worn parts.",
+          "consequence": "Fill times learned on worn packs suit the new ones badly, giving harsh or flared shifts.",
+          "prevent": "Clear the adaptations and run the guided adaptation routine.",
+          "severity": "rework",
+          "sourceIds": [
+            "s18",
+            "s10"
+          ]
+        },
+        {
+          "id": "zf-9hp48-115-m2",
+          "title": "Learning with codes stored",
+          "what": "Starts the adaptation routine with transmission codes still stored.",
+          "consequence": "The learn is built on a faulty input, or refused, and shift quality does not improve.",
+          "prevent": "Diagnose and clear every TCM code, then run the learn.",
+          "severity": "rework",
+          "sourceIds": [
+            "s11",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-115-m3",
+          "title": "Learning with cold fluid",
+          "what": "Runs the adaptation learn straight after the first start with the fluid still cool.",
+          "consequence": "The routine needs a minimum fluid temperature, so values learned cold are wrong.",
+          "prevent": "Drive until the scan tool shows the fluid temperature the routine requires, then learn.",
+          "severity": "rework",
+          "sourceIds": [
+            "s10",
+            "s9"
+          ]
+        },
+        {
+          "id": "zf-9hp48-115-m4",
+          "title": "Start-stop on during the learn",
+          "what": "Leaves start-stop enabled while running the learn.",
+          "consequence": "Auto stops interrupt the learn events, leaving the adaptation values incomplete.",
+          "prevent": "Turn start-stop off before starting the learn and keep it off until it finishes.",
+          "severity": "rework",
+          "sourceIds": [
+            "s11"
+          ]
+        },
+        {
+          "id": "zf-9hp48-115-m5",
+          "title": "Running the wrong learn routine",
+          "what": "Runs a valve body or solenoid learn when only an adaptation learn is needed.",
+          "consequence": "On this family that routine wipes factory settings as well as adaptations, leaving shifts worse.",
+          "prevent": "Choose the routine that matches the repair: adaptations after an overhaul, solenoid learn only after valve body or TCM replacement.",
+          "severity": "rework",
+          "sourceIds": [
+            "s10"
+          ]
+        }
+      ],
       "components": [
         "tcm"
       ],
@@ -2553,6 +5641,30 @@
       "title": "Road test all gears",
       "action": "Drive through every upshift and downshift to ninth, including part-throttle and kickdown, and check engagements from park to reverse to drive.",
       "why": "Dog clutch engagements need several cycles before shifts settle.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-116-m1",
+          "title": "Judging after a few shifts",
+          "what": "Rates shift quality on the first handful of shifts.",
+          "consequence": "Clutches need repeated shift events before they settle, so the rebuild looks bad when it is not.",
+          "prevent": "Repeat each upshift and downshift several times before rating them.",
+          "severity": "minor",
+          "sourceIds": [
+            "s10"
+          ]
+        },
+        {
+          "id": "zf-9hp48-116-m2",
+          "title": "Not repeating P-R-D engagements",
+          "what": "Checks the Park to Reverse to Drive engagements only once.",
+          "consequence": "A dog clutch that hangs up intermittently, such as at startup, slips past the test.",
+          "prevent": "Cycle P, R and D several times, hot and cold, and rescan after each set.",
+          "severity": "rework",
+          "sourceIds": [
+            "s6"
+          ]
+        }
+      ],
       "components": [
         "a-dog",
         "f-dog",
@@ -2569,6 +5681,43 @@
       "phase": "final",
       "title": "Recheck codes, leaks, level",
       "action": "Rescan for codes, inspect the cover, case joint, cooler and PTU joint for leaks, and recheck the hot level.",
+      "mistakes": [
+        {
+          "id": "zf-9hp48-117-m1",
+          "title": "Skipping the post-test leak check",
+          "what": "Hands the vehicle back without rechecking the cover, case joint, cooler and PTU joint.",
+          "consequence": "A small seep empties the unit over the next weeks, leading to dog clutch faults or no drive.",
+          "prevent": "Inspect all four listed joints after the road test with the case cleaned beforehand.",
+          "severity": "costly",
+          "sourceIds": [
+            "s13",
+            "s33"
+          ]
+        },
+        {
+          "id": "zf-9hp48-117-m2",
+          "title": "Not rechecking the hot level",
+          "what": "Trusts the level set before the road test.",
+          "consequence": "Once the cooler and circuits have filled, the level drops below the check plug.",
+          "prevent": "Recheck the level at temperature after the road test and top up.",
+          "severity": "rework",
+          "sourceIds": [
+            "s8",
+            "s14"
+          ]
+        },
+        {
+          "id": "zf-9hp48-117-m3",
+          "title": "Clearing new codes unread",
+          "what": "Clears post-test codes without recording them.",
+          "consequence": "A code from the first drive is the earliest warning of a rebuild error, and it is lost.",
+          "prevent": "Save and read every code after the road test before clearing anything.",
+          "severity": "rework",
+          "sourceIds": [
+            "s14"
+          ]
+        }
+      ],
       "components": [
         "valve-body-cover",
         "case-gasket",
@@ -2578,6 +5727,273 @@
       "sourceIds": [
         "s13",
         "s12"
+      ]
+    }
+  ],
+  "failureModes": [
+    {
+      "id": "zf-9hp48-fm1",
+      "title": "A dog clutch failure (no forward or lost gears)",
+      "cause": "The A dog on the input shaft stops completing its travel: a loose or broken sensing plate screw, worn sleeve or splines, or a sensing valve problem.",
+      "symptoms": [
+        "Loss of forward gears or higher gears",
+        "Grinding or ratcheting on engagement",
+        "Dog clutch position codes such as P0810"
+      ],
+      "rebuildAngle": "Inspect the A dog splines and both halves of the joint, check the sensing screw, air-test full travel and replace the input shaft assembly with the correct variant if any check fails (zf-9hp48-052, -053, -054, -078).",
+      "stepIds": [
+        "zf-9hp48-052",
+        "zf-9hp48-053",
+        "zf-9hp48-054",
+        "zf-9hp48-078"
+      ],
+      "sourceIds": [
+        "s3",
+        "s6",
+        "s2"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm2",
+      "title": "Stuck in Park or drops back to Park",
+      "cause": "The dog clutch position check fails at startup, from a sticking A dog, a failed dog pressure sensor or park system wear; body signals such as a door ajar can also hold Park.",
+      "symptoms": [
+        "Vehicle will not leave Park or returns to Park after selecting R or D",
+        "P0810 clutch position control error"
+      ],
+      "rebuildAngle": "Rule out body codes during diagnosis, then check A dog freedom, bench-test the Hall-effect pressure sensor and inspect the park pawl, gear and rod (zf-9hp48-001, -054, -056, -062).",
+      "stepIds": [
+        "zf-9hp48-001",
+        "zf-9hp48-054",
+        "zf-9hp48-056",
+        "zf-9hp48-062"
+      ],
+      "sourceIds": [
+        "s6"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm3",
+      "title": "Worn A/F dog plunger valve sleeves",
+      "cause": "The valve plungers reciprocate in aluminium sleeves and wear them, so dog clutch pressure overlaps or exhausts early.",
+      "symptoms": [
+        "Delayed engagement",
+        "Loss of higher gears",
+        "RPM cycling during shifts",
+        "Damaged A or F dog teeth"
+      ],
+      "rebuildAngle": "Inspect the sleeves at teardown and fit the plunger kit that matches the park-by-wire or park-by-cable valve body (zf-9hp48-057, -066).",
+      "stepIds": [
+        "zf-9hp48-057",
+        "zf-9hp48-066"
+      ],
+      "sourceIds": [
+        "s21"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm4",
+      "title": "Line pressure control wear",
+      "cause": "Oscillating wear in the pressure regulator bore and the SV-SP valve bore that feeds it lets regulated oil escape.",
+      "symptoms": [
+        "Low, high or erratic line pressure",
+        "Poor shift quality",
+        "Burnt clutches"
+      ],
+      "rebuildAngle": "Vacuum-test the regulator and SV-SP bores and ream and fit oversize valves where they fail (zf-9hp48-057, -066).",
+      "stepIds": [
+        "zf-9hp48-057",
+        "zf-9hp48-066"
+      ],
+      "sourceIds": [
+        "s4",
+        "s29"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm5",
+      "title": "Low fluid from cover gasket leaks",
+      "cause": "The side cover gasket was damaged in manufacture on some units, letting fluid leak until the level drops.",
+      "symptoms": [
+        "Visible leak at the side cover",
+        "Poor shift quality and transmission noise",
+        "TCM codes such as P2545/P2546 that clear once the leak and level are fixed"
+      ],
+      "rebuildAngle": "Fit the new ZF cover gasket kit whenever the cover is off and set the level hot (zf-9hp48-002, -013, -105, -114).",
+      "stepIds": [
+        "zf-9hp48-002",
+        "zf-9hp48-013",
+        "zf-9hp48-105",
+        "zf-9hp48-114"
+      ],
+      "sourceIds": [
+        "s12",
+        "s13",
+        "s14"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm6",
+      "title": "Oil gallery plate gasket leak",
+      "cause": "The bonded steel gasket under the oil passage cover plate was a known manufacturing fault on the 9HP48.",
+      "symptoms": [
+        "Fluid leak from the case",
+        "Poor gear shifting",
+        "Abnormal transmission noise"
+      ],
+      "rebuildAngle": "Fit a new bonded gasket and new bolts, tightened in sequence (zf-9hp48-019, -106).",
+      "stepIds": [
+        "zf-9hp48-019",
+        "zf-9hp48-106"
+      ],
+      "sourceIds": [
+        "s20"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm7",
+      "title": "PTU interface and differential plug leaks",
+      "cause": "Quill shaft seals and clips at the PTU joint can assemble wrong, and the internal differential sealing plug is knocked out when halfshafts are pushed through.",
+      "symptoms": [
+        "Oil leaking from the front of the vehicle at the PTU joint",
+        "Fluid level dropping after a driveline repair"
+      ],
+      "rebuildAngle": "Pull halfshafts from the outboard side, confirm the sealing plug is present, and fit the latest PTU interface seals and clips (zf-9hp48-006, -099, -111).",
+      "stepIds": [
+        "zf-9hp48-006",
+        "zf-9hp48-099",
+        "zf-9hp48-111"
+      ],
+      "sourceIds": [
+        "s31",
+        "s30"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm8",
+      "title": "Underfill leading to no drive",
+      "cause": "The transmission runs short of fluid, from a fill set by volume or a leak, and the elements cannot apply.",
+      "symptoms": [
+        "No forward gear",
+        "Slipping or delayed engagements",
+        "Dog clutch codes"
+      ],
+      "rebuildAngle": "Set the level at the check plug inside the temperature window, then recheck after the road test (zf-9hp48-112, -114, -117).",
+      "stepIds": [
+        "zf-9hp48-112",
+        "zf-9hp48-114",
+        "zf-9hp48-117"
+      ],
+      "sourceIds": [
+        "s33",
+        "s14"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm9",
+      "title": "Early calibration shift complaints",
+      "cause": "First-generation TCM software gave harsh or delayed shifts, irregular gear changes or neutral selection, much of it fixed by later calibrations.",
+      "symptoms": [
+        "Harsh upshifts and downshifts",
+        "Delayed engagements",
+        "Irregular shift or neutral selected, P1758"
+      ],
+      "rebuildAngle": "Update the TCM, configure it to the transmission serial and relearn adaptations before and after any repair (zf-9hp48-003, -113, -115).",
+      "stepIds": [
+        "zf-9hp48-003",
+        "zf-9hp48-113",
+        "zf-9hp48-115"
+      ],
+      "sourceIds": [
+        "s15",
+        "s18",
+        "s27",
+        "s10"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm10",
+      "title": "Internal harness crimp failure",
+      "cause": "Insufficient crimps in the transmission wiring harness on some early units broke contact intermittently.",
+      "symptoms": [
+        "Sudden shift to neutral and loss of drive"
+      ],
+      "rebuildAngle": "Check the vehicle for the recall, and inspect and pull-test the terminals at the connector plate during the rebuild (zf-9hp48-001, -063).",
+      "stepIds": [
+        "zf-9hp48-001",
+        "zf-9hp48-063"
+      ],
+      "sourceIds": [
+        "s34"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm11",
+      "title": "C brake snap ring dislodging",
+      "cause": "On early 948TE units of the same design the C piston snap ring could dislodge; FCA fitted a new ring with its gap moved.",
+      "symptoms": [
+        "C element stuck-on code (P07A7 on the 948TE)",
+        "Tie-up or harsh engagements"
+      ],
+      "rebuildAngle": "Fit a new C snap ring with its gap where the bulletin shows and check it is seated all round (zf-9hp48-065, -080).",
+      "stepIds": [
+        "zf-9hp48-065",
+        "zf-9hp48-080"
+      ],
+      "sourceIds": [
+        "s9"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm12",
+      "title": "External hydraulic line blowout",
+      "cause": "The external hydraulic line at the back of the case ages and can blow out.",
+      "symptoms": [
+        "Sudden fluid loss under the vehicle",
+        "Loss of drive once the level drops"
+      ],
+      "rebuildAngle": "Inspect the line and renew its seals on every overhaul (zf-9hp48-020, -107).",
+      "stepIds": [
+        "zf-9hp48-020",
+        "zf-9hp48-107"
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm13",
+      "title": "Converter lockup wear and contamination",
+      "cause": "Lockup is used in every gear, so the converter clutch wears, and debris from a failure collects inside the converter.",
+      "symptoms": [
+        "Shudder under light throttle",
+        "Repeat contamination of a rebuilt unit"
+      ],
+      "rebuildAngle": "Send the converter out or replace it after a debris-making failure, and seat it fully on install (zf-9hp48-064, -108).",
+      "stepIds": [
+        "zf-9hp48-064",
+        "zf-9hp48-108"
+      ],
+      "sourceIds": [
+        "s4",
+        "s1"
+      ]
+    },
+    {
+      "id": "zf-9hp48-fm14",
+      "title": "Repeat failure from a dirty cooler",
+      "cause": "Debris from the original failure stays in the oil cooler and lines and restricts lube flow to the new unit.",
+      "symptoms": [
+        "Early wear or failure of a freshly rebuilt transmission",
+        "Debris back in the fluid soon after the rebuild"
+      ],
+      "rebuildAngle": "Note debris at the drain and flush or replace the cooler before the rebuilt unit runs (zf-9hp48-005, -111).",
+      "stepIds": [
+        "zf-9hp48-005",
+        "zf-9hp48-111"
+      ],
+      "sourceIds": [
+        "s36"
       ]
     }
   ]

@@ -2,6 +2,7 @@ import { useSearchParams, Link } from 'react-router-dom';
 import { PageHeader, Chip, Card, Pill } from '../components/ui.jsx';
 import { KindIcon } from '../components/bench.jsx';
 import { COMPARE_PAIRS, UNIT_BY_ID, VEHICLES, specSteps } from '../data/index.js';
+import { Glossed } from '../components/glossary.jsx';
 
 /**
  * Fact labels are free text in each unit file, so line them up by a normalized
@@ -115,8 +116,8 @@ export default function Compare() {
               <div key={`${r.label}-${i}`} className="px-4 py-3">
                 <dt className={`text-xs font-semibold uppercase tracking-wide ${r.computed ? 'text-ink-3' : 'text-brand-text'}`}>{r.label}</dt>
                 <dd className="mt-1 grid grid-cols-2 gap-3 text-sm leading-snug">
-                  <span className={r.a != null ? 'text-ink' : 'text-ink-3'}>{r.a ?? '-'}</span>
-                  <span className={r.b != null ? 'text-ink' : 'text-ink-3'}>{r.b ?? '-'}</span>
+                  <span className={r.a != null ? 'text-ink' : 'text-ink-3'}>{r.a != null && !r.computed ? <Glossed text={r.a} /> : r.a ?? '-'}</span>
+                  <span className={r.b != null ? 'text-ink' : 'text-ink-3'}>{r.b != null && !r.computed ? <Glossed text={r.b} /> : r.b ?? '-'}</span>
                 </dd>
               </div>
             ))}

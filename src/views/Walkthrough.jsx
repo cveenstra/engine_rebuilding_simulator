@@ -4,7 +4,11 @@ import { Bar, Button, Select } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
 import { ModeHeader, StepCard, UnitMissing, ActionBar } from '../components/bench.jsx';
 import { useUnit } from '../engine/unit.js';
-import { getState } from '../engine/storage.js';
+import { getState, getPref, setPref } from '../engine/storage.js';
+import { UnitDiagram } from '../components/parts.jsx';
+import { usePartSheet } from '../components/usePartSheet.jsx';
+import { useUnitDiagram } from '../engine/assets.js';
+import { stepParts } from '../data/parts.js';
 import { setWalkIndex, touchMode } from '../engine/progress.js';
 
 function startIndex(unit, params) {
@@ -20,18 +24,64 @@ function startIndex(unit, params) {
   return Number.isInteger(saved) && saved >= 0 && saved < n ? saved : 0;
 }
 
+/** The unit diagram as a collapsible panel, lighting up the parts this step touches. */
+function DiagramPanel({ unit, step }) {
+  const diagram = useUnitDiagram(unit.id);
+  const [open, setOpen] = useState(() => getPref('walkDiagram', false) === true);
+  const [sheet, openPart] = usePartSheet(unit);
+  if (diagram.state === 'none') return null;
+  const highlight = stepParts(unit, step).map((p) => p.partId);
+  return (
+    <>
+      <details
+        open={open}
+        onToggle={(e) => { const o = e.currentTarget.open; setOpen(o); setPref('walkDiagram', o); }}
+        className="mb-3 rounded-xl border border-line bg-surface"
+      >
+        <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 px-4 text-sm font-medium text-ink-2 [&::-webkit-details-marker]:hidden">
+          <Icon name="chevron" size={16} className={`text-ink-3 transition-transform ${open ? 'rotate-90' : ''}`} />
+          {open ? 'Hide' : 'Show'} where this step is on the {unit.kind === 'transmission' ? 'transmission' : 'engine'}
+        </summary>
+        {open && (
+          <div className="px-3 pb-3" data-noswipe>
+            {diagram.state === 'ready'
+              ? <UnitDiagram unit={unit} markup={diagram.markup} highlight={highlight} onPick={openPart} />
+              : <div className="aspect-[4/3] w-full animate-pulse rounded-xl bg-line-2" />}
+          </div>
+        )}
+      </details>
+      {sheet}
+    </>
+  );
+}
+
 function Walk({ unit }) {
-  const [params] = useSearchParams();
+  const [params, setParams] = useSearchParams();
   const [index, setIndex] = useState(() => startIndex(unit, params));
   const touch = useRef(null);
   const n = unit.steps.length;
+
+  // A link to another step of this unit (from a definition's "Appears in")
+  // changes only ?step=, so follow it here rather than remounting.
+  const stepParam = params.get('step');
+  const [seenParam, setSeenParam] = useState(stepParam);
+  if (stepParam !== seenParam) {
+    setSeenParam(stepParam);
+    const order = Number(stepParam);
+    if (Number.isInteger(order) && order >= 1 && order <= n && order - 1 !== index) {
+      setIndex(order - 1);
+    }
+  }
   const step = unit.steps[index];
+  useEffect(() => { setWalkIndex(unit.id, index); }, [unit.id, index]);
 
   const go = (i) => {
     const next = Math.max(0, Math.min(n - 1, i));
     if (next === index) return;
     setIndex(next);
     setWalkIndex(unit.id, next);
+    // Keep the step in the URL so coming back from a part page lands on the same step.
+    setParams({ step: String(next + 1) }, { replace: true });
   };
 
   useEffect(() => { touchMode(unit.id, 'walk'); }, [unit.id]);
@@ -42,6 +92,7 @@ function Walk({ unit }) {
   useEffect(() => {
     const onKey = (e) => {
       if (e.target instanceof HTMLElement && /^(INPUT|SELECT|TEXTAREA)$/.test(e.target.tagName)) return;
+      if (document.querySelector('dialog[open]')) return;
       if (e.key === 'ArrowRight') goRef.current(index + 1);
       if (e.key === 'ArrowLeft') goRef.current(index - 1);
     };
@@ -50,6 +101,8 @@ function Walk({ unit }) {
   }, [index]);
 
   const onTouchStart = (e) => {
+    // Picture strips and sheets handle their own swipes.
+    if (e.target instanceof Element && e.target.closest('[data-noswipe]')) { touch.current = null; return; }
     const t = e.touches[0];
     touch.current = { x: t.clientX, y: t.clientY };
   };
@@ -78,9 +131,11 @@ function Walk({ unit }) {
         <span className="tabnum flex-shrink-0 text-sm text-ink-3">{index + 1} / {n}</span>
       </div>
 
+      <DiagramPanel unit={unit} step={step} />
+
       <div className="swipe" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         <div key={step.id} className="pop-in">
-          <StepCard unit={unit} step={step} />
+          <StepCard unit={unit} step={step} mistakesOpen={params.get('show') === 'mistakes' && Number(stepParam) === step.order} />
         </div>
       </div>
       <p className="mt-2 text-center text-xs text-ink-3">Swipe left or right, or use the buttons below.</p>

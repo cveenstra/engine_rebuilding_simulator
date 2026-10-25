@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Card, PageHeader, SectionTitle, Bar, Pill, Stat } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
 import { UnitMissing, SourceLinks } from '../components/bench.jsx';
@@ -6,6 +6,13 @@ import { useUnit, DISCLAIMER } from '../engine/unit.js';
 import { UNIT_BY_ID, PHASE_KIND_LABEL, specSteps } from '../data/index.js';
 import { useProgress } from '../engine/storage.js';
 import { unitProgress, formatMs } from '../engine/progress.js';
+import { UnitDiagram } from '../components/parts.jsx';
+import { useUnitDiagram } from '../engine/assets.js';
+import { unitParts } from '../data/parts.js';
+import { Glossed } from '../components/glossary.jsx';
+import { glossSkips } from '../engine/glossary.js';
+import { FailureModes, SeverityBadge } from '../components/mistakes.jsx';
+import { SEVERITIES, mistakeStats, wreckLine, mistakeSummary } from '../engine/mistakes.js';
 
 function ModeTile({ to, icon, title, note, accent }) {
   return (
@@ -22,6 +29,61 @@ function ModeTile({ to, icon, title, note, accent }) {
         <span className={`block text-sm leading-snug ${accent ? 'opacity-90' : 'text-ink-3'}`}>{note}</span>
       </span>
     </Link>
+  );
+}
+
+/** The unit diagram (once it exists) and the way into the parts gallery. */
+function PartsSection({ unit }) {
+  const diagram = useUnitDiagram(unit.id);
+  const navigate = useNavigate();
+  const count = unitParts(unit).length;
+  if (!count) return null;
+  const base = `/unit/${unit.id}/parts`;
+  return (
+    <section>
+      <SectionTitle sub={`${count} kinds of part. See what each one looks like and where it sits.`}>Parts</SectionTitle>
+      {diagram.state === 'ready' && (
+        <UnitDiagram unit={unit} markup={diagram.markup} onPick={(id) => navigate(`/part/${id}?unit=${unit.id}`)} className="mb-3" />
+      )}
+      {diagram.state === 'loading' && <div className="mx-auto mb-3 aspect-[4/3] w-full max-w-xl animate-pulse rounded-xl bg-line-2" />}
+      <div className="grid gap-2 sm:grid-cols-2">
+        <ModeTile to={base} icon="image" title="Parts gallery" note="Every part in this unit, by category, with pictures" />
+        <ModeTile to={`${base}/quiz`} icon="eye" title="Picture quiz" note="Name the part from its picture. Practice only." />
+      </div>
+    </section>
+  );
+}
+
+/** The way into the mistakes list and the mistake drill, with the unit's wreck count. */
+function MistakesSection({ unit, state }) {
+  const stats = mistakeStats(unit);
+  if (!stats.total) return null;
+  const drill = mistakeSummary(unit, [], state);
+  const base = `/unit/${unit.id}/mistakes`;
+  return (
+    <section>
+      <SectionTitle sub="Every way a step can go wrong, what it costs and how to stay ahead of it.">Ways to screw up</SectionTitle>
+      <Card className="mb-2 p-4">
+        <p className="flex items-start gap-2 text-base font-semibold text-ink">
+          <Icon name="alert" size={20} className="mt-0.5 flex-shrink-0 text-bad-text" />
+          <span>{wreckLine(stats)}</span>
+        </p>
+        <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5">
+          {SEVERITIES.filter((s) => stats.bySeverity[s]).map((s) => (
+            <span key={s} className="inline-flex items-center gap-1">
+              <SeverityBadge severity={s} /><span className="tabnum text-sm font-semibold text-ink-2">{stats.bySeverity[s]}</span>
+            </span>
+          ))}
+        </div>
+      </Card>
+      <div className="grid gap-2 sm:grid-cols-2">
+        <ModeTile to={base} icon="alert" title={`All ${stats.total} mistakes`} note="By phase, with filters, search and a printable pre-flight checklist" />
+        {drill.total >= 4 && (
+          <ModeTile to={`${base}/drill`} icon="shield" title="Mistake drill"
+            note={drill.due ? `${drill.due} due now. Missed ones come back.` : `${drill.total} to learn: what happens, how to prevent it`} />
+        )}
+      </div>
+    </section>
   );
 }
 
@@ -71,10 +133,21 @@ export default function UnitOverview() {
         </div>
       </section>
 
+      <MistakesSection unit={unit} state={state} />
+
+      {unit.failureModes.length > 0 && (
+        <section>
+          <SectionTitle sub="How this unit usually fails in service, and what the rebuild does about it.">How these units die</SectionTitle>
+          <FailureModes unit={unit} />
+        </section>
+      )}
+
+      <PartsSection unit={unit} />
+
       {unit.summary && (
         <section>
           <SectionTitle>About this unit</SectionTitle>
-          <p className="text-base leading-relaxed text-ink-2">{unit.summary}</p>
+          <p className="text-base leading-relaxed text-ink-2"><Glossed text={unit.summary} /></p>
         </section>
       )}
 
@@ -82,12 +155,15 @@ export default function UnitOverview() {
         <section>
           <SectionTitle>Facts</SectionTitle>
           <Card as="dl" className="divide-y divide-line-2">
-            {unit.facts.map((f, i) => (
-              <div key={`${f.label}-${i}`} className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-3 px-4 py-2.5">
-                <dt className="text-sm text-ink-3">{f.label}</dt>
-                <dd className="text-sm font-medium text-ink">{f.value}</dd>
-              </div>
-            ))}
+            {unit.facts.map((f, i) => {
+              const [, valueSkip] = glossSkips([f.label, f.value]);
+              return (
+                <div key={`${f.label}-${i}`} className="grid grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-3 px-4 py-2.5">
+                  <dt className="text-sm text-ink-3"><Glossed text={f.label} /></dt>
+                  <dd className="text-sm font-medium text-ink"><Glossed text={f.value} skip={valueSkip} /></dd>
+                </div>
+              );
+            })}
           </Card>
         </section>
       )}
@@ -99,7 +175,7 @@ export default function UnitOverview() {
             {unit.notes.map((n, i) => (
               <li key={i} className="flex gap-2.5 text-base leading-relaxed text-ink-2">
                 <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-heat" />
-                <span className="min-w-0">{n}</span>
+                <span className="min-w-0"><Glossed text={n} /></span>
               </li>
             ))}
           </ul>

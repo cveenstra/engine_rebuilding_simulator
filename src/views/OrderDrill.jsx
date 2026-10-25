@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Button, Chip, ChipRow, Card } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
 import { ModeHeader, UnitMissing, ActionBar, ChoiceButton, CriticalBadge } from '../components/bench.jsx';
+import { PartStrip } from '../components/parts.jsx';
+import { Glossed } from '../components/glossary.jsx';
 import { useUnit } from '../engine/unit.js';
 import { orderWindow } from '../engine/game.js';
 import { gradeMany, transitionId } from '../engine/srs.js';
@@ -127,9 +129,10 @@ function Drill({ unit }) {
                       {!ok && (
                         <>
                           <p className="text-sm text-bad-text">You put it at {positionOf[s.id] + 1}. Step {s.order} of the rebuild.</p>
-                          <p className="mt-1 text-sm leading-relaxed text-ink-2">{s.why || s.action}</p>
+                          <p className="mt-1 text-sm leading-relaxed text-ink-2"><Glossed text={s.why || s.action} /></p>
                         </>
                       )}
+                      <PartStrip unit={unit} step={s} small className="mt-2" />
                     </div>
                     {ok && <Icon name="check" size={20} strokeWidth={2.4} className="text-ok-text" />}
                   </div>

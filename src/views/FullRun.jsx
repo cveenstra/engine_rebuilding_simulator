@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Card, Chip, Bar, Stat } from '../components/ui.jsx';
 import Icon from '../components/Icon.jsx';
 import { ModeHeader, UnitMissing, ActionBar, ChoiceButton, StepCard } from '../components/bench.jsx';
+import { PartStrip } from '../components/parts.jsx';
+import { Glossed } from '../components/glossary.jsx';
 import { useUnit } from '../engine/unit.js';
 import { runChoices } from '../engine/game.js';
 import { grade, transitionId } from '../engine/srs.js';
@@ -52,7 +54,8 @@ function Results({ unit, result, onAgain }) {
                   <p className="text-base font-semibold text-ink">
                     <span className="tabnum text-brand-text">{to.order}.</span> {to.title}
                   </p>
-                  {(to.why || to.action) && <p className="mt-1 text-sm leading-relaxed text-ink-2">{to.why || to.action}</p>}
+                  {(to.why || to.action) && <p className="mt-1 text-sm leading-relaxed text-ink-2"><Glossed text={to.why || to.action} /></p>}
+                  <PartStrip unit={unit} step={to} small className="mt-2" />
                 </li>
               );
             })}

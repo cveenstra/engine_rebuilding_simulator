@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Icon from './Icon.jsx';
 import { Pill, Empty, Button } from './ui.jsx';
 import { SPEC_KIND_LABEL } from '../data/index.js';
+import { PartStrip } from './parts.jsx';
+import { Glossed } from './glossary.jsx';
+import { glossSkips } from '../engine/glossary.js';
+import { MistakeCount, MistakeSection } from './mistakes.jsx';
 
 export function UnitMissing() {
   return (
@@ -80,7 +85,7 @@ export function SpecValue({ spec, className = '' }) {
 }
 
 /** A spec with its kind, value, note, sources and the always-on verify tag. */
-export function SpecBlock({ unit, spec }) {
+export function SpecBlock({ unit, spec, skip }) {
   if (!spec) return null;
   return (
     <div className="rounded-lg border border-heat-line bg-heat-soft/60 p-3">
@@ -88,30 +93,48 @@ export function SpecBlock({ unit, spec }) {
         {SPEC_KIND_LABEL[spec.kind] || 'Spec'}
       </p>
       <p className="mt-0.5 text-lg"><SpecValue spec={spec} /></p>
-      {spec.note && <p className="mt-0.5 text-sm text-ink-2">{spec.note}</p>}
+      {spec.note && <p className="mt-0.5 text-sm text-ink-2"><Glossed text={spec.note} skip={skip} /></p>}
       <div className="mt-2"><VerifyTag /></div>
       <SourceLinks unit={unit} ids={spec.sourceIds} className="mt-2" />
     </div>
   );
 }
 
-/** Everything about one step. Used by the walkthrough and the after-answer explanations. */
-export function StepCard({ unit, step, compact = false }) {
+/**
+ * Everything about one step. Used by the walkthrough and the after-answer explanations.
+ * Its ways to go wrong start collapsed, except on a critical step or when `mistakesOpen`.
+ */
+export function StepCard({ unit, step, compact = false, mistakesOpen = false }) {
   const phase = unit.phaseById[step.phase];
+  // Each term is linked once per card: in the first of these it appears in.
+  const [, whySkip, specSkip] = glossSkips([step.action, step.why, step.spec?.note]);
+  const initial = mistakesOpen || !!step.critical;
+  const [m, setM] = useState({ id: step.id, open: initial });
+  if (m.id !== step.id) setM({ id: step.id, open: initial });
+  const open = m.id === step.id ? m.open : initial;
+  const sectionId = `ways-${step.id}`;
+  const toggle = () => setM({ id: step.id, open: !open });
+  const fromHeader = () => {
+    setM({ id: step.id, open: true });
+    requestAnimationFrame(() => document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
+  };
   return (
     <article className="rounded-xl border border-line bg-surface p-4">
       <div className="mb-2 flex flex-wrap items-center gap-2">
         <span className="tabnum text-sm font-semibold text-brand-text">Step {step.order}</span>
         {phase && <span className="text-sm text-ink-3">{phase.name}</span>}
         {step.critical && <CriticalBadge />}
+        <MistakeCount step={step} open={open} onClick={fromHeader} />
       </div>
       <h2 className="text-xl font-semibold leading-snug text-ink">{step.title}</h2>
-      {step.action && <p className="mt-2 text-base leading-relaxed text-ink-2">{step.action}</p>}
+      {step.action && <p className="mt-2 text-base leading-relaxed text-ink-2"><Glossed text={step.action} /></p>}
+
+      <PartStrip unit={unit} step={step} className="mt-3" />
 
       {step.why && (
         <div className="mt-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">Why here</p>
-          <p className="mt-0.5 text-base leading-relaxed text-ink-2">{step.why}</p>
+          <p className="mt-0.5 text-base leading-relaxed text-ink-2"><Glossed text={step.why} skip={whySkip} /></p>
         </div>
       )}
 
@@ -119,19 +142,14 @@ export function StepCard({ unit, step, compact = false }) {
         <div className="mt-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-3">Tools</p>
           <ul className="mt-1 flex flex-wrap gap-1.5">
-            {step.tools.map((t) => <li key={t}><Pill>{t}</Pill></li>)}
+            {step.tools.map((t) => <li key={t}><Pill><Glossed text={t} /></Pill></li>)}
           </ul>
         </div>
       )}
 
-      {step.spec && <div className="mt-3"><SpecBlock unit={unit} spec={step.spec} /></div>}
+      {step.spec && <div className="mt-3"><SpecBlock unit={unit} spec={step.spec} skip={specSkip} /></div>}
 
-      {step.mistake && (
-        <div className="mt-3 rounded-lg border border-bad-line bg-bad-soft/60 p-3">
-          <p className="text-xs font-semibold uppercase tracking-wide text-bad-text">Common mistake</p>
-          <p className="mt-0.5 text-sm leading-relaxed text-ink">{step.mistake}</p>
-        </div>
-      )}
+      <MistakeSection unit={unit} step={step} open={open} onToggle={toggle} id={sectionId} />
 
       {!compact && step.sourceIds.length > 0 && (
         <details className="mt-3">

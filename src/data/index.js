@@ -8,7 +8,43 @@ import sampleUnit from './fixtures/sample-unit.json';
 const modules = import.meta.glob('./units/*.json', { eager: true });
 
 const asArr = (v) => (Array.isArray(v) ? v : []);
-const str = (v) => (typeof v === 'string' ? v : '');
+const str = (v) => (typeof v === 'string' ? v.trim() : '');
+/** A string or a list of strings, as a list of non-empty strings. */
+const strList = (v) => (Array.isArray(v) ? v : [v]).map(str).filter(Boolean);
+
+/** Mistake severities, worst first. */
+export const SEVERITIES = ['ruins-unit', 'costly', 'rework', 'minor'];
+const SEVERITY_SET = new Set(SEVERITIES);
+const sevRank = (m) => (m.severity ? SEVERITIES.indexOf(m.severity) : SEVERITIES.length);
+
+/**
+ * A step's ways to go wrong, worst first. A step with no `mistakes` list but
+ * the older one-sentence `mistake` gets it as a single unrated entry
+ * (legacy: no title, consequence or prevent, so it is listed but not drilled).
+ */
+function stepMistakes(s) {
+  const list = asArr(s.mistakes)
+    .filter((m) => m && typeof m === 'object' && (str(m.what) || str(m.title)))
+    .map((m, i) => ({
+      id: str(m.id) || `${s.id}-m${i + 1}`,
+      title: str(m.title),
+      what: str(m.what),
+      consequence: str(m.consequence),
+      prevent: str(m.prevent),
+      detect: str(m.detect),
+      severity: SEVERITY_SET.has(m.severity) ? m.severity : null,
+      sourceIds: asArr(m.sourceIds),
+      stepId: s.id,
+      legacy: false,
+    }));
+  if (!list.length && str(s.mistake)) {
+    list.push({
+      id: `${s.id}-mistake`, title: '', what: str(s.mistake), consequence: '', prevent: '', detect: '',
+      severity: null, sourceIds: [], stepId: s.id, legacy: true,
+    });
+  }
+  return list.map((m, i) => [m, i]).sort((a, b) => sevRank(a[0]) - sevRank(b[0]) || a[1] - b[1]).map(([m]) => m);
+}
 
 /** Make a unit safe to render even if a field is missing; sort steps by order. */
 function normalize(raw, { sample = false } = {}) {
@@ -26,9 +62,31 @@ function normalize(raw, { sample = false } = {}) {
       sourceIds: asArr(s.sourceIds),
       spec: s.spec && typeof s.spec === 'object' ? { ...s.spec, sourceIds: asArr(s.spec.sourceIds) } : null,
       phase: phaseIds.has(s.phase) ? s.phase : phases[0]?.id ?? 'unknown',
+      mistakes: stepMistakes(s),
     }))
     .sort((a, b) => a.order - b.order)
     .map((s, index) => ({ ...s, index }));
+  const stepById = Object.fromEntries(steps.map((s) => [s.id, s]));
+  // Every mistake in step order. Ids are progress keys, so a repeat gets a suffix rather than sharing a card.
+  const seenIds = new Set();
+  const mistakes = steps.flatMap((s) => s.mistakes).map((m) => {
+    let id = m.id;
+    for (let k = 2; seenIds.has(id); k++) id = `${m.id}~${k}`;
+    seenIds.add(id);
+    if (id !== m.id) m.id = id;
+    return m;
+  });
+  const failureModes = asArr(u.failureModes)
+    .filter((f) => f && typeof f === 'object' && str(f.title))
+    .map((f, i) => ({
+      id: str(f.id) || `fm-${i + 1}`,
+      title: str(f.title),
+      cause: strList(f.cause),
+      symptoms: strList(f.symptoms),
+      rebuildAngle: strList(f.rebuildAngle),
+      stepIds: asArr(f.stepIds).filter((id) => stepById[id]).sort((a, b) => stepById[a].order - stepById[b].order),
+      sourceIds: asArr(f.sourceIds),
+    }));
   const sources = asArr(u.sources).filter((s) => s && s.id);
   return {
     id: str(u.id),
@@ -46,6 +104,9 @@ function normalize(raw, { sample = false } = {}) {
     phases: phases.map((p) => ({ ...p, steps: steps.filter((s) => s.phase === p.id) })),
     phaseById: Object.fromEntries(phases.map((p) => [p.id, p])),
     steps,
+    stepById,
+    mistakes,
+    failureModes,
     sample,
   };
 }
