@@ -51,7 +51,7 @@ function Deck({ unit }) {
       <div>
         <ModeHeader unit={unit} title="Spec flashcards" />
         <Empty title="No sourced specs yet" action={<Button to={`/unit/${unit.id}`} variant="ghost">Back to {unit.name}</Button>}>
-          Only steps with a cited spec become flashcards. None are in this unit's data yet.
+          Only steps with a sourced spec become flashcards, and this unit has none yet.
         </Empty>
       </div>
     );
@@ -93,7 +93,7 @@ function Deck({ unit }) {
         <Card className="p-5 text-center">
           <p className="text-lg font-semibold text-ink">Deck done</p>
           <p className="mt-1 text-base text-ink-2">{tally.got} got it, {tally.again} to see again.</p>
-          <p className="mt-2 text-sm text-ink-3">Cards you missed stay at the front of this deck until you get them.</p>
+          <p className="mt-2 text-sm text-ink-3">Cards you missed stay at the front of the deck until you get them right.</p>
         </Card>
       ) : (
         <button

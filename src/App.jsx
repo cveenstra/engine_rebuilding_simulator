@@ -46,7 +46,7 @@ const TABS = [
 
 const DESKTOP_NAV = [
   { to: '/', label: 'Garage', end: true },
-  { to: '/review', label: 'Review due' },
+  { to: '/review', label: 'Review' },
   { to: '/terms', label: 'Terms' },
   { to: '/dictionary', label: 'Dictionary' },
   { to: '/compare', label: 'Compare' },

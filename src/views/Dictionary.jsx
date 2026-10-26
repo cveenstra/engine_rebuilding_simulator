@@ -8,8 +8,8 @@ import { GLOSSARY_CATEGORIES, termCategoryLabel, letterOf } from '../data/glossa
 
 function NoGlossary() {
   return (
-    <Empty title="The dictionary is on its way" action={<Button to="/" variant="ghost">Back to the garage</Button>}>
-      Terms appear here, and as tappable words across the app, as soon as the glossary file lands.
+    <Empty title="No terms yet" action={<Button to="/" variant="ghost">Back to the garage</Button>}>
+      Terms show up here, and as tappable words across the app, once they’re added.
     </Empty>
   );
 }
@@ -37,7 +37,7 @@ function TermRow({ term, open, onToggle }) {
             to={`/dictionary/${term.id}`}
             className="inline-flex min-h-11 items-center gap-1 text-sm font-medium text-brand-text underline decoration-brand-line underline-offset-2"
           >
-            Open as its own page <Icon name="chevron" size={14} />
+            Open full page <Icon name="chevron" size={14} />
           </Link>
         </div>
       )}
@@ -87,7 +87,7 @@ function DictionaryList() {
     <div className="space-y-4">
       <PageHeader
         title="Dictionary"
-        sub="Shop words in plain English. Any word with a dotted underline elsewhere in the app opens its meaning here."
+        sub="Shop terms in plain English. Tap any underlined word in the app to see what it means."
       />
 
       <div className="flex flex-wrap gap-2">
@@ -130,7 +130,7 @@ function DictionaryList() {
       )}
 
       {!results.length ? (
-        <Empty title="No term matches that">Try a shorter word, or clear the category filter.</Empty>
+        <Empty title="No terms match">Try a shorter word, or clear the type filter.</Empty>
       ) : groups ? (
         <div className="space-y-4">
           {groups.map(([l, list]) => (
@@ -161,7 +161,7 @@ function TermPage({ termId }) {
     return (
       <div>
         <PageHeader title="Term not found" back={back} />
-        <Empty title="That term is not in the dictionary" action={<Button to="/dictionary" variant="ghost">Browse the dictionary</Button>} />
+        <Empty title="That term isn’t in the dictionary" action={<Button to="/dictionary" variant="ghost">Browse the dictionary</Button>} />
       </div>
     );
   }

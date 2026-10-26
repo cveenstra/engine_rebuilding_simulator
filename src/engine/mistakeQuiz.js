@@ -7,9 +7,9 @@
  * a step's position in the rebuild.
  *
  * Three kinds of question:
- *   consequence  "What happens if...?"   the step and the mistake, pick its consequence
- *   prevent      "How do you prevent it?" the mistake, pick how to prevent it
- *   step         "Which of these is a real risk at this step?" the step, pick its mistake
+ *   consequence  "What happens if you make this mistake?"  the step and the mistake, pick its consequence
+ *   prevent      "How do you prevent this mistake?"        the mistake, pick how to prevent it
+ *   step         "Which mistake is a real risk at this step?" the step, pick its mistake
  *
  * Wrong answers are real text from other mistakes in the unit, chosen closest
  * in length to the right one so length never gives the answer away. A step
@@ -20,9 +20,9 @@ import { shuffle } from './ladder.js';
 
 export const KINDS = ['consequence', 'prevent', 'step'];
 export const KIND_PROMPT = {
-  consequence: 'What happens if...?',
-  prevent: 'How do you prevent it?',
-  step: 'Which of these is a real risk at this step?',
+  consequence: 'What happens if you make this mistake?',
+  prevent: 'How do you prevent this mistake?',
+  step: 'Which mistake is a real risk at this step?',
 };
 /** Steps this close to the asked step never supply a wrong answer to a step question. */
 export const STEP_GAP = 3;

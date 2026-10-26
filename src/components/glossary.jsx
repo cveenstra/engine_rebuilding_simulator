@@ -89,7 +89,7 @@ export function TermBody({ term, onPick, onLeave, size = 'page', headingLevel = 
             <Link to={`/part/${part.id}`} onClick={onLeave} className="flex min-h-11 items-center gap-3 rounded-lg hover:bg-sunken">
               <PartThumb partId={part.id} className="w-28 flex-shrink-0" />
               <span className="min-w-0 flex-1 text-base font-medium text-brand-text underline decoration-brand-line underline-offset-2">
-                {part.name}: part page
+                {part.name}
               </span>
               <Icon name="chevron" size={16} className="text-ink-3" />
             </Link>
@@ -100,7 +100,7 @@ export function TermBody({ term, onPick, onLeave, size = 'page', headingLevel = 
                 to={`/part/${part.id}`} onClick={onLeave}
                 className="mt-2 flex min-h-11 items-center justify-center gap-1 rounded-lg border border-line px-4 text-base font-medium text-brand-text hover:bg-sunken"
               >
-                {part.name}: full part page <Icon name="chevron" size={16} />
+                Open the part page <Icon name="chevron" size={16} />
               </Link>
             </>
           )}

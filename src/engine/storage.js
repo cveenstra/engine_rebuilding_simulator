@@ -115,7 +115,7 @@ export function exportJSON() {
 export function importJSON(text) {
   const parsed = JSON.parse(text);
   if (!isObj(parsed) || parsed.app !== 'rebuild-bench' || !isObj(parsed.srs)) {
-    throw new Error('That file is not a Rebuild Bench progress backup.');
+    throw new Error('That file isn’t a Rebuild Bench backup.');
   }
   cache = { ...sanitize(parsed), savedAt: Date.now() };
   safeSet(KEY, JSON.stringify(cache));

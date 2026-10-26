@@ -59,7 +59,7 @@ function Game({ unit }) {
       </ModeHeader>
 
       <ChipRow className="mb-4">
-        <Chip active={!phase} onClick={() => pickPhase('')}>Anywhere</Chip>
+        <Chip active={!phase} onClick={() => pickPhase('')}>All phases</Chip>
         {unit.phases.map((p) => (
           <Chip key={p.id} active={phase === p.id} onClick={() => pickPhase(p.id)}>{p.name}</Chip>
         ))}
@@ -68,7 +68,7 @@ function Game({ unit }) {
       {q ? (
         <NextQuestion key={q.step.id} unit={unit} q={q} picked={picked} onPick={onPick} explainProps={beat.pauseProps} />
       ) : (
-        <p className="text-base text-ink-2">This phase has no step with a step after it. Pick another phase.</p>
+        <p className="text-base text-ink-2">There’s nothing to ask in this phase. Pick another one.</p>
       )}
 
       <ActionBar beat={beat}>

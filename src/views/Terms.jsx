@@ -10,8 +10,8 @@ import { termSummary, termBreakdown, hasTerms, newPerDay, perDayLabel, scopeTerm
 import { dueAt, formatGap } from '../engine/ladder.js';
 
 const MODES = [
-  ['ask', 'Questions', 'Pick from 4. The question gets harder as a term climbs.'],
-  ['flip', 'Flip cards', 'See the word, say what it means, then grade yourself.'],
+  ['ask', 'Questions', 'Pick from four. Questions get harder as you learn a term.'],
+  ['flip', 'Flip cards', 'See the term, say what it means, then grade yourself.'],
 ];
 
 /** When the next term in a scope comes back, as "10 min" or "3 days", or null. */
@@ -38,8 +38,8 @@ export default function Terms() {
     return (
       <div>
         <PageHeader title="Terms" />
-        <Empty title="The dictionary is on its way" action={<Button to="/" variant="ghost">Back to the garage</Button>}>
-          The terminology drill needs at least four defined terms. It fills in as soon as the glossary lands.
+        <Empty title="No terms yet" action={<Button to="/" variant="ghost">Back to the garage</Button>}>
+          The term drill needs at least four defined terms.
         </Empty>
       </div>
     );
@@ -63,7 +63,7 @@ export default function Terms() {
     <div className="space-y-6">
       <PageHeader
         title="Terms"
-        sub="Learn the shop language one word at a time, in the order the words build on each other. Each term climbs a ladder: right moves it up a rung, wrong moves it down, and the gaps stretch from minutes to weeks."
+        sub="Learn the shop language one term at a time, basics first. A right answer moves a term up a rung and a miss moves it down. The higher it climbs, the longer until you see it again, from minutes to weeks."
       />
 
       <Card className="p-4">
@@ -75,20 +75,20 @@ export default function Terms() {
         <StatusBar counts={s} className="mt-4" />
         <StatusLegend className="mt-2" />
         {s.locked > 0 && (
-          <p className="mt-2 text-sm text-ink-3">{s.locked} term{s.locked === 1 ? '' : 's'} locked until the words they build on are learned.</p>
+          <p className="mt-2 text-sm text-ink-3">{s.locked} term{s.locked === 1 ? ' is' : 's are'} locked until you learn what {s.locked === 1 ? 'it builds' : 'they build'} on.</p>
         )}
       </Card>
 
       <section>
-        <SectionTitle sub="A filter keeps the words it needs underneath, so nothing is locked behind a word it left out.">What to drill</SectionTitle>
+        <SectionTitle sub="Filters keep the basic terms each one builds on, so nothing gets stuck behind a term you filtered out.">What to drill</SectionTitle>
         <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink-3">Unit</p>
         <ChipRow className="mb-3">
           <Chip active={!unitId} onClick={() => setParam('unit', '')}>All units</Chip>
           {units.map((u) => <Chip key={u.id} active={unitId === u.id} onClick={() => setParam('unit', u.id)}>{u.name}</Chip>)}
         </ChipRow>
-        <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink-3">Kind of word</p>
+        <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink-3">Type</p>
         <ChipRow className="mb-3">
-          <Chip active={!category} onClick={() => setParam('cat', '')}>All kinds</Chip>
+          <Chip active={!category} onClick={() => setParam('cat', '')}>All types</Chip>
           {cats.map(([c, label]) => <Chip key={c} active={category === c} onClick={() => setParam('cat', c)}>{label}</Chip>)}
         </ChipRow>
         <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink-3">How</p>
@@ -109,14 +109,14 @@ export default function Terms() {
       <div>
         {waiting > 0 ? (
           <Button to={`/terms/drill?${query}`} className="w-full sm:w-auto">
-            <Icon name="play" size={16} /> Start: {s.due} due, {s.newToday} new
+            <Icon name="play" size={16} /> Start: {[s.due && `${s.due} due`, s.newToday && `${s.newToday} new`].filter(Boolean).join(', ')}
           </Button>
         ) : (
           <Card className="p-4">
             <p className="text-base font-semibold text-ink">Nothing waiting{unitId || category ? ' in this filter' : ''}</p>
             <p className="mt-1 text-sm text-ink-3">
               {later ? `The next term comes back in ${later}. ` : ''}
-              {s.allowance === 0 ? 'Today’s new terms are done; more open tomorrow.' : s.new === 0 && s.locked ? 'Learn the words underneath to unlock more.' : ''}
+              {s.allowance === 0 ? 'You’ve had today’s new terms. More tomorrow.' : s.new === 0 && s.locked ? 'Keep reviewing to unlock more.' : ''}
             </p>
           </Card>
         )}
@@ -130,7 +130,7 @@ export default function Terms() {
           <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-text"><Icon name="map" size={20} /></span>
           <span className="min-w-0 flex-1">
             <span className="block text-base font-medium text-ink">Concept map</span>
-            <span className="block text-sm text-ink-3">Every word by level, and what it builds on</span>
+            <span className="block text-sm text-ink-3">Every term by level, and what it builds on</span>
           </span>
           <Icon name="chevron" size={18} className="text-ink-3" />
         </Link>
@@ -138,14 +138,14 @@ export default function Terms() {
           <span className="grid h-10 w-10 flex-shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-text"><Icon name="book" size={20} /></span>
           <span className="min-w-0 flex-1">
             <span className="block text-base font-medium text-ink">Dictionary</span>
-            <span className="block text-sm text-ink-3">Look up any word, A to Z</span>
+            <span className="block text-sm text-ink-3">Look up any term, A to Z</span>
           </span>
           <Icon name="chevron" size={18} className="text-ink-3" />
         </Link>
       </div>
 
       <section>
-        <SectionTitle sub="Words each unit's steps use, with the words underneath them.">By unit</SectionTitle>
+        <SectionTitle sub="The terms each unit uses, plus the ones they build on.">By unit</SectionTitle>
         <Card as="ul" className="divide-y divide-line-2">
           {units.filter((u) => byUnit.has(u.id)).map((u) => {
             const c = byUnit.get(u.id);
@@ -163,7 +163,7 @@ export default function Terms() {
       </section>
 
       <section>
-        <SectionTitle>By concept group</SectionTitle>
+        <SectionTitle>By topic</SectionTitle>
         <Card as="ul" className="divide-y divide-line-2">
           {[...byGroup.entries()].map(([g, c]) => (
             <li key={g} className="px-4 py-3">

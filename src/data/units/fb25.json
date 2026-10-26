@@ -110,7 +110,7 @@
     "There are no piston pin service holes on the FB25. Pistons and rods leave and enter through the bores, with the rod caps reached from the oil pan side, which is why the heads and oil pan upper come off before the block is split.",
     "The engine comes out without the TR580; the torque converter stays in the transmission and needs the converter stopper fitted before the engine is pulled away.",
     "Special tools that matter: crankshaft socket 18252AA000, rod bolt socket 18270AA020, cam sprocket socket 18270KA010, pulley wrench 18355AA000 with pin sets, angle gauge, valve spring compressor, rear seal guide and installer, and the chain cover removal kit J-53038 with alignment pins J-51972.",
-    "Treat as one-time use: connecting rod cap bolts, head gaskets, every O-ring, AVCS filter screens, the oil separator cover, valve stem seals, front and rear crank seals, and any replaced valve shim.",
+    "Treat as one-time use: connecting rod cap bolts, head gaskets, every O-ring, AVCS filter screens, the oil separator cover, the PCV adapter, valve stem seals, front and rear crank seals, and any replaced valve shim.",
     "Liquid gasket is ThreeBond 1217G per the manual (ThreeBond 1105 on gallery plug threads, 1141G on the PCV valve). Most joints must be assembled within five minutes of applying the bead.",
     "Usually sublet to a machine shop: head and deck surfacing, valve guide replacement and seat cutting, boring and honing (all four bores at once), crank grinding and rod bushing replacement.",
     "Typical rebuild kits omit the oil pump and timing parts. The oil pump is built into the chain cover and is not serviceable separately."
@@ -676,7 +676,7 @@
       "id": "prep",
       "name": "Prep and engine removal",
       "kind": "prep",
-      "summary": "Check the engine, drain it, disconnect it and lift it out of the Forester leaving the TR580 in the car."
+      "summary": "Check the engine, drain it, disconnect it and lift it out of the Forester, leaving the TR580 in the car."
     },
     {
       "id": "teardown-ext",
@@ -826,7 +826,7 @@
       "id": "fb25-003",
       "order": 3,
       "phase": "prep",
-      "title": "Relieve fuel pressure, disconnect battery",
+      "title": "Relieve fuel pressure and disconnect battery",
       "action": "Bleed fuel pressure using the factory procedure, remove the fuel filler cap to vent the tank, then disconnect the battery ground.",
       "why": "Fuel lines are opened later; relieving pressure first keeps fuel from spraying, and the ground comes off before any connector is unplugged.",
       "mistakes": [
@@ -865,7 +865,7 @@
       "order": 4,
       "phase": "prep",
       "title": "Drain the coolant",
-      "action": "Fit a hose to the radiator drain, open the drain plug with the radiator cap off and collect the coolant; refit the drain with new O-rings.",
+      "action": "Fit a hose to the radiator drain, take off the radiator cap, open the drain plug and collect the coolant, then refit the drain plug with new O-rings.",
       "tools": [
         "Drain pan",
         "8 mm ID hose"
@@ -925,9 +925,9 @@
       "mistakes": [
         {
           "id": "fb25-005-m1",
-          "title": "Old oil and filter discarded unread",
+          "title": "Old oil and filter thrown away unchecked",
           "what": "Draining the oil and throwing the filter away without looking at either.",
-          "consequence": "The evidence of what failed is lost: glitter means bearing wear, milky oil means coolant, and sludge points at the AVCS and PCV problems.",
+          "consequence": "The evidence of what failed is lost: glitter means bearing wear, milky oil means coolant, and sludge points to AVCS and PCV problems.",
           "prevent": "Drain into a clean pan, look at the oil in good light, and cut the filter open before scrapping it.",
           "detect": "Metal flakes in the filter pleats or a milky film on the dipstick.",
           "severity": "minor",
@@ -999,7 +999,7 @@
       "id": "fb25-007",
       "order": 7,
       "phase": "prep",
-      "title": "Label and disconnect engine harness",
+      "title": "Label and disconnect the engine harness",
       "action": "Tag and unplug the bulkhead harness connectors, generator and A/C compressor leads, and the engine ground strap; free the harness from its clips.",
       "why": "Labels now save hours at reinstallation when dozens of identical-looking connectors go back.",
       "tools": [
@@ -1055,7 +1055,7 @@
           "id": "fb25-008-m1",
           "title": "Heater hoses not marked",
           "what": "Disconnecting the heater inlet and outlet hoses without tagging which is which.",
-          "consequence": "They are easy to swap at reinstallation, and swapped hoses give poor heat and trap air in the system.",
+          "consequence": "Unmarked heater hoses are easily swapped at reinstallation, giving poor heat and trapping air in the system.",
           "prevent": "Tag each hose and its pipe with matching labels before pulling them off.",
           "severity": "rework",
           "sourceIds": [
@@ -1064,9 +1064,9 @@
         },
         {
           "id": "fb25-008-m2",
-          "title": "CVT fluid cooler lines disturbed",
-          "what": "Disconnecting the short CVT fluid lines at the cooler instead of just the engine coolant hoses.",
-          "consequence": "CVT fluid is lost and dirt can enter the transmission circuit, and the CVTF level then has to be corrected.",
+          "title": "CVTF cooler lines disturbed",
+          "what": "Disconnecting the short CVTF lines at the cooler instead of just the engine coolant hoses.",
+          "consequence": "CVTF is lost and dirt can enter the transmission circuit, and the CVTF level then has to be corrected.",
           "prevent": "Disconnect only the coolant hoses and move the cooler on its bracket, leaving the short CVTF lines undisturbed.",
           "severity": "rework",
           "sourceIds": [
@@ -1137,7 +1137,7 @@
       "order": 10,
       "phase": "prep",
       "title": "Unbolt converter from drive plate",
-      "action": "Remove the service hole plug, turn the crank by the pulley bolt to reach each of the torque converter bolts and remove them.",
+      "action": "Remove the service hole plug, then turn the crank by the pulley bolt to bring each torque converter bolt into reach and remove it.",
       "why": "On the Forester the engine comes out alone and the TR580 stays in the car, so the converter must be freed from the drive plate first.",
       "mistakes": [
         {
@@ -1206,7 +1206,7 @@
       "id": "fb25-012",
       "order": 12,
       "phase": "prep",
-      "title": "Fit converter stopper, separate bellhousing",
+      "title": "Fit converter stopper and separate bellhousing",
       "action": "Remove the starter, attach the torque converter stopper to the converter housing, then remove the upper transmission-to-engine bolts.",
       "why": "The stopper keeps the converter seated on the transmission input shaft as the engine pulls away.",
       "tools": [
@@ -1229,7 +1229,7 @@
         {
           "id": "fb25-012-m2",
           "title": "Prying on the bellhousing seam",
-          "what": "Wedging a bar into the machined joint between the engine and the CVT case to break them apart.",
+          "what": "Wedging a pry bar into the machined joint between the engine and the CVT case to break them apart.",
           "consequence": "The mating faces are gouged or the case is cracked, causing leaks or misalignment when the engine goes back.",
           "prevent": "Use only the pry relief point near the engine number, apply light pressure, and never twist the tool.",
           "severity": "costly",
@@ -1268,7 +1268,7 @@
         },
         {
           "id": "fb25-013-m2",
-          "title": "Lifting before the shaft clears",
+          "title": "Engine lifted before the shaft clears",
           "what": "Raising the engine while the converter and input shaft are still engaged with it.",
           "consequence": "The input shaft or converter pilot takes a side load and the pump or seal is damaged.",
           "prevent": "Slide the engine straight forward until it is completely clear of the transmission before lifting.",
@@ -1301,7 +1301,7 @@
       "id": "fb25-014",
       "order": 14,
       "phase": "prep",
-      "title": "Mount the engine on stand",
+      "title": "Mount the engine on the stand",
       "action": "Remove the engine mounts and bolt the engine to the stand using the RH and LH stand adapters and the adapter plate.",
       "tools": [
         "Engine stand 499817100",
@@ -1355,14 +1355,14 @@
       "order": 15,
       "phase": "teardown-ext",
       "title": "Remove the V-belt",
-      "action": "Turn the belt tensioner clockwise with a wrench to relieve tension and slip the belt off, then remove the tensioner and the idler pulley.",
+      "action": "Turn the belt tensioner clockwise with a wrench to relieve tension and slip the belt off, then remove the belt tensioner and the idler pulley.",
       "why": "Every pulley on the front of the engine, including the crank pulley, is blocked by the belt.",
       "mistakes": [
         {
           "id": "fb25-015-m1",
           "title": "Belt tensioner allowed to snap back",
-          "what": "Letting the tensioner arm spring back after the belt slips off.",
-          "consequence": "The tensioner damper is damaged or a hand is pinched; a weak tensioner then lets the new belt slip.",
+          "what": "Letting the belt tensioner arm spring back after the belt slips off.",
+          "consequence": "The belt tensioner damper is damaged or a hand is pinched, and a weak belt tensioner then lets the new belt slip.",
           "prevent": "Hold the wrench and return the arm slowly to its stop.",
           "severity": "minor",
           "sourceIds": [
@@ -1458,7 +1458,7 @@
       "mistakes": [
         {
           "id": "fb25-018-m1",
-          "title": "TGV sealing face gouged",
+          "title": "Tumble generator valve flange gouged",
           "what": "Prying the tumble generator valve bodies off the head plates with a screwdriver.",
           "consequence": "The scratched flange leaks air after assembly, giving lean codes and a rough idle.",
           "prevent": "Break the joint with a plastic tool and protect the flange faces on the bench.",
@@ -1481,11 +1481,11 @@
       "phase": "teardown-ext",
       "title": "Remove the EGR pipe",
       "action": "Unbolt the EGR pipe from the water pipe and the RH block half.",
-      "why": "It ties the RH head to the block and blocks the RH head from lifting off.",
+      "why": "The pipe ties the RH head to the block and stops that head from lifting off.",
       "mistakes": [
         {
           "id": "fb25-019-m1",
-          "title": "EGR pipe bent free",
+          "title": "EGR pipe twisted off its mounts",
           "what": "Twisting the EGR pipe off its block and water pipe mounts after a fastener is missed.",
           "consequence": "The pipe or its flange cracks, causing an exhaust leak or EGR flow codes.",
           "prevent": "Confirm every EGR fastener is out and lift the pipe straight off.",
@@ -1512,9 +1512,9 @@
       "mistakes": [
         {
           "id": "fb25-020-m1",
-          "title": "Spark plugs not read",
+          "title": "Old spark plugs not inspected",
           "what": "Throwing the old plugs away without laying them out by cylinder.",
-          "consequence": "Oil fouling or coolant residue on one plug, which points to a ring, guide or gasket fault there, is lost.",
+          "consequence": "The clue on the plugs is lost: oil fouling or coolant residue on one plug points to a ring, guide or gasket fault there.",
           "prevent": "Lay the plugs out in cylinder order and note their condition with the compression readings.",
           "severity": "minor",
           "sourceIds": [
@@ -1526,7 +1526,7 @@
           "id": "fb25-020-m2",
           "title": "Debris left in plug wells",
           "what": "Pulling the plugs without blowing out the plug tubes first.",
-          "consequence": "Grit drops into the cylinder and is dragged along the bore as the crank is turned for timing removal.",
+          "consequence": "Grit drops into the cylinder and is dragged along the bore as the crank is turned during teardown.",
           "prevent": "Blow out each plug well with compressed air before loosening the plug.",
           "severity": "minor",
           "sourceIds": [
@@ -1577,7 +1577,7 @@
       "id": "fb25-022",
       "order": 22,
       "phase": "teardown-ext",
-      "title": "Loosen and remove crank pulley",
+      "title": "Loosen and remove the crank pulley",
       "action": "Lock the crank pulley with the pulley wrench and pin set, break the bolt loose and remove the bolt and pulley.",
       "why": "The crank must be held by the pulley itself; the bolt is angle-torqued and will not break loose otherwise.",
       "tools": [
@@ -1619,7 +1619,7 @@
       "id": "fb25-023",
       "order": 23,
       "phase": "teardown-ext",
-      "title": "Strip harness from chain cover",
+      "title": "Strip the harness from the chain cover",
       "action": "Unplug the oil control solenoids, cam position sensors, oil pressure switch, oil temperature sensor and oil level switch, remove the harness stay, and pull the dipstick guide and idler pulley.",
       "mistakes": [
         {
@@ -1650,7 +1650,7 @@
       "order": 24,
       "phase": "teardown-ext",
       "title": "Separate the chain cover",
-      "action": "Remove all chain cover bolts and push the cover off with the factory removal tool, or pry only at the designated points with a taped bar, working around a little at a time.",
+      "action": "Remove all chain cover bolts and push the cover off with the factory removal tool, or pry only at the designated points with a taped pry bar, working around a little at a time.",
       "why": "The cover is sealed with a long bead of liquid gasket to both heads, both cam carriers, the block and the oil pan upper; it has to come off before any timing part is reachable.",
       "tools": [
         "Chain cover tool kit J-53038",
@@ -1661,7 +1661,7 @@
       "mistakes": [
         {
           "id": "fb25-024-m1",
-          "title": "Pried on cam carrier lower corner",
+          "title": "Cover pried at the carrier's lower corner",
           "what": "Levering against the unsupported lower corner of a cam carrier to free the cover.",
           "consequence": "The cam cap cracks, and a cracked cap means replacing the whole cam carrier.",
           "prevent": "Pry only at the designated points, never on the lower carrier corner.",
@@ -1674,7 +1674,7 @@
         },
         {
           "id": "fb25-024-m2",
-          "title": "Metal or power tools on the seam",
+          "title": "Steel or power tools used on the seam",
           "what": "Driving a steel pry bar, chisel or air tool into the joint to break the sealant.",
           "consequence": "The machined aluminum faces are scratched, leaving a permanent leak path that can mean a new cover or carrier.",
           "prevent": "Use the push-off kit with hand tools only and a plastic trim tool once a gap opens.",
@@ -1686,7 +1686,7 @@
         },
         {
           "id": "fb25-024-m3",
-          "title": "A cover bolt left in",
+          "title": "Cover forced with a bolt still in",
           "what": "Starting to push or pry the cover with one of its many bolts still fitted.",
           "consequence": "The cover ear or boss cracks, and the cover (with the oil pump built in) has to be replaced.",
           "prevent": "Count the bolts out and check every hole with a light before applying any force.",
@@ -1735,7 +1735,7 @@
       "order": 25,
       "phase": "teardown-ext",
       "title": "Clean off cover sealant",
-      "action": "Remove the O-rings at the heads, block LH and oil pan upper and strip the old liquid gasket from the cover and engine with gasket remover and plastic scrapers.",
+      "action": "Remove the O-rings at the heads, the LH block half and the oil pan upper, then strip the old liquid gasket from the cover and engine with gasket remover and plastic scrapers.",
       "why": "Steel blades and abrasive discs gouge the machined aluminum faces and cause leaks later.",
       "tools": [
         "Silicone gasket remover",
@@ -1778,7 +1778,7 @@
       "id": "fb25-026",
       "order": 26,
       "phase": "teardown-ext",
-      "title": "Check AVCS sprocket lock state",
+      "title": "Check each AVCS sprocket is locked",
       "action": "Before setting any marks, check whether the sensor plate on each cam sprocket turns freely against the sprocket housing.",
       "why": "If an AVCS lock pin did not engage at shutdown, the sensor plate marks are meaningless and only the housing marks can be trusted.",
       "mistake": "Timing to a free-floating sensor plate instead of the housing marks puts the cam out of time.",
@@ -1787,7 +1787,7 @@
           "id": "fb25-026-m1",
           "title": "Timed to a free-floating sensor plate",
           "what": "Lining up the timing on the sensor plate mark of a sprocket whose plate turns freely.",
-          "consequence": "That camshaft goes back out of time, setting AVCS or correlation codes and bringing the cover off again.",
+          "consequence": "A camshaft timed to a loose plate goes back out of time, setting AVCS or correlation codes and bringing the cover off again.",
           "prevent": "Check each plate for free movement and use the sprocket housing marks on any that are free.",
           "severity": "costly",
           "sourceIds": [
@@ -1826,10 +1826,10 @@
       "mistakes": [
         {
           "id": "fb25-027-m1",
-          "title": "Overshooting and backing up the crank",
+          "title": "Crank overshot and turned back",
           "what": "Turning past the alignment point and reversing the crank a long way to come back.",
           "consequence": "The chain slack moves to the wrong side and the marks look aligned when the cams are not where the procedure expects.",
-          "prevent": "Turn clockwise only, slowly near the marks, and go round again rather than backing up.",
+          "prevent": "Turn clockwise only, slowly near the marks, and go around again rather than backing up.",
           "severity": "rework",
           "sourceIds": [
             "s1"
@@ -1939,7 +1939,7 @@
       "mistakes": [
         {
           "id": "fb25-030-m1",
-          "title": "Expecting LH marks at RH positions",
+          "title": "LH marks expected at RH positions",
           "what": "Looking for the LH sprocket marks at the same clock positions as the RH and turning the crank past the real LH alignment.",
           "consequence": "The LH chain comes off out of position, and a loaded cam may later be turned by mistake.",
           "prevent": "Use the LH mark positions from the procedure, which differ from the RH positions.",
@@ -2000,9 +2000,9 @@
       "mistakes": [
         {
           "id": "fb25-032-m1",
-          "title": "LH intake turned with pistons high",
+          "title": "LH intake cam turned with pistons up",
           "what": "Turning the LH intake cam right after the LH chain comes off.",
-          "consequence": "Its open valves are driven into pistons 1 and 4, which are near the top.",
+          "consequence": "The open LH intake valves are driven into pistons 1 and 4, which are near the top.",
           "prevent": "Leave the LH intake cam alone until the pistons are parked at mid-stroke.",
           "severity": "costly",
           "sourceIds": [
@@ -2080,7 +2080,7 @@
       "id": "fb25-034",
       "order": 34,
       "phase": "teardown-ext",
-      "title": "Rotate LH intake to zero-lift",
+      "title": "Turn LH intake cam to zero lift",
       "action": "Hold the LH intake sprocket with the pulley wrench and pin set and turn it about 180 degrees to its zero-lift mark.",
       "why": "Every cam must sit at zero lift before the cam carriers are unbolted, or spring pressure loads the carrier unevenly.",
       "tools": [
@@ -2126,7 +2126,7 @@
       "phase": "teardown-ext",
       "title": "Remove the four cam sprockets",
       "action": "Hold each sprocket with the pulley wrench and pin sets (a 6 mm rod through the RH exhaust sprocket), remove the bolts with the sprocket socket and tag each sprocket by position.",
-      "why": "The sprockets come off only when the carriers will be stripped; the camshafts must stay still while the bolts break loose.",
+      "why": "The sprockets only need to come off when the carriers will be stripped; the camshafts must stay still while the bolts break loose.",
       "tools": [
         "Sprocket socket 18270KA010",
         "Pulley wrench 18355AA000",
@@ -2151,7 +2151,7 @@
           "title": "AVCS sprocket dropped",
           "what": "Dropping an AVCS sprocket on the floor or bench.",
           "consequence": "The sensor plate bends or the internal lock pin is damaged, causing AVCS or correlation codes.",
-          "prevent": "Set sprockets down on a towel, plate side up, and inspect any that was dropped.",
+          "prevent": "Set sprockets down on a towel, plate side up, and inspect any sprocket that has been dropped.",
           "severity": "costly",
           "sourceIds": [
             "s8",
@@ -2274,7 +2274,7 @@
       "id": "fb25-039",
       "order": 39,
       "phase": "teardown-heads",
-      "title": "Tip engine RH cams up",
+      "title": "Roll engine with RH cams up",
       "action": "Extend the stand with steel rods and roll the engine onto its side so the RH camshafts face up.",
       "why": "The rocker arms and shims are loose under the carrier; with the cams up they stay in place, and the extension rods keep the engine from toppling.",
       "tools": [
@@ -2294,7 +2294,7 @@
         },
         {
           "id": "fb25-039-m2",
-          "title": "Cams facing down when carrier lifts",
+          "title": "Carrier lifted with its cams facing down",
           "what": "Removing a cam carrier with that bank facing down.",
           "consequence": "Rockers, pivots and shims fall out and get mixed up.",
           "prevent": "Roll the engine so the bank being worked on faces up.",
@@ -2316,7 +2316,7 @@
       "id": "fb25-040",
       "order": 40,
       "phase": "teardown-heads",
-      "title": "Lift off RH cam carrier",
+      "title": "Lift off the RH cam carrier",
       "action": "Loosen the RH carrier bolts evenly a little at a time in the factory loosening sequence and lift the carrier off with both camshafts in it.",
       "why": "On the FB the camshafts are captured in the carrier; the carrier and cams come off as one unit.",
       "critical": true,
@@ -2403,7 +2403,7 @@
         {
           "id": "fb25-041-m2",
           "title": "Shim missing from its valve",
-          "what": "Missing a shim stuck to the bottom of a rocker or fallen into the head.",
+          "what": "Overlooking a shim that stuck to the bottom of a rocker or fell into the head.",
           "consequence": "One valve ends up with no shim and a very large clearance, or a shim is doubled elsewhere.",
           "prevent": "Count the shims against the valves before the head goes on the bench.",
           "detect": "An empty slot in the tray or a clearance reading far outside the range.",
@@ -2425,8 +2425,8 @@
       "id": "fb25-042",
       "order": 42,
       "phase": "teardown-heads",
-      "title": "Lift off LH cam carrier",
-      "action": "Roll the engine LH cams up, loosen the LH carrier bolts evenly in sequence, lift off the carrier with its cams and bag the LH rockers, pivots and shims by position.",
+      "title": "Lift off the LH cam carrier",
+      "action": "Roll the engine so the LH cams face up, loosen the LH carrier bolts evenly in sequence, lift off the carrier with its cams and bag the LH rockers, pivots and shims by position.",
       "tools": [
         "Labeled parts tray"
       ],
@@ -2434,7 +2434,7 @@
       "mistakes": [
         {
           "id": "fb25-042-m1",
-          "title": "LH cams loaded when carrier loosened",
+          "title": "LH carrier loosened with cams loaded",
           "what": "Loosening the LH carrier without checking that both LH cams sit at zero lift.",
           "consequence": "Uneven spring load bends or cracks the carrier as the bolts come out.",
           "prevent": "Check the LH intake (turned earlier) and the LH exhaust are both at zero lift before the first bolt is loosened.",
@@ -2477,7 +2477,7 @@
           "id": "fb25-043-m1",
           "title": "Head bolts loosened out of order",
           "what": "Breaking the head bolts loose randomly or one bolt fully at a time.",
-          "consequence": "The head distorts as clamp load is released unevenly, adding machining.",
+          "consequence": "The head distorts as clamp load is released unevenly, so it needs extra machining.",
           "prevent": "Loosen in the factory order in small steps across all bolts.",
           "severity": "rework",
           "sourceIds": [
@@ -2516,9 +2516,9 @@
       "mistakes": [
         {
           "id": "fb25-044-m1",
-          "title": "Screwdriver in the head joint",
+          "title": "Head pried off with a screwdriver",
           "what": "Prying between the head and block to break the gasket.",
-          "consequence": "Both sealing faces are gouged, which means resurfacing or a new head gasket leak.",
+          "consequence": "Both sealing faces are gouged, which means resurfacing or a head gasket leak later.",
           "prevent": "Tap the head loose with a plastic hammer at its solid points.",
           "severity": "costly",
           "sourceIds": [
@@ -2540,7 +2540,7 @@
           "id": "fb25-044-m3",
           "title": "Old head gasket not inspected",
           "what": "Throwing away the old head gasket without looking at it.",
-          "consequence": "Tracks showing gas or coolant crossing the gasket, which point to a warped face or crack, are lost.",
+          "consequence": "The clue in the gasket is lost: gas or coolant tracks across it point to a warped face or a crack.",
           "prevent": "Look over the gasket at the fire rings and coolant holes before scrapping it.",
           "severity": "minor",
           "sourceIds": [
@@ -2568,7 +2568,7 @@
       "mistakes": [
         {
           "id": "fb25-045-m1",
-          "title": "Coolant runs into LH bores",
+          "title": "Coolant spilled into the LH bores",
           "what": "Lifting the LH head with coolant still in its jackets.",
           "consequence": "Coolant pours into the open bores and crankcase and starts corroding liners and bearing surfaces.",
           "prevent": "Drain what you can first, mop up immediately, and wipe and oil the liners.",
@@ -2667,7 +2667,7 @@
           "id": "fb25-047-m3",
           "title": "Compressor slips off the retainer",
           "what": "Using a spring compressor that is not square to the retainer.",
-          "consequence": "It slips, the collets fly and can be lost, and the retainer or head is marked.",
+          "consequence": "The compressor slips, the collets fly off and can be lost, and the retainer or head is marked.",
           "prevent": "Center the compressor on the retainer and compress only enough to free the collets.",
           "severity": "minor",
           "sourceIds": [
@@ -2687,12 +2687,12 @@
       "id": "fb25-048",
       "order": 48,
       "phase": "teardown-heads",
-      "title": "Pull stem seals and studs",
-      "action": "Remove the valve stem seals from the guides and the stud bolts and chain cover bolt from the heads.",
+      "title": "Remove valve stem seals and studs",
+      "action": "Remove the valve stem seals from the guides, then remove the stud bolts and the chain cover bolt from the heads.",
       "mistakes": [
         {
           "id": "fb25-048-m1",
-          "title": "Valve guide damaged pulling seals",
+          "title": "Valve guide damaged while pulling seals",
           "what": "Gripping the stem seal with pliers that also bite the top of the guide.",
           "consequence": "A marked or cracked guide lets the new seal leak, which raises oil consumption.",
           "prevent": "Use a seal removal tool or pliers that grip only the seal body.",
@@ -2789,7 +2789,7 @@
       "id": "fb25-051",
       "order": 51,
       "phase": "teardown-block",
-      "title": "Remove drive plate and sensor",
+      "title": "Remove drive plate and crank sensor",
       "action": "Unbolt the drive plate with its crank position sensor plate, then remove the crank position sensor and holder from the LH half.",
       "mistakes": [
         {
@@ -2830,7 +2830,7 @@
       "order": 52,
       "phase": "teardown-block",
       "title": "Remove thermostat and water pump",
-      "action": "Turn the block oil pan up, take it off the stand, then remove the thermostat cover and thermostat and the water pump from the oil pan upper.",
+      "action": "Turn the block oil pan side up, take it off the stand, then remove the thermostat cover and thermostat and the water pump from the oil pan upper.",
       "why": "Both are mounted on the oil pan upper, which comes off next.",
       "mistakes": [
         {
@@ -2881,8 +2881,8 @@
         {
           "id": "fb25-053-m2",
           "title": "Upper pan pried at block seam",
-          "what": "Driving a screwdriver into the oil pan upper to block joint.",
-          "consequence": "This joint is a known FB leak point, and a gouge there seeps oil after the rebuild.",
+          "what": "Driving a screwdriver into the joint between the oil pan upper and the block.",
+          "consequence": "The oil pan upper to block joint is a known FB leak point, and a gouge there seeps oil after the rebuild.",
           "prevent": "Break the sealant with an oil pan cutter or plastic tools and lift evenly.",
           "severity": "costly",
           "sourceIds": [
@@ -2917,8 +2917,8 @@
       "id": "fb25-054",
       "order": 54,
       "phase": "teardown-block",
-      "title": "Stand block on its rear",
-      "action": "Thread four same-length bolts into the A/C compressor and generator bracket holes as feet, then stand the block with the rear seal down.",
+      "title": "Stand the block on its rear",
+      "action": "Thread four same-length bolts into the A/C compressor and generator bracket holes as feet, then stand the block on them with the rear seal end down.",
       "why": "The bolts keep the dowel (knock) pins off the bench, and standing the block up lets the pistons come straight out of the bores.",
       "mistakes": [
         {
@@ -2946,7 +2946,7 @@
       "order": 55,
       "phase": "teardown-block",
       "title": "Remove rods 1 and 4",
-      "action": "Turn the crank to bring the 1 and 4 rod caps into reach, remove each cap and bolt with the rod socket, rotate the crank to clear each pin, and push each piston and rod out the top of its bore.",
+      "action": "Turn the crank to bring the 1 and 4 rod caps into reach, remove each cap and bolt with the rod socket, turn the crank so each rod clears its crank pin, and push each piston and rod out the top of its bore.",
       "why": "The FB has no piston pin service holes; its diagonally split rods let the piston and rod leave through the bore once the head is off.",
       "tools": [
         "Crankshaft socket 18252AA000",
@@ -2957,7 +2957,7 @@
       "mistakes": [
         {
           "id": "fb25-055-m1",
-          "title": "Big end drags down the liner",
+          "title": "Rod big end dragged along the liner",
           "what": "Pushing the piston out and letting the rod big end scrape along the bore.",
           "consequence": "The cast iron liner is scratched, which can mean honing or boring that would not otherwise be needed.",
           "prevent": "Guide the rod by hand so the big end stays centered as the piston leaves the bore.",
@@ -3047,7 +3047,7 @@
       "order": 57,
       "phase": "teardown-block",
       "title": "Unbolt the block halves",
-      "action": "Lay the block RH half up on a padded board, remove the single outer joining bolt, then loosen the joining bolts in the factory order.",
+      "action": "Lay the block on a padded board with the RH half up, remove the single outer joining bolt, then loosen the joining bolts in the factory order.",
       "why": "The padded board protects the dowel pins and keeps the block stable while it is split.",
       "mistakes": [
         {
@@ -3118,7 +3118,7 @@
           "id": "fb25-058-m3",
           "title": "Main shells fall out mixed",
           "what": "Letting the main bearing shells drop out of the RH half and get mixed.",
-          "consequence": "Their wear pattern can no longer be read by position.",
+          "consequence": "The main shell wear patterns can no longer be read by journal position.",
           "prevent": "Lay the RH half down carefully and collect the shells in order.",
           "severity": "minor",
           "sourceIds": [
@@ -3145,7 +3145,7 @@
           "id": "fb25-059-m1",
           "title": "Crank set down on its journals",
           "what": "Laying the crank on a steel bench or letting it roll.",
-          "consequence": "Journals are nicked or the crank bent, which adds grinding or a new crank.",
+          "consequence": "Journals are nicked or the crank is bent, which adds grinding or a new crank.",
           "prevent": "Stand the crank on end or support it in V-blocks on wood.",
           "severity": "costly",
           "sourceIds": [
@@ -3166,7 +3166,7 @@
       "id": "fb25-060",
       "order": 60,
       "phase": "teardown-block",
-      "title": "Strip block plugs and covers",
+      "title": "Remove block plugs and covers",
       "action": "Remove the water jacket spacers, the oil separator cover, the block plug and main gallery plugs from both halves, and the block plate from the LH half.",
       "why": "The galleries can only be cleaned properly with every plug out.",
       "mistakes": [
@@ -3208,7 +3208,7 @@
       "order": 61,
       "phase": "teardown-block",
       "title": "Disassemble pistons from rods",
-      "action": "Remove the rod bearings, take the rings off top first, then the oil rails and expander, pry out one circlip with a taped screwdriver, push out the pin and separate the rod.",
+      "action": "Remove the rod bearings, take off the compression rings (top ring first), then the oil rails and expander, pry out one circlip with a taped screwdriver, push out the pin and separate the rod.",
       "why": "Keeping rings, pins and rods together by cylinder matters if any are reused.",
       "tools": [
         "Ring expander",
@@ -3220,7 +3220,7 @@
           "title": "Piston pin hammered out",
           "what": "Driving the pin out with a drift and hammer.",
           "consequence": "The piston pin bore or the rod bushing distorts, so a reused piston no longer fits its pin.",
-          "prevent": "Pins should push out by hand at room temperature; if one will not, find out why.",
+          "prevent": "Push each pin out by hand at room temperature; if one will not move, find out why.",
           "severity": "rework",
           "sourceIds": [
             "s1"
@@ -3433,7 +3433,7 @@
       "order": 65,
       "phase": "inspect",
       "title": "Measure stem-to-guide clearance",
-      "action": "Measure each valve stem in six places and each guide bore in six places and subtract, also checking the valve margin thickness.",
+      "action": "Measure each valve stem and each guide bore in six places, subtract the stem diameter from the bore to get the clearance, and check the valve margin thickness.",
       "tools": [
         "Micrometer",
         "Small hole gauge"
@@ -3499,7 +3499,7 @@
           "id": "fb25-066-m1",
           "title": "Shim fit to stem not checked",
           "what": "Assuming any shim fits any stem tip without measuring the clearance between them.",
-          "consequence": "An over-loose shim can move on the stem tip, changing cam clearance and wearing the tip.",
+          "consequence": "A loose shim can move on the stem tip, changing cam clearance and wearing the tip.",
           "prevent": "Measure each stem tip and its shim bore and compare with the limit.",
           "severity": "rework",
           "sourceIds": [
@@ -3553,7 +3553,7 @@
           "title": "Off-center seat band accepted",
           "what": "Passing a contact band that sits at the edge of the valve face.",
           "consequence": "The valve seals and cools poorly and can leak or burn.",
-          "prevent": "The band must sit centered on the face and within width; recut the seat if not.",
+          "prevent": "Accept only a band centered on the face and within the width spec; recut the seat if it is not.",
           "severity": "costly",
           "sourceIds": [
             "s1"
@@ -3631,7 +3631,7 @@
       "mistakes": [
         {
           "id": "fb25-069-m1",
-          "title": "Cam checked against wrong year spec",
+          "title": "Cam checked against the wrong year's spec",
           "what": "Using lobe heights from a different FB25 version when deciding if a cam is worn.",
           "consequence": "Lobe heights changed between versions, so a good cam is scrapped or a worn one is passed.",
           "prevent": "Use the spec for the exact engine version (check STIS by VIN), not a later Legacy figure.",
@@ -3666,7 +3666,7 @@
       "id": "fb25-070",
       "order": 70,
       "phase": "inspect",
-      "title": "Plastigage cam journal clearance",
+      "title": "Check cam journal clearance with Plastigage",
       "action": "Lay Plastigage across each cam journal, torque the caps in sequence, remove them and read the widest point; also check cam end play with a dial gauge.",
       "why": "If clearance is out, the caps and carrier are replaced as a set because they are line-bored together.",
       "tools": [
@@ -3751,7 +3751,7 @@
           "title": "Worn guides reused with new chain",
           "what": "Fitting a new chain against chain guides that already have grooves worn into them.",
           "consequence": "The chain runs noisy and the tensioner runs out of travel sooner, bringing the cover off again.",
-          "prevent": "Replace guides that show grooving or cracks; the tensioner notch count at assembly reflects wear.",
+          "prevent": "Replace guides that show grooving or cracks; the tensioner notch count at assembly also shows wear.",
           "severity": "costly",
           "sourceIds": [
             "s1",
@@ -3816,7 +3816,7 @@
       "mistakes": [
         {
           "id": "fb25-072-m1",
-          "title": "Thread pull-up missed at bolt holes",
+          "title": "Raised metal at bolt holes missed",
           "what": "Checking the deck with a straightedge but ignoring raised metal around the head bolt holes.",
           "consequence": "A raised ring of metal holds the gasket off the deck there and the head gasket can leak.",
           "prevent": "Run a flat stone lightly over the decks and chamfer any raised thread entry before measuring.",
@@ -3839,7 +3839,7 @@
       "id": "fb25-073",
       "order": 73,
       "phase": "inspect",
-      "title": "Bore-gauge all four cylinders",
+      "title": "Measure all four cylinder bores",
       "action": "Measure each liner at four depths (10, 45, 80 and 115 mm) in both the thrust and pin directions and work out size, taper and out-of-round.",
       "why": "The bore size grade (A or B) is stamped on the block deck and decides which piston grade belongs in each hole.",
       "tools": [
@@ -3918,7 +3918,7 @@
         {
           "id": "fb25-074-m2",
           "title": "Pistons matched to wrong bores",
-          "what": "Calculating clearance with each piston against a different bore than it will go into.",
+          "what": "Calculating clearance against a different bore from the one each piston will go into.",
           "consequence": "Each final pairing can be out of range even though every calculation looked fine.",
           "prevent": "Number pistons to their bores before measuring and keep them paired.",
           "severity": "rework",
@@ -3960,7 +3960,7 @@
           "title": "Tight pin forced in",
           "what": "Hammering or pressing a pin that will not push in by thumb at room temperature.",
           "consequence": "The pin bore distorts, and the pin can seize or score its bore.",
-          "prevent": "A pin should enter with thumb pressure; measure and correct any that will not.",
+          "prevent": "Expect each pin to enter with thumb pressure; measure and correct any that will not.",
           "severity": "rework",
           "sourceIds": [
             "s1"
@@ -4030,7 +4030,7 @@
         },
         {
           "id": "fb25-076-m3",
-          "title": "Wrong year ring gap spec",
+          "title": "Ring gaps judged to the wrong spec",
           "what": "Judging gaps against the figures for a different FB25 ring set.",
           "consequence": "The ring set changed with the oil control ring update and later engines, so good rings are rejected or out-of-spec rings accepted.",
           "prevent": "Match the gap spec to the ring set actually being fitted and check STIS by VIN.",
@@ -4072,7 +4072,7 @@
       "mistakes": [
         {
           "id": "fb25-077-m1",
-          "title": "Ring grooves left carboned",
+          "title": "Ring grooves left full of carbon",
           "what": "Measuring side clearance or refitting reused pistons without cleaning the grooves.",
           "consequence": "Carbon holds the ring and gives a false reading; a ring that sticks in its groove passes oil.",
           "prevent": "Clean every groove back to bare metal, including the oil ring drain holes.",
@@ -4106,7 +4106,7 @@
       "id": "fb25-078",
       "order": 78,
       "phase": "inspect",
-      "title": "Check rods for bend",
+      "title": "Check rods for bend and twist",
       "action": "Check each rod for bend and twist on a rod aligner and look over the thrust faces and small-end bushing.",
       "tools": [
         "Connecting rod aligner"
@@ -4198,7 +4198,7 @@
       "phase": "inspect",
       "title": "Check rod side clearance",
       "action": "Fit each rod and cap to the crank with a new oiled bolt, tighten to the full rod bolt procedure while holding the crank, and measure side play with a feeler gauge.",
-      "why": "Side clearance is only meaningful with the cap at full clamp, and the rod bolts are stretched in doing it.",
+      "why": "Side clearance is only meaningful with the cap at full clamp, and doing that stretches the rod bolts.",
       "tools": [
         "Rod bolt socket 18270AA020",
         "Angle gauge",
@@ -4261,8 +4261,8 @@
       "id": "fb25-081",
       "order": 81,
       "phase": "inspect",
-      "title": "Plastigage rod bearing clearance",
-      "action": "Lay Plastigage across each crank pin, fit the rod and cap with a new bolt and full rod bolt torque without letting the rod move, then remove the cap and read the strip.",
+      "title": "Check rod bearing clearance with Plastigage",
+      "action": "Lay Plastigage across each crank pin, fit the rod and cap with new bolts taken through the full rod bolt procedure without letting the rod move, then remove the cap and read the strip.",
       "why": "This is the only check of the actual oil film the rod bearing will run on.",
       "tools": [
         "Plastigage",
@@ -4329,9 +4329,9 @@
         {
           "id": "fb25-081-m5",
           "title": "Plastigage used instead of measuring",
-          "what": "Relying on Plastigage alone without miking the pins and bores first.",
+          "what": "Relying on Plastigage alone without measuring the pins and bores with micrometers first.",
           "consequence": "Out-of-round pins or bores pass because Plastigage only shows the vertical clearance.",
-          "prevent": "Measure journals and housing bores with mics and gauges first, then use Plastigage as the final check.",
+          "prevent": "Measure journals and housing bores with micrometers and bore gauges first, then use Plastigage as the final check.",
           "severity": "rework",
           "sourceIds": [
             "s19"
@@ -4371,7 +4371,7 @@
       "mistakes": [
         {
           "id": "fb25-082-m1",
-          "title": "Journals miked in one plane",
+          "title": "Journals measured in one plane",
           "what": "Measuring each journal and pin at only one point.",
           "consequence": "Out-of-round and taper beyond the small FB limits are missed.",
           "prevent": "Measure each journal at both ends and at two angles.",
@@ -4456,7 +4456,7 @@
       "id": "fb25-084",
       "order": 84,
       "phase": "inspect",
-      "title": "Plastigage main bearing clearance",
+      "title": "Check main bearing clearance with Plastigage",
       "action": "Lay Plastigage on each journal, join the block halves with oiled bolts and run the full joining-bolt torque sequence, then split the halves and read each strip.",
       "why": "Main clearance can only be read with the two halves clamped exactly as they will run.",
       "tools": [
@@ -4522,8 +4522,8 @@
         },
         {
           "id": "fb25-084-m5",
-          "title": "Bearing ID measured at the split",
-          "what": "Measuring assembled bearing bore size close to the parting line.",
+          "title": "Bearing bore measured at the split",
+          "what": "Measuring the assembled bearing bore close to the parting line.",
           "consequence": "Shells are thinner toward the split by design, so the reading overstates clearance.",
           "prevent": "Measure at 90 degrees to the parting line.",
           "severity": "minor",
@@ -4601,7 +4601,7 @@
       "order": 86,
       "phase": "machine",
       "title": "Decide on head resurfacing",
-      "action": "Have any head beyond the warpage limit surfaced, but only while it stays at or above the minimum height; otherwise replace it.",
+      "action": "Have a head resurfaced only if it is past the warpage limit, and never below the minimum head height; replace any head that would have to go below it.",
       "spec": {
         "kind": "other",
         "value": "98.4",
@@ -4678,7 +4678,7 @@
         },
         {
           "id": "fb25-087-m2",
-          "title": "Guide driven in dry or wrong way",
+          "title": "Guide fitted dry or from the wrong side",
           "what": "Installing guides unoiled or from the combustion side.",
           "consequence": "The bore in the head galls and the guide is loose or cocked, ruining the head.",
           "prevent": "Oil each new guide and drive it in from the cam side.",
@@ -4731,7 +4731,7 @@
         {
           "id": "fb25-088-m1",
           "title": "Lapping compound left in guide",
-          "what": "Not cleaning lapping compound out of the guide and port after lapping.",
+          "what": "Leaving lapping compound in the guide and port after lapping.",
           "consequence": "The abrasive wears the new guide and stem within minutes of running.",
           "prevent": "Wash the head, guides and ports thoroughly after lapping and before assembly.",
           "severity": "costly",
@@ -4775,7 +4775,7 @@
       "order": 89,
       "phase": "machine",
       "title": "Bore and hone to oversize",
-      "action": "If any bore is out of size, taper or round, or scored, bore and hone all four liners together for 0.25 or 0.50 mm oversize pistons, measuring only after the block cools to room temperature.",
+      "action": "If any bore is oversize, tapered, out of round or scored, bore and hone all four liners together for 0.25 or 0.50 mm oversize pistons, measuring only after the block cools to room temperature.",
       "why": "Subaru requires all four bores to be done together so all pistons stay matched.",
       "spec": {
         "kind": "other",
@@ -4815,7 +4815,7 @@
           "title": "Bores not scrubbed after honing",
           "what": "Wiping the bores with solvent but not scrubbing out the honing grit.",
           "consequence": "Abrasive left in the crosshatch wears rings and liners quickly and brings back oil consumption.",
-          "prevent": "Scrub with hot soapy water and a brush until a clean white rag comes out clean, then oil the bores.",
+          "prevent": "Scrub with hot soapy water and a brush until a white rag wiped through the bore comes out clean, then oil the bores.",
           "detect": "A white rag wiped on the bore shows gray residue.",
           "severity": "costly",
           "sourceIds": [
@@ -4848,7 +4848,7 @@
       "order": 90,
       "phase": "machine",
       "title": "Resurface the block decks",
-      "action": "Only if the decks are past the warpage limit, have them surfaced while staying within the minimum block height.",
+      "action": "Have the decks resurfaced only if they are past the warpage limit, and never below the minimum block height.",
       "spec": {
         "kind": "other",
         "value": "204.9",
@@ -4924,7 +4924,7 @@
           "title": "Oil holes not blended after grind",
           "what": "Leaving sharp edges at the oil holes after grinding.",
           "consequence": "Sharp edges left at the journal oil holes scrape the soft bearing lining as the crank turns.",
-          "prevent": "Make sure oil holes are chamfered and polished into the journal surface.",
+          "prevent": "Check that the oil holes are chamfered and polished into the journal surface.",
           "severity": "costly",
           "sourceIds": [
             "s20"
@@ -4988,7 +4988,7 @@
       "order": 93,
       "phase": "machine",
       "title": "Order kit and one-time parts",
-      "action": "Order the gasket set, bearings, rings and pistons as needed, plus the parts the manual treats as one-time use: rod cap bolts, every O-ring, AVCS filter screens, oil separator cover, front and rear seals and valve stem seals.",
+      "action": "Order the gasket set, bearings, rings and pistons as needed, plus the parts the manual treats as one-time use: rod cap bolts, every O-ring, AVCS filter screens, the PCV adapter, oil separator cover, front and rear seals and valve stem seals.",
       "why": "A typical aftermarket rebuild kit leaves out the oil pump and timing parts, so chains, guides or tensioners must be sourced separately if needed.",
       "mistakes": [
         {
@@ -5021,7 +5021,7 @@
           "id": "fb25-093-m3",
           "title": "Timing parts left off the order",
           "what": "Assuming the rebuild kit includes chains, guides and tensioners.",
-          "consequence": "Kits leave these out, and worn guides get reused rather than wait for parts.",
+          "consequence": "Kits leave these out, so worn guides get reused rather than waiting for parts.",
           "prevent": "Decide on chain parts after inspection and order them separately.",
           "severity": "rework",
           "sourceIds": [
@@ -5132,7 +5132,7 @@
           "id": "fb25-095-m1",
           "title": "Old oil separator cover reused",
           "what": "Refitting the original oil separator cover.",
-          "consequence": "It is a one-time part and can leak crankcase gases or oil.",
+          "consequence": "The used separator cover is a one-time part and can leak crankcase gases or oil.",
           "prevent": "Fit a new cover with a fresh bead.",
           "severity": "rework",
           "sourceIds": [
@@ -5336,7 +5336,7 @@
       "id": "fb25-099",
       "order": 99,
       "phase": "assembly-short",
-      "title": "Seat oiled main bearings",
+      "title": "Install the oiled main bearings",
       "action": "Install the oiled main bearings in both halves in their original or selected positions and fit new O-rings to the LH half.",
       "tools": [
         "Padded board"
@@ -5411,7 +5411,7 @@
       "id": "fb25-100",
       "order": 100,
       "phase": "assembly-short",
-      "title": "Lay crankshaft in LH half",
+      "title": "Lay the crankshaft in the LH half",
       "action": "Oil the main journals and lower the crankshaft into the LH half.",
       "why": "The crank must go in before the halves are joined; nothing else installs between them except the bearings.",
       "mistakes": [
@@ -5449,7 +5449,7 @@
       "id": "fb25-101",
       "order": 101,
       "phase": "assembly-short",
-      "title": "Apply block-half sealant bead",
+      "title": "Lay the block-half sealant bead",
       "action": "Degrease both mating faces and run the specified liquid gasket bead on the RH half, thin across most of the face and thicker in the marked ranges, keeping it clear of oil passages and bearing bores.",
       "why": "Sealant squeezed into an oil passage or bearing can block oil and seize the engine; the halves must be joined within five minutes.",
       "spec": {
@@ -5527,7 +5527,7 @@
       "mistakes": [
         {
           "id": "fb25-102-m1",
-          "title": "RH half slid across the LH",
+          "title": "RH half slid into place",
           "what": "Setting the RH half down off position and sliding it into place.",
           "consequence": "Sealant is smeared toward the bearing bores and oil passages and the bead is broken.",
           "prevent": "Lower the RH half straight onto its dowels in one movement.",
@@ -5561,7 +5561,7 @@
       "id": "fb25-103",
       "order": 103,
       "phase": "assembly-short",
-      "title": "Torque joining bolts first pass",
+      "title": "Torque the joining bolts twice",
       "action": "Holding only the LH half, tighten all joining bolts in the tightening sequence, back them all off 180 degrees in the loosening sequence, then tighten them all again.",
       "why": "Seating, releasing and reseating the bolts draws the halves together evenly before any angle is added.",
       "tools": [
@@ -5669,7 +5669,7 @@
           "what": "Moving on without turning the crank by hand once the halves are torqued.",
           "consequence": "A tight bearing or sealant in a bore goes unnoticed until the engine seizes.",
           "prevent": "Turn the crank a full turn by hand after torquing; it should turn smoothly without tight spots.",
-          "detect": "Rotating torque that rises sharply or a tight spot each turn.",
+          "detect": "Turning effort that rises sharply, or a tight spot once every turn.",
           "severity": "ruins-unit",
           "sourceIds": [
             "s1",
@@ -5769,7 +5769,7 @@
           "title": "Rear seal cocked",
           "what": "Pressing the seal in unevenly.",
           "consequence": "A seal pressed in at an angle runs off-center on the crank flange and leaks oil.",
-          "prevent": "Press it in square with the installer until it is flush all round.",
+          "prevent": "Press it in square with the installer until it is flush all around.",
           "severity": "costly",
           "sourceIds": [
             "s1"
@@ -5788,12 +5788,11 @@
       "order": 107,
       "phase": "assembly-short",
       "title": "Set the ring gap positions",
-      "action": "Stand the block rear down on the four bolts, then clock each top ring gap to its mark, the second ring opposite, the upper rail with its stopper in the side hole, the expander opposite the rail and the lower rail a further third of a turn round.",
+      "action": "Stand the block rear down on the four bolts, then clock each top ring gap to its mark and the second ring gap opposite it, seat the upper rail stopper in the side hole, set the expander gap opposite the upper rail and set the lower rail gap 120 degrees clockwise from the upper rail.",
       "why": "Staggered gaps limit blow-by, and no gap may sit in line with the piston skirt.",
       "spec": {
         "kind": "sequence",
-        "value": "second ring 180 from top ring; expander 180 from upper rail; lower rail 120 clockwise from upper rail",
-        "unit": "deg",
+        "value": "second ring 180° from top ring; expander 180° from upper rail; lower rail 120° clockwise from upper rail",
         "note": "top ring and upper rail start at the positions in the factory figure",
         "sourceIds": [
           "s1"
@@ -5897,7 +5896,7 @@
           "title": "Piston hammered past resistance",
           "what": "Hitting harder when the piston stops going in.",
           "consequence": "A ring caught on the deck edge snaps or cracks the ring land under it.",
-          "prevent": "Stop as soon as it stops, release the compressor and find the caught ring.",
+          "prevent": "Stop as soon as the piston stops moving, release the compressor and find the caught ring.",
           "severity": "costly",
           "sourceIds": [
             "s1"
@@ -5905,7 +5904,7 @@
         },
         {
           "id": "fb25-108-m4",
-          "title": "Front mark facing rearward",
+          "title": "Piston front mark facing rearward",
           "what": "Installing the piston with its front mark pointing to the rear of the engine.",
           "consequence": "The piston and rod sit backward in the bore with offsets and reliefs on the wrong side.",
           "prevent": "Check the front mark before each piston goes in.",
@@ -5940,7 +5939,7 @@
       "id": "fb25-109",
       "order": 109,
       "phase": "assembly-short",
-      "title": "Cap rod one, snug bolts",
+      "title": "Fit and snug rod cap one",
       "action": "Holding the piston down, turn the crank so the pin meets the big end, fit the matching cap with a new oiled bolt and tighten in two steps.",
       "why": "Each cap only fits its own rod; the final angle comes later once all four are in.",
       "tools": [
@@ -5970,7 +5969,7 @@
         },
         {
           "id": "fb25-109-m2",
-          "title": "Cap shell slips fitting from below",
+          "title": "Cap shell slips out during fitting",
           "what": "Fitting the cap blind through the bottom of the block so its shell slides out of the notch.",
           "consequence": "The shell is pinched and the bearing fails soon after start-up.",
           "prevent": "Check the shell lug is in its notch just before offering the cap, and look again with a mirror if possible.",
@@ -6037,7 +6036,7 @@
         },
         {
           "id": "fb25-110-m2",
-          "title": "Crank turned with a rod unhooked",
+          "title": "Crank turned with a rod uncapped",
           "what": "Turning the crank to bring the next pin up while an earlier rod is not yet capped.",
           "consequence": "The loose rod swings into the crank pin or liner and nicks it.",
           "prevent": "Cap and snug each rod before turning to the next.",
@@ -6060,8 +6059,8 @@
       "id": "fb25-111",
       "order": 111,
       "phase": "assembly-short",
-      "title": "Final-angle the rod bolts",
-      "action": "Thread cam carrier bolts into the block as anchors for the angle gauge, then add the final angle to the 1 and 4 cap bolts, rotate the crank and do the 2 and 3 cap bolts.",
+      "title": "Add the final rod bolt angle",
+      "action": "Thread cam carrier bolts into the block as anchors for the angle gauge, then add the final angle to the 1 and 4 cap bolts, turn the crank and angle the 2 and 3 cap bolts.",
       "why": "Rod bolts are stretch-type and one-time use; the angle sets clamp load, not the torque reading.",
       "tools": [
         "Angle gauge",
@@ -6080,7 +6079,7 @@
       "mistakes": [
         {
           "id": "fb25-111-m1",
-          "title": "Old rod bolts or no angle",
+          "title": "Old rod bolts reused or angle skipped",
           "what": "Reusing the old rod bolts or stopping at the snug torque without the final angle.",
           "consequence": "Clamp load is too low, a cap can loosen, and the bearing spins.",
           "prevent": "Use new rod bolts every time and complete the final angle on all eight.",
@@ -6114,7 +6113,7 @@
         },
         {
           "id": "fb25-111-m4",
-          "title": "Stop-start pull on the angle",
+          "title": "Angle pulled in jerky stages",
           "what": "Turning the bolt through the angle in several jerky pulls.",
           "consequence": "Friction changes each time the bolt stops, so clamp load scatters between bolts.",
           "prevent": "Pull through the angle in one smooth motion.",
@@ -6149,7 +6148,7 @@
       "mistakes": [
         {
           "id": "fb25-112-m1",
-          "title": "Pickup O-ring reused or pinched",
+          "title": "Strainer O-ring reused or pinched",
           "what": "Fitting the strainer with its old O-ring or rolling the new one as it goes in.",
           "consequence": "The pump draws air at the joint, giving low or fluctuating oil pressure.",
           "prevent": "Fit a new oiled O-ring and seat the strainer straight before tightening.",
@@ -6175,7 +6174,7 @@
           "id": "fb25-112-m3",
           "title": "Sealant squeezed into the pan",
           "what": "Running a heavy bead on the lower pan so sealant squeezes inside.",
-          "consequence": "Strings of cured sealant break off and block the pickup screen.",
+          "consequence": "Strings of cured sealant break off and block the strainer screen.",
           "prevent": "Use the specified bead size and check the inside of the joint after fitting.",
           "severity": "costly",
           "sourceIds": [
@@ -6208,8 +6207,8 @@
       "id": "fb25-113",
       "order": 113,
       "phase": "assembly-short",
-      "title": "Install oil pan upper",
-      "action": "Turn the block oil pan up, remove the four foot bolts, run a bead on the oil pan upper just outside the chamfer, fit a new O-ring and tighten the bolts in sequence.",
+      "title": "Install the oil pan upper",
+      "action": "Turn the block oil pan side up, remove the four foot bolts, run a bead on the oil pan upper just outside the chamfer, fit a new O-ring and tighten the bolts in sequence.",
       "spec": {
         "kind": "torque",
         "value": "18",
@@ -6248,7 +6247,7 @@
           "id": "fb25-113-m3",
           "title": "Bead laid inside the chamfer",
           "what": "Running the bead inside the chamfer instead of just outside it.",
-          "consequence": "Sealant squeezes into the crankcase and can reach the pickup.",
+          "consequence": "Sealant squeezes into the crankcase and can reach the strainer.",
           "prevent": "Lay the bead just outside the chamfer, where the procedure places it.",
           "severity": "rework",
           "sourceIds": [
@@ -6294,7 +6293,7 @@
       "mistakes": [
         {
           "id": "fb25-114-m1",
-          "title": "Thermostat fitted wrong way round",
+          "title": "Thermostat fitted backward",
           "what": "Installing the thermostat reversed or out of its seat.",
           "consequence": "Coolant flow is restricted and the freshly built engine overheats on its first runs.",
           "prevent": "Check the thermostat orientation and seat against the figure before fitting the cover.",
@@ -6328,7 +6327,7 @@
       "id": "fb25-115",
       "order": 115,
       "phase": "assembly-short",
-      "title": "Remount block on the stand",
+      "title": "Remount the block on the stand",
       "action": "Bolt the stand adapters back to the block and oil pan upper and remount the assembly on the stand.",
       "tools": [
         "Engine stand 499817100"
@@ -6383,7 +6382,7 @@
           "what": "Bolting the drive plate and crank sensor plate on without seating the sensor plate on its dowel pin.",
           "consequence": "The crank signal is out of time and the engine will not start, and fixing it means pulling the engine again.",
           "prevent": "Line up the hole in the sensor plate with the dowel in the crank flange and check it before tightening.",
-          "detect": "A crank-cam correlation code or no-start with good spark hardware.",
+          "detect": "A cam-to-crank correlation code, or a no-start even though the ignition parts are good.",
           "severity": "costly",
           "sourceIds": [
             "s10"
@@ -6473,9 +6472,9 @@
       "mistakes": [
         {
           "id": "fb25-118-m1",
-          "title": "Knock sensor torque off",
+          "title": "Knock sensor tightened by feel",
           "what": "Tightening the knock sensor by feel.",
-          "consequence": "Too loose or too tight changes how well it picks up knock, so the engine can knock without timing retard or set sensor codes.",
+          "consequence": "The wrong clamp load changes how well the sensor picks up knock, so the engine can knock without timing retard or set sensor codes.",
           "prevent": "Torque it to spec on a clean mounting face.",
           "severity": "rework",
           "sourceIds": [
@@ -6506,7 +6505,7 @@
       "id": "fb25-119",
       "order": 119,
       "phase": "assembly-short",
-      "title": "Fit water pipe and hanger",
+      "title": "Fit the water pipe and hanger",
       "action": "Fit new O-rings, install the water pipe and PCV connector set, then the rear engine hanger.",
       "spec": {
         "kind": "torque",
@@ -6544,7 +6543,7 @@
       "phase": "assembly-short",
       "title": "Slide on the crank sprocket",
       "action": "Slide the crank sprocket onto the crank key; either face can go outward.",
-      "why": "It must be on before the heads so the chains can be hung later without disturbing them.",
+      "why": "Fitting the sprocket before the heads gives its mark as the reference for where the crank is parked, so the chains can be hung on it later without moving the crank.",
       "mistakes": [
         {
           "id": "fb25-120-m1",
@@ -6623,7 +6622,7 @@
       "order": 122,
       "phase": "assembly-heads",
       "title": "Reassemble valves and springs",
-      "action": "Set the spring seat, spring (close coils down) and retainer, slide in the oiled valve, compress the spring and fit the collets, then tap each retainer to seat them.",
+      "action": "Set the spring seat, spring (close coils down) and retainer, slide in the oiled valve, compress the spring and fit the collets, then tap each retainer to seat the collets.",
       "tools": [
         "Valve spring compressor 0920287002000",
         "Plastic hammer"
@@ -6687,7 +6686,7 @@
       "id": "fb25-123",
       "order": 123,
       "phase": "assembly-heads",
-      "title": "Refit head studs",
+      "title": "Refit the head stud bolts",
       "action": "Install the stud bolts in both heads and the chain cover bolt in the LH head.",
       "spec": {
         "kind": "torque",
@@ -6780,7 +6779,7 @@
       "id": "fb25-125",
       "order": 125,
       "phase": "assembly-heads",
-      "title": "Seal and place RH gasket",
+      "title": "Seal and place the RH head gasket",
       "action": "Degrease the faces, put the specified liquid gasket bead on both sides of a new RH head gasket where marked and place it so the sealant squeezes out at the edge.",
       "why": "The head must go on within five minutes of applying sealant.",
       "spec": {
@@ -6795,7 +6794,7 @@
       "mistakes": [
         {
           "id": "fb25-125-m1",
-          "title": "L and R head gaskets swapped",
+          "title": "LH and RH head gaskets swapped",
           "what": "Fitting the head gasket marked for the other bank.",
           "consequence": "Coolant and oil holes do not line up, causing overheating or leaks.",
           "prevent": "Check the L or R marking on each gasket before applying sealant.",
@@ -6869,9 +6868,9 @@
       "mistakes": [
         {
           "id": "fb25-126-m1",
-          "title": "Head bolt creaks during tightening",
+          "title": "Creaking head bolt ignored",
           "what": "Carrying on after a bolt makes a stick-slip creak while being tightened.",
-          "consequence": "That bolt has not reached its correct clamp load, and the procedure cannot be finished properly from there.",
+          "consequence": "A creaking head bolt has not reached its correct clamp load, and the procedure cannot be finished properly from there.",
           "prevent": "Stop and restart the whole procedure with fresh sealant if any bolt creaks.",
           "severity": "rework",
           "sourceIds": [
@@ -6956,7 +6955,7 @@
           "id": "fb25-127-m2",
           "title": "Angle added without the retorque",
           "what": "Adding the angle passes straight after the release without the working torque step.",
-          "consequence": "Bolts start their stretch from different points and end up under or over clamped.",
+          "consequence": "Bolts start their stretch from different points and end up under- or over-clamped.",
           "prevent": "Bring every bolt to the working torque in sequence before any angle.",
           "severity": "costly",
           "sourceIds": [
@@ -7040,7 +7039,7 @@
       "id": "fb25-129",
       "order": 129,
       "phase": "assembly-heads",
-      "title": "Install and torque LH head",
+      "title": "Install and torque the LH head",
       "action": "Seal a new LH gasket the same way and run the identical torque, release, retorque and three-stage angle procedure on the LH head in its own sequence.",
       "tools": [
         "Torque wrench",
@@ -7101,7 +7100,7 @@
           "id": "fb25-130-m1",
           "title": "Compressor fitted out of order",
           "what": "Leaving the A/C compressor until after the LH cam carrier is on.",
-          "consequence": "Its mounting bolts are harder to reach and the carrier may have to come off again.",
+          "consequence": "The compressor mounting bolts are harder to reach, and the LH cam carrier may have to come off again.",
           "prevent": "Bolt the compressor on right after the LH head is torqued.",
           "severity": "minor",
           "sourceIds": [
@@ -7294,8 +7293,8 @@
       "id": "fb25-134",
       "order": 134,
       "phase": "assembly-heads",
-      "title": "Set RH rocker gear",
-      "action": "Stand the engine RH cams up, oil and install each shim and pivot in its original place, then the oiled roller rockers and new O-rings.",
+      "title": "Fit the RH rocker gear",
+      "action": "Roll the engine so the RH cams face up, oil and install each shim and pivot in its original place, then the oiled roller rockers and new O-rings.",
       "why": "Each shim must go back on its own valve or every clearance changes.",
       "mistakes": [
         {
@@ -7324,7 +7323,7 @@
           "id": "fb25-134-m3",
           "title": "Shim back on the wrong valve",
           "what": "Fitting a shim from the tray to a valve other than its own.",
-          "consequence": "That valve and the one it came from both end up out of clearance.",
+          "consequence": "Both the valve the shim went on and the valve it came from end up out of clearance.",
           "prevent": "Work from the labeled tray one valve at a time.",
           "severity": "rework",
           "sourceIds": [
@@ -7345,7 +7344,7 @@
       "order": 135,
       "phase": "assembly-heads",
       "title": "Torque the RH cam carrier",
-      "action": "Seal the carrier face, set both cams to zero lift, set the carrier and tighten all bolts in sequence, then three times back off the three named bolts 180 degrees and retighten them.",
+      "action": "Seal the carrier face, set both cams to zero lift, set the carrier and tighten all bolts in sequence, then back off the three named bolts 180 degrees and retighten them, three times over.",
       "why": "Zero lift means no valve spring is pushing up while the carrier draws down.",
       "tools": [
         "Torque wrench"
@@ -7409,7 +7408,7 @@
       "order": 136,
       "phase": "assembly-heads",
       "title": "Install the LH cam carrier",
-      "action": "Roll the engine LH cams up, fit the LH shims, pivots, rockers and O-rings, seal the carrier and torque it with the same zero-lift and three-cycle procedure.",
+      "action": "Roll the engine so the LH cams face up, fit the LH shims, pivots, rockers and O-rings, seal the carrier and torque it with the same zero-lift and three-cycle procedure.",
       "tools": [
         "Torque wrench"
       ],
@@ -7532,7 +7531,7 @@
         {
           "id": "fb25-138-m1",
           "title": "Cam turned past free range",
-          "what": "Rotating a cam beyond its free range to bring a lobe round for measuring.",
+          "what": "Rotating a cam beyond its free range to bring a lobe around for measuring.",
           "consequence": "The intake and exhaust valves of that cylinder hit each other and bend.",
           "prevent": "Measure only lobes reachable within the free range, then reposition safely.",
           "severity": "costly",
@@ -7669,7 +7668,7 @@
         },
         {
           "id": "fb25-140-m2",
-          "title": "Stopper pin falls out",
+          "title": "Stopper pin too short or thin",
           "what": "Using a pin too short or thin to stay in the stopper hole.",
           "consequence": "The plunger releases while the chain is being hung and has to be reset.",
           "prevent": "Use a 2.5 mm pin long enough to stay in and check it is secure.",
@@ -7690,7 +7689,7 @@
       "id": "fb25-141",
       "order": 141,
       "phase": "assembly-timing",
-      "title": "Confirm crank parked mid-stroke",
+      "title": "Confirm the crank is still parked",
       "action": "Check the crank sprocket mark is still at the parked position with all pistons halfway down.",
       "why": "The LH intake cam is turned next, and that is only safe with no piston near the top.",
       "tools": [
@@ -7700,9 +7699,9 @@
       "mistakes": [
         {
           "id": "fb25-141-m1",
-          "title": "Assumed crank still parked",
+          "title": "Crank assumed to be still parked",
           "what": "Skipping the check because the crank was parked during teardown.",
-          "consequence": "The crank may have moved during short block work and a piston is near an open valve.",
+          "consequence": "The crank may have moved during short block work, leaving a piston near an open valve.",
           "prevent": "Check the sprocket mark against the parked position before touching the LH intake cam.",
           "severity": "costly",
           "sourceIds": [
@@ -7744,7 +7743,7 @@
         },
         {
           "id": "fb25-142-m2",
-          "title": "LH intake timed to free plate",
+          "title": "LH intake timed to a free plate",
           "what": "Aligning the LH intake to its sensor plate mark when the plate was free.",
           "consequence": "The LH intake ends up out of time and sets correlation codes.",
           "prevent": "Use the housing mark on any sprocket tagged with a free plate.",
@@ -7766,7 +7765,7 @@
       "id": "fb25-143",
       "order": 143,
       "phase": "assembly-timing",
-      "title": "Roll crank back 200 degrees",
+      "title": "Turn the crank back 200 degrees",
       "action": "Turn the crank about 200 degrees counterclockwise to bring the key to its LH timing position, only going clockwise for the last fine adjustment.",
       "why": "This is the teardown move in reverse; turning clockwise here would push pistons into the open LH intake valves.",
       "tools": [
@@ -7776,7 +7775,7 @@
       "mistakes": [
         {
           "id": "fb25-143-m1",
-          "title": "Crank rolled back clockwise",
+          "title": "Crank turned clockwise to the LH position",
           "what": "Turning the crank clockwise to reach the LH timing position.",
           "consequence": "Pistons rise into the LH intake valves that are being held open.",
           "prevent": "Turn counterclockwise for the move and only clockwise for the final nudge.",
@@ -7837,7 +7836,7 @@
       "phase": "assembly-timing",
       "title": "Hang the LH timing chain",
       "action": "Fit the LH chain with its blue link on the crank sprocket mark and its two pink links on the LH intake and exhaust timing marks, then fit the LH guide.",
-      "why": "Use the housing marks on any sprocket whose sensor plate was found free.",
+      "why": "On any sprocket whose sensor plate was found free, only the housing marks can be trusted.",
       "spec": {
         "kind": "torque",
         "value": "6.4",
@@ -7852,7 +7851,7 @@
       "mistakes": [
         {
           "id": "fb25-145-m1",
-          "title": "Counting links instead of colored links",
+          "title": "Chain timed by counting links",
           "what": "Timing the LH chain by counting links rather than matching its colored links.",
           "consequence": "The LH bank ends up one tooth off, which shows as correlation codes.",
           "prevent": "Match the blue link to the crank mark and the pink links to the cam marks.",
@@ -7863,7 +7862,7 @@
         },
         {
           "id": "fb25-145-m2",
-          "title": "Reused chain without its paint marks",
+          "title": "Used chain hung without paint marks",
           "what": "Hanging a used chain whose colored links have faded, with no marks added at teardown.",
           "consequence": "There is no reliable reference and the bank can be a tooth off.",
           "prevent": "Use the paint marks made at teardown, or fit a new chain.",
@@ -7874,7 +7873,7 @@
         },
         {
           "id": "fb25-145-m3",
-          "title": "Back-face crank mark used",
+          "title": "Mark on the sprocket back face used",
           "what": "Lining up the chain to a mark on the back of the crank sprocket.",
           "consequence": "The crank reference is wrong and the timing is off.",
           "prevent": "Use the mark on the front face, to the right of the keyway.",
@@ -7885,7 +7884,7 @@
         },
         {
           "id": "fb25-145-m4",
-          "title": "Slack on the guide side",
+          "title": "Chain slack left on the guide side",
           "what": "Hanging the chain with its slack between the sprockets on the fixed guide side.",
           "consequence": "When the tensioner releases, the slack shifts and the cam moves off its mark.",
           "prevent": "Keep the chain tight on the guide side and slack on the tensioner side.",
@@ -7996,7 +7995,7 @@
       "id": "fb25-148",
       "order": 148,
       "phase": "assembly-timing",
-      "title": "Turn over and recheck LH",
+      "title": "Turn the crank and recheck LH marks",
       "action": "Turn the crank clockwise to confirm nothing binds, then bring it round until the crank and LH marks line up again with the key at six o'clock.",
       "why": "The RH chain is timed from this position.",
       "tools": [
@@ -8005,7 +8004,7 @@
       "mistakes": [
         {
           "id": "fb25-148-m1",
-          "title": "Turned through a tight spot",
+          "title": "Crank forced through a tight spot",
           "what": "Forcing the crank when it binds during the check.",
           "consequence": "A valve that is touching a piston is bent by the force.",
           "prevent": "Stop at any resistance and recheck every mark before going on.",
@@ -8039,14 +8038,14 @@
       "order": 149,
       "phase": "assembly-timing",
       "title": "Load the RH tensioner",
-      "action": "Compress and pin the RH tensioner plunger with the 2.5 mm stopper pin, first rack notch engaged.",
+      "action": "Compress the RH tensioner plunger and lock it with the 2.5 mm stopper pin, with the first rack notch engaged.",
       "tools": [
         "2.5 mm stopper pin"
       ],
       "mistakes": [
         {
           "id": "fb25-149-m1",
-          "title": "RH plunger pinned without notch",
+          "title": "RH plunger pinned with no notch engaged",
           "what": "Pinning the RH plunger without the first rack notch engaged.",
           "consequence": "The RH chain starts under-tensioned and rattles until oil pressure builds.",
           "prevent": "Engage the first rack notch on the RH plunger before inserting the pin.",
@@ -8084,9 +8083,9 @@
         },
         {
           "id": "fb25-150-m2",
-          "title": "RH timed to a free plate",
+          "title": "RH cam timed to a free plate",
           "what": "Using the sensor plate mark on an RH sprocket tagged as free.",
-          "consequence": "That RH camshaft ends up out of time and sets correlation codes.",
+          "consequence": "The RH camshaft is timed to the wrong reference, ends up out of time and sets correlation codes.",
           "prevent": "Use the housing mark on any RH sprocket tagged with a free plate.",
           "severity": "costly",
           "sourceIds": [
@@ -8120,7 +8119,7 @@
       "mistakes": [
         {
           "id": "fb25-151-m1",
-          "title": "RH chain hung to LH positions",
+          "title": "RH marks expected at LH positions",
           "what": "Expecting the RH marks at the clock positions used for the LH.",
           "consequence": "The RH chain goes on with its colored links off the real RH marks.",
           "prevent": "Use the RH mark positions from the procedure, not the LH ones.",
@@ -8179,7 +8178,7 @@
         },
         {
           "id": "fb25-152-m2",
-          "title": "Metal lever on the B1 guide",
+          "title": "Metal lever on the RH lower guide",
           "what": "Levering the RH lower guide with a bare metal tool.",
           "consequence": "The RH lower guide is scored and wears quickly against the chain.",
           "prevent": "Lift the guide gently with a rubber-coated plier handle.",
@@ -8201,7 +8200,7 @@
       "id": "fb25-153",
       "order": 153,
       "phase": "assembly-timing",
-      "title": "Rotate engine to verify timing",
+      "title": "Turn the engine to verify timing",
       "action": "Confirm all marks on both banks, then turn the crank clockwise by hand through at least two turns and check for any binding before going further.",
       "why": "A timing error found now costs minutes; found after the chain cover is sealed it costs the cover.",
       "tools": [
@@ -8222,7 +8221,7 @@
         },
         {
           "id": "fb25-153-m2",
-          "title": "Verified with one turn only",
+          "title": "Timing checked over one turn only",
           "what": "Turning the crank only one revolution.",
           "consequence": "A conflict that only occurs on the second revolution is missed.",
           "prevent": "Turn the crank through at least two full revolutions by hand.",
@@ -8393,7 +8392,7 @@
           "id": "fb25-157-m1",
           "title": "Chain cover O-rings reused",
           "what": "Refitting the O-rings between the chain cover and the engine.",
-          "consequence": "They are one-time parts and leak oil at the cover joints.",
+          "consequence": "Used chain cover O-rings are one-time parts and leak oil at the cover joints.",
           "prevent": "Fit every O-ring between the chain cover and the engine new.",
           "severity": "costly",
           "sourceIds": [
@@ -8436,8 +8435,8 @@
       "id": "fb25-158",
       "order": 158,
       "phase": "assembly-timing",
-      "title": "Seal and fit chain cover",
-      "action": "Run the liquid gasket bead around the cover and on its five center bosses, then slide it straight on over guide pins without touching the sprockets and tighten the bolts in sequence.",
+      "title": "Seal and fit the chain cover",
+      "action": "Run the liquid gasket bead around the cover and on its five center bosses, then slide it straight on over the alignment pins without touching the sprockets and tighten the bolts in sequence.",
       "why": "The cover can catch the sensor plate on a cam sprocket; touching a sprocket also smears the fresh bead.",
       "tools": [
         "Cover alignment pins J-51972"
@@ -8514,7 +8513,7 @@
         },
         {
           "id": "fb25-158-m6",
-          "title": "Excess cover sealant",
+          "title": "Chain cover bead laid too heavy",
           "what": "Running a heavy bead on the cover.",
           "consequence": "Squeeze-out enters oil passages and blocks the AVCS feed.",
           "prevent": "Run the cover bead at the specified size and no larger.",
@@ -8539,7 +8538,7 @@
       "id": "fb25-159",
       "order": 159,
       "phase": "assembly-timing",
-      "title": "Press in front crank seal",
+      "title": "Press in the front crank seal",
       "action": "Lightly oil the new front seal and drive it into the chain cover to just below the outer face.",
       "tools": [
         "Oil seal installer 398437700"
@@ -8578,7 +8577,7 @@
         },
         {
           "id": "fb25-159-m3",
-          "title": "Wrong year seal prep",
+          "title": "Front seal prepped to the wrong manual",
           "what": "Following the later Legacy instruction to fit the seal dry on this engine.",
           "consequence": "The two manuals disagree, and the wrong prep can let the lip run dry or not seal.",
           "prevent": "Follow the manual for the exact vehicle and check STIS.",
@@ -8613,10 +8612,10 @@
       "mistakes": [
         {
           "id": "fb25-160-m1",
-          "title": "OCV O-ring and backer reused",
-          "what": "Refitting the oil control valves with their old O-ring and nylon backer ring.",
-          "consequence": "Oil leaks past the valve and AVCS pressure is lost.",
-          "prevent": "Fit a new O-ring and backer ring on each valve.",
+          "title": "Solenoid O-ring and backer ring reused",
+          "what": "Refitting the oil control solenoids with their old O-ring and nylon backer ring.",
+          "consequence": "Oil leaks past the solenoid and AVCS pressure is lost.",
+          "prevent": "Fit a new O-ring and backer ring on each solenoid.",
           "severity": "rework",
           "sourceIds": [
             "s17"
@@ -8624,10 +8623,10 @@
         },
         {
           "id": "fb25-160-m2",
-          "title": "Contaminated OCV refitted",
-          "what": "Reusing an oil control valve from an engine with sludge or AVCS codes.",
-          "consequence": "The dirty valve sticks and the AVCS codes come back.",
-          "prevent": "Replace the valve as the AVCS bulletins direct.",
+          "title": "Contaminated oil control solenoid refitted",
+          "what": "Reusing an oil control solenoid from an engine with sludge or AVCS codes.",
+          "consequence": "The dirty solenoid sticks and the AVCS codes come back.",
+          "prevent": "Replace the solenoid as the AVCS bulletins direct.",
           "severity": "rework",
           "sourceIds": [
             "s18",
@@ -8774,7 +8773,7 @@
       "order": 163,
       "phase": "assembly-ext",
       "title": "Fit idler and dipstick guide",
-      "action": "Install the idler pulley with its cover the right way round and the oil level gauge guide with a new O-ring.",
+      "action": "Install the idler pulley with its cover facing the right way and the dipstick guide with a new O-ring.",
       "spec": {
         "kind": "torque",
         "value": "36",
@@ -8799,7 +8798,7 @@
         {
           "id": "fb25-163-m2",
           "title": "Idler cover fitted backward",
-          "what": "Installing the idler pulley cover the wrong way round.",
+          "what": "Installing the idler pulley cover backward.",
           "consequence": "The pulley bearing is exposed to water and dirt.",
           "prevent": "Check the idler cover orientation before torquing the pulley.",
           "severity": "minor",
@@ -8857,7 +8856,7 @@
       "order": 165,
       "phase": "assembly-ext",
       "title": "Install the oil filter",
-      "action": "Oil the new filter's seal and turn it on by hand until it touches, then about one more turn.",
+      "action": "Oil the new filter's seal and turn it on by hand until the seal touches, then about one more turn.",
       "spec": {
         "kind": "torque",
         "value": "14",
@@ -8916,7 +8915,7 @@
       "mistakes": [
         {
           "id": "fb25-166-m1",
-          "title": "TGV gaskets reused",
+          "title": "Tumble generator valve gaskets reused",
           "what": "Refitting the tumble generator valves with old gaskets.",
           "consequence": "Air leaks cause lean codes and rough idle.",
           "prevent": "Fit new gaskets behind every tumble generator valve.",
@@ -8928,9 +8927,9 @@
         {
           "id": "fb25-166-m2",
           "title": "Hardware dropped in an intake port",
-          "what": "Letting a bolt or washer fall into an open port before the TGV is fitted.",
+          "what": "Letting a bolt or washer fall into an open port before the tumble generator valve is fitted.",
           "consequence": "The part is drawn into the cylinder and damages the piston and valves.",
-          "prevent": "Plug the ports until each TGV goes on.",
+          "prevent": "Plug the ports until each tumble generator valve goes on.",
           "severity": "costly",
           "sourceIds": [
             "s4"
@@ -8986,9 +8985,9 @@
         {
           "id": "fb25-167-m3",
           "title": "Manifold bolts overtightened",
-          "what": "Tightening the manifold-to-TGV bolts past spec.",
+          "what": "Tightening the bolts between the manifold and the tumble generator valves past spec.",
           "consequence": "The manifold flange cracks and leaks air.",
-          "prevent": "Torque the manifold to TGV bolts to their low spec.",
+          "prevent": "Torque the manifold bolts to their low spec.",
           "severity": "rework",
           "sourceIds": [
             "s4"
@@ -9013,7 +9012,7 @@
         {
           "id": "fb25-168-m1",
           "title": "Generator terminal left loose",
-          "what": "Not tightening the generator output terminal nut.",
+          "what": "Leaving the generator output terminal nut loose.",
           "consequence": "Arcing causes charging faults and can start a fire.",
           "prevent": "Tighten the output terminal nut and refit its cover.",
           "severity": "minor",
@@ -9033,13 +9032,13 @@
       "id": "fb25-169",
       "order": 169,
       "phase": "assembly-ext",
-      "title": "Install tensioner and V-belt",
+      "title": "Install belt tensioner and V-belt",
       "action": "Fit the belt tensioner with its tab in the anti-rotation hole, then route the V-belt on clean, dry pulleys.",
       "spec": {
         "kind": "torque",
         "value": "25",
         "unit": "N·m",
-        "note": "tensioner",
+        "note": "belt tensioner",
         "sourceIds": [
           "s1"
         ]
@@ -9047,9 +9046,9 @@
       "mistakes": [
         {
           "id": "fb25-169-m1",
-          "title": "Tensioner tab not located",
+          "title": "Belt tensioner tab not located",
           "what": "Fitting the belt tensioner without its tab in the anti-rotation hole.",
-          "consequence": "The tensioner turns and the belt slips.",
+          "consequence": "The belt tensioner turns and the belt slips.",
           "prevent": "Seat the tab in the anti-rotation hole before tightening.",
           "severity": "rework",
           "sourceIds": [
@@ -9069,7 +9068,7 @@
         },
         {
           "id": "fb25-169-m3",
-          "title": "Oily pulleys",
+          "title": "Belt fitted over oily pulleys",
           "what": "Fitting the belt over pulleys with oil or sealant on them.",
           "consequence": "The belt slips and squeals on the contaminated pulleys.",
           "prevent": "Clean the pulleys with solvent and let them dry first.",
@@ -9090,7 +9089,7 @@
       "id": "fb25-170",
       "order": 170,
       "phase": "assembly-ext",
-      "title": "Install plugs and coils",
+      "title": "Install spark plugs and coils",
       "action": "Install the spark plugs and the four ignition coils.",
       "mistakes": [
         {
@@ -9108,7 +9107,7 @@
           "id": "fb25-170-m2",
           "title": "Coil boot not seated",
           "what": "Leaving a coil boot short of the plug.",
-          "consequence": "That cylinder misfires and sets a misfire code.",
+          "consequence": "The cylinder with the unseated boot misfires and sets a misfire code.",
           "prevent": "Press each coil fully home until it sits flat.",
           "severity": "minor",
           "sourceIds": [
@@ -9127,7 +9126,7 @@
       "id": "fb25-171",
       "order": 171,
       "phase": "final",
-      "title": "Fit mounts, lift off stand",
+      "title": "Fit mounts and lift off the stand",
       "action": "Bolt the engine mounts on, then sling the engine and remove it from the stand.",
       "tools": [
         "Engine hoist"
@@ -9167,10 +9166,10 @@
       "mistakes": [
         {
           "id": "fb25-172-m1",
-          "title": "Engine drawn in by bolts",
+          "title": "Engine pulled in with the bolts",
           "what": "Pulling the engine onto the transmission with the bellhousing bolts.",
           "consequence": "The case cracks or the converter is pushed into the pump.",
-          "prevent": "Slide until flush by hand, then fit bolts.",
+          "prevent": "Slide the engine on until it sits flush, then fit the bolts.",
           "severity": "costly",
           "sourceIds": [
             "s1"
@@ -9199,7 +9198,7 @@
       "id": "fb25-173",
       "order": 173,
       "phase": "final",
-      "title": "Reconnect torque converter",
+      "title": "Reconnect the torque converter",
       "action": "Remove the converter stopper, install the starter, then turn the crank to bolt the converter to the drive plate through the service hole and refit the plug.",
       "why": "The stopper must be out before the converter can be pulled up to the drive plate.",
       "spec": {
@@ -9248,7 +9247,7 @@
       "id": "fb25-174",
       "order": 174,
       "phase": "final",
-      "title": "Secure bolts, mounts and exhaust",
+      "title": "Fit lower bolts, mounts and exhaust",
       "action": "From underneath, fit the lower bellhousing bolts and the mount nuts, connect the engine ground and install the front exhaust pipe.",
       "spec": {
         "kind": "torque",
@@ -9275,7 +9274,7 @@
           "id": "fb25-174-m2",
           "title": "Engine ground left off",
           "what": "Forgetting the engine ground strap.",
-          "consequence": "No-start or current flows through other paths.",
+          "consequence": "The engine may not start, or current takes other paths such as cables and hoses.",
           "prevent": "Bolt the engine ground strap on before reconnecting the battery.",
           "severity": "rework",
           "sourceIds": [
@@ -9313,7 +9312,7 @@
           "id": "fb25-175-m2",
           "title": "Fuel connector not latched",
           "what": "Pushing on a fuel quick connector without the click.",
-          "consequence": "It pops off under pressure and sprays fuel.",
+          "consequence": "The unlatched fuel connector pops off under pressure and sprays fuel.",
           "prevent": "Pull back on every fuel connector after it clicks.",
           "severity": "costly",
           "sourceIds": [
@@ -9324,7 +9323,7 @@
           "id": "fb25-175-m3",
           "title": "Booster hose left off",
           "what": "Forgetting to reconnect the brake booster hose.",
-          "consequence": "A vacuum leak and hard brake pedal follow.",
+          "consequence": "A vacuum leak and a hard brake pedal follow.",
           "prevent": "Check the booster hose is on before the first start.",
           "severity": "rework",
           "sourceIds": [
@@ -9345,7 +9344,7 @@
       "order": 176,
       "phase": "final",
       "title": "Fill the engine oil",
-      "action": "Fill with 0W-20 synthetic through the filler to the F mark on the dipstick.",
+      "action": "Fill with 0W-20 synthetic oil through the filler to the F mark on the dipstick.",
       "spec": {
         "kind": "fluid",
         "value": "5.7",
@@ -9392,7 +9391,7 @@
       "order": 177,
       "phase": "final",
       "title": "Fill and bleed coolant",
-      "action": "Add the cooling system conditioner, fill with Subaru Super Coolant, then run the factory bleed cycle of short revving bursts, heater on full hot, until the fan cycles, topping up after each cool-down.",
+      "action": "Add the cooling system conditioner and fill with Subaru Super Coolant. Then run the factory bleed cycle with the heater on full hot, revving the engine in short bursts until the fan cycles and topping up after each cool-down.",
       "why": "The repeated rev, wait and top-up cycles work trapped air out of the engine and heater core; air left behind lets the engine overheat.",
       "spec": {
         "kind": "fluid",
@@ -9439,13 +9438,13 @@
       "id": "fb25-178",
       "order": 178,
       "phase": "final",
-      "title": "Check CVTF, recharge A/C",
-      "action": "Check the CVT fluid level and top up if needed, then evacuate and recharge the A/C system.",
+      "title": "Check CVTF and recharge A/C",
+      "action": "Check the CVTF level and top up if needed, then evacuate and recharge the A/C system.",
       "mistakes": [
         {
           "id": "fb25-178-m1",
           "title": "CVTF level not rechecked",
-          "what": "Skipping the CVT fluid check after the engine swap.",
+          "what": "Skipping the CVTF check after the engine swap.",
           "consequence": "Fluid lost during the engine swap leaves the CVT low, which damages it.",
           "prevent": "Check and correct CVTF level as specified.",
           "severity": "costly",
@@ -9455,7 +9454,7 @@
         },
         {
           "id": "fb25-178-m2",
-          "title": "A/C charged without vacuum",
+          "title": "A/C recharged without evacuating",
           "what": "Recharging the A/C without evacuating it.",
           "consequence": "Moisture left in the system damages the compressor.",
           "prevent": "Evacuate the system fully before recharging it.",
@@ -9527,7 +9526,7 @@
         "kind": "other",
         "value": "50 or more at 600 rpm",
         "unit": "kPa",
-        "note": "350 kPa or more at 6,000 rpm, oil at 80 C",
+        "note": "350 kPa or more at 6,000 rpm, oil at 80 °C",
         "sourceIds": [
           "s1"
         ]
@@ -9536,7 +9535,7 @@
       "mistakes": [
         {
           "id": "fb25-180-m1",
-          "title": "Ran on with low oil pressure",
+          "title": "Engine run with low oil pressure",
           "what": "Letting the engine run when the gauge shows low pressure.",
           "consequence": "The new bearings are wiped within minutes.",
           "prevent": "Shut down at once if pressure is below spec.",
@@ -9548,7 +9547,7 @@
         {
           "id": "fb25-180-m2",
           "title": "Persistent rattle ignored",
-          "what": "Letting a rattle that continues after start-up go.",
+          "what": "Ignoring a rattle that continues after start-up.",
           "consequence": "A loose chain or a missing shim damages the timing parts or valvetrain.",
           "prevent": "Shut down and trace any rattle that does not stop.",
           "severity": "costly",
@@ -9569,12 +9568,12 @@
       "id": "fb25-181",
       "order": 181,
       "phase": "final",
-      "title": "Run first heat cycle",
+      "title": "Run the first heat cycle",
       "action": "Let the engine warm up with varied speed rather than long idling, then shut it down, let it cool and check for leaks and fluid levels.",
       "mistakes": [
         {
           "id": "fb25-181-m1",
-          "title": "Long idle during first heat",
+          "title": "Long idle during the first heat cycle",
           "what": "Letting the engine idle for a long time to warm up.",
           "consequence": "The rings glaze the bores instead of bedding in.",
           "prevent": "Vary engine speed while warming up rather than idling.",
@@ -9587,7 +9586,7 @@
         {
           "id": "fb25-181-m2",
           "title": "Levels not rechecked after cooling",
-          "what": "Not checking oil and coolant after the first cool-down.",
+          "what": "Skipping the oil and coolant check after the first cool-down.",
           "consequence": "Coolant drops as air purges and the engine overheats later.",
           "prevent": "Recheck oil and coolant once the engine is fully cold.",
           "severity": "rework",
@@ -9599,7 +9598,7 @@
         {
           "id": "fb25-181-m3",
           "title": "Codes not checked after first run",
-          "what": "Not scanning for codes after the first run.",
+          "what": "Skipping the code scan after the first run.",
           "consequence": "A timing or AVCS error goes unnoticed until it causes damage.",
           "prevent": "Read codes and AVCS values after the heat cycle.",
           "severity": "minor",
@@ -9687,8 +9686,8 @@
         {
           "id": "fb25-183-m2",
           "title": "Oil level not checked often",
-          "what": "Not checking the dipstick during break-in.",
-          "consequence": "Early consumption runs it low before the warning lamp acts.",
+          "what": "Going through break-in without checking the dipstick.",
+          "consequence": "Early oil use runs the level low before the warning lamp comes on.",
           "prevent": "Check the level often during the first 1,000 miles.",
           "severity": "costly",
           "sourceIds": [
@@ -9698,7 +9697,7 @@
         },
         {
           "id": "fb25-183-m3",
-          "title": "Constant speed driving only",
+          "title": "Break-in driven at constant speed",
           "what": "Driving long stretches at one speed.",
           "consequence": "The rings do not see the varied load they need to seat.",
           "prevent": "Vary speed and load through the whole break-in.",
@@ -9776,7 +9775,7 @@
       "title": "Oil seepage at cam caps and carriers",
       "cause": "The joints between cam cap and carrier and between carrier and head rely on liquid gasket and one-time O-rings; Subaru added cleaning steps and sealer in production to cure seepage.",
       "symptoms": "Oil wetness at the front corners of the heads, burning oil smell from the exhaust, drips on the undercover.",
-      "rebuildAngle": "Clean faces without abrasives (fb25-025, fb25-062), new O-rings and correct beads at the cam caps and carriers (fb25-133, fb25-134, fb25-135, fb25-136).",
+      "rebuildAngle": "Clean faces without abrasives (fb25-025, fb25-062), and fit new O-rings and correct beads at the cam caps and carriers (fb25-133, fb25-134, fb25-135, fb25-136).",
       "stepIds": [
         "fb25-025",
         "fb25-062",
@@ -9810,7 +9809,7 @@
     },
     {
       "id": "fb25-fm5",
-      "title": "Oil pan upper to block seepage",
+      "title": "Seepage at the oil pan upper joint",
       "cause": "The sealant joint and O-rings between the oil pan upper and block weep, a leak area Subaru addressed with added sealer in production.",
       "symptoms": "Oil along the rear of the pan-to-block seam, seen from under the car.",
       "rebuildAngle": "Separate the pan without prying the seam (fb25-053), then reseal with a correctly placed bead and new O-rings in sequence (fb25-113).",
@@ -9861,8 +9860,8 @@
     },
     {
       "id": "fb25-fm8",
-      "title": "Cam to crank correlation faults after timing work",
-      "cause": "A cam timed one tooth off, timed to a free-floating sensor plate, or a bent sensor plate after a timing chain job.",
+      "title": "Cam-to-crank correlation faults after timing work",
+      "cause": "A cam timed one tooth off or to a free-floating sensor plate, or a sensor plate bent during a timing chain job.",
       "symptoms": "P0016 to P0019 codes, AVCS advance values far from the reference, poor running.",
       "rebuildAngle": "Check sensor plates before timing (fb25-026), use housing marks where needed (fb25-142, fb25-150), match the colored links (fb25-145, fb25-151) and verify by turning the engine (fb25-153).",
       "stepIds": [

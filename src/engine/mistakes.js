@@ -42,11 +42,13 @@ export function mistakeStats(unit) {
   return out;
 }
 
-/** "12 ways to wreck this unit (3 ruin it)". */
+/** "12 ways to wreck this unit, 3 of them fatal". */
 export function wreckLine(stats, noun = 'this unit') {
   if (!stats.total) return '';
   const ways = `${stats.total} way${stats.total === 1 ? '' : 's'} to wreck ${noun}`;
-  return stats.ruins ? `${ways} (${stats.ruins} ruin${stats.ruins === 1 ? 's' : ''} it)` : ways;
+  if (!stats.ruins) return ways;
+  if (stats.total === 1) return `${ways}, and it’s fatal`;
+  return `${ways}, ${stats.ruins === stats.total ? 'all' : stats.ruins} of them fatal`;
 }
 
 // ---- spaced repetition

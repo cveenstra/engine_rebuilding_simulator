@@ -6,7 +6,7 @@ import { VEHICLES, UNIT_BY_ID, SHOW_SAMPLE } from '../data/index.js';
 export default function About() {
   return (
     <div className="space-y-6">
-      <PageHeader title="About Rebuild Bench" back={{ to: '/more', label: 'Settings' }} />
+      <PageHeader title="About Rebuild Bench" back={{ to: '/more', label: 'Progress and settings' }} />
 
       <div role="note" className="rounded-xl border-2 border-warn-line bg-warn-soft p-4">
         <p className="text-base font-semibold text-warn-text">Study aid, not a service manual</p>
@@ -21,9 +21,10 @@ export default function About() {
       <section>
         <SectionTitle>What it is</SectionTitle>
         <p className="text-base leading-relaxed text-ink-2">
-          A study game for memorizing the order of a full rebuild, 100 or more steps per unit, until you can run the
-          whole sequence from memory. Walk through it, drill short stretches, guess what comes next, flip spec cards,
-          then rebuild the whole unit against the clock. Anything you miss comes back on a spaced schedule.
+          A study game for memorizing a full rebuild, 100 or more steps per unit, until you can run the whole sequence
+          from memory. Walk through it, drill short stretches, guess what comes next, flip spec cards, then rebuild the
+          whole unit against the clock. Along the way, learn the shop terms and the mistakes that wreck a unit.
+          Anything you miss comes back for review.
         </p>
       </section>
 
@@ -41,7 +42,7 @@ export default function About() {
         </Card>
         {SHOW_SAMPLE && (
           <p className="mt-2 text-sm text-ink-3">
-            A practice unit with fake names is also shown while real content is missing or in development builds.
+            A practice unit with made-up names also shows up in development builds.
           </p>
         )}
       </section>
@@ -50,7 +51,7 @@ export default function About() {
         <SectionTitle>Content</SectionTitle>
         <p className="text-base leading-relaxed text-ink-2">
           Every step is written in our own words from public sources, which are listed on each unit page. No factory
-          manual text is reproduced. Where a value could not be sourced it is left out rather than guessed.
+          manual text is reproduced. Where a value couldn’t be sourced, it’s left out rather than guessed.
         </p>
       </section>
 

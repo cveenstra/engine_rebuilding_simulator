@@ -16,7 +16,7 @@ import {
 import { formatGap } from '../engine/ladder.js';
 import { logSession } from '../engine/progress.js';
 
-const REASON = { new: 'New word', learning: 'Still learning', review: 'Review', early: 'Still learning' };
+const REASON = { new: 'New term', learning: 'Still learning', review: 'Review', early: 'Still learning' };
 const RATINGS = [
   ['again', 'Again', 'danger', 'One rung down, back in minutes'],
   ['hard', 'Hard', 'ghost', 'Stays on its rung'],
@@ -86,7 +86,9 @@ function Unlocked({ ids }) {
   return (
     <div className="rounded-xl border border-ok-line bg-ok-soft p-3" role="status">
       <p className="text-sm font-semibold text-ok-text">Unlocked: {ids.map((id) => TERM_BY_ID[id]?.term).filter(Boolean).join(', ')}</p>
-      <p className="text-sm text-ink-2">Everything they build on is learned, so they can come up as new words.</p>
+      <p className="text-sm text-ink-2">
+        {ids.length === 1 ? 'You know what it builds on now, so it can come up as a new term.' : 'You know what they build on now, so they can come up as new terms.'}
+      </p>
     </div>
   );
 }
@@ -195,7 +197,7 @@ function Drill({ scope, mode, skey }) {
             {s.answered ? `Session done: ${s.right} of ${s.answered} right` : 'Nothing waiting right now'}
           </p>
           <p className="mt-1 text-sm text-ink-2">
-            {s.cur ? 'Stopped. Everything you answered is saved.' : 'Every term in this filter is learned for now, locked behind words it builds on, or waiting for today’s new-term limit to reset if you set one.'}
+            {s.cur ? 'Stopped. Everything you answered is saved.' : 'You’re caught up. The rest are learned for now, still locked, or waiting for tomorrow’s new terms.'}
           </p>
         </Card>
         {learned.length > 0 && (
@@ -243,7 +245,7 @@ function Drill({ scope, mode, skey }) {
 
       {cur.phase === 'teach' && (
         <div key={`t-${s.answered}`} className="rise-in space-y-3">
-          <p className="text-base text-ink-2">A new word. Read it, then check you have it.</p>
+          <p className="text-base text-ink-2">A new term. Read it, then test yourself.</p>
           <TermCard term={term} unitId={scope.unitId} />
         </div>
       )}
@@ -271,7 +273,9 @@ function Drill({ scope, mode, skey }) {
           {cur.phase === 'answered' && cur.res && (
             <div className="pop-in space-y-3" {...beat.pauseProps}>
               <p className={`text-base font-semibold ${cur.q.options.find((o) => o.id === cur.picked)?.correct ? 'text-ok-text' : 'text-bad-text'}`} role="status">
-                {cur.q.options.find((o) => o.id === cur.picked)?.correct ? 'Right.' : `Not quite. The answer: ${cur.q.answerText}${/[.!?]$/.test(cur.q.answerText) ? '' : '.'}`}
+                {cur.q.options.find((o) => o.id === cur.picked)?.correct ? 'Right.' : (
+                  <>Not quite. {cur.q.feedback[0]}{cur.q.feedback[1] && <strong>{cur.q.feedback[1]}</strong>}{cur.q.feedback[2]}</>
+                )}
                 {' '}
                 <span className="font-normal text-ink-2">
                   {cur.res.justLearned ? 'Learned. ' : cur.res.lost ? 'Back to learning. ' : ''}Back in {formatGap(cur.res.nextIn)}.
@@ -318,12 +322,12 @@ function Drill({ scope, mode, skey }) {
           <>
             <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop</Button>
             <Button className="flex-[2]" onClick={() => setS({ ...s, last: null, cur: toCheck(cur, mode) })}>
-              Check I have it <Icon name="right" size={18} />
+              Test me <Icon name="right" size={18} />
             </Button>
           </>
         )}
         {cur.phase === 'ask' && (
-          <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop and save</Button>
+          <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop</Button>
         )}
         {(cur.phase === 'answered' || cur.phase === 'rated') && (
           <Button className="flex-1" onClick={beat.go}>Next <Icon name="right" size={18} /></Button>

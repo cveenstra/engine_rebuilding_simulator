@@ -40,7 +40,7 @@ export default function Credits() {
             ))}
           </Card>
         ) : (
-          <p className="text-base text-ink-2">No photos yet. Parts show their drawings until photos are added.</p>
+          <p className="text-base text-ink-2">No photos yet. Parts show their drawings for now.</p>
         )}
         <p className="mt-3 text-sm leading-relaxed text-ink-3">
           Photos are used under their Creative Commons or public domain licenses. Where a photo was cropped or resized for

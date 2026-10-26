@@ -316,7 +316,7 @@ export function PartStrip({ unit, step, small = false, className = '' }) {
               <li key={partId} className={`${w} flex-shrink-0`}>
                 <button
                   type="button" onClick={() => setOpen(partId)}
-                  aria-label={`${name}${names.length ? ` (${names.join(', ')})` : ''}. Show part`}
+                  aria-label={`Show ${name}${names.length ? ` (${names.join(', ')})` : ''}`}
                   className="block w-full rounded-lg text-left hover:opacity-90 active:opacity-80"
                 >
                   <PartThumb partId={partId} />
@@ -390,10 +390,10 @@ export function UnitDiagram({ unit, markup, highlight = [], onPick, className = 
       {highlight.length > 0 && (
         <p className="mt-1.5 text-xs text-ink-3">
           {missing.length === highlight.length
-            ? 'This step’s parts are not drawn on the diagram.'
+            ? 'This step’s parts aren’t on the diagram.'
             : missing.length
-              ? `Highlighted: this step’s parts. Not drawn: ${missing.map((id) => PART_BY_ID[id]?.name || id).join(', ')}.`
-              : 'Highlighted: the parts this step touches. Tap any part to see it.'}
+              ? `This step’s parts are highlighted. Not on the diagram: ${missing.map((id) => PART_BY_ID[id]?.name || id).join(', ')}.`
+              : 'This step’s parts are highlighted. Tap any part to see it.'}
         </p>
       )}
       {!highlight.length && <p className="mt-1.5 text-xs text-ink-3">Tap any part to see what it is.</p>}

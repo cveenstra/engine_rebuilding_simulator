@@ -11,10 +11,10 @@ import { MistakeCount, MistakeSection } from './mistakes.jsx';
 export function UnitMissing() {
   return (
     <Empty
-      title="That unit is not loaded"
+      title="We can’t find that unit"
       action={<Button to="/" variant="ghost">Back to the garage</Button>}
     >
-      Its content may still be on the way. Units appear here automatically once their data file lands.
+      Check the link, or pick a unit from the garage.
     </Empty>
   );
 }

@@ -82,7 +82,7 @@ export function HeldNotice({ split, top, className = '' }) {
         {n} new step card{n === 1 ? '' : 's'} wait{n === 1 ? 's' : ''} for {t} term{t === 1 ? '' : 's'}
       </p>
       <p className="mt-1 text-sm leading-relaxed text-ink-2">
-        A step joins review once every shop word in it is learned in Terms. The walkthrough is always open.
+        A step joins review once you’ve learned every term in it. The walkthrough is always open.
       </p>
       <TermChips terms={top} more={Math.max(0, t - top.length)} className="mt-3" />
       <Link to="/terms" className="mt-3 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-brand-text underline underline-offset-2">

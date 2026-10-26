@@ -55,7 +55,7 @@ function Stem({ unit, q }) {
         <>
           <StepStem step={step} />
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-bad-text">If you</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-bad-text">The mistake</p>
             <p className="mt-0.5 text-lg leading-snug text-ink">{q.what}</p>
           </div>
         </>
@@ -64,7 +64,7 @@ function Stem({ unit, q }) {
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-bad-text">The mistake</p>
           <p className="mt-0.5 text-lg leading-snug text-ink">{q.what}</p>
-          {step && <p className="mt-1 text-sm text-ink-3">At step {step.order}: {step.title}</p>}
+          {step && <p className="mt-1 text-sm text-ink-3">Step {step.order}: {step.title}</p>}
         </div>
       )}
       {q.kind === 'step' && <StepStem step={step} withAction />}
@@ -143,8 +143,8 @@ function Drill({ unit, severities, skey }) {
             {s.cur
               ? 'Stopped. Everything you answered is saved.'
               : s.answered
-                ? `Misses come back in minutes, the rest over the coming days.${later != null ? ` Next one in ${formatGap(later)}.` : ''}`
-                : `Every mistake in this filter is learned for now.${later != null ? ` Next one back in ${formatGap(later)}.` : ''} Pick another severity to keep going.`}
+                ? `Misses come back in minutes, the rest over the next few days.${later != null ? ` The next one is back in ${formatGap(later)}.` : ''}`
+                : `You've learned every mistake in this filter for now.${later != null ? ` The next one is back in ${formatGap(later)}.` : ''} Pick another severity to keep going.`}
           </p>
         </Card>
         {missed.length > 0 && (
@@ -206,7 +206,7 @@ function Drill({ unit, severities, skey }) {
       </div>
 
       <ActionBar beat={beat}>
-        {!cur.picked && <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop and save</Button>}
+        {!cur.picked && <Button variant="ghost" className="flex-1" onClick={() => setS({ ...s, done: true })}>Stop</Button>}
         {cur.picked && <Button className="flex-1" onClick={beat.go}>Next <Icon name="right" size={18} /></Button>}
       </ActionBar>
     </div>
@@ -242,12 +242,12 @@ export default function MistakeDrill() {
       <ModeHeader unit={unit} title="Mistake drill" />
       {pool.length < 4 ? (
         <Empty title="Not enough mistakes to drill yet" action={<Button to={`/unit/${unit.id}`} variant="ghost">Back to {unit.name}</Button>}>
-          The drill needs at least four mistakes with a consequence and a prevent line. They are on their way for this unit.
+          The drill needs at least four fully written mistakes, and this unit doesn't have them yet.
         </Empty>
       ) : (
         <>
           <div className="mb-4">
-            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink-3">Drill these</p>
+            <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-ink-3">Severity</p>
             <ChipRow>
               <Chip active={!severities.length} onClick={() => setSev([])}>All</Chip>
               {present.map((sev) => (

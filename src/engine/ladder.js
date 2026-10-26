@@ -8,13 +8,13 @@
  * back stretches with the rung: minutes while it is being acquired, then
  * days.
  *
- *   rung 0   1 min    learning   "Which word is this?"      meaning -> pick the term
+ *   rung 0   1 min    learning   "Which term means this?"   meaning -> pick the term
  *   rung 1   10 min   learning
- *   rung 2   1 day    learned    "Spot it in a step"        a real step sentence, term blanked
+ *   rung 2   1 day    learned    "Which term fills the blank?" a real step sentence, term blanked
  *   rung 3   3 days   learned
  *   rung 4   7 days   learned    "What does it mean?"       term -> pick the meaning
  *   rung 5   14 days  learned
- *   rung 6   21 days  mature     "What must you know first?" alternating with the step sentence
+ *   rung 6   21 days  mature     "Which of these does it build on?" alternating with the step sentence
  *   rung 7+  30, 45, 60, 90 days
  *
  * ORDER. A term is never introduced before every term it `requires` is
@@ -281,16 +281,90 @@ const distinctBy = (list, f) => {
 /** A definition with its own term's names blanked, so it never names its answer. */
 export const maskedShort = (t) => blankOut(t.short, nameList(t)).text;
 
+/** A definition that uses its own term's name, so masking would leave a blank in it. */
+const namesItself = (t) => mentions(t.short, nameList(t));
+
+/**
+ * Names that can stand in a blank where the term itself would go. An alias
+ * that is another part of speech ("lapped" for lapping, "mic" for
+ * micrometer) or only the leading word of the term ("helical" for helical
+ * gear) would leave a blank the term's name does not fit, so a sentence that
+ * uses one is not asked as fill-the-blank.
+ */
+export function blankableNames(term) {
+  const base = String(term.term || '').replace(/\s*\([^)]*\)\s*/g, ' ').trim().toLowerCase();
+  const lastOf = (s) => s.split(/[\s-]+/).pop() || '';
+  const tail = lastOf(base);
+  const safe = [];
+  const unsafe = [];
+  for (const n of nameList(term)) {
+    const a = String(n).replace(/\s*\([^)]*\)\s*/g, ' ').trim().toLowerCase();
+    const word = lastOf(a);
+    const plural = a === base || a === `${base}s` || a === `${base}es` || `${a}s` === base;
+    const caps = /^[A-Z0-9][A-Z0-9/&·.\s-]*$/.test(n) && /[A-Z]/.test(n);
+    let bad = false;
+    if (!plural && !caps) {
+      // The term's first word or words, with the noun left off ("vanes" for vane pump).
+      const stem = a.replace(/e?s$/, '');
+      if ([a, stem].some((x) => base.startsWith(`${x} `) || base.startsWith(`${x}-`))) bad = true;
+      // The term plus another noun, which names a different part ("NVH pads" for NVH).
+      if (a.startsWith(`${base} `)) bad = true;
+      // A verb or adjective form: lapped, misfiring, calibrated.
+      const suffix = (w) => (w.match(/(ing|ed)$/) || [''])[0];
+      if (/(ing|ed)$/.test(word) && suffix(word) !== suffix(tail)) bad = true;
+      // Another form of an -ing, -er or -ion word: mic, hone, lap, configure, seat cutter.
+      if (/(ing|er|ion)$/.test(tail) && word !== tail && word.slice(0, 3) === tail.slice(0, 3) && !word.startsWith(tail)) bad = true;
+    }
+    (bad ? unsafe : safe).push(n);
+  }
+  return { safe, unsafe };
+}
+
+/** Letters that start with a vowel sound when an abbreviation is read out (an FSM, an O-ring). */
+const VOWEL_LETTERS = 'AEFHILMNORSX';
+/** "a" or "an" for a word or name as it would be read aloud. Good enough for shop terms. */
+export function article(name) {
+  const w = String(name || '').trim();
+  const first = w.split(/[\s/-]/)[0] || '';
+  if (/^[A-Z0-9]{2,}$/.test(first) || /^[A-Z]$/.test(first)) {
+    if (/^\d/.test(first)) return /^(8|11|18)/.test(first) ? 'an' : 'a';
+    return VOWEL_LETTERS.includes(first[0]) ? 'an' : 'a';
+  }
+  if (/^(uni|use|usu|eu|one|once)/i.test(w)) return 'a';
+  if (/^(hour|honest|heir)/i.test(w)) return 'an';
+  return /^[aeiou]/i.test(w) ? 'an' : 'a';
+}
+
+/** The "a" or "an" directly before a blank, or null. */
+const ARTICLE_BEFORE = /(^|[^\p{L}])(a|an|A|An)\s+(?=_____)/u;
+
+/**
+ * A term's name as it reads inside a sentence: "limp mode", but brands,
+ * abbreviations and names with capitals later on ("Super Coolant") keep them.
+ */
+export function inSentence(t) {
+  const s = String(t?.term || '');
+  if (t?.category === 'brand' || t?.category === 'abbreviation') return s;
+  if (!/^[A-Z][a-z]/.test(s) || /\s[A-Z]/.test(s)) return s;
+  return s[0].toLowerCase() + s.slice(1);
+}
+
+/** The line after a wrong pick, as [before, term, after] so the term can be set in bold. */
+const line = (before, t, after = '.') => [before, inSentence(t), after];
+
 /**
  * One question for a term at a tier, or null when the dictionary cannot
  * support a fair one. Falls back to an easier tier when a harder one is not
- * possible (no step sentence, no prerequisite). Every option is a real term
- * or a real definition; every sentence is real step text.
+ * possible (no step sentence, no prerequisite, a definition that names
+ * itself). Every option is a real term or a real definition; every sentence
+ * is real step text.
  *
  * ctx: { pool: terms to draw wrong answers from, byId, contexts: sentences
  * using the term, best first, variant: which sentence, rnd }
  *
- * Returns { kind, tier, termId, prompt, stem, sentence?, options: [{ id, text, correct }] }.
+ * Returns { kind, tier, termId, prompt, stem, sentence?, options: [{ id, text, correct }],
+ * answerText, feedback } where feedback is the line shown after a wrong pick,
+ * as [before, term, after].
  */
 export function buildQuestion(term, tier, ctx) {
   const { pool, byId, contexts = [], variant = 0, rnd = Math.random } = ctx;
@@ -302,6 +376,16 @@ export function buildQuestion(term, tier, ctx) {
     if (opts.length < 4) return null;
     return { ...q, termId: term.id, options: shuffle(opts.slice(0, 4), rnd), answerText: text };
   };
+  // A wrong answer named in the text on screen is ruled out by reading it.
+  const notIn = (text) => (t) => !mentions(text, nameList(t));
+  // A wrong answer whose name contains the term's, or sits inside it ("speed
+  // sensor" against "sensor"), is a kind of the same thing: often a second
+  // right answer rather than a wrong one.
+  const mine = names.map((n) => n.toLowerCase());
+  const apart = (t) => nameList(t).every((n) => {
+    const l = n.toLowerCase();
+    return mine.every((m) => !mentions(l, [m]) && !mentions(m, [l]));
+  });
 
   if (tier === 4) {
     const reqs = (term.requires || []).filter((d) => byId[d]);
@@ -311,7 +395,10 @@ export function buildQuestion(term, tier, ctx) {
     const wrong = near.filter((t) => !required.has(t.id) && t.id !== term.id && !ancestors(t.id, byId).has(term.id));
     if (wrong.length < 3) return buildQuestion(term, 2, ctx);
     return finish(
-      { kind: 'dependency', tier: 4, prompt: `Which must you understand before "${term.term}"?`, stem: term.term },
+      {
+        kind: 'dependency', tier: 4, prompt: 'Which of these does it build on?', stem: term.term,
+        feedback: line('It builds on ', answer),
+      },
       { id: answer.id, text: answer.term },
       wrong.map((t) => ({ id: t.id, text: t.term })),
       answer.term,
@@ -319,25 +406,34 @@ export function buildQuestion(term, tier, ctx) {
   }
 
   if (tier === 2) {
-    const usable = contexts.filter((s) => mentions(s, names));
+    const { safe, unsafe } = blankableNames(term);
+    const usable = contexts.filter((s) => mentions(s, safe) && !mentions(s, unsafe));
     if (!usable.length) return buildQuestion(term, 3, ctx);
     const sentence = usable[Math.abs(variant) % usable.length];
     const blanked = blankOut(sentence, names);
     if (!blanked.hits) return buildQuestion(term, 3, ctx);
     // A wrong answer named in the sentence is ruled out by reading it, and one
     // whose name contains or sits inside the answer is unfair rather than hard.
-    const mine = names.map((n) => n.toLowerCase());
-    const fair = near.filter((t) => {
-      const theirs = nameList(t);
-      if (mentions(sentence, theirs)) return false;
-      return theirs.every((n) => {
-        const l = n.toLowerCase();
-        return mine.every((m) => !l.includes(m) && !m.includes(l));
-      });
-    });
+    let fair = near.filter(notIn(sentence)).filter((t) => nameList(t).every((n) => {
+      const l = n.toLowerCase();
+      return mine.every((m) => !l.includes(m) && !m.includes(l));
+    }));
+    let stem = blanked.text;
+    // "a _____" or "an _____" only fits answers that take that article, so the
+    // wrong answers must take it too, or the grammar gives the answer away.
+    const art = stem.match(ARTICLE_BEFORE);
+    if (art) {
+      const want = article(term.term);
+      const same = fair.filter((t) => article(t.term) === want);
+      if (same.length >= 3) fair = same;
+      else stem = stem.replace(ARTICLE_BEFORE, (m, lead, a) => `${lead}${a[0]}(n) `);
+    }
     if (fair.length < 3) return buildQuestion(term, 3, ctx);
     return finish(
-      { kind: 'context', tier: 2, prompt: 'Spot it in a step: which term fills the blank?', stem: blanked.text, sentence },
+      {
+        kind: 'context', tier: 2, prompt: 'Which term fills the blank?', stem, sentence,
+        feedback: line('The missing term is ', term),
+      },
       { id: term.id, text: term.term },
       fair.map((t) => ({ id: t.id, text: t.term })),
       term.term,
@@ -345,18 +441,28 @@ export function buildQuestion(term, tier, ctx) {
   }
 
   if (tier === 3) {
+    // A definition that names its own term would show a blank, which marks it
+    // out among the options: such a term gets the easier question instead, and
+    // such a neighbour is not offered.
+    if (namesItself(term)) return buildQuestion(term, 1, ctx);
     return finish(
-      { kind: 'definition', tier: 3, prompt: 'What does it mean?', stem: term.term },
-      { id: term.id, text: maskedShort(term) },
-      near.map((t) => ({ id: t.id, text: maskedShort(t) })),
+      { kind: 'definition', tier: 3, prompt: 'What does it mean?', stem: term.term, feedback: ['The right meaning is marked.', '', ''] },
+      { id: term.id, text: term.short },
+      (() => {
+        const ok = near.filter((t) => !namesItself(t));
+        const best = ok.filter(apart);
+        return best.length >= 3 ? best : ok;
+      })().map((t) => ({ id: t.id, text: t.short })),
       term.short,
-    );
+    ) || buildQuestion(term, 1, ctx);
   }
 
+  const stem = maskedShort(term);
+  const unnamed = near.filter((t) => notIn(stem)(t) && apart(t));
   return finish(
-    { kind: 'recognition', tier: 1, prompt: 'Which word is this?', stem: maskedShort(term) },
+    { kind: 'recognition', tier: 1, prompt: 'Which term means this?', stem, feedback: line('The answer is ', term) },
     { id: term.id, text: term.term },
-    near.map((t) => ({ id: t.id, text: t.term })),
+    (unnamed.length >= 3 ? unnamed : near).map((t) => ({ id: t.id, text: t.term })),
     term.term,
   );
 }

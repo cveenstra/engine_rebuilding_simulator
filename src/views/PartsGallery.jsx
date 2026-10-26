@@ -29,11 +29,11 @@ function Gallery({ unit }) {
       </ModeHeader>
 
       {!all.length ? (
-        <Empty title="No parts mapped yet">This unit&apos;s components do not point at the parts catalog yet.</Empty>
+        <Empty title="No parts yet">This unit’s parts aren’t linked to the catalog yet.</Empty>
       ) : (
         <>
           <p className="mb-3 text-base text-ink-2">
-            The {all.length} kinds of part in the {unit.name}. Tap one to see what it is, what it does and which steps touch it.
+            The {all.length} kinds of part in the {unit.name}. Tap one to see what it is, what it does and which steps use it.
           </p>
 
           <label className="mb-3 block">
@@ -51,7 +51,7 @@ function Gallery({ unit }) {
             ))}
           </ChipRow>
 
-          <p className="sr-only" aria-live="polite">{shown.length} parts shown</p>
+          <p className="sr-only" aria-live="polite">{shown.length} part{shown.length === 1 ? '' : 's'} shown</p>
           {shown.length ? (
             <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
               {shown.map(({ part, components }) => (
@@ -74,7 +74,7 @@ function Gallery({ unit }) {
           )}
 
           <Link to="/credits" className="mt-6 inline-flex min-h-11 items-center gap-1 text-sm text-ink-3 underline underline-offset-2">
-            <Icon name="info" size={16} /> Photo credits
+            <Icon name="info" size={16} /> Picture credits
           </Link>
         </>
       )}

@@ -22,12 +22,12 @@ function matches(m, step, words) {
 function Checklist({ unit, groups, ticked, onTick }) {
   const total = groups.reduce((n, g) => n + g.items.filter((m) => m.prevent).length, 0);
   if (!total) {
-    return <Empty title="No prevent lines in this filter">Older one-line mistakes have no prevent line yet. Widen the filter to see more.</Empty>;
+    return <Empty title="Nothing to check off here">These mistakes don’t have a prevention step written yet. Try a wider filter.</Empty>;
   }
   return (
     <div className="space-y-5">
       <div className="hidden print:block">
-        <h1 className="text-xl font-semibold">{unit.name}: pre-flight checklist</h1>
+        <h1 className="text-xl font-semibold">{unit.name} pre-flight checklist</h1>
         <p className="mt-1 text-sm">{unit.fullName}</p>
       </div>
       {groups.map(({ phase, items }) => {
@@ -82,9 +82,9 @@ export default function Mistakes() {
   if (!all.length) {
     return (
       <div>
-        <PageHeader title="Ways to screw up" back={back} />
-        <Empty title="No mistakes written for this unit yet" action={<Button to={back.to} variant="ghost">Back to {unit.name}</Button>}>
-          They show up here, step by step, as soon as the content lands.
+        <PageHeader title="Mistakes to avoid" back={back} />
+        <Empty title="No mistakes for this unit yet" action={<Button to={back.to} variant="ghost">Back to {unit.name}</Button>}>
+          They’ll show up here, step by step, once they’re written.
         </Empty>
       </div>
     );
@@ -125,7 +125,7 @@ export default function Mistakes() {
   return (
     <div className="space-y-5">
       <div className="print-hide">
-        <PageHeader title="Ways to screw up" sub={`${wreckLine(stats)}. Every one, in rebuild order, so you can get ahead of it.`} back={back} />
+        <PageHeader title="Mistakes to avoid" sub={`${wreckLine(stats)}. Here they all are, in rebuild order.`} back={back} />
 
         <div className="flex flex-wrap gap-1.5" aria-label="Count by severity">
           {SEVERITIES.filter((s) => stats.bySeverity[s]).map((s) => (
@@ -194,7 +194,7 @@ export default function Mistakes() {
 
         <div className="flex items-center gap-2">
           <p className="tabnum min-w-0 flex-1 text-sm text-ink-3" role="status">
-            {shown.length === all.length ? `All ${all.length}` : `${shown.length} of ${all.length}`}{view === 'checklist' ? ' mistakes, as prevent lines' : ''}
+            {shown.length === all.length ? `All ${all.length} mistakes` : `${shown.length} of ${all.length} mistakes`}{view === 'checklist' ? ', as a checklist' : ''}
           </p>
           {view === 'checklist' && (
             <Button variant="ghost" className="flex-shrink-0 px-3" onClick={() => window.print()}>
@@ -209,7 +209,7 @@ export default function Mistakes() {
           title="Nothing matches"
           action={<Button variant="ghost" onClick={() => setParams(view === 'checklist' ? { view } : {}, { replace: true })}>Clear filters</Button>}
         >
-          Try fewer words, or another severity or phase.
+          Try fewer words, or a different severity or phase.
         </Empty>
       )}
 

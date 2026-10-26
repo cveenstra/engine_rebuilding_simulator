@@ -37,6 +37,7 @@ export default function More() {
 
   const summary = srsSummary(allTransitions(), state);
   const runs = Object.values(state.runs).reduce((n, list) => n + (Array.isArray(list) ? list.length : 0), 0);
+  const streak = studyStreak(state);
 
   const doExport = () => {
     try {
@@ -65,10 +66,10 @@ export default function More() {
         importJSON(String(r.result));
         setMsg({ tone: 'ok', text: 'Progress restored from the backup.' });
       } catch (err) {
-        setMsg({ tone: 'bad', text: err instanceof SyntaxError ? 'That file is not valid JSON.' : err.message });
+        setMsg({ tone: 'bad', text: err instanceof SyntaxError ? 'That file isn’t a Rebuild Bench backup.' : err.message });
       }
     };
-    r.onerror = () => setMsg({ tone: 'bad', text: 'Could not read that file.' });
+    r.onerror = () => setMsg({ tone: 'bad', text: 'Couldn’t read that file.' });
     r.readAsText(file);
   };
 
@@ -86,22 +87,22 @@ export default function More() {
 
       {!canSave && (
         <p className="rounded-lg border border-warn-line bg-warn-soft p-3 text-sm text-warn-text">
-          This browser is not letting the app save (private mode or blocked site data). Everything works, but progress
-          is lost when you close the tab. Export a backup before you leave.
+          This browser isn’t letting the app save (private mode or blocked site data). Everything works, but your
+          progress is lost when you close the tab. Export a backup before you leave.
         </p>
       )}
 
       <Card className="p-4">
         <SectionTitle>Your progress</SectionTitle>
         <div className="grid grid-cols-3 gap-3">
-          <Stat label="Studied" value={summary.studied} note={`of ${summary.total} transitions`} />
-          <Stat label="Learned" value={summary.mature} note="16+ day gap" />
-          <Stat label="Runs" value={runs} note={`${studyStreak(state)}-day streak`} />
+          <Stat label="Studied" value={summary.studied} note={`of ${summary.total} step cards`} />
+          <Stat label="Learned" value={summary.mature} note="16+ days between reviews" />
+          <Stat label="Runs" value={runs} note={streak ? `${streak}-day streak` : 'No streak yet'} />
         </div>
       </Card>
 
       <Card className="p-4">
-        <SectionTitle sub="Progress lives only in this browser. Back it up as a file, or move it to another device.">Backup</SectionTitle>
+        <SectionTitle sub="Your progress lives only in this browser. Save it as a file to back it up or move it to another device.">Backup</SectionTitle>
         <div className="flex flex-wrap gap-2">
           <Button onClick={doExport}><Icon name="download" size={18} /> Export progress</Button>
           <Button variant="ghost" onClick={() => fileRef.current?.click()}><Icon name="upload" size={18} /> Import backup</Button>
@@ -116,14 +117,14 @@ export default function More() {
       </Card>
 
       <Card className="p-4">
-        <SectionTitle sub="How many new words the Terms drill introduces each day. No limit means new words keep coming as fast as you learn them; prerequisites still decide the order. Reviews are never capped.">New terms a day</SectionTitle>
+        <SectionTitle sub="How many new terms the drill can add each day. With no limit, new terms come as fast as you learn them, still in order. Reviews are never capped.">New terms a day</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {NEW_PER_DAY_CHOICES.map((n) => (
             <Chip key={n} active={perDay === n} onClick={() => { setPerDay(n); setPref('termNewPerDay', n); }}>{n === NO_LIMIT ? 'No limit' : n}</Chip>
           ))}
         </div>
         <div className="mt-4 border-t border-line-2 pt-4">
-          <SectionTitle sub="On: a step joins review only once every shop word it uses is learned in Terms. The walkthrough is never held. Off: steps join review straight away.">
+          <SectionTitle sub="When this is on, a step joins review only after you’ve learned every term in it. When it’s off, steps join review right away. The walkthrough is always open.">
             Steps wait for their terms
           </SectionTitle>
           <div className="flex flex-wrap gap-2">
@@ -134,10 +135,10 @@ export default function More() {
       </Card>
 
       <Card className="p-4">
-        <SectionTitle sub="After a right answer, the app pauses for a breath, then moves on by itself. Tap anywhere or press Enter to go sooner. Wrong answers always wait for you.">
-          Auto-advance on correct
+        <SectionTitle sub="After a right answer, the app pauses for a moment, then moves on by itself. Tap anywhere or press Enter to go sooner. Wrong answers always wait for you.">
+          Auto-advance
         </SectionTitle>
-        <OnOff label="Auto-advance on correct" value={fx.auto} onChange={(v) => setFxPref('auto', 'autoAdvance', v)} />
+        <OnOff label="Auto-advance" value={fx.auto} onChange={(v) => setFxPref('auto', 'autoAdvance', v)} />
         <div className={`mt-4 border-t border-line-2 pt-4 ${fx.auto ? '' : 'opacity-60'}`}>
           <SectionTitle sub="How long the right answer stays on screen before the next question.">Pause length</SectionTitle>
           <div className="flex flex-wrap gap-2" role="group" aria-label="Pause length">
@@ -156,13 +157,13 @@ export default function More() {
           </div>
         </div>
         <div className="mt-4 border-t border-line-2 pt-4">
-          <SectionTitle sub="A tiny tap from the phone on a right answer, where the phone supports it. iPhones do not.">Haptics</SectionTitle>
-          <OnOff label="Haptics" value={fx.haptics} onChange={(v) => setFxPref('haptics', 'haptics', v)} />
+          <SectionTitle sub="A tiny buzz on a right answer, on phones that support it (iPhones don’t).">Vibration</SectionTitle>
+          <OnOff label="Vibration" value={fx.haptics} onChange={(v) => setFxPref('haptics', 'haptics', v)} />
         </div>
       </Card>
 
       <Card className="p-4">
-        <SectionTitle sub="System follows your phone's light or dark setting.">Appearance</SectionTitle>
+        <SectionTitle sub="System matches your phone’s light or dark setting.">Appearance</SectionTitle>
         <div className="flex flex-wrap gap-2">
           {[['system', 'System'], ['light', 'Light'], ['dark', 'Dark']].map(([v, l]) => (
             <Chip key={v} active={theme === v} onClick={() => pickTheme(v)}>{l}</Chip>
@@ -171,7 +172,7 @@ export default function More() {
       </Card>
 
       <Card className="p-4">
-        <SectionTitle>Put it on your home screen</SectionTitle>
+        <SectionTitle>Add it to your home screen</SectionTitle>
         <ul className="space-y-2 text-base leading-relaxed text-ink-2">
           <li><strong className="font-semibold text-ink">iPhone:</strong> open this page in Safari, tap Share, then Add to Home Screen.</li>
           <li><strong className="font-semibold text-ink">Android:</strong> open it in Chrome, tap the menu, then Add to Home screen or Install app.</li>
@@ -184,7 +185,7 @@ export default function More() {
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-base font-medium text-ink">Terms</span>
-          <span className="block text-sm text-ink-3">Drill the shop language with spaced repetition</span>
+          <span className="block text-sm text-ink-3">Learn the shop language, a few terms at a time</span>
         </span>
         <Icon name="chevron" size={18} className="text-ink-3" />
       </Link>
@@ -195,7 +196,7 @@ export default function More() {
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-base font-medium text-ink">Dictionary</span>
-          <span className="block text-sm text-ink-3">Every shop word in plain English, A to Z</span>
+          <span className="block text-sm text-ink-3">Every term in plain English, A to Z</span>
         </span>
         <Icon name="chevron" size={18} className="text-ink-3" />
       </Link>

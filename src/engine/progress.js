@@ -8,7 +8,7 @@ export const MODES = {
   order: { label: 'Order drill', path: 'order' },
   next: { label: "What's next", path: 'next' },
   specs: { label: 'Spec flashcards', path: 'specs' },
-  review: { label: 'Review due', path: 'review' },
+  review: { label: 'Review', path: 'review' },
 };
 
 /** Mastery, due count and run history for one unit. */

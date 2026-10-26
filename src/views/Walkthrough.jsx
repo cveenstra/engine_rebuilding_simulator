@@ -138,19 +138,19 @@ function Walk({ unit }) {
           <StepCard unit={unit} step={step} mistakesOpen={params.get('show') === 'mistakes' && Number(stepParam) === step.order} />
         </div>
       </div>
-      <p className="mt-2 text-center text-xs text-ink-3">Swipe left or right, or use the buttons below.</p>
+      <p className="mt-2 text-center text-xs text-ink-3">Swipe, or use the buttons below, to move between steps.</p>
 
       {index === n - 1 && (
         <div className="mt-4 rounded-xl border border-ok-line bg-ok-soft p-4">
-          <p className="text-base font-semibold text-ok-text">That is the whole rebuild.</p>
-          <p className="mt-1 text-sm text-ink-2">Now test yourself: a full run asks you to pick every step in order.</p>
+          <p className="text-base font-semibold text-ok-text">That’s the whole rebuild.</p>
+          <p className="mt-1 text-sm text-ink-2">Now test yourself. A full run has you pick every step in order.</p>
           <Button to={`/unit/${unit.id}/run`} className="mt-3">Start a full rebuild run</Button>
         </div>
       )}
 
       <ActionBar>
         <Button variant="ghost" className="flex-1" onClick={() => go(index - 1)} disabled={index === 0}>
-          <Icon name="left" size={18} /> Prev
+          <Icon name="left" size={18} /> Back
         </Button>
         <Button className="flex-[2]" onClick={() => go(index + 1)} disabled={index === n - 1}>
           Next step <Icon name="right" size={18} />

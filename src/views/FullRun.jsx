@@ -32,19 +32,19 @@ function Results({ unit, result, onAgain }) {
         </p>
         <div className="mt-3 grid grid-cols-3 gap-3">
           <Stat label="Accuracy" value={`${pct}%`} />
-          <Stat label="Mistakes" value={result.mistakes} note={`of ${result.total} steps`} />
+          <Stat label="Misses" value={result.mistakes} note={`of ${result.total} steps`} />
           <Stat label="Time" value={formatMs(result.ms)} />
         </div>
         {isBest && <p className="mt-3 text-sm font-medium text-ok-text">New personal best for this unit.</p>}
         {!isBest && best && (
-          <p className="mt-3 text-sm text-ink-3">Best so far: {best.mistakes} mistakes in {formatMs(best.ms)}.</p>
+          <p className="mt-3 text-sm text-ink-3">Best so far: {best.mistakes} {best.mistakes === 1 ? 'miss' : 'misses'} in {formatMs(best.ms)}.</p>
         )}
       </Card>
 
       {result.missed.length > 0 && (
         <section>
-          <h2 className="mb-1 text-lg font-semibold text-ink">Transitions you missed</h2>
-          <p className="mb-3 text-sm text-ink-3">These are now due for review, so they come back sooner.</p>
+          <h2 className="mb-1 text-lg font-semibold text-ink">Steps you missed</h2>
+          <p className="mb-3 text-sm text-ink-3">They’re due for review now, so you’ll see them again soon.</p>
           <ol className="space-y-2">
             {result.missed.map((m, i) => {
               const from = byId[m.from];
@@ -67,7 +67,7 @@ function Results({ unit, result, onAgain }) {
 
       <div className="flex flex-wrap gap-2">
         <Button onClick={onAgain}>Run it again</Button>
-        {result.missed.length > 0 && <Button variant="ghost" to={`/review?unit=${unit.id}`}>Review missed now</Button>}
+        {result.missed.length > 0 && <Button variant="ghost" to={`/review?unit=${unit.id}`}>Review your misses</Button>}
       </div>
     </div>
   );
@@ -182,7 +182,7 @@ function Run({ unit }) {
         <Card className="space-y-4 p-4">
           <p className="text-base leading-relaxed text-ink-2">
             Rebuild the whole {unit.name}, all {n} steps, by picking the next step each time. A wrong pick shows the
-            right step and why, then you carry on. Mistakes and time are tracked, and every miss comes back in review.
+            right step and why, then you carry on. Your misses and time are tracked, and every miss comes back in review.
           </p>
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-ink-3">Choices per step</p>
@@ -199,7 +199,7 @@ function Run({ unit }) {
           <Card className="mt-3 border-brand-line bg-brand-soft/50 p-4">
             <p className="text-base font-semibold text-ink">Run in progress</p>
             <p className="text-sm text-ink-2">
-              Step {saved.pos + 1} of {n}, {saved.mistakes} mistake{saved.mistakes === 1 ? '' : 's'}, {formatMs(saved.elapsedMs)} so far.
+              Step {saved.pos + 1} of {n}, {saved.mistakes} {saved.mistakes === 1 ? 'miss' : 'misses'}, {formatMs(saved.elapsedMs)} so far.
             </p>
           </Card>
         )}
@@ -260,7 +260,7 @@ function Run({ unit }) {
         )}
       </div>
 
-      <p className="mb-2 text-base font-semibold text-ink">Step {run.pos + 1}: what do you do next?</p>
+      <p className="mb-2 text-base font-semibold text-ink">Step {run.pos + 1}: what do you do {run.pos === 0 ? 'first' : 'next'}?</p>
       <ul key={q.answer.id} className="rise-in space-y-2">
         {q.choices.map((c) => {
           let state = 'idle';
@@ -276,7 +276,7 @@ function Run({ unit }) {
 
       {wrong && (
         <div className="pop-in mt-4 space-y-2">
-          <p className="text-base font-semibold text-bad-text">Not that one. Step {q.answer.order} is:</p>
+          <p className="text-base font-semibold text-bad-text">Not that one. Step {q.answer.order} is next:</p>
           <StepCard unit={unit} step={q.answer} compact />
         </div>
       )}
@@ -287,7 +287,7 @@ function Run({ unit }) {
         ) : right ? (
           <Button className="flex-1" onClick={beat.go}>{right.out.res ? 'See results' : 'Continue'} <Icon name="right" size={18} /></Button>
         ) : (
-          <Button variant="ghost" className="flex-1" onClick={pause}>Pause and leave (saved)</Button>
+          <Button variant="ghost" className="flex-1" onClick={pause}>Save and leave</Button>
         )}
       </ActionBar>
     </div>

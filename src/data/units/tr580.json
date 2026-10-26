@@ -115,7 +115,7 @@
     "One-time-use parts called out by Subaru include the stator support sealing ring, the differential side (axle) seals, the axle C-clips and the filler plug gasket. A rebuild kit adds the gaskets, seals, sealing rings and frictions.",
     "Clutch clearances and stack-ups come from an aftermarket teardown of the second-generation unit, not factory text. Most torque values are not publicly sourced, so steps say 'torque to spec' rather than give a number.",
     "The valve body is on top of the case on this unit, which is why it can be replaced in the car.",
-    "Step count is 114, inside the 90–120 target. Pulley disassembly (sheave seals, the secondary pulley spring) is left out because public sources don't document it for this generation and shops replace pulleys as assemblies.",
+    "Pulley disassembly (sheave seals, the secondary pulley spring) is left out: public sources don't document it for this generation, and shops replace pulleys as assemblies.",
     "After any rebuild, valve body or TCM work, clear the AT learning data and run the learning procedure with a Subaru-capable scan tool, or shift quality and lock-up will be wrong."
   ],
   "sources": [
@@ -601,7 +601,7 @@
         {
           "id": "tr580-001-m1",
           "title": "Clearing codes before recording them",
-          "what": "Clears the trouble codes or disconnects the battery before the codes, their current or past status and the freeze-frame data are saved.",
+          "what": "Clearing the trouble codes or disconnecting the battery before the codes, their current or past status and the freeze-frame data are saved.",
           "consequence": "The evidence that separates a wiring, sensor or solenoid fault from a hard-part failure is gone, so the depth of the rebuild becomes a guess.",
           "prevent": "Save the full code list, mark each code current or past, and save the freeze-frame pressures before anything is cleared or unplugged.",
           "severity": "costly",
@@ -613,7 +613,7 @@
         {
           "id": "tr580-001-m2",
           "title": "Calling an engine surge chain slip",
-          "what": "Decides the chain is slipping from an rpm flare or vibration without graphing engine, primary pulley and secondary pulley speeds.",
+          "what": "Deciding the chain is slipping from an rpm flare or vibration without graphing engine, primary pulley and secondary pulley speeds.",
           "consequence": "An engine-side torque fluctuation gets blamed on the CVT, the unit is torn down or replaced, and the original complaint is still there afterward.",
           "prevent": "Duplicate the complaint while recording scan data and check whether the fluctuation starts in engine speed before it shows in the pulley speeds.",
           "detect": "If the engine speed trace wobbles first and the pulley speeds follow it, the cause is upstream of the CVT.",
@@ -625,7 +625,7 @@
         {
           "id": "tr580-001-m3",
           "title": "Blaming harsh engagement on clutches",
-          "what": "Treats hard garage shifts as worn clutches without first clearing up stored codes and comparing commanded with actual secondary pressure.",
+          "what": "Treating hard garage shifts as worn clutches without first clearing up stored codes and comparing commanded with actual secondary pressure.",
           "consequence": "Most sensor and solenoid faults make the TCM command maximum secondary pressure, so an overhaul leaves the real fault in place.",
           "prevent": "Fix every stored code first, compare commanded and actual secondary pressure, and run the pressure learning procedures before condemning hard parts.",
           "severity": "costly",
@@ -636,7 +636,7 @@
         {
           "id": "tr580-001-m4",
           "title": "Not noting fluid temperature with faults",
-          "what": "Records a lock-up or solenoid complaint without noting the CVTF temperature at the moment it happens.",
+          "what": "Recording a lock-up or solenoid complaint without noting the CVTF temperature at the moment it happens.",
           "consequence": "Heat-dependent faults, such as a lock-up solenoid that only opens when hot, look intermittent and pass a cold bench check.",
           "prevent": "Write down the CVTF temperature for every check and try to reproduce the fault both cold and fully hot before teardown.",
           "severity": "rework",
@@ -670,7 +670,7 @@
         {
           "id": "tr580-002-m1",
           "title": "Ignoring burnt or metal-laden fluid",
-          "what": "Finds burnt-smelling or heavily contaminated CVTF but still plans a light repair such as a valve body swap or a reseal.",
+          "what": "Finding burnt-smelling or heavily contaminated CVTF but still planning a light repair such as a valve body swap or a reseal.",
           "consequence": "Debris has already passed through the converter, cooler, valve body and pulleys, so the light repair fails again within a short time.",
           "prevent": "Let the fluid set the scope: Subaru sends burnt or contaminated fluid to unit replacement and allows part repairs only on clean fluid.",
           "severity": "costly",
@@ -682,7 +682,7 @@
         {
           "id": "tr580-002-m2",
           "title": "Opening the wrong drain plug",
-          "what": "Pulls the front differential drain plug thinking it is the CVT drain, or the reverse.",
+          "what": "Pulling the front differential drain plug thinking it is the CVT drain, or the reverse.",
           "consequence": "Gear oil is judged as CVTF and the wrong failure is assumed; on a serviced car one unit is left empty and the other overfilled.",
           "prevent": "Identify the CVT pan drain and the differential drain before loosening either, and confirm what comes out looks and smells like CVTF.",
           "severity": "rework",
@@ -694,8 +694,8 @@
         {
           "id": "tr580-002-m3",
           "title": "Catching fluid in a dirty pan",
-          "what": "Drains the CVT into a pan that still holds old oil, sludge or metal from another job.",
-          "consequence": "You can no longer tell which glitter, colour or smell came from this CVT, so the drained fluid tells you nothing reliable.",
+          "what": "Draining the CVT into a pan that still holds old oil, sludge or metal from another job.",
+          "consequence": "You can no longer tell which glitter, color or smell came from this CVT, so the drained fluid tells you nothing reliable.",
           "prevent": "Drain into a clean pan, then pour a sample over a white rag and check the drain magnet before anything else touches it.",
           "severity": "minor",
           "sourceIds": [
@@ -727,7 +727,7 @@
         {
           "id": "tr580-003-m1",
           "title": "Skipping the differential magnet check",
-          "what": "Drains the gear oil and throws it out without looking at the plug magnet and the oil for chips or paste.",
+          "what": "Draining the gear oil and throwing it out without looking at the plug magnet and the oil for chips or paste.",
           "consequence": "Worn hypoid gears or differential bearings go unnoticed, and the rebuilt CVT goes back in with a failing final drive.",
           "prevent": "Look at the differential plug magnet and the drained gear oil before cleaning anything, and note chips separately from fine paste.",
           "severity": "costly",
@@ -739,7 +739,7 @@
         {
           "id": "tr580-003-m2",
           "title": "Assuming one fluid fills both",
-          "what": "Treats the front differential as part of the CVT sump and drains only the CVT.",
+          "what": "Treating the front differential as part of the CVT sump and draining only the CVT.",
           "consequence": "The final drive is rebuilt around old gear oil, and at refill time one compartment is likely to get the other's fluid.",
           "prevent": "Remember the front differential has its own 75W-90 GL-5 gear oil with its own drain and fill, and service it separately.",
           "severity": "rework",
@@ -775,7 +775,7 @@
         {
           "id": "tr580-004-m1",
           "title": "Converter slides off its hub",
-          "what": "Lets the converter ride forward with the drive plate as the CVT is separated from the engine.",
+          "what": "Letting the converter ride forward with the drive plate as the CVT is separated from the engine.",
           "consequence": "The converter drops off its hub, damaging the converter seal, the hub and the chain-driven oil pump drive.",
           "prevent": "Once the nuts are out, push the converter fully back into the CVT and strap it to the housing before the unit moves.",
           "severity": "costly",
@@ -786,7 +786,7 @@
         {
           "id": "tr580-004-m2",
           "title": "Separating with a nut still on",
-          "what": "Loses count while turning the engine and starts pulling the CVT back with one converter nut still fitted.",
+          "what": "Losing count while turning the engine and starting to pull the CVT back with one converter nut still fitted.",
           "consequence": "The drive plate or a converter stud is bent or torn as the jack pulls the unit rearward.",
           "prevent": "Count the converter nuts off against the number of studs and check the converter moves back from the plate by hand first.",
           "detect": "The converter will not slide back from the drive plate.",
@@ -807,7 +807,7 @@
       "id": "tr580-005",
       "order": 5,
       "phase": "prep",
-      "title": "Lower the CVT out",
+      "title": "Lower the CVT out of the car",
       "action": "With the engine supported, disconnect the axles, propeller shaft, cooler lines, harness and crossmember, separate the CVT from the engine and lower it out on a jack.",
       "why": "This is a summary of the in-car removal; the bench work starts once the unit is on the floor.",
       "tools": [
@@ -818,7 +818,7 @@
         {
           "id": "tr580-005-m1",
           "title": "Letting the CVT hang on dowels",
-          "what": "Removes the last bell housing bolts before the transmission jack is carrying the weight.",
+          "what": "Removing the last bell housing bolts before the transmission jack is carrying the weight.",
           "consequence": "The unit swings on the dowels and input shaft, bending the shaft, damaging the converter seal or cracking a housing ear.",
           "prevent": "Take the full weight of the CVT on the jack and chain it to the saddle before the final housing bolts come out.",
           "severity": "costly",
@@ -829,7 +829,7 @@
         {
           "id": "tr580-005-m2",
           "title": "Lowering with something still connected",
-          "what": "Lowers the CVT with a connector, ground strap or cooler line still attached.",
+          "what": "Lowering the CVT with a connector, ground strap or cooler line still attached.",
           "consequence": "A harness connector is torn or a cooler pipe kinked, and it has to be replaced before the car can go back together.",
           "prevent": "Walk around the unit with a light and check every connector, ground strap and line is free before the jack comes down.",
           "severity": "rework",
@@ -840,7 +840,7 @@
         {
           "id": "tr580-005-m3",
           "title": "Leaving cooler lines open",
-          "what": "Leaves the disconnected cooler lines and CVT cooler ports uncapped while the car sits.",
+          "what": "Leaving the disconnected cooler lines and CVT cooler ports uncapped while the car sits.",
           "consequence": "Dirt gets into the cooler circuit and is later pumped straight into the rebuilt unit on first start.",
           "prevent": "Cap both cooler lines and both ports as soon as they are disconnected, and still flush the cooler before reconnecting.",
           "severity": "rework",
@@ -872,7 +872,7 @@
         {
           "id": "tr580-006-m1",
           "title": "Opening covers before degreasing",
-          "what": "Removes a cover, plug or sensor before the outside of the unit is cleaned.",
+          "what": "Removing a cover, plug or sensor before the outside of the unit is cleaned.",
           "consequence": "Road grit packed around the seams falls into the valve body and case and ends up in valves and bearings.",
           "prevent": "Degrease and dry the whole outside, especially the chain cover seam and bell housing, before any fastener is turned.",
           "severity": "rework",
@@ -884,7 +884,7 @@
         {
           "id": "tr580-006-m2",
           "title": "Working the unit unsecured",
-          "what": "Sets the CVT on a bench or the floor without bolting it to a fixture.",
+          "what": "Setting the CVT on a bench or the floor without bolting it to a fixture.",
           "consequence": "The unit tips when the case bolts or the pulley expander are worked, dropping parts or cracking the case.",
           "prevent": "Bolt the CVT to a stand that holds it steady in each position the teardown needs, bell housing down for the case split.",
           "severity": "minor",
@@ -918,7 +918,7 @@
         {
           "id": "tr580-007-m1",
           "title": "Pulling the converter at an angle",
-          "what": "Rocks or cocks the converter as it comes off the input shaft.",
+          "what": "Rocking or cocking the converter as it comes off the input shaft.",
           "consequence": "The converter hub scores the stator support and seal surfaces or levers on the pump drive.",
           "prevent": "Pull the converter straight forward with even pressure from both sides, using converter handles rather than fingers.",
           "severity": "rework",
@@ -930,7 +930,7 @@
         {
           "id": "tr580-007-m2",
           "title": "Dropping the converter",
-          "what": "Lets the fluid-slick converter slide off the shaft unsupported.",
+          "what": "Letting the fluid-slick converter slide off the shaft unsupported.",
           "consequence": "A dented shell or damaged hub means the converter can no longer be reused or economically rebuilt.",
           "prevent": "Support the converter's weight with both hands as the hub clears the shaft, working over a drain pan.",
           "severity": "costly",
@@ -941,7 +941,7 @@
         {
           "id": "tr580-007-m3",
           "title": "Not looking at converter fluid",
-          "what": "Lets the converter drain without looking at what comes out of it.",
+          "what": "Letting the converter drain without looking at what comes out of it.",
           "consequence": "Metal or friction debris inside the converter goes unnoticed, and that debris is the main evidence for replacing it.",
           "prevent": "Drain the converter into a clean pan and look for metal and friction material before deciding whether it can stay.",
           "severity": "rework",
@@ -970,7 +970,7 @@
         {
           "id": "tr580-008-m1",
           "title": "Assuming the leak is CVT fluid",
-          "what": "Sees a wet bell housing and assumes the chain cover is leaking without confirming the fluid is CVTF.",
+          "what": "Seeing a wet bell housing and assuming the chain cover is leaking without confirming the fluid is CVTF.",
           "consequence": "An engine oil leak is left in place, and the resealed CVT comes back looking like it still leaks.",
           "prevent": "Confirm the wet fluid is CVTF and not engine oil before choosing the repair, as Subaru's seepage bulletin requires first.",
           "severity": "rework",
@@ -981,7 +981,7 @@
         {
           "id": "tr580-008-m2",
           "title": "Misreading fresh fluid at the seal",
-          "what": "Treats the small amount of fresh CVTF that appears at the bottom of the seal when the converter comes out as the leak.",
+          "what": "Treating the small amount of fresh CVTF that appears at the bottom of the seal when the converter comes out as the leak.",
           "consequence": "The real seepage path, old dirty trails at the cover seam or input seal, never gets recorded or repaired.",
           "prevent": "Look for road dirt mixed with CVTF around the chain cover seam rather than clean fresh fluid at the bottom of the seal.",
           "severity": "minor",
@@ -1018,7 +1018,7 @@
         {
           "id": "tr580-009-m1",
           "title": "Lifting the cover with harness attached",
-          "what": "Pulls the top cover off without first unplugging the valve body harness connector underneath it.",
+          "what": "Pulling the top cover off without first unplugging the valve body harness connector underneath it.",
           "consequence": "The harness or its connector is torn, which turns a cover removal into a harness or valve body replacement.",
           "prevent": "Lift the top cover only far enough to reach the connector, unplug it, then lift the cover clear.",
           "severity": "costly",
@@ -1030,7 +1030,7 @@
         {
           "id": "tr580-009-m2",
           "title": "Not recording lead and ground routing",
-          "what": "Unplugs and moves solenoid leads without photographing their routing and ground points.",
+          "what": "Unplugging and moving solenoid leads without photographing their routing and ground points.",
           "consequence": "Leads end up pinched under the cover or a ground is left loose, setting solenoid circuit codes after the rebuild.",
           "prevent": "Photograph every solenoid lead and ground before touching them and label anything that could fit two places.",
           "severity": "rework",
@@ -1056,7 +1056,7 @@
       "order": 10,
       "phase": "teardown-ext",
       "title": "Lift out the control valve body",
-      "action": "Remove the valve body to case bolts and lift it off level, then find the two small O-rings that can stay behind in the case.",
+      "action": "Remove the valve-body-to-case bolts and lift the valve body off level, then find the two small O-rings that can stay behind in the case.",
       "why": "Lifting it level keeps loose valve parts in place, and the O-rings are easy to lose.",
       "spec": {
         "kind": "other",
@@ -1072,7 +1072,7 @@
         {
           "id": "tr580-010-m1",
           "title": "Old case O-rings left behind",
-          "what": "Lifts the valve body without accounting for the two small O-rings that can stay in the case or stick to the valve body.",
+          "what": "Lifting the valve body without accounting for the two small O-rings that can stay in the case or stick to the valve body.",
           "consequence": "The old rings are missed and new ones get stacked on top, which holds the valve body off the case and lets pressure leak.",
           "prevent": "Count both valve body O-rings out at removal and bag them, then check the case bores are empty before new ones go in.",
           "severity": "rework",
@@ -1083,7 +1083,7 @@
         {
           "id": "tr580-010-m2",
           "title": "Removing the valve body's own bolts",
-          "what": "Takes out bolts that hold the valve body sections together instead of only the nine body-to-case bolts.",
+          "what": "Taking out bolts that hold the valve body sections together instead of only the nine body-to-case bolts.",
           "consequence": "The body separates and its small filters, relief valves and springs drop into the case or get lost.",
           "prevent": "Identify the nine 10 mm body-to-case bolts before turning anything and leave every other valve body bolt alone.",
           "detect": "The valve body sections shift or a part falls out as it is lifted.",
@@ -1095,7 +1095,7 @@
         {
           "id": "tr580-010-m3",
           "title": "Tipping the valve body over",
-          "what": "Lifts the valve body at an angle or turns it over to look underneath.",
+          "what": "Lifting the valve body at an angle or turning it over to look underneath.",
           "consequence": "Loose valves, filters and springs fall out of their bores and their positions are no longer known.",
           "prevent": "Lift the valve body level and set it right side up on a clean tray until it is inspected.",
           "severity": "rework",
@@ -1106,7 +1106,7 @@
         {
           "id": "tr580-010-m4",
           "title": "Mixing valve body bolts with others",
-          "what": "Drops the valve body bolts into the same tray as cover, pan and pump bolts.",
+          "what": "Dropping the valve body bolts into the same tray as cover, pan and pump bolts.",
           "consequence": "A bolt of the wrong length bottoms out in, or pulls threads from, the aluminum when it goes back in.",
           "prevent": "Bag and label each group of bolts by location and compare lengths before reinstalling any of them.",
           "severity": "rework",
@@ -1141,7 +1141,7 @@
         {
           "id": "tr580-011-m1",
           "title": "Losing the transfer clutch O-ring",
-          "what": "Pulls the extension case and lets the small O-ring that seals the transfer clutch feed fall out or stay stuck unnoticed.",
+          "what": "Pulling the extension case and letting the small O-ring that seals the transfer clutch feed fall out or stay stuck unnoticed.",
           "consequence": "If it is missed on reassembly, the AWD transfer clutch gets little or no apply pressure.",
           "prevent": "Find the transfer clutch feed O-ring and bag it as soon as the extension case is off.",
           "severity": "rework",
@@ -1152,7 +1152,7 @@
         {
           "id": "tr580-011-m2",
           "title": "Prying the extension case seam",
-          "what": "Drives a screwdriver into the joint between the extension case and the main case.",
+          "what": "Driving a screwdriver into the joint between the extension case and the main case.",
           "consequence": "A gouged aluminum face leaks at the tail housing joint afterward and may need a new housing.",
           "prevent": "Break the extension case joint with a soft mallet or at cast pry points, never on the machined faces.",
           "severity": "rework",
@@ -1185,7 +1185,7 @@
         {
           "id": "tr580-012-m1",
           "title": "Mixing up the transfer shim sets",
-          "what": "Puts both transfer shim sets in one bag, or leaves one stuck to the housing.",
+          "what": "Putting both transfer shim sets in one bag, or leaving one stuck to the housing.",
           "consequence": "Transfer gear bearing preload and end play come out wrong, giving noise and early bearing failure or a second teardown.",
           "prevent": "Bag each transfer shim set the moment it comes off, label its location, and check the housing bore for a stuck shim.",
           "detect": "The two sets have different outside diameters, so a shim that doesn't fit its bore is in the wrong place.",
@@ -1197,7 +1197,7 @@
         {
           "id": "tr580-012-m2",
           "title": "Bending a shim on removal",
-          "what": "Pries transfer shims off with a screwdriver tip.",
+          "what": "Prying transfer shims off with a screwdriver tip.",
           "consequence": "A bent shim no longer has its marked thickness, so preload changes even when it goes back in the right place.",
           "prevent": "Lift shims with a thin pick or magnet, check each with a micrometer, and replace any that are bent or creased.",
           "severity": "rework",
@@ -1223,7 +1223,7 @@
         {
           "id": "tr580-013-m1",
           "title": "Not noting the pawl spring hookup",
-          "what": "Removes the parking pawl, spring and shaft without noting how the spring hooks onto the pawl and case.",
+          "what": "Removing the parking pawl, spring and shaft without noting how the spring hooks onto the pawl and case.",
           "consequence": "Refitted wrong, the pawl may not retract and can ratchet against the park gear while driving, or Park may not hold.",
           "prevent": "Photograph the pawl spring in place before removal so it can be hooked up exactly the same way.",
           "severity": "costly",
@@ -1243,13 +1243,13 @@
       "id": "tr580-014",
       "order": 14,
       "phase": "teardown-ext",
-      "title": "Pull transfer clutch drum and hub",
+      "title": "Pull the transfer clutch drum and hub",
       "action": "Pull the transfer clutch drum straight out of the rear of the case, then lift out the hub behind it.",
       "mistakes": [
         {
           "id": "tr580-014-m1",
           "title": "Letting the hub drop with drum",
-          "what": "Pulls the transfer clutch drum out with the hub still inside and lets the hub fall.",
+          "what": "Pulling the transfer clutch drum out with the hub still inside and letting the hub fall.",
           "consequence": "The hub's sealing ring and ring lands are nicked, so the AWD clutch can leak apply pressure later.",
           "prevent": "Pull the transfer drum straight out, then lift the hub out separately by hand.",
           "severity": "rework",
@@ -1260,7 +1260,7 @@
         {
           "id": "tr580-014-m2",
           "title": "Stripping the pack before measuring",
-          "what": "Takes the transfer clutch apart without first checking its as-found clearance.",
+          "what": "Taking the transfer clutch apart without first checking its as-found clearance.",
           "consequence": "You lose the clue that tells whether an AWD bind or slip complaint came from a tight or a worn pack.",
           "prevent": "Measure the transfer pack clearance as found and write it down before the snap ring comes out.",
           "severity": "minor",
@@ -1287,9 +1287,9 @@
         {
           "id": "tr580-015-m1",
           "title": "Levering the gears by their teeth",
-          "what": "Pries the transfer shaft and gears out using the gear teeth as a lever point.",
+          "what": "Prying the transfer shaft and gears out using the gear teeth as a lever point.",
           "consequence": "Chipped transfer gear teeth whine in service and leave metal in the CVTF.",
-          "prevent": "Lift the transfer assembly by its shaft and free it from the case side, never with a bar on a tooth.",
+          "prevent": "Lift the transfer assembly by its shaft and free it from the case side, never with a pry bar on a tooth.",
           "severity": "rework",
           "sourceIds": [
             "s9"
@@ -1314,7 +1314,7 @@
         {
           "id": "tr580-016-m1",
           "title": "Cleaning the pan before reading it",
-          "what": "Wipes the oil pan and magnet before looking at the debris.",
+          "what": "Wiping the oil pan and magnet before looking at the debris.",
           "consequence": "The evidence that separates chain and pulley wear, bearing failure and clutch wear is wiped away before anyone reads it.",
           "prevent": "Photograph and examine the pan magnet and the bottom of the pan before any cleaning starts.",
           "severity": "rework",
@@ -1326,7 +1326,7 @@
         {
           "id": "tr580-016-m2",
           "title": "Bending the pan flange",
-          "what": "Pries the oil pan off at one corner.",
+          "what": "Prying the oil pan off at one corner.",
           "consequence": "A distorted pan flange will not sit flat again and leaks after reassembly.",
           "prevent": "Cut the pan seal with a thin blade, and check the flange is flat on a surface before refitting.",
           "severity": "minor",
@@ -1347,7 +1347,7 @@
       "id": "tr580-017",
       "order": 17,
       "phase": "teardown-ext",
-      "title": "Remove strainer and pan baffle",
+      "title": "Remove the strainer and pan baffle",
       "action": "Remove the strainer bolts and pull the strainer, checking its O-ring, then unbolt the baffle under it from the case.",
       "spec": {
         "kind": "other",
@@ -1362,7 +1362,7 @@
         {
           "id": "tr580-017-m1",
           "title": "Strainer O-ring left in the bore",
-          "what": "Pulls the strainer and leaves its O-ring stuck in the case bore.",
+          "what": "Pulling the strainer and leaving its O-ring stuck in the case bore.",
           "consequence": "The new O-ring stacks on the old one or does not seat, the pump draws air, and the result is noise, low pressure and a risk of chain slip.",
           "prevent": "Check the strainer bore is empty, with the old O-ring accounted for, before fitting the new strainer.",
           "severity": "costly",
@@ -1374,7 +1374,7 @@
         {
           "id": "tr580-017-m2",
           "title": "Not looking inside the strainer",
-          "what": "Throws the old strainer away without looking at what it trapped.",
+          "what": "Throwing the old strainer away without looking at what it trapped.",
           "consequence": "Large debris that points to a specific failed part, such as guide plastic or bearing chips, is missed.",
           "prevent": "Look into the strainer inlet and shake it out over a clean pan before discarding it.",
           "severity": "minor",
@@ -1401,7 +1401,7 @@
         {
           "id": "tr580-018-m1",
           "title": "Not marking range switch position",
-          "what": "Unbolts the inhibitor switch without marking where it sat on the case.",
+          "what": "Unbolting the inhibitor switch without marking where it sat on the case.",
           "consequence": "Refitted out of position, the car may not start in P or N, the reverse lamps misbehave and the TCM sees the wrong range.",
           "prevent": "Scribe a line across the switch and case before removal, and still set the switch in neutral at reassembly.",
           "severity": "rework",
@@ -1412,7 +1412,7 @@
         {
           "id": "tr580-018-m2",
           "title": "Damaging the shift rail roll pin",
-          "what": "Drives the roll pin out with an oversize or tapered punch, or without supporting the shaft.",
+          "what": "Driving the roll pin out with an oversize or tapered punch, or without supporting the shaft.",
           "consequence": "The pin mushrooms in its bore or the shift rail shaft bends, and the linkage gets sloppy.",
           "prevent": "Use a pin punch of the right size, support the shaft behind the pin, and plan on a new roll pin.",
           "severity": "minor",
@@ -1441,7 +1441,7 @@
         {
           "id": "tr580-019-m1",
           "title": "Splitting the case with linkage in",
-          "what": "Starts lifting the main case while the parking rod and manual valve linkage are still installed.",
+          "what": "Starting to lift the main case while the parking rod and manual valve linkage are still installed.",
           "consequence": "The rod or manual valve bends as the case rises, which means new parts and can leave Park or range selection faulty.",
           "prevent": "Before touching any case bolt, confirm the parking rod and manual valve linkage are both out of the case.",
           "severity": "costly",
@@ -1467,7 +1467,7 @@
         {
           "id": "tr580-020-m1",
           "title": "Prying sensors out by the connector",
-          "what": "Levers the speed sensors or the secondary pressure sensor out by their plastic bodies or connectors.",
+          "what": "Levering the speed sensors or the secondary pressure sensor out by their plastic bodies or connectors.",
           "consequence": "A cracked sensor or damaged connector sets speed sensor or P0841 codes after the rebuild.",
           "prevent": "Twist each sensor gently to break its O-ring free and pull on the metal body only.",
           "severity": "rework",
@@ -1479,7 +1479,7 @@
         {
           "id": "tr580-020-m2",
           "title": "Leaving sensor bores open",
-          "what": "Leaves the speed and pressure sensor bores uncapped for the rest of the teardown.",
+          "what": "Leaving the speed and pressure sensor bores uncapped for the rest of the teardown.",
           "consequence": "Grit and cleaning solvent get into the case through the open sensor bores.",
           "prevent": "Cap or tape every sensor bore as soon as its sensor is out.",
           "severity": "minor",
@@ -1520,7 +1520,7 @@
         {
           "id": "tr580-021-m1",
           "title": "Prying on the machined face",
-          "what": "Puts the pry tool in the seam on the chain cover's sealing face instead of on its pry tabs.",
+          "what": "Putting the pry tool in the seam on the chain cover's sealing face instead of on its pry tabs.",
           "consequence": "A gouged face leaks after reassembly, and Subaru's answer to a damaged face is a new cover.",
           "prevent": "Pry only on the tabs Subaru shows, and keep prying only on them even after the cover breaks loose.",
           "detect": "Run a fingernail around both faces after removal; any catch is damage.",
@@ -1532,7 +1532,7 @@
         {
           "id": "tr580-021-m2",
           "title": "Prying with a bolt still in",
-          "what": "Starts prying the chain cover before all ten bolts are out.",
+          "what": "Starting to pry the chain cover before all ten bolts are out.",
           "consequence": "The chain cover cracks at a bolt boss and has to be replaced along with its seal.",
           "prevent": "Count all ten 12 mm chain cover bolts out onto the bench before any prying starts.",
           "severity": "costly",
@@ -1560,7 +1560,7 @@
         {
           "id": "tr580-022-m1",
           "title": "Not marking the pump chain",
-          "what": "Lifts the oil pump drive chain off without marking which side faced out.",
+          "what": "Lifting the oil pump drive chain off without marking which side faced out.",
           "consequence": "A reused pump chain can go back flipped, putting its worn faces against fresh sprocket teeth.",
           "prevent": "Paint-mark the outer face of the pump chain before removal, or replace it if it shows wear.",
           "severity": "minor",
@@ -1599,7 +1599,7 @@
         {
           "id": "tr580-023-m1",
           "title": "Losing track of pump O-rings",
-          "what": "Lifts the oil pump and loses track of which O-ring sealed the suction port and which the output.",
+          "what": "Lifting the oil pump and losing track of which O-ring sealed the suction port and which the output.",
           "consequence": "Swapped or missing O-rings let the pump suck air or leak pressure, giving low line pressure and noise.",
           "prevent": "Note that the large O-ring seals the suction side and the small one the output, and replace both with new rings.",
           "severity": "costly",
@@ -1610,9 +1610,9 @@
         {
           "id": "tr580-023-m2",
           "title": "Rounding the 8 mm Allen bolts",
-          "what": "Uses a worn hex bit that is not fully seated in the pump bolt heads.",
+          "what": "Using a worn hex bit that is not fully seated in the pump bolt heads.",
           "consequence": "A rounded pump bolt head has to be drilled or extracted from the case.",
-          "prevent": "Use a sharp 8 mm hex bit, seat it fully and keep the breaker bar square to the bolt.",
+          "prevent": "Use a sharp 8 mm hex bit, seat it fully and keep the wrench square to the bolt.",
           "severity": "minor",
           "sourceIds": [
             "s9"
@@ -1637,7 +1637,7 @@
         {
           "id": "tr580-024-m1",
           "title": "Missing a hidden case bolt",
-          "what": "Overlooks a case bolt in a recess and starts prying the case halves apart.",
+          "what": "Overlooking a case bolt in a recess and starting to pry the case halves apart.",
           "consequence": "The case flange or a bolt ear cracks, and a new case also means re-measuring shims.",
           "prevent": "Count the case bolts out with a light, and expect the case to lift with only light prying at the lugs.",
           "severity": "costly",
@@ -1649,7 +1649,7 @@
         {
           "id": "tr580-024-m2",
           "title": "Mixing case bolt lengths",
-          "what": "Throws all the case-half bolts into one tray.",
+          "what": "Throwing all the case-half bolts into one tray.",
           "consequence": "A long bolt in a short hole bottoms out or strips the aluminum thread in the converter case.",
           "prevent": "Push each case bolt through a cardboard outline of the case in the position it came from.",
           "severity": "rework",
@@ -1676,7 +1676,7 @@
         {
           "id": "tr580-025-m1",
           "title": "Missing the case passage O-rings",
-          "what": "Lifts the case without catching the two O-rings on its back that seal case passages.",
+          "what": "Lifting the case without catching the two O-rings on its back that seal case passages.",
           "consequence": "If they are lost or left out later, a hydraulic circuit leaks inside the unit and the case has to come off again.",
           "prevent": "Find and bag both case passage O-rings as soon as the transmission case is off.",
           "severity": "costly",
@@ -1687,7 +1687,7 @@
         {
           "id": "tr580-025-m2",
           "title": "Lifting the case crooked",
-          "what": "Tilts the transmission case as it rises off the pulley shafts.",
+          "what": "Tilting the transmission case as it rises off the pulley shafts.",
           "consequence": "The case drags on the pulley bearings or knocks the chain and guides on its way up.",
           "prevent": "Lift the case straight up, with a helper or hoist on a heavy unit, keeping it level the whole way.",
           "severity": "rework",
@@ -1698,7 +1698,7 @@
         {
           "id": "tr580-025-m3",
           "title": "Chiseling the case seam",
-          "what": "Drives a chisel or screwdriver into the case joint to break the sealant.",
+          "what": "Driving a chisel or screwdriver into the case joint to break the sealant.",
           "consequence": "The gouged mating faces leak at the case seam once the unit is back in service.",
           "prevent": "Break the case seal with a soft mallet or at the cast pry points only.",
           "severity": "rework",
@@ -1736,7 +1736,7 @@
         {
           "id": "tr580-026-m1",
           "title": "Bending the pulley baffle",
-          "what": "Levers the baffle off around the secondary pulley before all three bolts are out.",
+          "what": "Levering the baffle off around the secondary pulley before all three bolts are out.",
           "consequence": "A bent baffle rubs the secondary pulley or chain once running, making noise and debris.",
           "prevent": "Remove all three baffle bolts, lift it straight off, and check its shape before reuse.",
           "severity": "rework",
@@ -1769,7 +1769,7 @@
         {
           "id": "tr580-027-m1",
           "title": "Tightening the expander unevenly",
-          "what": "Runs one side of the all-thread expander ahead of the other.",
+          "what": "Running one side of the all-thread expander ahead of the other.",
           "consequence": "The secondary pulley cocks, or the tool slips under spring load and the sheave slams shut.",
           "prevent": "Alternate small turns side to side and check the sheave gap is the same on both sides as it opens.",
           "severity": "costly",
@@ -1780,7 +1780,7 @@
         {
           "id": "tr580-027-m2",
           "title": "Using a flimsy homemade expander",
-          "what": "Builds the expander from thin plate or soft threaded rod.",
+          "what": "Building the expander from thin plate or soft threaded rod.",
           "consequence": "The plate bends or the threads strip under the strong spring, releasing the sheave suddenly onto the chain.",
           "prevent": "Make the expander from stout plate and hardened threaded rod and check it for bending before every use.",
           "severity": "costly",
@@ -1792,7 +1792,7 @@
         {
           "id": "tr580-027-m3",
           "title": "Tool bearing on a sheave face",
-          "what": "Lets the expander press on the working surface the chain runs on.",
+          "what": "Letting the expander press on the working surface the chain runs on.",
           "consequence": "The hardened face is dented or marked, and that mark then chews the chain.",
           "prevent": "Pad every expander contact point and keep the tool well clear of the chain path on both sheaves.",
           "severity": "costly",
@@ -1816,7 +1816,7 @@
       "order": 28,
       "phase": "teardown-int",
       "title": "Release the chain guides",
-      "action": "Pull the chain outward, release the locking tabs and split the left chain guide, then remove its anchor bolt.",
+      "action": "Pull the chain outward and remove the left chain guide's anchor bolt, then release the locking tabs and split the guide.",
       "spec": {
         "kind": "other",
         "value": "4",
@@ -1829,7 +1829,7 @@
         {
           "id": "tr580-028-m1",
           "title": "Snapping the guide locking tabs",
-          "what": "Forces the plastic locking tabs on the chain guide.",
+          "what": "Forcing the plastic locking tabs on the chain guide.",
           "consequence": "A guide with a broken tab can come apart in service, letting the chain wear into the oil supply tubes and drop pressure.",
           "prevent": "Release the guide tabs one at a time with gentle pressure, and plan on new guides if any tab breaks.",
           "severity": "costly",
@@ -1841,7 +1841,7 @@
         {
           "id": "tr580-028-m2",
           "title": "Splitting the guide before the anchor bolt",
-          "what": "Tries to work the left chain guide apart while its anchor bolt is still in.",
+          "what": "Trying to work the left chain guide apart while its anchor bolt is still in.",
           "consequence": "The guide cracks at the anchor, and a cracked guide cannot be reused.",
           "prevent": "Remove the guide anchor bolt as part of releasing the guide, before any force goes on it.",
           "severity": "rework",
@@ -1867,7 +1867,7 @@
         {
           "id": "tr580-029-m1",
           "title": "Mixing primary and secondary bolts",
-          "what": "Puts the primary pulley retaining bolts in with the secondary pulley bolts.",
+          "what": "Putting the primary pulley retaining bolts in with the secondary pulley bolts.",
           "consequence": "A wrong-length bolt bottoms out or under-clamps the bearing retainer when the pulley goes back in.",
           "prevent": "Bag the retaining bolts for each pulley separately and label the bags primary and secondary.",
           "severity": "minor",
@@ -1896,7 +1896,7 @@
         {
           "id": "tr580-030-m1",
           "title": "Knocking the sheave faces together",
-          "what": "Lets the chain drop or the primary sheave faces strike the secondary pulley or case as the pulley tips.",
+          "what": "Letting the chain drop or the primary sheave faces strike the secondary pulley or case as the pulley tips.",
           "consequence": "Nicks in the hardened faces chew a chain, so the pulley has to be replaced.",
           "prevent": "Tip the primary slowly with a helper holding the chain, and pad the secondary sheave with a clean lint-free cloth.",
           "severity": "costly",
@@ -1907,7 +1907,7 @@
         {
           "id": "tr580-030-m2",
           "title": "Lifting the primary straight up",
-          "what": "Tries to pull the primary pulley straight out without tipping it toward the secondary.",
+          "what": "Trying to pull the primary pulley straight out without tipping it toward the secondary.",
           "consequence": "The pulley binds against the pinion shaft and the right guide or the pulley gets damaged.",
           "prevent": "Tip the primary pulley toward the secondary to gain room for the right guide, as the step describes.",
           "severity": "rework",
@@ -1918,7 +1918,7 @@
         {
           "id": "tr580-030-m3",
           "title": "Forcing out the right guide",
-          "what": "Pries the right chain guide past the pinion shaft before the pulley is tipped far enough.",
+          "what": "Prying the right chain guide past the pinion shaft before the pulley is tipped far enough.",
           "consequence": "The right guide breaks against the pinion shaft and must be replaced.",
           "prevent": "Tip the primary further until the right guide lifts out with no force at all.",
           "severity": "rework",
@@ -1948,7 +1948,7 @@
         {
           "id": "tr580-031-m1",
           "title": "Not marking chain running direction",
-          "what": "Removes the variator chain without marking which way it ran.",
+          "what": "Removing the variator chain without marking which way it ran.",
           "consequence": "If the chain is reused, it can go back the opposite way to how it wore in.",
           "prevent": "Paint an arrow on an outer link plate before removal; never scribe or punch the chain.",
           "severity": "rework",
@@ -1959,7 +1959,7 @@
         {
           "id": "tr580-031-m2",
           "title": "Storing the chain dirty or kinked",
-          "what": "Coils the variator chain tightly or lays it on a dirty bench.",
+          "what": "Coiling the variator chain tightly or laying it on a dirty bench.",
           "consequence": "Grit lodges between the pins and plates, or a link is kinked, and a usable chain becomes scrap.",
           "prevent": "Lay the chain flat in a clean covered tray away from the work until it is inspected.",
           "severity": "rework",
@@ -1995,7 +1995,7 @@
         {
           "id": "tr580-032-m1",
           "title": "Losing the rear pulley shims",
-          "what": "Lifts the secondary pulley out and lets the shims behind it fall or stay stuck unseen.",
+          "what": "Lifting the secondary pulley out and letting the shims behind it fall or stay stuck unseen.",
           "consequence": "The pulley ends up in the wrong axial position, so the chain runs misaligned and wears both pulleys.",
           "prevent": "Bag and label the secondary rear shims as the pulley comes out and measure them with a micrometer.",
           "severity": "costly",
@@ -2006,7 +2006,7 @@
         {
           "id": "tr580-032-m2",
           "title": "Releasing the expander too fast",
-          "what": "Spins the expander nuts off quickly to save time once the chain is out.",
+          "what": "Spinning the expander nuts off quickly to save time once the chain is out.",
           "consequence": "The sheave snaps shut under spring force, which can damage the sheave, its seals or the tool.",
           "prevent": "Back the expander off evenly in small turns on each side until the spring is fully unloaded.",
           "severity": "rework",
@@ -2035,7 +2035,7 @@
         {
           "id": "tr580-033-m1",
           "title": "Primary shim not tagged",
-          "what": "Drops the primary front bearing shim in with the secondary rear shims.",
+          "what": "Dropping the primary front bearing shim in with the secondary rear shims.",
           "consequence": "Swapped shims move both pulleys out of line and misalign the chain.",
           "prevent": "Bag the primary front bearing shim on its own and label it with its location.",
           "severity": "costly",
@@ -2071,7 +2071,7 @@
         {
           "id": "tr580-034-m1",
           "title": "Separator plate orientation lost",
-          "what": "Lets the separator plate come away from the internal manual valve body without marking which face goes where.",
+          "what": "Letting the separator plate come away from the internal manual valve body without marking which face goes where.",
           "consequence": "Refitted flipped, its holes no longer match the passages and forward or reverse feed is blocked.",
           "prevent": "Mark the separator plate face before it is separated and keep it with its own valve body.",
           "severity": "costly",
@@ -2110,7 +2110,7 @@
         {
           "id": "tr580-035-m1",
           "title": "Not noting the cushion plate direction",
-          "what": "Lifts out the reverse plates without noting which way the dished cushion plate faces.",
+          "what": "Lifting out the reverse plates without noting which way the dished cushion plate faces.",
           "consequence": "Refitted backward, reverse engagement is harsh or erratic and the clearance reading is wrong.",
           "prevent": "Note the cushion plate's ID mark, which faces the assembler, and keep the plates in order.",
           "severity": "rework",
@@ -2121,9 +2121,9 @@
         {
           "id": "tr580-035-m2",
           "title": "Mixing reverse and forward plates",
-          "what": "Puts reverse brake plates in the same tray as forward clutch plates.",
+          "what": "Putting reverse brake plates in the same tray as forward clutch plates.",
           "consequence": "The packs get the wrong counts, four and four in reverse against three and three in forward, and clearance can't be set.",
-          "prevent": "Use separate labelled trays for the reverse brake and the forward clutch plates.",
+          "prevent": "Use separate labeled trays for the reverse brake and the forward clutch plates.",
           "severity": "rework",
           "sourceIds": [
             "s10"
@@ -2132,7 +2132,7 @@
         {
           "id": "tr580-035-m3",
           "title": "Rounding the E20 bolt heads",
-          "what": "Uses a hex or worn socket on the reverse brake housing support bolts.",
+          "what": "Using a hex or worn socket on the reverse brake housing support bolts.",
           "consequence": "Damaged Torx heads have to be cut or extracted from the housing.",
           "prevent": "Use a proper E20 Torx socket, seated fully, on the housing support bolts.",
           "severity": "minor",
@@ -2158,7 +2158,7 @@
         {
           "id": "tr580-036-m1",
           "title": "Not noting sun gear direction",
-          "what": "Lifts the sun gear out without noting which side the full-circle oil slot faced.",
+          "what": "Lifting the sun gear out without noting which side the full-circle oil slot faced.",
           "consequence": "On reassembly it can go in backward and starve the planetary of lube oil.",
           "prevent": "Note the slot pattern at removal: full-circle slot toward the drum, three-slot side toward the planet.",
           "severity": "costly",
@@ -2187,7 +2187,7 @@
         {
           "id": "tr580-037-m1",
           "title": "Nicking the input shaft ring lands",
-          "what": "Handles or rests the input shaft on its sealing ring area.",
+          "what": "Handling or resting the input shaft on its sealing ring area.",
           "consequence": "Nicked lands or grooves leak forward clutch apply oil even with new sealing rings.",
           "prevent": "Hold the input shaft by its ends and set it down on a padded cradle.",
           "severity": "rework",
@@ -2198,7 +2198,7 @@
         {
           "id": "tr580-037-m2",
           "title": "Dumping the clutch plates together",
-          "what": "Pulls the forward clutch plates out in a pile.",
+          "what": "Pulling the forward clutch plates out in a pile.",
           "consequence": "You can no longer read the wear pattern plate by plate, and the cushion plate direction is lost.",
           "prevent": "Lay the forward clutch plates out in removal order on a clean towel.",
           "severity": "minor",
@@ -2235,7 +2235,7 @@
         {
           "id": "tr580-038-m1",
           "title": "Prying the pinion support on its bore",
-          "what": "Levers the pinion support up against the case sealing bore.",
+          "what": "Levering the pinion support up against the case sealing bore.",
           "consequence": "A gouged bore leaks past the new support seals, and the case may have to be replaced.",
           "prevent": "Pry the pinion support only at its pry points, evenly from both sides.",
           "severity": "costly",
@@ -2246,7 +2246,7 @@
         {
           "id": "tr580-038-m2",
           "title": "Losing track of the support seals",
-          "what": "Discards the two pinion support seals without noting where each sat.",
+          "what": "Discarding the two pinion support seals without noting where each sat.",
           "consequence": "The new seals can go into the wrong grooves on the support and leak.",
           "prevent": "Note each pinion support seal's position and compare the new ones with the old before fitting.",
           "severity": "rework",
@@ -2274,7 +2274,7 @@
         {
           "id": "tr580-039-m1",
           "title": "Knocking the hypoid gear teeth",
-          "what": "Lets the ring gear teeth strike the case as the differential is lifted out.",
+          "what": "Letting the ring gear teeth strike the case as the differential is lifted out.",
           "consequence": "Chipped hypoid teeth whine and shed metal into the differential gear oil.",
           "prevent": "Lift the differential straight out by its case, guiding the ring gear clear of the housing.",
           "severity": "rework",
@@ -2298,12 +2298,12 @@
       "phase": "teardown-int",
       "title": "Drive out the old seals",
       "action": "Remove the converter seal, the stator and input shaft seals and both differential side seals.",
-      "why": "Subaru treats the axle side seals as one-time-use, and the input shaft seal was redesigned.",
+      "why": "Subaru treats the axle side seals as one-time use, and the input shaft seal was redesigned.",
       "mistakes": [
         {
           "id": "tr580-040-m1",
           "title": "Missing the stator shaft seal",
-          "what": "Removes the converter and input seals but overlooks the third seal at the base of the stator shaft.",
+          "what": "Removing the converter and input seals but overlooking the third seal at the base of the stator shaft.",
           "consequence": "The old seal stays in, converter apply oil leaks, and lock-up becomes weak or shudders.",
           "prevent": "Count all three front seals out, including the one that seals inside the converter hub.",
           "severity": "costly",
@@ -2314,7 +2314,7 @@
         {
           "id": "tr580-040-m2",
           "title": "Gouging the seal bores",
-          "what": "Drives a chisel or screwdriver between the old seal and its bore.",
+          "what": "Driving a chisel or screwdriver between the old seal and its bore.",
           "consequence": "A scratched seal bore leaks around the outside of the new seal.",
           "prevent": "Use a seal puller, or lever against the seal casing only, keeping metal off the bore.",
           "severity": "rework",
@@ -2326,8 +2326,8 @@
         {
           "id": "tr580-040-m3",
           "title": "Keeping the axle side seals",
-          "what": "Leaves the original differential side seals in because they are not leaking.",
-          "consequence": "Subaru treats them as one-time-use, and the old seals are a likely leak once the axles are refitted.",
+          "what": "Leaving the original differential side seals in because they are not leaking.",
+          "consequence": "Subaru treats them as one-time use, and the old seals are a likely leak once the axles are refitted.",
           "prevent": "Replace both differential side seals as part of every CVT removal.",
           "severity": "rework",
           "sourceIds": [
@@ -2351,13 +2351,13 @@
       "phase": "inspect",
       "title": "Clean the cases and passages",
       "action": "Wash every case and flush the passages, picking sealant crumbs out of the stator support cavity with tape, then check both chain cover sealing faces for nicks.",
-      "why": "Subaru says not to use abrasive pads or compressed air there, and a damaged face means a new cover.",
+      "why": "Subaru says not to use abrasive pads on the sealing faces or compressed air in the stator cavity, and a damaged face means a new cover.",
       "mistake": "Using a gasket disc on the aluminum sealing faces.",
       "mistakes": [
         {
           "id": "tr580-041-m1",
           "title": "Gasket disc on the sealing faces",
-          "what": "Cleans the chain cover or case faces with an abrasive pad or gasket removal disc.",
+          "what": "Cleaning the chain cover or case faces with an abrasive pad or gasket removal disc.",
           "consequence": "The abraded aluminum no longer seals, and abrasive grit gets into passages and the pump.",
           "prevent": "Clean the sealing faces with a plastic scraper and solvent only, as Subaru specifies.",
           "severity": "costly",
@@ -2368,7 +2368,7 @@
         {
           "id": "tr580-041-m2",
           "title": "Blowing out the stator cavity",
-          "what": "Uses compressed air to clear sealant crumbs from around the stator support.",
+          "what": "Using compressed air to clear sealant crumbs from around the stator support.",
           "consequence": "The crumbs are blown deeper into passages, where they can block oil flow.",
           "prevent": "Pick loose sealant out of the stator cavity with the sticky side of tape, as Subaru describes.",
           "severity": "costly",
@@ -2379,7 +2379,7 @@
         {
           "id": "tr580-041-m3",
           "title": "Lint left in passages",
-          "what": "Wipes passages with shop rags and leaves lint and solvent behind.",
+          "what": "Wiping passages with shop rags and leaving lint and solvent behind.",
           "consequence": "Lint clogs the small filters in the valve body and sticks valves in their bores.",
           "prevent": "Use lint-free wipes, finish with a rinse of clean fluid, and let the cleaned parts dry covered.",
           "severity": "rework",
@@ -2390,7 +2390,7 @@
         {
           "id": "tr580-041-m4",
           "title": "Not inspecting the cleaned faces",
-          "what": "Cleans the chain cover and case faces but does not inspect them closely.",
+          "what": "Cleaning the chain cover and case faces but not inspecting them closely.",
           "consequence": "An existing nick or irregularity on a sealing face leaks after reassembly.",
           "prevent": "Inspect both faces under good light, and if the cover is replaced confirm it carries the new-style input seal.",
           "severity": "rework",
@@ -2413,16 +2413,16 @@
       "order": 42,
       "phase": "inspect",
       "title": "Inspect the variator chain",
-      "action": "Check every link and pin for cracks, flat spots, heat colour and stretch, look for chipped plates, and check both plastic guides for grooves and broken tabs.",
+      "action": "Check every link and pin for cracks, flat spots, heat color and stretch, look for chipped plates, and check both plastic guides for grooves and broken tabs.",
       "why": "Chain wear and broken guides are the usual sources of driving noise on this unit.",
       "critical": true,
       "mistakes": [
         {
           "id": "tr580-042-m1",
           "title": "Passing a chain by eye",
-          "what": "Looks at the outside of the variator chain and calls it good.",
+          "what": "Looking at the outside of the variator chain and calling it good.",
           "consequence": "Pin wear, cracked or chipped plates and heat damage go unseen, and the chain slips or fails later and takes the pulleys with it.",
-          "prevent": "Flex and inspect every link on both edges, look for heat colour and chipped plates, and judge stretch against a known reference.",
+          "prevent": "Flex and inspect every link on both edges, look for heat color and chipped plates, and judge stretch against a known reference.",
           "severity": "ruins-unit",
           "sourceIds": [
             "s13",
@@ -2432,7 +2432,7 @@
         {
           "id": "tr580-042-m2",
           "title": "Reusing worn chain guides",
-          "what": "Puts back plastic chain guides with grooves, cracks or broken clips.",
+          "what": "Putting back plastic chain guides with grooves, cracks or broken clips.",
           "consequence": "A failing guide lets the chain rub the oil supply tubes, wearing them and dropping oil pressure.",
           "prevent": "Replace guides that show grooves, cracks or damaged clips, and check the oil tubes for rub marks.",
           "severity": "costly",
@@ -2463,7 +2463,7 @@
         {
           "id": "tr580-043-m1",
           "title": "New chain on scored pulleys",
-          "what": "Fits a new chain to sheaves that show scoring or steps.",
+          "what": "Fitting a new chain to sheaves that show scoring or steps.",
           "consequence": "The damaged faces wear the new chain quickly, slip returns, and the whole variator is lost.",
           "prevent": "Replace chain and pulleys as a set whenever any of the four sheave faces is scored or stepped.",
           "severity": "ruins-unit",
@@ -2475,7 +2475,7 @@
         {
           "id": "tr580-043-m2",
           "title": "Dressing scored sheave faces",
-          "what": "Tries to polish out sheave scoring with abrasive.",
+          "what": "Trying to polish out sheave scoring with abrasive.",
           "consequence": "The dressed face no longer matches the chain's contact, slip and wear return, and abrasive grit ends up in the hydraulics.",
           "prevent": "Treat any sheave damage as a replacement decision; never put abrasive on a pulley face.",
           "severity": "costly",
@@ -2486,7 +2486,7 @@
         {
           "id": "tr580-043-m3",
           "title": "Inspecting sheaves in poor light",
-          "what": "Checks the four sheave faces quickly under ordinary shop lighting.",
+          "what": "Checking the four sheave faces quickly under ordinary shop lighting.",
           "consequence": "Fine steps, early galling and light bluing are missed and a damaged pulley is reused.",
           "prevent": "Clean each sheave and inspect it under a strong light, feeling across the chain track with a fingernail.",
           "severity": "costly",
@@ -2508,7 +2508,7 @@
       "id": "tr580-044",
       "order": 44,
       "phase": "inspect",
-      "title": "Decide reuse or replace variator",
+      "title": "Decide whether to reuse the variator",
       "action": "Treat chain and pulleys as one decision: if either is damaged, replace the variator parts as a set or switch to a complete replacement CVT.",
       "why": "Subaru's own fix for confirmed chain slip is a complete CVT, and loose pulleys and chains are hard to source.",
       "critical": true,
@@ -2516,7 +2516,7 @@
         {
           "id": "tr580-044-m1",
           "title": "Not finding why the chain slipped",
-          "what": "Replaces chain and pulleys without finding the loss of secondary pressure that let the chain slip.",
+          "what": "Replacing chain and pulleys without finding the loss of secondary pressure that let the chain slip.",
           "consequence": "A worn lube valve bore, a low fluid level or a pressure fault is still there and slips the new variator.",
           "prevent": "Treat slip as a symptom: check secondary pressure control, valve body bores and fluid level in the same job.",
           "severity": "ruins-unit",
@@ -2529,7 +2529,7 @@
         {
           "id": "tr580-044-m2",
           "title": "Mixing used variator parts",
-          "what": "Pairs a used pulley from another unit with this unit's chain or other pulley.",
+          "what": "Pairing a used pulley from another unit with this unit's chain or other pulley.",
           "consequence": "Mismatched wear surfaces bring noise and slip, and the pulley shims no longer suit the parts.",
           "prevent": "Keep chain and pulleys as one decision and go to a complete unit when matched variator parts can't be had.",
           "severity": "costly",
@@ -2560,7 +2560,7 @@
         {
           "id": "tr580-045-m1",
           "title": "Accepting a slightly rough bearing",
-          "what": "Puts a pulley back with a shaft bearing that feels a little rough.",
+          "what": "Putting a pulley back with a shaft bearing that feels a little rough.",
           "consequence": "The bearing whines, then fails and sheds metal through the whole unit.",
           "prevent": "Replace any pulley bearing that does not turn perfectly smooth by hand.",
           "severity": "costly",
@@ -2572,7 +2572,7 @@
         {
           "id": "tr580-045-m2",
           "title": "Ignoring worn ring grooves",
-          "what": "Checks the pulley sealing rings but not the sides of their grooves.",
+          "what": "Checking the pulley sealing rings but not the sides of their grooves.",
           "consequence": "New rings leak in stepped grooves, the pulley loses clamping pressure and the chain slips.",
           "prevent": "Inspect the pulley ring groove sides for steps and replace the part if they are worn.",
           "severity": "costly",
@@ -2584,7 +2584,7 @@
         {
           "id": "tr580-045-m3",
           "title": "Spinning dry bearings with air",
-          "what": "Spins a cleaned pulley bearing with compressed air.",
+          "what": "Spinning a cleaned pulley bearing with compressed air.",
           "consequence": "The dry overspeed damages the bearing's balls and races and can throw it apart.",
           "prevent": "Turn bearings slowly by hand with a little clean CVTF on them.",
           "severity": "minor",
@@ -2612,7 +2612,7 @@
         {
           "id": "tr580-046-m1",
           "title": "Reusing heat-marked steels",
-          "what": "Reuses steel clutch plates with blue heat spots or warping.",
+          "what": "Reusing steel clutch plates with blue heat spots or warping.",
           "consequence": "New frictions glaze against the damaged steels, causing shudder and slip.",
           "prevent": "Check each steel for flatness and heat marks and replace any that fail either check.",
           "severity": "costly",
@@ -2624,7 +2624,7 @@
         {
           "id": "tr580-046-m2",
           "title": "Not checking piston bores",
-          "what": "Fits new piston seals without inspecting the drum and piston bores for scoring.",
+          "what": "Fitting new piston seals without inspecting the drum and piston bores for scoring.",
           "consequence": "New seals leak past a scored bore, giving slow apply and slip.",
           "prevent": "Inspect every clutch piston bore and replace a scored drum or piston.",
           "severity": "costly",
@@ -2636,7 +2636,7 @@
         {
           "id": "tr580-046-m3",
           "title": "Not finding why a pack burned",
-          "what": "Replaces burnt frictions without looking for the low apply pressure that burned them.",
+          "what": "Replacing burnt frictions without looking for the low apply pressure that burned them.",
           "consequence": "A worn forward and reverse regulating valve bore keeps clutch pressure low, and the new pack burns again.",
           "prevent": "Check the valve body's forward and reverse regulating valve bore for wear before closing up.",
           "severity": "ruins-unit",
@@ -2666,7 +2666,7 @@
         {
           "id": "tr580-047-m1",
           "title": "Passing worn planet pinions",
-          "what": "Spins the planet carrier once and calls it good.",
+          "what": "Spinning the planet carrier once and calling it good.",
           "consequence": "Worn pinion needles or pitted gears whine and shed debris later.",
           "prevent": "Turn each planet pinion separately, checking for rough spots, end play and pitting.",
           "severity": "costly",
@@ -2677,7 +2677,7 @@
         {
           "id": "tr580-047-m2",
           "title": "Missing blocked lube slots",
-          "what": "Doesn't check the sun and ring gear oil slots.",
+          "what": "Overlooking the oil slots in the sun and ring gears.",
           "consequence": "A blocked slot starves the planetary of lube oil, and the pinions overheat.",
           "prevent": "Clean every sun and ring gear oil slot and look through each one for a clear path.",
           "severity": "costly",
@@ -2704,7 +2704,7 @@
         {
           "id": "tr580-048-m1",
           "title": "Losing pump gear orientation",
-          "what": "Lifts the pump gears out without noting that their ID marks face into the pump body.",
+          "what": "Lifting the pump gears out without noting that their ID marks face into the pump body.",
           "consequence": "Refitted upside down, the gears run on the wrong faces, losing pressure or scoring the pump.",
           "prevent": "Note that the pump gear ID marks go into the body first, and recheck before the halves are closed.",
           "severity": "costly",
@@ -2715,7 +2715,7 @@
         {
           "id": "tr580-048-m2",
           "title": "Reusing a scored pump",
-          "what": "Accepts scoring on the pump body or gear faces.",
+          "what": "Accepting scoring on the pump body or gear faces.",
           "consequence": "Pump output falls, secondary pressure falls with it, and the chain can slip.",
           "prevent": "Replace an oil pump whose body or gear faces are scored rather than hoping it holds pressure.",
           "severity": "costly",
@@ -2727,7 +2727,7 @@
         {
           "id": "tr580-048-m3",
           "title": "Reusing a worn pump drive chain",
-          "what": "Reuses a pump drive chain or sprockets that show wear.",
+          "what": "Reusing a pump drive chain or sprockets that show wear.",
           "consequence": "Noise follows, and if the drive fails the pump stops and the CVT loses all pressure.",
           "prevent": "Check the pump chain and sprocket teeth for wear and replace them as a set if worn.",
           "severity": "costly",
@@ -2764,7 +2764,7 @@
         {
           "id": "tr580-049-m1",
           "title": "Reusing a contaminated converter",
-          "what": "Flushes and reuses a converter after a debris failure.",
+          "what": "Flushing and reusing a converter after a debris failure.",
           "consequence": "Debris trapped inside the converter washes into the new valve body and pulleys.",
           "prevent": "Fit a new, remanufactured or properly rebuilt converter after any failure that put debris in the fluid.",
           "severity": "ruins-unit",
@@ -2777,7 +2777,7 @@
         {
           "id": "tr580-049-m2",
           "title": "Fitting an early-design converter",
-          "what": "Installs an old-stock or used converter of the early thrust-washer design.",
+          "what": "Installing an old-stock or used converter of the early thrust-washer design.",
           "consequence": "Washer wear can block lock-up release, so the engine nearly stalls coming to a stop.",
           "prevent": "Confirm the replacement converter is the updated design with a needle bearing in place of the washer.",
           "severity": "costly",
@@ -2789,7 +2789,7 @@
         {
           "id": "tr580-049-m3",
           "title": "Blaming the converter for valve faults",
-          "what": "Replaces the converter for a lock-up complaint without testing the lock-up solenoid and TCC valve.",
+          "what": "Replacing the converter for a lock-up complaint without testing the lock-up solenoid and TCC valve.",
           "consequence": "A solenoid that opens when hot or a worn TCC boost valve bore gives the same symptoms, and the complaint returns.",
           "prevent": "Test the lock-up solenoid hot and cold, check line pressure, and check the TCC valve bore before condemning the converter.",
           "severity": "costly",
@@ -2830,7 +2830,7 @@
         {
           "id": "tr580-050-m1",
           "title": "Checking the lock-up solenoid only cold",
-          "what": "Measures the lock-up duty solenoid at room temperature only.",
+          "what": "Measuring the lock-up duty solenoid at room temperature only.",
           "consequence": "A solenoid that goes open circuit when hot passes the test, and the lock-up code returns once the car is warm.",
           "prevent": "Heat the lock-up solenoid with a heat gun or oil bath while watching its resistance.",
           "detect": "Resistance that jumps to open as it heats condemns the solenoid.",
@@ -2843,7 +2843,7 @@
         {
           "id": "tr580-050-m2",
           "title": "Measuring through the harness only",
-          "what": "Reads resistances only at the main connector and judges the solenoids from that.",
+          "what": "Reading resistances only at the main connector and judging the solenoids from that.",
           "consequence": "Harness or connector resistance is mistaken for a solenoid fault, or a bad solenoid is hidden by the reading.",
           "prevent": "Measure at each solenoid as well as through the harness, and compare the two readings.",
           "severity": "rework",
@@ -2854,8 +2854,8 @@
         },
         {
           "id": "tr580-050-m3",
-          "title": "One resistance spec for all",
-          "what": "Applies the 10.0 to 13.5 ohm figure to every solenoid on the valve body.",
+          "title": "One resistance spec used for all",
+          "what": "Applying the 10.0 to 13.5 ohm figure to every solenoid on the valve body.",
           "consequence": "The secondary line pressure, forward/reverse and AWD solenoids read lower by design, so good parts are condemned.",
           "prevent": "Check each of the six solenoids against its own resistance range, not the lock-up figure.",
           "severity": "minor",
@@ -2866,7 +2866,7 @@
         {
           "id": "tr580-050-m4",
           "title": "Poor splice on a swapped solenoid",
-          "what": "Twists wires together or uses ordinary heat-shrink when fitting a lock-up solenoid from a core.",
+          "what": "Twisting wires together or using ordinary heat-shrink when fitting a lock-up solenoid from a core.",
           "consequence": "The splice fails in hot fluid and the lock-up solenoid code returns.",
           "prevent": "Solder the solenoid leads and cover the joint with oil-resistant heat-shrink only.",
           "severity": "rework",
@@ -2895,7 +2895,7 @@
         {
           "id": "tr580-051-m1",
           "title": "Reusing a valve body with worn bores",
-          "what": "Refits the original valve body after a slip, burn or lock-up failure without checking its bores.",
+          "what": "Refitting the original valve body after a slip, burn or lock-up failure without checking its bores.",
           "consequence": "A worn lube valve bore leaks secondary pressure and a worn forward and reverse regulating bore starves the clutches, so new parts fail.",
           "prevent": "Fit Subaru's updated valve body, or ream the worn bores and fit oversize valve kits.",
           "severity": "ruins-unit",
@@ -2908,7 +2908,7 @@
         {
           "id": "tr580-051-m2",
           "title": "Fitting a superseded valve body",
-          "what": "Installs a used or old-stock valve body of the earlier design.",
+          "what": "Installing a used or old-stock valve body of the earlier design.",
           "consequence": "Lock-up codes or shudder can return, which is exactly what the updated part's enhanced valve sleeve was made to stop.",
           "prevent": "Order the current Subaru valve body and confirm it is the updated design before fitting.",
           "severity": "costly",
@@ -2919,7 +2919,7 @@
         {
           "id": "tr580-051-m3",
           "title": "Reaming bores without the fixture",
-          "what": "Attempts the oversize valve repair freehand.",
+          "what": "Attempting the oversize valve repair freehand.",
           "consequence": "An off-axis or oversize bore makes the new valve stick and scraps the valve body.",
           "prevent": "Use the kit maker's reamer set and holding fixture, or send the valve body to a shop that has them.",
           "severity": "costly",
@@ -2931,7 +2931,7 @@
         {
           "id": "tr580-051-m4",
           "title": "Losing small filters and relief valves",
-          "what": "Separates the valve body without mapping the small filters and relief valves in its middle section.",
+          "what": "Separating the valve body without mapping the small filters and relief valves in its middle section.",
           "consequence": "A part left out or in the wrong pocket changes a pressure circuit, bringing codes and harsh or slipping engagements.",
           "prevent": "Photograph and map every small filter and relief valve as the separator plate comes off.",
           "severity": "costly",
@@ -2960,7 +2960,7 @@
         {
           "id": "tr580-052-m1",
           "title": "Swapping the sensor on P0841 alone",
-          "what": "Replaces the secondary pressure sensor for P0841 without following the diagnostic flow.",
+          "what": "Replacing the secondary pressure sensor for P0841 without following the diagnostic flow.",
           "consequence": "The code can come from wiring, loose terminals, contamination in a pressure solenoid or a hard-part failure, so it returns.",
           "prevent": "Follow Subaru's P0841 flow, and check for a TCM reprogram that addresses solenoid contamination.",
           "severity": "rework",
@@ -2972,7 +2972,7 @@
         {
           "id": "tr580-052-m2",
           "title": "Reusing a fluid-soaked connector",
-          "what": "Puts back a harness connector with CVTF inside it or loose terminals.",
+          "what": "Putting back a harness connector with CVTF inside it or loose terminals.",
           "consequence": "Intermittent sensor or solenoid codes follow, and many of these faults default secondary pressure to maximum.",
           "prevent": "Clean and dry the connector, inspect the pins, and check each terminal grips a test pin firmly.",
           "severity": "rework",
@@ -2984,7 +2984,7 @@
         {
           "id": "tr580-052-m3",
           "title": "Ignoring debris on sensor tips",
-          "what": "Wipes metal off a speed sensor tip without asking where it came from.",
+          "what": "Wiping metal off a speed sensor tip without asking where it came from.",
           "consequence": "Metal on the tip distorts the speed signal, and whatever shed it is still inside the unit.",
           "prevent": "Clean the sensor tip and trace the debris to its source before reassembly.",
           "severity": "rework",
@@ -3012,7 +3012,7 @@
         {
           "id": "tr580-053-m1",
           "title": "Rebuilding around a worn differential",
-          "what": "Accepts pitted hypoid teeth or rough differential bearings.",
+          "what": "Accepting pitted hypoid teeth or rough differential bearings.",
           "consequence": "The final drive howls after the rebuild and the whole unit comes out again.",
           "prevent": "Replace worn final drive parts now, and re-set pinion depth and backlash if they change.",
           "severity": "costly",
@@ -3041,8 +3041,8 @@
         {
           "id": "tr580-054-m1",
           "title": "Passing rough transfer gear bearings",
-          "what": "Reuses transfer gear bearings that feel rough because they are not in the kit.",
-          "consequence": "They whine, and replacing them later means removing the extension case and re-shimming.",
+          "what": "Reusing transfer gear bearings that feel rough because they are not in the kit.",
+          "consequence": "Rough transfer bearings whine, and replacing them later means removing the extension case and re-shimming.",
           "prevent": "Spin each transfer bearing by hand, replace any that are rough, and re-measure the shims if they change.",
           "severity": "costly",
           "sourceIds": [
@@ -3052,7 +3052,7 @@
         {
           "id": "tr580-054-m2",
           "title": "Ignoring worn transfer hub splines",
-          "what": "Overlooks stepped or worn splines on the transfer clutch hub.",
+          "what": "Overlooking stepped or worn splines on the transfer clutch hub.",
           "consequence": "Plates hang up on the steps, so the AWD clutch drags or applies unevenly.",
           "prevent": "Check the hub splines for steps where the plates ride and replace a worn hub.",
           "severity": "rework",
@@ -3081,7 +3081,7 @@
         {
           "id": "tr580-055-m1",
           "title": "Not restaking the bearing nut",
-          "what": "Torques the pulley bearing retaining nut but doesn't stake it.",
+          "what": "Torquing the pulley bearing retaining nut but not staking it.",
           "consequence": "The nut can back off, the bearing loosens and the pulley moves, wrecking the chain and pulleys.",
           "prevent": "Stake the retaining nut after torquing it and check the stake has bitten into the shaft groove.",
           "severity": "ruins-unit",
@@ -3092,7 +3092,7 @@
         {
           "id": "tr580-055-m2",
           "title": "Pressing through the outer race",
-          "what": "Presses the new pulley bearing on by its outer race.",
+          "what": "Pressing the new pulley bearing on by its outer race.",
           "consequence": "The load passes through the balls and brinells the new bearing, which then whines in service.",
           "prevent": "Press the bearing on only by its inner race, using a driver sized to that race.",
           "severity": "costly",
@@ -3103,7 +3103,7 @@
         {
           "id": "tr580-055-m3",
           "title": "Not rechecking pulley shims",
-          "what": "Fits new pulley bearings and reuses the old shim stack without checking.",
+          "what": "Fitting new pulley bearings and reusing the old shim stack without checking.",
           "consequence": "A bearing of slightly different width shifts the pulley's axial position and misaligns the chain.",
           "prevent": "Re-measure pulley position and shim selection after any pulley bearing change.",
           "severity": "costly",
@@ -3129,7 +3129,7 @@
         {
           "id": "tr580-056-m1",
           "title": "Cutting a sealing ring on install",
-          "what": "Stretches or drags a sealing ring over a sharp spline or groove edge.",
+          "what": "Stretching or dragging a sealing ring over a sharp spline or groove edge.",
           "consequence": "A damaged ring leaks pulley or clutch apply pressure, which can mean low clamping and chain slip.",
           "prevent": "Use a ring installer or tape over the splines, and check each ring sits free and unbroken in its groove.",
           "severity": "costly",
@@ -3141,7 +3141,7 @@
         {
           "id": "tr580-056-m2",
           "title": "Fitting sealing rings dry",
-          "what": "Installs the new shaft sealing rings without lubricating them.",
+          "what": "Installing the new shaft sealing rings without lubricating them.",
           "consequence": "The rings can roll or be cut as each shaft enters its bore on assembly.",
           "prevent": "Lubricate each shaft sealing ring with CVTF just before its shaft is installed.",
           "severity": "rework",
@@ -3170,7 +3170,7 @@
         {
           "id": "tr580-057-m1",
           "title": "Pump gears upside down",
-          "what": "Installs the oil pump gears with their ID marks facing out.",
+          "what": "Installing the oil pump gears with their ID marks facing out.",
           "consequence": "The gears run on the wrong faces against the pump body, losing pressure or scoring the pump.",
           "prevent": "Fit the pump gears with the ID marks going into the body first, then check before closing.",
           "severity": "costly",
@@ -3181,7 +3181,7 @@
         {
           "id": "tr580-057-m2",
           "title": "Assembling the pump dry",
-          "what": "Bolts the pump halves together without CVTF on the gears.",
+          "what": "Bolting the pump halves together without CVTF on the gears.",
           "consequence": "The pump runs dry at first start and is slow to prime, scuffing its gears.",
           "prevent": "Coat the pump gears and body pockets with CVTF before the halves go together.",
           "severity": "rework",
@@ -3192,7 +3192,7 @@
         {
           "id": "tr580-057-m3",
           "title": "Not checking the pump turns",
-          "what": "Tightens the pump half bolts without checking the gears still turn.",
+          "what": "Tightening the pump half bolts without checking the gears still turn.",
           "consequence": "A pump that binds after its halves are pulled together scores its gears and loses output at idle.",
           "prevent": "Tighten the four half bolts evenly in stages and turn the pump drive after each stage.",
           "severity": "rework",
@@ -3224,10 +3224,10 @@
         {
           "id": "tr580-058-m1",
           "title": "Seal driven past flush",
-          "what": "Drives the new input seal deeper than flush with the chain cover edge.",
+          "what": "Driving the new input seal deeper than flush with the chain cover edge.",
           "consequence": "The seal restricts or blocks the oil passage beside it in the chain cover.",
           "prevent": "Use the installer tool and stop with the seal flush to the chain cover edge, no deeper.",
-          "detect": "After fitting, the oil passage beside the seal should be fully clear.",
+          "detect": "Look at the oil passage beside the seal after fitting; it should be fully clear.",
           "severity": "costly",
           "sourceIds": [
             "s1"
@@ -3236,7 +3236,7 @@
         {
           "id": "tr580-058-m2",
           "title": "Fitting the old-style input seal",
-          "what": "Uses an old-style seal from stock or a kit that lacks the added side lip.",
+          "what": "Using an old-style seal from stock or a kit that lacks the added side lip.",
           "consequence": "Water and dust reach the main lip and the seepage the redesign fixes comes back, with the CVT out again to cure it.",
           "prevent": "Confirm the input seal has the extra side lip before installing it.",
           "severity": "costly",
@@ -3247,9 +3247,9 @@
         {
           "id": "tr580-058-m3",
           "title": "Driving the seal in cocked",
-          "what": "Taps the input seal in around its edge without an installer.",
+          "what": "Tapping the input seal in around its edge without an installer.",
           "consequence": "A seal that sits crooked in its bore leaks around the input shaft.",
-          "prevent": "Use the seal installer so the input seal goes in square all the way round.",
+          "prevent": "Use the seal installer so the input seal goes in square all the way around.",
           "severity": "rework",
           "sourceIds": [
             "s1"
@@ -3258,7 +3258,7 @@
         {
           "id": "tr580-058-m4",
           "title": "Oiling more than the main lip",
-          "what": "Coats the whole input seal, including its outside and the side lip, with fluid.",
+          "what": "Coating the whole input seal, including its outside and the side lip, with fluid.",
           "consequence": "The seal can slip in its bore and the oily side lip collects road dirt.",
           "prevent": "Put CVTF on the main lip only, as Subaru directs, and keep the outside dry.",
           "severity": "minor",
@@ -3294,7 +3294,7 @@
         {
           "id": "tr580-059-m1",
           "title": "Stacking frictions dry",
-          "what": "Builds the forward pack with new frictions straight out of the box.",
+          "what": "Building the forward pack with new frictions straight out of the box.",
           "consequence": "Dry frictions can scorch on the first engagements, and the clearance reading changes once they soak.",
           "prevent": "Soak the forward frictions in CVTF before stacking and measure the pack with soaked plates.",
           "severity": "costly",
@@ -3306,7 +3306,7 @@
         {
           "id": "tr580-059-m2",
           "title": "Cushion plate ID mark wrong",
-          "what": "Fits the forward dished cushion plate with its ID mark facing away.",
+          "what": "Fitting the forward dished cushion plate with its ID mark facing away.",
           "consequence": "Drive engagement is harsh or erratic and the measured forward clearance is wrong.",
           "prevent": "Fit the forward cushion plate with the ID mark facing you, as the teardown article shows.",
           "severity": "costly",
@@ -3317,7 +3317,7 @@
         {
           "id": "tr580-059-m3",
           "title": "Rolling a piston seal",
-          "what": "Forces the forward piston into the drum and rolls or cuts a seal lip.",
+          "what": "Forcing the forward piston into the drum and rolling or cutting a seal lip.",
           "consequence": "Apply oil leaks past the forward piston, and the clutch slips and burns.",
           "prevent": "Lubricate the piston seals, work the lip in with a smooth tool, and air-check the piston.",
           "severity": "ruins-unit",
@@ -3329,7 +3329,7 @@
         {
           "id": "tr580-059-m4",
           "title": "Snap ring not fully seated",
-          "what": "Leaves the forward pack snap ring partly out of its groove.",
+          "what": "Leaving the forward pack snap ring partly out of its groove.",
           "consequence": "The pack can come apart under load and damage the forward drum.",
           "prevent": "Check the snap ring all the way around and rotate it in its groove to confirm it is seated.",
           "severity": "costly",
@@ -3369,7 +3369,7 @@
         {
           "id": "tr580-060-m1",
           "title": "Accepting a loose forward pack",
-          "what": "Leaves forward clutch clearance above range.",
+          "what": "Leaving forward clutch clearance above range.",
           "consequence": "Engagement into D is late and slips, and the forward pack burns.",
           "prevent": "Change the forward selective apply plate until the clearance sits inside 1.10 to 1.40 mm.",
           "severity": "ruins-unit",
@@ -3380,7 +3380,7 @@
         {
           "id": "tr580-060-m2",
           "title": "Building the forward pack tight",
-          "what": "Sets forward clutch clearance below range.",
+          "what": "Setting forward clutch clearance below range.",
           "consequence": "The forward clutch drags when it should be released, heating the plates in neutral and reverse.",
           "prevent": "Keep forward clearance inside the range; a tight pack is not a better pack.",
           "severity": "costly",
@@ -3391,7 +3391,7 @@
         {
           "id": "tr580-060-m3",
           "title": "Measuring an unsettled pack",
-          "what": "Measures without pressing the plates down evenly, at one point only, or with dry frictions.",
+          "what": "Measuring without pressing the plates down evenly, at one point only, or with dry frictions.",
           "consequence": "The reading is off by enough that the wrong selective plate goes in.",
           "prevent": "Settle the pack, measure at several points around it, and measure with soaked frictions.",
           "severity": "rework",
@@ -3402,7 +3402,7 @@
         {
           "id": "tr580-060-m4",
           "title": "Using first-generation clearances",
-          "what": "Builds to clearances published for the 2010 to 2012 first-generation TR580.",
+          "what": "Building to clearances published for the 2010 to 2012 first-generation TR580.",
           "consequence": "The Forester's second-generation unit has different packs, so the pack ends up outside its own range.",
           "prevent": "Confirm the unit is the second generation and use the clearances published for it.",
           "severity": "rework",
@@ -3438,8 +3438,8 @@
         {
           "id": "tr580-061-m1",
           "title": "Reverse frictions not soaked",
-          "what": "Stacks new reverse brake frictions dry.",
-          "consequence": "They can scorch on the first reverse engagements, and the measured clearance changes once they soak.",
+          "what": "Stacking new reverse brake frictions dry.",
+          "consequence": "Dry reverse frictions can scorch on the first reverse engagements, and the measured clearance changes once they soak.",
           "prevent": "Soak the reverse frictions in CVTF first and measure the pack with soaked plates.",
           "severity": "costly",
           "sourceIds": [
@@ -3450,7 +3450,7 @@
         {
           "id": "tr580-061-m2",
           "title": "Wrong reverse plate count",
-          "what": "Uses the forward pack's plate count or mixes plates between the packs.",
+          "what": "Using the forward pack's plate count or mixing plates between the packs.",
           "consequence": "The reverse clearance can't be brought into range no matter which selective plate goes in.",
           "prevent": "Stack four frictions and four steels with the cushion and pressure plates in the reverse brake.",
           "severity": "rework",
@@ -3461,7 +3461,7 @@
         {
           "id": "tr580-061-m3",
           "title": "Reverse cushion plate reversed",
-          "what": "Fits the reverse cushion plate with its ID mark away from you.",
+          "what": "Fitting the reverse cushion plate with its ID mark away from you.",
           "consequence": "Reverse engagement is harsh and the reverse clearance reading is wrong.",
           "prevent": "Fit the reverse cushion plate with its ID mark facing you before the frictions go in.",
           "severity": "costly",
@@ -3472,7 +3472,7 @@
         {
           "id": "tr580-061-m4",
           "title": "Rolled reverse piston seal",
-          "what": "Rolls or cuts a reverse piston seal on assembly.",
+          "what": "Rolling or cutting a reverse piston seal on assembly.",
           "consequence": "Reverse applies late or slips under load, and the reverse pack burns.",
           "prevent": "Lubricate the reverse piston seals, fit the piston gently and air-check it before stacking.",
           "severity": "ruins-unit",
@@ -3513,7 +3513,7 @@
         {
           "id": "tr580-062-m1",
           "title": "Building the reverse pack tight",
-          "what": "Sets reverse brake clearance below range.",
+          "what": "Setting reverse brake clearance below range.",
           "consequence": "The reverse brake drags while driving forward, overheating its plates over every mile.",
           "prevent": "Swap the selective plate until reverse clearance sits inside 2.30 to 2.70 mm.",
           "severity": "ruins-unit",
@@ -3524,7 +3524,7 @@
         {
           "id": "tr580-062-m2",
           "title": "Leaving the reverse pack loose",
-          "what": "Accepts reverse brake clearance above range.",
+          "what": "Accepting reverse brake clearance above range.",
           "consequence": "Reverse engages late and harshly and the reverse pack wears quickly.",
           "prevent": "Bring reverse clearance inside the range before the housing goes in.",
           "severity": "costly",
@@ -3536,8 +3536,8 @@
         {
           "id": "tr580-062-m3",
           "title": "Trusting selective plate markings",
-          "what": "Picks a selective plate by its marking without measuring it.",
-          "consequence": "A mislabelled or worn plate puts the clearance out of range without anyone noticing.",
+          "what": "Picking a selective plate by its marking without measuring it.",
+          "consequence": "A mislabeled or worn plate puts the clearance out of range without anyone noticing.",
           "prevent": "Measure each selective plate with a micrometer before choosing which one to fit.",
           "severity": "rework",
           "sourceIds": [
@@ -3571,7 +3571,7 @@
         {
           "id": "tr580-063-m1",
           "title": "Apply plate in wrong position",
-          "what": "Starts the transfer stack with a friction instead of the apply plate.",
+          "what": "Starting the transfer stack with a friction instead of the apply plate.",
           "consequence": "Transfer clearance and engagement are wrong, giving AWD bind or slip.",
           "prevent": "Lay the apply plate in first, then alternate steel and friction four times.",
           "severity": "costly",
@@ -3582,7 +3582,7 @@
         {
           "id": "tr580-063-m2",
           "title": "Transfer frictions stacked dry",
-          "what": "Builds the transfer clutch pack with dry frictions.",
+          "what": "Building the transfer clutch pack with dry frictions.",
           "consequence": "The transfer frictions can scorch early and the clearance changes once they soak.",
           "prevent": "Soak the transfer frictions in CVTF before stacking and measure with them soaked.",
           "severity": "costly",
@@ -3623,7 +3623,7 @@
         {
           "id": "tr580-064-m1",
           "title": "Transfer clutch pack too tight",
-          "what": "Leaves transfer clutch clearance below range.",
+          "what": "Leaving transfer clutch clearance below range.",
           "consequence": "The AWD clutch binds on tight turns, scrubbing tires and overheating the pack.",
           "prevent": "Change transfer plate thickness until clearance sits inside 0.7 to 1.1 mm.",
           "severity": "costly",
@@ -3635,7 +3635,7 @@
         {
           "id": "tr580-064-m2",
           "title": "Transfer clutch pack too loose",
-          "what": "Accepts transfer clutch clearance above range.",
+          "what": "Accepting transfer clutch clearance above range.",
           "consequence": "The rear axle gets torque late or weakly, and the transfer pack slips and glazes.",
           "prevent": "Bring transfer clearance inside the range with a thicker plate before the air test.",
           "severity": "costly",
@@ -3671,7 +3671,7 @@
         {
           "id": "tr580-065-m1",
           "title": "Air-testing outside the press",
-          "what": "Applies air to the transfer clutch without clamping drum and hub in a press.",
+          "what": "Applying air to the transfer clutch without clamping drum and hub in a press.",
           "consequence": "The air pushes the hub off the drum and cuts its sealing ring.",
           "prevent": "Clamp the transfer drum and hub together in a press before applying air.",
           "severity": "rework",
@@ -3681,8 +3681,8 @@
         },
         {
           "id": "tr580-065-m2",
-          "title": "Unregulated shop air",
-          "what": "Air-tests the transfer clutch at full line pressure.",
+          "title": "Air-testing on unregulated shop air",
+          "what": "Air-testing the transfer clutch at full line pressure.",
           "consequence": "The piston slams over and its seals can be blown out of their grooves.",
           "prevent": "Regulate the air to the stated 40 psi test pressure before touching the feed.",
           "severity": "rework",
@@ -3693,7 +3693,7 @@
         {
           "id": "tr580-065-m3",
           "title": "Accepting a leaking apply",
-          "what": "Hears a hiss or a slow apply on the transfer clutch and carries on.",
+          "what": "Hearing a hiss or a slow apply on the transfer clutch and carrying on.",
           "consequence": "The AWD clutch applies weakly and slips once the car is driven.",
           "prevent": "Find and fix any transfer clutch leak while the assembly is still on the bench.",
           "severity": "costly",
@@ -3719,7 +3719,7 @@
         {
           "id": "tr580-066-m1",
           "title": "Differential bearings not seated",
-          "what": "Sets the differential in with a bearing race not fully home.",
+          "what": "Setting the differential in with a bearing race not fully home.",
           "consequence": "Differential preload and backlash are off, and the final drive whines.",
           "prevent": "Check both differential bearings sit fully in their bores before the pinion goes in.",
           "severity": "rework",
@@ -3747,8 +3747,8 @@
         {
           "id": "tr580-067-m1",
           "title": "Rolled pinion support seal",
-          "what": "Fits the pinion support with a seal rolled, cut or missing.",
-          "consequence": "The support leaks where it should seal, and it sits under the case, so the case has to come off again.",
+          "what": "Fitting the pinion support with a seal rolled, cut or missing.",
+          "consequence": "The support leaks, and because it sits under the case, the case has to come off again to fix it.",
           "prevent": "Lubricate the new support seals, check they sit in their grooves, and lower the support straight.",
           "severity": "costly",
           "sourceIds": [
@@ -3758,7 +3758,7 @@
         {
           "id": "tr580-067-m2",
           "title": "Skipping depth and backlash checks",
-          "what": "Replaces the hypoid set, bearings or case but reuses the old setup.",
+          "what": "Replacing the hypoid set, bearings or case but reusing the old setup.",
           "consequence": "Gear mesh is wrong, so the final drive whines and the hypoid gears wear early.",
           "prevent": "Re-set pinion depth and backlash whenever the hypoid set, its bearings or the case change.",
           "severity": "costly",
@@ -3769,7 +3769,7 @@
         {
           "id": "tr580-067-m3",
           "title": "Pulling the support down unevenly",
-          "what": "Tightens the pinion support bolts one side at a time.",
+          "what": "Tightening the pinion support bolts one side at a time.",
           "consequence": "The pinion support cocks in its bore, so pinion mesh and bearing load are both off.",
           "prevent": "Tighten the fourteen support bolts in a crossing pattern in stages.",
           "severity": "rework",
@@ -3795,8 +3795,8 @@
       "mistakes": [
         {
           "id": "tr580-068-m1",
-          "title": "Cutting input rings entering bore",
-          "what": "Pushes the input shaft into its bore without rotating it.",
+          "title": "Cutting the input shaft sealing rings",
+          "what": "Pushing the input shaft into its bore without rotating it.",
           "consequence": "The input shaft sealing rings are cut and forward clutch pressure leaks.",
           "prevent": "Rotate the input shaft gently as it enters so the rings compress into their grooves.",
           "severity": "costly",
@@ -3808,7 +3808,7 @@
         {
           "id": "tr580-068-m2",
           "title": "Drum not fully engaged",
-          "what": "Leaves the forward drum sitting on its splines instead of fully down.",
+          "what": "Leaving the forward drum sitting on its splines instead of fully down.",
           "consequence": "Parts bind or are crushed when the case and housing go on over them.",
           "prevent": "Turn the drum until it drops, and check the stack height matches what you saw at teardown.",
           "severity": "rework",
@@ -3832,14 +3832,14 @@
       "phase": "assembly",
       "title": "Orient and fit the sun gear",
       "action": "Fit the sun gear with the side carrying the full-circle oil slot toward the drum and the three-slot side toward the planet.",
-      "why": "Backward, it cuts off lube oil to the planetary.",
+      "why": "Fitted backward, the sun gear cuts off lube oil to the planetary.",
       "critical": true,
       "mistake": "Installing the sun gear backward and starving the planet of oil.",
       "mistakes": [
         {
           "id": "tr580-069-m1",
           "title": "Sun gear installed backward",
-          "what": "Fits the sun gear with the three-slot side toward the drum.",
+          "what": "Fitting the sun gear with the three-slot side toward the drum.",
           "consequence": "Lube oil to the planetary is cut off, and the planets fail and shed debris through the unit.",
           "prevent": "Fit the full-circle slot toward the drum and the three-slot side toward the planet.",
           "severity": "ruins-unit",
@@ -3865,7 +3865,7 @@
         {
           "id": "tr580-070-m1",
           "title": "Hammering the splines together",
-          "what": "Taps the planet carrier or ring gear down with a mallet instead of turning it into mesh.",
+          "what": "Tapping the planet carrier or ring gear down with a mallet instead of turning it into mesh.",
           "consequence": "Splines or thrust faces are burred, and the planetary binds or wears early.",
           "prevent": "Rotate the carrier and ring gear until the splines drop in under their own weight.",
           "severity": "rework",
@@ -3891,7 +3891,7 @@
         {
           "id": "tr580-071-m1",
           "title": "Pinching the reverse pack",
-          "what": "Lowers the reverse brake housing with plate lugs out of line with their slots.",
+          "what": "Lowering the reverse brake housing with plate lugs out of line with their slots.",
           "consequence": "A plate lug breaks or the reverse pack binds under the housing.",
           "prevent": "Align the reverse plate lugs with the housing slots and let it drop without force.",
           "severity": "rework",
@@ -3902,7 +3902,7 @@
         {
           "id": "tr580-071-m2",
           "title": "Separator plate flipped",
-          "what": "Fits the separator plate under the internal manual valve the wrong way up.",
+          "what": "Fitting the separator plate under the internal manual valve the wrong way up.",
           "consequence": "Forward or reverse feed is blocked and the case has to come off again.",
           "prevent": "Follow the mark made at teardown and check the plate holes line up with the passages.",
           "severity": "costly",
@@ -3913,7 +3913,7 @@
         {
           "id": "tr580-071-m3",
           "title": "Uneven housing support torque",
-          "what": "Tightens the six housing support bolts one at a time to full torque.",
+          "what": "Tightening the six housing support bolts one at a time to full torque.",
           "consequence": "The housing distorts and the reverse piston binds in its bore.",
           "prevent": "Snug all six support bolts first, then tighten them in a crossing pattern.",
           "severity": "rework",
@@ -3942,9 +3942,9 @@
         {
           "id": "tr580-072-m1",
           "title": "Rear shim omitted or swapped",
-          "what": "Leaves out a secondary rear shim or uses the primary pulley's shim.",
+          "what": "Leaving out a secondary rear shim or using the primary pulley's shim.",
           "consequence": "The pulley sits in the wrong axial position and the chain runs misaligned, wearing chain and pulleys.",
-          "prevent": "Refit the labelled shims, or newly selected ones, and recheck the stack before lowering the pulley.",
+          "prevent": "Refit the labeled shims, or newly selected ones, and recheck the stack before lowering the pulley.",
           "severity": "costly",
           "sourceIds": [
             "s10"
@@ -3953,7 +3953,7 @@
         {
           "id": "tr580-072-m2",
           "title": "Uneven pulley retaining bolts",
-          "what": "Tightens the three secondary pulley bolts one at a time.",
+          "what": "Tightening the three secondary pulley bolts one at a time.",
           "consequence": "The bearing retainer cocks and the secondary pulley sits crooked in the case.",
           "prevent": "Snug all three secondary pulley bolts, then tighten them evenly in turn.",
           "severity": "rework",
@@ -3984,7 +3984,7 @@
         {
           "id": "tr580-073-m1",
           "title": "Opening the pulley unevenly",
-          "what": "Tightens one side of the expander ahead of the other during assembly.",
+          "what": "Tightening one side of the expander ahead of the other during assembly.",
           "consequence": "The sheave cocks on its shaft, or the tool slips and slams the sheave shut.",
           "prevent": "Alternate small turns on the expander and check the sheave gap is even on both sides.",
           "severity": "costly",
@@ -4004,7 +4004,7 @@
       "id": "tr580-074",
       "order": 74,
       "phase": "assembly",
-      "title": "Hang chain and primary pulley",
+      "title": "Hang the chain and primary pulley",
       "action": "With its front bearing shim fitted, tip the primary pulley in with the chain on both pulleys in its marked direction, fit the right chain guide, then stand the pulley up and bolt it in.",
       "why": "The right guide only goes in while the primary pulley is tipped.",
       "critical": true,
@@ -4013,7 +4013,7 @@
         {
           "id": "tr580-074-m1",
           "title": "Reused chain fitted reversed",
-          "what": "Fits a reused variator chain opposite its marked running direction.",
+          "what": "Fitting a reused variator chain opposite its marked running direction.",
           "consequence": "Surfaces that wore in one way are loaded the other way, bringing noise and faster wear.",
           "prevent": "Follow the paint arrow when fitting a reused chain, or fit a new chain instead.",
           "severity": "rework",
@@ -4024,7 +4024,7 @@
         {
           "id": "tr580-074-m2",
           "title": "Forgetting the primary front shim",
-          "what": "Tips the primary pulley in without its front bearing shim.",
+          "what": "Tipping the primary pulley in without its front bearing shim.",
           "consequence": "The primary sits out of position and the chain runs misaligned between the pulleys.",
           "prevent": "Fit and check the primary front bearing shim before the pulley goes in.",
           "severity": "costly",
@@ -4035,7 +4035,7 @@
         {
           "id": "tr580-074-m3",
           "title": "Chain not seated on both sheaves",
-          "what": "Leaves the chain riding the rim of one pulley.",
+          "what": "Leaving the chain riding the rim of one pulley.",
           "consequence": "When the expander is released the chain is pinched and damaged.",
           "prevent": "Check the chain sits fully between the sheaves of both pulleys before standing the primary up.",
           "severity": "costly",
@@ -4046,7 +4046,7 @@
         {
           "id": "tr580-074-m4",
           "title": "Right guide left out",
-          "what": "Stands the primary pulley up before fitting the right chain guide.",
+          "what": "Standing the primary pulley up before fitting the right chain guide.",
           "consequence": "The right guide can't go in afterward, so the pulley has to be unbolted and tipped again.",
           "prevent": "Fit the right chain guide while the primary pulley is still tipped toward the secondary.",
           "severity": "rework",
@@ -4075,7 +4075,7 @@
         {
           "id": "tr580-075-m1",
           "title": "Guide tabs not fully locked",
-          "what": "Closes the guide halves but leaves one locking tab not fully clicked.",
+          "what": "Closing the guide halves but leaving one locking tab not fully clicked.",
           "consequence": "The guide can come apart in service and the chain then rubs the oil tubes, losing pressure.",
           "prevent": "Check each of the four guide tabs by eye and feel after closing the guide.",
           "severity": "costly",
@@ -4087,7 +4087,7 @@
         {
           "id": "tr580-075-m2",
           "title": "Anchor bolt left out",
-          "what": "Forgets to refit the chain guide anchor bolt.",
+          "what": "Forgetting to refit the chain guide anchor bolt.",
           "consequence": "The guide moves with the chain, wears quickly and can break apart.",
           "prevent": "Fit the guide anchor bolt before the expander is released.",
           "severity": "costly",
@@ -4115,7 +4115,7 @@
         {
           "id": "tr580-076-m1",
           "title": "Releasing the expander quickly",
-          "what": "Backs the expander off fast or one side at a time.",
+          "what": "Backing the expander off fast or one side at a time.",
           "consequence": "The spring slams the sheaves onto a chain that may not be fully seated.",
           "prevent": "Release the expander evenly in small turns, watching the chain pull into both pulleys.",
           "severity": "costly",
@@ -4126,7 +4126,7 @@
         {
           "id": "tr580-076-m2",
           "title": "Not turning the pulleys by hand",
-          "what": "Skips rotating the pulleys after the expander is released.",
+          "what": "Releasing the expander without turning the pulleys by hand afterward.",
           "consequence": "A misplaced chain or a rubbing guide is found only after the case is closed.",
           "prevent": "Turn the pulleys through several turns and watch the chain and guides before the case goes on.",
           "severity": "costly",
@@ -4153,7 +4153,7 @@
         {
           "id": "tr580-077-m1",
           "title": "Baffle rubbing the pulley",
-          "what": "Bolts on a bent secondary pulley baffle or one that isn't seated.",
+          "what": "Bolting on a bent secondary pulley baffle or one that isn't seated.",
           "consequence": "The baffle rubs the secondary pulley, making noise and debris.",
           "prevent": "Check the baffle's shape, fit it square and turn the pulley to check it clears.",
           "severity": "rework",
@@ -4173,13 +4173,13 @@
       "id": "tr580-078",
       "order": 78,
       "phase": "assembly",
-      "title": "Lower on the transmission case",
+      "title": "Lower the transmission case on",
       "action": "Clean both case faces dry, lay an even bead of Subaru-specified liquid gasket, then lower the case straight down over the pulley shafts without disturbing the chain.",
       "mistakes": [
         {
           "id": "tr580-078-m1",
           "title": "Sealant on oily case faces",
-          "what": "Lays the case bead on faces that are not completely clean and dry.",
+          "what": "Laying the case bead on faces that are not completely clean and dry.",
           "consequence": "The liquid gasket doesn't bond to the oily aluminum and the case-half seam leaks.",
           "prevent": "Degrease and dry both case faces right before the bead goes on.",
           "severity": "costly",
@@ -4190,7 +4190,7 @@
         {
           "id": "tr580-078-m2",
           "title": "Too heavy a case bead",
-          "what": "Runs a thick bead of liquid gasket on the case face.",
+          "what": "Running a thick bead of liquid gasket on the case face.",
           "consequence": "Excess squeezes into the case where it can block passages or the strainer.",
           "prevent": "Lay a small even bead on the case face, enough to seal but not to squeeze inward.",
           "severity": "costly",
@@ -4201,7 +4201,7 @@
         {
           "id": "tr580-078-m3",
           "title": "Case passage O-rings left out",
-          "what": "Lowers the case without the two O-rings that seal its passages.",
+          "what": "Lowering the case without the two O-rings that seal its passages.",
           "consequence": "A hydraulic circuit leaks inside the unit and the case has to come off again.",
           "prevent": "Check both new case passage O-rings are in place before lowering the case.",
           "severity": "costly",
@@ -4212,7 +4212,7 @@
         {
           "id": "tr580-078-m4",
           "title": "Sealant skinned before assembly",
-          "what": "Lays the case bead and then gets held up before the case goes on.",
+          "what": "Laying the case bead and then getting held up before the case goes on.",
           "consequence": "Skinned sealant doesn't wet the other face, so the joint leaks.",
           "prevent": "Have the case ready to lower before the bead goes on and close the joint promptly.",
           "severity": "rework",
@@ -4223,7 +4223,7 @@
         {
           "id": "tr580-078-m5",
           "title": "Knocking the chain with the case",
-          "what": "Lowers the case tilted so it hits the chain or a guide.",
+          "what": "Lowering the case tilted so it hits the chain or a guide.",
           "consequence": "A guide tab breaks or the chain is displaced without anyone seeing it.",
           "prevent": "Lower the case level and slowly over the pulley shafts, watching the chain.",
           "severity": "costly",
@@ -4252,7 +4252,7 @@
         {
           "id": "tr580-079-m1",
           "title": "Pulling the case down unevenly",
-          "what": "Tightens the case-half bolts one side at a time.",
+          "what": "Tightening the case-half bolts one side at a time.",
           "consequence": "The case distorts, bearing bores misalign and the seam leaks.",
           "prevent": "Snug all the case bolts, then torque them in a crossing pattern in stages.",
           "severity": "costly",
@@ -4263,7 +4263,7 @@
         {
           "id": "tr580-079-m2",
           "title": "Not checking rotation after torque",
-          "what": "Torques the case without turning the input shaft and pulleys.",
+          "what": "Torquing the case without turning the input shaft and pulleys.",
           "consequence": "A bind is discovered only after the unit is installed in the car.",
           "prevent": "Turn the input shaft by hand after torquing and feel for any tight spot.",
           "severity": "rework",
@@ -4274,7 +4274,7 @@
         {
           "id": "tr580-079-m3",
           "title": "Stripping case threads",
-          "what": "Over-tightens a case bolt or uses the wrong bolt in a hole.",
+          "what": "Overtightening a case bolt or using the wrong bolt in a hole.",
           "consequence": "The aluminum thread in the converter case strips and needs a thread insert before assembly can go on.",
           "prevent": "Use the bolt that came out of that hole and tighten it with a torque wrench.",
           "severity": "rework",
@@ -4301,7 +4301,7 @@
         {
           "id": "tr580-080-m1",
           "title": "Transfer gears not fully seated",
-          "what": "Leaves the transfer shaft and gears short of their bearing seats.",
+          "what": "Leaving the transfer shaft and gears short of their bearing seats.",
           "consequence": "The extension case won't sit flat, or bearing preload is wrong once it is pulled down.",
           "prevent": "Check the transfer assembly is fully home before fitting the transfer clutch.",
           "severity": "rework",
@@ -4327,7 +4327,7 @@
         {
           "id": "tr580-081-m1",
           "title": "Transfer drum not fully engaged",
-          "what": "Leaves the transfer clutch drum on top of its splines.",
+          "what": "Leaving the transfer clutch drum on top of its splines.",
           "consequence": "The extension case clamps the drum, so the AWD binds or the housing won't go on.",
           "prevent": "Turn the transfer drum until it drops fully onto its splines.",
           "severity": "rework",
@@ -4338,7 +4338,7 @@
         {
           "id": "tr580-081-m2",
           "title": "Cutting the hub sealing ring",
-          "what": "Forces the transfer clutch hub onto its shaft.",
+          "what": "Forcing the transfer clutch hub onto its shaft.",
           "consequence": "The hub sealing ring is cut and the AWD clutch loses apply pressure.",
           "prevent": "Lubricate the hub sealing ring and rotate the hub on gently.",
           "severity": "costly",
@@ -4364,7 +4364,7 @@
         {
           "id": "tr580-082-m1",
           "title": "Pawl spring hooked wrong",
-          "what": "Installs the parking pawl spring in the wrong position.",
+          "what": "Installing the parking pawl spring in the wrong position.",
           "consequence": "The pawl doesn't retract and grinds on the park gear while driving, or Park won't hold.",
           "prevent": "Match the teardown photo and check the pawl snaps back freely when pushed in.",
           "severity": "costly",
@@ -4392,9 +4392,9 @@
         {
           "id": "tr580-083-m1",
           "title": "Swapping the transfer shim sets",
-          "what": "Puts each transfer shim set in the other's location.",
+          "what": "Putting each transfer shim set in the other's location.",
           "consequence": "Transfer bearing preload is wrong, giving noise and early bearing failure.",
-          "prevent": "Fit each labelled transfer shim set in its own bore; the different diameters are your check.",
+          "prevent": "Fit each labeled transfer shim set in its own bore; the different diameters are your check.",
           "severity": "costly",
           "sourceIds": [
             "s9"
@@ -4403,7 +4403,7 @@
         {
           "id": "tr580-083-m2",
           "title": "Reusing shims after new bearings",
-          "what": "Refits the old transfer shims after replacing transfer bearings or a case.",
+          "what": "Refitting the old transfer shims after replacing transfer bearings or a case.",
           "consequence": "The new parts change the stack height, so transfer preload is wrong.",
           "prevent": "Measure and select new transfer shims whenever bearings or cases change.",
           "severity": "costly",
@@ -4414,7 +4414,7 @@
         {
           "id": "tr580-083-m3",
           "title": "Shim falls out on assembly",
-          "what": "Lets a transfer shim drop out of position as the extension case goes on.",
+          "what": "Letting a transfer shim drop out of position as the extension case goes on.",
           "consequence": "Transfer end play is wrong and the extension case has to come off again.",
           "prevent": "Check each transfer shim is still in its bore just before the extension case seats.",
           "severity": "rework",
@@ -4440,7 +4440,7 @@
         {
           "id": "tr580-084-m1",
           "title": "Transfer feed O-ring missing",
-          "what": "Fits the extension case without a new transfer clutch feed O-ring.",
+          "what": "Fitting the extension case without a new transfer clutch feed O-ring.",
           "consequence": "The AWD clutch loses apply pressure at the extension case joint.",
           "prevent": "Fit the new feed O-ring and check it is still in place as the extension case goes on.",
           "severity": "rework",
@@ -4451,7 +4451,7 @@
         {
           "id": "tr580-084-m2",
           "title": "Sealant across the feed port",
-          "what": "Runs the extension case sealant bead over the transfer clutch feed.",
+          "what": "Running the extension case sealant bead over the transfer clutch feed.",
           "consequence": "The transfer clutch feed is restricted by sealant, so the AWD clutch applies weakly or late.",
           "prevent": "Keep the extension case bead clear of the feed port and every other opening.",
           "severity": "costly",
@@ -4463,7 +4463,7 @@
         {
           "id": "tr580-084-m3",
           "title": "Drawing the housing down with bolts",
-          "what": "Uses the bolts to pull down an extension case that won't sit flush by hand.",
+          "what": "Using the bolts to pull down an extension case that won't sit flush by hand.",
           "consequence": "The housing cracks or a transfer shim or bearing is crushed.",
           "prevent": "Find out why the extension case won't sit flat before tightening anything.",
           "severity": "costly",
@@ -4498,7 +4498,7 @@
         {
           "id": "tr580-085-m1",
           "title": "Skipping the air checks",
-          "what": "Closes the unit up without air-checking the clutch circuits.",
+          "what": "Closing the unit up without air-checking the clutch circuits.",
           "consequence": "A cut ring or rolled seal is found only after installation, which means another teardown.",
           "prevent": "Air-check the forward, reverse and transfer circuits before the pump and covers go on.",
           "severity": "costly",
@@ -4509,7 +4509,7 @@
         {
           "id": "tr580-085-m2",
           "title": "Wrong manual valve position",
-          "what": "Air-checks the forward and reverse feeds without the manual valve in D and R.",
+          "what": "Air-checking the forward and reverse feeds without the manual valve in D and R.",
           "consequence": "No apply is heard, giving a false failure or a false pass on the clutch circuits.",
           "prevent": "Move the manual valve to D for the forward check and to R for the reverse check.",
           "severity": "rework",
@@ -4537,7 +4537,7 @@
         {
           "id": "tr580-086-m1",
           "title": "Swapping pump port O-rings",
-          "what": "Puts the small O-ring on the pump suction port and the large on the output.",
+          "what": "Putting the small O-ring on the pump suction port and the large on the output.",
           "consequence": "The pump draws air or leaks pressure, giving noise, low pressure and a risk of slip.",
           "prevent": "Fit the large O-ring on the suction port and the small one on the output port.",
           "severity": "costly",
@@ -4548,7 +4548,7 @@
         {
           "id": "tr580-086-m2",
           "title": "Uneven pump bolt torque",
-          "what": "Tightens the four pump mounting bolts one at a time.",
+          "what": "Tightening the four pump mounting bolts one at a time.",
           "consequence": "The pump body distorts against its mounting face and the pump gears bind.",
           "prevent": "Tighten the pump mounting bolts evenly in stages and turn the pump drive after.",
           "severity": "rework",
@@ -4559,7 +4559,7 @@
         {
           "id": "tr580-086-m3",
           "title": "Fitting pump sprockets separately",
-          "what": "Installs the pump drive sprockets one at a time and then tries to fit the chain.",
+          "what": "Installing the pump drive sprockets one at a time and then trying to fit the chain.",
           "consequence": "The chain is forced on and the sprockets or chain are damaged.",
           "prevent": "Fit the pump drive chain and both sprockets together as one assembly.",
           "severity": "rework",
@@ -4582,15 +4582,15 @@
       "phase": "assembly",
       "title": "Replace the stator seal ring",
       "action": "Fit a new plastic sealing ring on the stator support and oil it with CVTF.",
-      "why": "Subaru lists this ring as one-time-use.",
+      "why": "Subaru lists this ring as one-time use.",
       "critical": true,
       "mistake": "Reusing the old ring because it looks undamaged.",
       "mistakes": [
         {
           "id": "tr580-087-m1",
           "title": "Reusing the stator sealing ring",
-          "what": "Refits the old plastic stator support ring because it looks undamaged.",
-          "consequence": "Subaru lists it as one-time-use; a reused ring may not seal, and the CVT has to come out again to replace it.",
+          "what": "Refitting the old plastic stator support ring because it looks undamaged.",
+          "consequence": "Subaru lists it as one-time use; a reused ring may not seal, and the CVT has to come out again to replace it.",
           "prevent": "Fit a new stator support sealing ring every time the chain cover is off.",
           "severity": "costly",
           "sourceIds": [
@@ -4600,7 +4600,7 @@
         {
           "id": "tr580-087-m2",
           "title": "Fitting the ring dry",
-          "what": "Installs the new stator support ring without lubricating it.",
+          "what": "Installing the new stator support ring without lubricating it.",
           "consequence": "The dry ring can be damaged when the converter hub slides over it.",
           "prevent": "Lubricate the stator support ring thoroughly with CVTF, as Subaru specifies.",
           "severity": "rework",
@@ -4620,7 +4620,7 @@
       "id": "tr580-088",
       "order": 88,
       "phase": "assembly",
-      "title": "Bead sealant on chain cover",
+      "title": "Run the chain cover sealant bead",
       "action": "Run a small bead of liquid gasket along the chamfer edge of the cover, skipping the marked oil hole.",
       "why": "Sealant in the marked hole blocks oil flow, and too much squeezes into the case.",
       "spec": {
@@ -4637,7 +4637,7 @@
         {
           "id": "tr580-088-m1",
           "title": "Sealant around the marked hole",
-          "what": "Runs the chain cover bead around the oil hole Subaru marks.",
+          "what": "Running the chain cover bead around the oil hole Subaru marks.",
           "consequence": "Sealant squeezes into the marked oil hole and blocks or restricts the oil flow it carries.",
           "prevent": "Skip the marked hole as the bulletin shows, breaking the bead there.",
           "severity": "costly",
@@ -4648,7 +4648,7 @@
         {
           "id": "tr580-088-m2",
           "title": "Too much chain cover sealant",
-          "what": "Lays a heavy bead on the chain cover.",
+          "what": "Laying a heavy bead on the chain cover.",
           "consequence": "Excess chain cover sealant squeezes into the case, where crumbs can block oil passages.",
           "prevent": "Use a small bead that just fills the chamfer once the cover is fitted.",
           "severity": "costly",
@@ -4659,7 +4659,7 @@
         {
           "id": "tr580-088-m3",
           "title": "Bead off the chamfer",
-          "what": "Runs the bead on the flat face rather than along the chamfer edge.",
+          "what": "Running the bead on the flat face rather than along the chamfer edge.",
           "consequence": "The extra seal the sealant forms in the chamfer is missing and seepage returns.",
           "prevent": "Apply the bead along the chamfer edge of the cover, as Subaru's illustration shows.",
           "severity": "costly",
@@ -4670,7 +4670,7 @@
         {
           "id": "tr580-088-m4",
           "title": "Using generic RTV",
-          "what": "Uses a general-purpose silicone in place of the specified ThreeBond 1215.",
+          "what": "Using a general-purpose silicone in place of the specified ThreeBond 1215.",
           "consequence": "The joint can seep again, which is the very failure the bulletin repairs.",
           "prevent": "Use ThreeBond 1215, the sealant Subaru specifies for this joint.",
           "severity": "costly",
@@ -4705,7 +4705,7 @@
         {
           "id": "tr580-089-m1",
           "title": "Wrong cover torque pattern",
-          "what": "Tightens the chain cover bolts around in a circle or with an impact gun.",
+          "what": "Tightening the chain cover bolts around in a circle or with an impact gun.",
           "consequence": "The cover distorts and the bead is squeezed unevenly, leading to seepage.",
           "prevent": "Tighten the chain cover bolts in a crossing pattern with a torque wrench.",
           "severity": "costly",
@@ -4716,8 +4716,8 @@
         {
           "id": "tr580-089-m2",
           "title": "Using the TR690 torque value",
-          "what": "Uses the TR690's chain cover torque from the same bulletin.",
-          "consequence": "The TR580 cover is over-tightened, distorting the aluminum cover and squeezing the bead thin.",
+          "what": "Using the TR690's chain cover torque from the same bulletin.",
+          "consequence": "The TR580 cover is overtightened, distorting the aluminum cover and squeezing the bead thin.",
           "prevent": "Use 21 N·m for the TR580's ten equal-length bolts, not the TR690 value.",
           "severity": "rework",
           "sourceIds": [
@@ -4736,13 +4736,13 @@
       "id": "tr580-090",
       "order": 90,
       "phase": "assembly",
-      "title": "Refit rod and shift linkage",
+      "title": "Refit the parking rod and linkage",
       "action": "Install the parking rod, the manual shaft linkage and a new roll pin in the shift rail.",
       "mistakes": [
         {
           "id": "tr580-090-m1",
           "title": "Reusing the roll pin",
-          "what": "Refits the old roll pin in the shift rail.",
+          "what": "Refitting the old roll pin in the shift rail.",
           "consequence": "The pin works loose and the linkage gets sloppy, so range selection drifts.",
           "prevent": "Fit a new roll pin in the shift rail and check it sits flush on both sides.",
           "severity": "rework",
@@ -4753,7 +4753,7 @@
         {
           "id": "tr580-090-m2",
           "title": "Park rod not under the pawl",
-          "what": "Fits the parking rod without its end in position against the pawl.",
+          "what": "Fitting the parking rod without its end in position against the pawl.",
           "consequence": "Park doesn't engage and the car can roll away when left in P.",
           "prevent": "Move the lever to P and check the output shaft locks before the pan goes on.",
           "severity": "costly",
@@ -4780,7 +4780,7 @@
         {
           "id": "tr580-091-m1",
           "title": "Range switch not set in neutral",
-          "what": "Tightens the inhibitor switch without aligning it in neutral.",
+          "what": "Tightening the inhibitor switch without aligning it in neutral.",
           "consequence": "The car may not start in P or N, range signals disagree and codes set.",
           "prevent": "Set the inhibitor switch in its neutral position, then tighten its bolts.",
           "severity": "rework",
@@ -4800,13 +4800,13 @@
       "id": "tr580-092",
       "order": 92,
       "phase": "assembly",
-      "title": "Fit baffle and new strainer",
+      "title": "Fit the baffle and new strainer",
       "action": "Bolt the pan baffle back on, then install a new oil strainer with a new O-ring.",
       "mistakes": [
         {
           "id": "tr580-092-m1",
           "title": "Reusing the old strainer",
-          "what": "Refits the original oil strainer.",
+          "what": "Refitting the original oil strainer.",
           "consequence": "Trapped debris restricts flow, so the pump starves and pressure drops.",
           "prevent": "Fit a new strainer with a new O-ring whenever the unit is opened.",
           "severity": "costly",
@@ -4818,7 +4818,7 @@
         {
           "id": "tr580-092-m2",
           "title": "Pinched strainer O-ring",
-          "what": "Pushes the new strainer in with its O-ring pinched or rolled.",
+          "what": "Pushing the new strainer in with its O-ring pinched or rolled.",
           "consequence": "The pump draws air, giving noise, low pressure and a risk of chain slip.",
           "prevent": "Lubricate the strainer O-ring and push the strainer straight into its bore.",
           "severity": "costly",
@@ -4847,7 +4847,7 @@
         {
           "id": "tr580-093-m1",
           "title": "Dirty magnet refitted",
-          "what": "Puts the pan back without cleaning the magnet.",
+          "what": "Putting the pan back without cleaning the magnet.",
           "consequence": "Old debris confuses the next inspection and can wash loose into the fluid.",
           "prevent": "Clean the pan magnet and set it back in its place before the pan goes on.",
           "severity": "minor",
@@ -4858,9 +4858,9 @@
         {
           "id": "tr580-093-m2",
           "title": "Uneven pan bolt torque",
-          "what": "Over-tightens or tightens the pan bolts unevenly.",
+          "what": "Overtightening or tightening the pan bolts unevenly.",
           "consequence": "The pan flange distorts between bolts and leaks along the pan rail.",
-          "prevent": "Tighten the pan bolts evenly in a crossing pattern without over-tightening.",
+          "prevent": "Tighten the pan bolts evenly in a crossing pattern without overtightening.",
           "severity": "rework",
           "sourceIds": [
             "s9"
@@ -4869,7 +4869,7 @@
         {
           "id": "tr580-093-m3",
           "title": "Reusing the drain plug gasket",
-          "what": "Refits the pan drain plug with its old gasket.",
+          "what": "Refitting the pan drain plug with its old gasket.",
           "consequence": "The flattened old gasket no longer seals and the drain plug weeps.",
           "prevent": "Fit a new drain plug gasket each time the plug comes out.",
           "severity": "minor",
@@ -4897,7 +4897,7 @@
         {
           "id": "tr580-094-m1",
           "title": "Doubled port O-rings",
-          "what": "Fits new valve body port O-rings on top of old ones left in the case.",
+          "what": "Fitting new valve body port O-rings on top of old ones left in the case.",
           "consequence": "The valve body is held off the case and pressure leaks between them.",
           "prevent": "Confirm the case bores are empty before the new valve body O-rings go in.",
           "detect": "The valve body rocks before the bolts are tightened.",
@@ -4909,8 +4909,8 @@
         {
           "id": "tr580-094-m2",
           "title": "Missing port O-ring",
-          "what": "Leaves one valve body port O-ring out.",
-          "consequence": "That circuit leaks at the case, giving low pressure and slip.",
+          "what": "Leaving one valve body port O-ring out.",
+          "consequence": "The circuit missing its O-ring leaks at the case, giving low pressure and slip.",
           "prevent": "Count both valve body O-rings in before lowering the valve body.",
           "severity": "costly",
           "sourceIds": [
@@ -4920,7 +4920,7 @@
         {
           "id": "tr580-094-m3",
           "title": "Solenoid ground left off",
-          "what": "Leaves a solenoid ground lead out from under its bolt.",
+          "what": "Leaving a solenoid ground lead out from under its bolt.",
           "consequence": "Solenoid codes set and the TCM may default to high line pressure.",
           "prevent": "Check every solenoid ground against the teardown photos before the cover goes on.",
           "severity": "rework",
@@ -4932,7 +4932,7 @@
         {
           "id": "tr580-094-m4",
           "title": "Uneven valve body bolts",
-          "what": "Runs each valve body bolt down fully one at a time.",
+          "what": "Running each valve body bolt down fully one at a time.",
           "consequence": "The valve body distorts against the case and valves stick in their bores.",
           "prevent": "Snug all nine bolts, then tighten them evenly from the center out.",
           "severity": "costly",
@@ -4959,7 +4959,7 @@
         {
           "id": "tr580-095-m1",
           "title": "Connector not fully latched",
-          "what": "Pushes the main valve body connector on without hearing the latch.",
+          "what": "Pushing the main valve body connector on without hearing the latch.",
           "consequence": "Intermittent codes set and the TCM falls back to failsafe pressure.",
           "prevent": "Push the main connector home until it latches and tug-test it.",
           "severity": "rework",
@@ -4971,9 +4971,9 @@
         {
           "id": "tr580-095-m2",
           "title": "Harness pinched under cover",
-          "what": "Bolts the top cover down with a lead under its edge.",
+          "what": "Bolting the top cover down with a lead under its edge.",
           "consequence": "The trapped wire chafes through and shorts, setting solenoid circuit codes.",
-          "prevent": "Check the lead routing all round the cover edge before it goes down.",
+          "prevent": "Check the lead routing all around the cover edge before it goes down.",
           "severity": "rework",
           "sourceIds": [
             "s11",
@@ -4999,7 +4999,7 @@
         {
           "id": "tr580-096-m1",
           "title": "Reusing sensor O-rings",
-          "what": "Refits the speed and pressure sensors with their old O-rings.",
+          "what": "Refitting the speed and pressure sensors with their old O-rings.",
           "consequence": "The hardened old O-rings let the speed and pressure sensors seep CVTF.",
           "prevent": "Fit new O-rings on every external sensor and oil them before fitting.",
           "severity": "minor",
@@ -5010,7 +5010,7 @@
         {
           "id": "tr580-096-m2",
           "title": "Pressure sensor not latched",
-          "what": "Leaves the secondary pressure sensor connector not fully latched.",
+          "what": "Leaving the secondary pressure sensor connector not fully latched.",
           "consequence": "P0841 sets soon after the rebuild from a poor secondary pressure sensor connection.",
           "prevent": "Latch and tug-test the secondary pressure sensor connector.",
           "severity": "rework",
@@ -5036,7 +5036,7 @@
         {
           "id": "tr580-097-m1",
           "title": "Driving seals in crooked",
-          "what": "Taps the new axle and front seals in without a driver.",
+          "what": "Tapping the new axle and front seals in without a driver.",
           "consequence": "A cocked seal leaks around the axle or converter hub soon after the car is back on the road.",
           "prevent": "Use a driver that bears on each seal's outer edge so it goes in square.",
           "severity": "rework",
@@ -5048,7 +5048,7 @@
         {
           "id": "tr580-097-m2",
           "title": "Seal lips fitted dry",
-          "what": "Fits the converter and stator seals without oiling the lips.",
+          "what": "Fitting the converter and stator seals without oiling the lips.",
           "consequence": "The dry converter and stator seal lips burn on first rotation and start to leak.",
           "prevent": "Oil the converter and stator seal lips with CVTF before fitting.",
           "severity": "rework",
@@ -5059,7 +5059,7 @@
         {
           "id": "tr580-097-m3",
           "title": "Swapping left and right seals",
-          "what": "Fits the left differential side seal on the right.",
+          "what": "Fitting the left differential side seal on the right.",
           "consequence": "Subaru lists separate left and right part numbers, so a swapped seal is a likely leak.",
           "prevent": "Check the side seal part numbers and fit each one to its own side.",
           "severity": "rework",
@@ -5090,7 +5090,7 @@
         {
           "id": "tr580-098-m1",
           "title": "Converter not fully seated",
-          "what": "Bolts up with the converter on its last spline instead of fully engaged.",
+          "what": "Bolting up with the converter on its last spline instead of fully engaged.",
           "consequence": "The drive plate pulls the converter forward and damages the pump drive, hub and seal.",
           "prevent": "Turn the converter until it drops through each engagement, and measure its set-back before mating.",
           "severity": "ruins-unit",
@@ -5101,7 +5101,7 @@
         {
           "id": "tr580-098-m2",
           "title": "Cutting the seal with the hub",
-          "what": "Pushes the converter on at an angle.",
+          "what": "Pushing the converter on at an angle.",
           "consequence": "The new converter seal or stator sealing ring is cut and leaks.",
           "prevent": "Slide the converter on straight while turning it, keeping the hub centered.",
           "severity": "costly",
@@ -5128,9 +5128,9 @@
         {
           "id": "tr580-099-m1",
           "title": "Drawing in with the wrong fasteners",
-          "what": "Closes the gap between CVT and engine with the converter nuts or by forcing the housing bolts.",
+          "what": "Closing the gap between CVT and engine with the converter nuts or by forcing the housing bolts.",
           "consequence": "The converter hub and pump drive are damaged, or the bell housing cracks.",
-          "prevent": "The housings must meet by hand on the dowels; find out why if they don't.",
+          "prevent": "Bring the housings together by hand on the dowels, and find out why if they will not meet.",
           "severity": "ruins-unit",
           "sourceIds": [
             "s1"
@@ -5139,7 +5139,7 @@
         {
           "id": "tr580-099-m2",
           "title": "Converter slid forward on install",
-          "what": "Tilts the CVT nose-down as it is raised on the jack.",
+          "what": "Tilting the CVT nose-down as it is raised on the jack.",
           "consequence": "The converter slides forward off its engagement before the unit meets the engine.",
           "prevent": "Keep the CVT level on the jack and check the converter set-back just before mating.",
           "severity": "costly",
@@ -5160,13 +5160,13 @@
       "id": "tr580-100",
       "order": 100,
       "phase": "final",
-      "title": "Bolt converter to drive plate",
+      "title": "Bolt the converter to the drive plate",
       "action": "Rotate the engine and install the converter-to-drive-plate nuts to spec.",
       "mistakes": [
         {
           "id": "tr580-100-m1",
           "title": "Torquing one nut first",
-          "what": "Fully torques the first converter nut before starting the others.",
+          "what": "Torquing the first converter nut fully before starting the others.",
           "consequence": "The converter is pulled off center against the drive plate, loading the hub and seal.",
           "prevent": "Start every converter nut by hand, then torque them evenly in turn.",
           "severity": "rework",
@@ -5177,8 +5177,8 @@
         {
           "id": "tr580-100-m2",
           "title": "Dropping a nut in the housing",
-          "what": "Lets a converter nut fall into the bell housing.",
-          "consequence": "It wedges between the drive plate and the housing and cracks the housing.",
+          "what": "Letting a converter nut fall into the bell housing.",
+          "consequence": "A dropped converter nut wedges between the drive plate and the housing and cracks the housing.",
           "prevent": "Use a magnetic socket and account for every converter nut before turning the engine.",
           "severity": "costly",
           "sourceIds": [
@@ -5199,12 +5199,12 @@
       "phase": "final",
       "title": "Reconnect driveline and cooler",
       "action": "Refit the crossmember, axles with new C-clips, propeller shaft, cooler lines and harness, flushing the cooler circuit first.",
-      "why": "Subaru treats the axle C-clips as one-time-use.",
+      "why": "Subaru treats the axle C-clips as one-time use.",
       "mistakes": [
         {
           "id": "tr580-101-m1",
           "title": "Skipping the cooler flush",
-          "what": "Reconnects the cooler lines without flushing the cooler.",
+          "what": "Reconnecting the cooler lines without flushing the cooler.",
           "consequence": "Debris from the old failure is pumped into the rebuilt unit on first start.",
           "prevent": "Flush the cooler whenever the pan held debris, the unit overheated or a failed unit is being replaced.",
           "severity": "ruins-unit",
@@ -5215,7 +5215,7 @@
         {
           "id": "tr580-101-m2",
           "title": "Half-done cooler flush",
-          "what": "Uses the wrong product, or stops when it looks clear and doesn't blow out the residue.",
+          "what": "Using the wrong product, or stopping when it looks clear and not blowing out the residue.",
           "consequence": "Debris or flush residue stays in the cooler and contaminates the new fluid.",
           "prevent": "Use Subaru's cooler flush, repeat until it runs clean, then blow the cooler out with air.",
           "severity": "costly",
@@ -5226,7 +5226,7 @@
         {
           "id": "tr580-101-m3",
           "title": "Cooler hoses badly clamped",
-          "what": "Refits the cooler hoses with clamps that aren't the factory type or aren't fully on.",
+          "what": "Refitting the cooler hoses with clamps that aren't the factory type or aren't fully on.",
           "consequence": "A cooler hose blows off, the CVT pumps out its fluid and the chain slips.",
           "prevent": "Refit the cooler hoses with the factory clamps and check each one before filling.",
           "severity": "ruins-unit",
@@ -5238,8 +5238,8 @@
         {
           "id": "tr580-101-m4",
           "title": "Reusing axle C-clips",
-          "what": "Refits the old axle C-clips.",
-          "consequence": "Subaru treats them as one-time-use; a weak clip lets the axle move in the differential.",
+          "what": "Refitting the old axle C-clips.",
+          "consequence": "Subaru treats them as one-time use; a weak clip lets the axle move in the differential.",
           "prevent": "Fit new C-clips and pull-test each axle to confirm it is locked in.",
           "severity": "rework",
           "sourceIds": [
@@ -5249,7 +5249,7 @@
         {
           "id": "tr580-101-m5",
           "title": "Dragging the axle across the seal",
-          "what": "Slides the axle spline in across the new side seal lip.",
+          "what": "Sliding the axle spline in across the new side seal lip.",
           "consequence": "The axle spline cuts the new side seal lip, which leaks gear oil from the first drive.",
           "prevent": "Guide each axle in straight and keep the spline off the seal lip.",
           "severity": "rework",
@@ -5290,7 +5290,7 @@
         {
           "id": "tr580-102-m1",
           "title": "Fluid swapped between compartments",
-          "what": "Fills the differential with CVTF or the CVT with gear oil.",
+          "what": "Filling the differential with CVTF or the CVT with gear oil.",
           "consequence": "The hypoid gears wear in thin fluid, or the CVT needs a full drain and flush.",
           "prevent": "Identify the differential fill and the CVT filler plug before opening either.",
           "severity": "costly",
@@ -5303,7 +5303,7 @@
         {
           "id": "tr580-102-m2",
           "title": "Differential level guessed",
-          "what": "Fills the differential by pouring a quantity without checking the level.",
+          "what": "Filling the differential by pouring a quantity without checking the level.",
           "consequence": "Too low wears the gears and bearings; too high leaks at the side seals.",
           "prevent": "Use the capacity as a guide only and fill the differential to its level.",
           "severity": "rework",
@@ -5315,7 +5315,7 @@
         {
           "id": "tr580-102-m3",
           "title": "Wrong gear oil grade",
-          "what": "Uses a differential oil that is not 75W-90 GL-5.",
+          "what": "Using a differential oil that is not 75W-90 GL-5.",
           "consequence": "The hypoid gears are not protected as intended and wear faster.",
           "prevent": "Use 75W-90 GL-5 gear oil, as the sources list for this differential.",
           "severity": "rework",
@@ -5357,7 +5357,7 @@
         {
           "id": "tr580-103-m1",
           "title": "Wrong CVT fluid",
-          "what": "Uses High Torque CVTF meant for TR690 units such as the Forester XT, a generic CVT fluid, or ATF.",
+          "what": "Using High Torque CVTF meant for TR690 units such as the Forester XT, a generic CVT fluid, or ATF.",
           "consequence": "Subaru warns other fluids cause malfunction; noise, slip and unit failure follow.",
           "prevent": "Use Subaru CVTF II for the non-turbo TR580 and nothing else.",
           "severity": "ruins-unit",
@@ -5370,8 +5370,8 @@
         },
         {
           "id": "tr580-103-m2",
-          "title": "Choosing fluid by colour",
-          "what": "Grabs any green Subaru CVT fluid, including later low-viscosity types meant for other units.",
+          "title": "Choosing fluid by color",
+          "what": "Grabbing any green Subaru CVT fluid, including later low-viscosity types meant for other units.",
           "consequence": "The wrong fluid for this unit brings performance problems and can lead to failure.",
           "prevent": "Check the part number against Subaru's recommended materials for the 2014 to 2018 Forester non-turbo.",
           "severity": "costly",
@@ -5383,7 +5383,7 @@
         {
           "id": "tr580-103-m3",
           "title": "Starting with too little fluid",
-          "what": "Starts the engine before enough fluid is in.",
+          "what": "Starting the engine before enough fluid is in.",
           "consequence": "The pump draws air, secondary pressure is low and the chain can slip.",
           "prevent": "Put in close to the dry-fill amount before the first start.",
           "severity": "ruins-unit",
@@ -5395,7 +5395,7 @@
         {
           "id": "tr580-103-m4",
           "title": "Filling by volume alone",
-          "what": "Pours in the overhaul capacity and calls the job done.",
+          "what": "Pouring in the overhaul capacity and calling the job done.",
           "consequence": "The capacity is approximate, so the unit ends up over or under its true level.",
           "prevent": "Use the volume as a starting point only and set the final level hot.",
           "severity": "rework",
@@ -5418,7 +5418,7 @@
       "id": "tr580-104",
       "order": 104,
       "phase": "final",
-      "title": "Warm to check temperature",
+      "title": "Warm the CVTF to check temperature",
       "action": "Idle the engine and watch the CVTF temperature on the scan tool until it reaches the check window.",
       "tools": [
         "Scan tool showing CVTF temperature"
@@ -5438,7 +5438,7 @@
         {
           "id": "tr580-104-m1",
           "title": "Setting the level cold",
-          "what": "Adds fluid to the bottom of the filler hole with the fluid cold.",
+          "what": "Adding fluid to the bottom of the filler hole with the fluid cold.",
           "consequence": "Subaru warns a cold fill to the hole overfills the CVT and fluid spills out.",
           "prevent": "Warm the CVTF into the check window before adding fluid to the hole.",
           "severity": "rework",
@@ -5449,7 +5449,7 @@
         {
           "id": "tr580-104-m2",
           "title": "Overshooting the temperature window",
-          "what": "Idles the engine past the window before checking.",
+          "what": "Idling the engine past the window before checking.",
           "consequence": "Fluid expands with heat, so a level set too hot leaves the CVT short of fluid.",
           "prevent": "Watch the scan tool and set the level while the CVTF is inside the window.",
           "severity": "rework",
@@ -5460,7 +5460,7 @@
         {
           "id": "tr580-104-m3",
           "title": "Guessing fluid temperature",
-          "what": "Judges CVTF temperature from the coolant gauge or by touching the pan.",
+          "what": "Judging CVTF temperature from the coolant gauge or by touching the pan.",
           "consequence": "The real fluid temperature is unknown and the level is set wrong.",
           "prevent": "Read the CVTF temperature on the scan tool, not the coolant gauge.",
           "severity": "rework",
@@ -5481,12 +5481,12 @@
       "order": 105,
       "phase": "final",
       "title": "Circulate the new fluid",
-      "action": "Still idling with the brake held, move the lever slowly from P to R to N to D and back to P to push fluid through every circuit.",
+      "action": "With the engine still idling and the brake held, move the lever slowly from P to R to N to D and back to P to push fluid through every circuit.",
       "mistakes": [
         {
           "id": "tr580-105-m1",
           "title": "Skipping the lever cycle",
-          "what": "Checks the level straight after start-up without cycling P-R-N-D and back.",
+          "what": "Checking the level straight after start-up without cycling P-R-N-D and back.",
           "consequence": "Circuits and pistons are not yet full, so the level reads high and the unit ends up low.",
           "prevent": "Cycle the lever slowly through every range and back, engine idling, before checking.",
           "severity": "costly",
@@ -5506,7 +5506,7 @@
       "id": "tr580-106",
       "order": 106,
       "phase": "final",
-      "title": "Set level at the filler hole",
+      "title": "Set the level at the filler hole",
       "action": "With the engine idling, remove the filler plug, add fluid until it just reaches the bottom of the hole, then refit the plug with a new gasket.",
       "why": "The level is only correct with the engine running and the fluid in the temperature window.",
       "critical": true,
@@ -5514,7 +5514,7 @@
         {
           "id": "tr580-106-m1",
           "title": "Checking with the engine off",
-          "what": "Shuts the engine off before opening the filler plug.",
+          "what": "Shutting the engine off before opening the filler plug.",
           "consequence": "Fluid drains back from the circuits and the level reads high.",
           "prevent": "Keep the engine idling the whole time the level is being set.",
           "severity": "rework",
@@ -5525,7 +5525,7 @@
         {
           "id": "tr580-106-m2",
           "title": "Not rechecking an odd fill amount",
-          "what": "Adds far more or far less fluid than expected without rechecking conditions.",
+          "what": "Adding far more or far less fluid than expected without rechecking conditions.",
           "consequence": "The temperature or engine state was wrong, so the level is wrong too.",
           "prevent": "Recheck that the CVTF is inside the window and the engine is running.",
           "severity": "rework",
@@ -5536,7 +5536,7 @@
         {
           "id": "tr580-106-m3",
           "title": "Reusing the filler plug gasket",
-          "what": "Refits the filler plug with its old gasket.",
+          "what": "Refitting the filler plug with its old gasket.",
           "consequence": "The used gasket no longer crushes to seal and the filler plug seeps.",
           "prevent": "Fit a new filler plug gasket every time, as Subaru requires.",
           "severity": "minor",
@@ -5547,7 +5547,7 @@
         {
           "id": "tr580-106-m4",
           "title": "Filler plug torque guessed",
-          "what": "Tightens the filler plug without a torque wrench.",
+          "what": "Tightening the filler plug without a torque wrench.",
           "consequence": "The aluminum case thread strips, or an under-tightened filler plug seeps.",
           "prevent": "Torque the filler plug to 50 N·m with an 8 mm hex bit and a new gasket.",
           "severity": "rework",
@@ -5582,7 +5582,7 @@
         {
           "id": "tr580-107-m1",
           "title": "Calling it fixed after clearing",
-          "what": "Clears the codes and doesn't recheck after a drive cycle.",
+          "what": "Clearing the codes and not rechecking after a drive cycle.",
           "consequence": "Faults that only set over a drive cycle are missed and the car comes back.",
           "prevent": "Run a drive cycle after clearing and read the codes again.",
           "severity": "rework",
@@ -5594,7 +5594,7 @@
         {
           "id": "tr580-107-m2",
           "title": "Learning with faults present",
-          "what": "Goes on to AT learning with codes still active.",
+          "what": "Going on to AT learning with codes still active.",
           "consequence": "AT learning stops and tells you to fix the stored faults before it will run.",
           "prevent": "Repair every active fault and clear its code before starting AT learning.",
           "severity": "rework",
@@ -5616,7 +5616,7 @@
       "order": 108,
       "phase": "final",
       "title": "Clear the AT learning data",
-      "action": "Run the scan tool's clear AT learning function, then switch off for at least 30 seconds and back on; the AT temp light should flash four times.",
+      "action": "Run the scan tool's clear AT learning function, then switch off for at least 30 seconds and back on; the AT temperature light should flash four times.",
       "why": "Old learned values belong to the worn parts and must go before new learning.",
       "spec": {
         "kind": "other",
@@ -5631,7 +5631,7 @@
         {
           "id": "tr580-108-m1",
           "title": "Skipping the learning clear",
-          "what": "Runs AT learning with the old learned data still stored.",
+          "what": "Running AT learning with the old learned data still stored.",
           "consequence": "The TCM keeps values learned on worn parts, giving harsh or slipping engagements and poor lock-up.",
           "prevent": "Clear AT learning data first, then run the learning procedure.",
           "severity": "rework",
@@ -5642,7 +5642,7 @@
         {
           "id": "tr580-108-m2",
           "title": "Not confirming the light flashes",
-          "what": "Doesn't watch for the AT temperature light to flash after key-on.",
+          "what": "Turning the key on without watching for the AT temperature light to flash.",
           "consequence": "A failed clear goes unnoticed and learning runs on old data.",
           "prevent": "Watch for four flashes in two seconds and repeat the clear if they don't come.",
           "severity": "rework",
@@ -5653,7 +5653,7 @@
         {
           "id": "tr580-108-m3",
           "title": "Key-off too short",
-          "what": "Turns the ignition back on before the minimum wait after the clear.",
+          "what": "Turning the ignition back on before the minimum wait after the clear.",
           "consequence": "The clear may not complete, leaving old learned values in place.",
           "prevent": "Leave the ignition off for at least 30 seconds after the clear.",
           "severity": "minor",
@@ -5664,7 +5664,7 @@
         {
           "id": "tr580-108-m4",
           "title": "Out-of-date TCM software",
-          "what": "Skips checking for a newer TCM calibration.",
+          "what": "Skipping the check for a newer TCM calibration.",
           "consequence": "Known fixes, such as the logic that clears solenoid contamination on the 2018 Forester, are missing.",
           "prevent": "Check for a newer TCM calibration and reprogram before running learning.",
           "severity": "rework",
@@ -5675,7 +5675,7 @@
         {
           "id": "tr580-108-m5",
           "title": "Reflashing on a sagging battery",
-          "what": "Reprograms the TCM without a stable power supply.",
+          "what": "Reprogramming the TCM without a stable power supply.",
           "consequence": "A flash interrupted by battery discharge can ruin the TCM, and Subaru won't cover it.",
           "prevent": "Connect the approved battery support unit in power supply mode while reprogramming.",
           "severity": "costly",
@@ -5712,7 +5712,7 @@
         {
           "id": "tr580-109-m1",
           "title": "Fluid outside the learning window",
-          "what": "Starts learning with the CVTF too cold or too hot.",
+          "what": "Starting learning with the CVTF too cold or too hot.",
           "consequence": "AT learning ends abnormally as soon as the fluid temperature drifts out of range.",
           "prevent": "Bring the CVTF to 40 to 65 °C before starting learning.",
           "severity": "rework",
@@ -5723,7 +5723,7 @@
         {
           "id": "tr580-109-m2",
           "title": "Tires too close to the ground",
-          "what": "Raises the car only slightly for learning.",
+          "what": "Raising the car only slightly for learning.",
           "consequence": "The car vibrates during learning and could touch down and move.",
           "prevent": "Keep the tires at least 30 cm off the ground for learning.",
           "severity": "rework",
@@ -5733,8 +5733,8 @@
         },
         {
           "id": "tr580-109-m3",
-          "title": "Loads on or brake weak",
-          "what": "Leaves lights, A/C or heaters on, or the parking brake not fully applied.",
+          "title": "Electrical loads on or brake loose",
+          "what": "Leaving lights, A/C or heaters on, or the parking brake not fully applied.",
           "consequence": "AT learning ends abnormally partway through and has to start again from the beginning.",
           "prevent": "Turn off every electrical load and set the parking brake hard.",
           "severity": "minor",
@@ -5762,9 +5762,9 @@
         {
           "id": "tr580-110-m1",
           "title": "Touching pedals mid-learning",
-          "what": "Presses the accelerator or eases off the brake during learning.",
+          "what": "Pressing the accelerator or easing off the brake during learning.",
           "consequence": "AT learning ends abnormally the moment the accelerator moves or the brake eases.",
-          "prevent": "Keep your feet as the scan tool prompts and touch nothing else.",
+          "prevent": "Keep your feet where the scan tool prompts and touch nothing else.",
           "severity": "minor",
           "sourceIds": [
             "s4"
@@ -5773,7 +5773,7 @@
         {
           "id": "tr580-110-m2",
           "title": "Accepting an abnormal end",
-          "what": "Drives off after the scan tool reports that learning ended abnormally.",
+          "what": "Driving off after the scan tool reports that learning ended abnormally.",
           "consequence": "The TCM lacks learned values, so engagements are harsh or slipping.",
           "prevent": "Start AT learning over from the beginning until it ends normally.",
           "severity": "rework",
@@ -5784,7 +5784,7 @@
         {
           "id": "tr580-110-m3",
           "title": "Scan tool disconnected mid-learning",
-          "what": "Unplugs or powers down the scan tool during learning.",
+          "what": "Unplugging or powering down the scan tool during learning.",
           "consequence": "A communication error stops learning and the lever may not shift.",
           "prevent": "Keep the scan tool connected and powered until learning reports its end.",
           "severity": "minor",
@@ -5795,7 +5795,7 @@
         {
           "id": "tr580-110-m4",
           "title": "Ignoring harsh engagement after learning",
-          "what": "Accepts hard garage shifts after learning finishes.",
+          "what": "Accepting hard garage shifts after learning finishes.",
           "consequence": "The rebuilt clutches take the shock of every harsh engagement.",
           "prevent": "Run the learning control pressure and extra learning procedures, then look for internal faults.",
           "severity": "rework",
@@ -5822,7 +5822,7 @@
         {
           "id": "tr580-111-m1",
           "title": "Skipping the converter relearn",
-          "what": "Leaves out the converter relearn after a valve body or converter change.",
+          "what": "Leaving out the converter relearn after a valve body or converter change.",
           "consequence": "Shudder when pulling away from or slowing to a stop can remain.",
           "prevent": "Run the torque converter relearn and repeat it if the shudder persists.",
           "severity": "rework",
@@ -5833,7 +5833,7 @@
         {
           "id": "tr580-111-m2",
           "title": "Swapping the valve body without data",
-          "what": "Replaces the valve body for shudder without the hot and cold lock-up comparison.",
+          "what": "Replacing the valve body for shudder without the hot and cold lock-up comparison.",
           "consequence": "The new valve body doesn't fix a shudder that has another cause.",
           "prevent": "Compare lock-up duty hot and cold on decel to a stop, as Subaru's bulletin lays out.",
           "severity": "costly",
@@ -5869,7 +5869,7 @@
         {
           "id": "tr580-112-m1",
           "title": "Holding stall too long",
-          "what": "Holds full throttle at stall beyond the limit.",
+          "what": "Holding full throttle at stall beyond the limit.",
           "consequence": "Engine oil and CVTF deteriorate and the forward clutch and reverse brake are damaged.",
           "prevent": "Keep each stall test to no more than 5 seconds from closed throttle.",
           "severity": "costly",
@@ -5880,7 +5880,7 @@
         {
           "id": "tr580-112-m2",
           "title": "No cool-down between stall tests",
-          "what": "Goes straight from the D stall test to the R test.",
+          "what": "Going straight from the D stall test to the R test.",
           "consequence": "Back-to-back stalls overheat the CVTF and the forward and reverse packs.",
           "prevent": "Idle in P or N for at least a minute between stall tests.",
           "severity": "costly",
@@ -5891,7 +5891,7 @@
         {
           "id": "tr580-112-m3",
           "title": "Stall test at wrong temperature",
-          "what": "Stall-tests with the CVTF outside the specified window.",
+          "what": "Stall-testing with the CVTF outside the specified window.",
           "consequence": "The stall speeds you read can't be compared with the published range.",
           "prevent": "Bring the CVTF to 60 to 80 °C on the scan tool before the stall test.",
           "severity": "rework",
@@ -5902,7 +5902,7 @@
         {
           "id": "tr580-112-m4",
           "title": "Pre-collision braking left on",
-          "what": "Leaves EyeSight pre-collision braking on during the stall test.",
+          "what": "Leaving EyeSight pre-collision braking on during the stall test.",
           "consequence": "The pre-collision system can brake or cut power and spoil the stall reading.",
           "prevent": "Switch pre-collision braking off and keep everyone clear of the car.",
           "severity": "minor",
@@ -5924,13 +5924,13 @@
       "id": "tr580-113",
       "order": 113,
       "phase": "final",
-      "title": "Road test the vehicle",
+      "title": "Road-test the vehicle",
       "action": "Drive and check engagements, smooth ratio change, lock-up, no flare or judder from a stop, and no binding on tight turns.",
       "mistakes": [
         {
           "id": "tr580-113-m1",
-          "title": "A short, gentle road test",
-          "what": "Drives a few minutes with the fluid still cool.",
+          "title": "Road test too short and gentle",
+          "what": "Driving for only a few minutes with the fluid still cool.",
           "consequence": "Faults that appear only hot are missed and the car comes back.",
           "prevent": "Drive both cold and fully hot, slowing to a stop several times, and record data.",
           "severity": "rework",
@@ -5942,7 +5942,7 @@
         {
           "id": "tr580-113-m2",
           "title": "Not testing tight turns",
-          "what": "Skips slow full-lock turns on dry pavement.",
+          "what": "Skipping slow full-lock turns on dry pavement.",
           "consequence": "A tight transfer clutch or AWD solenoid fault is missed until tires and driveline suffer.",
           "prevent": "Make slow full-lock turns on dry pavement and check that all four tires match in size and wear.",
           "severity": "costly",
@@ -5954,7 +5954,7 @@
         {
           "id": "tr580-113-m3",
           "title": "Hard launches straight away",
-          "what": "Uses full throttle or tows before the level is rechecked.",
+          "what": "Using full throttle or towing before the level is rechecked.",
           "consequence": "If the fill is still low, a shock load from a hard launch can slip the chain.",
           "prevent": "Drive gently, with no towing, until the level has been rechecked hot.",
           "severity": "costly",
@@ -5965,7 +5965,7 @@
         {
           "id": "tr580-113-m4",
           "title": "Not logging pulley speeds",
-          "what": "Road-tests by feel only.",
+          "what": "Road-testing by feel only.",
           "consequence": "Slight chain slip goes unnoticed on the road test until the damage grows.",
           "prevent": "Log engine, primary and secondary pulley speeds and look for any mismatch.",
           "severity": "rework",
@@ -5989,13 +5989,13 @@
       "id": "tr580-114",
       "order": 114,
       "phase": "final",
-      "title": "Recheck level and leaks",
+      "title": "Recheck the level and look for leaks",
       "action": "Recheck the CVTF level in the temperature window and inspect the chain cover seam, axle seals and pan for leaks.",
       "mistakes": [
         {
           "id": "tr580-114-m1",
           "title": "Skipping the post-drive level check",
-          "what": "Doesn't recheck the CVTF level after the road test.",
+          "what": "Skipping the CVTF level recheck after the road test.",
           "consequence": "Air purged from the circuits leaves the level low, which brings air noise and a risk of chain slip.",
           "prevent": "Recheck the level in the temperature window after the road test.",
           "severity": "costly",
@@ -6006,7 +6006,7 @@
         {
           "id": "tr580-114-m2",
           "title": "Mistaking fill spills for leaks",
-          "what": "Takes CVTF spilled during filling for a seal leak.",
+          "what": "Taking CVTF spilled during filling for a seal leak.",
           "consequence": "A good reseal is condemned, or a real leak is hidden among the spills.",
           "prevent": "Clean every surface after filling so any new leak is obvious.",
           "severity": "minor",
@@ -6017,7 +6017,7 @@
         {
           "id": "tr580-114-m3",
           "title": "Not rechecking the cover seam",
-          "what": "Doesn't look at the chain cover seam after the unit has been hot.",
+          "what": "Overlooking the chain cover seam after the unit has been hot.",
           "consequence": "Seepage from a poor reseal is found by the customer instead.",
           "prevent": "Inspect the chain cover seam after the unit has been hot and cooled.",
           "severity": "rework",
@@ -6041,7 +6041,7 @@
     {
       "id": "tr580-fm1",
       "title": "Chain slip and pulley face damage",
-      "cause": "Secondary (clamping) pressure falls, from low fluid, worn valve body bores, pressure sensor or solenoid faults, and the chain slips on the sheaves under load. Once it slips, chain and pulley faces are damaged together.",
+      "cause": "Secondary (clamping) pressure falls because of low fluid, worn valve body bores, or pressure sensor or solenoid faults, and the chain slips on the sheaves under load. Once it slips, chain and pulley faces are damaged together.",
       "symptoms": [
         "Engine rpm flares without matching road speed",
         "Whine or vibration under load",
@@ -6071,7 +6071,7 @@
       "cause": "The lock-up duty solenoid's coil goes open circuit as it heats, so the TCM loses control of converter lock-up.",
       "symptoms": [
         "Code P2763 once the car is warm",
-        "No lock-up, or a lock-up feel coming to a stop",
+        "No lock-up, or a lock-up feel when coming to a stop",
         "Normal behavior when cold"
       ],
       "rebuildAngle": "Test the solenoid both cold and heated (tr580-050); replace the valve body or swap in a known-good solenoid with a soldered, oil-proof splice; check grounds and routing on reassembly (tr580-094, tr580-095).",
@@ -6324,7 +6324,7 @@
     {
       "id": "tr580-fm14",
       "title": "Front differential wear",
-      "cause": "The front differential has its own gear oil; skipped changes, a quick-lube shop draining the wrong plug, or the wrong fluid wears the hypoid gears and bearings.",
+      "cause": "The front differential has its own gear oil; skipped changes, a quick-lube shop draining the wrong plug, or the wrong fluid wear the hypoid gears and bearings.",
       "symptoms": [
         "Howl that changes with road speed",
         "Metal on the differential plug magnet"

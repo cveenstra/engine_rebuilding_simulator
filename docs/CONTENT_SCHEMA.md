@@ -67,7 +67,7 @@ Units in v1:
       "spec": {                       // optional, only with a source
         "kind": "torque",             // "torque" | "clearance" | "angle" | "sequence" | "fluid" | "other"
         "value": "45",
-        "unit": "N·m",                // N·m, ft·lb, mm, deg, L, qt...
+        "unit": "N·m",                // optional: N·m, ft·lb, mm, deg, L, qt... (leave out when the value states its own units)
         "note": "Optional: e.g. 'plus 90°' or 'new bolt'",
         "sourceIds": ["s1"]
       },
@@ -203,10 +203,10 @@ the app can teach them in order and no definition uses a word the learner has no
 Categories: `general`, `engine`, `transmission`, `measurement`, `tools`, `fasteners-sealing`,
 `electrical`, `abbreviation`, `brand`.
 
-Groups in use: Basics, Engine structure, Rotating assembly, Valvetrain and timing,
-Lubrication and cooling, Fuel, air and turbo, Measuring and machining, Fasteners and sealing,
-Tools and procedures, Electronics and control, Hydraulics, Clutches and gears, CVT,
-Torque converter, Makers and service info.
+Groups in use: Basics, Vehicle and accessories, Engine structure, Rotating assembly,
+Valvetrain and timing, Lubrication and cooling, Fuel, air and turbo, Measuring and machining,
+Fasteners and sealing, Tools and procedures, Electronics and control, Transmission structure,
+Hydraulics, Clutches and gears, CVT, Torque converter, Makers and service info.
 
 How terms are found in text: the app's matcher (`src/engine/termMatch.js`) is whole-word,
 case-insensitive and leftmost-longest, so "main bearing" wins over "bearing" and the two never

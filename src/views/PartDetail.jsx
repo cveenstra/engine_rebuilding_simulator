@@ -37,7 +37,7 @@ export default function PartDetail() {
     return (
       <div>
         <PageHeader title="Part not found" back={back} />
-        <Empty title="That part is not in the catalog" action={<Button to={back.to} variant="ghost">{back.label}</Button>} />
+        <Empty title="That part isn’t in the catalog" action={<Button to={back.to} variant="ghost">{back.label}</Button>} />
       </div>
     );
   }
@@ -79,7 +79,7 @@ export default function PartDetail() {
               <Icon name="chevron" size={18} className="text-ink-3 transition-transform group-open:rotate-90" />
               <span className="min-w-0 flex-1">
                 <span className="block text-lg font-semibold text-ink">Steps in the {unit.name}</span>
-                <span className="block text-sm text-ink-3">{steps.length} step{steps.length === 1 ? '' : 's'} touch it. Tap one to open it in the walkthrough.</span>
+                <span className="block text-sm text-ink-3">{steps.length} step{steps.length === 1 ? ' uses' : 's use'} it. Tap one to open it in the walkthrough.</span>
               </span>
             </summary>
             <Card className="overflow-hidden">
@@ -90,7 +90,7 @@ export default function PartDetail() {
       ))}
 
       {!usage.length && (
-        <p className="text-base text-ink-2">No loaded unit uses this part yet.</p>
+        <p className="text-base text-ink-2">No unit in the app uses this part yet.</p>
       )}
     </div>
   );

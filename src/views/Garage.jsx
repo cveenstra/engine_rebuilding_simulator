@@ -84,12 +84,12 @@ export default function Garage() {
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-base font-semibold text-ink">
-            {review.due ? `${review.due} step${review.due === 1 ? '' : 's'} due for review` : 'Nothing due right now'}
+            {review.due ? `${review.due} step card${review.due === 1 ? '' : 's'} due` : 'No step cards due'}
           </p>
           <p className="text-sm text-ink-3">
             {review.studied
-              ? `${review.studied} of ${review.total} transitions studied${streak ? `, ${streak}-day streak` : ''}`
-              : 'Play any mode and missed steps come back here on a schedule.'}
+              ? `${review.studied} of ${review.total} studied${streak ? `, ${streak}-day streak` : ''}`
+              : 'Play any mode, and missed steps come back here to review.'}
           </p>
         </div>
         <Button to="/review" variant={review.due ? 'primary' : 'ghost'} className="flex-shrink-0 px-3" disabled={!UNITS.length}>
@@ -107,7 +107,7 @@ export default function Garage() {
               {terms.due ? `${terms.due} term${terms.due === 1 ? '' : 's'} due` : 'No terms due'}
             </p>
             <p className="text-sm text-ink-3">
-              {terms.learned + terms.mature} of {terms.total} shop words learned{terms.newToday ? `, ${terms.newToday} new today` : ''}
+              {terms.learned + terms.mature} of {terms.total} learned{terms.newToday ? `, ${terms.newToday} new to learn` : ''}
             </p>
           </div>
           <Button to="/terms" variant={terms.due || terms.newToday ? 'primary' : 'ghost'} className="flex-shrink-0 px-3">
@@ -128,7 +128,7 @@ export default function Garage() {
             <p className="text-sm text-ink-3">
               {mistakesDue.length
                 ? mistakesDue.map((x) => `${x.due} in ${x.unit.name}`).join(', ')
-                : 'Drill the ways to wreck a unit; missed ones come back here.'}
+                : 'Drill the ways to wreck a unit. Missed ones come back here.'}
             </p>
           </div>
           {drillTarget && (
@@ -152,7 +152,7 @@ export default function Garage() {
 
       {OTHER_UNITS.length > 0 && (
         <section>
-          <SectionTitle sub="Fake parts and fake numbers, here so you can try every mode before the real content lands.">
+          <SectionTitle sub="Made-up parts and numbers, so you can try every mode.">
             Practice bench
           </SectionTitle>
           <Card as="ul" className="divide-y divide-line-2 overflow-hidden">
@@ -169,7 +169,7 @@ export default function Garage() {
         </span>
         <span className="min-w-0 flex-1">
           <span className="block text-base font-medium text-ink">Compare the units</span>
-          <span className="block text-sm text-ink-3">Boxer against inline, chain CVT against 9-speed automatic</span>
+          <span className="block text-sm text-ink-3">Boxer vs inline four, chain CVT vs 9-speed automatic</span>
         </span>
         <Icon name="chevron" size={18} className="text-ink-3" />
       </Link>

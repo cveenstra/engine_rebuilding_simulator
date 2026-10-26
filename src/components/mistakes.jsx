@@ -148,7 +148,7 @@ export function MistakeCount({ step, open, onClick }) {
 }
 
 /**
- * The "Ways this goes wrong" block on a step card. Collapsed to a one-line
+ * The "Ways to go wrong" block on a step card. Collapsed to a one-line
  * header (count and worst severity) unless `open`; the card controls it so
  * the header chip can open it too.
  */
@@ -165,7 +165,7 @@ export function MistakeSection({ unit, step, open, onToggle, id }) {
         >
           <Icon name="alert" size={16} strokeWidth={2.1} className="flex-shrink-0 text-bad-text" />
           <span className="min-w-0 flex-1">
-            <span className={`${LABEL} text-bad-text`}>Ways this goes wrong</span>
+            <span className={`${LABEL} text-bad-text`}>Ways to go wrong</span>
             <span className="tabnum ml-1.5 text-sm font-semibold text-ink-2">{list.length}</span>
           </span>
           {worst && !open && <SeverityBadge severity={worst} />}

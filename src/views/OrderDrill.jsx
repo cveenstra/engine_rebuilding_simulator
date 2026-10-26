@@ -66,16 +66,16 @@ function Drill({ unit }) {
       </ModeHeader>
 
       <ChipRow className="mb-4">
-        <Chip active={!phase} onClick={() => pickPhase('')}>Anywhere</Chip>
+        <Chip active={!phase} onClick={() => pickPhase('')}>All phases</Chip>
         {unit.phases.map((p) => (
           <Chip key={p.id} active={phase === p.id} onClick={() => pickPhase(p.id)}>{p.name}</Chip>
         ))}
       </ChipRow>
 
       <p className="mb-3 text-base text-ink-2">
-        Tap these {size} steps in the order you would do them
+        Tap these {size} steps in the order you’d do them
         {firstPhase ? <>, starting in <strong className="font-semibold text-ink">{firstPhase.name}</strong></> : null}.
-        Tap a placed step to send it back.
+        Tap a placed step to take it back out.
       </p>
 
       {!checked && (
@@ -118,7 +118,7 @@ function Drill({ unit }) {
           ) : (
             <Card className="pop-in p-4">
               <p className="text-lg font-semibold text-ink">{rightSpot} of {size} in the right spot</p>
-              <p className="text-sm text-ink-3">Here is the real order. Misplaced steps show why they go where they do.</p>
+              <p className="text-sm text-ink-3">Here’s the real order. Each step you misplaced shows why it goes there.</p>
             </Card>
           )}
           <ol className="space-y-2" {...beat.pauseProps}>
@@ -136,7 +136,7 @@ function Drill({ unit }) {
                       </p>
                       {!ok && (
                         <>
-                          <p className="text-sm text-bad-text">You put it at {positionOf[s.id] + 1}. Step {s.order} of the rebuild.</p>
+                          <p className="text-sm text-bad-text">You put it in spot {positionOf[s.id] + 1}. It’s step {s.order} of the rebuild.</p>
                           <p className="mt-1 text-sm leading-relaxed text-ink-2"><Glossed text={s.why || s.action} /></p>
                         </>
                       )}

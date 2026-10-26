@@ -12,6 +12,9 @@ import { glossSkips, termsForPart } from '../engine/glossary.js';
 import { useAutoAdvance } from '../components/useAutoAdvance.js';
 import { cheer, miss } from '../engine/feedback.js';
 
+/** A part name inside a sentence: "the oil pump", but "the VVT solenoid" keeps its capitals. */
+const inSentence = (name) => (/^[A-Z][a-z]/.test(name) ? name[0].toLowerCase() + name.slice(1) : name);
+
 const shuffle = (arr) => {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -82,21 +85,21 @@ function Quiz({ unit }) {
       {manifest === undefined ? (
         <div className="aspect-[4/3] w-full animate-pulse rounded-xl bg-line-2" />
       ) : !ready ? (
-        <Empty title="Pictures are still on the way" action={<Button to={`/unit/${unit.id}/parts`} variant="ghost">Open the parts gallery</Button>}>
+        <Empty title="No quiz for this unit yet" action={<Button to={`/unit/${unit.id}/parts`} variant="ghost">Open the parts gallery</Button>}>
           {all.length < 4
-            ? 'This unit needs at least four kinds of part for a quiz.'
-            : 'None of this unit’s parts has a photo or drawing yet. Check back once the pictures land.'}
+            ? 'A quiz needs at least four kinds of part.'
+            : 'None of this unit’s parts has a photo or drawing yet.'}
         </Empty>
       ) : q && (
         <div key={round.n} className="rise-in space-y-4">
           <p className="text-base text-ink-2">
-            Name this part from the {unit.name}. Just practice: it does not change your review schedule.
+            Name this part from the {unit.name}. It’s just for practice and doesn’t affect your reviews.
             {pool.length < all.length ? ` ${pool.length} of ${all.length} parts have a picture so far.` : ''}
           </p>
 
           <PartImage key={q.answer} partId={q.answer} hideCaption={!answered} hideAlt={!answered} onSlides={onSlides} />
           {noPic && !answered && (
-            <p className="text-sm text-warn-text">This picture did not load. Tap Skip for the next one.</p>
+            <p className="text-sm text-warn-text">This picture didn’t load. Tap Skip for the next one.</p>
           )}
 
           <div>
@@ -117,7 +120,7 @@ function Quiz({ unit }) {
           {answered && (
             <div className="pop-in rounded-xl border border-line bg-surface p-4" {...beat.pauseProps}>
               <p className={`text-base font-semibold ${picked === q.answer ? 'text-ok-text' : 'text-bad-text'}`}>
-                {picked === q.answer ? `Right: ${answerPart.name}.` : `Not quite. The answer: ${answerPart.name}.`}
+                {picked === q.answer ? `Right, it’s the ${inSentence(answerPart.name)}.` : `Not quite. It’s the ${inSentence(answerPart.name)}.`}
               </p>
               {/* Linked only after answering: before, the names would give the picture away. */}
               <p className="mt-1 text-base leading-relaxed text-ink-2"><Glossed text={answerPart.what} exclude={termsForPart(answerPart.id)} /></p>
@@ -125,7 +128,7 @@ function Quiz({ unit }) {
                 <Glossed text={answerPart.does} skip={glossSkips([answerPart.what, answerPart.does])[1]} exclude={termsForPart(answerPart.id)} />
               </p>
               <Link to={`/part/${q.answer}?unit=${unit.id}`} className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-medium text-brand-text underline underline-offset-2">
-                Part page and steps <Icon name="chevron" size={14} />
+                See the part and its steps <Icon name="chevron" size={14} />
               </Link>
             </div>
           )}

@@ -41,14 +41,14 @@ function PartsSection({ unit }) {
   const base = `/unit/${unit.id}/parts`;
   return (
     <section>
-      <SectionTitle sub={`${count} kinds of part. See what each one looks like and where it sits.`}>Parts</SectionTitle>
+      <SectionTitle sub={`${count} kind${count === 1 ? '' : 's'} of part. See what each one looks like and where it sits.`}>Parts</SectionTitle>
       {diagram.state === 'ready' && (
         <UnitDiagram unit={unit} markup={diagram.markup} onPick={(id) => navigate(`/part/${id}?unit=${unit.id}`)} className="mb-3" />
       )}
       {diagram.state === 'loading' && <div className="mx-auto mb-3 aspect-[4/3] w-full max-w-xl animate-pulse rounded-xl bg-line-2" />}
       <div className="grid gap-2 sm:grid-cols-2">
-        <ModeTile to={base} icon="image" title="Parts gallery" note="Every part in this unit, by category, with pictures" />
-        <ModeTile to={`${base}/quiz`} icon="eye" title="Picture quiz" note="Name the part from its picture. Practice only." />
+        <ModeTile to={base} icon="image" title="Parts gallery" note="Every part in this unit, with pictures" />
+        <ModeTile to={`${base}/quiz`} icon="eye" title="Picture quiz" note="Name the part from its picture. Just for practice." />
       </div>
     </section>
   );
@@ -62,7 +62,7 @@ function MistakesSection({ unit, state }) {
   const base = `/unit/${unit.id}/mistakes`;
   return (
     <section>
-      <SectionTitle sub="Every way a step can go wrong, what it costs and how to stay ahead of it.">Ways to screw up</SectionTitle>
+      <SectionTitle sub="Every way a step can go wrong, what it costs you and how to avoid it.">Mistakes to avoid</SectionTitle>
       <Card className="mb-2 p-4">
         <p className="flex items-start gap-2 text-base font-semibold text-ink">
           <Icon name="alert" size={20} className="mt-0.5 flex-shrink-0 text-bad-text" />
@@ -77,10 +77,10 @@ function MistakesSection({ unit, state }) {
         </div>
       </Card>
       <div className="grid gap-2 sm:grid-cols-2">
-        <ModeTile to={base} icon="alert" title={`All ${stats.total} mistakes`} note="By phase, with filters, search and a printable pre-flight checklist" />
+        <ModeTile to={base} icon="alert" title={`All ${stats.total} mistakes`} note="By phase, with search, filters and a printable checklist" />
         {drill.total >= 4 && (
           <ModeTile to={`${base}/drill`} icon="shield" title="Mistake drill"
-            note={drill.due ? `${drill.due} due now. Missed ones come back.` : `${drill.total} to learn: what happens, how to prevent it`} />
+            note={drill.due ? `${drill.due} due now` : `${drill.total} to learn: what happens and how to prevent it`} />
         )}
       </div>
     </section>
@@ -111,8 +111,8 @@ export default function UnitOverview() {
       <Card className="p-4">
         <div className="grid grid-cols-3 gap-3">
           <Stat label="Mastery" value={`${p.mastery}%`} />
-          <Stat label="Due" value={p.due} note={`of ${p.cards} transitions`} />
-          <Stat label="Best run" value={p.best ? `${p.best.mistakes} ${p.best.mistakes === 1 ? 'miss' : 'misses'}` : 'None'} note={p.best ? formatMs(p.best.ms) : 'yet'} />
+          <Stat label="Due" value={p.due} note={`of ${p.cards} step cards`} />
+          <Stat label="Best run" value={p.best ? `${p.best.mistakes} ${p.best.mistakes === 1 ? 'miss' : 'misses'}` : 'None'} note={p.best ? formatMs(p.best.ms) : 'No runs yet'} />
         </div>
         <Bar pct={p.mastery} className="mt-3" label="Mastery" />
       </Card>
@@ -122,14 +122,14 @@ export default function UnitOverview() {
         <div className="grid gap-2 sm:grid-cols-2">
           <ModeTile to={`${base}/run`} icon="play" accent
             title={p.active ? 'Resume full rebuild run' : 'Full rebuild run'}
-            note={p.active ? `Step ${p.active.pos + 1} of ${unit.steps.length}, ${p.active.mistakes} mistakes so far` : `Rebuild all ${unit.steps.length} steps in order, against the clock`} />
+            note={p.active ? `Step ${p.active.pos + 1} of ${unit.steps.length}, ${p.active.mistakes} ${p.active.mistakes === 1 ? 'miss' : 'misses'} so far` : `Rebuild all ${unit.steps.length} steps in order, against the clock`} />
           <ModeTile to={`${base}/walk`} icon="walk" title="Walkthrough" note="Read every step in order, with why, tools and specs" />
           <ModeTile to={`${base}/order`} icon="shuffle" title="Order drill" note="Put 5 to 8 shuffled steps back in order" />
-          <ModeTile to={`${base}/next`} icon="next" title="What's next" note="Pick the step that comes next, from 4" />
+          <ModeTile to={`${base}/next`} icon="next" title="What's next" note="Pick the next step out of four" />
           <ModeTile to={`${base}/specs`} icon="cards" title="Spec flashcards"
             note={specs ? `${specs} sourced specs` : 'No sourced specs yet'} />
-          <ModeTile to={`/review?unit=${unit.id}`} icon="review" title="Review due"
-            note={p.due ? `${p.due} transitions due now` : 'Nothing due; misses come back here'} />
+          <ModeTile to={`/review?unit=${unit.id}`} icon="review" title="Review"
+            note={p.due ? `${p.due} step card${p.due === 1 ? '' : 's'} due now` : 'Nothing due. Misses come back here.'} />
         </div>
       </section>
 
@@ -137,7 +137,7 @@ export default function UnitOverview() {
 
       {unit.failureModes.length > 0 && (
         <section>
-          <SectionTitle sub="How this unit usually fails in service, and what the rebuild does about it.">How these units die</SectionTitle>
+          <SectionTitle sub="How it usually fails in service, and what the rebuild does about it.">How this unit fails</SectionTitle>
           <FailureModes unit={unit} />
         </section>
       )}

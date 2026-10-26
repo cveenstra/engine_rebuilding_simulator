@@ -11,6 +11,10 @@ import { TERM_BY_ID, groupOf } from '../data/glossary.js';
 
 const levelName = (n) => (n === 0 ? 'Level 0: Foundations' : `Level ${n}`);
 const groupKey = (level, name) => `${level}|${name}`;
+const termCount = (lv) => {
+  const n = lv.groups.reduce((sum, g) => sum + g.terms.length, 0);
+  return `${n} term${n === 1 ? '' : 's'}`;
+};
 
 function Chips({ title, ids, onPick, statusOf }) {
   if (!ids.length) return null;
@@ -76,7 +80,7 @@ export default function ConceptMap() {
     return (
       <div>
         <PageHeader title="Concept map" back={{ to: '/terms', label: 'Terms' }} />
-        <Empty title="The dictionary is on its way">The map fills in once the glossary lands.</Empty>
+        <Empty title="No terms yet">The map fills in once there are terms to show.</Empty>
       </div>
     );
   }
@@ -86,7 +90,7 @@ export default function ConceptMap() {
       <PageHeader
         title="Concept map"
         back={{ to: '/terms', label: 'Terms' }}
-        sub="Every word sits on the words it builds on. Level 0 needs nothing else; each level up rests on the ones below. A word unlocks once everything it builds on is learned."
+        sub="Each term sits on the terms it builds on. Level 0 needs nothing else, and each level rests on the ones below. A term unlocks once you’ve learned everything it builds on."
       >
         <StatusLegend className="mt-3" />
       </PageHeader>
@@ -94,7 +98,7 @@ export default function ConceptMap() {
       {levels.map((lv) => (
         <section key={lv.level} aria-labelledby={`cm-l-${lv.level}`}>
           <h2 id={`cm-l-${lv.level}`} className="mb-2 text-lg font-semibold text-ink">
-            {levelName(lv.level)} <span className="text-sm font-normal text-ink-3">{lv.groups.reduce((n, g) => n + g.terms.length, 0)} words</span>
+            {levelName(lv.level)} <span className="text-sm font-normal text-ink-3">{termCount(lv)}</span>
           </h2>
           <div className="space-y-2">
             {lv.groups.map((g) => {
@@ -132,7 +136,7 @@ export default function ConceptMap() {
                                 <Chips title="Builds on" ids={t.requires} onPick={select} statusOf={statusOf} />
                                 <Chips title="Leads to" ids={LEADS_TO[t.id] || []} onPick={select} statusOf={statusOf} />
                                 {!t.requires.length && !(LEADS_TO[t.id] || []).length && (
-                                  <p className="text-sm text-ink-3">Stands on its own: nothing it needs, nothing that needs it yet.</p>
+                                  <p className="text-sm text-ink-3">Stands alone: it builds on nothing, and nothing builds on it yet.</p>
                                 )}
                                 <Button variant="ghost" onClick={() => define?.(t.id)}><Icon name="book" size={16} /> Full definition</Button>
                               </div>
